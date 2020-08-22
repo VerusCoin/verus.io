@@ -1,0 +1,80 @@
+const Footer = () => {
+  return (
+    <>
+      <div className="grid justify-center grid-cols-1 gap-4 md:p-6 md:pl-32 md:pr-32 md:grid-cols-2">
+        <a className="p-2 border-2 border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
+          <img src="/images/Discord-Logo-White.png" className="w-8 mb-4 " />
+          <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
+          <p className="text-sm opacity-50 md:text-base font-p">
+            Join our most active community channel for all questions and
+            discussions!
+          </p>
+        </a>
+
+        <a className="p-2 border-2 border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
+          <img
+            src="/images/iconmonstr-telegram-1-240.png"
+            className="w-8 mb-4"
+          />
+          <h3 className="mt-0 mb-4 text-2xl">Telegram Community</h3>
+          <p className="text-sm opacity-50 md:text-base font-p">
+            Jump in our community Telegram server. Ask questions and discuss
+            everything related to Verus.
+          </p>
+        </a>
+      </div>
+      <div className="grid justify-center mt-8 ml-0 md:mt-24 md:justify-evenly xs:grid-cols-1 sm:grid-cols-8 md:grid-cols-8 lg:grid-cols-12">
+        <div className="sm:col-start-1 md:col-start-2 lg:col-start-2 md:col-span-2 lg:col-span-3">
+          <img
+            src="/images/veruslogowhite.png"
+            width="100"
+            srcSet="
+              /images/veruslogowhite.png  500w,
+              /images/veruslogowhite.png  800w,
+              /images/veruslogowhite.png 1080w,
+              /images/veruslogowhite.png 1185w
+            "
+            sizes="100px"
+            alt=""
+          />
+          <p className="mt-2 text-sm font-p">
+            © 2020 The Verus Project.
+            <br />
+            All rights reserved.
+          </p>
+          <a className="block mt-6 hover:text-white text-navlink-hover">
+            Cookie Policy
+          </a>
+          <a className="block mt-2 hover:text-white text-navlink-hover">
+            Brand Materials
+          </a>
+        </div>
+        <div className="space-y-4 sm:col-start-4 sm:col-span-2 md:col-span-2 lg:col-span-3 lg:col-start-6 ">
+          <h4 className="m-0 mb-8 text-custom2">Socials</h4>
+          <a className="block mb-4 hover:text-white text-navlink-hover">
+            Facebook
+          </a>
+          <a className="block hover:text-white text-navlink-hover">Twitter</a>
+          <a className="block hover:text-white text-navlink-hover">Telegram</a>
+          <a className="block hover:text-white text-navlink-hover">Discord</a>
+          <a className="block hover:text-white text-navlink-hover">Reddit</a>
+          <a className="block hover:text-white text-navlink-hover">Medium</a>
+          <a className="block hover:text-white text-navlink-hover">YouTube</a>
+          <a className="block hover:text-white text-navlink-hover">
+            BitcoinTalk
+          </a>
+        </div>
+        <div className="space-y-4 sm:col-start-6 sm:col-span-3 md:col-span-2 lg:col-span-3">
+          <h4 className="m-0 mb-8 text-custom2">Build With Us</h4>
+          <a className="block hover:text-white text-navlink-hover">Discord</a>
+          <a className="block hover:text-white text-navlink-hover">GitHub</a>
+          <a className="block hover:text-white text-navlink-hover">
+            Developer Documentation
+          </a>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Footer;
