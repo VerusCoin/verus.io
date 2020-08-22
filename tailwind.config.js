@@ -98,4 +98,5 @@ module.exports = {
     require('tailwindcss-responsive-embed'),
     require('tailwindcss-aspect-ratio'),
   ],
+  purge: ['./components/**/*.js', './pages/**/*.js'],
 };
