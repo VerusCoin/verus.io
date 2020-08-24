@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <>
       <div className="grid justify-center grid-cols-1 gap-4 md:p-6 md:pl-32 md:pr-32 md:grid-cols-2">
-        <a className="p-2 border-2 border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
+        <a className="p-2 border border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
           <img src="/images/Discord-Logo-White.png" className="w-8 mb-4 " />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
           <p className="text-sm opacity-50 md:text-base font-p">
@@ -11,7 +11,7 @@ const Footer = () => {
           </p>
         </a>
 
-        <a className="p-2 border-2 border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
+        <a className="p-2 border border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
           <img
             src="/images/iconmonstr-telegram-1-240.png"
             className="w-8 mb-4"
@@ -50,7 +50,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="space-y-4 sm:col-start-4 sm:col-span-2 md:col-span-2 lg:col-span-3 lg:col-start-6 ">
-          <h4 className="m-0 mb-8 text-custom2">Socials</h4>
+          <h4 className="m-0 mb-8 text-lg">Socials</h4>
           <a className="block mb-4 hover:text-white text-navlink-hover">
             Facebook
           </a>

@@ -15,22 +15,22 @@ const Home = () => {
   };
   return (
     <>
-      <div className="pt-6 m-12 mt-16 text-center md:ml-40 sm:pt-12 section-2 sm:text-left">
-        <h1 className="w-full mb-0 text-5xl font-normal sm:w-4/5 md:w-3/5 lg:w-1/2 text-bluebutton">
+      <div className="max-w-2xl pt-6 m-12 mt-16 text-center md:ml-40 sm:pt-12 section-2 sm:text-left">
+        <h1 className="w-full mb-0 text-5xl font-normal text-bluebutton">
           Empowering Individuals Around the World
         </h1>
-        <p className="w-full mt-3 text-2xl font-light sm:w-4/5 md:w-3/5 lg:w-1/2 font-p">
+        <p className="w-full mt-3 text-2xl font-light font-p">
           Verus supplies tools for individuals and organizations to build
           equitable frameworks for social and economic change.
         </p>
-        <div className="flex flex-wrap justify-center w-full sm:w-4/5 md:justify-start">
+        <div className="flex flex-wrap justify-center md:justify-start">
           <Link href="/mining-and-staking">
-            <button className="px-6 py-4 m-2 ml-0 text-lg text-white border-0 rounded-full sm:m-8 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
+            <button className="px-6 py-4 m-2 ml-0 text-white border-0 rounded-full sm:m-8 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
               Secure the Network and Earn
             </button>
           </Link>
           <Link href="/technology">
-            <button className="px-6 py-4 m-2 text-lg bg-transparent rounded-full sm:m-8 hover:bg-gray-200">
+            <button className="px-6 py-4 m-2 text-lg bg-transparent border rounded-full sm:m-8 hover:bg-gray-200">
               Technology Deep Dive
             </button>
           </Link>
@@ -43,9 +43,9 @@ const Home = () => {
             <a
               onClick={() => setViewTab(0)}
               className={
-                'mr-5 text-center text-lg p-1  ' +
+                'mr-5 text-center cursor-pointer text-lg p-1  ' +
                 (viewTab === 0
-                  ? 'underline text-tablink-active'
+                  ? 'text-tablink-active border border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                   : 'text-tablink')
               }
             >
@@ -54,9 +54,9 @@ const Home = () => {
             <a
               onClick={() => setViewTab(1)}
               className={
-                'mr-5 text-center text-lg p-1 flex-no-wrap  ' +
+                'mr-5 text-center cursor-pointer text-lg p-1 flex-no-wrap  ' +
                 (viewTab === 1
-                  ? 'underline text-tablink-active'
+                  ? 'text-tablink-active border border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                   : 'text-tablink')
               }
             >
@@ -65,9 +65,9 @@ const Home = () => {
             <a
               onClick={() => setViewTab(2)}
               className={
-                'mr-5 text-center text-lg p-1  ' +
+                'mr-5 text-center cursor-pointer text-lg p-1  ' +
                 (viewTab === 2
-                  ? 'underline text-tablink-active'
+                  ? 'text-tablink-active border border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                   : 'text-tablink')
               }
             >
@@ -76,9 +76,9 @@ const Home = () => {
             <a
               onClick={() => setViewTab(3)}
               className={
-                'mr-5 text-center text-lg p-1  ' +
+                'mr-5 text-center cursor-pointer text-lg p-1  ' +
                 (viewTab === 3
-                  ? 'underline text-tablink-active'
+                  ? 'text-tablink-active border border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                   : 'text-tablink')
               }
             >
@@ -93,7 +93,7 @@ const Home = () => {
               <div className="pt-0 pl-20 text-left md:col-span-2">
                 {viewTab === 0 && (
                   <>
-                    <h3 className="mt-0 text-3xl font-normal lg:w-2/3">
+                    <h3 className="mt-0 text-2xl font-normal lg:w-2/3">
                       Self-Sovereign & Decentralized Identities
                     </h3>
                     <p className="w-4/5 text-xl font-light lg:w-2/3 font-p">
@@ -101,14 +101,14 @@ const Home = () => {
                       capabilities, including friendly, human-readable names to
                       receive, send and secure all cryptocurrencies.
                     </p>
-                    <button className="px-12 py-5 text-sm bg-transparent border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
+                    <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
                       Learn More
                     </button>
                   </>
                 )}
                 {viewTab === 1 && (
                   <>
-                    <h3 className="mt-0 text-3xl font-normal lg:w-2/3">
+                    <h3 className="mt-0 text-2xl font-normal lg:w-2/3">
                       Redefining DeFi With Reserve Currencies
                     </h3>
                     <p className="w-4/5 text-xl font-light lg:w-2/3 font-p">
@@ -116,14 +116,14 @@ const Home = () => {
                       allows Verus to advance the technology underpinning
                       automated market makers and community liquidity.
                     </p>
-                    <button className="px-12 py-5 text-sm bg-transparent border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
+                    <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
                       Learn More
                     </button>
                   </>
                 )}
                 {viewTab === 2 && (
                   <>
-                    <h3 className="mt-0 text-3xl font-normal lg:w-2/3">
+                    <h3 className="mt-0 text-2xl font-normal lg:w-2/3">
                       A Blockchain Launch Is Just a Few Clicks Away
                     </h3>
                     <p className="w-4/5 text-xl font-light lg:w-2/3 font-p">
@@ -132,14 +132,14 @@ const Home = () => {
                       security and continuity. PBaaS provides a roadmap for
                       practically unlimited scalability.
                     </p>
-                    <button className="px-12 py-5 text-sm bg-transparent border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
+                    <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
                       Learn More
                     </button>
                   </>
                 )}
                 {viewTab === 3 && (
                   <>
-                    <h3 className="mt-0 text-3xl font-normal lg:w-2/3">
+                    <h3 className="mt-0 text-2xl font-normal lg:w-2/3">
                       Combine the Power of Solidity with Verus
                     </h3>
                     <p className="w-4/5 text-xl font-light lg:w-2/3 font-p">
@@ -147,7 +147,7 @@ const Home = () => {
                       voluptatem accusantium doloremque laudantium, totam rem
                       aperiam eaque.
                     </p>
-                    <button className="px-12 py-5 text-sm bg-transparent border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
+                    <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
                       Learn More
                     </button>
                   </>
@@ -167,7 +167,7 @@ const Home = () => {
               Search for identities registered on the Verus blockchain
             </p>
             <Link href="/verusid-lookup">
-              <button className="w-1/2 py-3 text-sm bg-transparent border-solid rounded-full md:w-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
+              <button className="w-1/2 px-12 py-5 text-sm bg-transparent border border-solid rounded-full md:w-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
                 Search for identities
               </button>
             </Link>
@@ -188,7 +188,7 @@ const Home = () => {
               Search through addresses and transactions
             </p>
             <Link href="/">
-              <button className="w-1/2 py-3 bg-transparent border-solid rounded-full md:w-full text-n border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
+              <button className="w-1/2 px-12 py-5 bg-transparent border border-solid rounded-full md:w-full text-n border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
                 See explorer
               </button>
             </Link>
@@ -200,7 +200,7 @@ const Home = () => {
               Sign and verify documents and files for free
             </p>
             <Link href="/">
-              <button className="w-1/2 py-3 text-sm bg-transparent border-solid rounded-full md:w-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
+              <button className="w-1/2 px-12 py-5 text-sm bg-transparent border border-solid rounded-full md:w-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton">
                 Verify documents
               </button>
             </Link>
@@ -222,12 +222,12 @@ const Home = () => {
       <div className="grid justify-center grid-cols-1 p-6 mb-16 md:gap-4 md:grid-cols-6 sm:pt-24 section-5">
         <div className="grid grid-cols-1 col-span-1 md:col-start-2 md:col-span-4 md:grid-cols-2">
           <div className="p-16 bg-gray-100 rounded-lg">
-            <h4 className="p-0 mb-16 font-light leading-relaxed text-center lg:text-justify text-2xl5 font-p">
+            <h4 className="p-0 mb-16 text-2xl font-light leading-relaxed text-center lg:text-left font-p">
               Verus is a decentralized network where anyone in the world can
               participate to earn its currency VRSC.
             </h4>
             <Link href="/mining-and-staking">
-              <button className="flex-shrink-0 px-8 py-2 mx-2 text-base text-white border-0 rounded-full md:py-4 bg-bluebutton hover:bg-bluebutton-hover">
+              <button className="flex-shrink-0 px-8 py-2 mx-2 text-base text-white border border-0 rounded-full md:py-4 bg-bluebutton hover:bg-bluebutton-hover">
                 Start Earning Now
               </button>
             </Link>
@@ -258,7 +258,7 @@ const Home = () => {
       </div>
 
       <div className="justify-center w-screen p-6 pb-20 text-center section-3">
-        <h4 className="mb-3 font-light text-xl5 font-p">
+        <h4 className="mb-3 text-xl font-light font-p">
           Subscribe to our newsletter and stay up to date with developments
         </h4>
         <form

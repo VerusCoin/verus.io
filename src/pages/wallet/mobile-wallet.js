@@ -25,7 +25,7 @@ const MobileWallet = ({ latestAndroid }) => {
 
         <div className="grid grid-cols-1 p-6 sm:grid-cols-12 sm:col-span-2 md:col-span-7 lg:col-span-7">
           <div className="p-6 text-center sm:text-left sm:col-span-6">
-            <h2 className="p-0 m-0 text-5xl font-normal text-bluebutton">
+            <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
               Verus for Mobile
             </h2>
             <p className="mb-0 font-light font-p">

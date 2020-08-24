@@ -13,7 +13,7 @@ const MiningOverview = () => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="p-6 sm:col-span-2 md:col-span-8 lg:col-span-7">
-          <h1 className="p-0 m-0 text-5xl font-normal text-bluebutton">
+          <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Mining and Staking
           </h1>
           <p className="font-light font-p">

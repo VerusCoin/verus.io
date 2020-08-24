@@ -83,7 +83,7 @@ function Navbar() {
 
             <li className="flex items-center">
               <div className="relative hidden md:inline-block dropdown ">
-                <button className="inline-flex items-center px-4 py-2 text-sm bg-transparent border-0 outline-none cursor-pointer md:text-base text-navlink focus:outline-none">
+                <button className="inline-flex items-center px-4 py-2 bg-transparent border-0 outline-none cursor-pointer md:text-base text-navlink focus:outline-none">
                   <span className="mr-1">Resources</span>
                   <svg
                     fill="currentColor"

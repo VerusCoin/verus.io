@@ -13,7 +13,7 @@ const TechnologyOverview = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="p-6 sm:col-span-2 md:col-span-8 lg:col-span-7">
-          <h1 className="p-0 m-0 text-5xl font-normal text-bluebutton">
+          <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Introduction to Verus
           </h1>
           <p className="font-light font-p">
@@ -27,7 +27,7 @@ const TechnologyOverview = () => {
             innovation. Bringing it all together in a user centric experience
             for everyone interacting with the system.
           </p>
-          <h2 className="mt-16 text-xl font-light">Technology Deep Dive</h2>
+          <h2 className="mt-16 text-2xl font-normal">Technology Deep Dive</h2>
           <SlugMenu pathList={technologyLinks} href="/technology" />
           <h5 className="mb-0 text-2xl font-normal">
             Fair Launch &amp; Community Driven

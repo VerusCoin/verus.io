@@ -13,7 +13,7 @@ const WalletOverview = () => {
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
         <div className="p-6 sm:col-span-2 md:col-span-8 lg:col-span-7">
-          <h1 className="p-0 m-0 text-5xl font-normal text-bluebutton">
+          <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Start staking VRSC Now!
           </h1>
           <p className="font-light font-p">
@@ -46,7 +46,7 @@ const WalletOverview = () => {
             </a>{' '}
             and reach out to the community support channel. Happy staking!
           </p>
-          <h2 className="mt-12 text-3xl font-light">Wallets</h2>
+          <h2 className="mt-12 text-2xl font-normal">Wallets</h2>
           <SlugMenu pathList={walletLinks} href="/wallet" />
         </div>
       </div>

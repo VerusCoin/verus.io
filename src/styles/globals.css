@@ -12,12 +12,14 @@ html {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  @apply leading-relaxed text-black bg-theme-white font-display;
+  @apply leading-relaxed bg-theme-white font-display;
 }
 
 body {
   margin: 0;
   padding: 0;
+  color: #575757;
+  @apply text-base;
 }
 
 h1,
@@ -26,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply leading-tight;
+  @apply font-normal leading-tight;
 }
 
 .breakout-container {
@@ -71,6 +73,7 @@ h6 {
 /* Stop purging. */
 
 /* Your own custom utilities */
+
 .dropdown:hover .dropdown-menu {
   display: block;
   /* left: -28px; */
@@ -124,6 +127,15 @@ form span {
 .modalBody.modal-active {
   overflow-x: hidden;
   overflow-y: visible !important;
+}
+
+button:focus {
+  outline: none;
+}
+
+button {
+  font-family: Geomanist, sans-serif;
+  @apply text-base;
 }
 
 @import './markdown.css';
