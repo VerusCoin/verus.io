@@ -194,11 +194,15 @@ const Home = () => {
               <p className="font-light font-p">
                 Search through addresses and transactions
               </p>
-              <Link href="/">
+              <a
+                href="https://explorer.veruscoin.io/"
+                target="_blank"
+                className="no-underline"
+              >
                 <button className="px-12 py-4 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                   See explorer
                 </button>
-              </Link>
+              </a>
             </div>
             <div className="justify-center p-6 text-center">
               <img src="images/dummy.png" height="70" alt="" />

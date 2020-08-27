@@ -2,7 +2,11 @@ const Footer = () => {
   return (
     <>
       <div className="grid justify-center grid-cols-1 gap-6 md:grid-cols-2">
-        <a className="p-2 border border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
+        <a
+          href="https://discord.gg/VRKMP2S"
+          target="_blank"
+          className="p-2 no-underline border border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3"
+        >
           <img src="/images/Discord-Logo-White.png" className="w-8 mb-4 " />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
           <p className="text-sm opacity-50 md:text-base font-p">
@@ -11,7 +15,11 @@ const Footer = () => {
           </p>
         </a>
 
-        <a className="p-2 border border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
+        <a
+          href="#"
+          target="_blank"
+          className="p-2 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
+        >
           <img
             src="/images/iconmonstr-telegram-1-240.png"
             className="w-8 mb-4"
@@ -37,38 +45,107 @@ const Footer = () => {
             sizes="100px"
             alt=""
           />
-          <p className="mt-2 text-sm font-p">
+          <p className="mt-2 text-sm font-light font-p">
             © 2020 The Verus Project.
             <br />
             All rights reserved.
           </p>
-          <a className="block mt-6 hover:text-white text-navlink-hover">
+          <a
+            href="#"
+            target="_blank"
+            className="block mt-6 no-underline hover:text-white text-navlink-hover"
+          >
             Cookie Policy
           </a>
-          <a className="block mt-2 hover:text-white text-navlink-hover">
+          <a
+            href="#"
+            target="_blank"
+            className="block mt-2 no-underline hover:text-white text-navlink-hover"
+          >
             Brand Materials
           </a>
         </div>
         <div className="space-y-4">
           <h4 className="m-0 mb-8 text-lg">Socials</h4>
-          <a className="block mb-4 hover:text-white text-navlink-hover">
+          {/* @TODO need to add links for Telegram and YouTube */}
+          <a
+            href="https://www.facebook.com/VerusCoin"
+            target="_blank"
+            className="block mb-4 no-underline hover:text-white text-navlink-hover"
+          >
             Facebook
           </a>
-          <a className="block hover:text-white text-navlink-hover">Twitter</a>
-          <a className="block hover:text-white text-navlink-hover">Telegram</a>
-          <a className="block hover:text-white text-navlink-hover">Discord</a>
-          <a className="block hover:text-white text-navlink-hover">Reddit</a>
-          <a className="block hover:text-white text-navlink-hover">Medium</a>
-          <a className="block hover:text-white text-navlink-hover">YouTube</a>
-          <a className="block hover:text-white text-navlink-hover">
+          <a
+            href="https://twitter.com/veruscoin"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            Twitter
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            Telegram
+          </a>
+          <a
+            href="https://discord.gg/VRKMP2S"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            Discord
+          </a>
+          <a
+            href="https://reddit.com/r/veruscoin"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            Reddit
+          </a>
+          <a
+            href="https://medium.com/@veruscoin"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            Medium
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            YouTube
+          </a>
+          <a
+            href="https://bitcointalk.org/index.php?topic=4070404.0"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
             BitcoinTalk
           </a>
         </div>
         <div className="space-y-4">
           <h4 className="m-0 mb-8 text-custom2">Build With Us</h4>
-          <a className="block hover:text-white text-navlink-hover">Discord</a>
-          <a className="block hover:text-white text-navlink-hover">GitHub</a>
-          <a className="block hover:text-white text-navlink-hover">
+          <a
+            href="#"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            Discord
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            GitHub
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
             Developer Documentation
           </a>
         </div>

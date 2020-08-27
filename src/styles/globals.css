@@ -116,6 +116,14 @@ h6 {
   background-color: hsla(0, 0%, 100%, 0.051);
 }
 
+.link-block-3:visited {
+  @apply text-theme-white;
+}
+
+a .text-navlink-hover:visited {
+  @apply text-navlink-hover;
+}
+
 form span {
   @apply text-red-700;
 }

@@ -74,11 +74,13 @@ function Navbar() {
               className="flex items-center"
               onClick={() => setNavbarOpen(false)}
             >
-              <Link href="/">
-                <a className="px-4 py-2 text-sm no-underline md:text-base text-navlink hover:text-navlink-hover">
-                  Support
-                </a>
-              </Link>
+              <a
+                href="https://wiki.veruscoin.io/"
+                target="_blank"
+                className="px-4 py-2 text-sm no-underline md:text-base text-navlink hover:text-navlink-hover"
+              >
+                Support
+              </a>
             </li>
 
             <li className="flex items-center">
@@ -121,7 +123,11 @@ function Navbar() {
                       </a>
                     </li>
                     <li className="block px-4 py-2 whitespace-no-wrap">
-                      <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
+                      <a
+                        href="https://explorer.veruscoin.io/"
+                        target="_blank"
+                        className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      >
                         Explorer
                       </a>
                     </li>
@@ -136,7 +142,7 @@ function Navbar() {
                     className="flex items-center"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    <a className="py-2 text-sm text-navlink hover:text-navlink-hover">
+                    <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
                       Developer Docs
                     </a>
                   </li>
@@ -144,15 +150,17 @@ function Navbar() {
                     className="flex items-center"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    <a className="py-2 text-sm text-navlink hover:text-navlink-hover">
-                      VerusID Lookup
-                    </a>
+                    <Link href="/verusid-lookup">
+                      <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
+                        VerusID Lookup
+                      </a>
+                    </Link>
                   </li>
                   <li
                     className="flex items-center"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    <a className="py-2 text-sm text-navlink hover:text-navlink-hover">
+                    <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
                       Signatures
                     </a>
                   </li>
@@ -160,7 +168,11 @@ function Navbar() {
                     className="flex items-center"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    <a className="py-2 text-sm text-navlink hover:text-navlink-hover">
+                    <a
+                      href="https://explorer.veruscoin.io/"
+                      target="_blank"
+                      className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover"
+                    >
                       Explorer
                     </a>
                   </li>
@@ -169,7 +181,10 @@ function Navbar() {
             </li>
             <li className="flex items-center ">
               <Link href="/wallet">
-                <button className="flex-shrink-0 px-8 py-2 mx-2 text-base text-white border-0 rounded-full md:py-4 bg-bluebutton hover:bg-bluebutton-hover focus:outline-none">
+                <button
+                  onClick={() => setNavbarOpen(false)}
+                  className="flex-shrink-0 px-8 py-2 mx-2 text-base text-white border-0 rounded-full md:py-4 bg-bluebutton hover:bg-bluebutton-hover focus:outline-none"
+                >
                   Get Wallet
                 </button>
               </Link>

@@ -17,9 +17,7 @@ const SlugMenu = ({ pathList, href }) => {
               key={path.id}
             >
               <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
-                <h2 className="p-0 m-0 text-xl font-normal lg:text-2xl">
-                  {path.name}
-                </h2>
+                <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
                 <p className="p-0 m-0 mt-2 text-base font-light leading-normal text-black lg:text-md font-p">
                   {path.description}
                 </p>
@@ -37,9 +35,7 @@ const SlugMenu = ({ pathList, href }) => {
               target="_blank"
             >
               <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
-                <h2 className="p-0 m-0 text-xl font-normal lg:text-2xl">
-                  {path.name}
-                </h2>
+                <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
                 <p className="p-0 m-0 mt-2 text-base font-light leading-normal text-black lg:text-md font-p">
                   {path.description}
                 </p>
@@ -56,9 +52,7 @@ const SlugMenu = ({ pathList, href }) => {
               key={path.id}
             >
               <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
-                <h2 className="p-0 m-0 text-xl font-normal lg:text-2xl">
-                  {path.name}
-                </h2>
+                <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
                 <p className="p-0 m-0 mt-2 text-base font-light leading-normal text-black lg:text-md font-p">
                   {path.description}
                 </p>
