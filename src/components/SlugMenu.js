@@ -16,7 +16,7 @@ const SlugMenu = ({ pathList, href }) => {
               as={`${href}/${path.path}`}
               key={path.id}
             >
-              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans-defualt hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal lg:text-2xl">
                   {path.name}
                 </h2>
@@ -36,7 +36,7 @@ const SlugMenu = ({ pathList, href }) => {
               key={path.id}
               target="_blank"
             >
-              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans-defualt hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal lg:text-2xl">
                   {path.name}
                 </h2>
@@ -55,7 +55,7 @@ const SlugMenu = ({ pathList, href }) => {
               as={`${href}/${path.slug}`}
               key={path.id}
             >
-              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans-defualt hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal lg:text-2xl">
                   {path.name}
                 </h2>

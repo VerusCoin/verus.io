@@ -29,15 +29,13 @@ const VerusIdLookup = () => {
   };
 
   return (
-    <div className="section-2">
+    <div className="container max-w-5xl section-2">
       <div className="grid justify-center grid-cols-2 mt-16 sm:grid-cols-4">
         <div className="col-span-2 text-center sm:col-start-2">
           <img
-            src="/images/verusidlookup.png"
+            src="/images/VerusID_Search_Icon.svg"
             width="250"
-            srcSet="/images/verusidlookup-p-500.png 500w, /images/verusidlookup-p-800.png 800w, /images/verusidlookup.png 1078w"
-            sizes="250px"
-            alt=""
+            alt="VerusID Search Icon"
           />
         </div>
       </div>
@@ -101,7 +99,7 @@ const VerusIdLookup = () => {
             </div>
             <button
               onClick={() => _handleReset()}
-              className="px-12 py-5 mt-8 text-sm bg-transparent border-solid rounded-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton"
+              className="px-12 py-5 mt-8 text-sm bg-transparent border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton"
             >
               Lookup Another VerusID
             </button>

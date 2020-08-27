@@ -18,7 +18,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: #575757;
+  color: #353535;
   @apply text-base;
 }
 
@@ -98,7 +98,7 @@ h6 {
 }
 
 .menu-link a {
-  @apply text-navlink;
+  color: #8d8d8d;
 }
 .menu-link a:hover {
   @apply text-navlink-hover;

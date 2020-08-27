@@ -11,7 +11,7 @@ const walletLink = (asset) => {
   if (asset.name.includes('arm64')) {
     return (
       <a key={asset.name} href={asset.browser_download_url}>
-        <button className="w-full px-6 py-4 m-2 text-lg text-white border-0 rounded-full sm:w-auto focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
+        <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
           ARM Version
         </button>
       </a>
@@ -19,7 +19,7 @@ const walletLink = (asset) => {
   } else if (asset.name.includes('Windows')) {
     return (
       <a key={asset.name} href={asset.browser_download_url}>
-        <button className="w-full px-6 py-4 m-2 text-lg text-white border-0 rounded-full sm:w-auto focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
+        <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
           Windows Version
         </button>
       </a>
@@ -27,7 +27,7 @@ const walletLink = (asset) => {
   } else if (asset.name.includes('MacOS')) {
     return (
       <a key={asset.name} href={asset.browser_download_url}>
-        <button className="w-full px-6 py-4 m-2 text-lg text-white border-0 rounded-full sm:w-auto focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
+        <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
           MacOS Version
         </button>
       </a>
@@ -35,7 +35,7 @@ const walletLink = (asset) => {
   } else if (asset.name.includes('amd64')) {
     return (
       <a key={asset.name} href={asset.browser_download_url}>
-        <button className="w-full px-6 py-4 m-2 text-lg text-white border-0 rounded-full sm:w-auto focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
+        <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
           Linux Version
         </button>
       </a>
@@ -56,14 +56,14 @@ const CommandWallet = ({ latestDesktop }) => {
   };
 
   return (
-    <div className="modalBody modal-active">
-      <div className="grid w-full grid-cols-1 gap-4 mb-40 md:grid-cols-12">
-        <div className="md:col-start-2 md:col-span-3 lg:col-span-2 lg:col-start-3">
+    <div className="container max-w-5xl modalBody modal-active">
+      <div className="grid grid-cols-1 gap-4 mb-40 md:grid-cols-4">
+        <div className="">
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
 
-        <div className="grid grid-cols-1 p-6 sm:grid-cols-12 sm:col-span-2 md:col-span-7 lg:col-span-7">
-          <div className="p-6 text-center sm:text-left sm:col-span-6">
+        <div className="grid grid-cols-1 p-6 space-y-4 sm:grid-cols-3 md:col-span-3">
+          <div className="text-center sm:text-left sm:col-span-2">
             <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
               Verus Command Line
             </h2>
@@ -72,7 +72,6 @@ const CommandWallet = ({ latestDesktop }) => {
               Latest release: {formatDateFromString(
                 latestDesktop.published_at
               )}{' '}
-              <br />
               {date_diff_indays(latestDesktop.published_at) < 7 ? (
                 <span className="px-6 py-1 mx-4 font-bold whitespace-no-wrap bg-red-600 rounded-full ">
                   New Update
@@ -80,7 +79,7 @@ const CommandWallet = ({ latestDesktop }) => {
               ) : null}
             </p>
           </div>
-          <div className="left-0 p-6 sm:col-span-6">
+          <div className="left-0">
             <img
               src="/images/VerusDesktopImg3.png"
               className="w-full"
@@ -89,13 +88,13 @@ const CommandWallet = ({ latestDesktop }) => {
               alt=""
             />
           </div>
-          <div className="items-center justify-center md:col-span-12 lg:col-span-12 sm:col-span-12">
+          <div className="items-center justify-center sm:col-span-3">
             {latestDesktop.assets.map((asset) => {
               return walletLink(asset);
             })}
           </div>
 
-          <div className="p-6 space-y-20 text-center sm:text-left sm:col-span-5">
+          <div className="pr-6 space-y-20 text-center sm:text-left sm:col-span-2">
             <div>
               <h3 className="mb-2 text-2xl font-normal">Easy and Safe</h3>
               <p className="font-light text-md font-p">
@@ -133,7 +132,7 @@ const CommandWallet = ({ latestDesktop }) => {
               </p>
             </div>
           </div>
-          <div className="p-6 space-y-2 text-sm bg-gray-200 rounded-lg sm:col-start-8 sm:col-span-4 sm:text-left">
+          <div className="p-6 space-y-2 text-sm bg-gray-200 rounded-lg sm:text-left">
             <div className="space-y-0">
               <p className="font-light font-p">System requirements:</p>
               <p className="font-light text-navlink-hover font-p">
@@ -151,13 +150,13 @@ const CommandWallet = ({ latestDesktop }) => {
             <div className="mt-4 mb-4 space-y-2 text-center">
               <button
                 onClick={() => _handleModal(true)}
-                className="w-1/2 py-3 text-sm rounded-full cursor-pointer focus:outline-none bg-gray-105 md:w-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton hover:bg-bluetrans-alter"
+                className="block w-1/2 py-3 text-sm no-underline border-2 border-solid rounded-full cursor-pointer focus:outline-none bg-gray-105 md:w-full border-bluetrans hover:border-bluebutton text-bluebutton hover:bg-bluetrans-alter"
               >
                 Release Notes
               </button>
 
               <a
-                className="block w-1/2 py-3 text-sm no-underline border border-solid rounded-full cursor-pointer focus:outline-none bg-gray-105 md:w-full border-bluetrans-defualt hover:border-bluebutton text-bluebutton hover:bg-bluetrans-alter"
+                className="block w-1/2 py-3 text-sm no-underline border-2 border-solid rounded-full cursor-pointer focus:outline-none bg-gray-105 md:w-full border-bluetrans hover:border-bluebutton text-bluebutton hover:bg-bluetrans-alter"
                 href="https://bootstrap.veruscoin.io/"
               >
                 Download Bootstrap
@@ -204,6 +203,7 @@ const CommandWallet = ({ latestDesktop }) => {
           </div>
         </div>
       </div>
+
       <MarkdownModal
         modalTitle="Release Notes"
         modalShow={modalShow}

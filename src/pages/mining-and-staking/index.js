@@ -8,11 +8,11 @@ const MiningOverview = () => {
 
   return (
     <>
-      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-12 ">
-        <div className="md:col-start-2 md:col-span-3 lg:col-span-2 lg:col-start-3">
+      <div className="container grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-4">
+        <div className="">
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
-        <div className="p-6 sm:col-span-2 md:col-span-8 lg:col-span-7">
+        <div className="p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Mining and Staking
           </h1>

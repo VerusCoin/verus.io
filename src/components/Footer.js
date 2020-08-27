@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <div className="grid justify-center grid-cols-1 gap-4 md:p-6 md:pl-32 md:pr-32 md:grid-cols-2">
+      <div className="grid justify-center grid-cols-1 gap-6 md:grid-cols-2">
         <a className="p-2 border border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3">
           <img src="/images/Discord-Logo-White.png" className="w-8 mb-4 " />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
@@ -23,8 +23,8 @@ const Footer = () => {
           </p>
         </a>
       </div>
-      <div className="grid justify-center mt-8 ml-0 md:mt-24 md:justify-evenly xs:grid-cols-1 sm:grid-cols-8 md:grid-cols-8 lg:grid-cols-12">
-        <div className="sm:col-start-1 md:col-start-2 lg:col-start-2 md:col-span-2 lg:col-span-3">
+      <div className="flex flex-col justify-between mt-24 space-y-12 sm:space-x-12 sm:flex-row sm:space-y-0 ">
+        <div className="">
           <img
             src="/images/veruslogowhite.png"
             width="100"
@@ -49,7 +49,7 @@ const Footer = () => {
             Brand Materials
           </a>
         </div>
-        <div className="space-y-4 sm:col-start-4 sm:col-span-2 md:col-span-2 lg:col-span-3 lg:col-start-6 ">
+        <div className="space-y-4">
           <h4 className="m-0 mb-8 text-lg">Socials</h4>
           <a className="block mb-4 hover:text-white text-navlink-hover">
             Facebook
@@ -64,7 +64,7 @@ const Footer = () => {
             BitcoinTalk
           </a>
         </div>
-        <div className="space-y-4 sm:col-start-6 sm:col-span-3 md:col-span-2 lg:col-span-3">
+        <div className="space-y-4">
           <h4 className="m-0 mb-8 text-custom2">Build With Us</h4>
           <a className="block hover:text-white text-navlink-hover">Discord</a>
           <a className="block hover:text-white text-navlink-hover">GitHub</a>

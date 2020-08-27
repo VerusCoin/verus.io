@@ -15,7 +15,6 @@ module.exports = {
     fontSize: {
       xs: '.75rem',
       sm: '.9375rem',
-      custom: '15px',
       custom2: '19px',
       base: '1.0625rem',
       lg: '1.1875rem',
@@ -58,7 +57,7 @@ module.exports = {
           hover: '#2856b9',
         },
         bluetrans: {
-          defualt: '#ccdaf8',
+          default: '#ccdaf8',
           alter: '#f4f7ff',
         },
         menu: {
@@ -68,6 +67,9 @@ module.exports = {
         'theme-blue': '#3165D4',
         'theme-green': '#4AA658',
         'theme-black': '#1d1e22',
+        custom: {
+          default: '#575757',
+        },
       },
       borderRadius: {
         sm: '.125rem',

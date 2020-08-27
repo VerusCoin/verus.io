@@ -12,13 +12,11 @@ const Technology = () => {
   const nextPath = technologyLinks[pathIndex + 1] || [];
   return (
     <>
-      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-12 ">
-        <div className="md:col-start-2 md:col-span-3 lg:col-span-2 lg:col-start-3">
+      <div className="container grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-4">
+        <div className="">
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
-        <div className="p-6 sm:col-span-2 md:col-span-2 lg:col-span-7">
-          {path.asPath}
-        </div>
+        <div className="p-6 md:col-span-3">{path.asPath}</div>
       </div>
       <div className="flex flex-row items-center justify-between p-2 md:hidden">
         {prevPath.slug ? (
