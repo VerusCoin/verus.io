@@ -31,7 +31,7 @@ const Home = () => {
               </button>
             </Link>
             <Link href="/technology">
-              <button className="px-12 py-4 bg-transparent border rounded-full hover:bg-gray-200">
+              <button className="px-12 py-4 bg-transparent border-2 border-solid rounded-full hover:bg-gray-200">
                 Technology Deep Dive
               </button>
             </Link>
