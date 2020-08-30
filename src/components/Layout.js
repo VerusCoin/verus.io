@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       </header>
       <main>{children}</main>
       <footer className="w-screen bg-theme-black text-theme-white">
-        <div className="container justify-center max-w-5xl p-24">
+        <div className="container justify-center max-w-5xl p-3 md:p-24">
           <Footer />
         </div>
       </footer>

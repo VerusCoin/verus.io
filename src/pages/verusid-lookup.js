@@ -43,7 +43,7 @@ const VerusIdLookup = () => {
         <div className="grid grid-cols-2 p-6 text-center sm:grid-cols-4">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col col-span-2 text-center md:items-baseline sm:col-start-2 md:flex-row"
+            className="flex flex-col col-span-2 space-y-8 text-center md:space-y-0 md:items-baseline sm:col-start-2 md:flex-row"
           >
             <div className="flex-grow">
               <input

@@ -5,7 +5,7 @@ const Footer = () => {
         <a
           href="https://discord.gg/VRKMP2S"
           target="_blank"
-          className="p-2 no-underline border border-white border-opacity-25 border-solid rounded sm:p-8 link-block-3"
+          className="p-2 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
         >
           <img src="/images/Discord-Logo-White.png" className="w-8 mb-4 " />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const VerusLogo = '/images/veruslogo.png';
+const VerusLogo = '/images/Verus_Logo.svg';
 const HamburgerSVG = '/hamburger.inline.svg';
 
 function Navbar() {
@@ -9,12 +9,12 @@ function Navbar() {
 
   return (
     <div className="w-full bg-white">
-      <div className="flex flex-col px-4 py-4 md:mx-8 lg:mx-16 md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+      <div className="flex flex-col px-4 py-4 mb-8 md:mx-8 lg:mx-16 md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div className="flex flex-row items-center justify-between flex-shrink-0 p-4 ">
           <Link href="/">
             <img
               src={VerusLogo}
-              alt="Verus"
+              alt="Verus Logo"
               title="Veruscoin"
               className="w-32 cursor-pointer fill-current"
             />
@@ -56,7 +56,7 @@ function Navbar() {
             >
               <Link href="/mining-and-staking">
                 <a className="px-4 py-2 text-sm no-underline md:text-base text-navlink hover:text-navlink-hover">
-                  Mining and Staking
+                  Mining & Staking
                 </a>
               </Link>
             </li>

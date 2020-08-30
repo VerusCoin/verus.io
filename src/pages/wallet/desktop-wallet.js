@@ -57,7 +57,7 @@ const DesktopWallet = ({ latestDesktop }) => {
 
   return (
     <div className="container max-w-5xl modalBody modal-active">
-      <div className="grid grid-cols-1 gap-4 mb-40 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 mb-40 md:grid-cols-4">
         <div className="">
           <Menu pathList={walletLinks} href="/wallet" />
         </div>

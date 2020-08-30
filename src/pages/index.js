@@ -16,17 +16,17 @@ const Home = () => {
   return (
     <>
       <div className="container max-w-5xl">
-        <div className="max-w-2xl pt-6 m-12 mt-16 text-center sm:pt-12 section-2 sm:text-left">
-          <h1 className="w-full mb-0 text-5xl font-normal text-bluebutton">
+        <div className="max-w-2xl pt-6 m-4 mb-32 text-left sm:mt-16 sm:m-12 sm:pt-8 section-2">
+          <h1 className="w-full m-0 text-5xl font-normal text-bluebutton">
             Empowering Individuals Around the World
           </h1>
           <p className="w-full mt-3 text-2xl font-light text-custom font-p">
             Verus supplies tools for individuals and organizations to build
             equitable frameworks for social and economic change.
           </p>
-          <div className="flex flex-wrap items-center justify-center space-y-2 md:space-y-0 md:justify-start">
+          <div className="flex flex-wrap items-center justify-center space-y-4 md:space-y-0 md:justify-start">
             <Link href="/mining-and-staking">
-              <button className="px-12 py-4 text-white border-0 rounded-full sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
+              <button className="px-6 py-4 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
                 Secure the Network and Earn
               </button>
             </Link>
@@ -38,7 +38,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="pt-6 pb-8 sm:pt-40 section-3 md:pb-24">
+      <div className="pt-6 pb-12 sm:pt-32 section-3 md:pb-32">
         <div className="container max-w-5xl">
           <div className="justify-center">
             <div className="flex flex-col justify-center sm:flex-row">
@@ -47,7 +47,7 @@ const Home = () => {
                 className={
                   'mr-5 text-center cursor-pointer text-lg p-1  ' +
                   (viewTab === 0
-                    ? 'text-tablink-active border border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
+                    ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                     : 'text-tablink')
                 }
               >
@@ -58,7 +58,7 @@ const Home = () => {
                 className={
                   'mr-5 text-center cursor-pointer text-lg p-1 flex-no-wrap  ' +
                   (viewTab === 1
-                    ? 'text-tablink-active border border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
+                    ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                     : 'text-tablink')
                 }
               >
@@ -69,7 +69,7 @@ const Home = () => {
                 className={
                   'mr-5 text-center cursor-pointer text-lg p-1  ' +
                   (viewTab === 2
-                    ? 'text-tablink-active border border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
+                    ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                     : 'text-tablink')
                 }
               >
@@ -80,14 +80,14 @@ const Home = () => {
                 className={
                   'mr-5 text-center cursor-pointer text-lg p-1  ' +
                   (viewTab === 3
-                    ? 'text-tablink-active border border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
+                    ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                     : 'text-tablink')
                 }
               >
                 ERC-20 Bridge
               </a>
             </div>
-            <div className="pt-6 tab-content sm:pt-32 ">
+            <div className="pt-6 tab-content sm:pt-24 ">
               <div className="grid items-center grid-cols-1 gap-6 md:grid-cols-3 md:items-start">
                 <div className="pt-2 mb-4 text-center md:text-right">
                   <img
@@ -96,7 +96,7 @@ const Home = () => {
                     alt="VerusID Icon"
                   />
                 </div>
-                <div className="pt-0 pl-20 text-left md:col-span-2">
+                <div className="p-3 pt-0 text-left md:pl-20 md:col-span-2">
                   {viewTab === 0 && (
                     <div className="max-w-xl">
                       <h3 className="mt-0 text-2xl font-normal">
@@ -107,7 +107,7 @@ const Home = () => {
                         capabilities, including friendly, human-readable names
                         to receive, send and secure all cryptocurrencies.
                       </p>
-                      <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                      <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                         Learn More
                       </button>
                     </div>
@@ -122,7 +122,7 @@ const Home = () => {
                         allows Verus to advance the technology underpinning
                         automated market makers and community liquidity.
                       </p>
-                      <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                      <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                         Learn More
                       </button>
                     </div>
@@ -138,7 +138,7 @@ const Home = () => {
                         security and continuity. PBaaS provides a roadmap for
                         practically unlimited scalability.
                       </p>
-                      <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                      <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                         Learn More
                       </button>
                     </div>
@@ -153,7 +153,7 @@ const Home = () => {
                         voluptatem accusantium doloremque laudantium, totam rem
                         aperiam eaque.
                       </p>
-                      <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                      <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                         Learn More
                       </button>
                     </div>
@@ -166,8 +166,8 @@ const Home = () => {
       </div>
 
       <div className="container max-w-5xl">
-        <div className="justify-center pt-6 text-center sm:pt-24 section-4">
-          <div className="grid grid-cols-1 text-center md:g-8 md:grid-cols-3">
+        <div className="justify-center pt-12 text-center sm:pt-32 section-4">
+          <div className="grid grid-cols-1 mb-32 space-y-6 text-center md:space-y-0 md:g-8 md:grid-cols-3">
             <div className="justify-center p-6 text-center">
               <img
                 src="images/VerusID_Lookup_Icon.svg"
@@ -218,7 +218,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 pl-6 pr-6 m-4 text-white rounded-lg md:m-0 md:grid-cols-12 md:mt-24 md:mb-32 bg-theme-green">
+          <div className="grid hidden grid-cols-1 pl-6 pr-6 m-4 text-white rounded-lg md:m-0 md:grid-cols-12 md:mt-24 md:mb-32 bg-theme-green">
             <h1 className="text-3xl font-normal md:text-left md:col-span-8">
               Want to start building on Verus?
             </h1>
@@ -230,19 +230,19 @@ const Home = () => {
       </div>
       <hr />
       <div className="container max-w-5xl">
-        <div className="grid justify-center grid-cols-1 m-4 mb-16 md:m-0 md:mb-16 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-24 section-5">
-          <div className="p-16 bg-gray-100 rounded-lg">
-            <h4 className="p-0 mb-16 text-2xl font-light leading-relaxed text-center text-custom lg:text-left font-p">
+        <div className="grid justify-center grid-cols-1 pt-12 m-4 mb-16 space-y-12 md:space-y-0 md:m-0 md:mb-16 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-32 section-5">
+          <div className="p-3 pb-12 bg-gray-100 rounded-lg md:p-16">
+            <h4 className="p-0 mb-16 text-2xl font-light text-left text-custom font-p">
               Verus is a decentralized network where anyone in the world can
               participate to earn its currency VRSC.
             </h4>
             <Link href="/mining-and-staking">
-              <button className="flex-shrink-0 px-12 py-4 text-base text-white border border-0 rounded-full md:py-4 bg-bluebutton hover:bg-bluebutton-hover">
+              <button className="flex-shrink-0 w-full px-12 py-4 text-base text-white border-0 rounded-full md:w-auto md:py-4 bg-bluebutton hover:bg-bluebutton-hover">
                 Start Earning Now
               </button>
             </Link>
           </div>
-          <div className="pl-12 pr-12">
+          <div className="pl-3 pr-3 md:pl-12 md:pr-12">
             <h3 className="mb-1 text-2xl font-normal">Worldwide Network</h3>
             <p className="mt-2 mr-0 font-light font-p">
               Anyone with a modern CPU can start mining VRSC immediately,
@@ -272,27 +272,29 @@ const Home = () => {
           <h4 className="mb-3 text-xl font-light font-p">
             Subscribe to our newsletter and stay up to date with developments
           </h4>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="grid items-start justify-between grid-cols-1 gap-6 p-6 sm:grid-cols-12">
-              <div className="sm:col-span-7 md:col-start-3 md:col-span-5">
-                <input
-                  name="email"
-                  className="w-full px-12 py-4 rounded-full text-field text-bluebutton focus:outline-none "
-                  type="email"
-                  placeholder="your@email.com"
-                  ref={register({ required: true })}
-                />
 
-                {errors.email && <span>Please enter a email</span>}
-              </div>
-              <div className="sm:col-span-3 lg:col-span-2">
-                <input
-                  type="submit"
-                  value="Stay up to date"
-                  className="px-12 py-4 text-white rounded-full bg-bluebutton hover:bg-bluebutton-hover focus:outline-none "
-                />
-                <span></span>
-              </div>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col max-w-lg mx-auto mt-8 space-y-8 text-sm text-center md:mt-0 md:space-y-0 md:items-baseline md:flex-row"
+          >
+            <div className="flex-grow">
+              <input
+                name="email"
+                className="w-full px-12 py-4 rounded-full text-field text-bluebutton focus:outline-none "
+                type="email"
+                placeholder="your@email.com"
+                ref={register({ required: true })}
+              />
+
+              {errors.email && <span>Please enter a email</span>}
+            </div>
+            <div className="md:-ml-40">
+              <input
+                type="submit"
+                value="Stay up to date"
+                className="w-full px-12 py-4 text-white border-0 rounded-full md:w-auto bg-bluebutton hover:bg-bluebutton-hover focus:outline-none "
+              />
+              <span></span>
             </div>
           </form>
         </div>

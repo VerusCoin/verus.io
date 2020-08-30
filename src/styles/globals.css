@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   color: #353535;
-  @apply text-base;
+  @apply text-base leading-none;
 }
 
 h1,
@@ -36,6 +36,9 @@ h6 {
   margin-right: calc(50% - 50vw);
 }
 
+hr {
+  border-color: #ebebeb;
+}
 .arrow-list li:not(:last-child) {
   @apply mb-5;
 }

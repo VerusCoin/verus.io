@@ -12,7 +12,7 @@ const MiningAndStaking = () => {
   const nextPath = miningStakingLinks[pathIndex + 1] || [];
   return (
     <>
-      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-12 ">
+      <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-12 ">
         <div className="md:col-start-2 md:col-span-3 lg:col-span-2 lg:col-start-3">
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
