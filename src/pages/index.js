@@ -171,7 +171,7 @@ const Home = () => {
                         voluptatem accusantium doloremque laudantium, totam rem
                         aperiam eaque.
                       </p>
-                      <Link href="technology/erc-20">
+                      <Link href="technology/ERC-20_Bridge">
                         <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                           Learn More
                         </button>
@@ -238,14 +238,14 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="grid hidden grid-cols-1 pl-6 pr-6 m-4 text-white rounded-lg md:m-0 md:grid-cols-12 md:mt-24 md:mb-32 bg-theme-green">
+          {/* <div className="grid grid-cols-1 pl-6 pr-6 m-4 text-white rounded-lg md:m-0 md:grid-cols-12 md:mt-24 md:mb-32 bg-theme-green">
             <h1 className="text-3xl font-normal md:text-left md:col-span-8">
               Want to start building on Verus?
             </h1>
             <button className="px-12 py-4 m-3 text-lg font-normal text-black bg-white border-transparent rounded-full sm:flex-shrink-0 hover:bg-gray-200 md:col-span-4">
               See Developer Documentation
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
       <hr />
