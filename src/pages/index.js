@@ -2,21 +2,33 @@ import { useState } from 'react';
 
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
+import useSWR from 'swr';
+import fetch from 'unfetch';
+import { format } from 'date-fns';
+
+const fetcher = (url) =>
+  fetch(url)
+    .then((r) => r.json())
+    .then((d) => d.articles.splice(0, 3));
 
 const Home = () => {
   const [viewTab, setViewTab] = useState(0);
   const [formSubmit, setFormSubmit] = useState(false);
   const { register, handleSubmit, errors } = useForm();
+  const { data, error } = useSWR(
+    'https://medium-f.herokuapp.com/api/v1/articles?orgid=veruscoin',
+    fetcher
+  );
 
-  const onSubmit = (data) => {
-    if (data) {
+  const onSubmit = (formData) => {
+    if (formData) {
       setFormSubmit(true);
     }
   };
   return (
     <>
       <div className="container max-w-5xl">
-        <div className="max-w-2xl pt-6 m-4 mb-32 text-left sm:mt-16 sm:m-12 sm:pt-8 section-2">
+        <div className="max-w-2xl pt-6 m-4 mb-32 text-left sm:mt-16 sm:mb-32 sm:m-12 sm:pt-8 section-2">
           <h1 className="w-full m-0 text-5xl font-normal text-bluebutton">
             Empowering Individuals Around the World
           </h1>
@@ -107,9 +119,11 @@ const Home = () => {
                         capabilities, including friendly, human-readable names
                         to receive, send and secure all cryptocurrencies.
                       </p>
-                      <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                        Learn More
-                      </button>
+                      <Link href="technology/verusid">
+                        <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                          Learn More
+                        </button>
+                      </Link>
                     </div>
                   )}
                   {viewTab === 1 && (
@@ -122,9 +136,11 @@ const Home = () => {
                         allows Verus to advance the technology underpinning
                         automated market makers and community liquidity.
                       </p>
-                      <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                        Learn More
-                      </button>
+                      <Link href="technology/reserve_currencies">
+                        <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                          Learn More
+                        </button>
+                      </Link>
                     </div>
                   )}
                   {viewTab === 2 && (
@@ -138,9 +154,11 @@ const Home = () => {
                         security and continuity. PBaaS provides a roadmap for
                         practically unlimited scalability.
                       </p>
-                      <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                        Learn More
-                      </button>
+                      <Link href="technology/public_blockchains_as_a_service">
+                        <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                          Learn More
+                        </button>
+                      </Link>
                     </div>
                   )}
                   {viewTab === 3 && (
@@ -153,9 +171,11 @@ const Home = () => {
                         voluptatem accusantium doloremque laudantium, totam rem
                         aperiam eaque.
                       </p>
-                      <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                        Learn More
-                      </button>
+                      <Link href="technology/erc-20">
+                        <button className="px-12 py-5 mt-12 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                          Learn More
+                        </button>
+                      </Link>
                     </div>
                   )}
                 </div>
@@ -179,7 +199,7 @@ const Home = () => {
                 Search for identities registered on the Verus blockchain
               </p>
               <Link href="/verusid-lookup">
-                <button className="px-12 py-4 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                   Search for identities
                 </button>
               </Link>
@@ -199,7 +219,7 @@ const Home = () => {
                 target="_blank"
                 className="no-underline"
               >
-                <button className="px-12 py-4 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                   See explorer
                 </button>
               </a>
@@ -211,7 +231,7 @@ const Home = () => {
                 Sign and verify documents and files for free
               </p>
               <Link href="/">
-                <button className="px-12 py-4 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                   Verify documents
                 </button>
               </Link>
@@ -222,7 +242,7 @@ const Home = () => {
             <h1 className="text-3xl font-normal md:text-left md:col-span-8">
               Want to start building on Verus?
             </h1>
-            <button className="py-3 m-3 text-lg font-normal text-black bg-white border-transparent rounded-full sm:flex-shrink-0 hover:bg-gray-200 md:col-span-4">
+            <button className="px-12 py-4 m-3 text-lg font-normal text-black bg-white border-transparent rounded-full sm:flex-shrink-0 hover:bg-gray-200 md:col-span-4">
               See Developer Documentation
             </button>
           </div>
@@ -266,6 +286,38 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <hr />
+      <div className="container max-w-5xl p-0 pt-12 pb-12 text-center md:pt-32 md:pb-32">
+        <h3 className="text-2xl font-normal">Latest Articles</h3>
+        <div className="grid items-center justify-center grid-cols-1 p-3 space-y-4 text-left text-current md:space-y-0 md:p-0 md:grid-cols-3 md:gap-6">
+          {error && <div className="col-span-3 text-center">Failed Load</div>}
+          {!data && <div className="col-span-3 text-center">Loading...</div>}
+          {data &&
+            data.map((article) => {
+              return (
+                <div>
+                  <img src={article.thumbnailref} width="100%" />
+                  <h3 className="text-xl font-normal text-left">
+                    {article.title}
+                  </h3>
+                  <p className="font-light font-p">
+                    {format(new Date(article.PublishDateTime), 'MMM dd, yyyy')}
+                  </p>
+                </div>
+              );
+            })}
+
+          <a
+            href="https://medium.com/veruscoin"
+            target="_blank"
+            className="justify-center text-center no-underline md:col-span-3"
+          >
+            <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+              Read all articles
+            </button>
+          </a>
+        </div>
+      </div>
 
       <div className="justify-center w-screen p-6 pb-20 text-center section-3">
         <div className="container max-w-5xl">
@@ -292,7 +344,7 @@ const Home = () => {
               <input
                 type="submit"
                 value="Stay up to date"
-                className="w-full px-12 py-4 text-white border-0 rounded-full md:w-auto bg-bluebutton hover:bg-bluebutton-hover focus:outline-none "
+                className="w-full px-12 py-4 text-white border border-solid rounded-full md:w-auto bg-bluebutton hover:bg-bluebutton-hover focus:outline-none "
               />
               <span></span>
             </div>

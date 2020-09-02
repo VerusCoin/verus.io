@@ -1,13 +1,17 @@
 const Footer = () => {
   return (
     <>
-      <div className="grid justify-center grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid justify-center grid-cols-1 gap-8 md:grid-cols-2">
         <a
           href="https://discord.gg/VRKMP2S"
           target="_blank"
           className="p-2 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
         >
-          <img src="/images/Discord-Logo-White.png" className="w-8 mb-4 " />
+          <img
+            src="/images/Discord-Logo-White.png"
+            alt="Discord Logo"
+            className="w-8 mb-4 "
+          />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
           <p className="text-sm opacity-50 md:text-base font-p">
             Join our most active community channel for all questions and
@@ -16,12 +20,13 @@ const Footer = () => {
         </a>
 
         <a
-          href="#"
+          href="https://t.me/veruscommunity"
           target="_blank"
           className="p-2 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
         >
           <img
             src="/images/iconmonstr-telegram-1-240.png"
+            alt="Telegram Logo"
             className="w-8 mb-4"
           />
           <h3 className="mt-0 mb-4 text-2xl">Telegram Community</h3>
@@ -67,7 +72,7 @@ const Footer = () => {
         </div>
         <div className="space-y-4">
           <h4 className="m-0 mb-8 text-lg">Socials</h4>
-          {/* @TODO need to add links for Telegram and YouTube */}
+
           <a
             href="https://www.facebook.com/VerusCoin"
             target="_blank"
@@ -83,7 +88,7 @@ const Footer = () => {
             Twitter
           </a>
           <a
-            href="#"
+            href="https://t.me/veruscommunity"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
           >
@@ -111,7 +116,7 @@ const Footer = () => {
             Medium
           </a>
           <a
-            href="#"
+            href="https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
           >
@@ -128,26 +133,26 @@ const Footer = () => {
         <div className="space-y-4">
           <h4 className="m-0 mb-8 text-custom2">Build With Us</h4>
           <a
-            href="#"
+            href="https://discord.gg/VRKMP2S"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
           >
             Discord
           </a>
           <a
-            href="#"
+            href="https://github.com/VerusCoin"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
           >
             GitHub
           </a>
-          <a
+          {/* <a
             href="#"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
           >
             Developer Documentation
-          </a>
+          </a> */}
         </div>
       </div>
     </>

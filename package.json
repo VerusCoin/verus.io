@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "jquery": "^3.5.1",
     "next": "9.5.1",
@@ -15,7 +16,9 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-hook-form": "^6.3.2",
-    "react-markdown": "^4.3.1"
+    "react-markdown": "^4.3.1",
+    "swr": "^0.3.1",
+    "unfetch": "^4.1.0"
   },
   "devDependencies": {
     "postcss-flexbugs-fixes": "^4.2.1",

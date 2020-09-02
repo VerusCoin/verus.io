@@ -105,11 +105,11 @@ function Navbar() {
                       ' pt-1 pb-1 pl-4 pr-4 mt-3 bg-white rounded-lg shadow-menu  md:z-50 '
                     }
                   >
-                    <li className="block px-4 py-2 whitespace-no-wrap">
+                    {/* <li className="block px-4 py-2 whitespace-no-wrap">
                       <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
                         Developer Docs
                       </a>
-                    </li>
+                    </li> */}
                     <li className="block px-4 py-2 whitespace-no-wrap">
                       <Link href="/verusid-lookup">
                         <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
@@ -138,14 +138,14 @@ function Navbar() {
                 Resources
                 <hr />
                 <ul>
-                  <li
+                  {/* <li
                     className="flex items-center"
                     onClick={() => setNavbarOpen(false)}
                   >
                     <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
                       Developer Docs
                     </a>
-                  </li>
+                  </li> */}
                   <li
                     className="flex items-center"
                     onClick={() => setNavbarOpen(false)}
