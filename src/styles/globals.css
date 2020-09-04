@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   color: #353535;
-  @apply text-base leading-none;
+  @apply text-base leading-snug;
 }
 
 h1,

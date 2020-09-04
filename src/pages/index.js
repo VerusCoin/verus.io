@@ -36,14 +36,14 @@ const Home = () => {
             Verus supplies tools for individuals and organizations to build
             equitable frameworks for social and economic change.
           </p>
-          <div className="flex flex-wrap items-center justify-center space-y-4 md:space-y-0 md:justify-start">
+          <div className="flex flex-wrap items-center justify-center space-x-0 space-y-4 md:space-x-8 md:space-y-0 md:justify-start">
             <Link href="/mining-and-staking">
-              <button className="px-6 py-4 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
+              <button className="px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
                 Secure the Network and Earn
               </button>
             </Link>
             <Link href="/technology">
-              <button className="px-12 py-4 bg-transparent border-2 border-solid rounded-full hover:bg-gray-200">
+              <button className="px-12 py-5 bg-transparent border-2 border-black border-solid rounded-full hover:bg-gray-200">
                 Technology Deep Dive
               </button>
             </Link>
@@ -295,15 +295,25 @@ const Home = () => {
           {data &&
             data.map((article) => {
               return (
-                <div>
-                  <img src={article.thumbnailref} width="100%" />
-                  <h3 className="text-xl font-normal text-left">
-                    {article.title}
-                  </h3>
-                  <p className="font-light font-p">
-                    {format(new Date(article.PublishDateTime), 'MMM dd, yyyy')}
-                  </p>
-                </div>
+                <>
+                  <div class="">
+                    <img
+                      className="w-full h-auto"
+                      src={article.thumbnailref}
+                      alt="Article Header Image"
+                    />
+
+                    <h3 className="text-xl font-normal text-left">
+                      {article.title}
+                    </h3>
+                    <p className="text-base text-gray-700 font-lite font-p">
+                      {format(
+                        new Date(article.PublishDateTime),
+                        'MMM dd, yyyy'
+                      )}
+                    </p>
+                  </div>
+                </>
               );
             })}
 
