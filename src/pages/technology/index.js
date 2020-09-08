@@ -16,12 +16,12 @@ const TechnologyOverview = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Introduction to Verus
           </h1>
-          <p className="font-light font-p">
+          <p className="font-light leading-relaxed font-p">
             Verus is an open-source platform available to anyone. Verus supplies
             tools for individuals and organizations to build equitable
             frameworks for social and economic change.
           </p>
-          <p className="font-light font-p">
+          <p className="font-light leading-relaxed font-p">
             Combining scalability, security, privacy, self-sovereign identities
             and decentralized finance, Verus is at the forefront of blockchain
             innovation. Bringing it all together in a user centric experience
