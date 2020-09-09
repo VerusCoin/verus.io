@@ -16,17 +16,15 @@ const MiningOverview = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Mining and Staking
           </h1>
-          <p className="font-light font-p">
+          <p className="font-light font-p text-xl leading-normal">
             Anyone can earn VRSC by participating in the network economy. Use
             your computer power to help secure the network, or simply put your
-            VRSC holdings to work by staking.
+            $VRSC holdings to work by staking.
           </p>
-          <h5 className="mb-0 text-2xl font-normal">Network Economy</h5>
-          <p className="font-light font-p">
+          <h5 className="mb-0 mt-20 text-2xl font-normal">Join the Thriving Verus Economy</h5>
+          <p className="font-light font-p text-xl leading-normal">
             By securing the network one can earn more than just block rewards.
-            There are a number of fees collected in each found block, such as
-            when a VerusID is created and conversions fees to and from reserve
-            currencies.
+            There are a number of fees collected in each found block that will outperform the block rewards.
           </p>
           <SlugMenu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>

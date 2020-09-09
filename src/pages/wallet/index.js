@@ -14,38 +14,12 @@ const WalletOverview = () => {
         </div>
         <div className="p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
-            Start staking VRSC Now!
+            Verus Wallets
           </h1>
-          <p className="font-light font-p">
-            Anyone with a capable computer can stake Verus Coin (VRSC)!
+          <p className="font-light font-p text-xl leading-normal">
+            Verus is actively developing multi-coin wallets for Windows, macOS, Linux, ARM. And on mobile for Android and iOS.
           </p>
-          <ul className="font-light font-p">
-            <li>No specialized hardware is required</li>
-            <li>Stake with minimal CPU power</li>
-            <li>Stake directly from the Verus Wallet</li>
-          </ul>
-          <p className="font-light font-p">
-            However you use VRSC, you'll need a Verus Coin address, which you
-            can create using the wallet in either Lite or Native mode. For
-            staking you will need to run the wallet in Native mode. If you need
-            any help, check our{' '}
-            <a
-              className="font-normal no-underline text-bluebutton-hover"
-              href="https://wiki.veruscoin.io/#!index.md"
-              target="_blank"
-            >
-              FAQ and How-To section
-            </a>
-            , or join our{' '}
-            <a
-              className="font-normal no-underline text-bluebutton-hover"
-              href="https://veruscoin.io/discord"
-              target="_blank"
-            >
-              official Discord
-            </a>{' '}
-            and reach out to the community support channel. Happy staking!
-          </p>
+         
           <h2 className="mt-12 text-2xl font-normal">Wallets</h2>
           <SlugMenu pathList={walletLinks} href="/wallet" />
         </div>

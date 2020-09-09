@@ -226,7 +226,7 @@ const Home = () => {
             </div>
             <div className="justify-center p-6 text-center">
               <img src="images/dummy.png" height="70" alt="" />
-              <h1 className="mt-8 text-2xl font-normal">Verus Signature</h1>
+              <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
               <p className="font-light leading-normal font-p">
                 Sign and verify documents and files for free
               </p>

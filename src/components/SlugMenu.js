@@ -7,7 +7,7 @@ const SlugMenu = ({ pathList, href }) => {
     }
   });
   return (
-    <div className="grid grid-cols-1 gap-4 mb-20 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-3 mb-20 sm:grid-cols-2">
       {pathList.map((path) => {
         if (path.path) {
           return (
