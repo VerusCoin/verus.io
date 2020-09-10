@@ -32,7 +32,7 @@ const Home = () => {
           <h1 className="w-full m-0 text-5xl font-normal text-bluebutton">
             Empowering Individuals Around the World
           </h1>
-          <p className="w-full mt-3 text-2xl font-light text-custom leading-normal font-p">
+          <p className="w-full mt-3 text-2xl font-light leading-normal text-custom font-p">
             Verus supplies tools for individuals and organizations to build
             equitable frameworks for social and economic change.
           </p>
@@ -248,11 +248,11 @@ const Home = () => {
           </div> */}
         </div>
       </div>
-      <hr  />
+      <hr />
       <div className="container max-w-5xl">
         <div className="grid justify-center grid-cols-1 pt-12 m-4 mb-16 space-y-12 md:space-y-0 md:m-0 md:mb-16 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-32 section-5">
           <div className="p-3 pb-12 bg-gray-100 rounded-lg md:p-16">
-            <h4 className="p-0 mb-16 leading-relaxed text-2xl font-light text-left text-custom font-p">
+            <h4 className="p-0 mb-16 text-2xl font-light leading-relaxed text-left text-custom font-p">
               Verus is a decentralized network where anyone in the world can
               participate to earn its currency VRSC.
             </h4>
@@ -264,21 +264,21 @@ const Home = () => {
           </div>
           <div className="pl-3 pr-3 md:pl-12 md:pr-12">
             <h3 className="mb-1 text-2xl font-normal">Worldwide Network</h3>
-            <p className="mt-2 mr-0 leading-normal font-light font-p">
+            <p className="mt-2 mr-0 font-light leading-normal font-p">
               Anyone with a modern CPU can start mining VRSC immediately,
               creating a naturally decentralized miner ecosystem.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Thriving Economy
             </h3>
-            <p className="mt-2 mr-0 leading-normal font-light font-p">
+            <p className="mt-2 mr-0 font-light leading-normal font-p">
               Verus has a robust and thriving protocol economy with
               opportunities for everyone to earn through mining and staking.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Permissionless System
             </h3>
-            <p className="mt-2 mr-0 leading-normal font-light font-p">
+            <p className="mt-2 mr-0 font-light leading-normal font-p">
               Verus is open-source, borderless and permissionless. It
               doesn&#x27;t matter who you are or where you live. Anyone can
               participate.
@@ -295,25 +295,20 @@ const Home = () => {
           {data &&
             data.map((article) => {
               return (
-                <>
-                  <div class="">
-                    <img
-                      className="w-full h-auto"
-                      src={article.thumbnailref}
-                      alt="Article Header Image"
-                    />
+                <div key={article.title}>
+                  <img
+                    className="w-full h-auto"
+                    src={article.thumbnailref}
+                    alt="Article Header Image"
+                  />
 
-                    <h3 className="text-xl font-normal text-left">
-                      {article.title}
-                    </h3>
-                    <p className="text-base text-gray-700 font-lite font-p">
-                      {format(
-                        new Date(article.PublishDateTime),
-                        'MMM dd, yyyy'
-                      )}
-                    </p>
-                  </div>
-                </>
+                  <h3 className="text-xl font-normal text-left">
+                    {article.title}
+                  </h3>
+                  <p className="text-base text-gray-700 font-lite font-p">
+                    {format(new Date(article.PublishDateTime), 'MMM dd, yyyy')}
+                  </p>
+                </div>
               );
             })}
 

@@ -1,25 +1,20 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-const datafetch = {
-  name: 'Verus Coin Foundation@',
-  address: 'i5v3h9FWVdRFbNHU7DfcpGykQjRaHtMqu7',
-  revocation: 'i5v3h9FWVdRFbNHU7DfcpGykQjRaHtMqu7 Verus Coin Foundation@',
-  recovery: 'i5v3h9FWVdRFbNHU7DfcpGykQjRaHtMqu7 Verus Coin Foundation@',
-  private:
-    'zs1dycegwse0x67qvy2fksukcng3ekkgvly2qwjckj8fxraam33xu2y5jyh3yva0e4ywec9quedcud',
-  primary: 'REpxm9bCLMiHRNVPA9unPBWixie7uHFA5C',
-};
-
 const VerusIdLookup = () => {
   const { register, handleSubmit, errors } = useForm();
   const [formSubmit, setFormSubmit] = useState(false);
   const [verusID, setVerusID] = useState({});
 
-  const onSubmit = (data) => {
-    if (data) {
+  const onSubmit = async (query) => {
+    if (query) {
       setFormSubmit(true);
-      setVerusID(datafetch);
+      let url = `/api/verusIDcheck?id=${query.verusID}`;
+      let result = await fetch(url);
+      let data = await result.json();
+      if (data) {
+        setVerusID(data);
+      }
     }
   };
 
@@ -39,7 +34,7 @@ const VerusIdLookup = () => {
           />
         </div>
       </div>
-      {!verusID.name && (
+      {!verusID.result && (
         <div className="grid grid-cols-2 p-6 text-center sm:grid-cols-4">
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -67,34 +62,62 @@ const VerusIdLookup = () => {
           </form>
         </div>
       )}
-      {verusID.name && (
+
+      {verusID.error && (
+        <div className="relative px-4 py-3 text-red-700 bg-red-100 border border-red-400 rounded">
+          Error in obtaining VerusID. <pre>{verusID.error}</pre>
+        </div>
+      )}
+      {verusID.result && (
         <div className="grid grid-cols-1 p-6 mb-16 text-xs text-center md:text-base md:grid-cols-3 lg:grid-cols-5 sm:text-base">
           <div className="text-center break-all md:col-span-3 lg:col-start-2">
             <h3 className="py-6 font-normal rounded-full bg-bluetrans-alter font-3xl">
-              {datafetch.name}
+              {verusID.result.identity.name}
             </h3>
             <div className="space-y-2 text-sm font-light font-p">
               <div className="flex flex-wrap justify-between p-6 py-4 mt-8 mb-8 bg-gray-105">
                 <div className="text-left">Identity Address</div>
                 <div className="text-right sm:text-base">
-                  {datafetch.address}
+                  {verusID.result.identity.identityaddress}
                 </div>
               </div>
               <div className="flex flex-wrap justify-between p-6 py-4 border-0 border-t-2 border-b-2 border-solid border-gray-305">
                 <div className="text-left">Revocation Authority</div>
-                <div className="text-right">{datafetch.revocation}</div>
+                {verusID.result.identity.revocationauthority ===
+                verusID.result.identity.identityaddress ? (
+                  <div className="text-right">Self</div>
+                ) : (
+                  <div className="text-right">
+                    {verusID.result.identity.revocationauthority}
+                  </div>
+                )}
               </div>
               <div className="flex flex-wrap justify-between p-6 py-2">
                 <div className="text-left">Recovery Authority</div>
-                <div className="text-right">{datafetch.recovery}</div>
+                {verusID.result.identity.recoveryauthority ===
+                verusID.result.identity.identityaddress ? (
+                  <div className="text-right">Self</div>
+                ) : (
+                  <div className="text-right">
+                    {verusID.result.identity.recoveryauthority}
+                  </div>
+                )}
               </div>
               <div className="flex flex-wrap justify-between p-6 py-4 border-0 border-t-2 border-b-2 border-solid border-gray-305">
                 <div className="text-left">Private Address</div>
-                <div className="text-right ">{datafetch.private}</div>
+                <div className="text-right ">
+                  {verusID.result.identity.privateaddress}
+                </div>
               </div>
               <div className="flex flex-wrap justify-between p-6 py-2">
-                <div className="text-left">Primary Address</div>
-                <div className="text-right">{datafetch.primary}</div>
+                <div className="text-left">Primary Address(es)</div>
+                {verusID.result.identity.primaryaddresses.map((address) => {
+                  return (
+                    <div key={address} className="text-right">
+                      {address}
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <button

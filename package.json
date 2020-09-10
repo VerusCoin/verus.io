@@ -15,7 +15,7 @@
     "nprogress": "^0.2.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-hook-form": "^6.7.0",
+    "react-hook-form": "^6.8.0",
     "react-markdown": "^4.3.1",
     "swr": "^0.3.2",
     "unfetch": "^4.1.0"
@@ -23,7 +23,7 @@
   "devDependencies": {
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.6.2",
+    "tailwindcss": "^1.8.6",
     "tailwindcss-responsive-embed": "^1.0.0"
   }
 }
