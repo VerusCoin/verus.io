@@ -142,7 +142,21 @@ button:focus {
 
 button {
   font-family: Geomanist, sans-serif;
+  cursor: pointer;
   @apply text-base text-center;
+}
+
+.text-span-code {
+  font-family: Inconsolata, monospace;
+  background-color: #ebebeb;
+}
+
+.text-span-4 {
+  color: hsla(0, 0%, 100%, 0.66);
+}
+
+a.text-bluebutton:visited {
+  @apply text-bluebutton;
 }
 
 @import './markdown.css';

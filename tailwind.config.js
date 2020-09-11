@@ -1,5 +1,5 @@
 module.exports = {
-  // purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
       sm: '640px',
@@ -31,17 +31,17 @@ module.exports = {
     extend: {
       colors: {
         gray: {
-          '105': '#fafafa',
-          '100': '#f5f5f5',
-          '200': '#eeeeee',
-          '300': '#e0e0e0',
-          '305': '#e9e9e9',
-          '400': '#bdbdbd',
-          '500': '#9e9e9e',
-          '600': '#757575',
-          '700': '#616161',
-          '800': '#424242',
-          '900': '#212121',
+          105: '#fafafa',
+          100: '#f5f5f5',
+          200: '#eeeeee',
+          300: '#e0e0e0',
+          305: '#e9e9e9',
+          400: '#bdbdbd',
+          500: '#9e9e9e',
+          600: '#757575',
+          700: '#616161',
+          800: '#424242',
+          900: '#212121',
         },
         navlink: {
           default: '#353535',
@@ -59,6 +59,10 @@ module.exports = {
         bluetrans: {
           default: '#ccdaf8',
           alter: '#f4f7ff',
+        },
+        greenbutton: {
+          default: '#d6ffdc',
+          hover: '#4aa658',
         },
         menu: {
           active: '#f7faff',
