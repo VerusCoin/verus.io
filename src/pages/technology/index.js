@@ -16,12 +16,12 @@ const TechnologyOverview = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Introduction to Verus
           </h1>
-          <p className="text-xl font-light leading-normal font-p">
+          <p className="text-p font-light leading-relaxed font-p">
             Verus is an open-source platform available to anyone. Verus supplies
             tools for individuals and organizations to build equitable
             frameworks for social and economic change.
           </p>
-          <p className="text-xl font-light leading-normal font-p">
+          <p className="text-p font-light leading-relaxed font-p">
             No ICO, no pre-mine, no founder or developer fees. Verus is a
             community driven project in the true spirit of Bitcoin.
           </p>
