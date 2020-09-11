@@ -1,7 +1,7 @@
 export const technologyLinks = [
   {
     id: 1,
-    slug: 'verushash',
+    path: 'verushash',
     name: 'VerusHash',
     description: 'Creating a naturally decentralized miner ecosystem.',
   },
@@ -13,13 +13,13 @@ export const technologyLinks = [
   },
   {
     id: 3,
-    slug: 'verusid',
+    path: 'verusID',
     name: 'VerusID',
     description: 'Advanced self-sovereign and decentralized identities.',
   },
   {
     id: 4,
-    slug: 'public_blockchains_as_a_service',
+    slug: 'PbaaS',
     name: 'Public Blockchains as a Service',
     description: 'Launch your own blockchain with customizable specifications.',
   },

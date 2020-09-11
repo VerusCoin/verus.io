@@ -16,19 +16,18 @@ const TechnologyOverview = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Introduction to Verus
           </h1>
-          <p className="leading-normal font-light font-p text-xl">
+          <p className="text-xl font-light leading-normal font-p">
             Verus is an open-source platform available to anyone. Verus supplies
             tools for individuals and organizations to build equitable
-            frameworks for social and economic change. 
+            frameworks for social and economic change.
           </p>
-          <p className="leading-normal font-light font-p text-xl">
-          No ICO, no pre-mine, no 
-            founder or developer fees. Verus is a community driven project in 
-            the true spirit of Bitcoin.
+          <p className="text-xl font-light leading-normal font-p">
+            No ICO, no pre-mine, no founder or developer fees. Verus is a
+            community driven project in the true spirit of Bitcoin.
           </p>
           <h2 className="mt-16 text-2xl font-normal">Technology Deep Dive</h2>
           <SlugMenu pathList={technologyLinks} href="/technology" />
-  
+
           <h5 className="mt-12 mb-4 text-2xl font-normal">Resources</h5>
           <ul className="flex flex-col p-0 m-0 mb-24 space-y-2">
             <li className="inline-flex">
@@ -70,9 +69,9 @@ const TechnologyOverview = () => {
       </div>
 
       <div className="flex flex-row items-center justify-end p-2 md:hidden">
-        <Link href="/technology/[slug]" as={`/technology/${nextRoute.slug}`}>
+        <Link href={`/technology/${nextRoute.path}`}>
           <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover ">
-            {nextRoute.slug}&nbsp;{' '}
+            {nextRoute.name}&nbsp;{' '}
             <svg
               width="8"
               height="18"
