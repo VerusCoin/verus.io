@@ -1,11 +1,6 @@
 import Link from 'next/link';
 
 const SlugMenu = ({ pathList, href }) => {
-  pathList.map((path) => {
-    if (path.href) {
-      console.log(path);
-    }
-  });
   return (
     <div className="grid grid-cols-1 gap-3 mb-20 sm:grid-cols-2">
       {pathList.map((path) => {
