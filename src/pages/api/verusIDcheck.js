@@ -5,8 +5,7 @@ const fetchID = async (query) => {
     let data = await result.json();
     return data;
   } catch (error) {
-    console.error('error in verusIDcheck', error);
-    return { error: 'invalid request or not a valid verusID' };
+    return { message: 'invalid request or not a valid verusID' };
   }
 };
 
