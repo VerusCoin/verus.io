@@ -16,19 +16,20 @@ const WalletOverview = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Verus Wallets
           </h1>
-          <p className="font-light font-p text-xl leading-normal">
-            Verus is actively developing multi-coin wallets for Windows, macOS, Linux, ARM. And on mobile for Android and iOS.
+          <p className="text-xl font-light leading-normal font-p">
+            Verus is actively developing multi-coin wallets for Windows, macOS,
+            Linux, ARM. And on mobile for Android and iOS.
           </p>
-         
+
           <h2 className="mt-12 text-2xl font-normal">Wallets</h2>
           <SlugMenu pathList={walletLinks} href="/wallet" />
         </div>
       </div>
 
       <div className="flex flex-row items-center justify-end p-2 md:hidden">
-        <Link href="/wallet/[slug]" as={`/wallet/${nextRoute.slug}`}>
+        <Link href={`/wallet/${nextRoute.path}`}>
           <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover ">
-            {nextRoute.slug}&nbsp;{' '}
+            {nextRoute.name}&nbsp;{' '}
             <svg
               width="8"
               height="18"

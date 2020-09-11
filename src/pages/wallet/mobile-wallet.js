@@ -1,16 +1,12 @@
 import { useState } from 'react';
-import Link from 'next/link';
+
 import Menu from '../../components/Menu';
-import { useRouter } from 'next/router';
 import { walletLinks } from '../../constants/wallet';
 import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
 import MarkdownModal from '../../components/MarkdownModal';
+import FooterMenu from '../../components/FooterMenu';
 
 const MobileWallet = ({ latestAndroid }) => {
-  const path = useRouter();
-  const pathIndex = walletLinks.findIndex((e) => e.slug === path.query.slug);
-  const prevPath = walletLinks[pathIndex - 1] || [];
-  const nextPath = walletLinks[pathIndex + 1] || [];
   const [modalShow, setModalShow] = useState(false);
   const _handleModal = (value) => {
     setModalShow(value);
@@ -139,71 +135,7 @@ const MobileWallet = ({ latestAndroid }) => {
         modalBody={latestAndroid.body}
       />
 
-      <div className="flex flex-row items-center justify-between p-2 md:hidden">
-        {prevPath.slug ? (
-          <Link href="/wallet/[slug]" as={`/wallet/${prevPath.slug}`}>
-            <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton">
-              {' '}
-              <svg
-                width="8"
-                height="10"
-                className="rotate-180"
-                viewBox="0 0 6 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7"
-                  stroke="#999"
-                  strokeLinecap="square"
-                ></path>
-              </svg>{' '}
-              &nbsp;{prevPath.name}
-            </a>
-          </Link>
-        ) : (
-          <Link href="/wallet">
-            <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton">
-              {' '}
-              <svg
-                width="8"
-                height="10"
-                className="rotate-180"
-                viewBox="0 0 6 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7"
-                  stroke="#999"
-                  strokeLinecap="square"
-                ></path>
-              </svg>{' '}
-              &nbsp;wallet Overview
-            </a>
-          </Link>
-        )}
-        {nextPath.slug ? (
-          <Link href="/wallet/[slug]" as={`/wallet/${nextPath.slug}`}>
-            <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton">
-              {nextPath.name}&nbsp;{' '}
-              <svg
-                width="8"
-                height="10"
-                viewBox="0 0 6 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7"
-                  stroke="#999"
-                  strokeLinecap="square"
-                ></path>
-              </svg>{' '}
-            </a>
-          </Link>
-        ) : null}
-      </div>
+      <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
     </div>
   );
 };
