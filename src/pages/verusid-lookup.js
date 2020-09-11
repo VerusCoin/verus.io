@@ -12,8 +12,10 @@ const VerusIdLookup = () => {
       let url = `/api/verusIDcheck?id=${query.verusID}`;
       let result = await fetch(url);
       let data = await result.json();
-      if (data) {
+      if (data.result) {
         setVerusID(data);
+      } else {
+        setVerusID({ error: data.error.message });
       }
     }
   };
