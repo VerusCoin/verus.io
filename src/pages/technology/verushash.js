@@ -13,12 +13,12 @@ const VerusHash = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             VerusHash
           </h1>
-          <p className="text-p font-light leading-relaxed font-p">
+          <p className="font-light leading-relaxed text-p font-p">
             VerusHash 2.2 is the mining algorithm for VerusCoin. The algorithm
             was developed to equalize mining equitability across hardware
             classes, and to create a naturally decentralized miner ecosystem.
           </p>
-          <p className="text-p font-light leading-relaxed font-p">
+          <p className="font-light leading-relaxed text-p font-p">
             No specialized mining equipment is necessary to mine Verus, and it
             can even be solo-mined directly from the Verus Desktop wallet with
             just a few clicks, without any additional software requirements.
@@ -28,40 +28,41 @@ const VerusHash = () => {
           <div className="grid grid-cols-1 mt-16 mb-8 md:grid-cols-2 md:gap-6">
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/CPU.png" alt="CPU image" width="100" />
-              <p className="pl-3 font-light text-sm leading-normal font-p">
+              <p className="pl-3 text-sm font-light leading-normal font-p">
                 Mining with a CPU is most profitable.
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/GPU.png" alt="GPU image" width="100" />
-              <p className="pl-3 font-light text-sm leading-normal font-p">
+              <p className="pl-3 text-sm font-light leading-normal font-p">
                 Mining with a GPU can be profitable.
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/FPGA.png" alt="FPGA image" width="100" />
-              <p className="pl-3 font-light text-sm leading-normal font-p">
+              <p className="pl-3 text-sm font-light leading-normal font-p">
                 There are no Bitstreams available to mine on FPGA's.
               </p>
             </div>
             <div className="flex flex-row items-center">
               <img src="/images/ASIC.png" alt="ASIC image" width="100" />
-              <p className="pl-3 font-light text-sm leading-normal font-p">
+              <p className="pl-3 text-sm font-light leading-normal font-p">
                 No ASICs are made (yet) to mine Verus.
               </p>
             </div>
           </div>
-          <p className="font-light leading-normal font-p text-gray-600">
+          <p className="font-light leading-normal text-gray-600 font-p">
             For actual hashrate statistics reported by our community see Discord
             channels: #cpu-hashrate, #gpu-hashrate, #fpga-hashrate.
           </p>
           <div className="justify-center w-full mt-16 mb-32 space-y-4">
-            <button className="w-full px-12 py-5 text-p text-white border-0 rounded-full bg-bluebutton hover:bg-bluebutton-hover">
+            <button className="w-full px-12 py-5 text-white border-0 rounded-full text-p bg-bluebutton hover:bg-bluebutton-hover">
               Start solo-mining with Verus Desktop.{' '}
-              <span className="text-span-4">Easy, in just a few clicks</span>
+              <span className="text-span-4">Easy, in just a few clicks</span>{' '}
+              (Need Link)
             </button>
-            <button className="w-full px-12 py-5 text-p bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-              Get mining software
+            <button className="w-full px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
+              Get mining software (Need Link)
             </button>
           </div>
         </div>

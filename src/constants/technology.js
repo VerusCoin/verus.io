@@ -25,15 +25,15 @@ export const technologyLinks = [
   },
   {
     id: 5,
-    slug: 'reserve_currencies',
-    name: 'Reserve Currencies',
+    slug: 'currencies',
+    name: 'Currencies & DeFi',
     description: 'text.',
   },
-  { id: 6, slug: 'ERC-20_Bridge', name: 'ERC-20 Bridge', description: 'text.' },
+  { id: 6, slug: 'bridges', name: 'Bridges', description: 'text.' },
   {
     id: 7,
-    slug: 'privacy_technology',
-    name: 'Privacy Technology',
+    slug: 'privacy',
+    name: 'Privacy',
     description: 'text.',
   },
   {
