@@ -11,7 +11,7 @@ const VerusHash = () => {
         </div>
         <div className="justify-center max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
-            Verushash
+            VerusHash
           </h1>
           <p className="text-p font-light leading-relaxed font-p">
             VerusHash 2.2 is the mining algorithm for VerusCoin. The algorithm
@@ -51,16 +51,16 @@ const VerusHash = () => {
               </p>
             </div>
           </div>
-          <p className="font-light leading-normal font-p">
+          <p className="font-light leading-normal font-p text-gray-600">
             For actual hashrate statistics reported by our community see Discord
-            in channels: #cpu-hashrate, #gpu-hashrate, #fpga-hashrate.
+            channels: #cpu-hashrate, #gpu-hashrate, #fpga-hashrate.
           </p>
           <div className="justify-center w-full mt-16 mb-32 space-y-4">
-            <button className="w-full px-12 py-5 text-xl text-white border-0 rounded-full bg-bluebutton hover:bg-bluebutton-hover">
-              Start solo-mining in Verus Desktop.{' '}
+            <button className="w-full px-12 py-5 text-p text-white border-0 rounded-full bg-bluebutton hover:bg-bluebutton-hover">
+              Start solo-mining with Verus Desktop.{' '}
               <span className="text-span-4">Easy, in just a few clicks</span>
             </button>
-            <button className="w-full px-12 py-5 text-xl bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="w-full px-12 py-5 text-p bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
               Get mining software
             </button>
           </div>

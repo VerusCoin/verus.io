@@ -238,8 +238,8 @@ const Verusid = () => {
               not manipulated by bad actors.
             </p>
           </div>
-          <button className="w-full px-12 py-5 text-xl bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-            Verify signatures here.
+          <button className="px-12 py-5 text-p bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+            Verify signatures here
           </button>
           <div className="mb-16">
             <h2 className="mt-16 text-2xl font-normal">Multisig</h2>
