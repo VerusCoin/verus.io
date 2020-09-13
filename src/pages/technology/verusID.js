@@ -155,8 +155,10 @@ const Verusid = () => {
               </div>
             </div>
           </div>
-          <div className="mb-16">
-            <h2 className="mt-16 text-2xl font-normal">Friendly Name</h2>
+          <div className="p-12 mt-16 mb-16 bg-gray-100">
+            <h2 className="m-0 text-2xl font-normal ">
+              Always remember your crypto address
+            </h2>
             <p className="font-light leading-relaxed text-p font-p">
               Each VerusID has an easy to remember name, chosen by you. No more
               hassle with copying long complicated addresses or being scared of

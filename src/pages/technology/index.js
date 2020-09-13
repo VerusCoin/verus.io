@@ -16,15 +16,47 @@ const TechnologyOverview = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Introduction to Verus
           </h1>
-          <p className="text-p font-light leading-relaxed font-p">
+          <p className="font-light leading-relaxed text-p font-p">
             Verus is an open-source platform available to anyone. Verus supplies
             tools for individuals and organizations to build equitable
             frameworks for social and economic change.
           </p>
-          <p className="text-p font-light leading-relaxed font-p">
-            No ICO, no pre-mine, no founder or developer fees. Verus is a
-            community driven project in the true spirit of Bitcoin.
-          </p>
+          <div className="grid grid-cols-1 mt-8 mb-8 md:grid-cols-2 md:gap-6">
+            <div className="flex flex-row items-center flex-shrink-0">
+              <img
+                src="/images/community.png"
+                alt="community image"
+                width="100"
+              />
+              <p className="pl-3 text-sm font-light leading-normal font-p">
+                Community driven project in the true spirit of Bitcoin.
+              </p>
+            </div>
+
+            <div className="flex flex-row items-center flex-shrink-0">
+              <img src="/images/noICO.png" alt="no ico image" width="100" />
+              <p className="pl-3 text-sm font-light leading-normal font-p">
+                No ICO was held.
+              </p>
+            </div>
+            <div className="flex flex-row items-center flex-shrink-0">
+              <img
+                src="/images/noPREmine.png"
+                alt="no premine image"
+                width="100"
+              />
+              <p className="pl-3 text-sm font-light leading-normal font-p">
+                No coins were pre-mined.
+              </p>
+            </div>
+            <div className="flex flex-row items-center flex-shrink-0">
+              <img src="/images/noDEV.png" alt="no dev image" width="100" />
+              <p className="pl-3 text-sm font-light leading-normal font-p">
+                No founder or developer fees.
+              </p>
+            </div>
+          </div>
+
           <h2 className="mt-16 text-2xl font-normal">Technology Deep Dive</h2>
           <SlugMenu pathList={technologyLinks} href="/technology" />
 
