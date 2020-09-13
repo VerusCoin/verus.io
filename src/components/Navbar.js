@@ -66,7 +66,7 @@ function Navbar() {
             >
               <Link href="/">
                 <a className="px-4 py-2 text-sm no-underline md:text-base text-navlink hover:text-navlink-hover">
-                  Foundation
+                  Community
                 </a>
               </Link>
             </li>
