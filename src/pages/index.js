@@ -57,7 +57,7 @@ const Home = () => {
               <a
                 onClick={() => setViewTab(0)}
                 className={
-                  'mr-5 text-center cursor-pointer text-lg p-1  ' +
+                  'mr-5 text-center text-lg p-1  ' +
                   (viewTab === 0
                     ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                     : 'text-tablink')
@@ -68,7 +68,7 @@ const Home = () => {
               <a
                 onClick={() => setViewTab(1)}
                 className={
-                  'mr-5 text-center cursor-pointer text-lg p-1 flex-no-wrap  ' +
+                  'mr-5 text-center text-lg p-1 flex-no-wrap  ' +
                   (viewTab === 1
                     ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
                     : 'text-tablink')

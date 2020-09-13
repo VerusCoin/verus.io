@@ -159,4 +159,9 @@ a.text-bluebutton:visited {
   @apply text-bluebutton;
 }
 
+a {
+  cursor: pointer;
+  @apply text-bluebutton;
+}
+
 @import './markdown.css';

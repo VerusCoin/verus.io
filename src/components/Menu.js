@@ -51,8 +51,8 @@ const Menu = ({ pathList, href }) => {
           {pathList.map((path) => {
             let activeLink = false;
             if (currentPath.asPath.match(path.slug || path.path)) {
-              if (path.slug === 'staking') {
-                if (currentPath.query.slug === 'staking') {
+              if (path.path === 'staking') {
+                if (currentPath.asPath.split('/').pop() === 'staking') {
                   activeLink = true;
                 } else {
                   activeLink = false;
