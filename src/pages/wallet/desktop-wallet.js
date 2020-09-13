@@ -5,50 +5,14 @@ import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
 import MarkdownModal from '../../components/MarkdownModal';
 import FooterMenu from '../../components/FooterMenu';
 
-const walletLink = (asset) => {
-  let platformType = 'Download Verus Desktop for';
-  if (asset.name.includes('arm64')) {
-    return (
-      <a key={asset.name} href={asset.browser_download_url}>
-        <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
-          ARM Version
-        </button>
-      </a>
-    );
-  } else if (asset.name.includes('Windows')) {
-    return (
-      <a key={asset.name} href={asset.browser_download_url}>
-        <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
-          Windows Version
-        </button>
-      </a>
-    );
-  } else if (asset.name.includes('MacOS')) {
-    return (
-      <a key={asset.name} href={asset.browser_download_url}>
-        <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
-          MacOS Version
-        </button>
-      </a>
-    );
-  } else if (asset.name.includes('x86_64')) {
-    return (
-      <a key={asset.name} href={asset.browser_download_url}>
-        <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
-          Linux Version
-        </button>
-      </a>
-    );
-  } else {
-    return null;
-  }
-};
-
-const DesktopWallet = ({ latestDesktop }) => {
+const DesktopWallet = (props) => {
   const [modalShow, setModalShow] = useState(false);
+  const [showDownloads, setShowDownloads] = useState(false);
   const _handleModal = (value) => {
     setModalShow(value);
   };
+
+  const { latestDesktop, linuxApp, winApp, macApp, armApp } = props;
 
   return (
     <div className="container max-w-5xl modalBody modal-active">
@@ -83,10 +47,101 @@ const DesktopWallet = ({ latestDesktop }) => {
               alt=""
             />
           </div>
-          <div className="items-center justify-center sm:col-span-3">
-            {latestDesktop.assets.map((asset) => {
-              return walletLink(asset);
-            })}
+
+          <div className="items-center justify-items-center sm:col-span-3">
+            <button
+              onClick={() => {
+                setShowDownloads(!showDownloads);
+              }}
+              className="inline-flex items-center px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
+            >
+              <span className="mr-1">Download Verus Desktop</span>
+              {showDownloads ? (
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  className="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-180 md:-mt-1 "
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              ) : (
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  className="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 "
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              )}
+            </button>
+
+            <div
+              className={
+                showDownloads
+                  ? 'absolute z-30 pt-0 -mt-3 dropdown-menu block'
+                  : 'hidden'
+              }
+            >
+              <ul
+                className={
+                  ' pt-1 pb-1 pl-4 pr-4  bg-white rounded-lg shadow-menu  md:z-50 '
+                }
+              >
+                {winApp && (
+                  <li className="block px-4 py-2 whitespace-no-wrap">
+                    <a
+                      href={winApp}
+                      className="flex flex-row items-center flex-shrink-0 block py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                    >
+                      <img src="/images/windows.svg" />
+                      <p className="p-0 m-0">Windows App</p>
+                    </a>
+                  </li>
+                )}
+                {macApp && (
+                  <li className="block px-4 py-2 whitespace-no-wrap">
+                    <a
+                      href={macApp}
+                      className="flex flex-row items-center flex-shrink-0 block py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                    >
+                      <img src="/images/macos.svg" />
+                      <p className="p-0 m-0">MacOS App</p>
+                    </a>
+                  </li>
+                )}
+                {linuxApp && (
+                  <li className="block px-4 py-2 whitespace-no-wrap">
+                    <a
+                      href={linuxApp}
+                      className="flex flex-row items-center flex-shrink-0 block py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                    >
+                      <img src="/images/linux.svg" />
+                      <p className="p-0 m-0">Linux App</p>
+                    </a>
+                  </li>
+                )}
+                {armApp && (
+                  <li className="block px-4 py-2 whitespace-no-wrap">
+                    <a
+                      href={armApp}
+                      className="flex flex-row items-center flex-shrink-0 block py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                    >
+                      <img src="/images/linux.svg" />
+                      <p className="p-0 m-0">ARM App</p>
+                    </a>
+                  </li>
+                )}
+              </ul>
+            </div>
+            <pre>{showDownloads}</pre>
           </div>
 
           <div className="pr-6 space-y-20 text-center sm:text-left sm:col-span-2">
@@ -216,8 +271,29 @@ export async function getServerSideProps(context) {
     'https://api.github.com/repos/VerusCoin/Verus-Desktop/releases/latest'
   );
   let latestDesktop = await result.json();
+  let linuxApp,
+    winApp,
+    macApp,
+    armApp = '';
+  latestDesktop.assets.map((asset) => {
+    if (asset.name.includes('arm64')) {
+      armApp = asset.browser_download_url;
+    }
+
+    if (asset.name.includes('Windows')) {
+      winApp = asset.browser_download_url;
+    }
+
+    if (asset.name.includes('MacOS')) {
+      macApp = asset.browser_download_url;
+    }
+
+    if (asset.name.includes('x86_64')) {
+      linuxApp = asset.browser_download_url;
+    }
+  });
 
   return {
-    props: { latestDesktop: latestDesktop },
+    props: { latestDesktop, linuxApp, winApp, macApp, armApp },
   };
 }
