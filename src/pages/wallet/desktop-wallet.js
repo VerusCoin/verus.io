@@ -99,7 +99,7 @@ const DesktopWallet = (props) => {
                   <li className="block px-4 py-2 whitespace-no-wrap">
                     <a
                       href={winApp}
-                      className="flex flex-row items-center flex-shrink-0 block py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
                       <img src="/images/windows.svg" />
                       <p className="p-0 m-0">Windows App</p>
@@ -110,7 +110,7 @@ const DesktopWallet = (props) => {
                   <li className="block px-4 py-2 whitespace-no-wrap">
                     <a
                       href={macApp}
-                      className="flex flex-row items-center flex-shrink-0 block py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
                       <img src="/images/macos.svg" />
                       <p className="p-0 m-0">MacOS App</p>
@@ -121,7 +121,7 @@ const DesktopWallet = (props) => {
                   <li className="block px-4 py-2 whitespace-no-wrap">
                     <a
                       href={linuxApp}
-                      className="flex flex-row items-center flex-shrink-0 block py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
                       <img src="/images/linux.svg" />
                       <p className="p-0 m-0">Linux App</p>
@@ -132,7 +132,7 @@ const DesktopWallet = (props) => {
                   <li className="block px-4 py-2 whitespace-no-wrap">
                     <a
                       href={armApp}
-                      className="flex flex-row items-center flex-shrink-0 block py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
                       <img src="/images/linux.svg" />
                       <p className="p-0 m-0">ARM App</p>
@@ -214,7 +214,7 @@ const DesktopWallet = (props) => {
 
               <a
                 href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
-                className="block font-light no-underline font-p text-bluebutton"
+                className="block font-light no-underline external font-p text-bluebutton"
               >
                 Bootstrap Install Instruction
               </a>
