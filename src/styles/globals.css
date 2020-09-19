@@ -164,4 +164,11 @@ a {
   @apply text-bluebutton;
 }
 
+a.external::after {
+  content: '↗';
+  display: inline;
+  margin-left: 0.125em;
+  margin-right: 0.3em;
+}
+
 @import './markdown.css';
