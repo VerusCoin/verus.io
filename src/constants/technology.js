@@ -7,7 +7,7 @@ export const technologyLinks = [
   },
   {
     id: 2,
-    slug: 'verus_proof_of_power',
+    path: 'verus_proof_of_power',
     name: 'Verus Proof of Power',
     description: 'A provable hybrid solution to 51% hash attacks.',
   },
