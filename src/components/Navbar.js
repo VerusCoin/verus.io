@@ -70,18 +70,18 @@ function Navbar() {
                 </a>
               </Link>
             </li>
-            <li
+            {/* <li
               className="flex items-center"
               onClick={() => setNavbarOpen(false)}
             >
               <a
                 href="https://wiki.veruscoin.io/"
                 target="_blank"
-                className="px-4 py-2 text-sm no-underline md:text-base text-navlink hover:text-navlink-hover"
+                className="px-4 py-2 text-sm no-underline external md:text-base text-navlink hover:text-navlink-hover"
               >
                 Support
               </a>
-            </li>
+            </li> */}
 
             <li className="flex items-center">
               <div className="relative hidden md:inline-block dropdown ">
@@ -119,16 +119,25 @@ function Navbar() {
                     </li>
                     <li className="block px-4 py-2 whitespace-no-wrap">
                       <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
-                        Signatures
+                        Verify Signatures
                       </a>
                     </li>
                     <li className="block px-4 py-2 whitespace-no-wrap">
                       <a
                         href="https://explorer.veruscoin.io/"
                         target="_blank"
-                        className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                        className="block py-2 no-underline whitespace-no-wrap cursor-pointer external text-navlink hover:text-navlink-hover"
                       >
-                        Explorer
+                        Block Explorer
+                      </a>
+                    </li>
+                    <li className="block px-4 py-2 whitespace-no-wrap">
+                      <a
+                        href="https://wiki.veruscoin.io/"
+                        target="_blank"
+                        className="block py-2 no-underline whitespace-no-wrap cursor-pointer external text-navlink hover:text-navlink-hover"
+                      >
+                        Support Wiki
                       </a>
                     </li>
                   </ul>
@@ -171,9 +180,21 @@ function Navbar() {
                     <a
                       href="https://explorer.veruscoin.io/"
                       target="_blank"
-                      className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="py-2 text-sm no-underline cursor-pointer external text-navlink hover:text-navlink-hover"
                     >
-                      Explorer
+                      Block Explorer
+                    </a>
+                  </li>
+                  <li
+                    className="flex items-center"
+                    onClick={() => setNavbarOpen(false)}
+                  >
+                    <a
+                      href="https://wiki.veruscoin.io/"
+                      target="_blank"
+                      className="py-2 text-sm no-underline cursor-pointer external text-navlink hover:text-navlink-hover"
+                    >
+                      Support Wiki
                     </a>
                   </li>
                 </ul>
