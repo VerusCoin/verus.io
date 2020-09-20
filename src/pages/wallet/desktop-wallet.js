@@ -82,46 +82,46 @@ const DesktopWallet = (props) => {
                 }
               >
                 {winApp && (
-                  <li className="block px-4 py-2 whitespace-no-wrap">
+                  <li className="block px-4 py-3 whitespace-no-wrap">
                     <a
                       href={winApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <img src="/images/windows.svg" />
-                      <p className="p-0 m-0">Windows App</p>
+                      <img className="opacity-25" src="/images/windows.svg" />
+                      <p className="pl-2 m-0">Download Windows app</p>
                     </a>
                   </li>
                 )}
                 {macApp && (
-                  <li className="block px-4 py-2 whitespace-no-wrap">
+                  <li className="block px-4 py-3 whitespace-no-wrap">
                     <a
                       href={macApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <img src="/images/macos.svg" />
-                      <p className="p-0 m-0">MacOS App</p>
+                      <img className="opacity-25" src="/images/macos.svg" />
+                      <p className="pl-2 m-0">Download Mac app</p>
                     </a>
                   </li>
                 )}
                 {linuxApp && (
-                  <li className="block px-4 py-2 whitespace-no-wrap">
+                  <li className="block px-4 py-3 whitespace-no-wrap">
                     <a
                       href={linuxApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <img src="/images/linux.svg" />
-                      <p className="p-0 m-0">Linux App</p>
+                      <img className="opacity-25" src="/images/linux.svg" />
+                      <p className="pl-2 m-0">Download Linux app</p>
                     </a>
                   </li>
                 )}
                 {armApp && (
-                  <li className="block px-4 py-2 whitespace-no-wrap">
+                  <li className="block px-4 py-3 whitespace-no-wrap">
                     <a
                       href={armApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <img src="/images/linux.svg" />
-                      <p className="p-0 m-0">ARM App</p>
+                      
+                      <p className="pl-2 m-0">Download ARM app</p>
                     </a>
                   </li>
                 )}
