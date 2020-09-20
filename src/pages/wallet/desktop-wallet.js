@@ -31,7 +31,7 @@ const DesktopWallet = (props) => {
               <a
                 href="https://github.com/VerusCoin/VerusCoin/releases/latest"
                 target="_blank"
-                className="font-light no-underline external font-p text-bluebutton"
+                className="no-underline external text-bluebutton"
               >
                 Bootstrap Install Instruction
               </a>
@@ -120,7 +120,6 @@ const DesktopWallet = (props) => {
                       href={armApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      
                       <p className="pl-2 m-0">Download ARM app</p>
                     </a>
                   </li>
