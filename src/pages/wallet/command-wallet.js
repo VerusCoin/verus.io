@@ -35,7 +35,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
             <tbody>
               <tr>
                 <td className="flex items-center justify-between px-4 py-2 space-x-4">
-                  <img src="/images/windows.svg" />
+                  <img className="opacity-25" src="/images/windows.svg" />
                   <p className="text-xl">Windows</p>
                   {winApp && (
                     <a href={winApp} target="_blank">
@@ -46,7 +46,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               </tr>
               <tr className="bg-gray-100">
                 <td className="flex items-center justify-between px-4 py-2 space-x-4">
-                  <img src="/images/macos.svg" />
+                  <img className="opacity-25" src="/images/macos.svg" />
                   <p className="text-xl ">MacOS</p>
                   {macApp && (
                     <a href={macApp} target="_blank">
@@ -57,7 +57,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               </tr>
               <tr>
                 <td className="flex items-center justify-between px-4 py-2 space-x-4">
-                  <img src="/images/linux.svg" />
+                  <img className="opacity-25" src="/images/linux.svg" />
                   <p className="text-xl ">Linux</p>
                   {linuxApp && (
                     <a href={linuxApp} target="_blank">
@@ -68,7 +68,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               </tr>
               <tr className="bg-gray-100">
                 <td className="flex items-center justify-between px-4 py-2 space-x-4">
-                  <img src="/images/linux.svg" />
+                  <img className="opacity-25" src="/images/linux.svg" />
                   <p className="text-xl ">ARM</p>
                   {armApp && (
                     <a href={armApp} target="_blank">
