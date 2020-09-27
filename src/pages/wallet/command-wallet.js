@@ -18,12 +18,12 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
             <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
               Verus Command Line (CLI)
             </h2>
-            <p className="mb-0 font-light font-p">
+            <p className="mb-0 font-p">
               Save hours on synchronising, jumpstart your native wallet using{' '}
               <a
                 href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
                 target="_blank"
-                className="font-light no-underline external font-p text-bluebutton"
+                className="no-underline  external font-p text-bluebutton"
               >
                 this bootstrap
               </a>
@@ -80,7 +80,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
           </table>
 
           <div className="max-w-3xl p-8 bg-gray-200">
-            <p className="text-sm font-light font-p">
+            <p className="text-sm font-p">
               This is experimental and unfinished software. Use at your own
               risk! No warranty for any kind of damage!Permission is hereby
               granted, free of charge, to any person obtaining a copy of this
@@ -93,7 +93,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               permission notice shall be included in all copies or substantial
               portions of the Software.
             </p>
-            <p className="text-sm font-light font-p">
+            <p className="text-sm font-p">
               THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
               EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
               MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

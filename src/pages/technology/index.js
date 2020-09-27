@@ -8,7 +8,7 @@ const TechnologyOverview = () => {
 
   return (
     <>
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-4">
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
         <div className="">
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
@@ -16,7 +16,7 @@ const TechnologyOverview = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Introduction to Verus
           </h1>
-          <p className="font-light leading-relaxed text-p font-p">
+          <p className="leading-relaxed  text-p font-p">
             Verus is an open-source platform available to anyone. Verus supplies
             tools for individuals and organizations to build equitable
             frameworks for social and economic change.
@@ -28,14 +28,14 @@ const TechnologyOverview = () => {
                 alt="community image"
                 width="100"
               />
-              <p className="pl-3 text-sm font-light leading-normal font-p">
+              <p className="pl-3 text-sm leading-normal font-p">
                 Community driven project in the true spirit of Bitcoin.
               </p>
             </div>
 
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/noICO.png" alt="no ico image" width="100" />
-              <p className="pl-3 text-sm font-light leading-normal font-p">
+              <p className="pl-3 text-sm leading-normal font-p">
                 No ICO was held.
               </p>
             </div>
@@ -45,13 +45,13 @@ const TechnologyOverview = () => {
                 alt="no premine image"
                 width="100"
               />
-              <p className="pl-3 text-sm font-light leading-normal font-p">
+              <p className="pl-3 text-sm leading-normal font-p">
                 No coins were pre-mined.
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/noDEV.png" alt="no dev image" width="100" />
-              <p className="pl-3 text-sm font-light leading-normal font-p">
+              <p className="pl-3 text-sm leading-normal font-p">
                 No founder or developer fees.
               </p>
             </div>

@@ -8,7 +8,7 @@ const Technology = () => {
 
   return (
     <>
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-4">
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
         <div className="">
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
@@ -16,8 +16,8 @@ const Technology = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             {path.query.slug}
           </h1>
-          <p className="text-xl font-light leading-normal font-p">Content</p>
-          <p className="text-xl font-light leading-normal font-p">Content</p>
+          <p className="text-xl leading-normal font-p">Content</p>
+          <p className="text-xl leading-normal font-p">Content</p>
           <h2 className="mt-16 text-2xl font-normal">H2</h2>
         </div>
       </div>

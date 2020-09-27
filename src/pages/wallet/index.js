@@ -16,7 +16,7 @@ const WalletOverview = () => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Verus Wallets
           </h1>
-          <p className="text-xl font-light leading-normal font-p">
+          <p className="text-xl   leading-normal font-p">
             Verus is actively developing multi-coin wallets for Windows, macOS,
             Linux, ARM. And on mobile for Android and iOS.
           </p>

@@ -19,7 +19,7 @@ const DesktopWallet = (props) => {
             <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
               Verus for Desktop
             </h2>
-            <p className="mt-8 mb-0 font-light font-p">
+            <p className="mt-8 mb-0   font-p">
               Latest version: {name} <br />
               Latest release: {formatDateFromString(published_at)}{' '}
               {date_diff_indays(published_at) < 14 ? (
@@ -143,7 +143,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-2 text-2xl font-normal">
                     Easy and Safe & Always Secure
                   </h3>
-                  <p className="font-light text-md font-p">
+                  <p className="  text-md font-p">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
                     highest priority that's why all Verus software is
@@ -161,7 +161,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-2 text-2xl font-normal">
                     VerusID Capabilities
                   </h3>
-                  <p className="font-light text-md font-p">
+                  <p className="  text-md font-p">
                     Create and manage self-sovereign identities on the
                     blockchain. Use VerusID as friendly crypto name, sign and
                     verify files and message and many more features.
@@ -176,7 +176,7 @@ const DesktopWallet = (props) => {
                   <h4 className="mb-0 text-base font-semibold font-p">
                     Multi-Currency Wallet
                   </h4>
-                  <p className="mt-1 text-sm font-light leading-normal font-p">
+                  <p className="mt-1 text-sm   leading-normal font-p">
                     Store hundreds of coins and tokens!
                   </p>
                 </div>
@@ -191,7 +191,7 @@ const DesktopWallet = (props) => {
                   <h4 className="mb-0 text-base font-semibold font-p">
                     Mining & Staking
                   </h4>
-                  <p className="mt-1 text-sm font-light leading-normal font-p">
+                  <p className="mt-1 text-sm   leading-normal font-p">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
                   </p>
@@ -208,7 +208,7 @@ const DesktopWallet = (props) => {
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h4>
-                  <p className="mt-1 text-sm font-light leading-normal font-p">
+                  <p className="mt-1 text-sm   leading-normal font-p">
                     Convert from one currency to another through multi-reserve
                     currencies.
                   </p>
@@ -225,7 +225,7 @@ const DesktopWallet = (props) => {
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h4>
-                  <p className="mt-1 text-sm font-light leading-normal font-p">
+                  <p className="mt-1 text-sm   leading-normal font-p">
                     Create multi-reserve and fractional currencies with a few
                     clicks.
                   </p>
@@ -235,13 +235,13 @@ const DesktopWallet = (props) => {
             <div className="flex justify-center ">
               <div className="flex justify-center max-w-xl space-x-8">
                 <img src="/images/time-icon.svg" alt="time-icon" width="30" />
-                <p className="text-xl font-light font-p">
+                <p className="text-xl   font-p">
                   Jumpstart your native Verus wallet and save hours on
                   synchronizing.{' '}
                   <a
                     href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
                     target="_blank"
-                    className="font-light no-underline external font-p text-bluebutton"
+                    className="  no-underline external font-p text-bluebutton"
                   >
                     Download Bootstrap
                   </a>
@@ -249,7 +249,7 @@ const DesktopWallet = (props) => {
               </div>
             </div>
             <div className="p-8 bg-gray-105">
-              <p className="text-sm font-light font-p">
+              <p className="text-sm   font-p">
                 This is experimental and unfinished software. Use at your own
                 risk! No warranty for any kind of damage!Permission is hereby
                 granted, free of charge, to any person obtaining a copy of this
@@ -262,7 +262,7 @@ const DesktopWallet = (props) => {
                 notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
               </p>
-              <p className="text-sm font-light font-p">
+              <p className="text-sm   font-p">
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
                 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
                 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

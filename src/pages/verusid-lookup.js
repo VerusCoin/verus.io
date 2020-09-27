@@ -26,7 +26,7 @@ const VerusIdLookup = () => {
   };
 
   return (
-    <div className="container max-w-5xl section-2">
+    <div className="container max-w-5xl   section-2">
       <div className="grid justify-center grid-cols-2 mt-16 sm:grid-cols-4">
         <div className="col-span-2 text-center sm:col-start-2">
           <img
@@ -76,7 +76,7 @@ const VerusIdLookup = () => {
             <h3 className="py-6 font-normal rounded-full bg-bluetrans-alter font-3xl">
               {verusID.result.identity.name}
             </h3>
-            <div className="space-y-2 text-sm font-light font-p">
+            <div className="space-y-2 text-sm font-p">
               <div className="flex flex-wrap justify-between p-6 py-4 mt-8 mb-8 bg-gray-105">
                 <div className="text-left">Identity Address</div>
                 <div className="text-right sm:text-base">

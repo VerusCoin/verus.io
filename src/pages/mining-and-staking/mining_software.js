@@ -6,7 +6,7 @@ const MiningSoftware = (props) => {
   const { linuxURL, WinURL, OsURL } = props;
   return (
     <>
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-4">
+      <div className="container grid mt-8 max-w-5xl grid-cols-1 gap-6 md:grid-cols-4">
         <div className="">
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
@@ -14,7 +14,7 @@ const MiningSoftware = (props) => {
           <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
             Mining Software
           </h1>
-          <p className="text-xl font-light leading-normal font-p">
+          <p className="text-xl   leading-normal font-p">
             Get one of the miners to get started. However you mine VRSC, you'll
             need a Verus Coin address, which you can create using the wallet in
             either Lite or Native mode. If you need any help, check our{' '}
@@ -34,7 +34,7 @@ const MiningSoftware = (props) => {
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
                   <img src="/images/windows.svg" />
                   <p className="text-xl">nheqminer</p>
-                  <p className="font-light">Windows, CLI, VerusHash 2.0-2.2</p>
+                  <p className=" ">Windows, CLI, VerusHash 2.0-2.2</p>
                 </td>
                 <td className="w-1/6 px-4 py-2 text-center ">
                   {WinURL && (
@@ -48,7 +48,7 @@ const MiningSoftware = (props) => {
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
                   <img src="/images/macos.svg" />
                   <p className="text-xl ">nheqminer</p>
-                  <p className="font-light">macOS, CLI, VerusHash 2.0-2.2</p>
+                  <p className=" ">macOS, CLI, VerusHash 2.0-2.2</p>
                 </td>
                 <td className="w-1/6 px-4 py-2 text-center ">
                   {OsURL && (
@@ -62,7 +62,7 @@ const MiningSoftware = (props) => {
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
                   <img src="/images/linux.svg" />
                   <p className="text-xl ">nheqminer</p>
-                  <p className="font-light">Linux, CLI, VerusHash 2.0-2.2</p>
+                  <p className=" ">Linux, CLI, VerusHash 2.0-2.2</p>
                 </td>
                 <td className="w-1/6 px-4 py-2 text-center ">
                   {linuxURL && (
@@ -75,7 +75,7 @@ const MiningSoftware = (props) => {
               <tr className="bg-gray-100">
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
                   <p className="text-xl ">CCMiner CPU</p>
-                  <p className="font-light">x64, ARM, VerusHash 2.0-2.2</p>
+                  <p className=" ">x64, ARM, VerusHash 2.0-2.2</p>
                 </td>
                 <td className="w-1/6 px-4 py-2 text-center ">
                   <a
@@ -89,7 +89,7 @@ const MiningSoftware = (props) => {
               <tr>
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
                   <p className="text-xl ">CCMiner CUDA</p>
-                  <p className="font-light">Nvidia GPU, VerusHash 2.2</p>
+                  <p className=" ">Nvidia GPU, VerusHash 2.2</p>
                 </td>
                 <td className="w-1/6 px-4 py-2 text-center ">
                   <a
@@ -103,7 +103,7 @@ const MiningSoftware = (props) => {
               <tr className="bg-gray-100">
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
                   <p className="text-xl ">CCMiner OCL</p>
-                  <p className="font-light">AMD GPU, VerusHash 2.2</p>
+                  <p className=" ">AMD GPU, VerusHash 2.2</p>
                 </td>
                 <td className="w-1/6 px-4 py-2 text-center ">
                   <a
@@ -117,7 +117,7 @@ const MiningSoftware = (props) => {
             </tbody>
           </table>
 
-          <p className="w-3/4 text-sm font-light leading-normal font-p">
+          <p className="w-3/4 text-sm   leading-normal font-p">
             <span className="font-bold">System requirements: </span>64bit
             CPU/OS, CPU with AES-NI and AVX instructions. Windows or Linux
             (Ubuntu tested). 4GB Memory.
@@ -129,7 +129,7 @@ const MiningSoftware = (props) => {
                 <td className="flex flex-row items-baseline px-4 py-2 space-x-4">
                   <img src="/images/linux.svg" />
                   <p className="w-1/4 text-xl">Oink Docker</p>
-                  <p className="w-3/4 font-light">
+                  <p className="w-3/4  ">
                     Dockers running nheqminer or ccminer. OS independent VM,
                     internal Linux
                   </p>
@@ -144,7 +144,7 @@ const MiningSoftware = (props) => {
                 <td className="flex flex-row items-baseline px-4 py-2 space-x-4">
                   <img src="/images/linux.svg" />
                   <p className="w-1/4 text-xl">0x03 Docker</p>
-                  <p className="w-3/4 font-light">
+                  <p className="w-3/4  ">
                     Dockers running nheqminer or ccminer. OS independent VM,
                     internal Linux
                   </p>
@@ -161,13 +161,13 @@ const MiningSoftware = (props) => {
             </tbody>
           </table>
 
-          <p className="w-3/4 text-sm font-light leading-normal font-p">
+          <p className="w-3/4 text-sm   leading-normal font-p">
             <span className="font-bold">System requirements: </span>64bit
             CPU/OS, CPU with AES-NI and AVX instructions. Windows or Linux
             (Ubuntu tested). 4GB Memory.
           </p>
 
-          <p className="p-8 mt-16 mb-32 text-sm font-light leading-normal bg-gray-100 font-p">
+          <p className="p-8 mt-16 mb-32 text-sm   leading-normal bg-gray-100 font-p">
             All software is provided "as is", without warranty of any kind,
             express or implied, including but not limited to the warranties of
             merchantability, fitness for a particular purpose and

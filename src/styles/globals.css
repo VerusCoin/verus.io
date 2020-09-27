@@ -141,7 +141,7 @@ button:focus {
 }
 
 button {
-  font-family: Geomanist, sans-serif;
+  font-family: geomanistregular, sans-serif;
   cursor: pointer;
   @apply text-base text-center;
 }

@@ -24,7 +24,7 @@ const ThirdPartyWallet = () => {
             <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
               Verus Third Party
             </h2>
-            <p className="mb-0 font-light font-p">
+            <p className="mb-0   font-p">
               Wallets not developed by Verus Community
             </p>
           </div>
@@ -63,7 +63,7 @@ const ThirdPartyWallet = () => {
           <div className="pr-6 space-y-20 text-center sm:text-left sm:col-span-2">
             <div>
               <h3 className="mb-2 text-2xl font-normal">Easy and Safe</h3>
-              <p className="font-light text-md font-p">
+              <p className="  text-md font-p">
                 Verus Desktop is created for beginners and exports in mind.
                 Anyone can get started, no matter previous cryptocurrency
                 experiences.
@@ -71,7 +71,7 @@ const ThirdPartyWallet = () => {
             </div>
             <div>
               <h3 className="mb-2 text-2xl font-normal">VerusID</h3>
-              <p className="font-light text-md font-p">
+              <p className="  text-md font-p">
                 Create and manage self-sovereign identities on the blockchain.
                 With user-friendly names as addresses, and more.
               </p>
@@ -79,18 +79,16 @@ const ThirdPartyWallet = () => {
           </div>
           <div className="p-6 space-y-2 text-sm bg-gray-200 rounded-lg sm:text-left">
             <div className="space-y-0">
-              <p className="font-light font-p">System requirements:</p>
-              <p className="font-light text-navlink-hover font-p">
-                Processor: 64-bit
-              </p>
-              <p className="font-light text-navlink-hover font-p">RAM: 8 GB</p>
-              <p className="font-light text-navlink-hover font-p">
+              <p className="  font-p">System requirements:</p>
+              <p className="  text-navlink-hover font-p">Processor: 64-bit</p>
+              <p className="  text-navlink-hover font-p">RAM: 8 GB</p>
+              <p className="  text-navlink-hover font-p">
                 Operating Systems: Windows, Linux (Ubuntu), macOS (High Sierra
                 and up)
               </p>
             </div>
             <div>
-              <p className="font-light font-p">Release Notes</p>
+              <p className="  font-p">Release Notes</p>
             </div>
             <div className="mt-4 mb-4 space-y-2 text-center">
               <button
@@ -109,19 +107,19 @@ const ThirdPartyWallet = () => {
 
               <a
                 href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
-                className="block font-light no-underline font-p text-bluebutton"
+                className="block   no-underline font-p text-bluebutton"
               >
                 Bootstrap Install Instruction
               </a>
             </div>
             <div>
-              <p className="m-0 font-light font-p">Supported Coins:</p>
-              <p className="m-0 font-light font-p">
+              <p className="m-0   font-p">Supported Coins:</p>
+              <p className="m-0   font-p">
                 VRSC, BTC, KMD, LTC, ETH, .........
               </p>
             </div>
             <div>
-              <p className="text-xs font-light font-p">
+              <p className="text-xs   font-p">
                 This is experimental and unfinished software. Use at your own
                 risk! No warranty for any kind of damage!Permission is hereby
                 granted, free of charge, to any person obtaining a copy of this
@@ -134,7 +132,7 @@ const ThirdPartyWallet = () => {
                 notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
               </p>
-              <p className="text-xs font-light font-p">
+              <p className="text-xs   font-p">
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
                 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
                 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

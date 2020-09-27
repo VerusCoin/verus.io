@@ -6,6 +6,8 @@ import useSWR from 'swr';
 import fetch from 'unfetch';
 import { format } from 'date-fns';
 
+import styles from '../styles/custom.module.css';
+
 const fetcher = (url) =>
   fetch(url)
     .then((r) => r.json())
@@ -27,26 +29,28 @@ const Home = () => {
   };
   return (
     <>
-      <div className="container max-w-5xl pt-8 pb-8">
-        <div className="max-w-2xl text-left sm:mt-16 sm:mb-32 sm:m-12 sm:pt-8 section-2">
-          <h1 className="w-full m-0 text-5xl font-normal text-bluebutton">
-            Empowering Individuals Around the World
-          </h1>
-          <p className="w-full mt-3 text-2xl font-light leading-normal text-custom font-p">
-            Verus supplies tools for individuals and organizations to build
-            equitable frameworks for social and economic change.
-          </p>
-          <div className="flex flex-wrap items-center justify-center mt-16 md:space-x-8 md:space-y-0 md:justify-start">
-            <Link href="/mining-and-staking">
-              <button className="px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
-                Secure the Network and Earn
-              </button>
-            </Link>
-            <Link href="/technology">
-              <button className="px-12 py-5 bg-transparent border-2 border-black border-solid rounded-full hover:bg-gray-200">
-                Technology Deep Dive
-              </button>
-            </Link>
+      <div className={styles.landing}>
+        <div className="max-w-5xl mx-auto ">
+          <div className="max-w-2xl text-left sm:mt-16 sm:mb-32 sm:m-12 sm:pt-8 section-2 ">
+            <h1 className="w-full m-0 text-5xl font-normal text-bluebutton">
+              Empowering Individuals Around the World
+            </h1>
+            <p className="w-full mt-3 text-2xl leading-normal text-custom font-p">
+              Verus supplies tools for individuals and organizations to build
+              equitable frameworks for social and economic change.
+            </p>
+            <div className="flex flex-wrap items-center justify-center mt-16 md:space-x-8 md:space-y-0 md:justify-start">
+              <Link href="/mining-and-staking">
+                <button className="px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
+                  Secure the Network and Earn
+                </button>
+              </Link>
+              <Link href="/technology">
+                <button className="px-12 py-5 bg-transparent border-2 border-black border-solid rounded-full hover:bg-gray-200">
+                  Technology Deep Dive
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -114,7 +118,7 @@ const Home = () => {
                       <h3 className="mt-0 text-2xl font-normal">
                         Self-Sovereign & Decentralized Identities
                       </h3>
-                      <p className="text-xl font-light leading-relaxed font-p">
+                      <p className="text-xl leading-relaxed font-p">
                         Introducing VerusID; an identity protocol with advanced
                         capabilities, including friendly, human-readable names
                         to receive, send and secure all cryptocurrencies.
@@ -131,7 +135,7 @@ const Home = () => {
                       <h3 className="mt-0 text-2xl font-normal">
                         Redefining DeFi With Reserve Currencies
                       </h3>
-                      <p className="text-xl font-light leading-relaxed font-p">
+                      <p className="text-xl leading-relaxed font-p">
                         Simultaneous parallel processing of DeFi transactions
                         allows Verus to advance the technology underpinning
                         automated market makers and community liquidity.
@@ -148,7 +152,7 @@ const Home = () => {
                       <h3 className="mt-0 text-2xl font-normal ">
                         A Blockchain Launch Is Just a Few Clicks Away
                       </h3>
-                      <p className="text-xl font-light leading-relaxed font-p">
+                      <p className="text-xl leading-relaxed font-p">
                         Launch your own blockchain with customizable
                         specifications, while using Verus infrastructure for
                         security and continuity. PBaaS provides a roadmap for
@@ -166,7 +170,7 @@ const Home = () => {
                       <h3 className="mt-0 text-2xl font-normal ">
                         Combine the Power of Solidity with Verus
                       </h3>
-                      <p className="text-xl font-light leading-relaxed font-p">
+                      <p className="text-xl leading-relaxed font-p">
                         Sed ut perspiciatis, unde omnis iste natus error sit
                         voluptatem accusantium doloremque laudantium, totam rem
                         aperiam eaque.
@@ -195,7 +199,7 @@ const Home = () => {
                 alt="VerusID Lookup Icon"
               />
               <h1 className="mt-8 text-2xl font-normal">VerusID Lookup</h1>
-              <p className="font-light leading-normal font-p">
+              <p className="leading-normal font-p">
                 Search for identities registered on the Verus blockchain
               </p>
               <Link href="/verusid-lookup">
@@ -211,7 +215,7 @@ const Home = () => {
                 alt="Blockchain Explorer Icon"
               />
               <h1 className="mt-8 text-2xl font-normal">Block Explorer</h1>
-              <p className="font-light leading-normal font-p">
+              <p className="leading-normal font-p">
                 Search through addresses and transactions
               </p>
               <a
@@ -227,7 +231,7 @@ const Home = () => {
             <div className="justify-center p-6 text-center">
               <img src="images/dummy.png" height="70" alt="" />
               <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
-              <p className="font-light leading-normal font-p">
+              <p className="leading-normal font-p">
                 Sign and verify documents and files for free
               </p>
               <Link href="/">
@@ -252,7 +256,7 @@ const Home = () => {
       <div className="container max-w-5xl">
         <div className="grid justify-center grid-cols-1 pt-12 m-4 mb-16 space-y-12 md:space-y-0 md:m-0 md:mb-16 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-32 section-5">
           <div className="p-3 pb-12 bg-gray-100 rounded-lg md:p-16">
-            <h4 className="p-0 mb-16 text-2xl font-light leading-relaxed text-left text-custom font-p">
+            <h4 className="p-0 mb-16 text-2xl leading-relaxed text-left text-custom font-p">
               Verus is a decentralized network where anyone in the world can
               participate to earn its currency VRSC.
             </h4>
@@ -264,21 +268,21 @@ const Home = () => {
           </div>
           <div className="pl-3 pr-3 md:pl-12 md:pr-12">
             <h3 className="mb-1 text-2xl font-normal">Worldwide Network</h3>
-            <p className="mt-2 mr-0 font-light leading-normal font-p">
+            <p className="mt-2 mr-0 leading-normal font-p">
               Anyone with a modern CPU can start mining VRSC immediately,
               creating a naturally decentralized miner ecosystem.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Thriving Economy
             </h3>
-            <p className="mt-2 mr-0 font-light leading-normal font-p">
+            <p className="mt-2 mr-0 leading-normal font-p">
               Verus has a robust and thriving protocol economy with
               opportunities for everyone to earn through mining and staking.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Permissionless System
             </h3>
-            <p className="mt-2 mr-0 font-light leading-normal font-p">
+            <p className="mt-2 mr-0 leading-normal font-p">
               Verus is open-source, borderless and permissionless. It
               doesn&#x27;t matter who you are or where you live. Anyone can
               participate.
@@ -326,7 +330,7 @@ const Home = () => {
 
       <div className="justify-center w-screen p-6 pb-20 text-center section-3">
         <div className="container max-w-5xl">
-          <h4 className="mb-3 text-xl font-light font-p">
+          <h4 className="mb-3 text-xl font-p">
             Subscribe to our newsletter and stay up to date with developments
           </h4>
 

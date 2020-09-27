@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <>
+    <div className="pb-12 font-foot">
       <div className="grid justify-center grid-cols-1 gap-8 md:grid-cols-2">
         <a
           href="https://discord.gg/VRKMP2S"
@@ -13,8 +13,9 @@ const Footer = () => {
             className="w-8 mb-4 "
           />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
-          <p className="text-sm font-light leading-relaxed opacity-50 md:text-base font-p">
-          Join our most active community with over 4.700 members for all questions and discussions.
+          <p className="text-sm leading-relaxed opacity-50 md:text-base font-p">
+            Join our most active community with over 4.700 members for all
+            questions and discussions.
           </p>
         </a>
 
@@ -29,7 +30,7 @@ const Footer = () => {
             className="w-8 mb-4"
           />
           <h3 className="mt-0 mb-4 text-2xl">Telegram Community</h3>
-          <p className="text-sm font-light leading-relaxed opacity-50 md:text-base font-p">
+          <p className="text-sm leading-relaxed opacity-50 md:text-base font-p">
             Jump in our community Telegram server. Ask questions and discuss
             everything related to Verus.
           </p>
@@ -49,7 +50,7 @@ const Footer = () => {
             sizes="100px"
             alt=""
           />
-          <p className="mt-2 text-sm font-light font-p">
+          <p className="mt-2 text-sm font-p">
             © 2020 The Verus Project.
             <br />
             All rights reserved.
@@ -154,7 +155,7 @@ const Footer = () => {
           </a> */}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

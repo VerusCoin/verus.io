@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <div className="w-full bg-white">
-      <div className="flex flex-col px-4 py-4 mb-8 md:mx-8 lg:mx-16 md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+      <div className="flex flex-col px-4 py-4 md:mx-8 lg:mx-16 md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div className="flex flex-row items-center justify-between flex-shrink-0 p-4 ">
           <Link href="/">
             <img

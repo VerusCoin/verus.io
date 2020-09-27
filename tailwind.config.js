@@ -8,9 +8,10 @@ module.exports = {
       xl: '1236px',
     },
     fontFamily: {
-      display: ['Geomanist', 'sans-serif'],
-      body: ['Geomanist', 'sans-serif'],
+      display: ['geomanistbook', 'sans-serif'],
+      body: ['geomanistbook', 'sans-serif'],
       p: ['Source Sans Pro', 'sans-serif'],
+      foot: ['geomanistregular', 'sans-serif'],
     },
     fontSize: {
       xs: '.75rem',

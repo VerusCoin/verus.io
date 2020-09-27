@@ -1,6 +1,9 @@
 import 'nprogress/nprogress.css';
 
 import '../styles/globals.css';
+import '../styles/geomanist-regular-stylesheet.css';
+import '../styles/geomanist-book-stylesheet.css';
+
 import dynamic from 'next/dynamic';
 const TopProgressBar = dynamic(
   () => {
