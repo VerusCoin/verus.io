@@ -42,6 +42,7 @@ header {
 
 hr {
   border-color: #ebebeb;
+  height: 1px;
 }
 .arrow-list li:not(:last-child) {
   @apply mb-5;

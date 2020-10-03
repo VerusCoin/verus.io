@@ -1,5 +1,5 @@
 .landing {
-  background-image: url('/images/light-bg.svg');
+  background-image: url('/images/backgrounds/light-bg.svg');
   background-size: cover;
   background-position: center;
   min-height: calc(100vh - 100px);

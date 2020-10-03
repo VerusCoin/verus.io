@@ -7,6 +7,7 @@ import fetch from 'unfetch';
 import { format } from 'date-fns';
 
 import styles from '../styles/custom.module.css';
+import IndexTabWindow from '../components/Tab';
 
 const fetcher = (url) =>
   fetch(url)
@@ -14,7 +15,6 @@ const fetcher = (url) =>
     .then((d) => d.articles.splice(0, 3));
 
 const Home = () => {
-  const [viewTab, setViewTab] = useState(0);
   const [formSubmit, setFormSubmit] = useState(false);
   const { register, handleSubmit, errors } = useForm();
   const { data, error } = useSWR(
@@ -29,17 +29,17 @@ const Home = () => {
   };
   return (
     <>
-      <div className={styles.landing}>
-        <div className="max-w-5xl mx-auto ">
-          <div className="max-w-2xl text-left sm:mt-16 sm:mb-32 sm:m-12 sm:pt-8 section-2 ">
-            <h1 className="w-full m-0 text-5xl font-normal text-bluebutton">
-              Empowering Individuals Around the World
-            </h1>
-            <p className="w-full mt-3 text-2xl leading-normal text-custom font-p">
-              Verus supplies tools for individuals and organizations to build
+      <div
+        className={'p-8 md:flex justify-center items-center ' + styles.landing}
+      >
+        <div className="">
+          <div className="max-w-3xl text-left sm:pt-8 section-2">
+            <h1 className="m-0 text-4xl ">
+              We supply tools for individuals and organizations to build
               equitable frameworks for social and economic change.
-            </p>
-            <div className="flex flex-wrap items-center justify-center mt-16 md:space-x-8 md:space-y-0 md:justify-start">
+            </h1>
+
+            <div className="flex flex-wrap items-center justify-center w-full mt-12 md:space-x-8 md:space-y-0 md:justify-start">
               <Link href="/mining-and-staking">
                 <button className="px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
                   Secure the Network and Earn
@@ -51,147 +51,41 @@ const Home = () => {
                 </button>
               </Link>
             </div>
+            <a
+              href="https://www.facebook.com/VerusCoin"
+              target="_blank"
+              className="flex items-center mt-8 "
+            >
+              <img
+                src="/images/iconmonstr-video-13_1.svg"
+                alt="Play Logo"
+                className="w-8 mr-3"
+              />
+              <p className="text-lg text-black underline font-foot">
+                Watch introductory video
+              </p>
+            </a>
+            <p className="max-w-xs m-0 text-sm font-normal font-p">
+              We have a strict zero-tracking policy on our website. You are safe
+              with us.
+            </p>
           </div>
         </div>
       </div>
-      <div className="pt-6 pb-12 sm:pt-32 section-3 md:pb-32">
+      {/* below landing  
+          Section 2
+      */}
+      <div className="pt-6 pb-12 sm:pt-24 md:pb-24">
         <div className="container max-w-5xl">
           <div className="justify-center">
-            <div className="flex flex-col justify-center sm:flex-row">
-              <a
-                onClick={() => setViewTab(0)}
-                className={
-                  'mr-5 text-center text-lg p-1  ' +
-                  (viewTab === 0
-                    ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
-                    : 'text-tablink')
-                }
-              >
-                VerusID
-              </a>
-              <a
-                onClick={() => setViewTab(1)}
-                className={
-                  'mr-5 text-center text-lg p-1 flex-no-wrap  ' +
-                  (viewTab === 1
-                    ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
-                    : 'text-tablink')
-                }
-              >
-                Decentralized Finance
-              </a>
-              <a
-                onClick={() => setViewTab(2)}
-                className={
-                  'mr-5 text-center cursor-pointer text-lg p-1  ' +
-                  (viewTab === 2
-                    ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
-                    : 'text-tablink')
-                }
-              >
-                Public Blockchains as a Service
-              </a>
-              <a
-                onClick={() => setViewTab(3)}
-                className={
-                  'mr-5 text-center cursor-pointer text-lg p-1  ' +
-                  (viewTab === 3
-                    ? 'text-tablink-active border-2 border-solid border-t-0 border-r-0 border-l-0 border-tablink-active'
-                    : 'text-tablink')
-                }
-              >
-                ERC-20 Bridge
-              </a>
-            </div>
-            <div className="pt-6 tab-content sm:pt-24 ">
-              <div className="grid items-center grid-cols-1 gap-6 md:grid-cols-3 md:items-start">
-                <div className="pt-2 mb-4 text-center md:text-right">
-                  <img
-                    src="images/VerusID_Icon.svg"
-                    width="181"
-                    alt="VerusID Icon"
-                  />
-                </div>
-                <div className="p-3 pt-0 text-left md:pl-20 md:col-span-2">
-                  {viewTab === 0 && (
-                    <div className="max-w-xl">
-                      <h3 className="mt-0 text-2xl font-normal">
-                        Self-Sovereign & Decentralized Identities
-                      </h3>
-                      <p className="text-xl leading-relaxed font-p">
-                        Introducing VerusID; an identity protocol with advanced
-                        capabilities, including friendly, human-readable names
-                        to receive, send and secure all cryptocurrencies.
-                      </p>
-                      <Link href="technology/verusid">
-                        <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                          Learn More
-                        </button>
-                      </Link>
-                    </div>
-                  )}
-                  {viewTab === 1 && (
-                    <div className="max-w-xl">
-                      <h3 className="mt-0 text-2xl font-normal">
-                        Redefining DeFi With Reserve Currencies
-                      </h3>
-                      <p className="text-xl leading-relaxed font-p">
-                        Simultaneous parallel processing of DeFi transactions
-                        allows Verus to advance the technology underpinning
-                        automated market makers and community liquidity.
-                      </p>
-                      <Link href="technology/reserve_currencies">
-                        <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                          Learn More
-                        </button>
-                      </Link>
-                    </div>
-                  )}
-                  {viewTab === 2 && (
-                    <div className="max-w-xl">
-                      <h3 className="mt-0 text-2xl font-normal ">
-                        A Blockchain Launch Is Just a Few Clicks Away
-                      </h3>
-                      <p className="text-xl leading-relaxed font-p">
-                        Launch your own blockchain with customizable
-                        specifications, while using Verus infrastructure for
-                        security and continuity. PBaaS provides a roadmap for
-                        practically unlimited scalability.
-                      </p>
-                      <Link href="technology/public_blockchains_as_a_service">
-                        <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                          Learn More
-                        </button>
-                      </Link>
-                    </div>
-                  )}
-                  {viewTab === 3 && (
-                    <div className="max-w-xl">
-                      <h3 className="mt-0 text-2xl font-normal ">
-                        Combine the Power of Solidity with Verus
-                      </h3>
-                      <p className="text-xl leading-relaxed font-p">
-                        Sed ut perspiciatis, unde omnis iste natus error sit
-                        voluptatem accusantium doloremque laudantium, totam rem
-                        aperiam eaque.
-                      </p>
-                      <Link href="technology/ERC-20_Bridge">
-                        <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                          Learn More
-                        </button>
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
+            <IndexTabWindow />
           </div>
         </div>
       </div>
 
-      <div className="container max-w-5xl">
-        <div className="justify-center pt-12 text-center sm:pt-32 section-4">
-          <div className="grid grid-cols-1 mb-32 space-y-6 text-center md:space-y-0 md:g-8 md:grid-cols-3">
+      <div className="pt-12 section-3 sm:pt-24 md:pb-24">
+        <div className="container justify-center max-w-5xl text-center section-4 ">
+          <div className="grid grid-cols-1 space-y-6 text-center md:space-y-0 md:g-8 md:grid-cols-3">
             <div className="justify-center p-6 text-center">
               <img
                 src="images/VerusID_Lookup_Icon.svg"
@@ -252,16 +146,16 @@ const Home = () => {
           </div> */}
         </div>
       </div>
-      <hr />
+
       <div className="container max-w-5xl">
         <div className="grid justify-center grid-cols-1 pt-12 m-4 mb-16 space-y-12 md:space-y-0 md:m-0 md:mb-16 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-32 section-5">
-          <div className="p-3 pb-12 bg-gray-100 rounded-lg md:p-16">
-            <h4 className="p-0 mb-16 text-2xl leading-relaxed text-left text-custom font-p">
+          <div className="p-3 pb-12 bg-center bg-cover rounded-lg bg-earning-bg md:p-16">
+            <h4 className="p-0 mb-16 text-2xl leading-relaxed text-left text-white font-p">
               Verus is a decentralized network where anyone in the world can
               participate to earn its currency VRSC.
             </h4>
             <Link href="/mining-and-staking">
-              <button className="flex-shrink-0 w-full px-12 py-4 text-base text-white border-0 rounded-full md:w-auto md:py-4 bg-bluebutton hover:bg-bluebutton-hover">
+              <button className="flex-shrink-0 w-full px-12 py-4 text-base bg-white border-0 rounded-full md:w-auto md:py-4 hover:bg-bluebutton hover:text-white">
                 Start Earning Now
               </button>
             </Link>

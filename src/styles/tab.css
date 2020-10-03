@@ -21,7 +21,7 @@
 }
 .tab.b input:checked + label {
   /* @apply border-navlink-active text-navlink-active; */
-  border-color: navlink-active;
+  border-color: #3165d4;
 }
 /* Icon */
 .tab label::after {

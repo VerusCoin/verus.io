@@ -87,6 +87,12 @@ module.exports = {
         xl: '2px 2px 4px 0 rgba(0,0,0,0.07), 4px 4px 28px 0 rgba(0,0,0,0.33)',
         menu: '2px 2px 11px 0 rgba(0,0,0,0.4)',
       },
+      backgroundImage: {
+        'earning-bg': "url('/images/backgrounds/earning-bg.svg')",
+        'features-bg': "url('/images/backgrounds/features-bg.svg')",
+        'footer-bg': "url('/images/backgrounds/footer-bg.svg')",
+        'light-bg': "url('/images/backgrounds/light-bg.svg')",
+      },
     },
     aspectRatio: {
       none: 0,
