@@ -64,7 +64,7 @@ function Navbar() {
               className="flex items-center"
               onClick={() => setNavbarOpen(false)}
             >
-              <Link href="/">
+              <Link href="/community">
                 <a className="px-4 py-2 text-sm no-underline md:text-base text-navlink hover:text-navlink-hover">
                   Community
                 </a>
@@ -140,6 +140,13 @@ function Navbar() {
                         Support Wiki
                       </a>
                     </li>
+                    <li className="block px-4 py-2 whitespace-no-wrap">
+                      <Link href="/get-vrsc">
+                        <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
+                          Get VRSC
+                        </a>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -196,6 +203,13 @@ function Navbar() {
                     >
                       Support Wiki
                     </a>
+                  </li>
+                  <li className="block px-4 py-2 whitespace-no-wrap">
+                    <Link href="/get-vrsc">
+                      <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
+                        Get VRSC
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
