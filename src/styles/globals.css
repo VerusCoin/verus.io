@@ -36,6 +36,10 @@ h6 {
   margin-right: calc(50% - 50vw);
 }
 
+header {
+  max-height: 100px;
+}
+
 hr {
   border-color: #ebebeb;
 }
@@ -172,3 +176,4 @@ a.external::after {
 }
 
 @import './markdown.css';
+@import './tab.css';
