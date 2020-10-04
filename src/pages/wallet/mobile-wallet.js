@@ -19,11 +19,23 @@ const MobileWallet = ({ latestAndroid }) => {
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
 
-        <div className="grid grid-cols-1 p-6 space-y-4 sm:grid-cols-3 md:col-span-3">
-          <div className="text-center sm:text-left sm:col-span-2">
-            <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
-              Verus for Mobile
+        <div className="p-6 md:col-span-3">
+          <div className="text-center sm:text-left">
+            <h2 className="p-0 m-0 text-4xl font-normal ">
+              Verus Mobile: multi-coin wallet.
             </h2>
+            <div className="items-center justify-center sm:col-span-3">
+              <a href="https://testflight.apple.com/join/ZS43lYcw">
+                <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
+                  Verus Mobile for iOS
+                </button>
+              </a>
+              <a href="https://github.com/VerusCoin/Verus-Mobile/releases">
+                <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
+                  Verus Mobile for Android
+                </button>
+              </a>
+            </div>
             <p className="mb-0 font-p">
               Latest version: {latestAndroid.name} <br />
               Latest release: {formatDateFromString(
@@ -45,18 +57,6 @@ const MobileWallet = ({ latestAndroid }) => {
               alt=""
             />
           </div>
-          <div className="items-center justify-center sm:col-span-3">
-            <a href="https://testflight.apple.com/join/ZS43lYcw">
-              <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
-                Verus Mobile for iOS
-              </button>
-            </a>
-            <a href="https://github.com/VerusCoin/Verus-Mobile/releases">
-              <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
-                Verus Mobile for Android
-              </button>
-            </a>
-          </div>
 
           <div className="pr-6 space-y-20 text-center sm:text-left sm:col-span-2">
             <div>
@@ -67,21 +67,8 @@ const MobileWallet = ({ latestAndroid }) => {
                 experiences.
               </p>
             </div>
-            <div>
-              <h3 className="mb-2 text-2xl font-normal">VerusID</h3>
-              <p className=" text-md font-p">
-                Create and manage self-sovereign identities on the blockchain.
-                With user-friendly names as addresses, and more.
-              </p>
-            </div>
           </div>
           <div className="p-6 space-y-2 text-sm bg-gray-200 rounded-lg sm:text-left">
-            <div className="space-y-0">
-              <p className=" font-p">System requirements:</p>
-              <p className=" text-navlink-hover font-p">
-                Operating Systems: Android, iOS
-              </p>
-            </div>
             <div>
               <p className=" font-p">Release Notes</p>
             </div>
@@ -95,9 +82,7 @@ const MobileWallet = ({ latestAndroid }) => {
             </div>
             <div>
               <p className="m-0 font-p">Supported Coins:</p>
-              <p className="m-0 font-p">
-                VRSC, BTC, KMD, LTC, ETH, .........
-              </p>
+              <p className="m-0 font-p">VRSC, BTC, KMD, LTC, ETH, .........</p>
             </div>
             <div>
               <p className="text-xs font-p">
