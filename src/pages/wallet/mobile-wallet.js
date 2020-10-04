@@ -7,6 +7,7 @@ import MarkdownModal from '../../components/MarkdownModal';
 import FooterMenu from '../../components/FooterMenu';
 
 const MobileWallet = ({ latestAndroid }) => {
+  const [showDownloads, setShowDownloads] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const _handleModal = (value) => {
     setModalShow(value);
@@ -24,17 +25,68 @@ const MobileWallet = ({ latestAndroid }) => {
             <h2 className="p-0 m-0 text-4xl font-normal ">
               Verus Mobile: multi-coin wallet.
             </h2>
-            <div className="items-center justify-center sm:col-span-3">
-              <a href="https://testflight.apple.com/join/ZS43lYcw">
-                <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
-                  Verus Mobile for iOS
-                </button>
-              </a>
-              <a href="https://github.com/VerusCoin/Verus-Mobile/releases">
-                <button className="px-12 py-4 mt-4 mr-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover">
-                  Verus Mobile for Android
-                </button>
-              </a>
+            <button
+              onClick={() => {
+                setShowDownloads(!showDownloads);
+              }}
+              className="inline-flex items-center px-12 py-5 mt-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
+            >
+              <span className="mr-1">Download Verus Mobile</span>
+              {showDownloads ? (
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  className="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-180 md:-mt-1 "
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              ) : (
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  className="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 "
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              )}
+            </button>
+            <div
+              className={
+                showDownloads
+                  ? 'absolute z-30 pt-0 -mt-3 dropdown-menu block'
+                  : 'hidden'
+              }
+            >
+              <ul
+                className={
+                  ' pt-1 pb-1 pl-4 pr-4  bg-white rounded-lg shadow-menu  md:z-50 '
+                }
+              >
+                <li className="block px-4 py-3 whitespace-no-wrap">
+                  <a
+                    href="https://testflight.apple.com/join/ZS43lYcw"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                  >
+                    <p className="pl-2 m-0">Verus Mobile for iOS</p>
+                  </a>
+                </li>
+                <li className="block px-4 py-3 whitespace-no-wrap">
+                  <a
+                    href="https://github.com/VerusCoin/Verus-Mobile/releases"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                  >
+                    <p className="pl-2 m-0">Verus Mobile for Android</p>
+                  </a>
+                </li>
+              </ul>
             </div>
             <p className="mb-0 font-p">
               Latest version: {latestAndroid.name} <br />
