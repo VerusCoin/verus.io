@@ -72,6 +72,7 @@ module.exports = {
         'theme-blue': '#3165D4',
         'theme-green': '#4AA658',
         'theme-black': '#1d1e22',
+        'theme-feature': '#92a3c7',
         custom: {
           default: '#575757',
         },

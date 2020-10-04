@@ -109,7 +109,7 @@ hr {
 }
 
 .menu-link.active {
-  @apply bg-menu-active;
+  @apply border-2 border-solid rounded bg-menu-active border-bluebutton;
 }
 .menu-link.active > a {
   @apply text-bluebutton;

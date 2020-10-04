@@ -8,7 +8,7 @@ const Footer = () => {
           className="p-2 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
         >
           <img
-            src="/images/Discord-Logo-White.png"
+            src="/images/logos/Discord-Logo-White.png"
             alt="Discord Logo"
             className="w-8 mb-4 "
           />
@@ -25,7 +25,7 @@ const Footer = () => {
           className="p-2 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
         >
           <img
-            src="/images/iconmonstr-telegram-1-240.png"
+            src="/images/logos/iconmonstr-telegram-1-240.png"
             alt="Telegram Logo"
             className="w-8 mb-4"
           />
@@ -39,13 +39,13 @@ const Footer = () => {
       <div className="flex flex-col justify-between mt-24 space-y-12 sm:space-x-12 sm:flex-row sm:space-y-0 ">
         <div className="">
           <img
-            src="/images/veruslogowhite.png"
+            src="/images/logos/veruslogowhite.png"
             width="100"
             srcSet="
-              /images/veruslogowhite.png  500w,
-              /images/veruslogowhite.png  800w,
-              /images/veruslogowhite.png 1080w,
-              /images/veruslogowhite.png 1185w
+              /images/logos/veruslogowhite-p-500.png  500w,
+              /images/logos/veruslogowhite-p-800.png  800w,
+              /images/logos/veruslogowhite-p-1080.png 1080w,
+              /images/logos/veruslogowhite.png 1185w
             "
             sizes="100px"
             alt=""

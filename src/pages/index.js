@@ -32,7 +32,7 @@ const Home = () => {
       <div
         className={'p-8 md:flex justify-center items-center ' + styles.landing}
       >
-        <div className="">
+        <div className="z-0">
           <div className="max-w-3xl text-left sm:pt-8 section-2">
             <h1 className="m-0 text-4xl ">
               We supply tools for individuals and organizations to build
@@ -57,7 +57,7 @@ const Home = () => {
               className="flex items-center mt-8 "
             >
               <img
-                src="/images/iconmonstr-video-13_1.svg"
+                src="/images/icons/play-icon.svg"
                 alt="Play Logo"
                 className="w-8 mr-3"
               />
@@ -88,7 +88,7 @@ const Home = () => {
           <div className="grid grid-cols-1 space-y-6 text-center md:space-y-0 md:g-8 md:grid-cols-3">
             <div className="justify-center p-6 text-center">
               <img
-                src="images/VerusID_Lookup_Icon.svg"
+                src="images/icons/VerusID_Lookup_Icon.svg"
                 height="70"
                 alt="VerusID Lookup Icon"
               />
@@ -104,7 +104,7 @@ const Home = () => {
             </div>
             <div className="justify-center p-6 text-center">
               <img
-                src="images/Blockchain_Explorer_Icon.svg"
+                src="images/icons/Blockchain_Explorer_Icon.svg"
                 height="70"
                 alt="Blockchain Explorer Icon"
               />
@@ -123,7 +123,11 @@ const Home = () => {
               </a>
             </div>
             <div className="justify-center p-6 text-center">
-              <img src="images/dummy.png" height="70" alt="" />
+              <img
+                src="images/icons/signature-icon.svg"
+                height="70"
+                alt="verus signature icon"
+              />
               <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
               <p className="leading-normal font-p">
                 Sign and verify documents and files for free

@@ -24,7 +24,7 @@ const MobileWallet = ({ latestAndroid }) => {
             <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
               Verus for Mobile
             </h2>
-            <p className="mb-0   font-p">
+            <p className="mb-0 font-p">
               Latest version: {latestAndroid.name} <br />
               Latest release: {formatDateFromString(
                 latestAndroid.published_at
@@ -38,9 +38,9 @@ const MobileWallet = ({ latestAndroid }) => {
           </div>
           <div className="left-0">
             <img
-              src="/images/VerusDesktopImg3.png"
+              src="/images/icons/VerusDesktopImg3.png"
               className="w-full"
-              srcSet="/images/VerusDesktopImg3-p-500.png 500w, /images/VerusDesktopImg3-p-800.png 800w, /images/VerusDesktopImg3-p-1080.png 1080w, /images/VerusDesktopImg3.png 1600w"
+              srcSet="/images/icons/VerusDesktopImg3-p-500.png 500w, /images/icons/VerusDesktopImg3-p-800.png 800w, /images/icons/VerusDesktopImg3-p-1080.png 1080w, /images/icons/VerusDesktopImg3.png 1600w"
               sizes="(max-width: 479px) 43vw, (max-width: 767px) 51vw, (max-width: 991px) 54vw, 56vw"
               alt=""
             />
@@ -61,7 +61,7 @@ const MobileWallet = ({ latestAndroid }) => {
           <div className="pr-6 space-y-20 text-center sm:text-left sm:col-span-2">
             <div>
               <h3 className="mb-2 text-2xl font-normal">Easy and Safe</h3>
-              <p className="  text-md font-p">
+              <p className=" text-md font-p">
                 Verus Mobile is created for beginners and exports in mind.
                 Anyone can get started, no matter previous cryptocurrency
                 experiences.
@@ -69,7 +69,7 @@ const MobileWallet = ({ latestAndroid }) => {
             </div>
             <div>
               <h3 className="mb-2 text-2xl font-normal">VerusID</h3>
-              <p className="  text-md font-p">
+              <p className=" text-md font-p">
                 Create and manage self-sovereign identities on the blockchain.
                 With user-friendly names as addresses, and more.
               </p>
@@ -77,13 +77,13 @@ const MobileWallet = ({ latestAndroid }) => {
           </div>
           <div className="p-6 space-y-2 text-sm bg-gray-200 rounded-lg sm:text-left">
             <div className="space-y-0">
-              <p className="  font-p">System requirements:</p>
-              <p className="  text-navlink-hover font-p">
+              <p className=" font-p">System requirements:</p>
+              <p className=" text-navlink-hover font-p">
                 Operating Systems: Android, iOS
               </p>
             </div>
             <div>
-              <p className="  font-p">Release Notes</p>
+              <p className=" font-p">Release Notes</p>
             </div>
             <div className="text-center">
               <button
@@ -94,13 +94,13 @@ const MobileWallet = ({ latestAndroid }) => {
               </button>
             </div>
             <div>
-              <p className="m-0   font-p">Supported Coins:</p>
-              <p className="m-0   font-p">
+              <p className="m-0 font-p">Supported Coins:</p>
+              <p className="m-0 font-p">
                 VRSC, BTC, KMD, LTC, ETH, .........
               </p>
             </div>
             <div>
-              <p className="text-xs   font-p">
+              <p className="text-xs font-p">
                 This is experimental and unfinished software. Use at your own
                 risk! No warranty for any kind of damage!Permission is hereby
                 granted, free of charge, to any person obtaining a copy of this
@@ -113,7 +113,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
               </p>
-              <p className="text-xs   font-p">
+              <p className="text-xs font-p">
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
                 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
                 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

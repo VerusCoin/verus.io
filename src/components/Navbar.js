@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const VerusLogo = '/images/Verus_Logo.svg';
+const VerusLogo = '/images/logos/Verus_Logo.svg';
 const HamburgerSVG = '/hamburger.inline.svg';
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <div className="w-full bg-white">
+    <div className="z-50 w-full bg-white">
       <div className="flex flex-col px-4 py-4 md:mx-8 lg:mx-16 md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div className="flex flex-row items-center justify-between flex-shrink-0 p-4 ">
           <Link href="/">
@@ -35,7 +35,7 @@ function Navbar() {
         </div>
         <nav
           className={
-            'flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row' +
+            'flex-col bg-white z-20 flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row' +
             (navbarOpen ? ' block' : ' hidden')
           }
         >

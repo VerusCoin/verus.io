@@ -19,7 +19,7 @@ const DesktopWallet = (props) => {
             <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
               Verus for Desktop
             </h2>
-            <p className="mt-8 mb-0   font-p">
+            <p className="mt-8 mb-0 font-p">
               Latest version: {name} <br />
               Latest release: {formatDateFromString(published_at)}{' '}
               {date_diff_indays(published_at) < 14 ? (
@@ -87,7 +87,10 @@ const DesktopWallet = (props) => {
                       href={winApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <img className="opacity-25" src="/images/windows.svg" />
+                      <img
+                        className="opacity-25"
+                        src="/images/icons/windows.svg"
+                      />
                       <p className="pl-2 m-0">Download Windows app</p>
                     </a>
                   </li>
@@ -98,7 +101,10 @@ const DesktopWallet = (props) => {
                       href={macApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <img className="opacity-25" src="/images/macos.svg" />
+                      <img
+                        className="opacity-25"
+                        src="/images/icons/macos.svg"
+                      />
                       <p className="pl-2 m-0">Download Mac app</p>
                     </a>
                   </li>
@@ -109,7 +115,10 @@ const DesktopWallet = (props) => {
                       href={linuxApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <img className="opacity-25" src="/images/linux.svg" />
+                      <img
+                        className="opacity-25"
+                        src="/images/icons/linux.svg"
+                      />
                       <p className="pl-2 m-0">Download Linux app</p>
                     </a>
                   </li>
@@ -128,22 +137,26 @@ const DesktopWallet = (props) => {
             </div>
           </div>
           <img
-            src="/images/VerusDesktopImg3.png"
+            src="/images/icons/VerusDesktopImg3.png"
             width="800px"
             className="w-full"
-            srcSet="/images/VerusDesktopImg3-p-500.png 500w, /images/VerusDesktopImg3-p-800.png 800w, /images/VerusDesktopImg3-p-1080.png 1080w, /images/VerusDesktopImg3.png 1600w"
+            srcSet="/images/icons/VerusDesktopImg3-p-500.png 500w, /images/icons/VerusDesktopImg3-p-800.png 800w, /images/icons/VerusDesktopImg3-p-1080.png 1080w, /images/icons/VerusDesktopImg3.png 1600w"
             sizes="(max-width: 479px) 43vw, (max-width: 767px) 51vw, (max-width: 991px) 54vw, 56vw"
             alt=""
           />
           <div className="max-w-4xl space-y-16 text-center sm:text-left sm:col-span-2">
             <div className="max-w-2xl space-y-8">
               <div className="flex flex-row space-x-8">
-                <img src="/images/safe-icon.svg" alt="Safe Icon" width="50" />
+                <img
+                  src="/images/icons/safe-icon.svg"
+                  alt="Safe Icon"
+                  width="50"
+                />
                 <div className="">
                   <h3 className="mb-2 text-2xl font-normal">
                     Easy and Safe & Always Secure
                   </h3>
-                  <p className="  text-md font-p">
+                  <p className=" text-md font-p">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
                     highest priority that's why all Verus software is
@@ -153,7 +166,7 @@ const DesktopWallet = (props) => {
               </div>
               <div className="flex flex-row space-x-8">
                 <img
-                  src="/images/verusid-icon.svg"
+                  src="/images/icons/verusid-icon.svg"
                   alt="VerusID Icon"
                   width="50"
                 />
@@ -161,7 +174,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-2 text-2xl font-normal">
                     VerusID Capabilities
                   </h3>
-                  <p className="  text-md font-p">
+                  <p className=" text-md font-p">
                     Create and manage self-sovereign identities on the
                     blockchain. Use VerusID as friendly crypto name, sign and
                     verify files and message and many more features.
@@ -171,19 +184,23 @@ const DesktopWallet = (props) => {
             </div>
             <div className="grid grid-cols-1 px-12 py-6 rounded gap-y-4 gap-x-12 sm:grid-cols-2 bg-gray-105">
               <div className="flex flex-row items-center flex-shrink-0 space-x-6">
-                <img src="/images/bitcoin-icon.svg" alt="BTC icon" width="25" />
+                <img
+                  src="/images/icons/bitcoin-icon.svg"
+                  alt="BTC icon"
+                  width="25"
+                />
                 <div className="ml-2">
                   <h4 className="mb-0 text-base font-semibold font-p">
                     Multi-Currency Wallet
                   </h4>
-                  <p className="mt-1 text-sm   leading-normal font-p">
+                  <p className="mt-1 text-sm leading-normal font-p">
                     Store hundreds of coins and tokens!
                   </p>
                 </div>
               </div>
               <div className="flex flex-row items-center flex-shrink-0 space-x-6">
                 <img
-                  src="/images/mining-staking-icon.svg"
+                  src="/images/icons/mining-staking-icon.svg"
                   alt="Mining and Staking icon"
                   width="25"
                 />
@@ -191,7 +208,7 @@ const DesktopWallet = (props) => {
                   <h4 className="mb-0 text-base font-semibold font-p">
                     Mining & Staking
                   </h4>
-                  <p className="mt-1 text-sm   leading-normal font-p">
+                  <p className="mt-1 text-sm leading-normal font-p">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
                   </p>
@@ -199,7 +216,7 @@ const DesktopWallet = (props) => {
               </div>
               <div className="flex flex-row items-center flex-shrink-0 space-x-6">
                 <img
-                  src="/images/converting-icon.svg"
+                  src="/images/icons/converting-icon.svg"
                   alt="Converting icon"
                   width="25"
                 />
@@ -208,7 +225,7 @@ const DesktopWallet = (props) => {
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h4>
-                  <p className="mt-1 text-sm   leading-normal font-p">
+                  <p className="mt-1 text-sm leading-normal font-p">
                     Convert from one currency to another through multi-reserve
                     currencies.
                   </p>
@@ -216,7 +233,7 @@ const DesktopWallet = (props) => {
               </div>
               <div className="flex flex-row items-center flex-shrink-0 space-x-6">
                 <img
-                  src="/images/currencies-icon.svg"
+                  src="/images/icons/currencies-icon.svg"
                   alt="Currencies icon"
                   width="25"
                 />
@@ -225,7 +242,7 @@ const DesktopWallet = (props) => {
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h4>
-                  <p className="mt-1 text-sm   leading-normal font-p">
+                  <p className="mt-1 text-sm leading-normal font-p">
                     Create multi-reserve and fractional currencies with a few
                     clicks.
                   </p>
@@ -234,14 +251,18 @@ const DesktopWallet = (props) => {
             </div>
             <div className="flex justify-center ">
               <div className="flex justify-center max-w-xl space-x-8">
-                <img src="/images/time-icon.svg" alt="time-icon" width="30" />
-                <p className="text-xl   font-p">
+                <img
+                  src="/images/icons/time-icon.svg"
+                  alt="time-icon"
+                  width="30"
+                />
+                <p className="text-xl font-p">
                   Jumpstart your native Verus wallet and save hours on
                   synchronizing.{' '}
                   <a
                     href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
                     target="_blank"
-                    className="  no-underline external font-p text-bluebutton"
+                    className="no-underline external font-p text-bluebutton"
                   >
                     Download Bootstrap
                   </a>
@@ -249,7 +270,7 @@ const DesktopWallet = (props) => {
               </div>
             </div>
             <div className="p-8 bg-gray-105">
-              <p className="text-sm   font-p">
+              <p className="text-sm font-p">
                 This is experimental and unfinished software. Use at your own
                 risk! No warranty for any kind of damage!Permission is hereby
                 granted, free of charge, to any person obtaining a copy of this
@@ -262,7 +283,7 @@ const DesktopWallet = (props) => {
                 notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
               </p>
-              <p className="text-sm   font-p">
+              <p className="text-sm font-p">
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
                 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
                 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
