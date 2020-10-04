@@ -9,33 +9,17 @@ const DesktopWallet = (props) => {
   const { name, published_at, linuxApp, winApp, macApp, armApp } = props;
 
   return (
-    <div className="container">
-      <div className="grid grid-cols-1 gap-6 mb-40 md:grid-cols-4">
+    <div className="container ">
+      <div className="grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
-        <div className="grid grid-cols-1 p-6 space-y-12 sm:grid-cols-2 md:col-span-3">
+        <div className="p-6 md:col-span-3">
           <div className="text-center sm:text-left">
-            <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
-              Verus for Desktop
+            <h2 className="p-0 m-0 text-4xl font-normal ">
+              Verus Desktop: multi-coin wallet packed with features.
             </h2>
-            <p className="mt-8 mb-0 font-p">
-              Latest version: {name} <br />
-              Latest release: {formatDateFromString(published_at)}{' '}
-              {date_diff_indays(published_at) < 14 ? (
-                <span className="px-6 py-1 mx-4 font-bold whitespace-no-wrap bg-red-300 rounded-full ">
-                  New Update
-                </span>
-              ) : null}
-              <br />
-              <a
-                href="https://github.com/VerusCoin/VerusCoin/releases/latest"
-                target="_blank"
-                className="no-underline external text-bluebutton"
-              >
-                Bootstrap Install Instruction
-              </a>
-            </p>
+
             <button
               onClick={() => {
                 setShowDownloads(!showDownloads);
@@ -69,6 +53,7 @@ const DesktopWallet = (props) => {
                 </svg>
               )}
             </button>
+
             <div
               className={
                 showDownloads
@@ -135,16 +120,26 @@ const DesktopWallet = (props) => {
                 )}
               </ul>
             </div>
+            <p className="font-p">
+              Latest version: {name} <br />
+              Latest release: {formatDateFromString(published_at)}{' '}
+              {date_diff_indays(published_at) < 14 ? (
+                <span className="px-6 py-1 mx-4 font-bold text-white whitespace-no-wrap bg-red-500 rounded-full ">
+                  New Update
+                </span>
+              ) : null}
+            </p>
           </div>
+
           <img
             src="/images/icons/VerusDesktopImg3.png"
-            width="800px"
-            className="w-full"
+            className="max-w-3xl"
             srcSet="/images/icons/VerusDesktopImg3-p-500.png 500w, /images/icons/VerusDesktopImg3-p-800.png 800w, /images/icons/VerusDesktopImg3-p-1080.png 1080w, /images/icons/VerusDesktopImg3.png 1600w"
             sizes="(max-width: 479px) 43vw, (max-width: 767px) 51vw, (max-width: 991px) 54vw, 56vw"
             alt=""
           />
-          <div className="max-w-4xl space-y-16 text-center sm:text-left sm:col-span-2">
+
+          <div className="max-w-4xl space-y-16 text-center sm:text-left">
             <div className="max-w-2xl space-y-8">
               <div className="flex flex-row space-x-8">
                 <img
@@ -182,7 +177,7 @@ const DesktopWallet = (props) => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 px-12 py-6 rounded gap-y-4 gap-x-12 sm:grid-cols-2 bg-gray-105">
+            <div className="grid items-baseline grid-cols-1 px-12 py-6 bg-center bg-cover rounded gap-y-4 gap-x-12 bg-features-bg sm:grid-cols-2">
               <div className="flex flex-row items-center flex-shrink-0 space-x-6">
                 <img
                   src="/images/icons/bitcoin-icon.svg"
@@ -190,10 +185,10 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-base font-semibold font-p">
+                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
                     Multi-Currency Wallet
                   </h4>
-                  <p className="mt-1 text-sm leading-normal font-p">
+                  <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
                     Store hundreds of coins and tokens!
                   </p>
                 </div>
@@ -205,10 +200,10 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-base font-semibold font-p">
+                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
                     Mining & Staking
                   </h4>
-                  <p className="mt-1 text-sm leading-normal font-p">
+                  <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
                   </p>
@@ -221,11 +216,11 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-base font-semibold font-p">
+                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h4>
-                  <p className="mt-1 text-sm leading-normal font-p">
+                  <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
                     Convert from one currency to another through multi-reserve
                     currencies.
                   </p>
@@ -238,11 +233,11 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-base font-semibold font-p">
+                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h4>
-                  <p className="mt-1 text-sm leading-normal font-p">
+                  <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
                     Create multi-reserve and fractional currencies with a few
                     clicks.
                   </p>
@@ -340,4 +335,15 @@ export async function getServerSideProps(context) {
   return {
     props: { name, published_at, linuxApp, winApp, macApp, armApp },
   };
+}
+
+{
+  /* <br />
+              <a
+                href="https://github.com/VerusCoin/VerusCoin/releases/latest"
+                target="_blank"
+                className="no-underline external text-bluebutton"
+              >
+                Bootstrap Install Instruction
+              </a> */
 }

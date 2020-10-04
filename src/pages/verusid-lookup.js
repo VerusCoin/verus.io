@@ -26,7 +26,7 @@ const VerusIdLookup = () => {
   };
 
   return (
-    <div className="container max-w-5xl section-2">
+    <div className="container max-w-5xl md:mb-32 section-2">
       <div className="grid justify-center grid-cols-2 mt-16 sm:grid-cols-4">
         <div className="col-span-2 text-center sm:col-start-2">
           <img

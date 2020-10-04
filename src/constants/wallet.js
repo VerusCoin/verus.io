@@ -20,13 +20,13 @@ export const walletLinks = [
   },
   {
     id: 4,
-    href: 'https://paperwallet.veruscoin.io/',
+    path: 'paper-wallet',
     name: 'Paper Wallet',
   },
   {
     id: 5,
     path: 'third-party',
-    name: 'Third Party',
+    name: 'Alternate Wallets',
   },
 ];
 

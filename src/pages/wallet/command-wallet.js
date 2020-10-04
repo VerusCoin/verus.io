@@ -35,7 +35,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
             <tbody>
               <tr>
                 <td className="flex items-center justify-between px-4 py-2 space-x-4">
-                  <img src="/images/icons/windows.svg" />
+                  <img src="/images/logos/windows.svg" />
                   <p className="text-xl">Windows</p>
                   {winApp && (
                     <a href={winApp} target="_blank">
@@ -46,7 +46,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               </tr>
               <tr className="bg-gray-100">
                 <td className="flex items-center justify-between px-4 py-2 space-x-4">
-                  <img src="/images/icons/macos.svg" />
+                  <img src="/images/logos/macos.svg" />
                   <p className="text-xl ">MacOS</p>
                   {macApp && (
                     <a href={macApp} target="_blank">
@@ -57,7 +57,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               </tr>
               <tr>
                 <td className="flex items-center justify-between px-4 py-2 space-x-4">
-                  <img src="/images/icons/linux.svg" />
+                  <img src="/images/logos/linux.svg" />
                   <p className="text-xl ">Linux</p>
                   {linuxApp && (
                     <a href={linuxApp} target="_blank">
