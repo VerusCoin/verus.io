@@ -118,9 +118,11 @@ function Navbar() {
                       </Link>
                     </li>
                     <li className="block px-4 py-2 whitespace-no-wrap">
-                      <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
-                        Verify Signatures
-                      </a>
+                      <Link href="/verify-signatures">
+                        <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
+                          Verify Signatures
+                        </a>
+                      </Link>
                     </li>
                     <li className="block px-4 py-2 whitespace-no-wrap">
                       <a
