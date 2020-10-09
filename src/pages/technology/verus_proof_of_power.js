@@ -5,11 +5,11 @@ import FooterMenu from '../../components/FooterMenu';
 const ProofOfPower = () => {
   return (
     <>
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-12 md:grid-cols-4 ">
         <div className="">
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
-        <div className="max-w-5xl p-6 mb-12 md:col-span-3">
+        <div className="max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal">
             Verus Proof of Power: the consensus mechanism for security.
           </h1>

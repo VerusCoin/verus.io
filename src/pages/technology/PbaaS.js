@@ -5,8 +5,8 @@ import FooterMenu from '../../components/FooterMenu';
 const Pbaas = () => {
   return (
     <>
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
-        <div className="">
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-12 md:grid-cols-4">
+        <div>
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">

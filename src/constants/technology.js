@@ -43,8 +43,8 @@ export const technologyLinks = [
   },
   {
     id: 8,
-    path: 'protocol_economy',
-    name: 'Protocol Economy',
+    path: 'service_economy',
+    name: 'Service Economy',
     description: 'Verus architecture provides rewards to miners and stakers.',
   },
 ];
