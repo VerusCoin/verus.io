@@ -11,10 +11,10 @@ const MiningSoftware = (props) => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal text-bluebutton">
-            Mining Software
-          </h1>
-          <p className="text-xl leading-normal font-p">
+          <h2 className="p-0 m-0 text-4xl font-normal">
+            Grab your mining software here.
+          </h2>
+          <p className="leading-normal font-p">
             Get one of the miners to get started. However you mine VRSC, you'll
             need a Verus Coin address, which you can create using the wallet in
             either Lite or Native mode. If you need any help, check our{' '}
@@ -32,7 +32,7 @@ const MiningSoftware = (props) => {
             <tbody>
               <tr>
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
-                  <img src="/images/logos/windows.svg" />
+                  <img src="/images/logos/windows.svg" className="opacity-25" />
                   <p className="text-xl">nheqminer</p>
                   <p className="">Windows, CLI, VerusHash 2.0-2.2</p>
                 </td>
@@ -46,7 +46,7 @@ const MiningSoftware = (props) => {
               </tr>
               <tr className="bg-gray-100">
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
-                  <img src="/images/logos/macos.svg" />
+                  <img src="/images/logos/macos.svg" className="opacity-25" />
                   <p className="text-xl ">nheqminer</p>
                   <p className="">macOS, CLI, VerusHash 2.0-2.2</p>
                 </td>
@@ -60,7 +60,7 @@ const MiningSoftware = (props) => {
               </tr>
               <tr>
                 <td className="flex flex-row items-center px-4 py-2 space-x-4">
-                  <img src="/images/logos/linux.svg" />
+                  <img src="/images/logos/linux.svg" className="opacity-25" />
                   <p className="text-xl ">nheqminer</p>
                   <p className="">Linux, CLI, VerusHash 2.0-2.2</p>
                 </td>
@@ -127,7 +127,7 @@ const MiningSoftware = (props) => {
             <tbody>
               <tr>
                 <td className="flex flex-row items-baseline px-4 py-2 space-x-4">
-                  <img src="/images/logos/linux.svg" />
+                  <img src="/images/logos/linux.svg" className="opacity-25" />
                   <p className="w-1/4 text-xl">Oink Docker</p>
                   <p className="w-3/4 ">
                     Dockers running nheqminer or ccminer. OS independent VM,
@@ -142,7 +142,7 @@ const MiningSoftware = (props) => {
               </tr>
               <tr className="bg-gray-100">
                 <td className="flex flex-row items-baseline px-4 py-2 space-x-4">
-                  <img src="/images/logos/linux.svg" />
+                  <img src="/images/logos/linux.svg" className="opacity-25" />
                   <p className="w-1/4 text-xl">0x03 Docker</p>
                   <p className="w-3/4 ">
                     Dockers running nheqminer or ccminer. OS independent VM,
