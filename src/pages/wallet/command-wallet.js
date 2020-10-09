@@ -7,9 +7,9 @@ import FooterMenu from '../../components/FooterMenu';
 
 const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
   return (
-    <div className="container">
-      <div className="grid grid-cols-1 gap-6 mb-40 md:grid-cols-4">
-        <div className="">
+    <>
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
+        <div >
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
 
@@ -108,7 +108,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
       </div>
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
-    </div>
+    </>
   );
 };
 

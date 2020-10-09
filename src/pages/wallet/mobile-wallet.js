@@ -14,9 +14,9 @@ const MobileWallet = ({ latestAndroid }) => {
   };
 
   return (
-    <div className="container max-w-5xl modalBody modal-active">
-      <div className="grid grid-cols-1 gap-6 mb-40 md:grid-cols-4">
-        <div className="">
+    <>
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 modalBody modal-active md:grid-cols-4">
+        <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
 
@@ -173,7 +173,7 @@ const MobileWallet = ({ latestAndroid }) => {
       />
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
-    </div>
+    </>
   );
 };
 

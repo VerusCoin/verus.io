@@ -9,8 +9,8 @@ const DesktopWallet = (props) => {
   const { name, published_at, linuxApp, winApp, macApp, armApp } = props;
 
   return (
-    <div className="container ">
-      <div className="grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
+    <>
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
@@ -294,7 +294,7 @@ const DesktopWallet = (props) => {
       </div>
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
-    </div>
+    </>
   );
 };
 

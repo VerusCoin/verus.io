@@ -13,8 +13,8 @@ const PaperWallet = () => {
   };
 
   return (
-    <div className="container max-w-5xl">
-      <div className="grid grid-cols-1 gap-6 mb-40 md:grid-cols-4">
+    <>
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
         <div className="">
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
@@ -32,7 +32,7 @@ const PaperWallet = () => {
       </div>
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
-    </div>
+    </>
   );
 };
 
