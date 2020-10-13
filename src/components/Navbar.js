@@ -35,7 +35,7 @@ function Navbar() {
         </div>
         <nav
           className={
-            'flex-col bg-white z-20 flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row' +
+            'flex-col bg-white md:bg-transparent z-20 flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row' +
             (navbarOpen ? ' block' : ' hidden')
           }
         >

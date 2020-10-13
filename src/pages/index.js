@@ -34,7 +34,7 @@ const Home = () => {
       >
         <div className="z-0">
           <div className="max-w-3xl text-left sm:pt-8 section-2">
-            <h1 className="m-0 text-4xl ">
+            <h1 className="m-0 text-2xl md:text-4xl ">
               We supply tools for individuals and organizations to build
               equitable frameworks for social and economic change.
             </h1>
@@ -52,16 +52,16 @@ const Home = () => {
               </Link>
             </div>
             <a
-              href="https://www.facebook.com/VerusCoin"
+              href=" https://www.youtube.com/watch?v=eOn9XpjkuCA"
               target="_blank"
-              className="flex items-center mt-8 "
+              className="flex items-center mt-8"
             >
               <img
                 src="/images/icons/play-icon.svg"
                 alt="Play Logo"
                 className="w-8 mr-3"
               />
-              <p className="text-lg text-black underline font-foot">
+              <p className="text-lg text-black underline font-foot external">
                 Watch introductory video
               </p>
             </a>

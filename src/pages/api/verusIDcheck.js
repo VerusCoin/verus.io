@@ -1,5 +1,8 @@
+// In: /getid/?id=<identity>
+// out: Identity information
+
 const fetchID = async (query) => {
-  let url = `https://verusverify.pleiades.dev/getid/?id=${query.id}`;
+  let url = `https://verify.verus.tools/getid/?id=${query.id}`;
   try {
     let result = await fetch(url);
     let data = await result.json();
