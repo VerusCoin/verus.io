@@ -109,7 +109,7 @@ hr {
 }
 
 .menu-link.active {
-  @apply border-2 border-solid rounded bg-menu-active border-bluebutton;
+  @apply border border-solid rounded bg-menu-active border-bluebutton;
 }
 .menu-link.active > a {
   @apply text-bluebutton;
@@ -169,6 +169,7 @@ a {
   @apply text-bluebutton;
 }
 
+p.external::after,
 a.external::after {
   content: '↗';
   display: inline;
