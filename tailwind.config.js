@@ -16,6 +16,7 @@ module.exports = {
       body: ['geomanistbook', 'sans-serif'],
       p: ['Source Sans Pro', 'sans-serif'],
       foot: ['geomanistregular', 'sans-serif'],
+      nav: ['geomanistregular', 'sans-serif'],
     },
     fontSize: {
       xs: '.75rem',

@@ -31,7 +31,7 @@ const Menu = ({ pathList, href }) => {
       </button>
       <nav
         className={
-          'grid grid-cols-1 pb-4 md:pb-0 md:block' +
+          'grid grid-cols-1 font-nav pb-4 md:pb-0 md:block' +
           (showMenu ? ' block' : ' hidden')
         }
       >
