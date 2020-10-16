@@ -1,3 +1,6 @@
+
+import SigTabWindow from '../components/sigTab'
+
 const VerifySignatures = () => {
   return (
     <div className="container max-w-5xl mt-8 md:mb-32">
@@ -11,9 +14,10 @@ const VerifySignatures = () => {
             use tool.
           </p>
         </div>
-        <div className="my-16 bg-gray-500">
-          <p>Tool Here</p>
+        <div>
+          <SigTabWindow />
         </div>
+       
         <div>
           <h3 className="text-2xl font-normal">
             Want to sign files, messages or hashes?
@@ -29,3 +33,4 @@ const VerifySignatures = () => {
 };
 
 export default VerifySignatures;
+
