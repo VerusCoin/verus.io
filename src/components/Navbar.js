@@ -178,9 +178,11 @@ function Navbar() {
                     className="flex items-center"
                     onClick={() => setNavbarOpen(false)}
                   >
-                    <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
-                      Signatures
-                    </a>
+                    <Link href="/verify-signatures">
+                      <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
+                        Verify Signatures
+                      </a>
+                    </Link>
                   </li>
                   <li
                     className="flex items-center"
