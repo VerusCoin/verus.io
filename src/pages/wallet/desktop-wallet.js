@@ -15,7 +15,7 @@ const DesktopWallet = (props) => {
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
         <div className="p-6 md:col-span-3">
-          <div className="text-center sm:text-left">
+          <div className="mb-4 text-center sm:text-left">
             <h2 className="p-0 m-0 text-4xl font-normal ">
               Verus Desktop: multi-coin wallet packed with features.
             </h2>
@@ -74,7 +74,7 @@ const DesktopWallet = (props) => {
                     >
                       <img
                         className="opacity-25"
-                        src="/images/icons/windows.svg"
+                        src="/images/logos/windows.svg"
                       />
                       <p className="pl-2 m-0">Download Windows app</p>
                     </a>
@@ -88,7 +88,7 @@ const DesktopWallet = (props) => {
                     >
                       <img
                         className="opacity-25"
-                        src="/images/icons/macos.svg"
+                        src="/images/logos/macos.svg"
                       />
                       <p className="pl-2 m-0">Download Mac app</p>
                     </a>
@@ -102,7 +102,7 @@ const DesktopWallet = (props) => {
                     >
                       <img
                         className="opacity-25"
-                        src="/images/icons/linux.svg"
+                        src="/images/logos/linux.svg"
                       />
                       <p className="pl-2 m-0">Download Linux app</p>
                     </a>
@@ -120,7 +120,7 @@ const DesktopWallet = (props) => {
                 )}
               </ul>
             </div>
-            <p className="font-p">
+            <p>
               Latest version: {name} <br />
               Latest release: {formatDateFromString(published_at)}{' '}
               {date_diff_indays(published_at) < 14 ? (
@@ -151,7 +151,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-2 text-2xl font-normal">
                     Easy and Safe & Always Secure
                   </h3>
-                  <p className=" text-md font-p">
+                  <p className=" text-md">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
                     highest priority that's why all Verus software is
@@ -169,7 +169,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-2 text-2xl font-normal">
                     VerusID Capabilities
                   </h3>
-                  <p className=" text-md font-p">
+                  <p className=" text-md">
                     Create and manage self-sovereign identities on the
                     blockchain. Use VerusID as friendly crypto name, sign and
                     verify files and message and many more features.
@@ -188,7 +188,7 @@ const DesktopWallet = (props) => {
                   <h4 className="mb-0 text-lg font-semibold text-white font-p">
                     Multi-Currency Wallet
                   </h4>
-                  <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                  <p className="mt-1 text-sm text-theme-feature ">
                     Store hundreds of coins and tokens!
                   </p>
                 </div>
@@ -203,7 +203,7 @@ const DesktopWallet = (props) => {
                   <h4 className="mb-0 text-lg font-semibold text-white font-p">
                     Mining & Staking
                   </h4>
-                  <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                  <p className="mt-1 text-sm text-theme-feature ">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
                   </p>
@@ -216,11 +216,11 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
+                  <h4 className="mb-0 text-lg font-semibold text-white font-p ">
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h4>
-                  <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                  <p className="mt-1 text-sm text-theme-feature ">
                     Convert from one currency to another through multi-reserve
                     currencies.
                   </p>
@@ -237,7 +237,7 @@ const DesktopWallet = (props) => {
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h4>
-                  <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                  <p className="mt-1 text-sm text-theme-feature ">
                     Create multi-reserve and fractional currencies with a few
                     clicks.
                   </p>
@@ -251,7 +251,7 @@ const DesktopWallet = (props) => {
                   alt="time-icon"
                   width="30"
                 />
-                <p className="text-xl font-p">
+                <p className="text-xl ">
                   Jumpstart your native Verus wallet and save hours on
                   synchronizing.{' '}
                   <a
@@ -265,7 +265,7 @@ const DesktopWallet = (props) => {
               </div>
             </div>
             <div className="p-8 bg-gray-105">
-              <p className="text-sm font-p">
+              <p className="text-sm ">
                 This is experimental and unfinished software. Use at your own
                 risk! No warranty for any kind of damage!Permission is hereby
                 granted, free of charge, to any person obtaining a copy of this
@@ -278,7 +278,7 @@ const DesktopWallet = (props) => {
                 notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
               </p>
-              <p className="text-sm font-p">
+              <p className="text-sm ">
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
                 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
                 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

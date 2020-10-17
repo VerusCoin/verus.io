@@ -9,16 +9,16 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
   return (
     <>
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
-        <div >
+        <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
 
         <div className="grid grid-cols-1 p-6 space-y-12 md:col-span-3">
           <div className="text-center sm:text-left">
-            <h2 className="p-0 m-0 text-4xl font-normal text-bluebutton">
+            <h2 className="p-0 m-0 text-4xl font-normal ">
               Verus Command Line (CLI)
             </h2>
-            <p className="mb-0 font-p">
+            <p className="my-8 ">
               Save hours on synchronising, jumpstart your native wallet using{' '}
               <a
                 href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
@@ -31,10 +31,13 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
             </p>
           </div>
 
-          <table className="w-2/3 border-collapse font-p">
+          <table
+            className="w-2/3 border-collapse font-p"
+            style={{ marginTop: '0' }}
+          >
             <tbody>
               <tr>
-                <td className="flex items-center justify-between px-4 py-2 space-x-4">
+                <td className="flex items-center justify-between p-4 space-x-4">
                   <img src="/images/logos/windows.svg" />
                   <p className="text-xl">Windows</p>
                   {winApp && (
@@ -45,7 +48,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
                 </td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="flex items-center justify-between px-4 py-2 space-x-4">
+                <td className="flex items-center justify-between p-4 space-x-4">
                   <img src="/images/logos/macos.svg" />
                   <p className="text-xl ">MacOS</p>
                   {macApp && (
@@ -56,7 +59,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
                 </td>
               </tr>
               <tr>
-                <td className="flex items-center justify-between px-4 py-2 space-x-4">
+                <td className="flex items-center justify-between p-4 space-x-4">
                   <img src="/images/logos/linux.svg" />
                   <p className="text-xl ">Linux</p>
                   {linuxApp && (
@@ -67,7 +70,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
                 </td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="flex items-center justify-between px-4 py-2 space-x-4">
+                <td className="flex items-center justify-between p-4 space-x-4">
                   <p className="text-xl ">ARM</p>
                   {armApp && (
                     <a href={armApp} target="_blank">

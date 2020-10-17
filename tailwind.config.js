@@ -2,8 +2,10 @@ module.exports = {
   future: {
     purgeLayersByDefault: true,
     removeDeprecatedGapUtilities: true,
+    removeDeprecatedGapUtilities: true,
+    defaultLineHeights: true,
+    standardFontWeights: true,
   },
-  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
       sm: '640px',
@@ -19,16 +21,16 @@ module.exports = {
       nav: ['geomanistregular', 'sans-serif'],
     },
     fontSize: {
-      xs: '.75rem',
-      sm: '.9375rem',
-      custom2: '19px',
-      base: '1.0625rem',
-      lg: '1.1875rem',
-      xl: '1.3125rem',
-      '2xl': '1.5625rem',
-      '3xl': '1.875rem',
-      '4xl': '2.375rem',
-      '5xl': '3.1875rem',
+      xs: ['.75rem', { lineHeight: '1rem' }],
+      sm: ['.9375rem', { lineHeight: '1.25rem' }],
+      custom2: ['19px', { lineHeight: '1.25rem' }],
+      base: ['1.0625rem', { lineHeight: '1.5rem' }],
+      lg: ['1.1875rem', { lineHeight: '1.75rem' }],
+      xl: ['1.3125rem', { lineHeight: '1.75rem' }],
+      '2xl': ['1.5625rem', { lineHeight: '2rem' }],
+      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+      '4xl': ['2.375rem', { lineHeight: '2.5rem' }],
+      '5xl': ['3.1875rem', { lineHeight: '1rem' }],
     },
     container: {
       center: true,
@@ -113,5 +115,5 @@ module.exports = {
     require('tailwindcss-responsive-embed'),
     require('tailwindcss-aspect-ratio'),
   ],
-  purge: ['./components/**/*.js', './pages/**/*.js'],
+  purge: false,
 };

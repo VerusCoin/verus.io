@@ -86,57 +86,61 @@ const Home = () => {
       <div className="pt-12 section-3 sm:pt-24 md:pb-24">
         <div className="container justify-center max-w-5xl text-center section-4 ">
           <div className="grid grid-cols-1 space-y-6 text-center md:space-y-0 md:g-8 md:grid-cols-3">
-            <div className="justify-center p-6 text-center">
+            <div className="flex flex-col justify-center p-6 text-center">
               <img
                 src="images/icons/VerusID_Lookup_Icon.svg"
-                height="70"
                 alt="VerusID Lookup Icon"
+                className="h-32"
               />
               <h1 className="mt-8 text-2xl font-normal">VerusID Lookup</h1>
-              <p className="leading-normal font-p">
+              <p className="my-3">
                 Search for identities registered on the Verus blockchain
               </p>
-              <Link href="/verusid-lookup">
-                <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                  Search for identities
-                </button>
-              </Link>
+              <div>
+                <Link href="/verusid-lookup">
+                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                    Search for identities
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className="justify-center p-6 text-center">
+            <div className="flex flex-col justify-center p-6 text-center">
               <img
                 src="images/icons/Blockchain_Explorer_Icon.svg"
-                height="70"
+                className="h-32"
                 alt="Blockchain Explorer Icon"
               />
               <h1 className="mt-8 text-2xl font-normal">Block Explorer</h1>
-              <p className="leading-normal font-p">
-                Search through addresses and transactions
-              </p>
-              <a
-                href="https://explorer.veruscoin.io/"
-                target="_blank"
-                className="no-underline"
-              >
-                <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                  See explorer
-                </button>
-              </a>
+              <p className="my-3">Search through addresses and transactions</p>
+              <div>
+                <a
+                  href="https://explorer.veruscoin.io/"
+                  target="_blank"
+                  className="no-underline"
+                >
+                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                    See explorer
+                  </button>
+                </a>
+              </div>
             </div>
-            <div className="justify-center p-6 text-center">
+            <div className="flex flex-col justify-center p-6 text-center">
               <img
                 src="images/icons/signature-icon.svg"
-                height="70"
+                className="h-32"
                 alt="verus signature icon"
               />
               <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
-              <p className="leading-normal font-p">
+              <p className="my-3">
                 Sign and verify documents and files for free
               </p>
-              <Link href="/">
-                <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                  Verify documents
-                </button>
-              </Link>
+              <div>
+                <Link href="/">
+                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                    Verify documents
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -152,7 +156,7 @@ const Home = () => {
       </div>
 
       <div className="container max-w-5xl">
-        <div className="grid justify-center grid-cols-1 pt-12 m-4 mb-16 space-y-12 md:space-y-0 md:m-0 md:mb-16 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-32 section-5">
+        <div className="grid justify-center grid-cols-1 pt-12 m-4 mb-16 space-y-12 md:space-y-0 md:m-0 md:mb-32 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-32 section-5">
           <div className="p-3 pb-12 bg-center bg-cover rounded-lg bg-earning-bg md:p-16">
             <h4 className="p-0 mb-16 text-2xl leading-relaxed text-left text-white font-p">
               Verus is a decentralized network where anyone in the world can
@@ -166,21 +170,21 @@ const Home = () => {
           </div>
           <div className="pl-3 pr-3 md:pl-12 md:pr-12">
             <h3 className="mb-1 text-2xl font-normal">Worldwide Network</h3>
-            <p className="mt-2 mr-0 leading-normal font-p">
+            <p className="mt-2 mr-0">
               Anyone with a modern CPU can start mining VRSC immediately,
               creating a naturally decentralized miner ecosystem.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Thriving Economy
             </h3>
-            <p className="mt-2 mr-0 leading-normal font-p">
+            <p className="mt-2 mr-0">
               Verus has a robust and thriving protocol economy with
               opportunities for everyone to earn through mining and staking.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Permissionless System
             </h3>
-            <p className="mt-2 mr-0 leading-normal font-p">
+            <p className="mt-2 mr-0">
               Verus is open-source, borderless and permissionless. It
               doesn&#x27;t matter who you are or where you live. Anyone can
               participate.
@@ -190,7 +194,7 @@ const Home = () => {
       </div>
       <hr />
       <div className="container max-w-5xl p-0 pt-12 pb-12 text-center md:pt-32 md:pb-32">
-        <h3 className="text-2xl font-normal">Latest Articles</h3>
+        <h3 className="mb-3 text-2xl font-normal">Latest Articles</h3>
         <div className="grid items-center justify-center grid-cols-1 p-3 space-y-4 text-left text-current md:space-y-0 md:p-0 md:grid-cols-3 md:gap-6">
           {error && <div className="col-span-3 text-center">Failed Load</div>}
           {!data && <div className="col-span-3 text-center">Loading...</div>}
@@ -199,7 +203,7 @@ const Home = () => {
               return (
                 <div key={article.title}>
                   <img
-                    className="w-full h-auto"
+                    className="w-full"
                     src={article.thumbnailref}
                     alt="Article Header Image"
                   />

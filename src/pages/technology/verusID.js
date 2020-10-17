@@ -15,7 +15,7 @@ const Verusid = () => {
               VerusID: the first decentralized and self-sovereign identity of
               its kind.
             </h1>
-            <p className="mt-8 leading-relaxed font-p">
+            <p className="mt-8 leading-relaxed ">
               The first self-sovereign, decentralized identities on the
               blockchain of its kind. A VerusID is a blockchain address that can
               hold funds and stake its $VRSC. Future proof and packed with
@@ -50,7 +50,7 @@ const Verusid = () => {
                 <h3 className="mb-0 font-semibold text-white font-p">
                   Friendly Name
                 </h3>
-                <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                <p className="mt-1 text-sm text-theme-feature ">
                   Always remember your crypto address.
                 </p>
               </div>
@@ -66,7 +66,7 @@ const Verusid = () => {
                 <h3 className="mb-0 font-semibold text-white font-p">
                   Verus Vault
                 </h3>
-                <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                <p className="mt-1 text-sm text-theme-feature ">
                   Set (time) locks for theft proof staking and workflow.
                 </p>
               </div>
@@ -82,7 +82,7 @@ const Verusid = () => {
                 <h3 className="mb-0 font-semibold text-white font-p">
                   Revoking
                 </h3>
-                <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                <p className="mt-1 text-sm text-theme-feature ">
                   Revoke spending abilities on your identity.
                 </p>
               </div>
@@ -98,7 +98,7 @@ const Verusid = () => {
                 <h3 className="mb-0 font-semibold text-white font-p">
                   Recovering
                 </h3>
-                <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                <p className="mt-1 text-sm text-theme-feature ">
                   Recover funds and UTXOs to an assigned identity.
                 </p>
               </div>
@@ -114,7 +114,7 @@ const Verusid = () => {
                 <h3 className="mb-0 font-semibold text-white font-p">
                   Signatures
                 </h3>
-                <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                <p className="mt-1 text-sm text-theme-feature ">
                   Create unforgeable signatures for files and messages.
                 </p>
               </div>
@@ -130,7 +130,7 @@ const Verusid = () => {
                 <h3 className="mb-0 font-semibold text-white font-p">
                   Multisig
                 </h3>
-                <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                <p className="mt-1 text-sm text-theme-feature ">
                   Multiple identities can control one identity.
                 </p>
               </div>
@@ -146,7 +146,7 @@ const Verusid = () => {
                 <h3 className="mb-0 font-semibold text-white font-p">
                   Privacy
                 </h3>
-                <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                <p className="mt-1 text-sm text-theme-feature ">
                   Attach a private address (Sapling).
                 </p>
               </div>
@@ -162,7 +162,7 @@ const Verusid = () => {
                 <h3 className="mb-0 font-semibold text-white font-p">
                   Messaging
                 </h3>
-                <p className="mt-1 text-sm leading-normal text-theme-feature font-p">
+                <p className="mt-1 text-sm text-theme-feature ">
                   Send and receive private messages.
                 </p>
               </div>
@@ -172,20 +172,20 @@ const Verusid = () => {
             <h2 className="m-0 text-2xl font-normal ">
               Always remember your crypto address
             </h2>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p ">
               Each VerusID has an easy to remember name, chosen by you. No more
               hassle with copying long complicated addresses or being scared of
               making a typing error.
             </p>
 
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p ">
               All characters from all character sets except{' '}
               <span className="px-1 py-1 text-span-code">{`\/:*?"<>|@`}</span>.
               are available to create your own VerusID, with a maximum of 64
               characters. All identities end with the{' '}
               <span className="px-1 py-1 text-span-code">@</span> sign.
             </p>
-            <p className="leading-relaxed text-p font-p">
+            <p className="leading-relaxed text-p ">
               The Verus Foundation identity is{' '}
               <span className="px-1 py-1 text-span-code">
                 Verus Coin Foundation@
@@ -194,18 +194,18 @@ const Verusid = () => {
           </div>
           <div className="mb-16">
             <h2 className="mt-16 text-2xl font-normal">Verus Vault</h2>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p">
               Verus Vault is a lock mechanism to create virtually theft proof
               security for your funds and workflow. When a VerusID is locked, it
               can't spend, but it can still receive, hold, and stake funds. It
               can also still be used for signing.
             </p>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p">
               A VerusID can be locked indefinitely. Or locked and will unlock
               only after: an unlock has been requested, and a predetermined
               amount of time elapses after the request. Or unlocked.
             </p>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p">
               Even when an identity is locked, its spending power can still be
               revoked, and thus recovered. More about revoking and recovering in
               the next part.
@@ -215,19 +215,19 @@ const Verusid = () => {
             <h2 className="mt-16 text-2xl font-normal">
               Revoking and Recovering
             </h2>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p">
               Each VerusID can be revoked and recovered by another identity that
               you authorized. The revokeID and recoverID are specified by
               yourself.
             </p>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p">
               Verus believes that this functionality is critical for any system
               of self-sovereign identities; users need a path to recover their
               identities if their private keys are lost or stolen, otherwise
               there is just too much risk in a self-sovereign system where an
               identity can become inaccessible with a single mistake.
             </p>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p">
               It’s now possible for the first time ever that you can recover
               from private key loss or theft in a completely decentralized,
               self-sovereign way.
@@ -235,12 +235,12 @@ const Verusid = () => {
           </div>
           <div className="mb-16">
             <h2 className="mt-16 text-2xl font-normal">Signatures</h2>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p">
               Verus enables free verifiable digital signatures for all through
               the VerusID protocol. Sign and verify data, files and messages
               with your own VerusID.
             </p>
-            <p className="leading-relaxed text-p font-p">
+            <p className="my-8 leading-relaxed text-p">
               A great example is the Verus Coin Foundation signing the Verus
               Desktop binaries. Users can verify if the software is legit and
               not manipulated by bad actors.

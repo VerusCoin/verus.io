@@ -33,19 +33,19 @@ const VerifyResult = ({
       </p>
       {fileName && (
         <>
-          <p className="w-full mb-2 font-semibold font-p">File:</p>
-          <p className="w-full m-0 break-all font-p">{fileName}</p>
+          <p className="w-full mb-2 font-semibold">File:</p>
+          <p className="w-full m-0 break-all">{fileName}</p>
         </>
       )}
-      <p className="w-full mb-2 font-semibold font-p">{title}</p>
-      <p className="w-full m-0 break-all font-p">{children}</p>
-      <p className="w-full mb-2 font-semibold font-p">Identity/Address:</p>
-      <p className="w-full m-0 break-all font-p">{verusSignature.Identity}</p>
-      <p className="w-full mb-2 font-semibold font-p">Signature:</p>
-      <p className="w-full m-0 break-all font-p">{verusSignature.Signature}</p>
+      <p className="w-full mb-2 font-semibold">{title}</p>
+      <p className="w-full m-0 break-all">{children}</p>
+      <p className="w-full mb-2 font-semibold">Identity/Address:</p>
+      <p className="w-full m-0 break-all">{verusSignature.Identity}</p>
+      <p className="w-full mb-2 font-semibold">Signature:</p>
+      <p className="w-full m-0 break-all">{verusSignature.Signature}</p>
       <button
         onClick={resetCall}
-        className="px-12 py-5 mt-8 text-sm bg-white border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton"
+        className="px-12 py-5 mt-8 text-sm bg-white border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton"
       >
         Verify Another Signature
       </button>
@@ -98,7 +98,7 @@ const MessageContent = () => {
           >
             <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md">
               <label
-                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white font-p "
+                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white "
                 style={{ marginTop: '-1.45rem', width: 'fit-content' }}
                 htmlFor="Message"
               >
@@ -115,7 +115,7 @@ const MessageContent = () => {
 
             <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md">
               <label
-                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white font-p "
+                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white "
                 style={{ marginTop: '-1.45rem', width: 'fit-content' }}
                 htmlFor="Identity"
               >
@@ -132,7 +132,7 @@ const MessageContent = () => {
 
             <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md">
               <label
-                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white font-p "
+                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white "
                 style={{ marginTop: '-1.45rem', width: 'fit-content' }}
                 htmlFor="Signature"
               >
@@ -148,7 +148,7 @@ const MessageContent = () => {
             </div>
 
             <button
-              className="w-full px-12 py-5 text-sm bg-transparent border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
+              className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
               type="submit"
             >
               Submit
@@ -224,7 +224,7 @@ const FileContent = () => {
               <InputField name="Signature" label="Signature" />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
                 type="submit"
               >
                 Submit
@@ -292,7 +292,7 @@ const HashContent = () => {
           >
             <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md">
               <label
-                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white font-p "
+                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white "
                 style={{ marginTop: '-1.45rem', width: 'fit-content' }}
                 htmlFor="Hash"
               >
@@ -309,7 +309,7 @@ const HashContent = () => {
 
             <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md">
               <label
-                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white font-p "
+                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white "
                 style={{ marginTop: '-1.45rem', width: 'fit-content' }}
                 htmlFor="Identity"
               >
@@ -326,7 +326,7 @@ const HashContent = () => {
 
             <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md">
               <label
-                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white font-p "
+                className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white "
                 style={{ marginTop: '-1.45rem', width: 'fit-content' }}
                 htmlFor="Signature"
               >
@@ -342,7 +342,7 @@ const HashContent = () => {
             </div>
 
             <button
-              className="w-full px-12 py-5 text-sm bg-transparent border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
+              className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
               type="submit"
             >
               Submit
@@ -431,7 +431,7 @@ const AllContent = () => {
                 style={{ width: 'fit-content' }}
               >
                 <label
-                  className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white font-p "
+                  className="block px-2 mb-2 ml-2 text-sm text-gray-700 bg-white "
                   style={{ marginTop: '-1.45rem', width: 'fit-content' }}
                   htmlFor="verusSignatureType"
                 >
@@ -463,7 +463,7 @@ const AllContent = () => {
               <InputField name="Signature" label="Signature" />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
                 type="submit"
               >
                 Submit
@@ -488,27 +488,21 @@ const AllContent = () => {
               'Processing...'
             )}
           </p>
-          <p className="font-p">
-            Data Type: {verusSignature.verusSignatureType}
-          </p>
+          <p>Data Type: {verusSignature.verusSignatureType}</p>
           {verusSignature.Message && (
-            <p className="w-full font-p">
-              Message/Text: {verusSignature.Message}
-            </p>
+            <p className="w-full">Message/Text: {verusSignature.Message}</p>
           )}
           {verusSignature.FileName && (
-            <p className="w-full font-p">File: {verusSignature.FileName}</p>
+            <p className="w-full">File: {verusSignature.FileName}</p>
           )}
           {verusSignature.Hash && (
-            <p className="w-full font-p">Hash: {verusSignature.Hash}</p>
+            <p className="w-full">Hash: {verusSignature.Hash}</p>
           )}
-          <p className="w-full font-p">
-            Identity/Address: {verusSignature.Identity}
-          </p>
-          <p className="w-full font-p">Signature: {verusSignature.Signature}</p>
+          <p className="w-full">Identity/Address: {verusSignature.Identity}</p>
+          <p className="w-full">Signature: {verusSignature.Signature}</p>
           <button
             onClick={() => _handleReset()}
-            className="px-12 py-5 mt-8 text-sm bg-white border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton"
+            className="px-12 py-5 mt-8 text-sm bg-white border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton"
           >
             Verify Another Signature
           </button>

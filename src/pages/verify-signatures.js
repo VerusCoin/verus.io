@@ -1,5 +1,4 @@
-
-import SigTabWindow from '../components/sigTab'
+import SigTabWindow from '../components/sigTab';
 
 const VerifySignatures = () => {
   return (
@@ -9,20 +8,20 @@ const VerifySignatures = () => {
           <h2 className="p-0 m-0 text-4xl font-normal ">
             Verify Verus signatures.
           </h2>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             Verify signatures from messages, files or hashes with our easy to
             use tool.
           </p>
         </div>
-        <div>
+        <div className="mb-12">
           <SigTabWindow />
         </div>
-       
+
         <div>
           <h3 className="text-2xl font-normal">
             Want to sign files, messages or hashes?
           </h3>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             <a href="#">Download Verus Desktop (Link?)</a>, register your
             VerusID and start signing!
           </p>
@@ -33,4 +32,3 @@ const VerifySignatures = () => {
 };
 
 export default VerifySignatures;
-

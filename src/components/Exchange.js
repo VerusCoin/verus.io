@@ -10,8 +10,8 @@ const Exchange = ({ exchange }) => {
       />
 
       <h3 className="m-0 font-normal md:text-2xl">{title}</h3>
-      <p className="m-0 text-sm text-gray-600 font-p">{trade}</p>
-      <p className="m-0 text-sm text-gray-600 font-p">{kyc}</p>
+      <p className="m-0 text-sm text-gray-600 ">{trade}</p>
+      <p className="m-0 text-sm text-gray-600 ">{kyc}</p>
       <a
         href={URI}
         target="_blank"

@@ -11,7 +11,7 @@ const Privacy = () => {
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal">Privacy</h1>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             Information vies for our attention in today’s digital world, trying
             to convince us of what product to use or which politician to
             believe. We are watched and measured as we react to that
@@ -22,7 +22,7 @@ const Privacy = () => {
             about and influencing each of us individually to open our wallets or
             add our voices to another’s agenda.
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             No single person can digest and fully understand – let alone verify
             – a fraction of the information thrust at us in daily life. We are
             told to give up on the notion of privacy and to trust networks of
@@ -35,7 +35,7 @@ const Privacy = () => {
             society, first – and then allowed to support businesses, in that
             context?
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             We believe it is possible to support businesses and governments
             requirements with digital systems that: 1) respect your privacy, 2)
             give you control over your data, and 3) enable you to speak your
@@ -43,7 +43,7 @@ const Privacy = () => {
             of a community, in a way that can directly be heard and affect
             actual change.
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             With Verus, anyone can leverage zero-knowledge succinct
             non-interactive arguments of knowledge – or zk-SNARKs – the most
             reliable and tested iteration of proven, zero-knowledge privacy

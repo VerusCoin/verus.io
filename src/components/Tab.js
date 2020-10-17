@@ -4,7 +4,7 @@ import Link from 'next/link';
 const VerusIDContent = () => {
   return (
     <>
-      <div className="pt-2 mb-4 text-center md:text-right">
+      <div className="flex flex-col items-center justify-center pt-2 mb-4 text-center md:flex-row md:text-right">
         <img
           src="/images/icons/tab/verusid-tab-icon.svg"
           width="181"
@@ -13,10 +13,10 @@ const VerusIDContent = () => {
       </div>
       <div className="p-3 pt-0 text-left md:pl-20 md:col-span-2">
         <div className="max-w-xl">
-          <h3 className="mt-0 font-normal md:text-2xl">
+          <h3 className="mt-0 mb-6 font-normal md:text-2xl">
             Self-Sovereign & Decentralized Identities
           </h3>
-          <p className="leading-relaxed md:text-xl font-p">
+          <p className="leading-relaxed">
             Introducing VerusID; an identity protocol with advanced
             capabilities, including friendly, human-readable names to receive,
             send and secure all cryptocurrencies.
@@ -35,7 +35,7 @@ const VerusIDContent = () => {
 const DefiContent = () => {
   return (
     <>
-      <div className="pt-2 mb-4 text-center md:text-right">
+      <div className="flex flex-col items-center justify-center pt-2 mb-4 text-center md:text-right md:flex-row">
         <img
           src="/images/icons/tab/currencies-tab-icon.svg"
           width="181"
@@ -47,7 +47,7 @@ const DefiContent = () => {
           <h3 className="mt-0 font-normal md:text-2xl">
             Redefining DeFi With Reserve Currencies
           </h3>
-          <p className="leading-relaxed md:text-xl font-p">
+          <p className="leading-relaxed">
             Simultaneous parallel processing of DeFi transactions allows Verus
             to advance the technology underpinning automated market makers and
             community liquidity.
@@ -66,7 +66,7 @@ const DefiContent = () => {
 const PbaasContent = () => {
   return (
     <>
-      <div className="pt-2 mb-4 text-center md:text-right">
+      <div className="flex flex-col items-center justify-center pt-2 mb-4 text-center md:text-right md:flex-row">
         <img
           src="/images/icons/tab/pbaas-tab-icon.svg"
           width="181"
@@ -78,7 +78,7 @@ const PbaasContent = () => {
           <h3 className="mt-0 font-normal md:text-2xl ">
             A Blockchain Launch Is Just a Few Clicks Away
           </h3>
-          <p className="leading-relaxed md:text-xl font-p">
+          <p className="leading-relaxed">
             Launch your own blockchain with customizable specifications, while
             using Verus infrastructure htmlFor security and continuity. PBaaS
             provides a roadmap htmlFor practically unlimited scalability.
@@ -97,7 +97,7 @@ const PbaasContent = () => {
 const ErcContent = () => {
   return (
     <>
-      <div className="pt-2 mb-4 text-center md:text-right">
+      <div className="flex flex-col items-center justify-center pt-2 mb-4 text-center md:text-right md:flex-row">
         <img
           src="/images/icons/tab/bridge-tab-icon.svg"
           width="181"
@@ -109,7 +109,7 @@ const ErcContent = () => {
           <h3 className="mt-0 font-normal md:text-2xl ">
             Combine the Power of Solidity with Verus
           </h3>
-          <p className="leading-relaxed md:text-xl font-p">
+          <p className="leading-relaxed">
             Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam eaque.
           </p>

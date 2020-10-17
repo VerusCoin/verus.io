@@ -13,12 +13,12 @@ const VerusHash = () => {
           <h1 className="p-0 m-0 text-4xl font-normal ">
             VerusHash: algorithm for a naturally decentralized miner ecosystem.
           </h1>
-          <p className="leading-relaxed text-p font-p">
+          <p className="my-8 leading-relaxed ">
             VerusHash 2.2 is the mining algorithm for VerusCoin. The algorithm
             was developed to equalize mining equitability across hardware
             classes, and to create a naturally decentralized miner ecosystem.
           </p>
-          <p className="leading-relaxed text-p font-p">
+          <p className="my-8 leading-relaxed">
             No specialized mining equipment is necessary to mine Verus, and it
             can even be solo-mined directly from the Verus Desktop wallet with
             just a few clicks, without any additional software requirements.

@@ -13,7 +13,7 @@ const ProofOfPower = () => {
           <h1 className="p-0 m-0 text-4xl font-normal">
             Verus Proof of Power: the consensus mechanism for security.
           </h1>
-          <p className="leading-normal font-p">
+          <p className="my-8 leading-normal">
             VerusCoin has a unique consensus mechanism: it is 50% Proof of Work
             and 50% Proof of Stake. This means that half of newly generated
             blocks come from mining (PoW), and the other half comes from staking
@@ -47,7 +47,7 @@ const ProofOfPower = () => {
               </div>
             </div>
           </div>
-          <p className="leading-normal font-p ">
+          <p className="my-8 leading-normal ">
             Verus’ staking algorithm{' '}
             <a className="no-underline external text-bluebutton">
               solves the two major theoretical issues undermining other PoS
@@ -57,13 +57,13 @@ const ProofOfPower = () => {
             transaction capabilities to remove any incentive to attempt
             cheating, making it a losing proposition.
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8 leading-normal">
             This mechanism is called Proof of Power or VerusPoP and provides a
             further decentralizing effect on the network, incentivizing holders
             to keep nodes online to support the network. Even if a change in
             network hashrate happens, the PoW/PoS ratio stays the same: 50/50%.
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8 leading-normal">
             To successfully attack the VerusCoin blockchain, more than 50% of
             the validation power is needed, called Chain Power. On top of that,
             VerusCoin utilizes Komodo’s delayed Proof of Work. This means the
@@ -71,7 +71,7 @@ const ProofOfPower = () => {
             every bitcoin block, leveraging Bitcoin’s hashrate to help defend
             the Verus network.
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8 leading-normal">
             In over two years of mainnet, VerusCoin has never experienced a
             successful 51% hash attack.{' '}
             <a className="no-underline text-bluebutton">

@@ -13,14 +13,14 @@ const Bridges = () => {
           <h1 className="p-0 m-0 text-4xl font-normal">
             Decentralized bridges to connect other cryptocurrencies.
           </h1>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             Verus develops bridges to other cryptocurrencies. Bridges connect
             external blockchains and their currencies to the Verus blockchain.
             This means that users can freely transfer coins from one blockchain
             to the Verus blockchain and vice versa. The coins from the external
             blockchain are represented as tokens on the Verus blockchain.
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             Through bridges, value from other blockchains flow into the Verus
             ecosystem. This value (tokenized BTC, ETH and all ERC-20 tokens) can
             then utilize all the features Verus has to offer. For example
@@ -28,14 +28,14 @@ const Bridges = () => {
             fractional and reserve currencies, converting currencies, financing
             projects and much more.
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             One of the implications for ERC-20 tokens on the Ethereum
             blockchain, is that they don’t have to rely on exchange listings
             anymore. They can find instant liquidity through the Verus reserve
             currency system. They are also freed from the exorbitant transaction
             fees of the Ethereum network.
           </p>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             Bridges that are now being worked on are for Bitcoin (BTC) and
             Ethereum (ETH).
           </p>

@@ -8,7 +8,7 @@ const Menu = ({ pathList, href }) => {
   return (
     <>
       <button
-        className="items-center w-full pl-4 text-left bg-white border-none text-baseLink md:hidden focus:outline-none focus:shadow-outline-lg"
+        className="flex flex-row items-center w-full pl-4 text-left bg-white border-none text-baseLink md:hidden focus:outline-none focus:shadow-outline-lg"
         type="button"
         onClick={() => setShowMenu(!showMenu)}
       >

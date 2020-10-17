@@ -13,15 +13,15 @@ const TechnologyOverview = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal ">
+          <h1 className="p-0 mt-0 text-4xl font-normal ">
             Technology Deep Dive: inside Verus.
           </h1>
-          <p className="leading-relaxed text-p font-p">
+          <p className="my-8 leading-relaxed">
             We are an open-source platform available to anyone. We supply tools
             for individuals and organizations to build equitable frameworks for
             social and economic change.
           </p>
-          <p className="leading-relaxed text-p font-p">
+          <p className="my-8 leading-relaxed">
             Verus release was pre-announced on Bitcointalk with zero premine,
             and team members mined and staked along with everyone else to
             generate coins. In addition to coins mined by individual team
@@ -75,7 +75,9 @@ const TechnologyOverview = () => {
             </div>
           </div>
 
-          <h2 className="mt-16 text-2xl font-normal">Technology Deep Dive</h2>
+          <h2 className="mt-16 mb-4 text-2xl font-normal">
+            Technology Deep Dive
+          </h2>
           <SlugMenu pathList={technologyLinks} href="/technology" />
 
           <h5 className="mt-12 mb-4 text-2xl font-normal">Resources</h5>

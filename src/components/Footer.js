@@ -13,7 +13,7 @@ const Footer = () => {
             className="w-8 mb-4 "
           />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
-          <p className="text-sm leading-relaxed opacity-50 md:text-base font-p">
+          <p className="text-sm leading-relaxed opacity-50 md:text-base ">
             Join our most active community with over 4.700 members for all
             questions and discussions.
           </p>
@@ -30,7 +30,7 @@ const Footer = () => {
             className="w-8 mb-4"
           />
           <h3 className="mt-0 mb-4 text-2xl">Telegram Community</h3>
-          <p className="text-sm leading-relaxed opacity-50 md:text-base font-p">
+          <p className="text-sm leading-relaxed opacity-50 md:text-base ">
             Jump in our community Telegram server. Ask questions and discuss
             everything related to Verus.
           </p>
@@ -50,7 +50,7 @@ const Footer = () => {
             sizes="100px"
             alt=""
           />
-          <p className="mt-2 text-sm font-p">
+          <p className="mt-2 text-sm ">
             © 2020 The Verus Project.
             <br />
             All rights reserved.

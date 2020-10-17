@@ -13,8 +13,8 @@ const Staking = () => {
           <h2 className="text-4xl font-normal ">
             Stake your coins to earn coins.
           </h2>
-          <h3 className="text-2xl font-normal ">What is staking?</h3>
-          <p className="leading-normal font-p">
+          <h3 className="mt-8 text-2xl font-normal ">What is staking?</h3>
+          <p className="my-8">
             By staking you help secure the network by using your coins. Coins,
             or stakes, are used to generate new blocks. Stakes are chosen at
             random and the winner will receive the block reward. This is
@@ -25,14 +25,14 @@ const Staking = () => {
               Read more about our consensus mechanism here. (Need a link)
             </a>
           </p>
-          <div className="max-w-lg p-8 my-16 bg-gray-200 rounded-lg">
+          <div className="flex items-center justify-center max-w-lg p-8 my-16 bg-gray-200 rounded-lg">
             <div className="flex flex-col md:flex-row ">
               <div className="self-center flex-shrink-0 md:self-start md:mr-4">
                 <img src="/images/icons/stake-rules-icon.svg" width="50" />
               </div>
               <div>
                 <p className="text-xl">Verus Staking Rules</p>
-                <ul className="leading-loose list-disc font-p">
+                <ul className="ml-5 leading-loose list-disc font-p">
                   <li>Run native blockchain</li>
                   <li>Keep Verus Desktop (or CLI) open</li>
                   <li>Coins eligible to stake after 150 confirmations</li>
@@ -42,7 +42,7 @@ const Staking = () => {
           </div>
 
           <h3 className="m-0 text-2xl font-normal">How do I start staking?</h3>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             It's easy, all you have to do is{' '}
             <a href="#">download Verus Desktop here. (need link)</a>
           </p>

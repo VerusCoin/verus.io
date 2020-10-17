@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap'
-@tailwind base;
-
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+/*  */
 /* Write your own custom base styles here */
 *,
 *:before,
@@ -29,6 +29,9 @@ h4,
 h5,
 h6 {
   @apply font-normal leading-tight;
+}
+p {
+  @apply text-base font-normal font-p;
 }
 
 .breakout-container {
@@ -70,14 +73,15 @@ hr {
 .rotate-270 {
   transform: rotate(270deg);
 }
+/* purgecss end ignore */
 /* Start purging... */
-@tailwind components;
+@import 'tailwindcss/components';
 /* Stop purging. */
 
 /* Write you own custom component styles here */
 
 /* Start purging... */
-@tailwind utilities;
+@import 'tailwindcss/utilities';
 /* Stop purging. */
 
 /* Your own custom utilities */
@@ -177,5 +181,5 @@ a.external::after {
   margin-right: 0.3em;
 }
 
-@import './markdown.css';
-@import './tab.css';
+/* @import './markdown.css';
+@import './tab.css'; */

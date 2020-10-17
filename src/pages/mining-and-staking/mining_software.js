@@ -14,7 +14,7 @@ const MiningSoftware = (props) => {
           <h2 className="p-0 m-0 text-4xl font-normal">
             Grab your mining software here.
           </h2>
-          <p className="leading-normal font-p">
+          <p className="my-8">
             Get one of the miners to get started. However you mine VRSC, you'll
             need a Verus Coin address, which you can create using the wallet in
             either Lite or Native mode. If you need any help, check our{' '}
@@ -31,12 +31,12 @@ const MiningSoftware = (props) => {
           <table className="w-full border-collapse table-fixed font-p">
             <tbody>
               <tr>
-                <td className="flex flex-row items-center px-4 py-2 space-x-4">
+                <td className="flex flex-row items-center p-4 space-x-4">
                   <img src="/images/logos/windows.svg" className="opacity-25" />
                   <p className="text-xl">nheqminer</p>
                   <p className="">Windows, CLI, VerusHash 2.0-2.2</p>
                 </td>
-                <td className="w-1/6 px-4 py-2 text-center ">
+                <td className="w-1/6 p-4 text-center ">
                   {WinURL && (
                     <a href={WinURL} target="_blank">
                       Download
@@ -45,12 +45,12 @@ const MiningSoftware = (props) => {
                 </td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="flex flex-row items-center px-4 py-2 space-x-4">
+                <td className="flex flex-row items-center p-4 space-x-4">
                   <img src="/images/logos/macos.svg" className="opacity-25" />
                   <p className="text-xl ">nheqminer</p>
                   <p className="">macOS, CLI, VerusHash 2.0-2.2</p>
                 </td>
-                <td className="w-1/6 px-4 py-2 text-center ">
+                <td className="w-1/6 p-4 text-center ">
                   {OsURL && (
                     <a href={OsURL} target="_blank">
                       Download
@@ -59,12 +59,12 @@ const MiningSoftware = (props) => {
                 </td>
               </tr>
               <tr>
-                <td className="flex flex-row items-center px-4 py-2 space-x-4">
+                <td className="flex flex-row items-center p-4 space-x-4">
                   <img src="/images/logos/linux.svg" className="opacity-25" />
                   <p className="text-xl ">nheqminer</p>
                   <p className="">Linux, CLI, VerusHash 2.0-2.2</p>
                 </td>
-                <td className="w-1/6 px-4 py-2 text-center ">
+                <td className="w-1/6 p-4 text-center ">
                   {linuxURL && (
                     <a href={linuxURL} target="_blank">
                       Download
@@ -73,11 +73,11 @@ const MiningSoftware = (props) => {
                 </td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="flex flex-row items-center px-4 py-2 space-x-4">
+                <td className="flex flex-row items-center p-4 space-x-4">
                   <p className="text-xl ">CCMiner CPU</p>
                   <p className="">x64, ARM, VerusHash 2.0-2.2</p>
                 </td>
-                <td className="w-1/6 px-4 py-2 text-center ">
+                <td className="w-1/6 p-4 text-center ">
                   <a
                     href="https://github.com/monkins1010/ccminer/releases"
                     target="_blank"
@@ -87,11 +87,11 @@ const MiningSoftware = (props) => {
                 </td>
               </tr>
               <tr>
-                <td className="flex flex-row items-center px-4 py-2 space-x-4">
+                <td className="flex flex-row items-center p-4 space-x-4">
                   <p className="text-xl ">CCMiner CUDA</p>
                   <p className="">Nvidia GPU, VerusHash 2.2</p>
                 </td>
-                <td className="w-1/6 px-4 py-2 text-center ">
+                <td className="w-1/6 p-4 text-center ">
                   <a
                     href="https://github.com/monkins1010/ccminer/releases"
                     target="_blank"
@@ -101,11 +101,11 @@ const MiningSoftware = (props) => {
                 </td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="flex flex-row items-center px-4 py-2 space-x-4">
+                <td className="flex flex-row items-center p-4 space-x-4">
                   <p className="text-xl ">CCMiner OCL</p>
                   <p className="">AMD GPU, VerusHash 2.2</p>
                 </td>
-                <td className="w-1/6 px-4 py-2 text-center ">
+                <td className="w-1/6 p-4 text-center ">
                   <a
                     href="https://github.com/monkins1010/AMDVerusCoin/releases"
                     target="_blank"
@@ -117,7 +117,7 @@ const MiningSoftware = (props) => {
             </tbody>
           </table>
 
-          <p className="w-3/4 text-sm leading-normal font-p">
+          <p className="w-3/4 mt-2 mb-8 text-sm">
             <span className="font-bold">System requirements: </span>64bit
             CPU/OS, CPU with AES-NI and AVX instructions. Windows or Linux
             (Ubuntu tested). 4GB Memory.
@@ -126,7 +126,7 @@ const MiningSoftware = (props) => {
           <table className="w-full border-collapse table-fixed font-p">
             <tbody>
               <tr>
-                <td className="flex flex-row items-baseline px-4 py-2 space-x-4">
+                <td className="flex flex-row items-baseline p-4 space-x-4">
                   <img src="/images/logos/linux.svg" className="opacity-25" />
                   <p className="w-1/4 text-xl">Oink Docker</p>
                   <p className="w-3/4 ">
@@ -134,14 +134,14 @@ const MiningSoftware = (props) => {
                     internal Linux
                   </p>
                 </td>
-                <td className="w-1/6 px-4 py-2 text-center ">
+                <td className="w-1/6 p-4 text-center ">
                   <a href="https://hub.docker.com/r/oink70" target="_blank">
                     Download
                   </a>
                 </td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="flex flex-row items-baseline px-4 py-2 space-x-4">
+                <td className="flex flex-row items-baseline p-4 space-x-4">
                   <img src="/images/logos/linux.svg" className="opacity-25" />
                   <p className="w-1/4 text-xl">0x03 Docker</p>
                   <p className="w-3/4 ">
@@ -149,7 +149,7 @@ const MiningSoftware = (props) => {
                     internal Linux
                   </p>
                 </td>
-                <td className="w-1/6 px-4 py-2 text-center ">
+                <td className="w-1/6 p-4 text-center ">
                   <a
                     href="https://github.com/BloodyNora/Docker"
                     target="_blank"
@@ -161,7 +161,7 @@ const MiningSoftware = (props) => {
             </tbody>
           </table>
 
-          <p className="w-3/4 text-sm leading-normal font-p">
+          <p className="w-3/4 mt-2 mb-8 text-sm">
             <span className="font-bold">System requirements: </span>64bit
             CPU/OS, CPU with AES-NI and AVX instructions. Windows or Linux
             (Ubuntu tested). 4GB Memory.
