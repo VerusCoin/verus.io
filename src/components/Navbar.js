@@ -219,10 +219,10 @@ function Navbar() {
               </div>
             </li>
             <li className="flex items-center ">
-              <Link href="/wallet">
+              <Link href="/wallet" className="p-0 m-0">
                 <button
                   onClick={() => setNavbarOpen(false)}
-                  className="flex-shrink-0 px-8 py-2 mx-2 text-base text-white border-0 rounded-full md:py-4 bg-bluebutton hover:bg-bluebutton-hover focus:outline-none"
+                  className="flex-shrink-0 px-8 py-2 mx-2 text-base text-white border-0 rounded-full bg-bluebutton hover:bg-bluebutton-hover focus:outline-none md:py-3"
                 >
                   Get Wallet
                 </button>

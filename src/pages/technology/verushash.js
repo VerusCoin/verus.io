@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Menu from '../../components/Menu';
 import { technologyLinks } from '../../constants/technology';
 import FooterMenu from '../../components/FooterMenu';
@@ -11,7 +12,7 @@ const VerusHash = () => {
         </div>
         <div className="justify-center max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal ">
-            VerusHash: algorithm for a naturally decentralized miner ecosystem.
+            VerusHash: Algorithm for a naturally decentralized miner ecosystem.
           </h1>
           <p className="my-8 leading-relaxed ">
             VerusHash 2.2 is the mining algorithm for VerusCoin. The algorithm
@@ -25,7 +26,7 @@ const VerusHash = () => {
             Beginners can find an even level playing field to start earning
             VRSC.
           </p>
-          <div className="grid grid-cols-1 p-8 my-8 bg-center bg-cover rounded bg-features-bg md:grid-cols-2 md:gap-6">
+          <div className="grid grid-cols-1 p-8 mt-10 mb-2 bg-center bg-cover rounded bg-features-bg md:grid-cols-2 md:gap-6">
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/icons/CPU.png" alt="CPU image" width="100" />
               <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
@@ -51,19 +52,22 @@ const VerusHash = () => {
               </p>
             </div>
           </div>
-          <p className="leading-normal text-gray-600 font-p">
+          <p className="text-sm leading-normal text-gray-600 font-p">
             For actual hashrate statistics reported by our community see Discord
             channels: #cpu-hashrate, #gpu-hashrate, #fpga-hashrate.
           </p>
           <div className="justify-center w-full mt-16 mb-32 space-y-4">
-            <button className="w-full px-12 py-5 text-white border-0 rounded-full text-p bg-bluebutton hover:bg-bluebutton-hover">
-              Start solo-mining with Verus Desktop.{' '}
-              <span className="text-span-4">Easy, in just a few clicks</span>{' '}
-              (Need Link)
-            </button>
-            <button className="w-full px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
-              Get mining software (Need Link)
-            </button>
+            <Link href="/wallet/desktop-wallet">
+              <button className="w-full px-12 py-5 text-white border-0 rounded-full text-p bg-bluebutton hover:bg-bluebutton-hover">
+                Start solo-mining with Verus Desktop.{' '}
+                <span className="text-span-4">Easy, in just a few clicks</span>
+              </button>
+            </Link>
+            <Link href="/mining-and-staking/mining_software">
+              <button className="w-full px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
+                Get mining software
+              </button>
+            </Link>
           </div>
         </div>
       </div>

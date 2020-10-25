@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import SigTabWindow from '../components/sigTab';
 
 const VerifySignatures = () => {
@@ -22,7 +23,7 @@ const VerifySignatures = () => {
             Want to sign files, messages or hashes?
           </h3>
           <p className="my-8">
-            <a href="#">Download Verus Desktop (Link?)</a>, register your
+            <Link href="/wallet">Download Verus Desktop</Link>, register your
             VerusID and start signing!
           </p>
         </div>

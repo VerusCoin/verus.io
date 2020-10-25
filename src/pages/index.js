@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
-import useSWR from 'swr';
-import fetch from 'unfetch';
 import { format } from 'date-fns';
 
 import styles from '../styles/custom.module.css';
@@ -14,14 +12,11 @@ const fetcher = (url) =>
     .then((r) => r.json())
     .then((d) => d.articles.splice(0, 3));
 
-const Home = () => {
+const Home = (props) => {
   const [formSubmit, setFormSubmit] = useState(false);
   const { register, handleSubmit, errors } = useForm();
-  const { data, error } = useSWR(
-    'https://medium-f.herokuapp.com/api/v1/articles?orgid=veruscoin',
-    fetcher
-  );
 
+  const { data, error } = props;
   const onSubmit = (formData) => {
     if (formData) {
       setFormSubmit(true);
@@ -42,7 +37,7 @@ const Home = () => {
             <div className="flex flex-wrap items-center justify-center w-full mt-12 md:space-x-8 md:space-y-0 md:justify-start">
               <Link href="/mining-and-staking">
                 <button className="px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
-                  Secure the Network and Earn
+                  Earn in the Network Economy
                 </button>
               </Link>
               <Link href="/technology">
@@ -90,7 +85,7 @@ const Home = () => {
               <img
                 src="images/icons/VerusID_Lookup_Icon.svg"
                 alt="VerusID Lookup Icon"
-                className="h-32"
+                className="h-20"
               />
               <h1 className="mt-8 text-2xl font-normal">VerusID Lookup</h1>
               <p className="my-3">
@@ -107,7 +102,7 @@ const Home = () => {
             <div className="flex flex-col justify-center p-6 text-center">
               <img
                 src="images/icons/Blockchain_Explorer_Icon.svg"
-                className="h-32"
+                className="h-20"
                 alt="Blockchain Explorer Icon"
               />
               <h1 className="mt-8 text-2xl font-normal">Block Explorer</h1>
@@ -127,7 +122,7 @@ const Home = () => {
             <div className="flex flex-col justify-center p-6 text-center">
               <img
                 src="images/icons/signature-icon.svg"
-                className="h-32"
+                className="h-20"
                 alt="verus signature icon"
               />
               <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
@@ -135,7 +130,7 @@ const Home = () => {
                 Sign and verify documents and files for free
               </p>
               <div>
-                <Link href="/">
+                <Link href="/verify-signatures">
                   <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                     Verify documents
                   </button>
@@ -207,11 +202,16 @@ const Home = () => {
                     src={article.thumbnailref}
                     alt="Article Header Image"
                   />
-
-                  <h3 className="text-xl font-normal text-left">
-                    {article.title}
-                  </h3>
-                  <p className="text-base text-gray-700 font-lite font-p">
+                  <a
+                    href={article.link}
+                    target="_blank"
+                    className="text-theme-black hover:underline"
+                  >
+                    <h3 className="my-2 text-xl font-normal text-left">
+                      {article.title}
+                    </h3>
+                  </a>
+                  <p className="text-base text-gray-500 font-lite font-p">
                     {format(new Date(article.PublishDateTime), 'MMM dd, yyyy')}
                   </p>
                 </div>
@@ -230,20 +230,20 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="justify-center w-screen p-6 pb-20 text-center section-3">
-        <div className="container max-w-5xl">
-          <h4 className="mb-3 text-xl font-p">
+      <div className="justify-center w-full p-6 pb-20 text-center ">
+        <div className="container max-w-5xl px-4 py-8 bg-center bg-cover rounded-lg md:bg-left-top bg-newsletter-bg">
+          <h4 className="mb-3 text-xl text-white font-p">
             Subscribe to our newsletter and stay up to date with developments
           </h4>
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col max-w-lg mx-auto mt-8 space-y-8 text-sm text-center md:mt-0 md:space-y-0 md:items-baseline md:flex-row"
+            className="flex flex-col max-w-lg mx-auto mt-8 space-y-4 text-sm text-center md:mt-0 md:space-y-0 md:items-baseline md:flex-row"
           >
-            <div className="flex-grow">
+            <div className="flex-grow border-none ">
               <input
                 name="email"
-                className="w-full px-12 py-4 text-sm rounded-full text-field text-bluebutton focus:outline-none "
+                className="w-full px-12 py-4 text-sm text-white bg-transparent border border-white border-solid rounded-full focus:outline-none "
                 type="email"
                 placeholder="your@email.com"
                 ref={register({ required: true })}
@@ -251,13 +251,12 @@ const Home = () => {
 
               {errors.email && <span>Please enter a email</span>}
             </div>
-            <div className="md:-ml-40">
+            <div className="md:-ml-48">
               <input
                 type="submit"
                 value="Stay up to date"
-                className="w-full px-12 py-4 text-sm text-white border border-solid rounded-full md:w-auto bg-bluebutton hover:bg-bluebutton-hover focus:outline-none "
+                className="w-full px-12 py-4 text-sm bg-gray-200 border border-solid rounded-full border-theme-white hover:text-white md:w-auto hover:bg-bluebutton-hover focus:outline-none "
               />
-              <span></span>
             </div>
           </form>
         </div>
@@ -267,3 +266,15 @@ const Home = () => {
 };
 
 export default Home;
+
+export async function getServerSideProps() {
+  let result = await fetch(
+    'https://medium-f.herokuapp.com/api/v1/articles?orgid=veruscoin'
+  );
+  let articles = await result.json();
+  let data = articles.articles.splice(0, 3);
+
+  return {
+    props: { data },
+  };
+}

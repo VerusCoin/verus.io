@@ -21,11 +21,18 @@ const PaperWallet = () => {
 
         <div className="max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal ">Paper Wallet</h1>
-          <p className="my-8">
-            Wallets not developed by the Verus Community that can hold VRSC.
+          <p className="mt-8 mb-4">
+            Use a paper wallet if you want to store your coins offline. This is
+            a very safe method since the private key is only stored on a piece
+            of paper. Follow the instructions closely for maximum security.
           </p>
-          <p className="my-8">Content</p>
-          <h2 className="mt-16 text-2xl font-normal">H2</h2>
+          <a
+            href="https://paperwallet.veruscoin.io/"
+            target="_blank"
+            className="underline external font-p text-bluebutton"
+          >
+            Get PaperWallet here
+          </a>
         </div>
       </div>
 

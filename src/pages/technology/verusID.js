@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Menu from '../../components/Menu';
 import { technologyLinks } from '../../constants/technology';
 import FooterMenu from '../../components/FooterMenu';
@@ -12,7 +13,7 @@ const Verusid = () => {
         <div className="max-w-5xl p-6 md:col-span-3">
           <div className="mb-6">
             <h1 className="p-0 m-0 text-4xl font-normal">
-              VerusID: the first decentralized and self-sovereign identity of
+              VerusID: First decentralized and self-sovereign identity of
               its kind.
             </h1>
             <p className="mt-8 leading-relaxed ">
@@ -21,9 +22,12 @@ const Verusid = () => {
               hold funds and stake its $VRSC. Future proof and packed with
               advanced capabilities. In this permissionless system anyone can
               create a VerusID and have complete ownership.{' '}
-              <a href="#" className="font-p no-font-p text-bluebutton">
-                Register VerusID with Verus Desktop (need link)
-              </a>
+              <Link
+                href="/wallet/desktop-wallet"
+                className="font-p no-font-p text-bluebutton"
+              >
+                Register VerusID with Verus Desktop
+              </Link>
               .
             </p>
             <a href="#" target="_blank" className="flex items-center my-12 ">
@@ -246,9 +250,11 @@ const Verusid = () => {
               not manipulated by bad actors.
             </p>
           </div>
-          <button className="px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
-            Verify signatures here (Need link)
-          </button>
+          <Link href="/verify-signatures">
+            <button className="px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
+              Verify signatures here
+            </button>
+          </Link>
           <div className="mb-16">
             <h2 className="mt-16 text-2xl font-normal">Multisig</h2>
             <p className="text-xl leading-normal font-p">lipsum</p>

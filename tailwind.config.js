@@ -100,6 +100,7 @@ module.exports = {
         'features-bg': "url('/images/backgrounds/features-bg.svg')",
         'footer-bg': "url('/images/backgrounds/footer-bg.svg')",
         'light-bg': "url('/images/backgrounds/light-bg.svg')",
+        'newsletter-bg': "url('/images/backgrounds/newsletter-bg.svg')",
       },
     },
     aspectRatio: {

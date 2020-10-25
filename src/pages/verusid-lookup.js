@@ -28,10 +28,10 @@ const VerusIdLookup = () => {
   return (
     <div className="container max-w-5xl md:mb-32 section-2">
       <div className="grid justify-center grid-cols-2 mt-16 sm:grid-cols-4">
-        <div className="col-span-2 text-center sm:col-start-2">
+        <div className="justify-center col-span-2 text-center sm:col-start-2">
           <img
             src="/images/icons/VerusID_Search_Icon.svg"
-            width="250"
+            className="w-56 m-auto"
             alt="VerusID Search Icon"
           />
         </div>

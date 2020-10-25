@@ -43,6 +43,41 @@ export const InputField = (props) => {
   );
 };
 
+export const TextAreaField = (props) => {
+  const { name, label, validate } = props;
+  const { errors, register } = useFormContext();
+  const errorMessage = get(errors, name)?.message;
+  const ref = register(validate);
+  return (
+    <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md shadow">
+      <label
+        className={`block ${
+          errorMessage ? 'text-red-600' : 'text-gray-700'
+        } text-sm px-2 mb-2 ml-2 bg-white font-p capitalize`}
+        style={{ marginTop: '-1.45rem', width: 'fit-content' }}
+        htmlFor={name}
+      >
+        {label}
+      </label>
+      <textarea
+        {...props}
+        className={` w-full max-w-full px-2 text-base text-gray-800 border-none outline-none ${
+          errorMessage
+            ? 'border-red-600 focus:shadow-red bg-red-200'
+            : 'focus:shadow-outline'
+        }`}
+        id={name}
+        ref={ref}
+      />
+      {errorMessage && (
+        <p className="mt-2 text-xs italic font-medium text-red-600">
+          {errorMessage}
+        </p>
+      )}
+    </div>
+  );
+};
+
 export const FileInputField = (props) => {
   const { name, label = name } = props;
   const [isProcessing, setIsProcessing] = useState(false);

@@ -31,7 +31,7 @@ const TechnologyOverview = () => {
             us, in order to support the ongoing growth and project development
             by core developers and the community for years to come.
           </p>
-          <div className="grid grid-cols-1 p-8 my-8 bg-center bg-cover rounded md:grid-cols-2 md:gap-6 bg-features-bg">
+          <div className="grid grid-cols-1 p-8 my-16 bg-center bg-cover rounded md:grid-cols-2 md:gap-6 bg-features-bg">
             <div className="flex flex-row items-center flex-shrink-0">
               <img
                 src="/images/icons/community.png"
@@ -80,7 +80,7 @@ const TechnologyOverview = () => {
           </h2>
           <SlugMenu pathList={technologyLinks} href="/technology" />
 
-          <h5 className="mt-12 mb-4 text-2xl font-normal">Resources</h5>
+          <h5 className="mt-8 mb-4 text-2xl font-normal">Resources</h5>
           <ul className="flex flex-col p-0 m-0 mb-24 space-y-2">
             <li className="inline-flex">
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
@@ -89,7 +89,7 @@ const TechnologyOverview = () => {
                 href="#"
                 target="_blank"
               >
-                Verus Vision Paper
+                Verus Vision Paper (need document)
               </a>
             </li>
             <li className="inline-flex">
@@ -100,7 +100,7 @@ const TechnologyOverview = () => {
               />
               <a
                 className="no-underline text-bluebutton"
-                href="#"
+                href="/docs/VerusPoP.pdf"
                 target="_blank"
               >
                 Verus Proof of Power Paper
@@ -113,7 +113,7 @@ const TechnologyOverview = () => {
                 href="#"
                 target="_blank"
               >
-                Verus Phase One Paper
+                Verus Phase One Paper (need document)
               </a>
             </li>
           </ul>

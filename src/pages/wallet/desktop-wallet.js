@@ -264,7 +264,7 @@ const DesktopWallet = (props) => {
                 </p>
               </div>
             </div>
-            <div className="p-8 bg-gray-105">
+            <div className="p-8 space-y-8 bg-gray-105">
               <p className="text-sm ">
                 This is experimental and unfinished software. Use at your own
                 risk! No warranty for any kind of damage!Permission is hereby

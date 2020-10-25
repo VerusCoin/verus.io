@@ -113,54 +113,37 @@ const MobileWallet = ({ latestAndroid }) => {
           <div className="pr-6 space-y-20 text-center sm:text-left sm:col-span-2">
             <div>
               <h3 className="mb-2 text-2xl font-normal">Easy and Safe</h3>
-              <p className="my-8  text-md">
+              <p className="my-8 text-md">
                 Verus Mobile is created for beginners and exports in mind.
                 Anyone can get started, no matter previous cryptocurrency
                 experiences.
               </p>
             </div>
           </div>
-          <div className="p-6 space-y-2 text-sm bg-gray-200 rounded-lg sm:text-left">
-            <div>
-              <p className=" font-p">Release Notes</p>
-            </div>
-            <div className="text-center">
-              <button
-                onClick={() => _handleModal(true)}
-                className="block w-1/2 py-3 text-sm no-underline border-2 border-solid rounded-full cursor-pointer focus:outline-none bg-gray-105 md:w-full border-bluetrans hover:border-bluebutton text-bluebutton hover:bg-bluetrans-alter"
-              >
-                Release Notes
-              </button>
-            </div>
-            <div>
-              <p className="m-0 font-p">Supported Coins:</p>
-              <p className="m-0 font-p">VRSC, BTC, KMD, LTC, ETH, .........</p>
-            </div>
-            <div>
-              <p className="text-xs font-p">
-                This is experimental and unfinished software. Use at your own
-                risk! No warranty for any kind of damage!Permission is hereby
-                granted, free of charge, to any person obtaining a copy of this
-                software and associated documentation files (the "Software"), to
-                deal in the Software without restriction, including without
-                limitation the rights to use, copy, modify, merge, publish,
-                distribute, sublicense, and/or sell copies of the Software, and
-                to permit persons to whom the Software is furnished to do so,
-                subject to the following conditions:The enclosed copyright
-                notice and this permission notice shall be included in all
-                copies or substantial portions of the Software.
-              </p>
-              <p className="text-xs font-p">
-                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-                EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-                OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-                NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-                HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-                WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-                FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-                OTHER DEALINGS IN THE SOFTWARE.
-              </p>
-            </div>
+          <div className="p-6 space-y-8 text-sm bg-gray-200 rounded-lg sm:text-left">
+            <p className="text-sm font-p">
+              This is experimental and unfinished software. Use at your own
+              risk! No warranty for any kind of damage!Permission is hereby
+              granted, free of charge, to any person obtaining a copy of this
+              software and associated documentation files (the "Software"), to
+              deal in the Software without restriction, including without
+              limitation the rights to use, copy, modify, merge, publish,
+              distribute, sublicense, and/or sell copies of the Software, and to
+              permit persons to whom the Software is furnished to do so, subject
+              to the following conditions:The enclosed copyright notice and this
+              permission notice shall be included in all copies or substantial
+              portions of the Software.
+            </p>
+            <p className="text-sm font-p">
+              THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+              EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+              MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+              NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+              HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+              WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+              DEALINGS IN THE SOFTWARE.
+            </p>
           </div>
         </div>
       </div>

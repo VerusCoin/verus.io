@@ -33,11 +33,11 @@ const ThirdPartyWallet = () => {
                   alt="coincollect logo"
                 />
               </div>
-              <p className="py-2 m-0 font-p text-custom">Mobile Only</p>
+              <p className="pt-2 m-0 font-p text-custom">Mobile Only</p>
               <a
                 href="http://www.coincollect.cc/"
                 target="_blank"
-                className="py-2 leading-relaxed underline cursor-pointer"
+                className="leading-relaxed underline cursor-pointer  font-p"
               >
                 Go to CoinCollect website
               </a>
@@ -50,11 +50,11 @@ const ThirdPartyWallet = () => {
                   alt="vidulum logo"
                 />
               </div>
-              <p className="py-2 m-0 font-p text-custom">Desktop & Mobile</p>
+              <p className="pt-2 m-0 font-p text-custom">Desktop & Mobile</p>
               <a
                 href="http://www.vidulum.app/"
                 target="_blank"
-                className="py-2 leading-relaxed underline cursor-pointer"
+                className="leading-relaxed underline cursor-pointer  font-p"
               >
                 Go to Vidulum website
               </a>
@@ -67,11 +67,11 @@ const ThirdPartyWallet = () => {
                   alt="chameleon logo"
                 />
               </div>
-              <p className="py-2 m-0 font-p text-custom">Mobile Only</p>
+              <p className="pt-2 m-0 font-p text-custom">Mobile Only</p>
               <a
                 href="https://www.chainzilla.io/chameleonpay.html"
                 target="_blank"
-                className="py-2 leading-relaxed underline cursor-pointer"
+                className="leading-relaxed underline cursor-pointer font-p"
               >
                 Go to Chameleon website
               </a>

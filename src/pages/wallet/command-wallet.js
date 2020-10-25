@@ -38,7 +38,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
             <tbody>
               <tr>
                 <td className="flex items-center justify-between p-4 space-x-4">
-                  <img src="/images/logos/windows.svg" />
+                  <img src="/images/logos/windows.svg" className="opacity-25" />
                   <p className="text-xl">Windows</p>
                   {winApp && (
                     <a href={winApp} target="_blank">
@@ -49,7 +49,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               </tr>
               <tr className="bg-gray-100">
                 <td className="flex items-center justify-between p-4 space-x-4">
-                  <img src="/images/logos/macos.svg" />
+                  <img src="/images/logos/macos.svg" className="opacity-25" />
                   <p className="text-xl ">MacOS</p>
                   {macApp && (
                     <a href={macApp} target="_blank">
@@ -60,7 +60,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               </tr>
               <tr>
                 <td className="flex items-center justify-between p-4 space-x-4">
-                  <img src="/images/logos/linux.svg" />
+                  <img src="/images/logos/linux.svg" className="opacity-25" />
                   <p className="text-xl ">Linux</p>
                   {linuxApp && (
                     <a href={linuxApp} target="_blank">
@@ -82,7 +82,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
             </tbody>
           </table>
 
-          <div className="max-w-3xl p-8 bg-gray-200">
+          <div className="max-w-3xl p-8 space-y-8 bg-gray-200">
             <p className="text-sm font-p">
               This is experimental and unfinished software. Use at your own
               risk! No warranty for any kind of damage!Permission is hereby

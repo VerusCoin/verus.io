@@ -11,7 +11,7 @@ const ServiceEconomy = () => {
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal">
-            Service economy: enable all to participate and benefit
+            Service Economy: Enable all to participate and benefit
           </h1>
           <p className="my-8">
             We enable all people to participate in and benefit from a blockchain

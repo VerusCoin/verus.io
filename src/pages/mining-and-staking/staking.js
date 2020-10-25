@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Menu from '../../components/Menu';
 import { miningStakingLinks } from '../../constants/miningStaking';
 import FooterMenu from '../../components/FooterMenu';
@@ -44,7 +45,7 @@ const Staking = () => {
           <h3 className="m-0 text-2xl font-normal">How do I start staking?</h3>
           <p className="my-8">
             It's easy, all you have to do is{' '}
-            <a href="#">download Verus Desktop here. (need link)</a>
+            <Link href="/wallet">download Verus Desktop here.</Link>
           </p>
         </div>
       </div>

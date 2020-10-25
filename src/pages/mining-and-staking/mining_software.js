@@ -18,11 +18,19 @@ const MiningSoftware = (props) => {
             Get one of the miners to get started. However you mine VRSC, you'll
             need a Verus Coin address, which you can create using the wallet in
             either Lite or Native mode. If you need any help, check our{' '}
-            <a href="https://wiki.veruscoin.io/" target="_blank">
+            <a
+              href="https://wiki.veruscoin.io/"
+              target="_blank"
+              className="external"
+            >
               Support Wiki
             </a>
             , or join our{' '}
-            <a href="https://discord.gg/VRKMP2S" target="_blank">
+            <a
+              href="https://discord.gg/VRKMP2S"
+              target="_blank"
+              className="external"
+            >
               official Discord
             </a>{' '}
             and reach out to the community support channel.

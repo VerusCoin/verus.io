@@ -21,7 +21,7 @@ const VerusIDContent = () => {
             capabilities, including friendly, human-readable names to receive,
             send and secure all cryptocurrencies.
           </p>
-          <Link href="/technology/verusid">
+          <Link href="/technology/verusID">
             <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
               Learn More
             </button>
@@ -44,7 +44,7 @@ const DefiContent = () => {
       </div>
       <div className="p-3 pt-0 text-left md:pl-20 md:col-span-2">
         <div className="max-w-xl">
-          <h3 className="mt-0 font-normal md:text-2xl">
+          <h3 className="mt-0 mb-6 font-normal md:text-2xl">
             Redefining DeFi With Reserve Currencies
           </h3>
           <p className="leading-relaxed">
@@ -52,7 +52,7 @@ const DefiContent = () => {
             to advance the technology underpinning automated market makers and
             community liquidity.
           </p>
-          <Link href="/technology/reserve_currencies">
+          <Link href="/technology/currencies">
             <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
               Learn More
             </button>
@@ -75,7 +75,7 @@ const PbaasContent = () => {
       </div>
       <div className="p-3 pt-0 text-left md:pl-20 md:col-span-2">
         <div className="max-w-xl">
-          <h3 className="mt-0 font-normal md:text-2xl ">
+          <h3 className="mt-0 mb-6 font-normal md:text-2xl ">
             A Blockchain Launch Is Just a Few Clicks Away
           </h3>
           <p className="leading-relaxed">
@@ -83,7 +83,7 @@ const PbaasContent = () => {
             using Verus infrastructure htmlFor security and continuity. PBaaS
             provides a roadmap htmlFor practically unlimited scalability.
           </p>
-          <Link href="/technology/public_blockchains_as_a_service">
+          <Link href="/technology/PbaaS">
             <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
               Learn More
             </button>
@@ -106,14 +106,14 @@ const ErcContent = () => {
       </div>
       <div className="p-3 pt-0 text-left md:pl-20 md:col-span-2">
         <div className="max-w-xl">
-          <h3 className="mt-0 font-normal md:text-2xl ">
+          <h3 className="mt-0 mb-6 font-normal md:text-2xl ">
             Combine the Power of Solidity with Verus
           </h3>
           <p className="leading-relaxed">
             Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam eaque.
           </p>
-          <Link href="/technology/ERC-20_Bridge">
+          <Link href="/technology/bridges">
             <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
               Learn More
             </button>

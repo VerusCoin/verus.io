@@ -11,7 +11,7 @@ const ProofOfPower = () => {
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal">
-            Verus Proof of Power: the consensus mechanism for security.
+            Verus Proof of Power: Consensus mechanism for security.
           </h1>
           <p className="my-8 leading-normal">
             VerusCoin has a unique consensus mechanism: it is 50% Proof of Work
@@ -49,7 +49,10 @@ const ProofOfPower = () => {
           </div>
           <p className="my-8 leading-normal ">
             Verus’ staking algorithm{' '}
-            <a className="no-underline external text-bluebutton">
+            <a
+              className="no-underline external text-bluebutton"
+              href="https://medium.com/veruscoin/how-verus-solved-nothing-at-stake-and-weak-subjectivity-proof-of-stake-problems-b4dd6a85086e"
+            >
               solves the two major theoretical issues undermining other PoS
               systems
             </a>
@@ -74,9 +77,12 @@ const ProofOfPower = () => {
           <p className="my-8 leading-normal">
             In over two years of mainnet, VerusCoin has never experienced a
             successful 51% hash attack.{' '}
-            <a className="no-underline text-bluebutton">
-              Learn more in the technical whitepaper of VerusPoP(need correct
-              link)
+            <a
+              className="no-underline text-bluebutton"
+              href="/docs/VerusPoP.pdf"
+              target="_blank"
+            >
+              Learn more in the technical whitepaper of VerusPoP
             </a>
             .
           </p>
