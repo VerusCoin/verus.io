@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
-import MarkdownModal from '../../components/MarkdownModal';
+
 import FooterMenu from '../../components/FooterMenu';
 
 const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {

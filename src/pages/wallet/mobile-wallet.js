@@ -3,15 +3,10 @@ import { useState } from 'react';
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
 import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
-import MarkdownModal from '../../components/MarkdownModal';
 import FooterMenu from '../../components/FooterMenu';
 
 const MobileWallet = ({ latestAndroid }) => {
   const [showDownloads, setShowDownloads] = useState(false);
-  const [modalShow, setModalShow] = useState(false);
-  const _handleModal = (value) => {
-    setModalShow(value);
-  };
 
   return (
     <>
@@ -147,13 +142,6 @@ const MobileWallet = ({ latestAndroid }) => {
           </div>
         </div>
       </div>
-
-      <MarkdownModal
-        modalTitle="Release Notes"
-        modalShow={modalShow}
-        modalToggle={_handleModal}
-        modalBody={latestAndroid.body}
-      />
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
     </>

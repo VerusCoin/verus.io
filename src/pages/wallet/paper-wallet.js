@@ -1,17 +1,8 @@
-import { useState } from 'react';
-
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
-import MarkdownModal from '../../components/MarkdownModal';
 import FooterMenu from '../../components/FooterMenu';
 
 const PaperWallet = () => {
-  const [modalShow, setModalShow] = useState(false);
-  const _handleModal = (value) => {
-    setModalShow(value);
-  };
-
   return (
     <>
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">

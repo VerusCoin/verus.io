@@ -1,17 +1,9 @@
-import { useState } from 'react';
-
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
-import MarkdownModal from '../../components/MarkdownModal';
+
 import FooterMenu from '../../components/FooterMenu';
 
 const ThirdPartyWallet = () => {
-  const [modalShow, setModalShow] = useState(false);
-  const _handleModal = (value) => {
-    setModalShow(value);
-  };
-
   return (
     <>
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
@@ -37,7 +29,7 @@ const ThirdPartyWallet = () => {
               <a
                 href="http://www.coincollect.cc/"
                 target="_blank"
-                className="leading-relaxed underline cursor-pointer  font-p"
+                className="leading-relaxed underline cursor-pointer font-p"
               >
                 Go to CoinCollect website
               </a>
@@ -54,7 +46,7 @@ const ThirdPartyWallet = () => {
               <a
                 href="http://www.vidulum.app/"
                 target="_blank"
-                className="leading-relaxed underline cursor-pointer  font-p"
+                className="leading-relaxed underline cursor-pointer font-p"
               >
                 Go to Vidulum website
               </a>

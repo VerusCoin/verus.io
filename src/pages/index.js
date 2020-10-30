@@ -7,21 +7,8 @@ import { format } from 'date-fns';
 import styles from '../styles/custom.module.css';
 import IndexTabWindow from '../components/Tab';
 
-const fetcher = (url) =>
-  fetch(url)
-    .then((r) => r.json())
-    .then((d) => d.articles.splice(0, 3));
-
 const Home = (props) => {
-  const [formSubmit, setFormSubmit] = useState(false);
-  const { register, handleSubmit, errors } = useForm();
-
-  const { data, error } = props;
-  const onSubmit = (formData) => {
-    if (formData) {
-      setFormSubmit(true);
-    }
-  };
+  const { data } = props;
   return (
     <>
       <div
@@ -138,15 +125,6 @@ const Home = (props) => {
               </div>
             </div>
           </div>
-
-          {/* <div className="grid grid-cols-1 pl-6 pr-6 m-4 text-white rounded-lg md:m-0 md:grid-cols-12 md:mt-24 md:mb-32 bg-theme-green">
-            <h1 className="text-3xl font-normal md:text-left md:col-span-8">
-              Want to start building on Verus?
-            </h1>
-            <button className="px-12 py-4 m-3 text-lg font-normal text-black bg-white border-transparent rounded-full sm:flex-shrink-0 hover:bg-gray-200 md:col-span-4">
-              See Developer Documentation
-            </button>
-          </div> */}
         </div>
       </div>
 
@@ -191,7 +169,6 @@ const Home = (props) => {
       <div className="container max-w-5xl p-0 pt-12 pb-12 text-center md:pt-32 md:pb-32">
         <h3 className="mb-3 text-2xl font-normal">Latest Articles</h3>
         <div className="grid items-center justify-center grid-cols-1 p-3 space-y-4 text-left text-current md:space-y-0 md:p-0 md:grid-cols-3 md:gap-6">
-          {error && <div className="col-span-3 text-center">Failed Load</div>}
           {!data && <div className="col-span-3 text-center">Loading...</div>}
           {data &&
             data.map((article) => {
