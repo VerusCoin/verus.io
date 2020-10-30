@@ -229,50 +229,18 @@ const Home = (props) => {
           </a>
         </div>
       </div>
-
-      <div className="justify-center w-full p-6 pb-20 text-center ">
-        <div className="container max-w-5xl px-4 py-8 bg-center bg-cover rounded-lg md:bg-left-top bg-newsletter-bg">
-          <h4 className="mb-3 text-xl text-white font-p">
-            Subscribe to our newsletter and stay up to date with developments
-          </h4>
-
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col max-w-lg mx-auto mt-8 space-y-4 text-sm text-center md:mt-0 md:space-y-0 md:items-baseline md:flex-row"
-          >
-            <div className="flex-grow border-none ">
-              <input
-                name="email"
-                className="w-full px-12 py-4 text-sm text-white bg-transparent border border-white border-solid rounded-full focus:outline-none "
-                type="email"
-                placeholder="your@email.com"
-                ref={register({ required: true })}
-              />
-
-              {errors.email && <span>Please enter a email</span>}
-            </div>
-            <div className="md:-ml-48">
-              <input
-                type="submit"
-                value="Stay up to date"
-                className="w-full px-12 py-4 text-sm bg-gray-200 border border-solid rounded-full border-theme-white hover:text-white md:w-auto hover:bg-bluebutton-hover focus:outline-none "
-              />
-            </div>
-          </form>
-        </div>
-      </div>
     </>
   );
 };
 
 export default Home;
 
-export async function getServerSideProps() {
-  let result = await fetch(
-    'https://medium-f.herokuapp.com/api/v1/articles?orgid=veruscoin'
-  );
-  let articles = await result.json();
-  let data = articles.articles.splice(0, 3);
+export async function getServerSideProps(ctx) {
+  let URI = ctx.req.headers.referer;
+  let data = null;
+  // let result = await fetch(`${URI}api/verusArticles`);
+  let result = await fetch('http://localhost:3000/api/verusArticles');
+  data = await result.json();
 
   return {
     props: { data },
