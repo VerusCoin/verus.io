@@ -1,10 +1,6 @@
-import { useState } from 'react';
-
 import Link from 'next/link';
-import { useForm } from 'react-hook-form';
 import { format } from 'date-fns';
 
-import styles from '../styles/custom.module.css';
 import IndexTabWindow from '../components/Tab';
 
 const Home = (props) => {
@@ -12,7 +8,10 @@ const Home = (props) => {
   return (
     <>
       <div
-        className={'p-8 md:flex justify-center items-center ' + styles.landing}
+        className="items-center justify-center p-8 bg-center bg-cover md:flex bg-light-bg "
+        style={{
+          minHeight: 'calc(70vh - 100px)',
+        }}
       >
         <div className="z-0">
           <div className="max-w-3xl text-left sm:pt-8 section-2">
