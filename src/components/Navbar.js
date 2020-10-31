@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
-
+import { LogoJsonLd } from 'next-seo';
 const VerusLogo = '/images/logos/Verus_Logo.svg';
-const HamburgerSVG = '/hamburger.inline.svg';
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -19,6 +18,10 @@ function Navbar() {
               className="w-32 cursor-pointer fill-current"
             />
           </Link>
+          <LogoJsonLd
+            logo={`https://next.verus.io${VerusLogo}`}
+            url="https://verus.io"
+          />
           <button
             className="md:hidden focus:outline-none focus:shadow-outline-lg"
             type="button"

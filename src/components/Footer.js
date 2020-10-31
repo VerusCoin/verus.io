@@ -1,3 +1,5 @@
+import { SocialProfileJsonLd } from 'next-seo';
+
 const Footer = () => {
   return (
     <div className="pb-12 font-foot">
@@ -129,6 +131,21 @@ const Footer = () => {
           >
             BitcoinTalk
           </a>
+          <SocialProfileJsonLd
+            type="Organization"
+            name="Verus"
+            url="https://verus.io"
+            sameAs={[
+              'https://discord.gg/VRKMP2S',
+              'https://www.facebook.com/VerusCoin',
+              'https://twitter.com/veruscoin',
+              'https://t.me/veruscommunity',
+              'https://reddit.com/r/veruscoin',
+              'https://medium.com/@veruscoin',
+              'https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg',
+              'https://bitcointalk.org/index.php?topic=4070404.0',
+            ]}
+          />
         </div>
         <div className="space-y-4">
           <h4 className="m-0 mb-8 text-custom2">Build With Us</h4>

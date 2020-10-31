@@ -1,12 +1,23 @@
 import Link from 'next/link';
 import { format } from 'date-fns';
-
+import { NextSeo } from 'next-seo';
 import IndexTabWindow from '../components/Tab';
 
 const Home = (props) => {
   const { data } = props;
   return (
     <>
+      <NextSeo
+        title="Truth and Privacy for All | Community driven open source cryptocurrency"
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'Open Source, Privacy, cryptocurrency, VerusID, blockchain as a service, ERC-20, decentralized finance, verus signatures',
+          },
+        ]}
+      />
+
       <div
         className="items-center justify-center p-8 bg-center bg-cover md:flex bg-light-bg "
         style={{
