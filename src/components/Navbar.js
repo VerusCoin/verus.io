@@ -19,8 +19,8 @@ function Navbar() {
             />
           </Link>
           <LogoJsonLd
-            logo={`https://next.verus.io${VerusLogo}`}
-            url="https://verus.io"
+            logo={`${process.env.NEXT_PUBLIC_SITEURL}${VerusLogo}`}
+            url={process.env.NEXT_PUBLIC_SITEURL}
           />
           <button
             className="md:hidden focus:outline-none focus:shadow-outline-lg"
