@@ -79,9 +79,11 @@ export const TextAreaField = (props) => {
 };
 
 export const FileInputField = (props) => {
-  const { name, label = name } = props;
+  const { name, validate } = props;
   const [isProcessing, setIsProcessing] = useState(false);
-  const { register, unregister, setValue, watch } = useFormContext();
+  const { register, unregister, setValue, watch, errors } = useFormContext();
+  const errorMessage = get(errors, name)?.message;
+
   const files = watch(name);
 
   const onDrop = useCallback(
@@ -111,38 +113,47 @@ export const FileInputField = (props) => {
     accept: props.accept,
   });
   useEffect(() => {
-    register(name);
+    register(name, validate);
     return () => {
-      unregister(name);
+      unregister(name, validate);
     };
   }, [register, unregister, name]);
   return (
     <>
-      {/* <label
-        className="block mb-2 text-sm font-bold text-gray-700 capitalize"
-        htmlFor={name}
-      >
-        Select a File
-      </label> */}
       <div {...getRootProps()}>
         <input
           {...props}
-          className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+          className={`w-full px-3 py-2 leading-tight ${
+            errorMessage ? 'text-red-600' : 'text-gray-700'
+          } border rounded shadow appearance-none focus:outline-none focus:shadow-outline`}
           id={name}
           {...getInputProps()}
         />
         <div
           className={
             'w-full p-2 border rounded flex flex-col justify-center items-center border-dashed border-gray-900 ' +
-            (isDragActive ? 'bg-gray-400' : 'bg-gray-200')
+            (isDragActive
+              ? 'bg-gray-400'
+              : errorMessage
+              ? 'border-red-600 focus:shadow-red bg-red-200'
+              : 'bg-gray-200')
           }
           style={{ minHeight: '125px' }}
         >
-          <p className="my-2 text-center">
+          <p
+            className={`my-2 text-center  ${
+              errorMessage ? 'text-red-600' : 'text-gray-700'
+            }`}
+          >
             {isProcessing
               ? 'Please wait obtaining hash of file...'
-              : 'Drop the files here ...'}
+              : 'Click to select or Drop the files here ...'}
           </p>
+          {errorMessage && (
+            <p className="mt-2 text-xs italic font-medium text-red-600">
+              {errorMessage}
+            </p>
+          )}
           {/* Optionally you may display a preview of the file(s) */}
           {!!files?.length && (
             <div className="flex flex-col justify-center">

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState } from 'react';
 import {
   useForm,
   Controller,
@@ -22,10 +22,12 @@ const VerifyResult = ({
         {sigResult !== undefined ? (
           sigResult.valid === 'true' ? (
             <span className="text-green-700">Is Valid</span>
-          ) : (
+          ) : !sigResult.error ? (
             <span className="text-red-700">
               Is not valid or incorrect information
             </span>
+          ) : (
+            <span className="text-red-700">{sigResult.error_text}</span>
           )
         ) : (
           'Processing...'
@@ -55,12 +57,16 @@ const VerifyResult = ({
 
 const MessageContent = () => {
   const methods = useForm({ mode: 'onBlur' });
-  const { register, handleSubmit, errors, reset } = useForm();
   const [verusSignature, setVerusSignature] = useState();
   const [sigResult, setSigResult] = useState();
-  // TODO Add form validator
-  const onSubmit = async (query) => {
-    if (query) {
+
+  const onSubmit = async (values) => {
+    if (values) {
+      let query = {
+        Message: values.Message,
+        Identity: values.MessageIdentity,
+        Signature: values.MessageSignature,
+      };
       setVerusSignature(query);
 
       let url = '/api/verusSignatureMessage';
@@ -72,11 +78,13 @@ const MessageContent = () => {
         body: JSON.stringify(query),
       });
       let data = await result.json();
-      console.log(sigResult);
       if (data) {
         setSigResult(data);
       } else {
-        setSigResult({ error: data.message });
+        setSigResult({
+          error: -5,
+          error_text: 'Currently experensing network issues. Try again later.',
+        });
       }
     }
   };
@@ -90,15 +98,26 @@ const MessageContent = () => {
     <>
       {!verusSignature && (
         <div className="mt-6 mb-16m">
-          {/* TODO Add error handler */}
           <FormProvider {...methods}>
             <form
               onSubmit={methods.handleSubmit(onSubmit)}
               className="flex flex-col space-y-8"
             >
-              <TextAreaField name="Message" label="Message / text" />
-              <InputField name="Identity" label="identity / address" />
-              <InputField name="Signature" label="Signature" />
+              <TextAreaField
+                name="Message"
+                label="Message / text"
+                validate={{ required: 'message or text is required' }}
+              />
+              <InputField
+                name="MessageIdentity"
+                label="identity / address"
+                validate={{ required: 'VerusID or Address is required.' }}
+              />
+              <InputField
+                name="MessageSignature"
+                label="Signature"
+                validate={{ required: 'Verus Signature is required.' }}
+              />
 
               <button
                 className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
@@ -128,7 +147,7 @@ const FileContent = () => {
   const methods = useForm({ mode: 'onBlur' });
   const [verusSignature, setVerusSignature] = useState();
   const [sigResult, setSigResult] = useState();
-  // TODO Add form validator
+
   const onSubmit = async (values) => {
     if (values) {
       let query = {
@@ -152,7 +171,10 @@ const FileContent = () => {
       if (data) {
         setSigResult(data);
       } else {
-        setSigResult({ error: data.message });
+        setSigResult({
+          error: -5,
+          error_text: 'Currently experensing network issues. Try again later.',
+        });
       }
     }
   };
@@ -172,10 +194,21 @@ const FileContent = () => {
               className="flex flex-col space-y-8"
             >
               <div className="mb-4">
-                <FileInputField name="FileList" />
+                <FileInputField
+                  name="FileList"
+                  validate={{ required: 'File is required' }}
+                />
               </div>
-              <InputField name="Identity" label="identity / address" />
-              <InputField name="Signature" label="Signature" />
+              <InputField
+                name="Identity"
+                label="identity / address"
+                validate={{ required: 'VerusID or Address is required.' }}
+              />
+              <InputField
+                name="Signature"
+                label="Signature"
+                validate={{ required: 'Verus Signature is required.' }}
+              />
 
               <button
                 className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
@@ -207,9 +240,14 @@ const HashContent = () => {
 
   const [verusSignature, setVerusSignature] = useState(null);
   const [sigResult, setSigResult] = useState();
-  // TODO Add form validator
+
   const onSubmit = async (query) => {
-    if (query) {
+    if (values) {
+      let query = {
+        Hash: values.Hash,
+        Identity: values.HashIdentity,
+        Signature: values.HashSignature,
+      };
       setVerusSignature(query);
 
       let url = '/api/verusSignatureHash';
@@ -225,7 +263,10 @@ const HashContent = () => {
       if (data) {
         setSigResult(data);
       } else {
-        setSigResult({ error: data.message });
+        setSigResult({
+          error: -5,
+          error_text: 'Currently experensing network issues. Try again later.',
+        });
       }
     }
   };
@@ -239,16 +280,27 @@ const HashContent = () => {
     <>
       {!verusSignature && (
         <div className="mt-6 mb-16">
-          {/* TODO Add error handler */}
           <FormProvider {...methods}>
             <form
               onSubmit={methods.handleSubmit(onSubmit)}
               className="flex flex-col space-y-8"
             >
-              <InputField name="Hash" label="hash" />
+              <InputField
+                name="Hash"
+                label="hash"
+                validate={{ required: 'Hash is required.' }}
+              />
 
-              <InputField name="Identity" label="identity / address" />
-              <InputField name="Signature" label="Signature" />
+              <InputField
+                name="HashIdentity"
+                label="identity / address"
+                validate={{ required: 'VerusID or Address is required.' }}
+              />
+              <InputField
+                name="HashSignature"
+                label="Signature"
+                validate={{ required: 'Verus Signature is required.' }}
+              />
 
               <button
                 className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
