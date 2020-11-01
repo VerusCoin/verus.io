@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { NextSeo } from 'next-seo';
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
 import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
@@ -10,6 +10,17 @@ const MobileWallet = ({ latestAndroid }) => {
 
   return (
     <>
+      <NextSeo
+        title="Mobile Wallets"
+        description="Verus mobile multi-coin wallet for Android and iOS."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, ERC-20, VerusID, verus signatures, privacy, wallet, verus wallet, VRSC, mobile wallet, android wallet, ios wallet',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 modalBody modal-active md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />

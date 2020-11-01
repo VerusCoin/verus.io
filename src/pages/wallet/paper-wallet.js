@@ -1,10 +1,22 @@
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
 import FooterMenu from '../../components/FooterMenu';
+import { NextSeo } from 'next-seo';
 
 const PaperWallet = () => {
   return (
     <>
+      <NextSeo
+        title="Paper Wallet"
+        description="Verus paper wallet to store your coins offline."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, ERC-20, VerusID, verus signatures, privacy, wallet, verus wallet, paper wallet, offline wallet, VRSC',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
         <div className="">
           <Menu pathList={walletLinks} href="/wallet" />

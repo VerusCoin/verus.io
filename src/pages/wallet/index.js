@@ -2,12 +2,25 @@ import Link from 'next/link';
 import Menu from '../../components/Menu';
 import SlugMenu from '../../components/SlugMenu';
 import { walletLinks } from '../../constants/wallet';
+import { NextSeo } from 'next-seo';
 
 const WalletOverview = () => {
   const nextRoute = walletLinks[0];
 
   return (
     <>
+      <NextSeo
+        title="Verus Wallets"
+        description="Verus is actively developing multi-coin wallets for Windows, macOS,
+        Linux, ARM. And on mobile for Android and iOS."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, ERC-20, VerusID, verus signatures, privacy, wallet, verus wallet, mobile wallet, VRSC, desktop wallet, cli wallet, commandline wallet, 3rd party wallet, paper wallet',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />

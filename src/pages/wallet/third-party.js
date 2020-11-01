@@ -1,11 +1,22 @@
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
-
+import { NextSeo } from 'next-seo';
 import FooterMenu from '../../components/FooterMenu';
 
 const ThirdPartyWallet = () => {
   return (
     <>
+      <NextSeo
+        title="Alternate Wallets"
+        description="Cryptocurrency Wallets not developed by the Verus Community that can hold VRSC."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, ERC-20, privacy, wallet, VRSC, 3rd party wallet, third party wallet, alternative wallet',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
         <div className="">
           <Menu pathList={walletLinks} href="/wallet" />

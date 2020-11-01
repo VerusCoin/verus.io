@@ -3,7 +3,7 @@ const title =
 const titleTemplate = '%s | Verus';
 const description =
   'We supply tools for individuals and organizations to build equitable frameworks for social and economic change';
-const keywords = 'Open Source';
+
 export const SEO = {
   titleTemplate,
   description,

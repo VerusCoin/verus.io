@@ -3,6 +3,7 @@ import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
 import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
 import FooterMenu from '../../components/FooterMenu';
+import { NextSeo } from 'next-seo';
 
 const DesktopWallet = (props) => {
   const [showDownloads, setShowDownloads] = useState(false);
@@ -10,6 +11,17 @@ const DesktopWallet = (props) => {
 
   return (
     <>
+      <NextSeo
+        title="Desktop Wallets"
+        description="Verus desktop multi-coin wallet for Windows, macOS, Linux, ARM."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, ERC-20, VerusID, verus signatures, privacy, wallet, VRSC, verus wallet, desktop wallet, mining, staking',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />

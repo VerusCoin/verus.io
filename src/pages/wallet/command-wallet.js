@@ -1,11 +1,22 @@
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
-
+import { NextSeo } from 'next-seo';
 import FooterMenu from '../../components/FooterMenu';
 
 const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
   return (
     <>
+      <NextSeo
+        title="CLI Wallets"
+        description="Verus desktop command line multi-coin wallet for Windows, macOS, Linux, ARM."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, ERC-20, VerusID, verus signatures, VRSC, privacy, wallet, verus wallet, desktop wallet, command line wallet, cli wallet, mining, staking',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />

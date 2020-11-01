@@ -13,7 +13,7 @@ const Home = (props) => {
           {
             name: 'keywords',
             content:
-              'Open Source, Privacy, cryptocurrency, VerusID, blockchain as a service, ERC-20, decentralized finance, verus signatures',
+              'verus, pbaas, public blockchains as a service, proof of power, proof-of-power, cryptocurrency, Open Source, Privacy, VerusID, ERC-20, decentralized finance, verus signatures',
           },
         ]}
       />
