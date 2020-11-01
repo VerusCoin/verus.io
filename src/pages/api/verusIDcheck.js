@@ -8,18 +8,18 @@ const fetchID = async (query) => {
     let data = await result.json();
     return data;
   } catch (error) {
-    return { message: 'invalid request or not a valid verusID' };
+    return { result: null, error: { code: -5, message: 'network issue' } };
   }
 };
 
 export default async (req, res) => {
   let result = await fetchID(req.query);
-
+  console.log(result);
   if (!result.error) {
     res.statusCode = 200;
     res.json(result);
   } else {
-    res.statusCode = 401;
+    res.statusCode = 200;
     res.json(result);
   }
 };

@@ -14,7 +14,7 @@ const FetchMessage = async (query) => {
 
     return data;
   } catch (error) {
-    return { message: 'invalid request or not a valid message' };
+    return { result: null, error: { code: -5, message: 'network issue' } };
   }
 };
 
@@ -24,7 +24,7 @@ export default async (req, res) => {
   if (!result.error) {
     res.json(result);
   } else {
-    res.statusCode = 401;
+    res.statusCode = 200;
     res.json(result);
   }
 };

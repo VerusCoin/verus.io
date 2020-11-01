@@ -7,7 +7,7 @@ export default async (req, res) => {
   if (!data) {
     res.statusCode = 200;
   } else {
-    res.statusCode = 401;
+    res.statusCode = 200;
     res.json(data);
   }
 };
