@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 export function mapNumberToMonths(input) {
   const months = [
     'Jan',
@@ -35,11 +33,6 @@ export function formatDateTimeFromString(input) {
   )} ${addPadding(date.getHours())}:${addPadding(
     date.getMinutes()
   )}:${addPadding(date.getSeconds())}`;
-}
-
-export function validateEmail(email) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email.toLowerCase());
 }
 
 export function date_diff_indays(input) {
