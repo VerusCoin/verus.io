@@ -1,10 +1,22 @@
 import Menu from '../../components/Menu';
 import FooterMenu from '../../components/FooterMenu';
 import { miningStakingLinks } from '../../constants/miningStaking';
+import { NextSeo } from 'next-seo';
 
 const Pools = () => {
   return (
     <>
+      <NextSeo
+        title="Pools"
+        description="Choose from a growing list of community pools."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools, staking pools',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
         <div className="">
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />

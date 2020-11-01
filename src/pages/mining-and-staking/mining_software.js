@@ -1,11 +1,24 @@
 import Menu from '../../components/Menu';
 import FooterMenu from '../../components/FooterMenu';
 import { miningStakingLinks } from '../../constants/miningStaking';
+import { NextSeo } from 'next-seo';
 
 const MiningSoftware = (props) => {
   const { linuxURL, WinURL, OsURL } = props;
   return (
     <>
+      <NextSeo
+        title="Mining Software"
+        description="Earn VRSC by participating in the network economy. Get one of the miners to get started."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, cryptocurrency, open source, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools, staking pools, mining software, Windows, macOS, CLI,',
+          },
+        ]}
+      />
+
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
         <div className="">
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />

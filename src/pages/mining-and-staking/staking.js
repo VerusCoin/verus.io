@@ -2,10 +2,22 @@ import Link from 'next/link';
 import Menu from '../../components/Menu';
 import { miningStakingLinks } from '../../constants/miningStaking';
 import FooterMenu from '../../components/FooterMenu';
+import { NextSeo } from 'next-seo';
 
 const Staking = () => {
   return (
     <>
+      <NextSeo
+        title="Staking"
+        description="Stake your VRSC coins to earn coins."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools, staking pools',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-12 md:grid-cols-4">
         <div className="">
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
