@@ -7,14 +7,17 @@
 const FetchMessage = async (query) => {
   let message = encodeURI(query.Message);
   let signer = encodeURI(query.Identity);
-  let url = `https://verify.verus.tools/verifymessage/?message=${message}&signer=${signer}&signature=${query.Signature}`;
+  let url = `https://verify.verus.tools1/verifymessage/?message=${message}&signer=${signer}&signature=${query.Signature}`;
   try {
     let result = await fetch(url);
     let data = await result.json();
 
     return data;
   } catch (error) {
-    return { result: null, error: { code: -5, message: 'network issue' } };
+    return {
+      error: -5,
+      error_text: 'Currently having network issue. Try again later',
+    };
   }
 };
 

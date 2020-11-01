@@ -12,7 +12,10 @@ const FetchHash = async (query) => {
     let data = await result.json();
     return data;
   } catch (error) {
-    return { result: null, error: { code: -5, message: 'network issue' } };
+    return {
+      error: -5,
+      error_text: 'Currently having network issue. Try again later',
+    };
   }
 };
 
