@@ -1,0 +1,26 @@
+{
+  "name": "veruscoin_website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "crypto-js": "^4.0.0",
+    "date-fns": "^2.16.1",
+    "next": "10.0.0",
+    "next-seo": "^4.15.0",
+    "nprogress": "^0.2.0",
+    "postcss-flexbugs-fixes": "^5.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-dropzone": "^11.2.3",
+    "react-hook-form": "^6.10.1",
+    "tailwindcss": "^1.9.6",
+    "tailwindcss-responsive-embed": "^1.0.0"
+  }
+}

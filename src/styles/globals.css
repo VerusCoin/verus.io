@@ -1,0 +1,185 @@
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+/*  */
+/* Write your own custom base styles here */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  @apply leading-relaxed bg-theme-white font-display;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #353535;
+  @apply text-base leading-snug;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-normal leading-tight;
+}
+p {
+  @apply text-base font-normal font-p;
+}
+
+.breakout-container {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+header {
+  max-height: 100px;
+}
+
+hr {
+  border-color: #ebebeb;
+  height: 1px;
+}
+.arrow-list li:not(:last-child) {
+  @apply mb-5;
+}
+
+.arrow-list svg {
+  @apply inline ml-2;
+}
+
+@screen lg {
+  #nav-toggle ~ * {
+    display: block !important;
+  }
+}
+
+.rotate-0 {
+  transform: rotate(0deg);
+}
+.rotate-90 {
+  transform: rotate(90deg);
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.rotate-270 {
+  transform: rotate(270deg);
+}
+/* purgecss end ignore */
+/* Start purging... */
+@import 'tailwindcss/components';
+/* Stop purging. */
+
+/* Write you own custom component styles here */
+
+/* Start purging... */
+@import 'tailwindcss/utilities';
+/* Stop purging. */
+
+/* Your own custom utilities */
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  /* left: -28px; */
+}
+
+.section-3 {
+  background-color: #f5f5f5;
+  border-width: 1px;
+  border-color: #ddd;
+}
+
+.text-field {
+  /* width: 400px; */
+
+  max-width: none;
+  border: 1px solid #3165d4;
+  color: #3165d4;
+}
+
+.menu-link a {
+  color: #8d8d8d;
+}
+.menu-link a:hover {
+  @apply text-navlink-hover;
+}
+
+.menu-link.active {
+  @apply border border-solid rounded bg-menu-active border-bluebutton;
+}
+.menu-link.active > a {
+  @apply text-bluebutton;
+}
+
+.link-block-3:hover {
+  border-color: #fff;
+  background-color: hsla(0, 0%, 100%, 0.051);
+}
+
+.link-block-3:visited {
+  @apply text-theme-white;
+}
+
+a .text-navlink-hover:visited {
+  @apply text-navlink-hover;
+}
+
+form span {
+  @apply text-red-700;
+}
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+
+.modalBody.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+
+button:focus {
+  outline: none;
+}
+
+button {
+  font-family: geomanistregular, sans-serif;
+  cursor: pointer;
+  @apply text-base text-center;
+}
+
+.text-span-code {
+  font-family: Inconsolata, monospace;
+  background-color: #ebebeb;
+}
+
+.text-span-4 {
+  color: hsla(0, 0%, 100%, 0.66);
+}
+
+a.text-bluebutton:visited {
+  @apply text-bluebutton;
+}
+
+a {
+  cursor: pointer;
+  @apply text-bluebutton;
+}
+
+p.external::after,
+a.external::after {
+  content: '↗';
+  display: inline;
+  margin-left: 0.25em;
+  margin-right: 0.3em;
+}
+
+/* @import './markdown.css';
+@import './tab.css'; */
