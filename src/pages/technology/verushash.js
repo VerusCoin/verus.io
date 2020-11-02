@@ -2,10 +2,24 @@ import Link from 'next/link';
 import Menu from '../../components/Menu';
 import { technologyLinks } from '../../constants/technology';
 import FooterMenu from '../../components/FooterMenu';
+import { NextSeo } from 'next-seo';
 
 const VerusHash = () => {
   return (
     <>
+      <NextSeo
+        title="VerusHash"
+        description="VerusHash 2.2 is the mining algorithm for VerusCoin. An algorithm
+        developed to equalize mining equitability across hardware
+        classes, and to create a naturally decentralized miner ecosystem."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, pbaas, public blockchains as a service, proof of power, proof-of-power, cryptocurrency, Service Economy, economy, Privacy, VerusID, ERC-20, decentralized finance, verus signatures, verus hash verushash',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
         <div className="">
           <Menu pathList={technologyLinks} href="/technology" />

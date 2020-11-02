@@ -1,10 +1,25 @@
 import Menu from '../../components/Menu';
 import { technologyLinks } from '../../constants/technology';
 import FooterMenu from '../../components/FooterMenu';
+import { NextSeo } from 'next-seo';
 
 const ServiceEconomy = () => {
   return (
     <>
+      <NextSeo
+        title="Service Economy"
+        description="Verus enables all to participate and benefit is an open, borderless and decentralised
+        blockchain project, it is important to create value for the people
+        who maintain the network; the miners and stakers."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, pbaas, public blockchains as a service, proof of power, proof-of-power, cryptocurrency, Service Economy, economy, Privacy, VerusID, ERC-20, decentralized finance, verus signatures',
+          },
+        ]}
+      />
+
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-12 md:grid-cols-4">
         <div className="">
           <Menu pathList={technologyLinks} href="/technology" />

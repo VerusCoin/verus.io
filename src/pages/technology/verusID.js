@@ -2,10 +2,24 @@ import Link from 'next/link';
 import Menu from '../../components/Menu';
 import { technologyLinks } from '../../constants/technology';
 import FooterMenu from '../../components/FooterMenu';
+import { NextSeo } from 'next-seo';
 
 const Verusid = () => {
   return (
     <>
+      <NextSeo
+        title="VerusID"
+        description="The first self-sovereign, decentralized identities on the
+        blockchain of its kind as its address that can
+        hold funds and stake its $VRSC."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, pbaas, public blockchains as a service, proof of power, proof-of-power, cryptocurrency, Service Economy, economy, Privacy, VerusID, ERC-20, decentralized finance, verus signatures',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
         <div className="">
           <Menu pathList={technologyLinks} href="/technology" />
@@ -13,8 +27,8 @@ const Verusid = () => {
         <div className="max-w-5xl p-6 md:col-span-3">
           <div className="mb-6">
             <h1 className="p-0 m-0 text-4xl font-normal">
-              VerusID: First decentralized and self-sovereign identity of
-              its kind.
+              VerusID: First decentralized and self-sovereign identity of its
+              kind.
             </h1>
             <p className="mt-8 leading-relaxed ">
               The first self-sovereign, decentralized identities on the

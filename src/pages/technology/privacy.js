@@ -1,10 +1,26 @@
 import Menu from '../../components/Menu';
 import { technologyLinks } from '../../constants/technology';
 import FooterMenu from '../../components/FooterMenu';
+import { NextSeo } from 'next-seo';
 
 const Privacy = () => {
   return (
     <>
+      <NextSeo
+        title="Privacy"
+        description="We believe it is possible to: 1) respect your privacy, 2)
+        give you control over your data, and 3) enable you to speak your
+        mind with the anonymous authority of an authorized voter or member
+        of a community, in a way that can directly be heard and affect
+        actual change."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, pbaas, public blockchains as a service, proof of power, proof-of-power, cryptocurrency, Open Source, Privacy, VerusID, ERC-20, decentralized finance, verus signatures',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-12 md:grid-cols-4">
         <div>
           <Menu pathList={technologyLinks} href="/technology" />

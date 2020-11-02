@@ -2,12 +2,26 @@ import Link from 'next/link';
 import Menu from '../../components/Menu';
 import SlugMenu from '../../components/SlugMenu';
 import { technologyLinks } from '../../constants/technology';
+import { NextSeo } from 'next-seo';
 
 const TechnologyOverview = () => {
   const nextRoute = technologyLinks[0];
 
   return (
     <>
+      <NextSeo
+        title="Techonolgy"
+        description="We are an open-source platform available to anyone. We supply tools
+        for individuals and organizations to build equitable frameworks for
+        social and economic change."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, pbaas, public blockchains as a service, proof of power, proof-of-power, cryptocurrency, Open Source, Privacy, VerusID, ERC-20, decentralized finance, verus signatures',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
         <div>
           <Menu pathList={technologyLinks} href="/technology" />

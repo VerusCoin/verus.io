@@ -1,10 +1,25 @@
 import Menu from '../../components/Menu';
 import { technologyLinks } from '../../constants/technology';
 import FooterMenu from '../../components/FooterMenu';
+import { NextSeo } from 'next-seo';
 
 const ProofOfPower = () => {
   return (
     <>
+      <NextSeo
+        title="Verus Proof of Power"
+        description="VerusCoin has a unique consensus mechanism: it is 50% Proof of Work
+        and 50% Proof of Stake. This means that half of newly generated
+        blocks come from mining (PoW), and the other half comes from staking
+        (PoS)."
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content:
+              'verus, pbaas, public blockchains as a service, proof of power, proof-of-power, cryptocurrency, Service Economy, economy, Privacy, VerusID, ERC-20, decentralized finance, verus signatures',
+          },
+        ]}
+      />
       <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-12 md:grid-cols-4 ">
         <div className="">
           <Menu pathList={technologyLinks} href="/technology" />
