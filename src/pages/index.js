@@ -21,12 +21,12 @@ const Home = (props) => {
       <div
         className="items-center justify-center p-8 bg-center bg-cover md:flex bg-light-bg "
         style={{
-          minHeight: 'calc(70vh - 100px)',
+          minHeight: 'calc(50vh - 100px)',
         }}
       >
         <div className="z-0">
-          <div className="max-w-3xl text-left sm:pt-8 section-2">
-            <h1 className="m-0 text-2xl md:text-4xl ">
+          <div className="max-w-3xl text-left sm:pt-2 section-2">
+            <h1 className="m-0 text-2xl md:text-4xl">
               We supply tools for individuals and organizations to build
               equitable frameworks for social and economic change.
             </h1>
@@ -57,7 +57,7 @@ const Home = (props) => {
                 Watch introductory video
               </p>
             </a>
-            <p className="max-w-xs m-0 text-sm font-normal font-p">
+            <p className="max-w-xs m-0 mt-4 text-sm font-normal font-p leading-relaxed text-gray-600">
               We have a strict zero-tracking policy on our website. You are safe
               with us.
             </p>
@@ -85,7 +85,7 @@ const Home = (props) => {
                 className="h-20"
               />
               <h1 className="mt-8 text-2xl font-normal">VerusID Lookup</h1>
-              <p className="my-3">
+              <p className="my-3 text-gray-600">
                 Search for identities registered on the Verus blockchain
               </p>
               <div>
@@ -103,7 +103,7 @@ const Home = (props) => {
                 alt="Blockchain Explorer Icon"
               />
               <h1 className="mt-8 text-2xl font-normal">Block Explorer</h1>
-              <p className="my-3">Search through addresses and transactions</p>
+              <p className="my-3 text-gray-600">Search through addresses and transactions</p>
               <div>
                 <a
                   href="https://explorer.veruscoin.io/"
@@ -123,7 +123,7 @@ const Home = (props) => {
                 alt="verus signature icon"
               />
               <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
-              <p className="my-3">
+              <p className="my-3 text-gray-600">
                 Sign and verify documents and files for free
               </p>
               <div>
@@ -153,21 +153,21 @@ const Home = (props) => {
           </div>
           <div className="pl-3 pr-3 md:pl-12 md:pr-12">
             <h3 className="mb-1 text-2xl font-normal">Worldwide Network</h3>
-            <p className="mt-2 mr-0">
+            <p className="mt-2 mr-0 leading-relaxed text-gray-600">
               Anyone with a modern CPU can start mining VRSC immediately,
               creating a naturally decentralized miner ecosystem.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Thriving Economy
             </h3>
-            <p className="mt-2 mr-0">
+            <p className="mt-2 mr-0 leading-relaxed text-gray-600">
               Verus has a robust and thriving protocol economy with
               opportunities for everyone to earn through mining and staking.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Permissionless System
             </h3>
-            <p className="mt-2 mr-0">
+            <p className="mt-2 mr-0 leading-relaxed text-gray-600">
               Verus is open-source, borderless and permissionless. It
               doesn&#x27;t matter who you are or where you live. Anyone can
               participate.
