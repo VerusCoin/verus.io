@@ -21,7 +21,11 @@ const Home = (props) => {
       <div
         className="items-center justify-center p-8 bg-center bg-cover md:flex bg-light-bg "
         style={{
+<<<<<<< Updated upstream
           minHeight: 'calc(70vh - 100px)',
+=======
+          minHeight: 'calc(40vh - 100px)',
+>>>>>>> Stashed changes
         }}
       >
         <div className="z-0">
