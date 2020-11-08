@@ -36,25 +36,24 @@ const Verusid = () => {
               hold funds and stake its $VRSC. Future proof and packed with
               advanced capabilities. In this permissionless system anyone can
               create a VerusID and have complete ownership.{' '}
-              <Link
-                href="/wallet/desktop-wallet"
-                className="font-p no-font-p text-bluebutton"
-              >
-                Register VerusID with Verus Desktop
+              <Link href="/wallet/desktop-wallet" className="font-p no-font-p ">
+                <span className="underline text-bluebutton">
+                  Register VerusID with Verus Desktop
+                </span>
               </Link>
               .
             </p>
             <a
               href="https://www.youtube.com/watch?v=EyC-EMiI4FM"
               target="_blank"
-              className="flex items-center my-12 "
+              className="flex items-center my-12"
             >
               <img
                 src="/images/icons/play-icon.svg"
                 alt="Play Logo"
                 className="w-8 mr-3"
               />
-              <p className="text-lg text-black underline font-foot">
+              <p className="text-lg text-black underline external font-foot">
                 Watch explainer video on YouTube
               </p>
             </a>

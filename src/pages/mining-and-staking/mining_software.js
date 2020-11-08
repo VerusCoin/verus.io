@@ -34,7 +34,7 @@ const MiningSoftware = (props) => {
             <a
               href="https://wiki.veruscoin.io/"
               target="_blank"
-              className="external"
+              className="underline external"
             >
               Support Wiki
             </a>
@@ -42,7 +42,7 @@ const MiningSoftware = (props) => {
             <a
               href="https://discord.gg/VRKMP2S"
               target="_blank"
-              className="external"
+              className="underline external"
             >
               official Discord
             </a>{' '}

@@ -29,7 +29,7 @@ const Pools = () => {
             <a
               href="https://discord.gg/VRKMP2S"
               target="_blank"
-              className="external"
+              className="underline external"
             >
               Discord
             </a>
@@ -41,7 +41,7 @@ const Pools = () => {
             <a
               href="https://miningpoolstats.stream/veruscoin"
               target="_blank"
-              className="external"
+              className="underline external"
             >
               MiningPoolStats
             </a>
