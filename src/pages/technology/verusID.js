@@ -44,14 +44,18 @@ const Verusid = () => {
               </Link>
               .
             </p>
-            <a href="#" target="_blank" className="flex items-center my-12 ">
+            <a
+              href="https://www.youtube.com/watch?v=EyC-EMiI4FM"
+              target="_blank"
+              className="flex items-center my-12 "
+            >
               <img
                 src="/images/icons/play-icon.svg"
                 alt="Play Logo"
                 className="w-8 mr-3"
               />
               <p className="text-lg text-black underline font-foot">
-                Watch explainer video on YouTube (need link)
+                Watch explainer video on YouTube
               </p>
             </a>
           </div>

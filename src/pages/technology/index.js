@@ -100,10 +100,10 @@ const TechnologyOverview = () => {
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
               <a
                 className="no-underline text-bluebutton"
-                href="#"
+                href="/docs/VerusVision.pdf"
                 target="_blank"
               >
-                Verus Vision Paper (need document)
+                Verus Vision Paper
               </a>
             </li>
             <li className="inline-flex">
@@ -124,10 +124,10 @@ const TechnologyOverview = () => {
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
               <a
                 className="no-underline text-bluebutton"
-                href="#"
+                href="/docs/VerusPhaseI.pdf"
                 target="_blank"
               >
-                Verus Phase One Paper (need document)
+                Verus Phase One Paper
               </a>
             </li>
           </ul>
