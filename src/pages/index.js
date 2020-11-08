@@ -26,7 +26,7 @@ const Home = (props) => {
       >
         <div className="z-0">
           <div className="max-w-3xl text-left sm:pt-2 section-2">
-            <h1 className="m-0 text-2xl md:text-4xl">
+            <h1 className="m-0 text-2xl md:text-4xl md:leading-relaxed">
               We supply tools for individuals and organizations to build
               equitable frameworks for social and economic change.
             </h1>
