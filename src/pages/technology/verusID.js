@@ -269,14 +269,10 @@ const Verusid = () => {
             </p>
           </div>
           <Link href="/verify-signatures">
-            <button className="px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="px-12 py-5 mb-16 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
               Verify signatures here
             </button>
           </Link>
-          <div className="mb-16">
-            <h2 className="mt-16 text-2xl font-normal">Multisig</h2>
-            <p className="text-xl leading-normal font-p">lipsum</p>
-          </div>
         </div>
       </div>
       <FooterMenu hrefLocation="/technology" pathList={technologyLinks} />
