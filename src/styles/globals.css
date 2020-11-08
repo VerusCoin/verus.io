@@ -31,7 +31,7 @@ h6 {
   @apply font-normal leading-tight;
 }
 p {
-  @apply text-base font-normal font-p;
+  @apply text-base font-normal text-gray-700 font-p;
 }
 
 .breakout-container {

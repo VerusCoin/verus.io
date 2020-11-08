@@ -33,10 +33,9 @@ const Staking = () => {
             random and the winner will receive the block reward. This is
             possible since Verus has a unique consensus mechanism of 50% Proof
             of Stake, and 50% Proof of Work.{' '}
-            <a href="#">
-              {' '}
-              Read more about our consensus mechanism here. (Need a link)
-            </a>
+            <Link href="/technology/verus_proof_of_power">
+              Read more about our consensus mechanism here.
+            </Link>
           </p>
           <div className="flex items-center justify-center max-w-lg p-8 my-16 bg-gray-200 rounded-lg">
             <div className="flex flex-col md:flex-row ">

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Bridges from '../pages/technology/bridges';
 
 const VerusIDContent = () => {
   return (
@@ -107,11 +108,11 @@ const ErcContent = () => {
       <div className="p-3 pt-0 text-left md:pl-20 md:col-span-2">
         <div className="max-w-xl">
           <h3 className="mt-0 mb-6 font-normal md:text-2xl ">
-            Combine the Power of Solidity with Verus
+            Bridges to Other Cryptocurrencies
           </h3>
           <p className="leading-relaxed">
-            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam eaque.
+            Through decentralized bridges, other cryptocurrencies are
+            represented as tokens on the Verus blockchain.
           </p>
           <Link href="/technology/bridges">
             <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
@@ -171,7 +172,7 @@ const IndexTabWindow = () => {
               : 'text-tablink border-tablink')
           }
         >
-          ERC-20 Bridge
+          Bridges
         </a>
       </div>
       <div className="hidden pt-6 md:block tab-content sm:pt-24 ">
@@ -245,7 +246,7 @@ const IndexTabWindow = () => {
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-four"
           >
-            ERC-20 Bridge
+            Bridges
           </label>
           <div className="overflow-hidden leading-normal tab-content-accordion">
             <ErcContent />

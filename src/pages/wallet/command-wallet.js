@@ -59,7 +59,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               <tr className="bg-gray-100">
                 <td className="flex items-center justify-between p-4 space-x-4">
                   <img src="/images/logos/macos.svg" className="opacity-25" />
-                  <p className="text-xl ">MacOS</p>
+                  <p className="text-xl ">macOS</p>
                   {macApp && (
                     <a href={macApp} target="_blank">
                       Download

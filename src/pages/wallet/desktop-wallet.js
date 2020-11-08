@@ -36,7 +36,7 @@ const DesktopWallet = (props) => {
               onClick={() => {
                 setShowDownloads(!showDownloads);
               }}
-              className="inline-flex items-center px-12 py-5 mt-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
+              className="inline-flex items-center px-12 py-5 mt-8 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
             >
               <span className="mr-1">Download Verus Desktop</span>
               {showDownloads ? (
@@ -151,8 +151,8 @@ const DesktopWallet = (props) => {
             alt=""
           />
 
-          <div className="max-w-4xl space-y-16 text-center sm:text-left">
-            <div className="max-w-2xl space-y-8">
+          <div className="max-w-4xl mt-16 space-y-24 text-center sm:text-left">
+            <div className="max-w-2xl space-y-16">
               <div className="flex flex-row space-x-8">
                 <img
                   src="/images/icons/safe-icon.svg"

@@ -13,7 +13,7 @@ const SlugMenu = ({ pathList, href }) => {
             >
               <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
-                <p className="p-0 m-0 mt-2 text-base leading-normal text-black text-gray-600 font-p">
+                <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
                   {path.description}
                 </p>
               </div>

@@ -24,14 +24,6 @@ export const ExchangeLinks = [
     URIText: 'SafeTrade',
   },
   {
-    image: 'aacoin.svg',
-    title: 'AACoin',
-    trade: 'VRSC/BTC',
-    kyc: '',
-    URI: 'https://www.aacoin.com/trade/VRSC_BTC',
-    URIText: 'AAcoin',
-  },
-  {
     image: 'atomicdex.svg',
     title: 'AtomicDex',
     trade: 'All pairs',
