@@ -21,7 +21,7 @@ const Home = (props) => {
       <div
         className="items-center justify-center p-8 bg-center bg-cover md:flex bg-light-bg "
         style={{
-          minHeight: 'calc(50vh - 100px)',
+          minHeight: 'calc(40vh - 100px)',
         }}
       >
         <div className="z-0">
@@ -57,7 +57,7 @@ const Home = (props) => {
                 Watch introductory video
               </p>
             </a>
-            <p className="max-w-xs m-0 mt-4 text-sm font-normal font-p leading-relaxed text-gray-600">
+            <p className="max-w-xs m-0 mt-4 text-sm font-normal leading-relaxed text-gray-600 font-p">
               We have a strict zero-tracking policy on our website. You are safe
               with us.
             </p>
@@ -103,7 +103,9 @@ const Home = (props) => {
                 alt="Blockchain Explorer Icon"
               />
               <h1 className="mt-8 text-2xl font-normal">Block Explorer</h1>
-              <p className="my-3 text-gray-600">Search through addresses and transactions</p>
+              <p className="my-3 text-gray-600">
+                Search through addresses and transactions
+              </p>
               <div>
                 <a
                   href="https://explorer.veruscoin.io/"
