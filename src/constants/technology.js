@@ -27,19 +27,19 @@ export const technologyLinks = [
     id: 5,
     path: 'currencies',
     name: 'Currencies & DeFi',
-    description: 'text.',
+    description: 'Fractional currencies to enable Verus DeFi',
   },
   {
     id: 6,
     path: 'bridges',
     name: 'Bridges',
-    description: 'text.',
+    description: 'Representations of coins on the Verus blockchain',
   },
   {
     id: 7,
     path: 'privacy',
     name: 'Privacy',
-    description: 'text.',
+    description: 'Zk-SNARKs privacy technology',
   },
   {
     id: 8,
