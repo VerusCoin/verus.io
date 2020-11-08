@@ -32,7 +32,7 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               <a
                 href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
                 target="_blank"
-                className="no-underline external font-p text-bluebutton"
+                className="underline external font-p text-bluebutton"
               >
                 this bootstrap
               </a>

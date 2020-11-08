@@ -53,7 +53,7 @@ const Community = () => {
                 href="https://discord.gg/VRKMP2S"
                 target="_blank"
               >
-                Discord
+                <span className="underline">Discord</span>
               </a>
             </p>
             <p className="m-0 ">
@@ -63,7 +63,7 @@ const Community = () => {
                 href="https://github.com/VerusCoin"
                 target="_blank"
               >
-                GitHub
+                <span className="underline">GitHub</span>
               </a>
             </p>
           </div>

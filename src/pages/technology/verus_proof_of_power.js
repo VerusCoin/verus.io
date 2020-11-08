@@ -65,7 +65,7 @@ const ProofOfPower = () => {
           <p className="my-8 leading-normal ">
             Verus’ staking algorithm{' '}
             <a
-              className="no-underline external text-bluebutton"
+              className="underline external text-bluebutton"
               href="https://medium.com/veruscoin/how-verus-solved-nothing-at-stake-and-weak-subjectivity-proof-of-stake-problems-b4dd6a85086e"
             >
               solves the two major theoretical issues undermining other PoS
@@ -93,7 +93,7 @@ const ProofOfPower = () => {
             In over two years of mainnet, VerusCoin has never experienced a
             successful 51% hash attack.{' '}
             <a
-              className="no-underline text-bluebutton"
+              className="underline text-bluebutton"
               href="/docs/VerusPoP.pdf"
               target="_blank"
             >
