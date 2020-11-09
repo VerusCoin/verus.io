@@ -35,10 +35,10 @@ const ServiceEconomy = () => {
             who maintain the network; the miners and stakers.
           </p>
           <p className="my-8">
-            No value whatsoever goes to the Verus Coin Foundation, either
-            through founder fees or developer fees. All fees are 100% recycled
-            through mining and staking to create the groundwork for a thriving
-            economy.
+            Verus was launched as a public fair launch, with no premine, ICO,
+            or similar event. There are no founder or developer fees. All fees
+            are 100% recycled through mining and staking to create the groundwork
+            for a thriving economy.
           </p>
           <p className="my-8">
             The miners and stakers are competing to win the next block to
@@ -46,7 +46,7 @@ const ServiceEconomy = () => {
             rewards are added to the winning block, but also VerusID
             registration fees, conversion fees and transaction fees. These fees
             can outperform traditional block rewards. There is a lot to gain by
-            putting computers to work with mining, or coins through staking
+            putting computers to work with mining, or coins through staking.
           </p>
           <p className="my-8">
             Furthermore, when PBaaS is enabled, miners within the ecosystem can
