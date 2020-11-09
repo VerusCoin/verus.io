@@ -22,7 +22,7 @@ const DesktopWallet = (props) => {
           },
         ]}
       />
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-40 md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
@@ -134,6 +134,15 @@ const DesktopWallet = (props) => {
                     </a>
                   </li>
                 )}
+                <li className="block px-4 py-3 whitespace-no-wrap">
+                  <a
+                    href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
+                    target="_blank"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                  >
+                    <p className="pl-2 m-0">Download Bootstrap</p>
+                  </a>
+                </li>
               </ul>
             </div>
             <p>
