@@ -146,7 +146,7 @@ const Home = (props) => {
               participate to earn its currency VRSC.
             </h4>
             <Link href="/mining-and-staking">
-              <button className="flex-shrink-0 w-full px-12 py-4 text-base bg-white border-0 rounded-full md:w-auto md:py-4 hover:bg-bluebutton hover:text-white">
+              <button className="flex-shrink-0 w-full px-12 py-4 text-base bg-white border-0 rounded-full md:w-auto md:py-4 hover:bg-gray-200">
                 Start Earning Now
               </button>
             </Link>
