@@ -84,7 +84,7 @@ const Home = (props) => {
                 alt="VerusID Lookup Icon"
                 className="h-20"
               />
-              <h1 className="mt-8 text-2xl font-normal">VerusID Lookup</h1>
+              <h2 className="mt-8 text-2xl font-normal">VerusID Lookup</h2>
               <p className="my-3">
                 Search for identities registered on the Verus blockchain
               </p>
@@ -102,7 +102,7 @@ const Home = (props) => {
                 className="h-20"
                 alt="Blockchain Explorer Icon"
               />
-              <h1 className="mt-8 text-2xl font-normal">Block Explorer</h1>
+              <h2 className="mt-8 text-2xl font-normal">Block Explorer</h2>
               <p className="my-3">Search through addresses and transactions</p>
               <div>
                 <a
@@ -122,7 +122,7 @@ const Home = (props) => {
                 className="h-20"
                 alt="verus signature icon"
               />
-              <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
+              <h2 className="mt-8 text-2xl font-normal">Verus Signatures</h2>
               <p className="my-3">
                 Sign and verify documents and files for free
               </p>
