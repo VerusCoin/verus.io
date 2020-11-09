@@ -8,7 +8,7 @@ const ThirdPartyWallet = () => {
     <>
       <NextSeo
         title="Alternate Wallets"
-        description="Cryptocurrency Wallets not developed by the Verus Community that can hold VRSC."
+        description="Cryptocurrency Wallets developed by the extended Verus Community that work with VRSC."
         additionalMetaTags={[
           {
             name: 'keywords',
@@ -25,7 +25,7 @@ const ThirdPartyWallet = () => {
         <div className="max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal ">Alternate Wallets</h1>
           <p className="my-8">
-            Wallets not developed by the Verus Community that can hold VRSC.
+            Cryptocurrency Wallets developed by the extended Verus Community that work with VRSC. Listing here is not necessarily an endorsement, please do your own due dilligence regarding the safety of using any wallet.
           </p>
           <div className="grid grid-cols-2 gap-8">
             <div>
