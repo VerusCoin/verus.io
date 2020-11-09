@@ -126,17 +126,6 @@ const Pools = () => {
                 </td>
                 <td className="w-1/4 p-4 text-center ">1%</td>
               </tr>
-              <tr>
-                <td className="w-3/4 p-4">
-                  <a
-                    href="https://www.aacoin.com/#/trade?symbol=VRSC_BTC"
-                    target="_blank"
-                  >
-                    AAcoin Exchange
-                  </a>
-                </td>
-                <td className="w-1/4 p-4 text-center">20%</td>
-              </tr>
             </tbody>
           </table>
         </div>

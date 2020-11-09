@@ -43,7 +43,7 @@ const ProofOfPower = () => {
               />
               <div>
                 <h4 className="text-white">Proof of Stake</h4>
-                <p className="leading-normal text-theme-feature font-p">
+                <p className="text-sm leading-normal text-theme-feature font-p">
                   50% of all blocks are generated through staking
                 </p>
               </div>
@@ -56,7 +56,7 @@ const ProofOfPower = () => {
               />
               <div>
                 <h4 className="text-white">Proof of Work</h4>
-                <p className="leading-normal text-theme-feature font-p">
+                <p className="text-sm leading-normal text-theme-feature font-p">
                   50% of all blocks are generated through mining
                 </p>
               </div>

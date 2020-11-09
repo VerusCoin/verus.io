@@ -73,18 +73,6 @@ function Navbar() {
                 </a>
               </Link>
             </li>
-            {/* <li
-              className="flex items-center"
-              onClick={() => setNavbarOpen(false)}
-            >
-              <a
-                href="https://wiki.veruscoin.io/"
-                target="_blank"
-                className="px-4 py-2 text-sm no-underline external md:text-base text-navlink hover:text-navlink-hover"
-              >
-                Support
-              </a>
-            </li> */}
 
             <li className="flex items-center">
               <div className="relative hidden md:inline-block dropdown ">
@@ -102,17 +90,12 @@ function Navbar() {
                     ></path>
                   </svg>
                 </button>
-                <div className="absolute hidden pt-0 -ml-8 dropdown-menu">
+                <div className="absolute hidden pt-0 -ml-8 text-left dropdown-menu">
                   <ul
                     className={
                       ' pt-1 pb-1 pl-4 pr-4 mt-3 bg-white rounded-lg shadow-menu  md:z-50 '
                     }
                   >
-                    {/* <li className="block px-4 py-2 whitespace-no-wrap">
-                      <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
-                        Developer Docs
-                      </a>
-                    </li> */}
                     <li className="block px-4 py-2 whitespace-no-wrap">
                       <Link href="/verusid-lookup">
                         <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">

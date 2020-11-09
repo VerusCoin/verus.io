@@ -28,9 +28,9 @@ const DesktopWallet = (props) => {
         </div>
         <div className="p-6 md:col-span-3">
           <div className="mb-4 text-center sm:text-left">
-            <h2 className="p-0 m-0 text-4xl font-normal ">
+            <h1 className="p-0 m-0 text-4xl font-normal ">
               Verus Desktop: multi-coin wallet packed with features.
-            </h2>
+            </h1>
 
             <button
               onClick={() => {
@@ -160,9 +160,9 @@ const DesktopWallet = (props) => {
                   width="50"
                 />
                 <div className="">
-                  <h3 className="mb-2 text-2xl font-normal">
+                  <h2 className="mb-2 text-2xl font-normal">
                     Easy and Safe & Always Secure
-                  </h3>
+                  </h2>
                   <p className=" text-md">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
@@ -178,9 +178,9 @@ const DesktopWallet = (props) => {
                   width="50"
                 />
                 <div>
-                  <h3 className="mb-2 text-2xl font-normal">
+                  <h2 className="mb-2 text-2xl font-normal">
                     VerusID Capabilities
-                  </h3>
+                  </h2>
                   <p className=" text-md">
                     Create and manage self-sovereign identities on the
                     blockchain. Use VerusID as friendly crypto name, sign and
@@ -197,9 +197,9 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
+                  <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Multi-Currency Wallet
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-sm text-theme-feature ">
                     Store hundreds of coins and tokens!
                   </p>
@@ -212,9 +212,9 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
+                  <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Mining & Staking
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-sm text-theme-feature ">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
@@ -228,10 +228,10 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p ">
+                  <h3 className="mb-0 text-lg font-semibold text-white font-p ">
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-sm text-theme-feature ">
                     Convert from one currency to another through multi-reserve
                     currencies.
@@ -245,10 +245,10 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
+                  <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-sm text-theme-feature ">
                     Create multi-reserve and fractional currencies with a few
                     clicks.

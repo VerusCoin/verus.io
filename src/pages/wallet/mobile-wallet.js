@@ -28,9 +28,9 @@ const MobileWallet = ({ latestAndroid }) => {
 
         <div className="p-6 md:col-span-3">
           <div className="mb-4 text-center sm:text-left">
-            <h2 className="p-0 m-0 text-4xl font-normal ">
+            <h1 className="p-0 m-0 text-4xl font-normal ">
               Verus Mobile: multi-coin wallet.
-            </h2>
+            </h1>
             <button
               onClick={() => {
                 setShowDownloads(!showDownloads);
@@ -118,7 +118,7 @@ const MobileWallet = ({ latestAndroid }) => {
 
           <div className="pr-6 space-y-20 text-center sm:text-left sm:col-span-2">
             <div>
-              <h3 className="mb-2 text-2xl font-normal">Easy and Safe</h3>
+              <h2 className="mb-2 text-2xl font-normal">Easy and Safe</h2>
               <p className="my-8 text-md">
                 Verus Mobile is created for beginners and exports in mind.
                 Anyone can get started, no matter previous cryptocurrency

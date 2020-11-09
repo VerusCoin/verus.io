@@ -40,7 +40,7 @@ const ThirdPartyWallet = () => {
               <a
                 href="http://www.coincollect.cc/"
                 target="_blank"
-                className="leading-relaxed underline cursor-pointer font-p"
+                className="leading-relaxed underline cursor-pointer external font-p"
               >
                 Go to CoinCollect website
               </a>
@@ -57,7 +57,7 @@ const ThirdPartyWallet = () => {
               <a
                 href="http://www.vidulum.app/"
                 target="_blank"
-                className="leading-relaxed underline cursor-pointer font-p"
+                className="leading-relaxed underline cursor-pointer external font-p"
               >
                 Go to Vidulum website
               </a>
@@ -74,7 +74,7 @@ const ThirdPartyWallet = () => {
               <a
                 href="https://www.chainzilla.io/chameleonpay.html"
                 target="_blank"
-                className="leading-relaxed underline cursor-pointer font-p"
+                className="leading-relaxed underline cursor-pointer external font-p"
               >
                 Go to Chameleon website
               </a>

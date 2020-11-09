@@ -21,7 +21,7 @@ const WalletOverview = () => {
           },
         ]}
       />
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-4">
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
