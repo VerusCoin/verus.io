@@ -14,7 +14,7 @@ const MiningSoftware = (props) => {
           {
             name: 'keywords',
             content:
-              'verus, cryptocurrency, open source, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools, staking pools, mining software, Windows, macOS, CLI,',
+              'verus, cryptocurrency, open source, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools, mining software, Windows, macOS, CLI,',
           },
         ]}
       />
