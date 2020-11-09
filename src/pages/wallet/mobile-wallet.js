@@ -21,7 +21,7 @@ const MobileWallet = ({ latestAndroid }) => {
           },
         ]}
       />
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 modalBody modal-active md:grid-cols-4">
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-40 modalBody modal-active md:grid-cols-4">
         <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
