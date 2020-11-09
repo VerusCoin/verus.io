@@ -45,7 +45,7 @@ const Staking = () => {
                 <img src="/images/icons/stake-rules-icon.svg" width="50" />
               </div>
               <div>
-                <p className="text-xl">Verus Staking Rules</p>
+                <h4 className="text-2xl">Verus Staking Rules</h4>
                 <ul className="ml-5 leading-loose list-disc font-p">
                   <li>Run native blockchain</li>
                   <li>Keep Verus Desktop (or CLI) open</li>
