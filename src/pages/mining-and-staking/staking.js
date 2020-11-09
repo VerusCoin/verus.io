@@ -49,6 +49,7 @@ const Staking = () => {
                 <ul className="ml-5 leading-loose list-disc font-p">
                   <li>Run native blockchain</li>
                   <li>Keep Verus Desktop (or CLI) open</li>
+                  <li>Have staking enabled</li>
                   <li>Coins eligible to stake after 150 confirmations</li>
                 </ul>
               </div>
