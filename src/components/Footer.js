@@ -105,7 +105,7 @@ const Footer = () => {
             Reddit
           </a>
           <a
-            href="https://medium.com/@veruscoin"
+            href="https://medium.com/veruscoin"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
           >
@@ -135,7 +135,7 @@ const Footer = () => {
               'https://twitter.com/veruscoin',
               'https://t.me/veruscommunity',
               'https://reddit.com/r/veruscoin',
-              'https://medium.com/@veruscoin',
+              'https://medium.com/veruscoin',
               'https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg',
               'https://bitcointalk.org/index.php?topic=4070404.0',
             ]}

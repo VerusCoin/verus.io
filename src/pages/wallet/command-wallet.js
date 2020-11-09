@@ -80,7 +80,8 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
               </tr>
               <tr className="bg-gray-100">
                 <td className="flex items-center justify-between p-4 space-x-4">
-                  <p className="text-xl ">ARM</p>
+                  <img src="/images/logos/linux.svg" className="opacity-25" />
+                  <p className="text-xl ">Linux ARM</p>
                   {armApp && (
                     <a href={armApp} target="_blank">
                       Download

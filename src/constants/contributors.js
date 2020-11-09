@@ -13,9 +13,9 @@ export const ContributorsList = [
   },
   {
     name: 'Alex R. English',
-    title: 'Developer',
+    title: 'Developer/Program Manager',
     description:
-      "Alex's background is varied, including software development, system administration, embedded development, and technical editing. He became a cryptocurrency user in 2012 and has followed the technology since. He has grown to love shell scripts while managing Verus infrastructure.",
+      "Alex's background includes software development, system administration, and technical editing. He became a cryptocurrency user in 2012 and has followed the space since. Alex develops scripts to support community operations and works to coordinate effort within the Verus project and community.",
   },
   {
     name: 'David Dawes',
@@ -84,4 +84,5 @@ export const AdditionalContributionList = [
   { name: 'allbits' },
   { name: 'Brian Day (a.k.a Nair Biad)' },
   { name: 'JessicaZartler' },
+  { name: 'quipacorn' },
 ];

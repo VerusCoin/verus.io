@@ -126,7 +126,11 @@ const DesktopWallet = (props) => {
                       href={armApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <p className="pl-2 m-0">Download ARM app</p>
+                      <img
+                        className="opacity-25"
+                        src="/images/logos/linux.svg"
+                      />
+                      <p className="pl-2 m-0">Download Linux ARM app</p>
                     </a>
                   </li>
                 )}
