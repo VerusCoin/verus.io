@@ -19,7 +19,7 @@ const Home = (props) => {
       />
 
       <div
-        className="items-center justify-center p-8 bg-center bg-cover md:flex bg-light-bg "
+        className="items-center justify-center p-8 bg-top bg-cover md:flex bg-light-bg "
         style={{
           minHeight: 'calc(40vh - 100px)',
         }}
@@ -140,7 +140,7 @@ const Home = (props) => {
 
       <div className="container max-w-5xl">
         <div className="grid justify-center grid-cols-1 pt-12 m-4 mb-16 space-y-12 md:space-y-0 md:m-0 md:mb-32 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-32 section-5">
-          <div className="p-3 pb-12 bg-center bg-cover rounded-lg bg-earning-bg md:p-16">
+          <div className="p-3 pb-12 bg-top bg-cover rounded-lg bg-earning-bg md:p-16">
             <h4 className="p-0 mb-16 text-2xl leading-relaxed text-left text-white font-p">
               Verus is a decentralized network where anyone in the world can
               participate to earn its currency VRSC.
