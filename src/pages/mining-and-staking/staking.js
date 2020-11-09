@@ -14,7 +14,7 @@ const Staking = () => {
           {
             name: 'keywords',
             content:
-              'verus, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools, staking pools',
+              'verus, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools',
           },
         ]}
       />

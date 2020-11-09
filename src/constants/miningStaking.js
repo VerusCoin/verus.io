@@ -15,7 +15,7 @@ export const miningStakingLinks = [
     id: 3,
     path: 'pools',
     name: 'Pools',
-    description: 'Join mining or staking pools for consistent rewards',
+    description: 'Join mining pools for consistent rewards',
   },
 ];
 
