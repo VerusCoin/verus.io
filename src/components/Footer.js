@@ -57,7 +57,12 @@ const Footer = () => {
             <br />
             All rights reserved.
           </p>
-
+          <a
+            href="/privacy-policy"
+            className="block mt-6 no-underline hover:text-white text-navlink-hover"
+          >
+            Privacy Policy
+          </a>
           <a
             href="https://github.com/VerusCoin/Media-Assets"
             target="_blank"
