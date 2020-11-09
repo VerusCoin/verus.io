@@ -2,8 +2,16 @@ import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
 import { NextSeo } from 'next-seo';
 import FooterMenu from '../../components/FooterMenu';
+import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
 
-const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
+const CommandWallet = ({
+  linuxApp,
+  winApp,
+  macApp,
+  armApp,
+  name,
+  published_at,
+}) => {
   return (
     <>
       <NextSeo
@@ -46,9 +54,11 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
           >
             <tbody>
               <tr>
-                <td className="flex items-center justify-between p-4 space-x-4">
+                <td className="flex items-center p-4 space-x-4">
                   <img src="/images/logos/windows.svg" className="opacity-25" />
-                  <p className="text-xl">Windows</p>
+                  <p className="text-xl">{name} Windows</p>
+                </td>
+                <td>
                   {winApp && (
                     <a href={winApp} target="_blank">
                       Download
@@ -57,9 +67,11 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
                 </td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="flex items-center justify-between p-4 space-x-4">
+                <td className="flex items-center p-4 space-x-4">
                   <img src="/images/logos/macos.svg" className="opacity-25" />
-                  <p className="text-xl ">macOS</p>
+                  <p className="text-xl ">{name} macOS</p>
+                </td>
+                <td>
                   {macApp && (
                     <a href={macApp} target="_blank">
                       Download
@@ -68,9 +80,11 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
                 </td>
               </tr>
               <tr>
-                <td className="flex items-center justify-between p-4 space-x-4">
+                <td className="flex items-center p-4 space-x-4">
                   <img src="/images/logos/linux.svg" className="opacity-25" />
-                  <p className="text-xl ">Linux</p>
+                  <p className="text-xl ">{name} Linux</p>
+                </td>
+                <td>
                   {linuxApp && (
                     <a href={linuxApp} target="_blank">
                       Download
@@ -79,9 +93,11 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
                 </td>
               </tr>
               <tr className="bg-gray-100">
-                <td className="flex items-center justify-between p-4 space-x-4">
+                <td className="flex items-center p-4 space-x-4">
                   <img src="/images/logos/linux.svg" className="opacity-25" />
-                  <p className="text-xl ">Linux ARM</p>
+                  <p className="text-xl ">{name} Linux ARM</p>
+                </td>
+                <td>
                   {armApp && (
                     <a href={armApp} target="_blank">
                       Download
@@ -90,6 +106,16 @@ const CommandWallet = ({ linuxApp, winApp, macApp, armApp }) => {
                 </td>
               </tr>
             </tbody>
+            <tfoot>
+              <tr className="col-span-2">
+                Latest release: {formatDateFromString(published_at)}{' '}
+                {date_diff_indays(published_at) < 14 ? (
+                  <span className="px-6 py-1 mx-4 font-bold text-white whitespace-no-wrap bg-red-500 rounded-full ">
+                    New Update
+                  </span>
+                ) : null}
+              </tr>
+            </tfoot>
           </table>
 
           <div className="max-w-3xl p-8 space-y-8 bg-gray-200">
@@ -135,8 +161,12 @@ export async function getServerSideProps(context) {
   let linuxApp,
     winApp,
     macApp,
-    armApp = '';
+    name,
+    armApp = '',
+    published_at = '';
 
+  name = latestCMDwallet.name;
+  published_at = latestCMDwallet.published_at;
   latestCMDwallet.assets.map((asset) => {
     if (asset.name.includes('arm64')) {
       armApp = asset.browser_download_url;
@@ -154,6 +184,6 @@ export async function getServerSideProps(context) {
     }
   });
   return {
-    props: { linuxApp, winApp, macApp, armApp },
+    props: { linuxApp, winApp, macApp, armApp, name, published_at },
   };
 }
