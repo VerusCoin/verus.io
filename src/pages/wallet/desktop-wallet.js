@@ -215,7 +215,7 @@ const DesktopWallet = (props) => {
                 </div>
               </div>
             </div>
-            <div className="grid items-baseline grid-cols-1 px-12 py-6 bg-center bg-cover rounded gap-y-4 gap-x-12 bg-features-bg sm:grid-cols-2">
+            <div className="grid items-start grid-cols-1 px-12 py-6 bg-center bg-cover rounded gap-y-4 gap-x-12 bg-features-bg sm:grid-cols-2">
               <div className="flex flex-row items-center flex-shrink-0 space-x-6">
                 <img
                   src="/images/icons/bitcoin-icon.svg"
