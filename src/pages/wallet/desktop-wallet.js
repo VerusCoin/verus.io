@@ -41,7 +41,7 @@ const DesktopWallet = (props) => {
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
         <div className="p-6 md:col-span-3">
-          <div className="mb-4 text-center sm:text-left">
+          <div className="mb-4 text-center md:text-left">
             <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
               Verus Desktop: multi-coin wallet packed with features.
             </h1>
@@ -169,18 +169,17 @@ const DesktopWallet = (props) => {
               ) : null}
             </p>
           </div>
-
-          <img
-            src="/images/icons/VerusDesktopImg3.png"
-            className="max-w-3xl"
-            srcSet="/images/icons/VerusDesktopImg3-p-500.png 500w, /images/icons/VerusDesktopImg3-p-800.png 800w, /images/icons/VerusDesktopImg3-p-1080.png 1080w, /images/icons/VerusDesktopImg3.png 1600w"
-            sizes="(max-width: 479px) 43vw, (max-width: 767px) 51vw, (max-width: 991px) 54vw, 56vw"
-            alt=""
-          />
-
+          <div className="flex justify-center max-w-3xl">
+            <img
+              src="/images/icons/VerusDesktopImg3.png"
+              srcSet="/images/icons/VerusDesktopImg3-p-500.png 500w, /images/icons/VerusDesktopImg3-p-800.png 800w, /images/icons/VerusDesktopImg3-p-1080.png 1080w, /images/icons/VerusDesktopImg3.png 1600w"
+              sizes="(max-width: 479px) 43vw, (max-width: 767px) 51vw, (max-width: 991px) 54vw, 56vw"
+              alt=""
+            />
+          </div>
           <div className="max-w-4xl mt-16 space-y-24 text-center sm:text-left">
             <div className="max-w-2xl space-y-16">
-              <div className="flex flex-row space-x-8">
+              <div className="flex flex-row items-center space-x-8">
                 <img
                   src="/images/icons/safe-icon.svg"
                   alt="Safe Icon"
@@ -198,7 +197,7 @@ const DesktopWallet = (props) => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row space-x-8">
+              <div className="flex flex-row items-center space-x-8">
                 <img
                   src="/images/icons/verusid-icon.svg"
                   alt="VerusID Icon"

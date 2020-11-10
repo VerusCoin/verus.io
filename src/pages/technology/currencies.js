@@ -32,34 +32,34 @@ const Currencies = () => {
             Currencies.
           </p>
           <p className="my-8">
-            Users can create Fractional Currencies at will, without programming, by
-            defining new Currencies on Verus blockchains that are backed by
+            Users can create Fractional Currencies at will, without programming,
+            by defining new Currencies on Verus blockchains that are backed by
             on-chain reserves consisting of other useful Currencies, including,
-            for example, tokens that represent assets on other
-            blockchains (such as Etherium) via a bridge. Once created, users can
-            interact with these Fractional Currencies by:
+            for example, tokens that represent assets on other blockchains (such
+            as Etherium) via a bridge. Once created, users can interact with
+            these Fractional Currencies by:
           </p>
-          <ul className="my-8">
+          <ul className="my-8 ml-6 space-y-4 list-disc list-inside">
             <li>
-              Using the Fractional Currency as a conversion mechanism (for example from
-              VRSC to ETH), since they can automatically convert from one
-              Currency to another as long as both Currencies are used as
-              reserves in any already-defined Fractional Currency, and
+              Using the Fractional Currency as a conversion mechanism (for
+              example from VRSC to ETH), since they can automatically convert
+              from one Currency to another as long as both Currencies are used
+              as reserves in any already-defined Fractional Currency, and
             </li>
             <li>
-              Converting their own holdings into a Fractional Currency and holding
-              this Currency, which (a) acts as a
-              constantly rebalancing Constant Mix Strategy asset, and (b)
-              benefits from fees paid by other users who use the currency as a
-              conversion mechanism as described above.
+              Converting their own holdings into a Fractional Currency and
+              holding this Currency, which (a) acts as a constantly rebalancing
+              Constant Mix Strategy asset, and (b) benefits from fees paid by
+              other users who use the currency as a conversion mechanism as
+              described above.
             </li>
           </ul>
           <p className="my-8">
             Verus DeFi is characterized by ease of use and low barriers to entry
-            as Fractional Currencies can be created by anyone without programming, and
-            conversion transactions are done as easily as sending a currency to
-            oneself (by point-and-click in the GUI, or a simple command in the
-            CLI).
+            as Fractional Currencies can be created by anyone without
+            programming, and conversion transactions are done as easily as
+            sending a currency to oneself (by point-and-click in the GUI, or a
+            simple command in the CLI).
           </p>
           <p className="my-8">
             The Verus project believes that the Verus DeFi system offers real
@@ -76,7 +76,7 @@ const Currencies = () => {
             As a UTXO-based smart-transaction protocol that implements DeFi at
             the protocol level, Verus DeFi offers:
           </p>
-          <ul className="my-8">
+          <ul className="my-8 ml-6 space-y-4 list-disc list-inside">
             <li>
               Increased security at the "app level" - Verus DeFi is not
               implemented by having many smart contract authors creating smart
@@ -97,20 +97,19 @@ const Currencies = () => {
               has important implications for security, fairness, and efficiency,
               including
             </li>
-            <li>
-              <ul>
-                <li>elimination of front-running,</li>
-                <li>
-                  enhancing system-wide liquidity, thus reducing slippage, as
-                  conversions going to and from any given currency within the
-                  same block are offset against each other, and
-                </li>
-                <li>
-                  providing all users converting to and from a currency within
-                  the same block the same fair price with no spread.
-                </li>
-              </ul>
-            </li>
+
+            <ul className="ml-6 space-y-4 list-disc list-inside">
+              <li>elimination of front-running,</li>
+              <li>
+                enhancing system-wide liquidity, thus reducing slippage, as
+                conversions going to and from any given currency within the same
+                block are offset against each other, and
+              </li>
+              <li>
+                providing all users converting to and from a currency within the
+                same block the same fair price with no spread.
+              </li>
+            </ul>
           </ul>
         </div>
       </div>
