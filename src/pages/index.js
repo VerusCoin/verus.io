@@ -19,19 +19,19 @@ const Home = (props) => {
       />
 
       <div
-        className="items-center justify-center p-8 bg-center bg-cover md:flex bg-light-bg "
+        className="items-center justify-center p-8 bg-top bg-cover md:flex bg-light-bg "
         style={{
           minHeight: 'calc(40vh - 100px)',
         }}
       >
         <div className="z-0">
           <div className="max-w-3xl text-left sm:pt-2 section-2">
-            <h1 className="m-0 text-2xl md:text-4xl">
+            <h1 className="m-0 text-2xl md:text-4xl md:leading-snug">
               We supply tools for individuals and organizations to build
               equitable frameworks for social and economic change.
             </h1>
 
-            <div className="flex flex-wrap items-center justify-center w-full mt-12 md:space-x-8 md:space-y-0 md:justify-start">
+            <div className="flex flex-wrap items-center justify-center w-full mt-12 space-y-6 md:space-y-0 md:space-x-8 md:justify-start">
               <Link href="/mining-and-staking">
                 <button className="px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
                   Earn in the Network Economy
@@ -57,7 +57,7 @@ const Home = (props) => {
                 Watch introductory video
               </p>
             </a>
-            <p className="max-w-xs m-0 mt-4 text-sm font-normal leading-relaxed text-gray-600 font-p">
+            <p className="max-w-xs m-0 mt-4 text-sm font-normal leading-relaxed font-p">
               We have a strict zero-tracking policy on our website. You are safe
               with us.
             </p>
@@ -84,16 +84,16 @@ const Home = (props) => {
                 alt="VerusID Lookup Icon"
                 className="h-20"
               />
-              <h1 className="mt-8 text-2xl font-normal">VerusID Lookup</h1>
-              <p className="my-3 text-gray-600">
+              <h2 className="mt-8 text-2xl font-normal">VerusID Lookup</h2>
+              <p className="my-3">
                 Search for identities registered on the Verus blockchain
               </p>
               <div>
-                <Link href="/verusid-lookup">
+                <a href="/verusid-lookup">
                   <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                     Search for identities
                   </button>
-                </Link>
+                </a>
               </div>
             </div>
             <div className="flex flex-col justify-center p-6 text-center">
@@ -102,10 +102,8 @@ const Home = (props) => {
                 className="h-20"
                 alt="Blockchain Explorer Icon"
               />
-              <h1 className="mt-8 text-2xl font-normal">Block Explorer</h1>
-              <p className="my-3 text-gray-600">
-                Search through addresses and transactions
-              </p>
+              <h2 className="mt-8 text-2xl font-normal">Block Explorer</h2>
+              <p className="my-3">Search through addresses and transactions</p>
               <div>
                 <a
                   href="https://explorer.veruscoin.io/"
@@ -124,8 +122,13 @@ const Home = (props) => {
                 className="h-20"
                 alt="verus signature icon"
               />
+<<<<<<< HEAD
               <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
               <p className="my-3 text-gray-600">
+=======
+              <h2 className="mt-8 text-2xl font-normal">Verus Signatures</h2>
+              <p className="my-3">
+>>>>>>> dev
                 Sign and verify documents and files for free
               </p>
               <div>
@@ -142,34 +145,34 @@ const Home = (props) => {
 
       <div className="container max-w-5xl">
         <div className="grid justify-center grid-cols-1 pt-12 m-4 mb-16 space-y-12 md:space-y-0 md:m-0 md:mb-32 md:justify-between md:gap-12 md:grid-cols-2 sm:pt-32 section-5">
-          <div className="p-3 pb-12 bg-center bg-cover rounded-lg bg-earning-bg md:p-16">
+          <div className="p-6 pb-12 bg-top bg-cover rounded-lg bg-earning-bg md:p-16">
             <h4 className="p-0 mb-16 text-2xl leading-relaxed text-left text-white font-p">
               Verus is a decentralized network where anyone in the world can
               participate to earn its currency VRSC.
             </h4>
             <Link href="/mining-and-staking">
-              <button className="flex-shrink-0 w-full px-12 py-4 text-base bg-white border-0 rounded-full md:w-auto md:py-4 hover:bg-bluebutton hover:text-white">
+              <button className="flex-shrink-0 w-full px-12 py-4 text-base bg-white border-0 rounded-full md:w-auto md:py-4 hover:bg-gray-200">
                 Start Earning Now
               </button>
             </Link>
           </div>
           <div className="pl-3 pr-3 md:pl-12 md:pr-12">
             <h3 className="mb-1 text-2xl font-normal">Worldwide Network</h3>
-            <p className="mt-2 mr-0 leading-relaxed text-gray-600">
+            <p className="mt-2 mr-0 leading-relaxed">
               Anyone with a modern CPU can start mining VRSC immediately,
               creating a naturally decentralized miner ecosystem.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Thriving Economy
             </h3>
-            <p className="mt-2 mr-0 leading-relaxed text-gray-600">
+            <p className="mt-2 mr-0 leading-relaxed">
               Verus has a robust and thriving protocol economy with
               opportunities for everyone to earn through mining and staking.
             </p>
             <h3 className="mt-16 mb-1 text-2xl font-normal">
               Permissionless System
             </h3>
-            <p className="mt-2 mr-0 leading-relaxed text-gray-600">
+            <p className="mt-2 mr-0 leading-relaxed">
               Verus is open-source, borderless and permissionless. It
               doesn&#x27;t matter who you are or where you live. Anyone can
               participate.

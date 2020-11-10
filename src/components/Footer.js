@@ -15,8 +15,8 @@ const Footer = () => {
             className="w-8 mb-4 "
           />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
-          <p className="text-sm leading-relaxed opacity-50 md:text-base ">
-            Join our most active community with over 4.700 members for all
+          <p className="text-sm leading-relaxed opacity-50 md:text-base text-theme-white ">
+            Join our most active community with over 4.900 members for all
             questions and discussions.
           </p>
         </a>
@@ -32,7 +32,7 @@ const Footer = () => {
             className="w-8 mb-4"
           />
           <h3 className="mt-0 mb-4 text-2xl">Telegram Community</h3>
-          <p className="text-sm leading-relaxed opacity-50 md:text-base ">
+          <p className="text-sm leading-relaxed opacity-50 md:text-base text-theme-white ">
             Jump in our community Telegram server. Ask questions and discuss
             everything related to Verus.
           </p>
@@ -58,14 +58,13 @@ const Footer = () => {
             All rights reserved.
           </p>
           <a
-            href="#"
-            target="_blank"
+            href="/privacy-policy"
             className="block mt-6 no-underline hover:text-white text-navlink-hover"
           >
             Privacy Policy
           </a>
           <a
-            href="#"
+            href="https://github.com/VerusCoin/Media-Assets"
             target="_blank"
             className="block mt-2 no-underline hover:text-white text-navlink-hover"
           >
@@ -111,7 +110,7 @@ const Footer = () => {
             Reddit
           </a>
           <a
-            href="https://medium.com/@veruscoin"
+            href="https://medium.com/veruscoin"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
           >
@@ -141,7 +140,7 @@ const Footer = () => {
               'https://twitter.com/veruscoin',
               'https://t.me/veruscommunity',
               'https://reddit.com/r/veruscoin',
-              'https://medium.com/@veruscoin',
+              'https://medium.com/veruscoin',
               'https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg',
               'https://bitcointalk.org/index.php?topic=4070404.0',
             ]}

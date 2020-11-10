@@ -1,33 +1,33 @@
 export const ContributorsList = [
   {
     name: 'Michael J. Toutonghi',
-    title: 'Lead developer',
+    title: 'Lead Developer',
     description:
       "Former Vice President and Technical Fellow at Microsoft, recognized founder and architect of Microsoft's .Net platform, ex-Technical Fellow of Microsoft's advertising platform, ex-CTO, Parallels Corporation, experienced distributed computing and machine learning architect.",
   },
   {
     name: 'Michael F. Toutonghi',
-    title: 'Developer',
+    title: 'Lead GUI Wallet Developer',
     description:
       "Michael, the lead Verus GUI developer, has helped Verus set new standards in cryptocurrency ease of use on both Mobile and Desktop. Michael's passion for and understanding of user experience shows in Verus Desktop's user acclaimed design and implementation, which he works to improve and advance with every release.",
   },
   {
     name: 'Alex R. English',
-    title: 'Developer',
+    title: 'Developer/Program Manager',
     description:
-      "Alex's background is varied, including software development, system administration, embedded development, and technical editing. He became a cryptocurrency user in 2012 and has followed the technology since. He has grown to love shell scripts while managing Verus infrastructure.",
-  },
-  {
-    name: 'David Dawes',
-    title: 'Developer',
-    description:
-      'Decades of experience delivering successful products including real time financial engines moving billions of dollars in international remittances. Dave taught Mike assembly language over 30 years ago and has ensured that Verus enhanced Agama can be used on all platforms.',
+      "Alex's background includes software development, system administration, and technical editing. He became a cryptocurrency user in 2012 and has followed the space since. Alex develops scripts to support community operations and works to coordinate effort within the Verus project and community.",
   },
   {
     name: 'Asher Dawes',
     title: 'Developer',
     description:
       'Automation wizard extraordinaire, Asher keeps the Verus builds and backend test systems on track - Windows, Mac, Linux, and Android soon - Asher works tirelessly to automate builds and testing using github, gitlab, TravisCI, scripting and more as needed.',
+  },
+  {
+    name: 'David Dawes',
+    title: 'Developer',
+    description:
+      'Decades of experience delivering successful products including real time financial engines moving billions of dollars in international remittances. Dave taught Mike assembly language over 30 years ago and has ensured that Verus enhanced Agama can be used on all platforms.',
   },
   {
     name: 'jl777',
@@ -84,4 +84,5 @@ export const AdditionalContributionList = [
   { name: 'allbits' },
   { name: 'Brian Day (a.k.a Nair Biad)' },
   { name: 'JessicaZartler' },
+  { name: 'quipacorn' },
 ];

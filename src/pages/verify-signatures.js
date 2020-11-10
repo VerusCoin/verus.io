@@ -19,9 +19,9 @@ const VerifySignatures = () => {
       <div className="container max-w-5xl mt-8 md:mb-32">
         <div className="max-w-4xl mb-12 md:mb-32">
           <div>
-            <h2 className="p-0 m-0 text-4xl font-normal ">
+            <h1 className="p-0 m-0 text-4xl font-normal ">
               Verify Verus signatures.
-            </h2>
+            </h1>
             <p className="my-8">
               Verify signatures from messages, files or hashes with our easy to
               use tool.
@@ -36,8 +36,12 @@ const VerifySignatures = () => {
               Want to sign files, messages or hashes?
             </h3>
             <p className="my-8">
-              <Link href="/wallet">Download Verus Desktop</Link>, register your
-              VerusID and start signing!
+              <Link href="/wallet">
+                <span className="underline text-bluebutton">
+                  Download Verus Desktop
+                </span>
+              </Link>
+              , register your VerusID and start signing!
             </p>
           </div>
         </div>

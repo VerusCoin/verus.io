@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, createRef, useEffect } from 'react';
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
 import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
@@ -8,6 +8,17 @@ import { NextSeo } from 'next-seo';
 const DesktopWallet = (props) => {
   const [showDownloads, setShowDownloads] = useState(false);
   const { name, published_at, linuxApp, winApp, macApp, armApp } = props;
+  const container = createRef();
+
+  useEffect(() => {
+    const handleBodyClick = () => {
+      setShowDownloads(false);
+    };
+    document.addEventListener('mousedown', handleBodyClick);
+    return () => {
+      document.removeEventListener('mousedown', handleBodyClick);
+    };
+  });
 
   return (
     <>
@@ -22,21 +33,24 @@ const DesktopWallet = (props) => {
           },
         ]}
       />
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
+      <div
+        ref={container}
+        className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-40 md:grid-cols-4"
+      >
         <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
         <div className="p-6 md:col-span-3">
           <div className="mb-4 text-center sm:text-left">
-            <h2 className="p-0 m-0 text-4xl font-normal ">
+            <h1 className="p-0 m-0 text-4xl font-normal ">
               Verus Desktop: multi-coin wallet packed with features.
-            </h2>
+            </h1>
 
             <button
               onClick={() => {
                 setShowDownloads(!showDownloads);
               }}
-              className="inline-flex items-center px-12 py-5 mt-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
+              className="inline-flex items-center px-12 py-5 mt-8 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
             >
               <span className="mr-1">Download Verus Desktop</span>
               {showDownloads ? (
@@ -126,10 +140,23 @@ const DesktopWallet = (props) => {
                       href={armApp}
                       className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                     >
-                      <p className="pl-2 m-0">Download ARM app</p>
+                      <img
+                        className="opacity-25"
+                        src="/images/logos/linux.svg"
+                      />
+                      <p className="pl-2 m-0">Download Linux ARM app</p>
                     </a>
                   </li>
                 )}
+                <li className="block px-4 py-3 whitespace-no-wrap">
+                  <a
+                    href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
+                    target="_blank"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                  >
+                    <p className="pl-2 m-0">Download Bootstrap</p>
+                  </a>
+                </li>
               </ul>
             </div>
             <p>
@@ -151,8 +178,8 @@ const DesktopWallet = (props) => {
             alt=""
           />
 
-          <div className="max-w-4xl space-y-16 text-center sm:text-left">
-            <div className="max-w-2xl space-y-8">
+          <div className="max-w-4xl mt-16 space-y-24 text-center sm:text-left">
+            <div className="max-w-2xl space-y-16">
               <div className="flex flex-row space-x-8">
                 <img
                   src="/images/icons/safe-icon.svg"
@@ -160,9 +187,9 @@ const DesktopWallet = (props) => {
                   width="50"
                 />
                 <div className="">
-                  <h3 className="mb-2 text-2xl font-normal">
+                  <h2 className="mb-2 text-2xl font-normal">
                     Easy and Safe & Always Secure
-                  </h3>
+                  </h2>
                   <p className=" text-md">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
@@ -178,9 +205,9 @@ const DesktopWallet = (props) => {
                   width="50"
                 />
                 <div>
-                  <h3 className="mb-2 text-2xl font-normal">
+                  <h2 className="mb-2 text-2xl font-normal">
                     VerusID Capabilities
-                  </h3>
+                  </h2>
                   <p className=" text-md">
                     Create and manage self-sovereign identities on the
                     blockchain. Use VerusID as friendly crypto name, sign and
@@ -197,9 +224,9 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
+                  <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Multi-Currency Wallet
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-sm text-theme-feature ">
                     Store hundreds of coins and tokens!
                   </p>
@@ -212,9 +239,9 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
+                  <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Mining & Staking
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-sm text-theme-feature ">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
@@ -228,10 +255,10 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p ">
+                  <h3 className="mb-0 text-lg font-semibold text-white font-p ">
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-sm text-theme-feature ">
                     Convert from one currency to another through multi-reserve
                     currencies.
@@ -245,10 +272,10 @@ const DesktopWallet = (props) => {
                   width="25"
                 />
                 <div className="ml-2">
-                  <h4 className="mb-0 text-lg font-semibold text-white font-p">
+                  <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
-                  </h4>
+                  </h3>
                   <p className="mt-1 text-sm text-theme-feature ">
                     Create multi-reserve and fractional currencies with a few
                     clicks.
@@ -269,7 +296,7 @@ const DesktopWallet = (props) => {
                   <a
                     href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
                     target="_blank"
-                    className="no-underline external font-p text-bluebutton"
+                    className="underline external font-p text-bluebutton"
                   >
                     Download Bootstrap
                   </a>

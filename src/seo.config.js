@@ -16,10 +16,10 @@ export const SEO = {
     description,
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITEURL}/favicons/verus600x200.jfif`,
+        url: `${process.env.NEXT_PUBLIC_SITEURL}/logos/verus_og_image.png`,
         alt: title,
-        width: 600,
-        height: 200,
+        width: 1200,
+        height: 630,
       },
       {
         url: `${process.env.NEXT_PUBLIC_SITEURL}/favicons/verusx320.gif`,

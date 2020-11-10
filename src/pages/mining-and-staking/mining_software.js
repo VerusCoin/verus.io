@@ -14,7 +14,7 @@ const MiningSoftware = (props) => {
           {
             name: 'keywords',
             content:
-              'verus, cryptocurrency, open source, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools, staking pools, mining software, Windows, macOS, CLI,',
+              'verus, cryptocurrency, open source, ERC-20, VRSC, earn, mining, staking, pools, network economy, secure, mining pools, mining software, Windows, macOS, CLI,',
           },
         ]}
       />
@@ -24,9 +24,9 @@ const MiningSoftware = (props) => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h2 className="p-0 m-0 text-4xl font-normal">
+          <h1 className="p-0 m-0 text-4xl font-normal">
             Grab your mining software here.
-          </h2>
+          </h1>
           <p className="my-8">
             Get one of the miners to get started. However you mine VRSC, you'll
             need a Verus Coin address, which you can create using the wallet in
@@ -34,7 +34,7 @@ const MiningSoftware = (props) => {
             <a
               href="https://wiki.veruscoin.io/"
               target="_blank"
-              className="external"
+              className="underline external"
             >
               Support Wiki
             </a>
@@ -42,7 +42,7 @@ const MiningSoftware = (props) => {
             <a
               href="https://discord.gg/VRKMP2S"
               target="_blank"
-              className="external"
+              className="underline external"
             >
               official Discord
             </a>{' '}

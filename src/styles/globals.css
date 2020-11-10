@@ -31,7 +31,7 @@ h6 {
   @apply font-normal leading-tight;
 }
 p {
-  @apply text-base font-normal font-p;
+  @apply text-base font-normal text-gray-700 font-p;
 }
 
 .breakout-container {
@@ -175,11 +175,18 @@ a {
 
 p.external::after,
 a.external::after {
-  content: '↗';
-  display: inline;
-  margin-left: 0.25em;
+  margin-left: 0.125em;
   margin-right: 0.3em;
+  display: inline;
+  content: '↗';
+  transition: all 0.1s ease-in-out 0s;
+  font-style: normal;
 }
 
+@media only screen and (min-width: 2000px) {
+  body {
+    zoom: 200%;
+  }
+}
 /* @import './markdown.css';
 @import './tab.css'; */

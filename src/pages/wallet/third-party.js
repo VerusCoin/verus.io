@@ -8,7 +8,7 @@ const ThirdPartyWallet = () => {
     <>
       <NextSeo
         title="Alternate Wallets"
-        description="Cryptocurrency Wallets not developed by the Verus Community that can hold VRSC."
+        description="Cryptocurrency Wallets developed by the extended Verus Community that work with VRSC."
         additionalMetaTags={[
           {
             name: 'keywords',
@@ -17,7 +17,7 @@ const ThirdPartyWallet = () => {
           },
         ]}
       />
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mb-40 md:grid-cols-4">
+      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-40 md:grid-cols-4">
         <div className="">
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
@@ -25,7 +25,10 @@ const ThirdPartyWallet = () => {
         <div className="max-w-5xl p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-4xl font-normal ">Alternate Wallets</h1>
           <p className="my-8">
-            Wallets not developed by the Verus Community that can hold VRSC.
+            Cryptocurrency Wallets developed by the extended Verus Community
+            that work with VRSC. Listing here is not necessarily an endorsement,
+            please do your own due dilligence regarding the safety of using any
+            wallet.
           </p>
           <div className="grid grid-cols-2 gap-8">
             <div>
@@ -40,7 +43,7 @@ const ThirdPartyWallet = () => {
               <a
                 href="http://www.coincollect.cc/"
                 target="_blank"
-                className="leading-relaxed underline cursor-pointer font-p"
+                className="leading-relaxed underline cursor-pointer external font-p"
               >
                 Go to CoinCollect website
               </a>
@@ -57,7 +60,7 @@ const ThirdPartyWallet = () => {
               <a
                 href="http://www.vidulum.app/"
                 target="_blank"
-                className="leading-relaxed underline cursor-pointer font-p"
+                className="leading-relaxed underline cursor-pointer external font-p"
               >
                 Go to Vidulum website
               </a>
@@ -74,7 +77,7 @@ const ThirdPartyWallet = () => {
               <a
                 href="https://www.chainzilla.io/chameleonpay.html"
                 target="_blank"
-                className="leading-relaxed underline cursor-pointer font-p"
+                className="leading-relaxed underline cursor-pointer external font-p"
               >
                 Go to Chameleon website
               </a>
