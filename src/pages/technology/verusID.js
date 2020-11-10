@@ -26,7 +26,7 @@ const Verusid = () => {
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
           <div className="mb-6">
-            <h1 className="p-0 m-0 text-4xl font-normal">
+            <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
               VerusID: First decentralized and self-sovereign identity of its
               kind.
             </h1>

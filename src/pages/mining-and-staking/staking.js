@@ -23,7 +23,7 @@ const Staking = () => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="text-4xl font-normal ">
+          <h1 className="text-2xl font-normal md:text-4xl ">
             Stake your coins to earn coins.
           </h1>
           <h2 className="mt-8 text-2xl font-normal ">What is staking?</h2>

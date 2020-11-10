@@ -19,7 +19,7 @@ const VerifySignatures = () => {
       <div className="container max-w-5xl mt-8 md:mb-32">
         <div className="max-w-4xl mb-12 md:mb-32">
           <div>
-            <h1 className="p-0 m-0 text-4xl font-normal ">
+            <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
               Verify Verus signatures.
             </h1>
             <p className="my-8">

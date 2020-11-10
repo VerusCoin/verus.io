@@ -26,7 +26,7 @@ const Privacy = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal">Privacy</h1>
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">Privacy</h1>
           <p className="my-8">
             Information vies for our attention in today’s digital world, trying
             to convince us of what product to use or which politician to

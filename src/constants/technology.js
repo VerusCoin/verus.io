@@ -23,12 +23,7 @@ export const technologyLinks = [
     name: 'Public Blockchains as a Service',
     description: 'Launch your own blockchain with customizable specifications.',
   },
-  {
-    id: 5,
-    path: 'currencies',
-    name: 'Currencies & DeFi',
-    description: 'Fractional currencies to enable Verus DeFi',
-  },
+
   {
     id: 6,
     path: 'bridges',
@@ -50,3 +45,10 @@ export const technologyLinks = [
 ];
 
 export default technologyLinks;
+
+// {
+//   id: 5,
+//   path: 'currencies',
+//   name: 'Currencies & DeFi',
+//   description: 'Fractional currencies to enable Verus DeFi',
+// },

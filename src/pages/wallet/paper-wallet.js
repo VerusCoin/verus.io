@@ -23,7 +23,9 @@ const PaperWallet = () => {
         </div>
 
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal ">Paper Wallet</h1>
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
+            Paper Wallet
+          </h1>
           <p className="mt-8 mb-4">
             Use a paper wallet if you want to store your coins offline. This is
             a very safe method since the private key is only stored on a piece

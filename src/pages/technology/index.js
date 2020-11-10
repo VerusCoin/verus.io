@@ -27,7 +27,7 @@ const TechnologyOverview = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="p-6 md:col-span-3">
-          <h1 className="p-0 mt-0 text-4xl font-normal ">
+          <h1 className="p-0 mt-0 text-2xl font-normal md:text-4xl ">
             Technology Deep Dive: inside Verus.
           </h1>
           <p className="my-8 leading-relaxed">

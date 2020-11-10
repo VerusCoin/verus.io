@@ -26,7 +26,9 @@ const WalletOverview = () => {
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
         <div className="p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal ">Verus Wallets</h1>
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
+            Verus Wallets
+          </h1>
           <p className="my-8">
             Verus is actively developing multi-coin wallets for Windows, macOS,
             Linux, ARM. And on mobile for Android and iOS.

@@ -25,7 +25,7 @@ const VerusHash = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="justify-center max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal ">
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
             VerusHash: Algorithm for a naturally decentralized miner ecosystem.
           </h1>
           <p className="my-8 leading-relaxed ">

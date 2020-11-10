@@ -5,7 +5,9 @@ const PrivacyPolicy = () => {
     <>
       <NextSeo title="Privacy Policy" description="VerusCoin Privacy Policy" />
       <div className="container max-w-5xl p-6 mt-8 mb-12">
-        <h1 className="p-0 m-0 text-4xl font-normal">PrivacyPolicy</h1>
+        <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
+          PrivacyPolicy
+        </h1>
         <h3 className="mt-16 text-2xl font-normal">General</h3>
         <p className="my-8">
           We don't track you. We mean it. We're big advocates for maximizing

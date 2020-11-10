@@ -25,7 +25,7 @@ const ProofOfPower = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal">
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
             Verus Proof of Power: Consensus mechanism for security.
           </h1>
           <p className="my-8 leading-normal">
