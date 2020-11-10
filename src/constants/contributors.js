@@ -85,4 +85,5 @@ export const AdditionalContributionList = [
   { name: 'Brian Day (a.k.a Nair Biad)' },
   { name: 'JessicaZartler' },
   { name: 'quipacorn' },
+  { name: 'nward' },
 ];
