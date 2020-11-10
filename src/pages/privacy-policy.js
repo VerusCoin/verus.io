@@ -8,22 +8,29 @@ const PrivacyPolicy = () => {
         <h1 className="p-0 m-0 text-4xl font-normal">PrivacyPolicy</h1>
         <h3 className="mt-16 text-2xl font-normal">General</h3>
         <p className="my-8">
-          Check the website sourcecode and your browsers dev tools, we do not
-          track, and we mean it.
+          We don't track you. We mean it. We're big advocates for  maximizing
+          privacy and freedom.
         </p>
         <p className="my-8">
-          Any content created in our logfiles, refer to Logs (below), will never
-          be shared with any third party for whatever reason{' '}
+          This site doesn't set any cookies and uses no analytics or tracking
+          tools. Feel free to check the source.
         </p>
         <h3 className="mt-16 text-2xl font-normal">Logs</h3>
         <p className="my-8">
-          We only kept logfiles for maintenance and debugging purposes, which
-          are wiped after 14 days
+          Request information such as IP addresses and user agents may be stored
+          in server log files for up to 14 days on encrypted volumes for
+          maintenance and diagnostic purposes, and are not shared with third-parties.
         </p>
         <h3 className="mt-16 text-xl font-normal">Forms</h3>
         <p className="my-8">
-          The URL gots into the logfile, refer to "Logs", when completing your
-          one api call, the response does not get logged.
+          Data submitted using forms, such as the Verus ID lookup or signature
+          verification are only ever used to complete your request. The URL of
+          the request is logged (refer to "Logs"); the response is not logged.
+        </p>
+        <h3 className="mt-16 text-xl font-normal">Contact</h3>
+        <p className="my-8">
+          If you have any questions or concerns about this policy please contact
+          us on our official Discord server.
         </p>
       </div>
     </>
