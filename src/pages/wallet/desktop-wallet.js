@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, createRef, useEffect } from 'react';
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
 import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
@@ -8,6 +8,17 @@ import { NextSeo } from 'next-seo';
 const DesktopWallet = (props) => {
   const [showDownloads, setShowDownloads] = useState(false);
   const { name, published_at, linuxApp, winApp, macApp, armApp } = props;
+  const container = createRef();
+
+  useEffect(() => {
+    const handleBodyClick = () => {
+      setShowDownloads(false);
+    };
+    document.addEventListener('mousedown', handleBodyClick);
+    return () => {
+      document.removeEventListener('mousedown', handleBodyClick);
+    };
+  });
 
   return (
     <>
@@ -22,7 +33,10 @@ const DesktopWallet = (props) => {
           },
         ]}
       />
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-40 md:grid-cols-4">
+      <div
+        ref={container}
+        className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-40 md:grid-cols-4"
+      >
         <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>

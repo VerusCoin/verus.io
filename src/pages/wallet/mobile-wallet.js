@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, createRef } from 'react';
 import { NextSeo } from 'next-seo';
 import Menu from '../../components/Menu';
 import { walletLinks } from '../../constants/wallet';
@@ -7,7 +7,17 @@ import FooterMenu from '../../components/FooterMenu';
 
 const MobileWallet = ({ latestAndroid }) => {
   const [showDownloads, setShowDownloads] = useState(false);
+  const container = createRef();
 
+  useEffect(() => {
+    const handleBodyClick = () => {
+      setShowDownloads(false);
+    };
+    document.addEventListener('mousedown', handleBodyClick);
+    return () => {
+      document.removeEventListener('mousedown', handleBodyClick);
+    };
+  });
   return (
     <>
       <NextSeo
