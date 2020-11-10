@@ -122,13 +122,8 @@ const Home = (props) => {
                 className="h-20"
                 alt="verus signature icon"
               />
-<<<<<<< HEAD
-              <h1 className="mt-8 text-2xl font-normal">Verus Signatures</h1>
-              <p className="my-3 text-gray-600">
-=======
               <h2 className="mt-8 text-2xl font-normal">Verus Signatures</h2>
               <p className="my-3">
->>>>>>> dev
                 Sign and verify documents and files for free
               </p>
               <div>
