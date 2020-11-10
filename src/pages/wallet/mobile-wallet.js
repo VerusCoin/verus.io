@@ -116,27 +116,41 @@ const MobileWallet = ({ latestAndroid }) => {
               ) : null}
             </p>
           </div>
-          <div className="left-0">
-            <img
-              src="/images/icons/VerusDesktopImg3.png"
-              className="w-full"
-              srcSet="/images/icons/VerusDesktopImg3-p-500.png 500w, /images/icons/VerusDesktopImg3-p-800.png 800w, /images/icons/VerusDesktopImg3-p-1080.png 1080w, /images/icons/VerusDesktopImg3.png 1600w"
-              sizes="(max-width: 479px) 43vw, (max-width: 767px) 51vw, (max-width: 991px) 54vw, 56vw"
-              alt=""
-            />
-          </div>
 
-          <div className="pr-6 space-y-20 text-center sm:text-left sm:col-span-2">
-            <div>
-              <h2 className="mb-2 text-2xl font-normal">Easy and Safe</h2>
-              <p className="my-8 text-md">
-                Verus Mobile is created for beginners and exports in mind.
-                Anyone can get started, no matter previous cryptocurrency
-                experiences.
-              </p>
+          <div className="pr-6 mt-32 space-y-24 text-center sm:text-left sm:col-span-2">
+            <div className="flex flex-row space-x-8">
+              <img
+                src="/images/icons/safe-icon.svg"
+                alt="Safe Icon"
+                width="50"
+              />
+              <div className="">
+                <h2 className="mb-2 text-2xl font-normal">
+                  Easy and Safe & Always Secure
+                </h2>
+                <p className=" text-md">
+                  Verus Desktop is created for beginners and experts in mind.
+                  Easy to use yet advanced in capabilities. Security has highest
+                  priority that's why all Verus software is open-source.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-row space-x-8">
+              <img
+                src="/images/icons/bitcoin-icon.svg"
+                alt="BTC icon"
+                width="50"
+              />
+
+              <div className="">
+                <h2 className="mb-2 text-2xl font-normal">
+                  Multi-Currency Wallet
+                </h2>
+                <p className=" text-md">Store hundreds of coisn and tokens!</p>
+              </div>
             </div>
           </div>
-          <div className="p-6 space-y-8 text-sm bg-gray-200 rounded-lg sm:text-left">
+          <div className="p-6 mt-16 space-y-8 text-sm bg-gray-200 rounded-lg sm:text-left">
             <p className="text-sm font-p">
               This is experimental and unfinished software. Use at your own
               risk! No warranty for any kind of damage!Permission is hereby
