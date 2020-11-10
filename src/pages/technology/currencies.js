@@ -28,36 +28,35 @@ const Currencies = () => {
           <p className="my-8">
             Verus DeFi is a specific way of using the Verus Currency
             functionalities that provides the ability for users to define and
-            make use of Automated Market Makers (AMMs) that both connect to the
-            wider DeFi universe and offer new methods and improvements for
-            interacting with AMMs.
+            make use of Automated Market Makers (AMMs) in the form of Fractional
+            Currencies.
           </p>
           <p className="my-8">
-            Users can create AMM Currencies at will, without programming, by
+            Users can create Fractional Currencies at will, without programming, by
             defining new Currencies on Verus blockchains that are backed by
             on-chain reserves consisting of other useful Currencies, including,
-            for example, Gateway tokens that represent assets on other
+            for example, tokens that represent assets on other
             blockchains (such as Etherium) via a bridge. Once created, users can
-            interact with these AMM Currencies by:
+            interact with these Fractional Currencies by:
           </p>
           <ul className="my-8">
             <li>
-              Using the AMM Currency as a conversion mechanism (for example from
+              Using the Fractional Currency as a conversion mechanism (for example from
               VRSC to ETH), since they can automatically convert from one
               Currency to another as long as both Currencies are used as
-              reserves in any already-defined AMM Currency, and
+              reserves in any already-defined Fractional Currency, and
             </li>
             <li>
-              Converting their own holdings into an AMM Currency and holding
-              this Currency for investment purposes, which (a) acts as a
-              constatntly rebalancing Constant Mix Strategy asset, and (b)
+              Converting their own holdings into a Fractional Currency and holding
+              this Currency, which (a) acts as a
+              constantly rebalancing Constant Mix Strategy asset, and (b)
               benefits from fees paid by other users who use the currency as a
               conversion mechanism as described above.
             </li>
           </ul>
           <p className="my-8">
             Verus DeFi is characterized by ease of use and low barriers to entry
-            as AMM Currencies can be created by anyone without programming, and
+            as Fractional Currencies can be created by anyone without programming, and
             conversion transactions are done as easily as sending a currency to
             oneself (by point-and-click in the GUI, or a simple command in the
             CLI).
@@ -74,7 +73,7 @@ const Currencies = () => {
             easy-to-use solutions.
           </p>
           <p className="my-8">
-            As a UTXO-based smart transaction protocol that implements DeFi at
+            As a UTXO-based smart-transaction protocol that implements DeFi at
             the protocol level, Verus DeFi offers:
           </p>
           <ul className="my-8">
@@ -93,18 +92,18 @@ const Currencies = () => {
             </li>
             <li>
               the Verus protocol solves all transactions simultaneously within a
-              block (as opposed to serailly, in order, as is done on Ethereum
+              block (as opposed to serially, in order, as is done on Ethereum
               and all other systems which use the virtual machine model). This
               has important implications for security, fairness, and efficiency,
               including
             </li>
             <li>
               <ul>
-                <li>elimintation of front-running,</li>
+                <li>elimination of front-running,</li>
                 <li>
                   enhancing system-wide liquidity, thus reducing slippage, as
                   conversions going to and from any given currency within the
-                  same block are offset against eachother, and
+                  same block are offset against each other, and
                 </li>
                 <li>
                   providing all users converting to and from a currency within
