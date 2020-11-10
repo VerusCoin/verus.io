@@ -183,5 +183,10 @@ a.external::after {
   font-style: normal;
 }
 
+@media only screen and (min-width: 2000px) {
+  body {
+    zoom: 200%;
+  }
+}
 /* @import './markdown.css';
 @import './tab.css'; */
