@@ -37,7 +37,7 @@ const MobileWallet = ({ latestAndroid }) => {
         </div>
 
         <div className="p-6 md:col-span-3">
-          <div className="mb-4 text-center sm:text-left">
+          <div className="mb-4 text-center md:text-left">
             <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
               Verus Mobile: multi-coin wallet.
             </h1>
@@ -118,7 +118,7 @@ const MobileWallet = ({ latestAndroid }) => {
           </div>
 
           <div className="pr-6 mt-32 space-y-24 text-center sm:text-left sm:col-span-2">
-            <div className="flex flex-row space-x-8">
+            <div className="flex flex-row items-center space-x-8">
               <img
                 src="/images/icons/safe-icon.svg"
                 alt="Safe Icon"
@@ -135,7 +135,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-row space-x-8">
+            <div className="flex flex-row items-center space-x-8">
               <img
                 src="/images/icons/bitcoin-icon.svg"
                 alt="BTC icon"
