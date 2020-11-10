@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
         <h1 className="p-0 m-0 text-4xl font-normal">PrivacyPolicy</h1>
         <h3 className="mt-16 text-2xl font-normal">General</h3>
         <p className="my-8">
-          We don't track you. We mean it. We're big advocates for  maximizing
+          We don't track you. We mean it. We're big advocates for maximizing
           privacy and freedom.
         </p>
         <p className="my-8">
@@ -19,7 +19,8 @@ const PrivacyPolicy = () => {
         <p className="my-8">
           Request information such as IP addresses and user agents may be stored
           in server log files for up to 14 days on encrypted volumes for
-          maintenance and diagnostic purposes, and are not shared with third-parties.
+          maintenance and diagnostic purposes, and are not shared with
+          third-parties.
         </p>
         <h3 className="mt-16 text-xl font-normal">Forms</h3>
         <p className="my-8">
@@ -30,7 +31,15 @@ const PrivacyPolicy = () => {
         <h3 className="mt-16 text-xl font-normal">Contact</h3>
         <p className="my-8">
           If you have any questions or concerns about this policy please contact
-          us on our official Discord server.
+          us on our{' '}
+          <a
+            href="https://discord.gg/VRKMP2S"
+            target="_blank"
+            className="underline external"
+          >
+            official Discord
+          </a>{' '}
+          server.
         </p>
       </div>
     </>
