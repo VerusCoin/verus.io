@@ -22,7 +22,7 @@ const Community = () => {
       <div className="container flex flex-col items-center justify-center mt-8 ">
         <div className="max-w-4xl p-6 mb-12 md:mb-32">
           <div className="mb-16">
-            <h1 className="mb-12 text-4xl font-normal">
+            <h1 className="mb-12 text-2xl font-normal md:text-4xl">
               We intend for Verus to become a worldwide, inclusive community
               effort, which welcomes and rewards those who contribute.
             </h1>

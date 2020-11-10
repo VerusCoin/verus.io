@@ -22,7 +22,9 @@ const Currencies = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal">Currencies & DeFi</h1>
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
+            Currencies & DeFi
+          </h1>
           <p className="my-8">Content</p>
           <p className="my-8">Content</p>
           <h2 className="mt-16 text-2xl font-normal">H2</h2>

@@ -32,7 +32,7 @@ const CommandWallet = ({
 
         <div className="grid grid-cols-1 p-6 space-y-12 md:col-span-3">
           <div className="text-center sm:text-left">
-            <h1 className="p-0 m-0 text-4xl font-normal ">
+            <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
               Verus Command Line (CLI)
             </h1>
             <p className="my-8 ">

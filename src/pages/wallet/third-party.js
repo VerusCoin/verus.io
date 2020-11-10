@@ -23,7 +23,9 @@ const ThirdPartyWallet = () => {
         </div>
 
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal ">Alternate Wallets</h1>
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
+            Alternate Wallets
+          </h1>
           <p className="my-8">
             Cryptocurrency Wallets developed by the extended Verus Community
             that work with VRSC. Listing here is not necessarily an endorsement,

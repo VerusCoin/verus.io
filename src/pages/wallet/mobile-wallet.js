@@ -38,7 +38,7 @@ const MobileWallet = ({ latestAndroid }) => {
 
         <div className="p-6 md:col-span-3">
           <div className="mb-4 text-center sm:text-left">
-            <h1 className="p-0 m-0 text-4xl font-normal ">
+            <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
               Verus Mobile: multi-coin wallet.
             </h1>
             <button

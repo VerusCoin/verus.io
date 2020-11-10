@@ -24,7 +24,7 @@ const MiningSoftware = (props) => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal">
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
             Grab your mining software here.
           </h1>
           <p className="my-8">

@@ -25,7 +25,7 @@ const ServiceEconomy = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal">
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
             Service Economy: Enable all to participate and benefit
           </h1>
           <p className="my-8">
@@ -35,9 +35,9 @@ const ServiceEconomy = () => {
             who maintain the network; the miners and stakers.
           </p>
           <p className="my-8">
-            Verus was launched as a public fair launch, with no premine, ICO,
-            or similar event. There are no founder or developer fees. All fees
-            are 100% recycled through mining and staking to create the groundwork
+            Verus was launched as a public fair launch, with no premine, ICO, or
+            similar event. There are no founder or developer fees. All fees are
+            100% recycled through mining and staking to create the groundwork
             for a thriving economy.
           </p>
           <p className="my-8">

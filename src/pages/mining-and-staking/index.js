@@ -27,7 +27,9 @@ const MiningOverview = () => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-4xl font-normal">Mining and Staking</h1>
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
+            Mining and Staking
+          </h1>
           <p className="my-6">
             Anyone can earn VRSC by participating in the network economy. Use
             your computer power to help secure the network, or simply put your

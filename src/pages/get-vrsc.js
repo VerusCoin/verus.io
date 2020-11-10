@@ -18,7 +18,7 @@ const GetVRSC = () => {
       />
       <div className="container flex flex-col items-center justify-center mt-8 ">
         <div className="max-w-3xl mb-12 md:mb-32">
-          <h1 className="p-0 m-0 text-4xl font-normal">
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
             Get VRSC on exchanges, earn it, or start mining and staking.
           </h1>
           <p className="my-8">
