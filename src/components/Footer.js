@@ -7,7 +7,7 @@ const Footer = () => {
         <a
           href="https://discord.gg/VRKMP2S"
           target="_blank"
-          className="p-2 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
+          className="p-6 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
         >
           <img
             src="/images/logos/Discord-Logo-White.png"
@@ -24,7 +24,7 @@ const Footer = () => {
         <a
           href="https://t.me/veruscommunity"
           target="_blank"
-          className="p-2 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
+          className="p-6 no-underline border border-white border-opacity-25 border-solid rounded text-theme-white sm:p-8 link-block-3"
         >
           <img
             src="/images/logos/iconmonstr-telegram-1-240.png"

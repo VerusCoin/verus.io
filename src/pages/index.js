@@ -176,7 +176,7 @@ const Home = (props) => {
         </div>
       </div>
       <hr />
-      <div className="container max-w-5xl p-0 pt-12 pb-12 text-center md:pt-32 md:pb-32">
+      <div className="container max-w-5xl p-6 pt-12 pb-12 text-center md:pt-32 md:pb-32">
         <h3 className="mb-3 text-2xl font-normal">Latest Articles</h3>
         <div className="grid items-center justify-center grid-cols-1 p-3 space-y-4 text-left text-current md:space-y-0 md:p-0 md:grid-cols-3 md:gap-6">
           {!data && <div className="col-span-3 text-center">Loading...</div>}

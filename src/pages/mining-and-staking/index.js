@@ -33,7 +33,7 @@ const MiningOverview = () => {
           <p className="my-6">
             Anyone can earn VRSC by participating in the network economy. Use
             your computer power to help secure the network, or simply put your
-            $VRSC holdings to work by staking.
+            Verus holdings to work by staking.
           </p>
           <h3 className="m-0 mt-12 text-2xl font-normal ">Network Economy</h3>
           <p className="mt-6 mb-20">
