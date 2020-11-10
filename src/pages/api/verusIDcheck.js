@@ -14,7 +14,6 @@ const fetchID = async (query) => {
 
 export default async (req, res) => {
   let result = await fetchID(req.query);
-  console.log(result);
   if (!result.error) {
     res.statusCode = 200;
     res.json(result);

@@ -241,7 +241,7 @@ const HashContent = () => {
   const [verusSignature, setVerusSignature] = useState(null);
   const [sigResult, setSigResult] = useState();
 
-  const onSubmit = async (query) => {
+  const onSubmit = async (values) => {
     if (values) {
       let query = {
         Hash: values.Hash,
