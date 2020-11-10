@@ -89,11 +89,11 @@ const Home = (props) => {
                 Search for identities registered on the Verus blockchain
               </p>
               <div>
-                <Link href="/verusid-lookup">
+                <a href="/verusid-lookup">
                   <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
                     Search for identities
                   </button>
-                </Link>
+                </a>
               </div>
             </div>
             <div className="flex flex-col justify-center p-6 text-center">
