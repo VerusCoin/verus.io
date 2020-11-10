@@ -1,6 +1,6 @@
-import Menu from '../../components/Menu';
-import { technologyLinks } from '../../constants/technology';
-import FooterMenu from '../../components/FooterMenu';
+import Menu from '../components/Menu';
+import { technologyLinks } from '../constants/technology';
+import FooterMenu from '../components/FooterMenu';
 import { NextSeo } from 'next-seo';
 
 const Currencies = () => {
