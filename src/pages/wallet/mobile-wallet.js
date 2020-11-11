@@ -8,16 +8,20 @@ import FooterMenu from '../../components/FooterMenu';
 const MobileWallet = ({ latestAndroid }) => {
   const [showDownloads, setShowDownloads] = useState(false);
   const container = createRef();
+  const nodeRef = createRef();
 
   useEffect(() => {
-    const handleBodyClick = () => {
-      setShowDownloads(false);
+    const handleBodyClick = (e) => {
+      if (!nodeRef.current.contains(e.target)) {
+        setShowDownloads(false);
+      }
     };
     document.addEventListener('mousedown', handleBodyClick);
     return () => {
       document.removeEventListener('mousedown', handleBodyClick);
     };
   });
+
   return (
     <>
       <NextSeo
@@ -31,7 +35,10 @@ const MobileWallet = ({ latestAndroid }) => {
           },
         ]}
       />
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-40 modalBody modal-active md:grid-cols-4">
+      <div
+        ref={container}
+        className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 mb-40 modalBody modal-active md:grid-cols-4"
+      >
         <div>
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
@@ -75,6 +82,7 @@ const MobileWallet = ({ latestAndroid }) => {
               )}
             </button>
             <div
+              ref={nodeRef}
               className={
                 showDownloads
                   ? 'absolute z-30 pt-0 -mt-3 dropdown-menu block'

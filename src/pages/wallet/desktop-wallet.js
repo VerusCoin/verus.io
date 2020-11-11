@@ -9,10 +9,13 @@ const DesktopWallet = (props) => {
   const [showDownloads, setShowDownloads] = useState(false);
   const { name, published_at, linuxApp, winApp, macApp, armApp } = props;
   const container = createRef();
+  const nodeRef = createRef();
 
   useEffect(() => {
-    const handleBodyClick = () => {
-      setShowDownloads(false);
+    const handleBodyClick = (e) => {
+      if (!nodeRef.current.contains(e.target)) {
+        setShowDownloads(false);
+      }
     };
     document.addEventListener('mousedown', handleBodyClick);
     return () => {
@@ -81,6 +84,7 @@ const DesktopWallet = (props) => {
             </button>
 
             <div
+              ref={nodeRef}
               className={
                 showDownloads
                   ? 'absolute z-30 pt-0 -mt-3 dropdown-menu block'
