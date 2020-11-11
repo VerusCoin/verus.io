@@ -25,13 +25,13 @@ const Currencies = () => {
           <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
             Currencies & DeFi
           </h1>
-          <p className="my-8">
+          <p className="my-8 font-p">
             Verus DeFi is a specific way of using the Verus Currency
             functionalities that provides the ability for users to define and
             make use of Automated Market Makers (AMMs) in the form of Fractional
             Currencies.
           </p>
-          <p className="my-8">
+          <p className="my-8 font-p">
             Users can create Fractional Currencies at will, without programming,
             by defining new Currencies on Verus blockchains that are backed by
             on-chain reserves consisting of other useful Currencies, including,
@@ -39,7 +39,7 @@ const Currencies = () => {
             as Ethereum) via a bridge. Once created, users can interact with
             these Fractional Currencies by:
           </p>
-          <ul className="my-8 ml-6 space-y-4 list-disc list-inside">
+          <ul className="my-8 ml-6 space-y-4 list-disc list-inside font-p">
             <li>
               Using the Fractional Currency as a conversion mechanism (for
               example from VRSC to ETH), since they can automatically convert
@@ -54,14 +54,14 @@ const Currencies = () => {
               described above.
             </li>
           </ul>
-          <p className="my-8">
+          <p className="my-8 font-p">
             Verus DeFi is characterized by ease of use and low barriers to entry
             as Fractional Currencies can be created by anyone without
             programming, and conversion transactions are done as easily as
             sending a currency to oneself (by point-and-click in the GUI, or a
             simple command in the CLI).
           </p>
-          <p className="my-8">
+          <p className="my-8 font-p">
             The Verus project believes that the Verus DeFi system offers real
             advancements in security and efficiency over existing solutions. The
             system provides an opportunity to leverage community liquidity in
@@ -72,11 +72,11 @@ const Currencies = () => {
             users in other systems to experiment with these low-cost, scalable,
             easy-to-use solutions.
           </p>
-          <p className="my-8">
+          <p className="my-8 font-p">
             As a UTXO-based smart-transaction protocol that implements DeFi at
             the protocol level, Verus DeFi offers:
           </p>
-          <ul className="my-8 ml-6 space-y-4 list-disc list-inside">
+          <ul className="my-8 ml-6 space-y-4 list-disc list-inside font-p">
             <li>
               Increased security at the "app level" - Verus DeFi is not
               implemented by having many smart contract authors creating smart
@@ -98,7 +98,7 @@ const Currencies = () => {
               including
             </li>
 
-            <ul className="ml-6 space-y-4 list-disc list-inside">
+            <ul className="ml-6 space-y-4 list-disc list-inside font-p">
               <li>elimination of front-running,</li>
               <li>
                 enhancing system-wide liquidity, thus reducing slippage, as
