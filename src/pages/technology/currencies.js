@@ -36,7 +36,7 @@ const Currencies = () => {
             by defining new Currencies on Verus blockchains that are backed by
             on-chain reserves consisting of other useful Currencies, including,
             for example, tokens that represent assets on other blockchains (such
-            as Etherium) via a bridge. Once created, users can interact with
+            as Ethereum) via a bridge. Once created, users can interact with
             these Fractional Currencies by:
           </p>
           <ul className="my-8 ml-6 space-y-4 list-disc list-inside">
