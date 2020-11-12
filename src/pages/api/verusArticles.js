@@ -2,7 +2,7 @@ export default async (req, res) => {
   let result = await fetch(
     'https://medium-f.herokuapp.com/api/v1/articles?orgid=veruscoin'
   );
-  let article = null;
+  let articles = null;
   let data = null;
   try {
       articles = await result.json();
