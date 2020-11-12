@@ -2,8 +2,14 @@ export default async (req, res) => {
   let result = await fetch(
     'https://medium-f.herokuapp.com/api/v1/articles?orgid=veruscoin'
   );
-  let articles = await result.json();
-  let data = articles.articles.splice(0, 3);
+  let article = null
+  let data = null
+  try {
+      articles = await result.json();
+      data = articles.articles.splice(0, 3);
+  } catch (error) {
+       console.error("error in articles", error)
+  }
   if (!data) {
     res.statusCode = 200;
   } else {
