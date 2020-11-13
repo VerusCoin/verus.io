@@ -76,7 +76,7 @@ const Community = () => {
             </div>
           </div>
           <div className="mb-16">
-            <h3 className="mb-8 text-3xl font-normal ">
+            <h3 className="mb-8 text-2xl font-normal ">
               Additional community contributors by Discord name, in no
               particular order:
             </h3>
