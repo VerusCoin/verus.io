@@ -154,7 +154,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 <h2 className="mb-2 text-2xl font-normal">
                   Multi-Currency Wallet
                 </h2>
-                <p className=" text-md leading-relaxed">Store hundreds of coisn and tokens!</p>
+                <p className=" text-md leading-relaxed">Store hundreds of coins and tokens!</p>
               </div>
             </div>
           </div>
