@@ -92,25 +92,42 @@ const TechnologyOverview = () => {
             Coin Overview
           </h2>
           <p className="my-8 leading-relaxed">
-            <ul>
-              <li className="inline-flex">Launch Date: May 21, 2018</li>
-              <li className="inline-flex">Average block time: 1 minute</li>
-              <li className="inline-flex">Max Supply: 83,540,184</li>
-              <li className="inline-flex">Consensus Algorithm:
+            <ul className="flex flex-col p-0 m-0 mb-24 space-y-2">
+              <li className="inline-flex">
+                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+                Launch Date: May 21, 2018
+              </li>
+              <li className="inline-flex">
+                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+                Average block time: 1 minute
+              </li>
+              <li className="inline-flex">
+                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+                Max Supply: 83,540,184
+              </li>
+              <li className="inline-flex">
+                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+                Consensus Algorithm:
                 <a
                   className="no-underline text-bluebutton"
                   href="/technology/verus_proof_of_power"
                 >
                   Verus Proof-of-Power
-                </a> - 50/50 Proof-of-Work/Proof-of-Stake</li>
-              <li className="inline-flex">Hash Algorithm:
+                </a>
+                - 50/50 Proof-of-Work/Proof-of-Stake</li>
+              <li className="inline-flex">
+                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+                Hash Algorithm:
                 <a
                   className="no-underline text-bluebutton"
                   href="/technology/verushash"
                 >
-                  VerusHash 2.2
+                VerusHash 2.2
                 </a> - Designed to level the playing field across hardware classes</li>
-              <li className="inline-flex">UTXO-based, with zk-SNARKs-based zero-knowledge privacy</li>
+              <li className="inline-flex">
+                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+                UTXO-based, with zk-SNARKs-based zero-knowledge privacy
+              </li>
             </ul>
           </p>
 

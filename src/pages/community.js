@@ -46,7 +46,7 @@ const Community = () => {
               Want to contribute to Verus in any shape or form? We can't wait to
               have you! Get started here:
             </h2>
-            <p className="p-0 m-0 ">
+            <p className="p-0 mt-6">
               Talk to our community of developers and enthusiasts on{' '}
               <a
                 className="external"
@@ -56,7 +56,7 @@ const Community = () => {
                 <span className="underline">Discord</span>
               </a>
             </p>
-            <p className="m-0 ">
+            <p className="mt-2 ">
               Check out our{' '}
               <a
                 className="external"
@@ -68,7 +68,7 @@ const Community = () => {
             </p>
           </div>
           <div className="mb-16">
-            <h2 className="text-4xl">Contributors:</h2>
+            <h2 className="text-2xl">Contributors:</h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
               {ContributorsList.map((person) => {
                 return <Contributors person={person} />;
