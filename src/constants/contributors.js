@@ -9,7 +9,7 @@ export const ContributorsList = [
     name: 'Michael F. Toutonghi',
     title: 'Lead GUI Wallet Developer',
     description:
-      "Michael, the lead Verus GUI developer, has helped Verus set new standards in cryptocurrency ease of use on both Mobile and Desktop. Michael's passion for and understanding of user experience shows in Verus Desktop's user acclaimed design and implementation, which he works to improve and advance with every release.",
+      "Michael, the lead Verus GUI (Graphical User Interface) developer, has helped Verus set new standards in cryptocurrency ease of use on both Mobile and Desktop. Michael's passion for and understanding of user experience shows in Verus Desktop's user acclaimed design and implementation, which he works to improve and advance with every release.",
   },
   {
     name: 'Alex R. English',

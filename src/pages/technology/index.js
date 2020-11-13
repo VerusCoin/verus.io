@@ -112,9 +112,9 @@ const TechnologyOverview = () => {
                   className="no-underline text-bluebutton"
                   href="/technology/verus_proof_of_power"
                 >
-                  Verus Proof-of-Power
+                  Verus Proof of Power 
                 </a>
-                - 50/50 Proof-of-Work/Proof-of-Stake</li>
+                - 50/50 Proof of Work (PoW)/ Proof of Stake (PoS)</li>
               <li className="inline-flex">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
                 Hash Algorithm:
