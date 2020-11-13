@@ -68,7 +68,7 @@ export const ContributorsList = [
   },
   {
     name: 'Max Theyse',
-    title: 'Community Branding / Design Lead',
+    title: 'Lead Design / Community Branding',
     description: 'Experienced designer of brands and products. His passion is creating new products that use blockchain technology to move society to more decentralized structures. "Meyse" enjoys finding the balance between goals, design, messaging, user experience, and technological capabilities.',
   },
 ];
