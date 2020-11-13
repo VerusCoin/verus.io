@@ -68,7 +68,7 @@ const Community = () => {
             </p>
           </div>
           <div className="mb-16">
-            <h2 className="text-4xl">Contributors:</h2>
+            <h2 className="text-2xl">Contributors:</h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
               {ContributorsList.map((person) => {
                 return <Contributors person={person} />;
