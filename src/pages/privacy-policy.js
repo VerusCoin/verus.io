@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
         </h1>
         <h3 className="mt-16 text-2xl font-normal">General</h3>
         <p className="my-8">
-          We don't track you. We mean it. We're big advocates for maximizing
+          <b>We don't track you. We mean it.</b> We're big advocates for maximizing
           privacy and freedom.
         </p>
         <p className="my-8">

@@ -28,7 +28,7 @@ const TechnologyOverview = () => {
         </div>
         <div className="p-6 md:col-span-3">
           <h1 className="p-0 mt-0 text-2xl font-normal md:text-4xl ">
-            Technology Deep Dive: inside Verus.
+            Technology Deep Dive: Inside Verus
           </h1>
           <p className="my-8 leading-relaxed">
             We are an open-source platform available to anyone. We supply tools
@@ -36,14 +36,13 @@ const TechnologyOverview = () => {
             social and economic change.
           </p>
           <p className="my-8 leading-relaxed">
-            Verus release was pre-announced on Bitcointalk with zero premine,
-            and team members mined and staked along with everyone else to
-            generate coins. In addition to coins mined by individual team
-            members for their own benefit, the Verus developers intend to donate
-            most of their mined and staked earnings to a community Verus
-            foundation along with other donating community members who will join
-            us, in order to support the ongoing growth and project development
-            by core developers and the community for years to come.
+            The initial Verus release was pre-announced on Bitcointalk with zero
+            premine, and team members mined and staked along with everyone else to
+            generate coins. The Verus developers donated their early mining and
+            staking proceeds to a community foundation, which has also been
+            supported with other community donations in order to support the
+            ongoing growth and project development by core developers and the
+            community for years to come.
           </p>
           <div className="grid grid-cols-1 p-8 my-16 bg-center bg-cover rounded md:grid-cols-2 md:gap-6 bg-features-bg">
             <div className="flex flex-row items-center flex-shrink-0">
@@ -88,6 +87,32 @@ const TechnologyOverview = () => {
               </p>
             </div>
           </div>
+
+          <h2 className="mt-16 mb-4 text-2xl font-normal">
+            Coin Overview
+          </h2>
+          <p className="my-8 leading-relaxed">
+            <ul>
+              <li className="inline-flex">Launch Date: May 21, 2018</li>
+              <li className="inline-flex">Average block time: 1 minute</li>
+              <li className="inline-flex">Max Supply: 83,540,184</li>
+              <li className="inline-flex">Consensus Algorithm:
+                <a
+                  className="no-underline text-bluebutton"
+                  href="/technology/verus_proof_of_power"
+                >
+                  Verus Proof-of-Power
+                </a> - 50/50 Proof-of-Work/Proof-of-Stake</li>
+              <li className="inline-flex">Hash Algorithm:
+                <a
+                  className="no-underline text-bluebutton"
+                  href="/technology/verushash"
+                >
+                  VerusHash 2.2
+                </a> - Designed to level the playing field across hardware classes</li>
+              <li className="inline-flex">UTXO-based, with zk-SNARKs-based zero-knowledge privacy</li>
+            </ul>
+          </p>
 
           <h2 className="mt-16 mb-4 text-2xl font-normal">
             Technology Deep Dive
