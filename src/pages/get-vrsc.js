@@ -22,7 +22,7 @@ const GetVRSC = () => {
             Get Verus on exchanges.
           </h1>
           <p className="my-8">
-            We simply list the exchanges that are known to us that trade VRSC.
+            We simply list the exchanges that are known to us that trade Verus.
             Perform sufficient due-diligence on the exchange.
           </p>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
