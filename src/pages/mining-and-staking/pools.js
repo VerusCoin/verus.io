@@ -2,6 +2,7 @@ import Menu from '../../components/Menu';
 import FooterMenu from '../../components/FooterMenu';
 import { miningStakingLinks } from '../../constants/miningStaking';
 import { NextSeo } from 'next-seo';
+import { PoolLinks } from '../../constants/pools';
 
 const Pools = () => {
   return (
@@ -47,7 +48,7 @@ const Pools = () => {
             </a>
             .
           </p>
-          <table className="w-3/4 border-collapse table-fixed font-p md:w-1/2">
+          <table className="w-3/4 mb-12 border-collapse table-fixed font-p md:w-1/2">
             <thead>
               <tr>
                 <th className="w-3/4 p-4"></th>
@@ -55,46 +56,23 @@ const Pools = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="w-3/4 p-4">
-                  <a href="https://pool.veruscoin.io/" target="_blank">
-                    VerusCoin Pool
-                  </a>
-                </td>
-                <td className="w-1/4 p-4 text-center">5%</td>
-              </tr>
-              <tr className="bg-gray-100">
-                <td className="w-3/4 p-4">
-                  <a href="http://vrsc.lepool.com.cn:8088/" target="_blank">
-                    LePool
-                  </a>
-                </td>
-                <td className="w-1/4 p-4 text-center ">1%</td>
-              </tr>
-              <tr>
-                <td className="w-3/4 p-4 ">
-                  <a href="https://luckpool.net/verus/" target="_blank">
-                    LuckPool
-                  </a>
-                </td>
-                <td className="w-1/4 p-4 text-center ">1%</td>
-              </tr>
-              <tr className="bg-gray-100">
-                <td className="w-3/4 p-4">
-                  <a href="https://zergpool.com/" target="_blank">
-                    ZergPool
-                  </a>
-                </td>
-                <td className="w-1/4 p-4 text-center ">0.5%</td>
-              </tr>
-              <tr>
-                <td className="w-3/4 p-4 ">
-                  <a href="https://vrsc.ciscotech.dk/" target="_blank">
-                    CiscoTech
-                  </a>
-                </td>
-                <td className="w-1/4 p-4 text-center ">1%</td>
-              </tr>
+              {PoolLinks.map((pool) => {
+                return (
+                  <tr
+                    key={pool.id}
+                    className={pool.id % 2 == 0 ? 'bg-gray-100' : ''}
+                  >
+                    <td className="w-3/4 p-4">
+                      <a href={pool.URI} target="_blank">
+                        {pool.URIText}
+                      </a>
+                    </td>
+                    <td className="w-1/4 p-4 text-center">
+                      {pool.percentageRate}%
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
