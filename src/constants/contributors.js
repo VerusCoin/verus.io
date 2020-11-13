@@ -13,7 +13,7 @@ export const ContributorsList = [
   },
   {
     name: 'Alex R. English',
-    title: 'Developer/Program Manager',
+    title: 'Developer / Program Manager',
     description:
       "Alex's background includes software development, system administration, and technical editing. He became a cryptocurrency user in 2012 and has followed the space since. Alex develops scripts to support community operations and works to coordinate effort within the Verus project and community.",
   },
@@ -68,7 +68,7 @@ export const ContributorsList = [
   },
   {
     name: 'Max Theyse',
-    title: 'Community Branding/Design Lead',
+    title: 'Community Branding / Design Lead',
     description: 'Experienced designer of brands and products. His passion is creating new products that use blockchain technology to move society to more decentralized structures. "Meyse" enjoys finding the balance between goals, design, messaging, user experience, and technological capabilities.',
   },
 ];
