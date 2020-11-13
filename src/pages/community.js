@@ -22,7 +22,7 @@ const Community = () => {
       <div className="container flex flex-col items-center justify-center mt-8 ">
         <div className="max-w-4xl p-6 mb-12 md:mb-32">
           <div className="mb-16">
-            <h1 className="mb-12 text-2xl font-normal md:text-4xl">
+            <h1 className="mb-12 text-2xl font-normal md:leading-tight md:text-4xl">
               We intend for Verus to become a worldwide, inclusive community
               effort, which welcomes and rewards those who contribute.
             </h1>
@@ -46,7 +46,7 @@ const Community = () => {
               Want to contribute to Verus in any shape or form? We can't wait to
               have you! Get started here:
             </h2>
-            <p className="p-0 m-0 ">
+            <p className="p-0 mt-6">
               Talk to our community of developers and enthusiasts on{' '}
               <a
                 className="external"
@@ -56,7 +56,7 @@ const Community = () => {
                 <span className="underline">Discord</span>
               </a>
             </p>
-            <p className="m-0 ">
+            <p className="mt-2 ">
               Check out our{' '}
               <a
                 className="external"
@@ -68,7 +68,7 @@ const Community = () => {
             </p>
           </div>
           <div className="mb-16">
-            <h2 className="text-4xl">Contributors:</h2>
+            <h2 className="text-2xl">Contributors:</h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
               {ContributorsList.map((person) => {
                 return <Contributors person={person} />;
@@ -76,7 +76,7 @@ const Community = () => {
             </div>
           </div>
           <div className="mb-16">
-            <h3 className="mb-8 text-3xl font-normal ">
+            <h3 className="mb-8 text-2xl font-normal ">
               Additional community contributors by Discord name, in no
               particular order:
             </h3>

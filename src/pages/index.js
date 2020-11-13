@@ -227,9 +227,11 @@ export async function getServerSideProps(ctx) {
   let data = null;
   // let result = await fetch(`${URI}api/verusArticles`);
   let result = await fetch('http://localhost:3000/api/verusArticles');
-  data = await result.json();
-
-  return {
-    props: { data },
-  };
+  try {
+    data = await result.json();
+  } finally {
+    return {
+      props: { data },
+    };
+  }
 }

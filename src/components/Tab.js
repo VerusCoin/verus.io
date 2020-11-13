@@ -81,8 +81,8 @@ const PbaasContent = () => {
           </h3>
           <p className="leading-relaxed">
             Launch your own blockchain with customizable specifications, while
-            using Verus infrastructure htmlFor security and continuity. PBaaS
-            provides a roadmap htmlFor practically unlimited scalability.
+            using Verus infrastructure For security and continuity. PBaaS
+            provides a roadmap for practically unlimited scalability.
           </p>
           <Link href="/technology/PbaaS">
             <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
