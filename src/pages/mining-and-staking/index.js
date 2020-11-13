@@ -30,13 +30,13 @@ const MiningOverview = () => {
           <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
             Mining and Staking
           </h1>
-          <p className="my-6">
-            Anyone can earn VRSC by participating in the network economy. Use
+          <p className="my-6 leading-relaxed">
+            Anyone can earn Verus by participating in the network economy. Use
             your computer power to help secure the network, or simply put your
             Verus holdings to work by staking.
           </p>
           <h3 className="m-0 mt-12 text-2xl font-normal ">Network Economy</h3>
-          <p className="mt-6 mb-20">
+          <p className="mt-2 mb-20 leading-relaxed">
             By securing the network one can earn more than just block rewards.
             There are a number of fees collected in each found block, such as
             when a VerusID is created and conversions fees to and from reserve

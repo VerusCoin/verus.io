@@ -193,7 +193,7 @@ const DesktopWallet = (props) => {
                   <h2 className="mb-2 text-2xl font-normal">
                     Easy and Safe & Always Secure
                   </h2>
-                  <p className=" text-md">
+                  <p className=" text-md leading-relaxed">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
                     highest priority that's why all Verus software is
@@ -211,7 +211,7 @@ const DesktopWallet = (props) => {
                   <h2 className="mb-2 text-2xl font-normal">
                     VerusID Capabilities
                   </h2>
-                  <p className=" text-md">
+                  <p className=" text-md leading-relaxed">
                     Create and manage self-sovereign identities on the
                     blockchain. Use VerusID as friendly crypto name, sign and
                     verify files and message and many more features.

@@ -136,7 +136,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 <h2 className="mb-2 text-2xl font-normal">
                   Easy and Safe & Always Secure
                 </h2>
-                <p className=" text-md">
+                <p className=" text-md leading-relaxed">
                   Verus Desktop is created for beginners and experts in mind.
                   Easy to use yet advanced in capabilities. Security has highest
                   priority that's why all Verus software is open-source.
@@ -154,7 +154,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 <h2 className="mb-2 text-2xl font-normal">
                   Multi-Currency Wallet
                 </h2>
-                <p className=" text-md">Store hundreds of coisn and tokens!</p>
+                <p className=" text-md leading-relaxed">Store hundreds of coisn and tokens!</p>
               </div>
             </div>
           </div>
