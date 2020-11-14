@@ -44,15 +44,15 @@ const MobileWallet = ({ latestAndroid }) => {
         </div>
 
         <div className="p-6 md:col-span-3">
-          <div className="mb-4 text-center md:text-left">
-            <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
-              Verus Mobile: multi-coin wallet.
+          <div className="mb-4 text-left md:text-left">
+            <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl ">
+              Verus Mobile: Multi-Coin Wallet
             </h1>
             <button
               onClick={() => {
                 setShowDownloads(!showDownloads);
               }}
-              className="inline-flex items-center px-12 py-5 mt-4 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
+              className="inline-flex items-center px-12 py-5 mt-8 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
             >
               <span className="mr-1">Download Verus Mobile</span>
               {showDownloads ? (
@@ -112,7 +112,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 </li>
               </ul>
             </div>
-            <p className="mb-0">
+            <p className="mt-6">
               Latest version: {latestAndroid.name} <br />
               Latest release: {formatDateFromString(
                 latestAndroid.published_at
@@ -125,7 +125,7 @@ const MobileWallet = ({ latestAndroid }) => {
             </p>
           </div>
 
-          <div className="pr-6 mt-32 space-y-24 text-center sm:text-left sm:col-span-2">
+          <div className="pr-6 mt-32 space-y-24 text-left sm:text-left sm:col-span-2">
             <div className="flex flex-row items-center space-x-8">
               <img
                 src="/images/icons/safe-icon.svg"
@@ -158,10 +158,10 @@ const MobileWallet = ({ latestAndroid }) => {
               </div>
             </div>
           </div>
-          <div className="p-6 mt-16 space-y-8 text-sm bg-gray-200 rounded-lg sm:text-left">
-            <p className="text-sm font-p">
+          <div className="p-8 mt-16 space-y-8 text-sm bg-gray-100 rounded-lg sm:text-left">
+            <p className="text-sm font-p text-gray-500">
               This is experimental and unfinished software. Use at your own
-              risk! No warranty for any kind of damage!Permission is hereby
+              risk! No warranty for any kind of damage! Permission is hereby
               granted, free of charge, to any person obtaining a copy of this
               software and associated documentation files (the "Software"), to
               deal in the Software without restriction, including without
@@ -172,7 +172,7 @@ const MobileWallet = ({ latestAndroid }) => {
               permission notice shall be included in all copies or substantial
               portions of the Software.
             </p>
-            <p className="text-sm font-p">
+            <p className="text-sm font-p text-gray-500">
               THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
               EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
               MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

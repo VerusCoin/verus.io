@@ -44,9 +44,9 @@ const DesktopWallet = (props) => {
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
         <div className="p-6 md:col-span-3">
-          <div className="mb-4 text-center md:text-left">
-            <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
-              Verus Desktop: multi-coin wallet packed with features.
+          <div className="mb-4 text-left md:text-left">
+            <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl ">
+              Verus Desktop: Multi-Coin Wallet Packed with Features
             </h1>
 
             <button
@@ -163,7 +163,7 @@ const DesktopWallet = (props) => {
                 </li>
               </ul>
             </div>
-            <p>
+            <p className="mt-6">
               Latest version: {name} <br />
               Latest release: {formatDateFromString(published_at)}{' '}
               {date_diff_indays(published_at) < 14 ? (
@@ -181,7 +181,7 @@ const DesktopWallet = (props) => {
               alt=""
             />
           </div>
-          <div className="max-w-4xl mt-16 space-y-24 text-center sm:text-left">
+          <div className="max-w-4xl mt-16 space-y-24 text-left sm:text-left">
             <div className="max-w-2xl space-y-16">
               <div className="flex flex-row items-center space-x-8">
                 <img
@@ -306,10 +306,10 @@ const DesktopWallet = (props) => {
                 </p>
               </div>
             </div>
-            <div className="p-8 space-y-8 bg-gray-105">
-              <p className="text-sm ">
+            <div className="p-8 space-y-8 bg-gray-100">
+              <p className="text-sm text-gray-500">
                 This is experimental and unfinished software. Use at your own
-                risk! No warranty for any kind of damage!Permission is hereby
+                risk! No warranty for any kind of damage! Permission is hereby
                 granted, free of charge, to any person obtaining a copy of this
                 software and associated documentation files (the "Software"), to
                 deal in the Software without restriction, including without
@@ -320,7 +320,7 @@ const DesktopWallet = (props) => {
                 notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
               </p>
-              <p className="text-sm ">
+              <p className="text-sm text-gray-500">
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
                 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
                 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

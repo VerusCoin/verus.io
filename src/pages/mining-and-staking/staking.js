@@ -23,8 +23,8 @@ const Staking = () => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="text-2xl font-normal md:text-4xl ">
-            Stake your coins to earn coins.
+          <h1 className="text-2xl font-normal md:leading-tight md:text-4xl ">
+            Stake Verus to Earn
           </h1>
           <h2 className="mt-8 text-2xl font-normal ">What is staking?</h2>
           <p className="my-4 leading-relaxed">
@@ -41,7 +41,7 @@ const Staking = () => {
           </p>
           <div className="flex items-center justify-center max-w-lg p-8 my-16 bg-gray-200 rounded-lg">
             <div className="flex flex-col md:flex-row ">
-              <div className="self-center flex-shrink-0 md:self-start md:mr-8">
+              <div className="self-center mb-8 flex-shrink-0 md:self-start md:mr-8">
                 <img src="/images/icons/stake-rules-icon.svg" width="50" />
               </div>
               <div>

@@ -24,8 +24,8 @@ const MiningSoftware = (props) => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
-            Grab your mining software here.
+          <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl">
+            Grab Mining Software Here
           </h1>
           <p className="my-8">
             Get one of the miners to get started. However you mine VRSC, you'll
@@ -188,7 +188,7 @@ const MiningSoftware = (props) => {
             (Ubuntu tested). 4GB Memory.
           </p>
 
-          <p className="p-8 mt-16 mb-32 text-sm leading-normal bg-gray-100 font-p">
+          <p className="p-8 mt-16 mb-32 text-sm leading-normal bg-gray-100 text-gray-500 font-p">
             All software is provided "as is", without warranty of any kind,
             express or implied, including but not limited to the warranties of
             merchantability, fitness for a particular purpose and
