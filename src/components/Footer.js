@@ -133,7 +133,7 @@ const Footer = () => {
           <SocialProfileJsonLd
             type="Organization"
             name="Verus"
-            url={process.env.NEXT_PUBLIC_SITEURL}
+            url="https://verus.io"
             sameAs={[
               'https://discord.gg/VRKMP2S',
               'https://www.facebook.com/VerusCoin',
