@@ -2,7 +2,7 @@ import { SocialProfileJsonLd } from 'next-seo';
 
 const Footer = () => {
   return (
-    <div className="pb-12 font-foot">
+    <div className="pb-12 font-foot m-6">
       <div className="grid justify-center grid-cols-1 gap-8 md:grid-cols-2">
         <a
           href="https://discord.gg/VRKMP2S"

@@ -23,8 +23,8 @@ const Staking = () => {
           <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="text-2xl font-normal md:text-4xl ">
-            Stake your coins to earn coins.
+          <h1 className="text-2xl font-normal md:leading-tight md:text-4xl ">
+            Stake Verus to Earn
           </h1>
           <h2 className="mt-8 text-2xl font-normal ">What is staking?</h2>
           <p className="my-4 leading-relaxed">
@@ -34,14 +34,14 @@ const Staking = () => {
             possible since Verus has a unique consensus mechanism of 50% Proof
             of Stake, and 50% Proof of Work.{' '}
             <Link href="/technology/verus_proof_of_power">
-              <span className="underline text-bluebutton">
-                Read more about our consensus mechanism here.
+              <span className="underline text-bluebutton cursor-pointer">
+                Learn about Proof of Power.
               </span>
             </Link>
           </p>
           <div className="flex items-center justify-center max-w-lg p-8 my-16 bg-gray-200 rounded-lg">
             <div className="flex flex-col md:flex-row ">
-              <div className="self-center flex-shrink-0 md:self-start md:mr-8">
+              <div className="self-center mb-8 flex-shrink-0 md:self-start md:mr-8">
                 <img src="/images/icons/stake-rules-icon.svg" width="50" />
               </div>
               <div>
@@ -59,8 +59,8 @@ const Staking = () => {
           <h3 className="m-0 text-2xl font-normal">How do I start staking?</h3>
           <p className="my-4">
             It's easy, all you have to do is{' '}
-            <Link href="/wallet">
-              <span className="underline text-bluebutton">
+            <Link href="/wallet/desktop-wallet">
+              <span className="underline text-bluebutton cursor-pointer">
                 download Verus Desktop here.
               </span>
             </Link>

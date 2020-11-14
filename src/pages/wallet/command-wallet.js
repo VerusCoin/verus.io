@@ -110,7 +110,7 @@ const CommandWallet = ({
               <tr className="col-span-2">
                 Latest release: {formatDateFromString(published_at)}{' '}
                 {date_diff_indays(published_at) < 14 ? (
-                  <span className="px-6 py-1 mx-4 font-bold text-white whitespace-no-wrap bg-red-500 rounded-full ">
+                  <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-no-wrap">
                     New Update
                   </span>
                 ) : null}
@@ -118,10 +118,10 @@ const CommandWallet = ({
             </tfoot>
           </table>
 
-          <div className="max-w-3xl p-8 space-y-8 bg-gray-200">
-            <p className="text-sm font-p">
+          <div className="max-w-3xl p-8 space-y-8 bg-gray-100">
+            <p className="text-sm font-p text-gray-500">
               This is experimental and unfinished software. Use at your own
-              risk! No warranty for any kind of damage!Permission is hereby
+              risk! No warranty for any kind of damage! Permission is hereby
               granted, free of charge, to any person obtaining a copy of this
               software and associated documentation files (the "Software"), to
               deal in the Software without restriction, including without
@@ -132,7 +132,7 @@ const CommandWallet = ({
               permission notice shall be included in all copies or substantial
               portions of the Software.
             </p>
-            <p className="text-sm font-p">
+            <p className="text-sm font-p text-gray-500">
               THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
               EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
               MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

@@ -25,8 +25,8 @@ const VerusHash = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="justify-center max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
-            VerusHash: Algorithm for a naturally decentralized miner ecosystem.
+          <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl ">
+            VerusHash: Algorithm for a Naturally Decentralized Miner Ecosystem
           </h1>
           <p className="my-8 leading-relaxed ">
             VerusHash 2.2 is the mining algorithm for VerusCoin. The algorithm
@@ -38,30 +38,30 @@ const VerusHash = () => {
             can even be solo-mined directly from the Verus Desktop wallet with
             just a few clicks, without any additional software requirements.
             Beginners can find an even level playing field to start earning
-            VRSC.
+            Verus.
           </p>
           <div className="grid grid-cols-1 p-8 mt-10 mb-2 bg-center bg-cover rounded bg-features-bg md:grid-cols-2 md:gap-6">
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/icons/CPU.png" alt="CPU image" width="100" />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
+              <p className="pl-3 text-lg font-semibold text-white font-p">
                 Mining with a CPU is most profitable.
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/icons/GPU.png" alt="GPU image" width="100" />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
+              <p className="pl-3 text-lg font-semibold text-white font-p">
                 Mining with a GPU can be profitable.
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/icons/FPGA.png" alt="FPGA image" width="100" />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
+              <p className="pl-3 text-lg font-semibold text-white font-p">
                 There are no Bitstreams available to mine on FPGA's.
               </p>
             </div>
             <div className="flex flex-row items-center">
               <img src="/images/icons/ASIC.png" alt="ASIC image" width="100" />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
+              <p className="pl-3 text-lg font-semibold text-white font-p">
                 No ASICs are made (yet) to mine Verus.
               </p>
             </div>
