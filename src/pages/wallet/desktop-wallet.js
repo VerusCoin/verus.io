@@ -26,7 +26,7 @@ const DesktopWallet = (props) => {
   return (
     <>
       <NextSeo
-        title="Desktop Wallets"
+        title="Desktop Wallet"
         description="Verus desktop multi-coin wallet for Windows, macOS, Linux, ARM."
         additionalMetaTags={[
           {
@@ -44,9 +44,9 @@ const DesktopWallet = (props) => {
           <Menu pathList={walletLinks} href="/wallet" />
         </div>
         <div className="p-6 md:col-span-3">
-          <div className="mb-4 text-center md:text-left">
-            <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
-              Verus Desktop: multi-coin wallet packed with features.
+          <div className="mb-4 text-left md:text-left">
+            <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl ">
+              Verus Desktop: Multi-Coin Wallet Packed with Features
             </h1>
 
             <button
@@ -163,11 +163,11 @@ const DesktopWallet = (props) => {
                 </li>
               </ul>
             </div>
-            <p>
+            <p className="mt-6">
               Latest version: {name} <br />
               Latest release: {formatDateFromString(published_at)}{' '}
               {date_diff_indays(published_at) < 14 ? (
-                <span className="px-6 py-1 mx-4 font-bold text-white whitespace-no-wrap bg-red-500 rounded-full ">
+                <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-no-wrap">
                   New Update
                 </span>
               ) : null}
@@ -181,7 +181,7 @@ const DesktopWallet = (props) => {
               alt=""
             />
           </div>
-          <div className="max-w-4xl mt-16 space-y-24 text-center sm:text-left">
+          <div className="max-w-4xl mt-16 space-y-24 text-left sm:text-left">
             <div className="max-w-2xl space-y-16">
               <div className="flex flex-row items-center space-x-8">
                 <img
@@ -193,7 +193,7 @@ const DesktopWallet = (props) => {
                   <h2 className="mb-2 text-2xl font-normal">
                     Easy and Safe & Always Secure
                   </h2>
-                  <p className=" text-md">
+                  <p className=" text-md leading-relaxed">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
                     highest priority that's why all Verus software is
@@ -211,7 +211,7 @@ const DesktopWallet = (props) => {
                   <h2 className="mb-2 text-2xl font-normal">
                     VerusID Capabilities
                   </h2>
-                  <p className=" text-md">
+                  <p className=" text-md leading-relaxed">
                     Create and manage self-sovereign identities on the
                     blockchain. Use VerusID as friendly crypto name, sign and
                     verify files and message and many more features.
@@ -219,7 +219,7 @@ const DesktopWallet = (props) => {
                 </div>
               </div>
             </div>
-            <div className="grid items-start grid-cols-1 px-12 py-6 bg-center bg-cover rounded gap-y-4 gap-x-12 bg-features-bg sm:grid-cols-2">
+            <div className="grid items-start grid-cols-1 p-12 bg-center bg-cover rounded gap-y-12 gap-x-12 bg-features-bg sm:grid-cols-2">
               <div className="flex flex-row items-center flex-shrink-0 space-x-6">
                 <img
                   src="/images/icons/bitcoin-icon.svg"
@@ -230,7 +230,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Multi-Currency Wallet
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature ">
+                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                     Store hundreds of coins and tokens!
                   </p>
                 </div>
@@ -245,7 +245,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Mining & Staking
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature ">
+                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
                   </p>
@@ -262,7 +262,7 @@ const DesktopWallet = (props) => {
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature ">
+                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                     Convert from one currency to another through multi-reserve
                     currencies.
                   </p>
@@ -279,7 +279,7 @@ const DesktopWallet = (props) => {
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature ">
+                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                     Create multi-reserve and fractional currencies with a few
                     clicks.
                   </p>
@@ -306,10 +306,10 @@ const DesktopWallet = (props) => {
                 </p>
               </div>
             </div>
-            <div className="p-8 space-y-8 bg-gray-105">
-              <p className="text-sm ">
+            <div className="p-8 space-y-8 bg-gray-100">
+              <p className="text-sm text-gray-500">
                 This is experimental and unfinished software. Use at your own
-                risk! No warranty for any kind of damage!Permission is hereby
+                risk! No warranty for any kind of damage! Permission is hereby
                 granted, free of charge, to any person obtaining a copy of this
                 software and associated documentation files (the "Software"), to
                 deal in the Software without restriction, including without
@@ -320,7 +320,7 @@ const DesktopWallet = (props) => {
                 notice and this permission notice shall be included in all
                 copies or substantial portions of the Software.
               </p>
-              <p className="text-sm ">
+              <p className="text-sm text-gray-500">
                 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
                 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
                 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

@@ -5,7 +5,7 @@ export const ExchangeLinks = [
     trade: 'VRSC/BTC, VRSC/EUR, VRSC/USD',
     kyc: 'No KYC (2 BTC limit)',
     URI: 'https://whitebit.com/referral/VerusFoundation',
-    URIText: 'WhiteBIT',
+    URIText: 'whitebit.com',
   },
   {
     image: 'stex.svg',
@@ -13,7 +13,7 @@ export const ExchangeLinks = [
     trade: 'VRSC/BTC',
     kyc: '',
     URI: 'https://app.stex.com/en/trade/pair/BTC/VRSC',
-    URIText: 'STEX',
+    URIText: 'stex.com',
   },
   {
     image: 'safetrade.png',
@@ -21,7 +21,7 @@ export const ExchangeLinks = [
     trade: 'VRSC/BTC',
     kyc: 'No KYC',
     URI: 'https://safe.trade/trading/vrscbtc',
-    URIText: 'SafeTrade',
+    URIText: 'safe.trade',
   },
   {
     image: 'atomicdex.svg',
@@ -29,7 +29,7 @@ export const ExchangeLinks = [
     trade: 'All pairs',
     kyc: '',
     URI: 'https://atomicdex.io/',
-    URIText: 'AtomicDex',
+    URIText: 'atomicdex.io',
   },
   {
     image: 'graviex.svg',
@@ -37,6 +37,6 @@ export const ExchangeLinks = [
     trade: 'VRSC/BTC, VRSC/KMD, VRSC/USD',
     kyc: '',
     URI: 'https://graviex.net/markets/vrscbtc',
-    URIText: 'Graviex',
+    URIText: 'graviex.net',
   },
 ];

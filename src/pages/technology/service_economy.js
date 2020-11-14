@@ -25,8 +25,8 @@ const ServiceEconomy = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
-            Service Economy: Enable all to participate and benefit
+          <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl">
+            Service Economy: Enable All to Participate and Benefit
           </h1>
           <p className="my-8">
             We enable all people to participate in and benefit from a blockchain

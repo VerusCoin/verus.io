@@ -25,8 +25,8 @@ const ProofOfPower = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
-            Verus Proof of Power: Consensus mechanism for security.
+          <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl">
+            Verus Proof of Power: Consensus Mechanism for Security
           </h1>
           <p className="my-8 leading-normal">
             VerusCoin has a unique consensus mechanism: it is 50% Proof of Work
@@ -34,7 +34,7 @@ const ProofOfPower = () => {
             blocks come from mining (PoW), and the other half comes from staking
             (PoS).
           </p>
-          <div className="grid grid-cols-1 p-8 my-8 bg-center bg-cover rounded md:grid-cols-2 bg-features-bg md:gap-6">
+          <div className="grid grid-cols-1 p-8 my-8 bg-center bg-cover gap-y-12 gap-x-12 rounded md:grid-cols-2 bg-features-bg md:gap-12">
             <div className="flex flex-row items-center flex-shrink-0 space-x-3">
               <img
                 src="/images/icons/50-staking.svg"
@@ -42,8 +42,8 @@ const ProofOfPower = () => {
                 width="100"
               />
               <div>
-                <h4 className="text-white">Proof of Stake</h4>
-                <p className="text-sm leading-normal text-theme-feature font-p">
+                <h4 className="text-white text-xl">Proof of Stake</h4>
+                <p className="mt-2 text-sm text-theme-feature leading-relaxed font-p">
                   50% of all blocks are generated through staking
                 </p>
               </div>
@@ -55,8 +55,8 @@ const ProofOfPower = () => {
                 width="100"
               />
               <div>
-                <h4 className="text-white">Proof of Work</h4>
-                <p className="text-sm leading-normal text-theme-feature font-p">
+                <h4 className="text-white text-xl">Proof of Work</h4>
+                <p className="mt-2 text-sm text-theme-feature leading-relaxed font-p">
                   50% of all blocks are generated through mining
                 </p>
               </div>

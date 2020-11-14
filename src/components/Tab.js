@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Bridges from '../pages/technology/bridges';
 
 const VerusIDContent = () => {
   return (
@@ -81,7 +80,7 @@ const PbaasContent = () => {
           </h3>
           <p className="leading-relaxed">
             Launch your own blockchain with customizable specifications, while
-            using Verus infrastructure For security and continuity. PBaaS
+            using Verus infrastructure for security and continuity. PBaaS
             provides a roadmap for practically unlimited scalability.
           </p>
           <Link href="/technology/PbaaS">
@@ -127,6 +126,19 @@ const ErcContent = () => {
 
 const IndexTabWindow = () => {
   const [viewTab, setViewTab] = useState(0);
+  const [radioTab, setRadioTab] = useState(null);
+
+  const handleTabCheck = (tab) => {
+    let element = document.getElementById(tab);
+    let isOpen = element.checked;
+    if (isOpen) {
+      element.checked = !isOpen;
+    }
+    setRadioTab(tab);
+  };
+  const handleTabChange = (tab) => {
+    setRadioTab(null);
+  };
   return (
     <>
       <div className="flex-col justify-center hidden md:flex sm:flex-row">
@@ -190,10 +202,18 @@ const IndexTabWindow = () => {
             id="tab-single-one"
             type="radio"
             name="tabs2"
+            value="tab-single-one"
+            checked={radioTab === 'tab-single-one'}
+            onChange={() => {
+              handleTabChange('tab-single-one');
+            }}
           />
           <label
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-one"
+            onClick={() => {
+              handleTabCheck('tab-single-one');
+            }}
           >
             VerusID
           </label>
@@ -207,10 +227,17 @@ const IndexTabWindow = () => {
             id="tab-single-two"
             type="radio"
             name="tabs2"
+            checked={radioTab === 'tab-single-two'}
+            onChange={() => {
+              handleTabChange('tab-single-two');
+            }}
           />
           <label
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-two"
+            onClick={() => {
+              handleTabCheck('tab-single-two');
+            }}
           >
             Decentralized Finance
           </label>
@@ -224,10 +251,17 @@ const IndexTabWindow = () => {
             id="tab-single-three"
             type="radio"
             name="tabs2"
+            checked={radioTab === 'tab-single-three'}
+            onChange={() => {
+              handleTabChange('tab-single-three');
+            }}
           />
           <label
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-three"
+            onClick={() => {
+              handleTabCheck('tab-single-three');
+            }}
           >
             Public Blockchains as a Service
           </label>
@@ -241,10 +275,17 @@ const IndexTabWindow = () => {
             id="tab-single-four"
             type="radio"
             name="tabs2"
+            checked={radioTab === 'tab-single-four'}
+            onChange={() => {
+              handleTabChange('tab-single-four');
+            }}
           />
           <label
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-four"
+            onClick={() => {
+              handleTabCheck('tab-single-four');
+            }}
           >
             Bridges
           </label>

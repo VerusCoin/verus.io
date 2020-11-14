@@ -37,9 +37,9 @@ const TechnologyOverview = () => {
           </p>
           <p className="my-8 leading-relaxed">
             The initial Verus release was pre-announced on Bitcointalk with zero
-            premine, and team members mined and staked along with everyone else to
-            generate coins. The Verus developers donated their early mining and
-            staking proceeds to a community foundation, which has also been
+            premine, and team members mined and staked along with everyone else
+            to generate coins. The Verus developers donated their early mining
+            and staking proceeds to a community foundation, which has also been
             supported with other community donations in order to support the
             ongoing growth and project development by core developers and the
             community for years to come.
@@ -51,8 +51,8 @@ const TechnologyOverview = () => {
                 alt="community image"
                 width="100"
               />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
-                Community driven project in the true spirit of Bitcoin.
+              <p className="pl-3 text-lg font-semibold text-white font-p">
+                Community driven project in the true spirit of Bitcoin
               </p>
             </div>
 
@@ -62,8 +62,8 @@ const TechnologyOverview = () => {
                 alt="no ico image"
                 width="100"
               />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
-                No ICO was held.
+              <p className="pl-3 text-lg font-semibold text-white font-p">
+                No ICO was held
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
@@ -72,8 +72,8 @@ const TechnologyOverview = () => {
                 alt="no premine image"
                 width="100"
               />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
-                No coins were pre-mined.
+              <p className="pl-3 leading-normal text-lg font-semibold text-white font-p">
+                No coins were pre-mined
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
@@ -82,51 +82,60 @@ const TechnologyOverview = () => {
                 alt="no dev image"
                 width="100"
               />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
-                No founder or developer fees.
+              <p className="pl-3 text-lg font-semibold text-white font-p">
+                No founder or developer fees
               </p>
             </div>
           </div>
 
-          <h2 className="mt-16 mb-4 text-2xl font-normal">
-            Coin Overview
-          </h2>
+          <h2 className="mt-16 mb-4 text-2xl font-normal">Coin Overview</h2>
           <p className="my-8 leading-relaxed">
             <ul className="flex flex-col p-0 m-0 mb-24 space-y-2">
-              <li className="inline-flex">
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Launch Date: May 21, 2018
+                <p>Launch Date: May 21, 2018</p>
               </li>
-              <li className="inline-flex">
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Average block time: 1 minute
+                <p>Coin Ticker: VRSC</p>
               </li>
-              <li className="inline-flex">
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Max Supply: 83,540,184
+                <p>Average Block Time: 1 minute</p>
               </li>
-              <li className="inline-flex">
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Consensus Algorithm:
-                <a
-                  className="no-underline text-bluebutton"
-                  href="/technology/verus_proof_of_power"
-                >
-                  Verus Proof of Power 
-                </a>
-                - 50/50 Proof of Work (PoW)/ Proof of Stake (PoS)</li>
-              <li className="inline-flex">
+                <p>Max Supply: 83,540,184</p>
+              </li>
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Hash Algorithm:
-                <a
-                  className="no-underline text-bluebutton"
-                  href="/technology/verushash"
-                >
-                VerusHash 2.2
-                </a> - Designed to level the playing field across hardware classes</li>
-              <li className="inline-flex">
+                <p>
+                  Consensus Algorithm:{' '}
+                  <a
+                    className="underline text-bluebutton"
+                    href="/technology/verus_proof_of_power"
+                  >
+                    Verus Proof of Power
+                  </a>{' '}
+                  - 50/50% Proof of Work (PoW) / Proof of Stake (PoS)
+                </p>
+              </li>
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                UTXO-based, with zk-SNARKs-based zero-knowledge privacy
+                <p>
+                  Hash Algorithm:{' '}
+                  <a
+                    className="underline text-bluebutton"
+                    href="/technology/verushash"
+                  >
+                    VerusHash 2.2
+                  </a>{' '}
+                  - Designed to level the playing field across hardware classes
+                </p>
+              </li>
+              <li className="inline-flex items-start">
+                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+                <p>UTXO-based, with zk-SNARKs-based zero-knowledge privacy</p>
               </li>
             </ul>
           </p>
@@ -136,12 +145,12 @@ const TechnologyOverview = () => {
           </h2>
           <SlugMenu pathList={technologyLinks} href="/technology" />
 
-          <h5 className="mt-8 mb-4 text-2xl font-normal">Resources</h5>
+          <h5 className="mt-8 mb-4 text-2xl font-normal">Download Papers</h5>
           <ul className="flex flex-col p-0 m-0 mb-24 space-y-2">
             <li className="inline-flex">
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
               <a
-                className="no-underline text-bluebutton"
+                className="underline text-bluebutton"
                 href="/docs/VerusVision.pdf"
                 target="_blank"
               >
@@ -155,7 +164,7 @@ const TechnologyOverview = () => {
                 alt=""
               />
               <a
-                className="no-underline text-bluebutton"
+                className="underline text-bluebutton"
                 href="/docs/VerusPoP.pdf"
                 target="_blank"
               >
@@ -165,7 +174,7 @@ const TechnologyOverview = () => {
             <li className="inline-flex">
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
               <a
-                className="no-underline text-bluebutton"
+                className="underline text-bluebutton"
                 href="/docs/VerusPhaseI.pdf"
                 target="_blank"
               >

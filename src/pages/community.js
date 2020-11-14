@@ -26,7 +26,7 @@ const Community = () => {
               We intend for Verus to become a worldwide, inclusive community
               effort, which welcomes and rewards those who contribute.
             </h1>
-            <p className="my-8 ">
+            <p className="my-8 leading-relaxed">
               With Verus, we introduce digital tools to enable us all to build a
               better world together. We will monetarily incentivize – with our
               technologies – behavior that strengthens communities and
@@ -34,7 +34,7 @@ const Community = () => {
               today: Fiscal incentive for communal behavior built into the very
               fabric of its function.
             </p>
-            <p className="my-8">
+            <p className="my-8 leading-relaxed">
               We will maintain our development as an open source project and
               contribute back to the broader open source community, as we
               leverage the contributions of others that have made it possible
