@@ -41,25 +41,16 @@ export const ContributorsList = [
     description:
       'Raised over US$92B in the Public and Private Equity Capital Markets. Director of Equity Capital Markets Syndication Robert Fleming. Head of Technology Private Placements Robert Fleming. VP Financial Sponsors Group ECM, JPMorgan. Head of UK Institutional Advisory PFG, JPMorgan. Co-Founder of Crescent. Technology & AdAstra Bayesian Machine Learning Systematic Hedge Fund (Sold to Aspect Capital). VALU & Arkeytyp is the third company Nicholas has founded or co-founded.',
   },
-  {
-    name: 'Diesmaster',
-    title: 'GUI Developer',
-    description: ' ',
-  },
+ 
   {
     name: 'Oink',
     title: 'Community Support Lead',
     description: 'Exposed to computers at an early age, Oink acquired his skills quickly. Throughout his teenage years and adulthood he found himself continuously helping people with everything he could, deepening his understanding of the barriers people experience in learning new technologies. His passion for helping people has influenced much of his life.',
   },
   {
-    name: 'rozo',
-    title: 'Community Marketing Lead',
-    description: ' ',
-  },
-  {
-    name: '0x03',
-    title: 'Platform Operator',
-    description: '20 years of experience as a true IT allrounder, specializing in Unix, data privacy and IT security. Technical operator of Verus.',
+    name: 'Max Theyse',
+    title: 'Lead Design / Community Branding',
+    description: 'Experienced designer of brands and products. His passion is creating new products that use blockchain technology to move society to more decentralized structures. "Meyse" enjoys finding the balance between goals, design, messaging, user experience, and technological capabilities.',
   },
   {
     name: 'Chris Monkins',
@@ -67,9 +58,19 @@ export const ContributorsList = [
     description: 'Chris started programming in the 80s as a hobbyist, then got his Bachelor of Engineering in Electronic and Electrical Engineering. He\'s been working on mining software for 4 years and works on Verus community mining and pool software.',
   },
   {
-    name: 'Max Theyse',
-    title: 'Lead Design / Community Branding',
-    description: 'Experienced designer of brands and products. His passion is creating new products that use blockchain technology to move society to more decentralized structures. "Meyse" enjoys finding the balance between goals, design, messaging, user experience, and technological capabilities.',
+    name: '0x03',
+    title: 'Platform Operator',
+    description: '20 years of experience as a true IT allrounder, specializing in Unix, data privacy and IT security. Technical operator of Verus.',
+  },
+  {
+    name: 'rozo',
+    title: 'Community Marketing Lead',
+    description: ' ',
+  },
+  {
+    name: 'Diesmaster',
+    title: 'GUI Developer',
+    description: ' ',
   },
 ];
 
