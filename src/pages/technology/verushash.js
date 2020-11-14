@@ -29,7 +29,7 @@ const VerusHash = () => {
             VerusHash: Algorithm for a Naturally Decentralized Miner Ecosystem
           </h1>
           <p className="my-8 leading-relaxed ">
-            VerusHash 2.2 is the mining algorithm for VerusCoin. The algorithm
+            VerusHash 2.2 is the mining algorithm for Verus. The algorithm
             was developed to equalize mining equitability across hardware
             classes, and to create a naturally decentralized miner ecosystem.
           </p>
