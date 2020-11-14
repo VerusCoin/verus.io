@@ -2,7 +2,7 @@ import { SocialProfileJsonLd } from 'next-seo';
 
 const Footer = () => {
   return (
-    <div className="pb-12 font-foot ml-6 mr-6 mt-6">
+    <div className="pb-12 mt-6 ml-6 mr-6 font-foot">
       <div className="grid justify-center grid-cols-1 gap-8 md:grid-cols-2">
         <a
           href="https://discord.gg/VRKMP2S"
@@ -133,7 +133,7 @@ const Footer = () => {
           <SocialProfileJsonLd
             type="Organization"
             name="Verus"
-            url="https://verus.io"
+            url={process.env.NEXT_PUBLIC_SITEURL}
             sameAs={[
               'https://discord.gg/VRKMP2S',
               'https://www.facebook.com/VerusCoin',
