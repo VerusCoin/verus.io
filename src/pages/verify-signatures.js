@@ -36,8 +36,8 @@ const VerifySignatures = () => {
               Want to sign files, messages or hashes?
             </h3>
             <p className="my-4">
-              <Link href="/wallet">
-                <span className="underline text-bluebutton">
+              <Link href="/wallet/desktop-wallet/">
+                <span className="underline text-bluebutton cursor-pointer">
                   Download Verus Desktop
                 </span>
               </Link>
