@@ -52,7 +52,7 @@ const TechnologyOverview = () => {
                 width="100"
               />
               <p className="pl-3 text-lg font-semibold text-white font-p">
-                Community driven project in the true spirit of Bitcoin.
+                Community driven project in the true spirit of Bitcoin
               </p>
             </div>
 
@@ -63,7 +63,7 @@ const TechnologyOverview = () => {
                 width="100"
               />
               <p className="pl-3 text-lg font-semibold text-white font-p">
-                No ICO was held.
+                No ICO was held
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
@@ -83,7 +83,7 @@ const TechnologyOverview = () => {
                 width="100"
               />
               <p className="pl-3 text-lg font-semibold text-white font-p">
-                No founder or developer fees.
+                No founder or developer fees
               </p>
             </div>
           </div>
@@ -97,11 +97,11 @@ const TechnologyOverview = () => {
               </li>
               <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>Coin ticker: VRSC</p>
+                <p>Coin Ticker: VRSC</p>
               </li>
               <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>Average block time: 1 minute</p>
+                <p>Average Block Time: 1 minute</p>
               </li>
               <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />

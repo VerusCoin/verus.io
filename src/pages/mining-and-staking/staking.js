@@ -34,8 +34,8 @@ const Staking = () => {
             possible since Verus has a unique consensus mechanism of 50% Proof
             of Stake, and 50% Proof of Work.{' '}
             <Link href="/technology/verus_proof_of_power">
-              <span className="underline text-bluebutton">
-                Read more about our consensus mechanism here.
+              <span className="underline text-bluebutton cursor-pointer">
+                Learn about Proof of Power.
               </span>
             </Link>
           </p>
@@ -59,8 +59,8 @@ const Staking = () => {
           <h3 className="m-0 text-2xl font-normal">How do I start staking?</h3>
           <p className="my-4">
             It's easy, all you have to do is{' '}
-            <Link href="/wallet">
-              <span className="underline text-bluebutton">
+            <Link href="/wallet/desktop-wallet">
+              <span className="underline text-bluebutton cursor-pointer">
                 download Verus Desktop here.
               </span>
             </Link>

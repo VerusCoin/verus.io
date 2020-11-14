@@ -11,7 +11,7 @@ const SlugMenu = ({ pathList, href }) => {
               as={`${href}/${path.path}`}
               key={path.id}
             >
-              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
                 <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
                   {path.description}
@@ -29,7 +29,7 @@ const SlugMenu = ({ pathList, href }) => {
               key={path.id}
               target="_blank"
             >
-              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
                 <p className="p-0 m-0 mt-2 text-base leading-normal text-black font-p">
                   {path.description}
@@ -46,7 +46,7 @@ const SlugMenu = ({ pathList, href }) => {
               as={`${href}/${path.slug}`}
               key={path.id}
             >
-              <div className="px-3 py-4 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
                 <p className="p-0 m-0 mt-2 text-base leading-normal text-black font-p">
                   {path.description}
