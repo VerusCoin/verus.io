@@ -25,8 +25,8 @@ const VerusHash = () => {
           <Menu pathList={technologyLinks} href="/technology" />
         </div>
         <div className="justify-center max-w-5xl p-6 md:col-span-3">
-          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
-            VerusHash: Algorithm for a naturally decentralized miner ecosystem.
+          <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl ">
+            VerusHash: Algorithm for a Naturally Decentralized Miner Ecosystem
           </h1>
           <p className="my-8 leading-relaxed ">
             VerusHash 2.2 is the mining algorithm for VerusCoin. The algorithm

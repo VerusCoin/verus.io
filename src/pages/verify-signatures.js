@@ -20,7 +20,7 @@ const VerifySignatures = () => {
         <div className="max-w-4xl mb-12 md:mb-32">
           <div>
             <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl ">
-              Verify Verus signatures.
+              Verify Verus Signatures
             </h1>
             <p className="my-8">
               Verify signatures from messages, files or hashes with our easy to
@@ -35,7 +35,7 @@ const VerifySignatures = () => {
             <h3 className="text-2xl font-normal">
               Want to sign files, messages or hashes?
             </h3>
-            <p className="my-8">
+            <p className="my-4">
               <Link href="/wallet">
                 <span className="underline text-bluebutton">
                   Download Verus Desktop
