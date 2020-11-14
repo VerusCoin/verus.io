@@ -37,9 +37,9 @@ const TechnologyOverview = () => {
           </p>
           <p className="my-8 leading-relaxed">
             The initial Verus release was pre-announced on Bitcointalk with zero
-            premine, and team members mined and staked along with everyone else to
-            generate coins. The Verus developers donated their early mining and
-            staking proceeds to a community foundation, which has also been
+            premine, and team members mined and staked along with everyone else
+            to generate coins. The Verus developers donated their early mining
+            and staking proceeds to a community foundation, which has also been
             supported with other community donations in order to support the
             ongoing growth and project development by core developers and the
             community for years to come.
@@ -88,45 +88,50 @@ const TechnologyOverview = () => {
             </div>
           </div>
 
-          <h2 className="mt-16 mb-4 text-2xl font-normal">
-            Coin Overview
-          </h2>
+          <h2 className="mt-16 mb-4 text-2xl font-normal">Coin Overview</h2>
           <p className="my-8 leading-relaxed">
             <ul className="flex flex-col p-0 m-0 mb-24 space-y-2">
-              <li className="inline-flex">
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Launch Date: May 21, 2018
+                <p>Launch Date: May 21, 2018</p>
               </li>
-              <li className="inline-flex">
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Average block time: 1 minute
+                <p>Average block time: 1 minute</p>
               </li>
-              <li className="inline-flex">
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Max Supply: 83,540,184
+                <p>Max Supply: 83,540,184</p>
               </li>
-              <li className="inline-flex">
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Consensus Algorithm:
-                <a
-                  className="no-underline text-bluebutton"
-                  href="/technology/verus_proof_of_power"
-                >
-                  Verus Proof of Power 
-                </a>
-                - 50/50 Proof of Work (PoW)/ Proof of Stake (PoS)</li>
-              <li className="inline-flex">
+                <p>
+                  Consensus Algorithm:{' '}
+                  <a
+                    className="no-underline text-bluebutton"
+                    href="/technology/verus_proof_of_power"
+                  >
+                    Verus Proof of Power
+                  </a>{' '}
+                  - 50/50 Proof of Work (PoW)/ Proof of Stake (PoS)
+                </p>
+              </li>
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                Hash Algorithm:
-                <a
-                  className="no-underline text-bluebutton"
-                  href="/technology/verushash"
-                >
-                VerusHash 2.2
-                </a> - Designed to level the playing field across hardware classes</li>
-              <li className="inline-flex">
+                <p>
+                  Hash Algorithm:{' '}
+                  <a
+                    className="no-underline text-bluebutton"
+                    href="/technology/verushash"
+                  >
+                    VerusHash 2.2
+                  </a>{' '}
+                  - Designed to level the playing field across hardware classes
+                </p>
+              </li>
+              <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                UTXO-based, with zk-SNARKs-based zero-knowledge privacy
+                <p>UTXO-based, with zk-SNARKs-based zero-knowledge privacy</p>
               </li>
             </ul>
           </p>
