@@ -31,14 +31,14 @@ const Home = (props) => {
               equitable frameworks for social and economic change.
             </h1>
 
-            <div className="flex flex-col items-center justify-center w-full mt-12 space-y-6 md:flex-row md:space-y-0 md:space-x-8 md:justify-start">
+            <div className="flex flex-col items-center justify-center w-full mt-12 space-y-6 md:flex-row md:space-y-0 md:space-x-4 md:justify-start">
               <Link href="/mining-and-staking">
-                <button className="px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
+                <button className="custombutton px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
                   Earn in the Network Economy
                 </button>
               </Link>
               <Link href="/technology">
-                <button className="px-12 py-5 bg-transparent border-2 border-black border-solid rounded-full hover:bg-gray-200">
+                <button className="custombutton px-12 py-5 bg-transparent border-2 border-black border-solid rounded-full hover:bg-gray-200">
                   Technology Deep Dive
                 </button>
               </Link>
