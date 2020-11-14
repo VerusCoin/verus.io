@@ -37,7 +37,7 @@ const Verusid = () => {
               advanced capabilities. In this permissionless system anyone can
               create a VerusID and have complete ownership.{' '}
               <Link href="/wallet/desktop-wallet" className="font-p no-font-p ">
-                <span className="underline text-bluebutton">
+                <span className="underline text-bluebutton cursor-pointer">
                   Register VerusID with Verus Desktop
                 </span>
               </Link>
