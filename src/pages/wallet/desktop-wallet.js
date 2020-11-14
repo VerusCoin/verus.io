@@ -26,7 +26,7 @@ const DesktopWallet = (props) => {
   return (
     <>
       <NextSeo
-        title="Desktop Wallets"
+        title="Desktop Wallet"
         description="Verus desktop multi-coin wallet for Windows, macOS, Linux, ARM."
         additionalMetaTags={[
           {
