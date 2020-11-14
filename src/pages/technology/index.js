@@ -112,7 +112,7 @@ const TechnologyOverview = () => {
                 <p>
                   Consensus Algorithm:{' '}
                   <a
-                    className="no-underline text-bluebutton"
+                    className="underline text-bluebutton"
                     href="/technology/verus_proof_of_power"
                   >
                     Verus Proof of Power
@@ -125,7 +125,7 @@ const TechnologyOverview = () => {
                 <p>
                   Hash Algorithm:{' '}
                   <a
-                    className="no-underline text-bluebutton"
+                    className="underline text-bluebutton"
                     href="/technology/verushash"
                   >
                     VerusHash 2.2
@@ -145,12 +145,12 @@ const TechnologyOverview = () => {
           </h2>
           <SlugMenu pathList={technologyLinks} href="/technology" />
 
-          <h5 className="mt-8 mb-4 text-2xl font-normal">Resources</h5>
+          <h5 className="mt-8 mb-4 text-2xl font-normal">Download Papers</h5>
           <ul className="flex flex-col p-0 m-0 mb-24 space-y-2">
             <li className="inline-flex">
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
               <a
-                className="no-underline text-bluebutton"
+                className="underline text-bluebutton"
                 href="/docs/VerusVision.pdf"
                 target="_blank"
               >
@@ -164,7 +164,7 @@ const TechnologyOverview = () => {
                 alt=""
               />
               <a
-                className="no-underline text-bluebutton"
+                className="underline text-bluebutton"
                 href="/docs/VerusPoP.pdf"
                 target="_blank"
               >
@@ -174,7 +174,7 @@ const TechnologyOverview = () => {
             <li className="inline-flex">
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
               <a
-                className="no-underline text-bluebutton"
+                className="underline text-bluebutton"
                 href="/docs/VerusPhaseI.pdf"
                 target="_blank"
               >
