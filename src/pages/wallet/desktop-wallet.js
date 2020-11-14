@@ -219,7 +219,7 @@ const DesktopWallet = (props) => {
                 </div>
               </div>
             </div>
-            <div className="grid items-start grid-cols-1 px-12 py-6 bg-center bg-cover rounded gap-y-4 gap-x-12 bg-features-bg sm:grid-cols-2">
+            <div className="grid items-start grid-cols-1 p-12 bg-center bg-cover rounded gap-y-12 gap-x-12 bg-features-bg sm:grid-cols-2">
               <div className="flex flex-row items-center flex-shrink-0 space-x-6">
                 <img
                   src="/images/icons/bitcoin-icon.svg"
@@ -230,7 +230,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Multi-Currency Wallet
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature ">
+                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                     Store hundreds of coins and tokens!
                   </p>
                 </div>
@@ -245,7 +245,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Mining & Staking
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature ">
+                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
                   </p>
@@ -262,7 +262,7 @@ const DesktopWallet = (props) => {
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature ">
+                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                     Convert from one currency to another through multi-reserve
                     currencies.
                   </p>
@@ -279,7 +279,7 @@ const DesktopWallet = (props) => {
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature ">
+                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                     Create multi-reserve and fractional currencies with a few
                     clicks.
                   </p>

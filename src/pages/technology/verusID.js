@@ -33,7 +33,7 @@ const Verusid = () => {
             <p className="mt-8 leading-relaxed ">
               The first self-sovereign, decentralized identities on the
               blockchain of its kind. A VerusID is a blockchain address that can
-              hold funds and stake its $VRSC. Future proof and packed with
+              hold funds and stake Verus. Future proof and packed with
               advanced capabilities. In this permissionless system anyone can
               create a VerusID and have complete ownership.{' '}
               <Link href="/wallet/desktop-wallet" className="font-p no-font-p ">
@@ -60,18 +60,18 @@ const Verusid = () => {
           </div>
           <h2 className="mb-4 text-2xl">Features</h2>
 
-          <div className="grid grid-cols-1 p-8 mb-8 bg-center bg-cover rounded bg-features-bg md:grid-cols-2 md:gap-6">
+          <div className="grid grid-cols-1 p-8 mb-8 bg-center bg-cover rounded bg-features-bg gap-y-12 gap-x-12 md:grid-cols-2 md:gap-12">
             <div className="flex flex-row items-center flex-shrink-0">
               <img
                 src="/images/icons/easynameIcon.png"
                 alt="Friendly Name Icon"
                 width="100"
               />
-              <div className="ml-2">
-                <h3 className="mb-0 font-semibold text-white font-p">
+              <div className="ml-4">
+                <h3 className="mb-0 font-semibold text-white text-xl font-p">
                   Friendly Name
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature ">
+                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                   Always remember your crypto address.
                 </p>
               </div>
@@ -83,11 +83,11 @@ const Verusid = () => {
                 alt="vault Icon"
                 width="100"
               />
-              <div className="ml-2">
-                <h3 className="mb-0 font-semibold text-white font-p">
+              <div className="ml-4">
+                <h3 className="mb-0 font-semibold text-white font-p text-xl">
                   Verus Vault
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature ">
+                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                   Set (time) locks for theft proof staking and workflow.
                 </p>
               </div>
@@ -99,11 +99,11 @@ const Verusid = () => {
                 alt="Revoke Icon"
                 width="100"
               />
-              <div className="ml-2">
-                <h3 className="mb-0 font-semibold text-white font-p">
+              <div className="ml-4">
+                <h3 className="mb-0 font-semibold text-white font-p text-xl">
                   Revoking
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature ">
+                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                   Revoke spending abilities on your identity.
                 </p>
               </div>
@@ -115,11 +115,11 @@ const Verusid = () => {
                 alt="Recover Icon"
                 width="100"
               />
-              <div className="ml-2">
-                <h3 className="mb-0 font-semibold text-white font-p">
+              <div className="ml-4">
+                <h3 className="mb-0 font-semibold text-white font-p text-xl">
                   Recovering
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature ">
+                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                   Recover funds and UTXOs to an assigned identity.
                 </p>
               </div>
@@ -131,11 +131,11 @@ const Verusid = () => {
                 alt="Signature Icon"
                 width="100"
               />
-              <div className="ml-2">
-                <h3 className="mb-0 font-semibold text-white font-p">
+              <div className="ml-4">
+                <h3 className="mb-0 font-semibold text-white font-p text-xl">
                   Signatures
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature ">
+                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                   Create unforgeable signatures for files and messages.
                 </p>
               </div>
@@ -147,11 +147,11 @@ const Verusid = () => {
                 alt="Multisig Icon Icon"
                 width="100"
               />
-              <div className="ml-2">
-                <h3 className="mb-0 font-semibold text-white font-p">
+              <div className="ml-4">
+                <h3 className="mb-0 font-semibold text-white font-p text-xl">
                   Multisig
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature ">
+                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                   Multiple identities can control one identity.
                 </p>
               </div>
@@ -163,11 +163,11 @@ const Verusid = () => {
                 alt="Privacy Icon"
                 width="100"
               />
-              <div className="ml-2">
-                <h3 className="mb-0 font-semibold text-white font-p">
+              <div className="ml-4">
+                <h3 className="mb-0 font-semibold text-white font-p text-xl">
                   Privacy
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature ">
+                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                   Attach a private address (Sapling).
                 </p>
               </div>
@@ -179,11 +179,11 @@ const Verusid = () => {
                 alt="Message Icon"
                 width="100"
               />
-              <div className="ml-2">
-                <h3 className="mb-0 font-semibold text-white font-p">
+              <div className="ml-4">
+                <h3 className="mb-0 font-semibold text-white font-p text-xl">
                   Messaging
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature ">
+                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
                   Send and receive private messages.
                 </p>
               </div>

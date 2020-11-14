@@ -51,7 +51,7 @@ const TechnologyOverview = () => {
                 alt="community image"
                 width="100"
               />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
+              <p className="pl-3 text-lg font-semibold text-white font-p">
                 Community driven project in the true spirit of Bitcoin.
               </p>
             </div>
@@ -62,7 +62,7 @@ const TechnologyOverview = () => {
                 alt="no ico image"
                 width="100"
               />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
+              <p className="pl-3 text-lg font-semibold text-white font-p">
                 No ICO was held.
               </p>
             </div>
@@ -72,8 +72,8 @@ const TechnologyOverview = () => {
                 alt="no premine image"
                 width="100"
               />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
-                No coins were pre-mined.
+              <p className="pl-3 leading-normal text-lg font-semibold text-white font-p">
+                No coins were pre-mined
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
@@ -82,7 +82,7 @@ const TechnologyOverview = () => {
                 alt="no dev image"
                 width="100"
               />
-              <p className="pl-3 text-sm leading-normal text-theme-feature font-p">
+              <p className="pl-3 text-lg font-semibold text-white font-p">
                 No founder or developer fees.
               </p>
             </div>
@@ -94,6 +94,10 @@ const TechnologyOverview = () => {
               <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
                 <p>Launch Date: May 21, 2018</p>
+              </li>
+              <li className="inline-flex items-start">
+                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+                <p>Coin ticker: VRSC</p>
               </li>
               <li className="inline-flex items-start">
                 <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
@@ -113,7 +117,7 @@ const TechnologyOverview = () => {
                   >
                     Verus Proof of Power
                   </a>{' '}
-                  - 50/50 Proof of Work (PoW)/ Proof of Stake (PoS)
+                  - 50/50% Proof of Work (PoW) / Proof of Stake (PoS)
                 </p>
               </li>
               <li className="inline-flex items-start">
