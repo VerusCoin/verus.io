@@ -44,25 +44,25 @@ const VerusHash = () => {
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/icons/CPU.png" alt="CPU image" width="100" />
               <p className="pl-3 text-lg font-semibold text-white font-p">
-                Mining with a CPU is most profitable.
+                Mining with a CPU is most profitable
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/icons/GPU.png" alt="GPU image" width="100" />
               <p className="pl-3 text-lg font-semibold text-white font-p">
-                Mining with a GPU can be profitable.
+                Mining with a GPU can be profitable
               </p>
             </div>
             <div className="flex flex-row items-center flex-shrink-0">
               <img src="/images/icons/FPGA.png" alt="FPGA image" width="100" />
               <p className="pl-3 text-lg font-semibold text-white font-p">
-                There are no Bitstreams available to mine on FPGA's.
+                There are no Bitstreams available to mine on FPGA's
               </p>
             </div>
             <div className="flex flex-row items-center">
               <img src="/images/icons/ASIC.png" alt="ASIC image" width="100" />
               <p className="pl-3 text-lg font-semibold text-white font-p">
-                No ASICs are made (yet) to mine Verus.
+                No ASICs are made (yet) to mine Verus
               </p>
             </div>
           </div>
