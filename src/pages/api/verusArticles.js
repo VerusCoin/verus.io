@@ -13,7 +13,6 @@ export default async (req, res) => {
     );
     try {
       articles = await result.json();
-
       data = articles.articles.splice(0, 3);
     } catch (error) {
       console.error(
