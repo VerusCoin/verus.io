@@ -167,7 +167,7 @@ const DesktopWallet = (props) => {
               Latest version: {name} <br />
               Latest release: {formatDateFromString(published_at)}{' '}
               {date_diff_indays(published_at) < 14 ? (
-                <span className="px-6 py-1 mx-4 font-bold text-white whitespace-no-wrap bg-red-500 rounded-full ">
+                <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-no-wrap">
                   New Update
                 </span>
               ) : null}
