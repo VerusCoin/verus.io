@@ -124,6 +124,13 @@ const Footer = () => {
             YouTube
           </a>
           <a
+            href="#"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            QQ 718148736
+          </a>
+          <a
             href="https://bitcointalk.org/index.php?topic=4070404.0"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
