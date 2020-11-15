@@ -39,4 +39,12 @@ export const ExchangeLinks = [
     URI: 'https://graviex.net/markets/vrscbtc',
     URIText: 'graviex.net',
   },
+  {
+    image: 'BitHumb.svg',
+    title: 'Bithumb Global',
+    trade: 'VRSC/BTC, VRSC/USDT',
+    kyc: 'No',
+    URI: 'https://bithumb.pro',
+    URIText: 'BitHumb',
+  },
 ];
