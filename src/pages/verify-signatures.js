@@ -33,7 +33,7 @@ const VerifySignatures = () => {
 
           <div>
             <h3 className="text-2xl font-normal">
-              Want to sign files, messages or hashes?
+              Sign files, messages or hashes yourself
             </h3>
             <p className="my-4">
               <Link href="/wallet/desktop-wallet/">

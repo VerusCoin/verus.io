@@ -45,6 +45,6 @@ export const ExchangeLinks = [
     trade: 'VRSC/BTC, VRSC/USDT',
     kyc: 'No',
     URI: 'https://bithumb.pro',
-    URIText: 'BitHumb',
+    URIText: 'bithumb.pro',
   },
 ];

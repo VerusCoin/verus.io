@@ -4,7 +4,7 @@ const Exchange = ({ exchange }) => {
     <div className="flex flex-col max-w-sm p-4 text-center border border-solid rounded-lg justify-items-start">
       <img
         src={`/images/icons/exchange/${image}`}
-        width={URIText !== 'BitHumb' ? '30%' : '95%'}
+        width={URIText !== 'bithumb.pro' ? '30%' : '60%'}
         className="self-center py-4"
         alt={`${image} Icon`}
       />
