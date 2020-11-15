@@ -10,23 +10,18 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link
-            rel="shortcut icon"
-            href="/favicons/verusx320.gif"
-            sizes="320x320"
-            type="image/gif"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/favicons/apple-touch-icon.png"
-          />
           <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
           <link
             rel="alternate icon"
             href="/favicons/favicon.ico"
             type="image/x-icon"
           />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicons/apple-touch-icon.png"
+          />
+
           <link rel="manifest" href="/favicons/site.webmanifest" />
           <meta
             content="/favicons/browserconfig.xml"

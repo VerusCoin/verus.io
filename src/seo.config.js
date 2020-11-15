@@ -21,12 +21,6 @@ export const SEO = {
         width: 1200,
         height: 630,
       },
-      {
-        url: `${process.env.NEXT_PUBLIC_SITEURL}/favicons/verusx320.gif`,
-        alt: title,
-        width: 320,
-        height: 320,
-      },
     ],
   },
   twitter: {
