@@ -59,8 +59,8 @@ export const ContributorsList = [
   },
   {
     name: '0x03',
-    title: 'Platform Operator',
-    description: '20 years of experience as a true IT allrounder, specializing in Unix, data privacy and IT security. Technical operator of Verus.',
+    title: 'Unix Systems Engineer',
+    description: '20 years of experience as a true IT allrounder, specializing in Unix, data privacy, data frugality and IT security. Technical operator of Verus.',
   },
   {
     name: 'rozo',
