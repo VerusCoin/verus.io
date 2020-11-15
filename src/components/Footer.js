@@ -123,14 +123,13 @@ const Footer = () => {
           >
             YouTube
           </a>
-          {/* <a
-            href="#"
+          <a
+            href="https://qm.qq.com/cgi-bin/qm/qr?k=giXYZCf2m7UpB_I5uVs8yaxCB2oRuw3L&authKey=IiivzBvhfNBk3Pd8LJB9sn+GyrL9o39RkLB7k83Z+nLfZ2hBi0c3jbh9G0HNHjrV&noverify=0"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
           >
             QQ 718148736
-          </a> */}
-          <p>QQ 718148736</p>
+          </a>
           <a
             href="https://keybase.io/team/veruscoin"
             target="_blank"
