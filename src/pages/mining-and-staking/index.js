@@ -46,12 +46,9 @@ const MiningOverview = () => {
         </div>
       </div>
       <div className="flex flex-row items-center justify-end p-2 md:hidden">
-        <Link
-          href="/mining-and-staking/[slug]"
-          as={`/mining-and-staking/${nextRoute.slug}`}
-        >
+        <Link href={`/mining-and-staking/${nextRoute.path}`}>
           <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover ">
-            {nextRoute.slug}&nbsp;{' '}
+            {nextRoute.name}&nbsp;{' '}
             <svg
               width="8"
               height="18"
