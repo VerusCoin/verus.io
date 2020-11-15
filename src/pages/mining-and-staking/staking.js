@@ -26,7 +26,7 @@ const Staking = () => {
           <h1 className="text-2xl font-normal md:leading-tight md:text-4xl ">
             Stake Verus to Earn
           </h1>
-          <h2 className="mt-8 text-2xl font-normal ">What is staking?</h2>
+          <h2 className="mt-8 text-2xl font-normal ">Staking explained</h2>
           <p className="my-4 leading-relaxed">
             By staking you help secure the network by using your coins. Coins,
             or stakes, are used to generate new blocks. Stakes are chosen at
@@ -56,7 +56,7 @@ const Staking = () => {
             </div>
           </div>
 
-          <h3 className="m-0 text-2xl font-normal">How do I start staking?</h3>
+          <h3 className="m-0 text-2xl font-normal">Start staking</h3>
           <p className="my-4">
             It's easy, all you have to do is{' '}
             <Link href="/wallet/desktop-wallet">
