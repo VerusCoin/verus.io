@@ -131,6 +131,13 @@ const Footer = () => {
             QQ 718148736
           </a>
           <a
+            href="https://keybase.io/team/veruscoin"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            Keybase
+          </a>
+          <a
             href="https://bitcointalk.org/index.php?topic=4070404.0"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
@@ -149,6 +156,7 @@ const Footer = () => {
               'https://reddit.com/r/veruscoin',
               'https://medium.com/veruscoin',
               'https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg',
+              'https://keybase.io/team/veruscoin',
               'https://bitcointalk.org/index.php?topic=4070404.0',
             ]}
           />
