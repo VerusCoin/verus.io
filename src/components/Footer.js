@@ -2,7 +2,7 @@ import { SocialProfileJsonLd } from 'next-seo';
 
 const Footer = () => {
   return (
-    <div className="pb-12 font-foot ml-6 mr-6 mt-6">
+    <div className="pb-12 mt-6 ml-6 mr-6 font-foot">
       <div className="grid justify-center grid-cols-1 gap-8 md:grid-cols-2">
         <a
           href="https://discord.gg/VRKMP2S"
@@ -124,6 +124,20 @@ const Footer = () => {
             YouTube
           </a>
           <a
+            href="https://qm.qq.com/cgi-bin/qm/qr?k=giXYZCf2m7UpB_I5uVs8yaxCB2oRuw3L&authKey=IiivzBvhfNBk3Pd8LJB9sn+GyrL9o39RkLB7k83Z+nLfZ2hBi0c3jbh9G0HNHjrV&noverify=0"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            QQ 718148736
+          </a>
+          <a
+            href="https://keybase.io/team/veruscoin"
+            target="_blank"
+            className="block no-underline hover:text-white text-navlink-hover"
+          >
+            Keybase
+          </a>
+          <a
             href="https://bitcointalk.org/index.php?topic=4070404.0"
             target="_blank"
             className="block no-underline hover:text-white text-navlink-hover"
@@ -133,7 +147,7 @@ const Footer = () => {
           <SocialProfileJsonLd
             type="Organization"
             name="Verus"
-            url="https://verus.io"
+            url={process.env.NEXT_PUBLIC_SITEURL}
             sameAs={[
               'https://discord.gg/VRKMP2S',
               'https://www.facebook.com/VerusCoin',
@@ -142,6 +156,7 @@ const Footer = () => {
               'https://reddit.com/r/veruscoin',
               'https://medium.com/veruscoin',
               'https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg',
+              'https://keybase.io/team/veruscoin',
               'https://bitcointalk.org/index.php?topic=4070404.0',
             ]}
           />

@@ -155,6 +155,10 @@ button {
   @apply text-base text-center;
 }
 
+.custombutton{
+  font-family: geomanistbook, sans-serif;
+}
+
 .text-span-code {
   font-family: Inconsolata, monospace;
   background-color: #ebebeb;

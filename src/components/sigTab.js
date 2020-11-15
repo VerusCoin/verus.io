@@ -41,7 +41,7 @@ const VerifyResult = ({
       )}
       <p className="w-full mb-2 font-semibold">{title}</p>
       <p className="w-full m-0 break-all">{children}</p>
-      <p className="w-full mb-2 font-semibold">Identity/Address:</p>
+      <p className="w-full mb-2 font-semibold">VerusID / i-address:</p>
       <p className="w-full m-0 break-all">{verusSignature.Identity}</p>
       <p className="w-full mb-2 font-semibold">Signature:</p>
       <p className="w-full m-0 break-all">{verusSignature.Signature}</p>
@@ -83,7 +83,7 @@ const MessageContent = () => {
       } else {
         setSigResult({
           error: -5,
-          error_text: 'Currently experensing network issues. Try again later.',
+          error_text: 'Currently experiencing network issues. Try again later.',
         });
       }
     }
@@ -111,7 +111,7 @@ const MessageContent = () => {
               <InputField
                 name="MessageIdentity"
                 label="identity / address"
-                validate={{ required: 'VerusID or Address is required.' }}
+                validate={{ required: 'VerusID or i-address is required.' }}
               />
               <InputField
                 name="MessageSignature"
@@ -173,7 +173,7 @@ const FileContent = () => {
       } else {
         setSigResult({
           error: -5,
-          error_text: 'Currently experensing network issues. Try again later.',
+          error_text: 'Currently experiencing network issues. Try again later.',
         });
       }
     }
@@ -202,7 +202,7 @@ const FileContent = () => {
               <InputField
                 name="Identity"
                 label="identity / address"
-                validate={{ required: 'VerusID or Address is required.' }}
+                validate={{ required: 'VerusID or i-address is required.' }}
               />
               <InputField
                 name="Signature"
@@ -265,7 +265,7 @@ const HashContent = () => {
       } else {
         setSigResult({
           error: -5,
-          error_text: 'Currently experensing network issues. Try again later.',
+          error_text: 'Currently experiencing network issues. Try again later.',
         });
       }
     }
@@ -294,7 +294,7 @@ const HashContent = () => {
               <InputField
                 name="HashIdentity"
                 label="identity / address"
-                validate={{ required: 'VerusID or Address is required.' }}
+                validate={{ required: 'VerusID or i-address is required.' }}
               />
               <InputField
                 name="HashSignature"

@@ -1,13 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Table of Contents
+- [1. Getting Started](#1-getting-started)
+  - [1.1. Install dependencies](#11-install-dependencies)
+  - [1.2. Development Server](#12-development-server)
+  - [1.3. Production Server](#13-production-server)
+- [2. Development to production cycle](#2-development-to-production-cycle)
+  - [2.1. Working in Development](#21-working-in-development)
+  - [2.2. Working with Stage](#22-working-with-stage)
+- [3. Learn More](#3-learn-more)
 
-First, copy the `.env` file and create a:
+# 1. Getting Started
 
-- `.env.development.local` if you intend to run a development server
-- `.env.production.local` if you intend to run a production server
+First, copy the `.env.template` file and create a `.env`: (this is for both development and production servers)
 
-## Install dependencies
+``` cp .env.template .env ```
+note: change `NEXT_PUBLIC_SITEURL` value to domain name being used.
+
+## 1.1. Install dependencies
 
 Need to install all dependencies:
 
@@ -17,7 +27,7 @@ npm install
 yarn install
 ```
 
-## Development Server
+## 1.2. Development Server
 
 To run the development server:
 
@@ -31,7 +41,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the pages by modifying the files located in `pages/*.js` or `pages/api/*.js`. The page will auto-update as you edit the file.
 
-## Production Server
+## 1.3. Production Server
 
 There are two modes for production server:
 
@@ -47,21 +57,6 @@ npm run build
 yarn build
 ```
 
-<!-- You will have an output showing the file load sizes forWhat you are looking for what type of file was produced on the build. if any file has `λ` then you will be required to run Server Side.
-```bash
-λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
-○  (Static)  automatically rendered as static HTML (uses no initial props)
-●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
-```
-
-To run full static, you must export the files. (This can only be done after build)
-```bash
-npm export
-# or
-yarn export
-```
-By default, the export will generate an `out` directory, which can be served by any static hosting service or CDN. -->
-
 to start the server side. (this can only be done after build)
 
 ```bash
@@ -70,9 +65,36 @@ npm start
 yarn start
 ```
 
-## Learn More
+
+# 2. Development to production cycle
+## 2.1. Working in Development
+All developemnt will be committed to `dev` branch
+
+1. `git checkout dev` - to make sure you are on dev branch
+2. `git pull` - this is to make sure you have updated content on your branch
+3. Make any changes
+4. `git commit -m 'message'` to commit changes
+5. `git pull` to make sure no changes happen between your changes and github
+6. `git push`
+
+All merges to staging will be done end of day or at request
+
+## 2.2. Working with Stage
+Stage branch will be used for `next.verus.io` for review
+
+Note: make sure you follow [Getting Started](#1-getting-started) for the `.env` file.
+
+If everything is good, look for pull request (stage to master), and insert your comments if good or there needs to be a fixed.
+
+Upon completion of review a merge from stage to master will be done
+
+
+# 3. Learn More
 
 To learn about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [CSS documentation](https://tailwindcss.com/docs) - the css being used in this website
+
+

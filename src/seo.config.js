@@ -7,25 +7,19 @@ const description =
 export const SEO = {
   titleTemplate,
   description,
-  canonical: 'https://verus.io',
+  canonical: process.env.NEXT_PUBLIC_SITEURL,
   openGraph: {
     type: 'website',
     locale: 'en',
-    url: 'https://verus.io',
+    url: process.env.NEXT_PUBLIC_SITEURL,
     title,
     description,
     images: [
       {
-        url: 'https://verus.io/images/logos/verus_og_image.png',
+        url: `${process.env.NEXT_PUBLIC_SITEURL}/images/logos/verus_og_image.png`,
         alt: title,
         width: 1200,
         height: 630,
-      },
-      {
-        url: 'https://verus.io/favicons/verusx320.gif',
-        alt: title,
-        width: 320,
-        height: 320,
       },
     ],
   },

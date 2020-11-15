@@ -191,7 +191,7 @@ const DesktopWallet = (props) => {
                 />
                 <div className="">
                   <h2 className="mb-2 text-2xl font-normal">
-                    Easy and Safe & Always Secure
+                    Easy & Secure
                   </h2>
                   <p className=" text-md leading-relaxed">
                     Verus Desktop is created for beginners and experts in mind.

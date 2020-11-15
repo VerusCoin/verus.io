@@ -1,10 +1,10 @@
 const Exchange = ({ exchange }) => {
   const { image, title, trade, kyc, URI, URIText } = exchange;
   return (
-    <div className="flex flex-col max-w-sm p-4 text-center justify-items-start border border-solid rounded-lg">
+    <div className="flex flex-col max-w-sm p-4 text-center border border-solid rounded-lg justify-items-start">
       <img
         src={`/images/icons/exchange/${image}`}
-        width="30%"
+        width={URIText !== 'bithumb.pro' ? '30%' : '60%'}
         className="self-center py-4"
         alt={`${image} Icon`}
       />

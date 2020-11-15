@@ -2,7 +2,7 @@ export const PoolLinks = [
   {
     id: 1,
     URI: 'https://pool.veruscoin.io/',
-    URIText: 'VerusCoin Pool',
+    URIText: 'Verus Pool',
     percentageRate: 5,
   },
   {
