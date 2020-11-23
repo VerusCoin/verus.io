@@ -7,7 +7,7 @@ export default async (req, res) => {
   let data = null;
   let result = null;
   // TODO: Remove before master branch
-  cache.clear();
+  // cache.clear();
   if (!cache.get(cacheArticles)) {
     result = await fetch(
       'https://medium-f.herokuapp.com/api/v1/articles?orgid=veruscoin'
