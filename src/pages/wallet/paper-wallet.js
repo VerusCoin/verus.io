@@ -32,7 +32,7 @@ const PaperWallet = () => {
             of paper. Follow the instructions closely for maximum security.
           </p>
           <a
-            href="https://paperwallet.veruscoin.io/"
+            href="https://paperwallet.verus.io/"
             target="_blank"
             className="underline external font-p text-bluebutton"
           >
