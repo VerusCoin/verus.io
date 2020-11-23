@@ -43,8 +43,8 @@ export const ExchangeLinks = [
     image: 'BitHumb.svg',
     title: 'Bithumb Global',
     trade: 'VRSC/BTC, VRSC/USDT',
-    kyc: 'No KYC (5 BTC limit)',
-    URI: 'https://bithumb.pro',
-    URIText: 'bithumb.pro',
+    kyc: 'No',
+    URI: 'https://www.bithumb.pro/register;i=8jznat',
+    URIText: 'bithumb',
   },
 ];
