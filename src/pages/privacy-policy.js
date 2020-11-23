@@ -29,6 +29,8 @@ const PrivacyPolicy = () => {
           Data submitted using forms, such as the Verus ID lookup or signature
           verification are only ever used to complete your request. The URL of
           the request is logged (refer to "Logs"); the response is not logged.
+          Specifically, the API lookups will be proxied to an external API 
+          endpoint. Your IP address is not part of the proxied request.
         </p>
         <h3 className="mt-16 text-xl font-normal">Contact</h3>
         <p className="my-8">
