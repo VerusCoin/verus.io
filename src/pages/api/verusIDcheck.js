@@ -13,7 +13,12 @@ const fetchID = async (query) => {
 };
 
 export default async (req, res) => {
-  let result = await fetchID(req.query);
+  // Check for vanity '@' before doing fetch
+  let IDvariable = req.query;
+  if (IDvariable.id.slice(-1) != '@') {
+    IDvariable.id = IDvariable.id + '@';
+  }
+  let result = await fetchID(IDvariable);
   if (!result.error) {
     res.statusCode = 200;
     res.json(result);
