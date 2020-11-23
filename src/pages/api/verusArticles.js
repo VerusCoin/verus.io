@@ -13,7 +13,7 @@ export default async (req, res) => {
     );
     try {
       articles = await result.json();
-      data = articles.articles.splice(0, 3);
+      data = articles.articles.splice(0, 6);
     } catch (error) {
       console.error(
         '%s: fetching Articles %s',
@@ -25,6 +25,7 @@ export default async (req, res) => {
     // 900000 = 15 minutes
     // 43200000 = 12 Hours
     // 86400000 = 24 hours
+
     cache.put(cacheArticles, data, 43200000);
   } else {
     data = cache.get(cacheArticles);
