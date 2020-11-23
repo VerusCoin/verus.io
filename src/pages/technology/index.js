@@ -72,7 +72,7 @@ const TechnologyOverview = () => {
                 alt="no premine image"
                 width="100"
               />
-              <p className="pl-3 leading-normal text-lg font-semibold text-white font-p">
+              <p className="pl-3 text-lg font-semibold leading-normal text-white font-p">
                 No coins were pre-mined
               </p>
             </div>
@@ -89,56 +89,55 @@ const TechnologyOverview = () => {
           </div>
 
           <h2 className="mt-16 mb-4 text-2xl font-normal">Coin Overview</h2>
-          <p className="my-8 leading-relaxed">
-            <ul className="flex flex-col p-0 m-0 mb-24 space-y-2">
-              <li className="inline-flex items-start">
-                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>Launch Date: May 21, 2018</p>
-              </li>
-              <li className="inline-flex items-start">
-                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>Coin Ticker: VRSC</p>
-              </li>
-              <li className="inline-flex items-start">
-                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>Average Block Time: 1 minute</p>
-              </li>
-              <li className="inline-flex items-start">
-                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>Max Supply: 83,540,184</p>
-              </li>
-              <li className="inline-flex items-start">
-                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>
-                  Consensus Algorithm:{' '}
-                  <a
-                    className="underline text-bluebutton"
-                    href="/technology/verus_proof_of_power"
-                  >
-                    Verus Proof of Power
-                  </a>{' '}
-                  - 50/50% Proof of Work (PoW) / Proof of Stake (PoS)
-                </p>
-              </li>
-              <li className="inline-flex items-start">
-                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>
-                  Hash Algorithm:{' '}
-                  <a
-                    className="underline text-bluebutton"
-                    href="/technology/verushash"
-                  >
-                    VerusHash 2.2
-                  </a>{' '}
-                  - Designed to level the playing field across hardware classes
-                </p>
-              </li>
-              <li className="inline-flex items-start">
-                <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
-                <p>UTXO-based, with zk-SNARKs-based zero-knowledge privacy</p>
-              </li>
-            </ul>
-          </p>
+
+          <ul className="flex flex-col p-0 m-0 my-8 mb-24 space-y-2 leading-relaxed">
+            <li className="inline-flex items-start">
+              <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+              <p>Launch Date: May 21, 2018</p>
+            </li>
+            <li className="inline-flex items-start">
+              <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+              <p>Coin Ticker: VRSC</p>
+            </li>
+            <li className="inline-flex items-start">
+              <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+              <p>Average Block Time: 1 minute</p>
+            </li>
+            <li className="inline-flex items-start">
+              <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+              <p>Max Supply: 83,540,184</p>
+            </li>
+            <li className="inline-flex items-start">
+              <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+              <p>
+                Consensus Algorithm:{' '}
+                <a
+                  className="underline text-bluebutton"
+                  href="/technology/verus_proof_of_power"
+                >
+                  Verus Proof of Power
+                </a>{' '}
+                - 50/50% Proof of Work (PoW) / Proof of Stake (PoS)
+              </p>
+            </li>
+            <li className="inline-flex items-start">
+              <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+              <p>
+                Hash Algorithm:{' '}
+                <a
+                  className="underline text-bluebutton"
+                  href="/technology/verushash"
+                >
+                  VerusHash 2.2
+                </a>{' '}
+                - Designed to level the playing field across hardware classes
+              </p>
+            </li>
+            <li className="inline-flex items-start">
+              <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
+              <p>UTXO-based, with zk-SNARKs-based zero-knowledge privacy</p>
+            </li>
+          </ul>
 
           <h2 className="mt-16 mb-4 text-2xl font-normal">
             Technology Deep Dive
