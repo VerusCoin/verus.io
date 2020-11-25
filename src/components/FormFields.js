@@ -18,7 +18,7 @@ export const InputField = (props) => {
       <label
         className={`block ${
           errorMessage ? 'text-red-600' : 'text-gray-700'
-        } text-sm px-2 mb-2 ml-2 bg-white font-p capitalize`}
+        } text-sm px-2 mb-2 ml-2 bg-white font-p `}
         style={{ marginTop: '-1.45rem', width: 'fit-content' }}
         htmlFor={name}
       >

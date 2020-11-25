@@ -110,7 +110,7 @@ const MessageContent = () => {
               />
               <InputField
                 name="MessageIdentity"
-                label="identity / address"
+                label="VerusID / i-address"
                 validate={{ required: 'VerusID or i-address is required.' }}
               />
               <InputField
@@ -201,7 +201,7 @@ const FileContent = () => {
               </div>
               <InputField
                 name="Identity"
-                label="identity / address"
+                label="VerusID / i-address"
                 validate={{ required: 'VerusID or i-address is required.' }}
               />
               <InputField
@@ -287,13 +287,13 @@ const HashContent = () => {
             >
               <InputField
                 name="Hash"
-                label="hash"
+                label="Hash"
                 validate={{ required: 'Hash is required.' }}
               />
 
               <InputField
                 name="HashIdentity"
-                label="identity / address"
+                label="VerusID / i-address"
                 validate={{ required: 'VerusID or i-address is required.' }}
               />
               <InputField
