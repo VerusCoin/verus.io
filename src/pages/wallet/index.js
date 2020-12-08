@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Menu from '../../components/Menu';
-import SlugMenu from '../../components/SlugMenu';
+import { SlugMenu } from '../../components/SlugMenu';
 import { walletLinks } from '../../constants/wallet';
 import { NextSeo } from 'next-seo';
 
