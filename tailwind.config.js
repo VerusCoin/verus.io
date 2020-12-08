@@ -102,6 +102,10 @@ module.exports = {
         'light-bg': "url('/images/backgrounds/light-bg.svg')",
         'newsletter-bg': "url('/images/backgrounds/newsletter-bg.svg')",
       },
+      listStyleType: {
+        roman: 'lower-roman',
+        alpha: 'lower-alpha',
+      },
     },
     aspectRatio: {
       none: 0,
