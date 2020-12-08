@@ -32,7 +32,7 @@ const MiningSoftware = (props) => {
             need a Verus Coin address, which you can create using the wallet in
             either Lite or Native mode. If you need any help, check our{' '}
             <a
-              href="https://wiki.veruscoin.io/"
+              href="https://wiki.verus.io/"
               target="_blank"
               className="underline external"
             >

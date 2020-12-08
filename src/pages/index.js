@@ -106,7 +106,7 @@ const Home = (props) => {
               <p className="my-3">Search through addresses and transactions</p>
               <div>
                 <a
-                  href="https://explorer.veruscoin.io/"
+                  href="https://explorer.verus.io/"
                   target="_blank"
                   className="no-underline"
                 >

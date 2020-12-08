@@ -38,7 +38,7 @@ const CommandWallet = ({
             <p className="my-8 ">
               Save hours on synchronising, jumpstart your native wallet using{' '}
               <a
-                href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
+                href="https://wiki.verus.io/#!how-to%5Chow-to_bootstrap.md"
                 target="_blank"
                 className="underline external font-p text-bluebutton"
               >

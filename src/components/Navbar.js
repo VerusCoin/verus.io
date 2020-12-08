@@ -112,7 +112,7 @@ function Navbar() {
                     </li>
                     <li className="block px-4 py-2 whitespace-no-wrap">
                       <a
-                        href="https://explorer.veruscoin.io/"
+                        href="https://explorer.verus.io/"
                         target="_blank"
                         className="block py-2 no-underline whitespace-no-wrap cursor-pointer external text-navlink hover:text-navlink-hover"
                       >
@@ -121,7 +121,7 @@ function Navbar() {
                     </li>
                     <li className="block px-4 py-2 whitespace-no-wrap">
                       <a
-                        href="https://wiki.veruscoin.io/"
+                        href="https://wiki.verus.io/"
                         target="_blank"
                         className="block py-2 no-underline whitespace-no-wrap cursor-pointer external text-navlink hover:text-navlink-hover"
                       >
@@ -175,7 +175,7 @@ function Navbar() {
                     onClick={() => setNavbarOpen(false)}
                   >
                     <a
-                      href="https://explorer.veruscoin.io/"
+                      href="https://explorer.verus.io/"
                       target="_blank"
                       className="py-2 text-sm no-underline cursor-pointer external text-navlink hover:text-navlink-hover"
                     >
@@ -187,7 +187,7 @@ function Navbar() {
                     onClick={() => setNavbarOpen(false)}
                   >
                     <a
-                      href="https://wiki.veruscoin.io/"
+                      href="https://wiki.verus.io/"
                       target="_blank"
                       className="py-2 text-sm no-underline cursor-pointer external text-navlink hover:text-navlink-hover"
                     >

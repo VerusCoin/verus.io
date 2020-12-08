@@ -154,7 +154,7 @@ const DesktopWallet = (props) => {
                 )}
                 <li className="block px-4 py-3 whitespace-no-wrap">
                   <a
-                    href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
+                    href="https://wiki.verus.io/#!how-to%5Chow-to_bootstrap.md"
                     target="_blank"
                     className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
                   >
@@ -190,9 +190,7 @@ const DesktopWallet = (props) => {
                   width="50"
                 />
                 <div className="">
-                  <h2 className="mb-2 text-2xl font-normal">
-                    Easy & Secure
-                  </h2>
+                  <h2 className="mb-2 text-2xl font-normal">Easy & Secure</h2>
                   <p className=" text-md leading-relaxed">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
@@ -297,7 +295,7 @@ const DesktopWallet = (props) => {
                   Jumpstart your native Verus wallet and save hours on
                   synchronizing.{' '}
                   <a
-                    href="https://wiki.veruscoin.io/#!how-to%5Chow-to_bootstrap.md"
+                    href="https://wiki.verus.io/#!how-to%5Chow-to_bootstrap.md"
                     target="_blank"
                     className="underline external font-p text-bluebutton"
                   >

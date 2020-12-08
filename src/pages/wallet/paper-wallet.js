@@ -48,4 +48,4 @@ const PaperWallet = () => {
 
 export default PaperWallet;
 
-//https://paperwallet.veruscoin.io/
+//https://paperwallet.verus.io/
