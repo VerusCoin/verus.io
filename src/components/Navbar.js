@@ -2,6 +2,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { LogoJsonLd } from 'next-seo';
 const VerusLogo = '/images/logos/Verus_Logo.svg';
+const ResourceMenuList = [
+  { name: 'VerusID Lookup', url: '/verusid-lookup', external: false },
+  { name: 'VerusID Signatures', url: '/verify-signatures', external: false },
+  { name: 'Block Explorer', url: 'https://explorer.verus.io/', external: true },
+  { name: 'Support Wiki', url: 'https://wiki.verus.io/', external: true },
+  { name: 'Get Verus', url: '/get-vrsc', external: false },
+  { name: 'FAQ', url: '/faq', external: false },
+  { name: 'Papers', url: '/papers', external: false },
+];
 
 function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -96,45 +105,30 @@ function Navbar() {
                       ' pt-1 pb-1 pl-4 pr-4 mt-3 bg-white rounded-lg shadow-menu  md:z-50 '
                     }
                   >
-                    <li className="block px-4 py-2 whitespace-no-wrap">
-                      <Link href="/verusid-lookup">
-                        <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
-                          VerusID Lookup
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="block px-4 py-2 whitespace-no-wrap">
-                      <Link href="/verify-signatures">
-                        <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
-                          Verify Signatures
-                        </a>
-                      </Link>
-                    </li>
-                    <li className="block px-4 py-2 whitespace-no-wrap">
-                      <a
-                        href="https://explorer.verus.io/"
-                        target="_blank"
-                        className="block py-2 no-underline whitespace-no-wrap cursor-pointer external text-navlink hover:text-navlink-hover"
-                      >
-                        Block Explorer
-                      </a>
-                    </li>
-                    <li className="block px-4 py-2 whitespace-no-wrap">
-                      <a
-                        href="https://wiki.verus.io/"
-                        target="_blank"
-                        className="block py-2 no-underline whitespace-no-wrap cursor-pointer external text-navlink hover:text-navlink-hover"
-                      >
-                        Support Wiki
-                      </a>
-                    </li>
-                    <li className="block px-4 py-2 whitespace-no-wrap">
-                      <Link href="/get-vrsc">
-                        <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
-                          Get Verus
-                        </a>
-                      </Link>
-                    </li>
+                    {ResourceMenuList.map((menu, index) => {
+                      return (
+                        <li
+                          className="block px-4 py-2 whitespace-no-wrap"
+                          key={index}
+                        >
+                          {menu.external ? (
+                            <a
+                              href={menu.url}
+                              target="_blank"
+                              className="block py-2 no-underline whitespace-no-wrap cursor-pointer external text-navlink hover:text-navlink-hover"
+                            >
+                              {menu.name}
+                            </a>
+                          ) : (
+                            <Link href={menu.url}>
+                              <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
+                                {menu.name}
+                              </a>
+                            </Link>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -142,65 +136,31 @@ function Navbar() {
                 Resources
                 <hr />
                 <ul>
-                  {/* <li
-                    className="flex items-center"
-                    onClick={() => setNavbarOpen(false)}
-                  >
-                    <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
-                      Developer Docs
-                    </a>
-                  </li> */}
-                  <li
-                    className="flex items-center"
-                    onClick={() => setNavbarOpen(false)}
-                  >
-                    <Link href="/verusid-lookup">
-                      <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
-                        VerusID Lookup
-                      </a>
-                    </Link>
-                  </li>
-                  <li
-                    className="flex items-center"
-                    onClick={() => setNavbarOpen(false)}
-                  >
-                    <Link href="/verify-signatures">
-                      <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
-                        Verify Signatures
-                      </a>
-                    </Link>
-                  </li>
-                  <li
-                    className="flex items-center"
-                    onClick={() => setNavbarOpen(false)}
-                  >
-                    <a
-                      href="https://explorer.verus.io/"
-                      target="_blank"
-                      className="py-2 text-sm no-underline cursor-pointer external text-navlink hover:text-navlink-hover"
-                    >
-                      Block Explorer
-                    </a>
-                  </li>
-                  <li
-                    className="flex items-center"
-                    onClick={() => setNavbarOpen(false)}
-                  >
-                    <a
-                      href="https://wiki.verus.io/"
-                      target="_blank"
-                      className="py-2 text-sm no-underline cursor-pointer external text-navlink hover:text-navlink-hover"
-                    >
-                      Support Wiki
-                    </a>
-                  </li>
-                  <li className="block px-4 py-2 whitespace-no-wrap">
-                    <Link href="/get-vrsc">
-                      <a className="block py-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover">
-                        Get Verus
-                      </a>
-                    </Link>
-                  </li>
+                  {ResourceMenuList.map((menu, index) => {
+                    return (
+                      <li
+                        className="flex items-center"
+                        onClick={() => setNavbarOpen(false)}
+                        key={index}
+                      >
+                        {menu.external ? (
+                          <a
+                            href={menu.url}
+                            target="_blank"
+                            className="py-2 text-sm no-underline cursor-pointer external text-navlink hover:text-navlink-hover"
+                          >
+                            {menu.name}
+                          </a>
+                        ) : (
+                          <Link href={menu.url}>
+                            <a className="py-2 text-sm no-underline cursor-pointer text-navlink hover:text-navlink-hover">
+                              {menu.name}
+                            </a>
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </li>
