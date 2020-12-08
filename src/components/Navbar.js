@@ -10,6 +10,7 @@ const ResourceMenuList = [
   { name: 'Get Verus', url: '/get-vrsc', external: false },
   { name: 'FAQ', url: '/faq', external: false },
   { name: 'Papers', url: '/papers', external: false },
+  { name: 'Donate', url: '/donate', external: false },
 ];
 
 function Navbar() {
