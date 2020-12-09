@@ -40,7 +40,7 @@ const DonatePage = () => {
           greatly appreciate all donations, small or large. Thank you!
         </p>
         <h2 className="mt-8 mb-4 text-2xl font-normal">Addresses</h2>
-        <div className="max-w-md mb-16 space-y-8">
+        <div className="mb-16 space-y-8">
           <DonationCard
             title="VerusCoin (VRSC) & Komodo (KMD)"
             address="RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ"
