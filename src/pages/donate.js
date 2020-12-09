@@ -7,7 +7,10 @@ const DonationCard = ({ title, address }) => {
       style={{ width: 'fit-content' }}
     >
       <h3 className="p-0 m-0 text-xl font-normal ">{title}</h3>
-      <p className="p-4 text-md bg-gray-305" style={{ width: 'fit-content' }}>
+      <p
+        className="p-4 text-md bg-gray-305"
+        style={{ width: 'fit-content', wordBreak: 'break-all' }}
+      >
         {address}
       </p>
     </div>
@@ -37,7 +40,7 @@ const DonatePage = () => {
           greatly appreciate all donations, small or large. Thank you!
         </p>
         <h2 className="mt-8 mb-4 text-2xl font-normal">Addresses</h2>
-        <div className="mb-16 space-y-8">
+        <div className="max-w-md mb-16 space-y-8">
           <DonationCard
             title="VerusCoin (VRSC) & Komodo (KMD)"
             address="RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ"
