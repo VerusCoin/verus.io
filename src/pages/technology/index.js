@@ -116,8 +116,7 @@ const TechnologyOverview = () => {
                   href="/technology/verus_proof_of_power"
                 >
                   Verus Proof of Power
-                </a>{' '}
-                - 50/50% Proof of Work (PoW) / Proof of Stake (PoS)
+                </a>
               </p>
             </li>
             <li className="inline-flex items-start">
@@ -130,7 +129,6 @@ const TechnologyOverview = () => {
                 >
                   VerusHash 2.2
                 </a>{' '}
-                - Designed to level the playing field across hardware classes
               </p>
             </li>
             <li className="inline-flex items-start">
