@@ -16,7 +16,7 @@ const Footer = () => {
           />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
           <p className="text-sm leading-relaxed opacity-50 md:text-base text-theme-white ">
-            Join our most active community with over 4.900 members for all
+            Join our most active community with over 5.000 members for all
             questions and discussions.
           </p>
         </a>
