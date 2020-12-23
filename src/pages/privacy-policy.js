@@ -40,7 +40,7 @@ const PrivacyPolicy = () => {
           If you have any questions or concerns about this policy please contact
           us on our{' '}
           <a
-            href="https://discord.gg/VRKMP2S"
+            href="https://verus.io/discord"
             target="_blank"
             className="underline external"
           >
