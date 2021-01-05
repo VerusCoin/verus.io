@@ -25,7 +25,7 @@ const CustomAccordion = (props) => {
         }}
       />
       <label
-        className="block py-2 text-xl leading-normal border-2 border-t-0 border-l-0 border-r-0 border-gray-200 border-solid cursor-pointer"
+        className="block py-4 text-xl leading-relaxed border-2 border-t-0 border-l-0 border-r-0 border-gray-200 border-solid cursor-pointer"
         htmlFor={`${tabName}-${id}`}
         onClick={() => {
           handleTabCheck(`${tabName}-${id}`);
@@ -33,7 +33,7 @@ const CustomAccordion = (props) => {
       >
         {label}
       </label>
-      <div className="overflow-hidden leading-normal tab-content-accordion">
+      <div className="overflow-hidden leading-relaxed tab-content-accordion">
         {children}
       </div>
     </div>
@@ -69,8 +69,8 @@ const FAQ = () => {
         ]}
       />
       <div className="container flex flex-col items-center justify-center mt-8 ">
-        <div className="w-full max-w-5xl mb-12 md:mb-32">
-          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl md:leading-tight">
+        <div className="w-full max-w-4xl mb-12 md:mb-32">
+          <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl md:leading-relaxed">
             Frequently Asked Questions
           </h1>
           <div className="tab-content">
@@ -83,7 +83,8 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">No. Verus is fairly launced, with equal opportunity for everyone to earn coins through mining and staking.
+              Also, Verus had no premine, and has no developer fees.</p>
             </CustomAccordion>
             {/* 2 */}
             <CustomAccordion
@@ -94,10 +95,9 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
                 Verus has no roadmaps or deadlines. We are a community project
-                without central entity or commericial interests. everone is
-                working hard to achieve the Verus vision.
+                without central entity or commericial interests.
               </p>
             </CustomAccordion>
             {/* 3 */}
@@ -109,7 +109,12 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">Yes. Anyone can start mining Verus with a CPU and GPU. <a
+                  className="underline text-bluebutton"
+                  href="/mining-and-staking/"
+                >
+                  Learn more
+                </a> </p>
             </CustomAccordion>
             {/* 4 */}
             <CustomAccordion
@@ -120,7 +125,12 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">Yes. Anyone can start staking Verus without any minimum requirements. <a
+                  className="underline text-bluebutton"
+                  href="/mining-and-staking/"
+                >
+                  Learn more
+                </a> </p>
             </CustomAccordion>
             {/* 5 */}
             <CustomAccordion
@@ -131,7 +141,7 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4">83,540,184 VRSC</p>
             </CustomAccordion>
             {/* 6 */}
             <CustomAccordion
@@ -142,11 +152,11 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">
+              <p className="px-6 pt-8 pb-4 max-w-3xl leading-relaxed">
                 Verus has a number of capabilities that make it unique across
                 all other blockchain protocols.
               </p>
-              <ol className="px-6 space-y-4 text-gray-700 list-inside list-alpha font-p">
+              <ol className="px-6 space-y-4 text-gray-700 list-inside list-alpha font-p leading-relaxed max-w-3xl">
                 <li>
                   Verus is the first and only blockchain network to offer 100%
                   self-sovereign, friendly name, revocable, recoverable,
@@ -188,12 +198,12 @@ const FAQ = () => {
             <CustomAccordion
               id="7"
               tabName="faqTab"
-              label="Why do I want a VerusID? What can I use it for?"
+              label="Why do I want a VerusID?"
               radioTab={radioTab}
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
                 VerusIDs are owned permanently and can be transferred, just like
                 cryptocurrency. There are no annual fees, and the fees required
                 to purchase a VerusID go to miners, stakers, and referrers only.
@@ -218,51 +228,39 @@ const FAQ = () => {
             <CustomAccordion
               id="8"
               tabName="faqTab"
-              label="Verus uses zk-SNARKs like ZCash. Is Verus a privacy coin?"
+              label="Is Verus a privacy coin?"
               radioTab={radioTab}
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">
-                Verus Coin, the currency used to secure the Verus network
-                through staking and which is an integral part of the new Verus
-                DeFi system, supports fully private, zero knowledge transactions
-                that use Zcash-compatible zk- SNARK technologies. While that
-                does qualify Verus to be a privacy "coin", the smart transaction
-                support, VerusID, and Verus Data Exchange Format, as well as the
-                vision of using zero knowledge capabilities for voting, private
-                messaging, and privacy-respecting applications makes Verus not
-                only a privacy coin, but an entire privacy respecting protocol
-                and application enabling platform.
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
+                Verus supports fully private, zero knowledge transactions
+                that use zk- SNARK technologies.
               </p>
             </CustomAccordion>
             {/* 9 */}
             <CustomAccordion
               id="9"
               tabName="faqTab"
-              label="How does the Verus Automatic Market Maker (AMM) work? Is it
-              similar to Ethereum AMMs? How does Verus AMM deal the issues on
-              other platforms, namely low liquidity (which cause big spreads
-              between orders) and slippages?"
+              label="How does the Verus DeFi work?"
               radioTab={radioTab}
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">text</p>
             </CustomAccordion>
             {/* 10 */}
             <CustomAccordion
               id="10"
               tabName="faqTab"
-              label=" What exactly is impermanent loss? How does a liquidity provider
-              encounter impermanent loss? What are the major factors that can
-              influence the impermanent loss that a liquidity provider may
-              experience?"
+              label=" What is impermanent loss?"
               radioTab={radioTab}
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">Impermanent loss is nothing more than the difference between constant-mix vs buy-and-hold strategy.
+              An example: when you hold a currency that is 50/50% backed by VRSC and BTC, you might suffer an opportunity loss when compared
+              to holding VRSC and BTC directly. The upside is you will have less risk. </p>
             </CustomAccordion>
             {/* 11 */}
             <CustomAccordion
@@ -275,7 +273,7 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
                 The Verus community believes that its time for a new paradigm in
                 decentralized applications, one focused on data and
                 interoperability, much like the open Web, not any specific
@@ -320,39 +318,36 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">text</p>
             </CustomAccordion>
             {/* 13 */}
             <CustomAccordion
               id="13"
               tabName="faqTab"
-              label="Where can I learn more about developing on Verus? What
-              developer resources are there?"
+              label="Where can I learn more about developing on Verus?"
               radioTab={radioTab}
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">text</p>
             </CustomAccordion>
             {/* 14 */}
             <CustomAccordion
               id="14"
               tabName="faqTab"
-              label="Is Verus a global project ?What plan do you have for global
+              label="What is the plan for global
               adoption?"
               radioTab={radioTab}
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">text</p>
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">text</p>
             </CustomAccordion>
             {/* 15 */}
             <CustomAccordion
               id="15"
               tabName="faqTab"
-              label="Many of the major Verus products/services are not yet ready, When
-              they will be launched? What are your expectations Is there a
-              Roadmap? What is the marketing plan to make these products known?"
+              label="When is Verus finished?"
               radioTab={radioTab}
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
@@ -368,7 +363,7 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4">
+              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
                 When the Verus Founders, a number of people, including myself,
                 who felt that crypto projects were becoming too focused on
                 getting rich quickly and had lost the vision of improving
