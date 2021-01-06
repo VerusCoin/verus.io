@@ -1,4 +1,15 @@
-import Link from 'next/link';
+import Link from 'next/link'
+
+const SlugContent = ({ name, description, icon, colorControls }) => {
+  return (
+    <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+      <h2 className="p-0 m-0 text-xl font-normal ">{name}</h2>
+      <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
+        {description}
+      </p>
+    </div>
+  )
+}
 
 export const SlugMenu = ({ pathList, href }) => {
   return (
@@ -11,14 +22,9 @@ export const SlugMenu = ({ pathList, href }) => {
               as={`${href}/${path.path}`}
               key={path.id}
             >
-              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
-                <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
-                <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
-                  {path.description}
-                </p>
-              </div>
+              <SlugContent name={path.name} description={path.description} />
             </Link>
-          );
+          )
         }
 
         if (path.href) {
@@ -29,14 +35,9 @@ export const SlugMenu = ({ pathList, href }) => {
               key={path.id}
               target="_blank"
             >
-              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
-                <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
-                <p className="p-0 m-0 mt-2 text-base leading-normal text-black font-p">
-                  {path.description}
-                </p>
-              </div>
+              <SlugContent name={path.name} description={path.description} />
             </a>
-          );
+          )
         }
 
         if (path.slug) {
@@ -46,19 +47,14 @@ export const SlugMenu = ({ pathList, href }) => {
               as={`${href}/${path.slug}`}
               key={path.id}
             >
-              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
-                <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
-                <p className="p-0 m-0 mt-2 text-base leading-normal text-black font-p">
-                  {path.description}
-                </p>
-              </div>
+              <SlugContent name={path.name} description={path.description} />
             </Link>
-          );
+          )
         }
       })}
     </div>
-  );
-};
+  )
+}
 
 export const DocSlugMenu = ({ pathList, href }) => {
   return (
@@ -80,8 +76,8 @@ export const DocSlugMenu = ({ pathList, href }) => {
               Download
             </a>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
