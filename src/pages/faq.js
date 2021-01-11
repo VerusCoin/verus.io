@@ -100,7 +100,7 @@ const FAQ = () => {
             >
               <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
                 Verus has no roadmaps or deadlines. We are a community project
-                without central entity or commericial interests.
+                without central entity or commercial interests.
               </p>
             </CustomAccordion>
             {/* 3 */}
