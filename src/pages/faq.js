@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { NextSeo } from 'next-seo';
+import { useState } from 'react'
+import { NextSeo } from 'next-seo'
 
 const CustomAccordion = (props) => {
   const {
@@ -10,7 +10,7 @@ const CustomAccordion = (props) => {
     radioTab,
     handleTabChange,
     handleTabCheck,
-  } = props;
+  } = props
   return (
     <div className="w-full my-2 overflow-hidden tab b">
       <input
@@ -21,14 +21,14 @@ const CustomAccordion = (props) => {
         value={`${tabName}-${id}`}
         checked={radioTab === `${tabName}-${id}`}
         onChange={() => {
-          handleTabChange(`${tabName}-${id}`);
+          handleTabChange(`${tabName}-${id}`)
         }}
       />
       <label
         className="block py-4 text-xl leading-relaxed border-2 border-t-0 border-l-0 border-r-0 border-gray-200 border-solid cursor-pointer"
         htmlFor={`${tabName}-${id}`}
         onClick={() => {
-          handleTabCheck(`${tabName}-${id}`);
+          handleTabCheck(`${tabName}-${id}`)
         }}
       >
         {label}
@@ -37,24 +37,24 @@ const CustomAccordion = (props) => {
         {children}
       </div>
     </div>
-  );
-};
+  )
+}
 
 const FAQ = () => {
-  const [radioTab, setRadioTab] = useState(null);
+  const [radioTab, setRadioTab] = useState(null)
 
   const handleTabCheck = (tab) => {
-    let element = document.getElementById(tab);
+    let element = document.getElementById(tab)
 
-    let isOpen = element.checked;
+    let isOpen = element.checked
     if (isOpen) {
-      element.checked = !isOpen;
+      element.checked = !isOpen
     }
-    setRadioTab(tab);
-  };
+    setRadioTab(tab)
+  }
   const handleTabChange = (tab) => {
-    setRadioTab(null);
-  };
+    setRadioTab(null)
+  }
   return (
     <>
       <NextSeo
@@ -83,8 +83,11 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">No. Verus is fairly launced, with equal opportunity for everyone to earn coins through mining and staking.
-              Also, Verus had no premine, and has no developer fees.</p>
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
+                No. Verus is fairly launced, with equal opportunity for everyone
+                to earn coins through mining and staking. Also, Verus had no
+                premine, and has no developer fees.
+              </p>
             </CustomAccordion>
             {/* 2 */}
             <CustomAccordion
@@ -95,7 +98,7 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
                 Verus has no roadmaps or deadlines. We are a community project
                 without central entity or commercial interests.
               </p>
@@ -109,12 +112,15 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">Yes. Anyone can start mining Verus with a CPU and GPU. <a
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
+                Yes. Anyone can start mining Verus with a CPU and GPU.{' '}
+                <a
                   className="underline text-bluebutton"
                   href="/mining-and-staking/"
                 >
                   Learn more
-                </a> </p>
+                </a>{' '}
+              </p>
             </CustomAccordion>
             {/* 4 */}
             <CustomAccordion
@@ -125,12 +131,16 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">Yes. Anyone can start staking Verus without any minimum requirements. <a
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
+                Yes. Anyone can start staking Verus without any minimum
+                requirements.{' '}
+                <a
                   className="underline text-bluebutton"
                   href="/mining-and-staking/"
                 >
                   Learn more
-                </a> </p>
+                </a>{' '}
+              </p>
             </CustomAccordion>
             {/* 5 */}
             <CustomAccordion
@@ -152,11 +162,11 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 max-w-3xl leading-relaxed">
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
                 Verus has a number of capabilities that make it unique across
                 all other blockchain protocols.
               </p>
-              <ol className="px-6 space-y-4 text-gray-700 list-inside list-alpha font-p leading-relaxed max-w-3xl">
+              <ol className="max-w-3xl px-6 space-y-4 leading-relaxed text-gray-700 list-inside list-alpha font-p">
                 <li>
                   Verus is the first and only blockchain network to offer 100%
                   self-sovereign, friendly name, revocable, recoverable,
@@ -203,7 +213,7 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
                 VerusIDs are owned permanently and can be transferred, just like
                 cryptocurrency. There are no annual fees, and the fees required
                 to purchase a VerusID go to miners, stakers, and referrers only.
@@ -233,13 +243,13 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
-                Verus supports fully private, zero knowledge transactions
-                that use zk- SNARK technologies.
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
+                Verus supports fully private, zero knowledge transactions that
+                use zk- SNARK technologies.
               </p>
             </CustomAccordion>
-            {/* 9 */}
-            <CustomAccordion
+            {/* 9 Need Content */}
+            {/* <CustomAccordion
               id="9"
               tabName="faqTab"
               label="How does the Verus DeFi work?"
@@ -247,8 +257,8 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">text</p>
-            </CustomAccordion>
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">text</p>
+            </CustomAccordion> */}
             {/* 10 */}
             <CustomAccordion
               id="10"
@@ -258,9 +268,13 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">Impermanent loss is nothing more than the difference between constant-mix vs buy-and-hold strategy.
-              An example: when you hold a currency that is 50/50% backed by VRSC and BTC, you might suffer an opportunity loss when compared
-              to holding VRSC and BTC directly. The upside is you will have less risk. </p>
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
+                Impermanent loss is nothing more than the difference between
+                constant-mix vs buy-and-hold strategy. An example: when you hold
+                a currency that is 50/50% backed by VRSC and BTC, you might
+                suffer an opportunity loss when compared to holding VRSC and BTC
+                directly. The upside is you will have less risk.{' '}
+              </p>
             </CustomAccordion>
             {/* 11 */}
             <CustomAccordion
@@ -273,7 +287,7 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
                 The Verus community believes that its time for a new paradigm in
                 decentralized applications, one focused on data and
                 interoperability, much like the open Web, not any specific
@@ -305,8 +319,8 @@ const FAQ = () => {
                 Verus DeFi and the Ethereum bridge are released to mainnet.
               </p>
             </CustomAccordion>
-            {/* 12 */}
-            <CustomAccordion
+            {/* 12 need content */}
+            {/* <CustomAccordion
               id="12"
               tabName="faqTab"
               label="How will the feature to create corresponding ERC20 tokens work? If
@@ -318,10 +332,10 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">text</p>
-            </CustomAccordion>
-            {/* 13 */}
-            <CustomAccordion
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">text</p>
+            </CustomAccordion> */}
+            {/* 13 need content */}
+            {/* <CustomAccordion
               id="13"
               tabName="faqTab"
               label="Where can I learn more about developing on Verus?"
@@ -329,10 +343,10 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">text</p>
-            </CustomAccordion>
-            {/* 14 */}
-            <CustomAccordion
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">text</p>
+            </CustomAccordion> */}
+            {/* 14 need content*/}
+            {/* <CustomAccordion
               id="14"
               tabName="faqTab"
               label="What is the plan for global
@@ -341,10 +355,10 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">text</p>
-            </CustomAccordion>
-            {/* 15 */}
-            <CustomAccordion
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">text</p>
+            </CustomAccordion> */}
+            {/* 15 need content*/}
+            {/* <CustomAccordion
               id="15"
               tabName="faqTab"
               label="When is Verus finished?"
@@ -353,7 +367,7 @@ const FAQ = () => {
               handleTabCheck={handleTabCheck}
             >
               <p className="px-6 pt-8 pb-4">text</p>
-            </CustomAccordion>
+            </CustomAccordion> */}
             {/* 16 */}
             <CustomAccordion
               id="16"
@@ -363,7 +377,7 @@ const FAQ = () => {
               handleTabChange={handleTabChange}
               handleTabCheck={handleTabCheck}
             >
-              <p className="px-6 pt-8 pb-4 leading-relaxed max-w-3xl">
+              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
                 When the Verus Founders, a number of people, including myself,
                 who felt that crypto projects were becoming too focused on
                 getting rich quickly and had lost the vision of improving
@@ -394,10 +408,10 @@ const FAQ = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default FAQ;
+export default FAQ
 
 // template for FAQ
 {
