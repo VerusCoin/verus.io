@@ -47,7 +47,13 @@ export const PoolLinks = [
     URIText: 'Wattpool',
     percentageRate: 0.5,
   },
-];
+  {
+    id: 9,
+    URI: 'https://verusna.011data.com/',
+    URIText: '011DATA',
+    percentageRate: 0.5,
+  },
+]
 
 // template format
 // {
