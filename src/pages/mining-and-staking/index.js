@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Menu from '../../components/Menu';
-import { SlugMenu } from '../../components/SlugMenu';
-import { miningStakingLinks } from '../../constants/miningStaking';
-import { NextSeo } from 'next-seo';
+import Link from 'next/link'
+import Menu from '../../components/Menu'
+import { SlugMenu } from '../../components/SlugMenu'
+import { miningStakingLinks } from '../../constants/miningStaking'
+import { NextSeo } from 'next-seo'
 
 const MiningOverview = () => {
-  const nextRoute = miningStakingLinks[0];
+  const nextRoute = miningStakingLinks[0]
 
   return (
     <>
@@ -47,7 +47,7 @@ const MiningOverview = () => {
       </div>
       <div className="flex flex-row items-center justify-end p-2 md:hidden">
         <Link href={`/mining-and-staking/${nextRoute.path}`}>
-          <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover ">
+          <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover ">
             {nextRoute.name}&nbsp;{' '}
             <svg
               width="8"
@@ -66,7 +66,7 @@ const MiningOverview = () => {
         </Link>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default MiningOverview;
+export default MiningOverview

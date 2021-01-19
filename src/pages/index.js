@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { format } from 'date-fns';
-import { NextSeo } from 'next-seo';
-import IndexTabWindow from '../components/Tab';
+import Link from 'next/link'
+import { format } from 'date-fns'
+import { NextSeo } from 'next-seo'
+import IndexTabWindow from '../components/Tab'
 
 const Home = (props) => {
-  const { data } = props;
+  const { data } = props
   return (
     <>
       <NextSeo
@@ -33,7 +33,7 @@ const Home = (props) => {
 
             <div className="flex flex-col items-center justify-center w-full mt-12 space-y-6 md:flex-row md:space-y-0 md:space-x-4 md:justify-start">
               <Link href="/mining-and-staking">
-                <button className="custombutton px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
+                <button className="custombutton px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton-default hover:bg-bluebutton-hover">
                   Earn in the Network Economy
                 </button>
               </Link>
@@ -90,7 +90,7 @@ const Home = (props) => {
               </p>
               <div>
                 <a href="/verusid-lookup">
-                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
                     Search for identities
                   </button>
                 </a>
@@ -110,7 +110,7 @@ const Home = (props) => {
                   target="_blank"
                   className="no-underline"
                 >
-                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
                     See explorer
                   </button>
                 </a>
@@ -128,7 +128,7 @@ const Home = (props) => {
               </p>
               <div>
                 <Link href="/verify-signatures">
-                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
                     Verify documents
                   </button>
                 </Link>
@@ -202,7 +202,7 @@ const Home = (props) => {
                     {format(new Date(article.PublishDateTime), 'MMM dd, yyyy')}
                   </p>
                 </div>
-              );
+              )
             })}
 
           <a
@@ -210,28 +210,28 @@ const Home = (props) => {
             target="_blank"
             className="justify-center text-center no-underline md:col-span-3"
           >
-            <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
               Read all articles
             </button>
           </a>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 
 export async function getServerSideProps(ctx) {
-  let URI = ctx.req.headers.referer;
-  let data = null;
+  let URI = ctx.req.headers.referer
+  let data = null
   // let result = await fetch(`${URI}api/verusArticles`);
-  let result = await fetch('http://localhost:3000/api/verusArticles');
+  let result = await fetch('http://localhost:3000/api/verusArticles')
   try {
-    data = await result.json();
+    data = await result.json()
   } finally {
     return {
       props: { data },
-    };
+    }
   }
 }

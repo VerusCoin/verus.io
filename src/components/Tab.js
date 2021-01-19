@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from 'react'
+import Link from 'next/link'
 
 const VerusIDContent = () => {
   return (
@@ -22,15 +22,15 @@ const VerusIDContent = () => {
             send and secure all cryptocurrencies.
           </p>
           <Link href="/technology/verusID">
-            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
               Learn More
             </button>
           </Link>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 const DefiContent = () => {
   return (
@@ -53,15 +53,15 @@ const DefiContent = () => {
             community liquidity.
           </p>
           <Link href="/technology/currencies">
-            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
               Learn More
             </button>
           </Link>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 const PbaasContent = () => {
   return (
@@ -84,15 +84,15 @@ const PbaasContent = () => {
             provides a roadmap for practically unlimited scalability.
           </p>
           <Link href="/technology/PbaaS">
-            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
               Learn More
             </button>
           </Link>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 const ErcContent = () => {
   return (
@@ -114,31 +114,31 @@ const ErcContent = () => {
             represented as tokens on the Verus blockchain.
           </p>
           <Link href="/technology/bridges">
-            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
               Learn More
             </button>
           </Link>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 const IndexTabWindow = () => {
-  const [viewTab, setViewTab] = useState(0);
-  const [radioTab, setRadioTab] = useState(null);
+  const [viewTab, setViewTab] = useState(0)
+  const [radioTab, setRadioTab] = useState(null)
 
   const handleTabCheck = (tab) => {
-    let element = document.getElementById(tab);
-    let isOpen = element.checked;
+    let element = document.getElementById(tab)
+    let isOpen = element.checked
     if (isOpen) {
-      element.checked = !isOpen;
+      element.checked = !isOpen
     }
-    setRadioTab(tab);
-  };
+    setRadioTab(tab)
+  }
   const handleTabChange = (tab) => {
-    setRadioTab(null);
-  };
+    setRadioTab(null)
+  }
   return (
     <>
       <div className="flex-col justify-center hidden md:flex sm:flex-row">
@@ -148,7 +148,7 @@ const IndexTabWindow = () => {
             'px-5 text-center text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
             (viewTab === 0
               ? 'text-tablink-active border-tablink-active'
-              : 'text-tablink border-tablink')
+              : 'text-tablink-default border-tablink')
           }
         >
           VerusID
@@ -156,10 +156,10 @@ const IndexTabWindow = () => {
         <a
           onClick={() => setViewTab(1)}
           className={
-            'px-5 text-center text-lg p-1 flex-no-wrap border-2 border-solid border-t-0 border-r-0 border-l-0  ' +
+            'px-5 text-center text-lg p-1 flex-nowrap border-2 border-solid border-t-0 border-r-0 border-l-0  ' +
             (viewTab === 1
               ? 'text-tablink-active  border-tablink-active'
-              : 'text-tablink border-tablink')
+              : 'text-tablink-default border-tablink')
           }
         >
           Decentralized Finance
@@ -170,7 +170,7 @@ const IndexTabWindow = () => {
             'px-5 text-center cursor-pointer text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
             (viewTab === 2
               ? 'text-tablink-active  border-tablink-active'
-              : 'text-tablink border-tablink')
+              : 'text-tablink-default border-tablink')
           }
         >
           Public Blockchains as a Service
@@ -181,7 +181,7 @@ const IndexTabWindow = () => {
             'px-5 text-center cursor-pointer text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
             (viewTab === 3
               ? 'text-tablink-active  border-tablink-active'
-              : 'text-tablink border-tablink')
+              : 'text-tablink-default border-tablink')
           }
         >
           Bridges
@@ -205,14 +205,14 @@ const IndexTabWindow = () => {
             value="tab-single-one"
             checked={radioTab === 'tab-single-one'}
             onChange={() => {
-              handleTabChange('tab-single-one');
+              handleTabChange('tab-single-one')
             }}
           />
           <label
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-one"
             onClick={() => {
-              handleTabCheck('tab-single-one');
+              handleTabCheck('tab-single-one')
             }}
           >
             VerusID
@@ -229,14 +229,14 @@ const IndexTabWindow = () => {
             name="tabs2"
             checked={radioTab === 'tab-single-two'}
             onChange={() => {
-              handleTabChange('tab-single-two');
+              handleTabChange('tab-single-two')
             }}
           />
           <label
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-two"
             onClick={() => {
-              handleTabCheck('tab-single-two');
+              handleTabCheck('tab-single-two')
             }}
           >
             Decentralized Finance
@@ -253,14 +253,14 @@ const IndexTabWindow = () => {
             name="tabs2"
             checked={radioTab === 'tab-single-three'}
             onChange={() => {
-              handleTabChange('tab-single-three');
+              handleTabChange('tab-single-three')
             }}
           />
           <label
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-three"
             onClick={() => {
-              handleTabCheck('tab-single-three');
+              handleTabCheck('tab-single-three')
             }}
           >
             Public Blockchains as a Service
@@ -277,14 +277,14 @@ const IndexTabWindow = () => {
             name="tabs2"
             checked={radioTab === 'tab-single-four'}
             onChange={() => {
-              handleTabChange('tab-single-four');
+              handleTabChange('tab-single-four')
             }}
           />
           <label
             className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
             htmlFor="tab-single-four"
             onClick={() => {
-              handleTabCheck('tab-single-four');
+              handleTabCheck('tab-single-four')
             }}
           >
             Bridges
@@ -295,7 +295,7 @@ const IndexTabWindow = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default IndexTabWindow;
+export default IndexTabWindow

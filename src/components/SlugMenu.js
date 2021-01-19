@@ -9,7 +9,7 @@ const SlugContent = React.forwardRef(
         href={href}
         onClick={onClick}
         ref={ref}
-        className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton"
+        className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans-default hover:border-bluebutton-default hover:bg-menu-active text-bluebutton"
       >
         <h2 className="p-0 m-0 text-xl font-normal ">{name}</h2>
         <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
@@ -27,7 +27,7 @@ export const SlugMenu = ({ pathList, href }) => {
         if (path.path) {
           return (
             <Link href={`${href}/${path.path}`} key={path.id} passHref>
-              {/* <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              {/* <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans-default hover:border-bluebutton-default hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
                 <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
                   {path.description}
@@ -46,7 +46,7 @@ export const SlugMenu = ({ pathList, href }) => {
               key={path.id}
               target="_blank"
             >
-              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans-default hover:border-bluebutton-default hover:bg-menu-active text-bluebutton">
                 <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
                 <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
                   {path.description}
@@ -74,7 +74,7 @@ export const DocSlugMenu = ({ pathList, href }) => {
       {pathList.map((path) => {
         return (
           <div
-            className="p-6 bg-transparent border border-solid rounded-lg lg:px-8 lg:py-6 border-bluetrans "
+            className="p-6 bg-transparent border border-solid rounded-lg lg:px-8 lg:py-6 border-bluetrans-default "
             key={path.id}
           >
             <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>

@@ -1,26 +1,26 @@
-import { useState, useEffect, createRef } from 'react';
-import { NextSeo } from 'next-seo';
-import Menu from '../../components/Menu';
-import { walletLinks } from '../../constants/wallet';
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
-import FooterMenu from '../../components/FooterMenu';
+import { useState, useEffect, createRef } from 'react'
+import { NextSeo } from 'next-seo'
+import Menu from '../../components/Menu'
+import { walletLinks } from '../../constants/wallet'
+import { formatDateFromString, date_diff_indays } from '../../utils/helpers'
+import FooterMenu from '../../components/FooterMenu'
 
 const MobileWallet = ({ latestAndroid }) => {
-  const [showDownloads, setShowDownloads] = useState(false);
-  const container = createRef();
-  const nodeRef = createRef();
+  const [showDownloads, setShowDownloads] = useState(false)
+  const container = createRef()
+  const nodeRef = createRef()
 
   useEffect(() => {
     const handleBodyClick = (e) => {
       if (!nodeRef.current.contains(e.target)) {
-        setShowDownloads(false);
+        setShowDownloads(false)
       }
-    };
-    document.addEventListener('mousedown', handleBodyClick);
+    }
+    document.addEventListener('mousedown', handleBodyClick)
     return () => {
-      document.removeEventListener('mousedown', handleBodyClick);
-    };
-  });
+      document.removeEventListener('mousedown', handleBodyClick)
+    }
+  })
 
   return (
     <>
@@ -50,9 +50,9 @@ const MobileWallet = ({ latestAndroid }) => {
             </h1>
             <button
               onClick={() => {
-                setShowDownloads(!showDownloads);
+                setShowDownloads(!showDownloads)
               }}
-              className="inline-flex items-center px-12 py-5 mt-8 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
+              className="inline-flex items-center px-12 py-5 mt-8 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton-default hover:bg-bluebutton-hover"
             >
               <span className="mr-1">Download Verus Mobile</span>
               {showDownloads ? (
@@ -94,18 +94,18 @@ const MobileWallet = ({ latestAndroid }) => {
                   ' pt-1 pb-1 pl-4 pr-4  bg-white rounded-lg shadow-menu  md:z-50 '
                 }
               >
-                <li className="block px-4 py-3 whitespace-no-wrap">
+                <li className="block px-4 py-3 whitespace-nowrap">
                   <a
                     href="https://testflight.apple.com/join/ZS43lYcw"
-                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
                   >
                     <p className="pl-2 m-0">Verus Mobile for iOS</p>
                   </a>
                 </li>
-                <li className="block px-4 py-3 whitespace-no-wrap">
+                <li className="block px-4 py-3 whitespace-nowrap">
                   <a
                     href="https://github.com/VerusCoin/Verus-Mobile/releases"
-                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
                   >
                     <p className="pl-2 m-0">Verus Mobile for Android</p>
                   </a>
@@ -118,7 +118,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 latestAndroid.published_at
               )}{' '}
               {date_diff_indays(latestAndroid.published_at) < 7 ? (
-                <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-no-wrap">
+                <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-nowrap">
                   New Update
                 </span>
               ) : null}
@@ -154,7 +154,9 @@ const MobileWallet = ({ latestAndroid }) => {
                 <h2 className="mb-2 text-2xl font-normal">
                   Multi-Currency Wallet
                 </h2>
-                <p className=" text-md leading-relaxed">Store hundreds of coins and tokens!</p>
+                <p className=" text-md leading-relaxed">
+                  Store hundreds of coins and tokens!
+                </p>
               </div>
             </div>
           </div>
@@ -188,18 +190,18 @@ const MobileWallet = ({ latestAndroid }) => {
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
     </>
-  );
-};
+  )
+}
 
-export default MobileWallet;
+export default MobileWallet
 
 export async function getServerSideProps(context) {
   let result = await fetch(
     'https://api.github.com/repos/VerusCoin/Verus-Mobile/releases'
-  );
-  let latestAndroid = await result.json();
+  )
+  let latestAndroid = await result.json()
 
   return {
     props: { latestAndroid: latestAndroid[0] },
-  };
+  }
 }

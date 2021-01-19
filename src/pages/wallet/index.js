@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Menu from '../../components/Menu';
-import { SlugMenu } from '../../components/SlugMenu';
-import { walletLinks } from '../../constants/wallet';
-import { NextSeo } from 'next-seo';
+import Link from 'next/link'
+import Menu from '../../components/Menu'
+import { SlugMenu } from '../../components/SlugMenu'
+import { walletLinks } from '../../constants/wallet'
+import { NextSeo } from 'next-seo'
 
 const WalletOverview = () => {
-  const nextRoute = walletLinks[0];
+  const nextRoute = walletLinks[0]
 
   return (
     <>
@@ -41,7 +41,7 @@ const WalletOverview = () => {
 
       <div className="flex flex-row items-center justify-end p-2 md:hidden">
         <Link href={`/wallet/${nextRoute.path}`}>
-          <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover ">
+          <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover ">
             {nextRoute.name}&nbsp;{' '}
             <svg
               width="8"
@@ -60,7 +60,7 @@ const WalletOverview = () => {
         </Link>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default WalletOverview;
+export default WalletOverview

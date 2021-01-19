@@ -1,8 +1,8 @@
-import Menu from '../../components/Menu';
-import { walletLinks } from '../../constants/wallet';
-import { NextSeo } from 'next-seo';
-import FooterMenu from '../../components/FooterMenu';
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
+import Menu from '../../components/Menu'
+import { walletLinks } from '../../constants/wallet'
+import { NextSeo } from 'next-seo'
+import FooterMenu from '../../components/FooterMenu'
+import { formatDateFromString, date_diff_indays } from '../../utils/helpers'
 
 const CommandWallet = ({
   linuxApp,
@@ -110,7 +110,7 @@ const CommandWallet = ({
               <tr className="col-span-2">
                 Latest release: {formatDateFromString(published_at)}{' '}
                 {date_diff_indays(published_at) < 14 ? (
-                  <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-no-wrap">
+                  <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-nowrap">
                     New Update
                   </span>
                 ) : null}
@@ -148,42 +148,42 @@ const CommandWallet = ({
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
     </>
-  );
-};
+  )
+}
 
-export default CommandWallet;
+export default CommandWallet
 
 export async function getServerSideProps(context) {
   let result = await fetch(
     'https://api.github.com/repos/VerusCoin/VerusCoin/releases/latest'
-  );
-  let latestCMDwallet = await result.json();
+  )
+  let latestCMDwallet = await result.json()
   let linuxApp,
     winApp,
     macApp,
     name,
     armApp = '',
-    published_at = '';
+    published_at = ''
 
-  name = latestCMDwallet.name;
-  published_at = latestCMDwallet.published_at;
+  name = latestCMDwallet.name
+  published_at = latestCMDwallet.published_at
   latestCMDwallet.assets.map((asset) => {
     if (asset.name.includes('arm64')) {
-      armApp = asset.browser_download_url;
+      armApp = asset.browser_download_url
     }
     if (asset.name.includes('Windows')) {
-      winApp = asset.browser_download_url;
+      winApp = asset.browser_download_url
     }
 
     if (asset.name.includes('MacOS')) {
-      macApp = asset.browser_download_url;
+      macApp = asset.browser_download_url
     }
 
     if (asset.name.includes('amd64')) {
-      linuxApp = asset.browser_download_url;
+      linuxApp = asset.browser_download_url
     }
-  });
+  })
   return {
     props: { linuxApp, winApp, macApp, armApp, name, published_at },
-  };
+  }
 }

@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import Menu from '../../components/Menu';
-import { technologyLinks } from '../../constants/technology';
-import FooterMenu from '../../components/FooterMenu';
-import { NextSeo } from 'next-seo';
+import Link from 'next/link'
+import Menu from '../../components/Menu'
+import { technologyLinks } from '../../constants/technology'
+import FooterMenu from '../../components/FooterMenu'
+import { NextSeo } from 'next-seo'
 
 const VerusHash = () => {
   return (
@@ -29,9 +29,9 @@ const VerusHash = () => {
             VerusHash: Algorithm for a Naturally Decentralized Miner Ecosystem
           </h1>
           <p className="my-8 leading-relaxed ">
-            VerusHash 2.2 is the mining algorithm for Verus. The algorithm
-            was developed to equalize mining equitability across hardware
-            classes, and to create a naturally decentralized miner ecosystem.
+            VerusHash 2.2 is the mining algorithm for Verus. The algorithm was
+            developed to equalize mining equitability across hardware classes,
+            and to create a naturally decentralized miner ecosystem.
           </p>
           <p className="my-8 leading-relaxed">
             No specialized mining equipment is necessary to mine Verus, and it
@@ -72,13 +72,13 @@ const VerusHash = () => {
           </p>
           <div className="justify-center w-full mt-16 mb-32 space-y-4">
             <Link href="/wallet/desktop-wallet">
-              <button className="w-full px-12 py-5 text-white border-0 rounded-full text-p bg-bluebutton hover:bg-bluebutton-hover">
+              <button className="w-full px-12 py-5 text-white border-0 rounded-full text-p bg-bluebutton-default hover:bg-bluebutton-hover">
                 Start solo-mining with Verus Desktop.{' '}
                 <span className="text-span-4">Easy, in just a few clicks</span>
               </button>
             </Link>
             <Link href="/mining-and-staking/mining_software">
-              <button className="w-full px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
+              <button className="w-full px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
                 Get mining software
               </button>
             </Link>
@@ -87,7 +87,7 @@ const VerusHash = () => {
       </div>
       <FooterMenu hrefLocation="/technology" pathList={technologyLinks} />
     </>
-  );
-};
+  )
+}
 
-export default VerusHash;
+export default VerusHash

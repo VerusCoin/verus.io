@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import Menu from '../../components/Menu';
-import { miningStakingLinks } from '../../constants/miningStaking';
-import FooterMenu from '../../components/FooterMenu';
-import { NextSeo } from 'next-seo';
+import Link from 'next/link'
+import Menu from '../../components/Menu'
+import { miningStakingLinks } from '../../constants/miningStaking'
+import FooterMenu from '../../components/FooterMenu'
+import { NextSeo } from 'next-seo'
 
 const Staking = () => {
   return (
@@ -34,7 +34,7 @@ const Staking = () => {
             possible since Verus has a unique consensus mechanism of 50% Proof
             of Stake, and 50% Proof of Work.{' '}
             <Link href="/technology/verus_proof_of_power">
-              <span className="underline text-bluebutton cursor-pointer">
+              <span className="underline text-bluebutton-default cursor-pointer">
                 Learn about Proof of Power.
               </span>
             </Link>
@@ -60,7 +60,7 @@ const Staking = () => {
           <p className="my-4">
             It's easy, all you have to do is{' '}
             <Link href="/wallet/desktop-wallet">
-              <span className="underline text-bluebutton cursor-pointer">
+              <span className="underline text-bluebutton-default cursor-pointer">
                 download Verus Desktop here.
               </span>
             </Link>
@@ -72,7 +72,7 @@ const Staking = () => {
         pathList={miningStakingLinks}
       />
     </>
-  );
-};
+  )
+}
 
-export default Staking;
+export default Staking

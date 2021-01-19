@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Menu = ({ pathList, href }) => {
-  const [showMenu, setShowMenu] = useState(false);
-  const currentPath = useRouter();
+  const [showMenu, setShowMenu] = useState(false)
+  const currentPath = useRouter()
   return (
     <>
       <button
-        className="flex flex-row items-center w-full pl-4 text-left bg-white border-none text-baseLink md:hidden focus:outline-none focus:shadow-outline-lg"
+        className="flex flex-row items-center w-full pl-4 text-left bg-white border-none text-baseLink md:hidden focus:outline-none focus:ring-lg"
         type="button"
         onClick={() => setShowMenu(!showMenu)}
       >
@@ -49,20 +49,20 @@ const Menu = ({ pathList, href }) => {
             </Link>
           </li>
           {pathList.map((path) => {
-            let activeLink = false;
+            let activeLink = false
             if (currentPath.asPath.match(path.slug || path.path)) {
               if (path.path === 'staking') {
                 if (currentPath.asPath.split('/').pop() === 'staking') {
-                  activeLink = true;
+                  activeLink = true
                 } else {
-                  activeLink = false;
+                  activeLink = false
                 }
               } else {
-                activeLink = true;
+                activeLink = true
               }
             }
             if (path.href) {
-              activeLink = false;
+              activeLink = false
             }
 
             return (
@@ -97,12 +97,12 @@ const Menu = ({ pathList, href }) => {
                   </a>
                 )}
               </li>
-            );
+            )
           })}
         </ul>
       </nav>
     </>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

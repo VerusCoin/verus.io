@@ -1,27 +1,27 @@
-import { useState, createRef, useEffect } from 'react';
-import Menu from '../../components/Menu';
-import { walletLinks } from '../../constants/wallet';
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers';
-import FooterMenu from '../../components/FooterMenu';
-import { NextSeo } from 'next-seo';
+import { useState, createRef, useEffect } from 'react'
+import Menu from '../../components/Menu'
+import { walletLinks } from '../../constants/wallet'
+import { formatDateFromString, date_diff_indays } from '../../utils/helpers'
+import FooterMenu from '../../components/FooterMenu'
+import { NextSeo } from 'next-seo'
 
 const DesktopWallet = (props) => {
-  const [showDownloads, setShowDownloads] = useState(false);
-  const { name, published_at, linuxApp, winApp, macApp, armApp } = props;
-  const container = createRef();
-  const nodeRef = createRef();
+  const [showDownloads, setShowDownloads] = useState(false)
+  const { name, published_at, linuxApp, winApp, macApp, armApp } = props
+  const container = createRef()
+  const nodeRef = createRef()
 
   useEffect(() => {
     const handleBodyClick = (e) => {
       if (!nodeRef.current.contains(e.target)) {
-        setShowDownloads(false);
+        setShowDownloads(false)
       }
-    };
-    document.addEventListener('mousedown', handleBodyClick);
+    }
+    document.addEventListener('mousedown', handleBodyClick)
     return () => {
-      document.removeEventListener('mousedown', handleBodyClick);
-    };
-  });
+      document.removeEventListener('mousedown', handleBodyClick)
+    }
+  })
 
   return (
     <>
@@ -51,9 +51,9 @@ const DesktopWallet = (props) => {
 
             <button
               onClick={() => {
-                setShowDownloads(!showDownloads);
+                setShowDownloads(!showDownloads)
               }}
-              className="inline-flex items-center px-12 py-5 mt-8 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton hover:bg-bluebutton-hover"
+              className="inline-flex items-center px-12 py-5 mt-8 text-lg text-white border-0 rounded-full focus:outline-none bg-bluebutton-default hover:bg-bluebutton-hover"
             >
               <span className="mr-1">Download Verus Desktop</span>
               {showDownloads ? (
@@ -97,10 +97,10 @@ const DesktopWallet = (props) => {
                 }
               >
                 {winApp && (
-                  <li className="block px-4 py-3 whitespace-no-wrap">
+                  <li className="block px-4 py-3 whitespace-nowrap">
                     <a
                       href={winApp}
-                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
                     >
                       <img
                         className="opacity-25"
@@ -111,10 +111,10 @@ const DesktopWallet = (props) => {
                   </li>
                 )}
                 {macApp && (
-                  <li className="block px-4 py-3 whitespace-no-wrap">
+                  <li className="block px-4 py-3 whitespace-nowrap">
                     <a
                       href={macApp}
-                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
                     >
                       <img
                         className="opacity-25"
@@ -125,10 +125,10 @@ const DesktopWallet = (props) => {
                   </li>
                 )}
                 {linuxApp && (
-                  <li className="block px-4 py-3 whitespace-no-wrap">
+                  <li className="block px-4 py-3 whitespace-nowrap">
                     <a
                       href={linuxApp}
-                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
                     >
                       <img
                         className="opacity-25"
@@ -139,10 +139,10 @@ const DesktopWallet = (props) => {
                   </li>
                 )}
                 {armApp && (
-                  <li className="block px-4 py-3 whitespace-no-wrap">
+                  <li className="block px-4 py-3 whitespace-nowrap">
                     <a
                       href={armApp}
-                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
                     >
                       <img
                         className="opacity-25"
@@ -152,11 +152,11 @@ const DesktopWallet = (props) => {
                     </a>
                   </li>
                 )}
-                <li className="block px-4 py-3 whitespace-no-wrap">
+                <li className="block px-4 py-3 whitespace-nowrap">
                   <a
                     href="https://wiki.verus.io/#!how-to%5Chow-to_bootstrap.md"
                     target="_blank"
-                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-no-wrap cursor-pointer text-navlink hover:text-navlink-hover"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
                   >
                     <p className="pl-2 m-0">Download Bootstrap</p>
                   </a>
@@ -167,7 +167,7 @@ const DesktopWallet = (props) => {
               Latest version: {name} <br />
               Latest release: {formatDateFromString(published_at)}{' '}
               {date_diff_indays(published_at) < 14 ? (
-                <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-no-wrap">
+                <span className="px-2 py-1 mx-1 font-bold text-red-600 whitespace-nowrap">
                   New Update
                 </span>
               ) : null}
@@ -335,46 +335,46 @@ const DesktopWallet = (props) => {
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
     </>
-  );
-};
+  )
+}
 
-export default DesktopWallet;
+export default DesktopWallet
 
 export async function getServerSideProps(context) {
   let result = await fetch(
     'https://api.github.com/repos/VerusCoin/Verus-Desktop/releases/latest'
-  );
-  let latestDesktop = await result.json();
+  )
+  let latestDesktop = await result.json()
   let linuxApp,
     winApp,
     macApp,
     armApp,
     name,
-    published_at = '';
+    published_at = ''
 
-  name = latestDesktop.name;
-  published_at = latestDesktop.published_at;
+  name = latestDesktop.name
+  published_at = latestDesktop.published_at
   latestDesktop.assets.map((asset) => {
     if (asset.name.includes('arm64')) {
-      armApp = asset.browser_download_url;
+      armApp = asset.browser_download_url
     }
 
     if (asset.name.includes('Windows')) {
-      winApp = asset.browser_download_url;
+      winApp = asset.browser_download_url
     }
 
     if (asset.name.includes('MacOS')) {
-      macApp = asset.browser_download_url;
+      macApp = asset.browser_download_url
     }
 
     if (asset.name.includes('x86_64')) {
-      linuxApp = asset.browser_download_url;
+      linuxApp = asset.browser_download_url
     }
-  });
+  })
 
   return {
     props: { name, published_at, linuxApp, winApp, macApp, armApp },
-  };
+  }
 }
 
 {

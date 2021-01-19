@@ -1,9 +1,9 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
 
 const DonationCard = ({ title, address }) => {
   return (
     <div
-      className="p-6 bg-transparent border border-solid rounded-lg lg:px-8 lg:py-6 border-bluetrans "
+      className="p-6 bg-transparent border border-solid rounded-lg lg:px-8 lg:py-6 border-bluetrans-default "
       style={{ width: 'fit-content' }}
     >
       <h3 className="p-0 m-0 text-xl font-normal ">{title}</h3>
@@ -14,8 +14,8 @@ const DonationCard = ({ title, address }) => {
         {address}
       </p>
     </div>
-  );
-};
+  )
+}
 
 const DonatePage = () => {
   return (
@@ -56,7 +56,7 @@ const DonatePage = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default DonatePage;
+export default DonatePage

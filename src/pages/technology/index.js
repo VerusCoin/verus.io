@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Menu from '../../components/Menu';
-import { SlugMenu } from '../../components/SlugMenu';
-import { technologyLinks } from '../../constants/technology';
-import { NextSeo } from 'next-seo';
+import Link from 'next/link'
+import Menu from '../../components/Menu'
+import { SlugMenu } from '../../components/SlugMenu'
+import { technologyLinks } from '../../constants/technology'
+import { NextSeo } from 'next-seo'
 
 const TechnologyOverview = () => {
-  const nextRoute = technologyLinks[0];
+  const nextRoute = technologyLinks[0]
 
   return (
     <>
@@ -184,7 +184,7 @@ const TechnologyOverview = () => {
 
       <div className="flex flex-row items-center justify-end p-2 md:hidden">
         <Link href={`/technology/${nextRoute.path}`}>
-          <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover ">
+          <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover ">
             {nextRoute.name}&nbsp;{' '}
             <svg
               width="8"
@@ -203,7 +203,7 @@ const TechnologyOverview = () => {
         </Link>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default TechnologyOverview;
+export default TechnologyOverview

@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import {
   useForm,
   Controller,
   useFormContext,
   FormProvider,
-} from 'react-hook-form';
-import { InputField, TextAreaField, FileInputField } from './FormFields';
+} from 'react-hook-form'
+import { InputField, TextAreaField, FileInputField } from './FormFields'
 
 const VerifyResult = ({
   sigResult,
@@ -47,18 +47,18 @@ const VerifyResult = ({
       <p className="w-full m-0 break-all">{verusSignature.Signature}</p>
       <button
         onClick={resetCall}
-        className="px-12 py-5 mt-8 text-sm bg-white border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton"
+        className="px-12 py-5 mt-8 text-sm bg-white border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton"
       >
         Verify Another Signature
       </button>
     </div>
-  );
-};
+  )
+}
 
 const MessageContent = () => {
-  const methods = useForm({ mode: 'onBlur' });
-  const [verusSignature, setVerusSignature] = useState();
-  const [sigResult, setSigResult] = useState();
+  const methods = useForm({ mode: 'onBlur' })
+  const [verusSignature, setVerusSignature] = useState()
+  const [sigResult, setSigResult] = useState()
 
   const onSubmit = async (values) => {
     if (values) {
@@ -66,34 +66,34 @@ const MessageContent = () => {
         Message: values.Message,
         Identity: values.MessageIdentity,
         Signature: values.MessageSignature,
-      };
-      setVerusSignature(query);
+      }
+      setVerusSignature(query)
 
-      let url = '/api/verusSignatureMessage';
+      let url = '/api/verusSignatureMessage'
       let result = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(query),
-      });
-      let data = await result.json();
+      })
+      let data = await result.json()
       if (data) {
-        setSigResult(data);
+        setSigResult(data)
       } else {
         setSigResult({
           error: -5,
           error_text: 'Currently experiencing network issues. Try again later.',
-        });
+        })
       }
     }
-  };
+  }
 
   const _handleReset = () => {
-    setVerusSignature(null);
-    setSigResult();
-    methods.reset();
-  };
+    setVerusSignature(null)
+    setSigResult()
+    methods.reset()
+  }
   return (
     <>
       {!verusSignature && (
@@ -120,7 +120,7 @@ const MessageContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton"
                 type="submit"
               >
                 Submit
@@ -140,13 +140,13 @@ const MessageContent = () => {
         </VerifyResult>
       )}
     </>
-  );
-};
+  )
+}
 
 const FileContent = () => {
-  const methods = useForm({ mode: 'onBlur' });
-  const [verusSignature, setVerusSignature] = useState();
-  const [sigResult, setSigResult] = useState();
+  const methods = useForm({ mode: 'onBlur' })
+  const [verusSignature, setVerusSignature] = useState()
+  const [sigResult, setSigResult] = useState()
 
   const onSubmit = async (values) => {
     if (values) {
@@ -155,10 +155,10 @@ const FileContent = () => {
         Signature: values.Signature,
         FileName: values.FileList[0].path,
         Hash: values.FileList[0].hash,
-      };
-      setVerusSignature(query);
+      }
+      setVerusSignature(query)
 
-      let url = '/api/verusSignatureHash';
+      let url = '/api/verusSignatureHash'
 
       let result = await fetch(url, {
         method: 'POST',
@@ -166,24 +166,24 @@ const FileContent = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(query),
-      });
-      let data = await result.json();
+      })
+      let data = await result.json()
       if (data) {
-        setSigResult(data);
+        setSigResult(data)
       } else {
         setSigResult({
           error: -5,
           error_text: 'Currently experiencing network issues. Try again later.',
-        });
+        })
       }
     }
-  };
+  }
 
   const _handleReset = () => {
-    setVerusSignature(null);
-    setSigResult();
-    methods.reset();
-  };
+    setVerusSignature(null)
+    setSigResult()
+    methods.reset()
+  }
   return (
     <>
       {!verusSignature && (
@@ -211,7 +211,7 @@ const FileContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton"
                 type="submit"
               >
                 Submit
@@ -232,14 +232,14 @@ const FileContent = () => {
         </VerifyResult>
       )}
     </>
-  );
-};
+  )
+}
 
 const HashContent = () => {
-  const methods = useForm({ mode: 'onBlur' });
+  const methods = useForm({ mode: 'onBlur' })
 
-  const [verusSignature, setVerusSignature] = useState(null);
-  const [sigResult, setSigResult] = useState();
+  const [verusSignature, setVerusSignature] = useState(null)
+  const [sigResult, setSigResult] = useState()
 
   const onSubmit = async (values) => {
     if (values) {
@@ -247,35 +247,35 @@ const HashContent = () => {
         Hash: values.Hash,
         Identity: values.HashIdentity,
         Signature: values.HashSignature,
-      };
-      setVerusSignature(query);
+      }
+      setVerusSignature(query)
 
-      let url = '/api/verusSignatureHash';
+      let url = '/api/verusSignatureHash'
       let result = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(query),
-      });
-      let data = await result.json();
+      })
+      let data = await result.json()
 
       if (data) {
-        setSigResult(data);
+        setSigResult(data)
       } else {
         setSigResult({
           error: -5,
           error_text: 'Currently experiencing network issues. Try again later.',
-        });
+        })
       }
     }
-  };
+  }
 
   const _handleReset = () => {
-    setVerusSignature(null);
-    setSigResult();
-    methods.reset();
-  };
+    setVerusSignature(null)
+    setSigResult()
+    methods.reset()
+  }
   return (
     <>
       {!verusSignature && (
@@ -303,7 +303,7 @@ const HashContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton"
                 type="submit"
               >
                 Submit
@@ -323,11 +323,11 @@ const HashContent = () => {
         </VerifyResult>
       )}
     </>
-  );
-};
+  )
+}
 
 const SigTabWindow = () => {
-  const [viewTab, setViewTab] = useState(0);
+  const [viewTab, setViewTab] = useState(0)
   return (
     <>
       <div className="flex-col justify-center hidden space-x-4 md:flex sm:flex-row">
@@ -337,7 +337,7 @@ const SigTabWindow = () => {
             'px-5 text-center text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
             (viewTab === 0
               ? 'text-tablink-active border-tablink-active'
-              : 'text-tablink border-tablink')
+              : 'text-tablink-default border-tablink')
           }
         >
           Message/Text
@@ -345,10 +345,10 @@ const SigTabWindow = () => {
         <a
           onClick={() => setViewTab(1)}
           className={
-            'px-5 text-center text-lg p-1 flex-no-wrap border-2 border-solid border-t-0 border-r-0 border-l-0  ' +
+            'px-5 text-center text-lg p-1 flex-nowrap border-2 border-solid border-t-0 border-r-0 border-l-0  ' +
             (viewTab === 1
               ? 'text-tablink-active  border-tablink-active'
-              : 'text-tablink border-tablink')
+              : 'text-tablink-default border-tablink')
           }
         >
           File
@@ -359,7 +359,7 @@ const SigTabWindow = () => {
             'px-5 text-center cursor-pointer text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
             (viewTab === 2
               ? 'text-tablink-active  border-tablink-active'
-              : 'text-tablink border-tablink')
+              : 'text-tablink-default border-tablink')
           }
         >
           Hash
@@ -426,7 +426,7 @@ const SigTabWindow = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SigTabWindow;
+export default SigTabWindow

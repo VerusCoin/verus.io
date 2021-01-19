@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import Menu from '../../components/Menu';
-import { technologyLinks } from '../../constants/technology';
-import FooterMenu from '../../components/FooterMenu';
-import { NextSeo } from 'next-seo';
+import Link from 'next/link'
+import Menu from '../../components/Menu'
+import { technologyLinks } from '../../constants/technology'
+import FooterMenu from '../../components/FooterMenu'
+import { NextSeo } from 'next-seo'
 
 const Verusid = () => {
   return (
@@ -33,11 +33,11 @@ const Verusid = () => {
             <p className="mt-8 leading-relaxed ">
               The first self-sovereign, decentralized identities on the
               blockchain of its kind. A VerusID is a blockchain address that can
-              hold funds and stake Verus. Future proof and packed with
-              advanced capabilities. In this permissionless system anyone can
-              create a VerusID and have complete ownership.{' '}
+              hold funds and stake Verus. Future proof and packed with advanced
+              capabilities. In this permissionless system anyone can create a
+              VerusID and have complete ownership.{' '}
               <Link href="/wallet/desktop-wallet" className="font-p no-font-p ">
-                <span className="underline text-bluebutton cursor-pointer">
+                <span className="underline text-bluebutton-default cursor-pointer">
                   Register VerusID with Verus Desktop
                 </span>
               </Link>
@@ -268,7 +268,7 @@ const Verusid = () => {
             </p>
           </div>
           <Link href="/verify-signatures">
-            <button className="px-12 py-5 mb-16 bg-transparent border border-solid rounded-full text-p border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="px-12 py-5 mb-16 bg-transparent border border-solid rounded-full text-p border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
               Verify signatures here
             </button>
           </Link>
@@ -276,7 +276,7 @@ const Verusid = () => {
       </div>
       <FooterMenu hrefLocation="/technology" pathList={technologyLinks} />
     </>
-  );
-};
+  )
+}
 
-export default Verusid;
+export default Verusid
