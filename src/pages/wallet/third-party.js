@@ -1,7 +1,6 @@
-import Menu from '../../components/Menu'
-import { walletLinks } from '../../constants/wallet'
 import { NextSeo } from 'next-seo'
-import FooterMenu from '../../components/FooterMenu'
+import { Menu, FooterMenu } from '@src/components'
+import { walletLinks } from '@src/constants/wallet'
 
 const ThirdPartyWallet = () => {
   return (

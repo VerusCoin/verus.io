@@ -1,8 +1,7 @@
-import Menu from '../../components/Menu';
-import FooterMenu from '../../components/FooterMenu';
-import { miningStakingLinks } from '../../constants/miningStaking';
-import { NextSeo } from 'next-seo';
-import { PoolLinks } from '../../constants/pools';
+import { NextSeo } from 'next-seo'
+import { Menu, FooterMenu } from '@src/components'
+import { miningStakingLinks } from '@src/constants/miningStaking'
+import { PoolLinks } from '@src/constants/pools'
 
 const Pools = () => {
   return (
@@ -71,7 +70,7 @@ const Pools = () => {
                       {pool.percentageRate}%
                     </td>
                   </tr>
-                );
+                )
               })}
             </tbody>
           </table>
@@ -82,7 +81,7 @@ const Pools = () => {
         pathList={miningStakingLinks}
       />
     </>
-  );
-};
+  )
+}
 
-export default Pools;
+export default Pools

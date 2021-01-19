@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import Menu from '../../components/Menu'
-import { miningStakingLinks } from '../../constants/miningStaking'
-import FooterMenu from '../../components/FooterMenu'
 import { NextSeo } from 'next-seo'
+import { Menu, FooterMenu } from '@src/components'
+import { miningStakingLinks } from '@src/constants/miningStaking'
 
 const Staking = () => {
   return (
@@ -34,14 +33,14 @@ const Staking = () => {
             possible since Verus has a unique consensus mechanism of 50% Proof
             of Stake, and 50% Proof of Work.{' '}
             <Link href="/technology/verus_proof_of_power">
-              <span className="underline text-bluebutton-default cursor-pointer">
+              <span className="underline cursor-pointer text-bluebutton-default">
                 Learn about Proof of Power.
               </span>
             </Link>
           </p>
           <div className="flex items-center justify-center max-w-lg p-8 my-16 bg-gray-200 rounded-lg">
             <div className="flex flex-col md:flex-row ">
-              <div className="self-center mb-8 flex-shrink-0 md:self-start md:mr-8">
+              <div className="self-center flex-shrink-0 mb-8 md:self-start md:mr-8">
                 <img src="/images/icons/stake-rules-icon.svg" width="50" />
               </div>
               <div>
@@ -60,7 +59,7 @@ const Staking = () => {
           <p className="my-4">
             It's easy, all you have to do is{' '}
             <Link href="/wallet/desktop-wallet">
-              <span className="underline text-bluebutton-default cursor-pointer">
+              <span className="underline cursor-pointer text-bluebutton-default">
                 download Verus Desktop here.
               </span>
             </Link>

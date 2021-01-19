@@ -4,12 +4,10 @@ import { NextSeo } from 'next-seo'
 
 const VerusIdLookup = () => {
   const { register, handleSubmit, errors } = useForm()
-  const [formSubmit, setFormSubmit] = useState(false)
   const [verusID, setVerusID] = useState({})
 
   const onSubmit = async (query) => {
     if (query) {
-      setFormSubmit(true)
       let url = `/api/verusIDcheck?id=${query.verusID}`
       let result = await fetch(url)
       let data = await result.json()
@@ -22,7 +20,6 @@ const VerusIdLookup = () => {
   }
 
   const _handleReset = () => {
-    setFormSubmit(false)
     setVerusID({})
   }
 

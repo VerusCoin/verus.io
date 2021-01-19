@@ -1,7 +1,5 @@
-import Link from 'next/link';
-import { DocSlugMenu } from '../components/SlugMenu';
-
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
+import { DocSlugMenu } from '@/components'
 
 const PapersList = [
   {
@@ -25,7 +23,7 @@ const PapersList = [
     pages: 15,
     url: '/docs/VerusPoP.pdf',
   },
-];
+]
 const Papers = () => {
   return (
     <>
@@ -49,7 +47,7 @@ const Papers = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Papers;
+export default Papers

@@ -1,9 +1,8 @@
 import { useState, useEffect, createRef } from 'react'
 import { NextSeo } from 'next-seo'
-import Menu from '../../components/Menu'
-import { walletLinks } from '../../constants/wallet'
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers'
-import FooterMenu from '../../components/FooterMenu'
+import { Menu, FooterMenu } from '@src/components'
+import { walletLinks } from '@src/constants/wallet'
+import { formatDateFromString, date_diff_indays } from '@src/utils/helpers'
 
 const MobileWallet = ({ latestAndroid }) => {
   const [showDownloads, setShowDownloads] = useState(false)
@@ -97,7 +96,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 <li className="block px-4 py-3 whitespace-nowrap">
                   <a
                     href="https://testflight.apple.com/join/ZS43lYcw"
-                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline cursor-pointer whitespace-nowrap text-navlink-default hover:text-navlink-hover"
                   >
                     <p className="pl-2 m-0">Verus Mobile for iOS</p>
                   </a>
@@ -105,7 +104,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 <li className="block px-4 py-3 whitespace-nowrap">
                   <a
                     href="https://github.com/VerusCoin/Verus-Mobile/releases"
-                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline cursor-pointer whitespace-nowrap text-navlink-default hover:text-navlink-hover"
                   >
                     <p className="pl-2 m-0">Verus Mobile for Android</p>
                   </a>
@@ -136,7 +135,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 <h2 className="mb-2 text-2xl font-normal">
                   Easy and Safe & Always Secure
                 </h2>
-                <p className=" text-md leading-relaxed">
+                <p className="leading-relaxed text-md">
                   Verus Desktop is created for beginners and experts in mind.
                   Easy to use yet advanced in capabilities. Security has highest
                   priority that's why all Verus software is open-source.
@@ -154,14 +153,14 @@ const MobileWallet = ({ latestAndroid }) => {
                 <h2 className="mb-2 text-2xl font-normal">
                   Multi-Currency Wallet
                 </h2>
-                <p className=" text-md leading-relaxed">
+                <p className="leading-relaxed text-md">
                   Store hundreds of coins and tokens!
                 </p>
               </div>
             </div>
           </div>
           <div className="p-8 mt-16 space-y-8 text-sm bg-gray-100 rounded-lg sm:text-left">
-            <p className="text-sm font-p text-gray-500">
+            <p className="text-sm text-gray-500 font-p">
               This is experimental and unfinished software. Use at your own
               risk! No warranty for any kind of damage! Permission is hereby
               granted, free of charge, to any person obtaining a copy of this
@@ -174,7 +173,7 @@ const MobileWallet = ({ latestAndroid }) => {
               permission notice shall be included in all copies or substantial
               portions of the Software.
             </p>
-            <p className="text-sm font-p text-gray-500">
+            <p className="text-sm text-gray-500 font-p">
               THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
               EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
               MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

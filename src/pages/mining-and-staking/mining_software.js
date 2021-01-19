@@ -1,10 +1,9 @@
-import Menu from '../../components/Menu';
-import FooterMenu from '../../components/FooterMenu';
-import { miningStakingLinks } from '../../constants/miningStaking';
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
+import { Menu, FooterMenu } from '@src/components'
+import { miningStakingLinks } from '@src/constants/miningStaking'
 
 const MiningSoftware = (props) => {
-  const { linuxURL, WinURL, OsURL } = props;
+  const { linuxURL, WinURL, OsURL } = props
   return (
     <>
       <NextSeo
@@ -188,7 +187,7 @@ const MiningSoftware = (props) => {
             (Ubuntu tested). 4GB Memory.
           </p>
 
-          <p className="p-8 mt-16 mb-32 text-sm leading-normal bg-gray-100 text-gray-500 font-p">
+          <p className="p-8 mt-16 mb-32 text-sm leading-normal text-gray-500 bg-gray-100 font-p">
             All software is provided "as is", without warranty of any kind,
             express or implied, including but not limited to the warranties of
             merchantability, fitness for a particular purpose and
@@ -205,32 +204,32 @@ const MiningSoftware = (props) => {
         pathList={miningStakingLinks}
       />
     </>
-  );
-};
+  )
+}
 
-export default MiningSoftware;
+export default MiningSoftware
 
 export async function getServerSideProps(context) {
   let result = await fetch(
     'https://api.github.com/repos/VerusCoin/nheqminer/releases/latest'
-  );
-  let latestNheqminer = await result.json();
+  )
+  let latestNheqminer = await result.json()
   let linuxURL,
     WinURL,
-    OsURL = '';
+    OsURL = ''
   latestNheqminer.assets.map((asset) => {
     if (asset.name.match('Linux')) {
-      linuxURL = asset.browser_download_url;
+      linuxURL = asset.browser_download_url
     }
     if (asset.name.match('MacOS')) {
-      OsURL = asset.browser_download_url;
+      OsURL = asset.browser_download_url
     }
     if (asset.name.match('Windows')) {
-      WinURL = asset.browser_download_url;
+      WinURL = asset.browser_download_url
     }
-  });
+  })
 
   return {
     props: { linuxURL, WinURL, OsURL },
-  };
+  }
 }

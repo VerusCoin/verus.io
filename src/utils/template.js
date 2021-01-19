@@ -1,6 +1,6 @@
-// import Menu from '../../components/Menu';
-// import { technologyLinks } from '../../constants/technology';
-// import FooterMenu from '../../components/FooterMenu';
+// import Menu from '@src/components/Menu';
+// import { technologyLinks } from '@src/constants/technology';
+// import FooterMenu from '@src/components/FooterMenu';
 // import { NextSeo } from 'next-seo';
 
 // const Template = () => {

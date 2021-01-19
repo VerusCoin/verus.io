@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import Menu from '../../components/Menu'
-import { technologyLinks } from '../../constants/technology'
-import FooterMenu from '../../components/FooterMenu'
 import { NextSeo } from 'next-seo'
+import { Menu, FooterMenu } from '@src/components'
+import { technologyLinks } from '@src/constants/technology'
 
 const Verusid = () => {
   return (
@@ -37,7 +36,7 @@ const Verusid = () => {
               capabilities. In this permissionless system anyone can create a
               VerusID and have complete ownership.{' '}
               <Link href="/wallet/desktop-wallet" className="font-p no-font-p ">
-                <span className="underline text-bluebutton-default cursor-pointer">
+                <span className="underline cursor-pointer text-bluebutton-default">
                   Register VerusID with Verus Desktop
                 </span>
               </Link>
@@ -68,10 +67,10 @@ const Verusid = () => {
                 width="100"
               />
               <div className="ml-4">
-                <h3 className="mb-0 font-semibold text-white text-xl font-p">
+                <h3 className="mb-0 text-xl font-semibold text-white font-p">
                   Friendly Name
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                   Always remember your crypto address.
                 </p>
               </div>
@@ -84,10 +83,10 @@ const Verusid = () => {
                 width="100"
               />
               <div className="ml-4">
-                <h3 className="mb-0 font-semibold text-white font-p text-xl">
+                <h3 className="mb-0 text-xl font-semibold text-white font-p">
                   Verus Vault
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                   Set (time) locks for theft proof staking and workflow.
                 </p>
               </div>
@@ -100,10 +99,10 @@ const Verusid = () => {
                 width="100"
               />
               <div className="ml-4">
-                <h3 className="mb-0 font-semibold text-white font-p text-xl">
+                <h3 className="mb-0 text-xl font-semibold text-white font-p">
                   Revoking
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                   Revoke spending abilities on your identity.
                 </p>
               </div>
@@ -116,10 +115,10 @@ const Verusid = () => {
                 width="100"
               />
               <div className="ml-4">
-                <h3 className="mb-0 font-semibold text-white font-p text-xl">
+                <h3 className="mb-0 text-xl font-semibold text-white font-p">
                   Recovering
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                   Recover funds and UTXOs to an assigned identity.
                 </p>
               </div>
@@ -132,10 +131,10 @@ const Verusid = () => {
                 width="100"
               />
               <div className="ml-4">
-                <h3 className="mb-0 font-semibold text-white font-p text-xl">
+                <h3 className="mb-0 text-xl font-semibold text-white font-p">
                   Signatures
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                   Create unforgeable signatures for files and messages.
                 </p>
               </div>
@@ -148,10 +147,10 @@ const Verusid = () => {
                 width="100"
               />
               <div className="ml-4">
-                <h3 className="mb-0 font-semibold text-white font-p text-xl">
+                <h3 className="mb-0 text-xl font-semibold text-white font-p">
                   Multisig
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                   Multiple identities can control one identity.
                 </p>
               </div>
@@ -164,10 +163,10 @@ const Verusid = () => {
                 width="100"
               />
               <div className="ml-4">
-                <h3 className="mb-0 font-semibold text-white font-p text-xl">
+                <h3 className="mb-0 text-xl font-semibold text-white font-p">
                   Privacy
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                   Attach a private address (Sapling).
                 </p>
               </div>
@@ -180,10 +179,10 @@ const Verusid = () => {
                 width="100"
               />
               <div className="ml-4">
-                <h3 className="mb-0 font-semibold text-white font-p text-xl">
+                <h3 className="mb-0 text-xl font-semibold text-white font-p">
                   Messaging
                 </h3>
-                <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                   Send and receive private messages.
                 </p>
               </div>

@@ -1,9 +1,9 @@
 import { useState, createRef, useEffect } from 'react'
-import Menu from '../../components/Menu'
-import { walletLinks } from '../../constants/wallet'
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers'
-import FooterMenu from '../../components/FooterMenu'
 import { NextSeo } from 'next-seo'
+import { Menu, FooterMenu } from '@src/components'
+
+import { walletLinks } from '@src/constants/wallet'
+import { formatDateFromString, date_diff_indays } from '@src/utils/helpers'
 
 const DesktopWallet = (props) => {
   const [showDownloads, setShowDownloads] = useState(false)
@@ -100,7 +100,7 @@ const DesktopWallet = (props) => {
                   <li className="block px-4 py-3 whitespace-nowrap">
                     <a
                       href={winApp}
-                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline cursor-pointer whitespace-nowrap text-navlink-default hover:text-navlink-hover"
                     >
                       <img
                         className="opacity-25"
@@ -114,7 +114,7 @@ const DesktopWallet = (props) => {
                   <li className="block px-4 py-3 whitespace-nowrap">
                     <a
                       href={macApp}
-                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline cursor-pointer whitespace-nowrap text-navlink-default hover:text-navlink-hover"
                     >
                       <img
                         className="opacity-25"
@@ -128,7 +128,7 @@ const DesktopWallet = (props) => {
                   <li className="block px-4 py-3 whitespace-nowrap">
                     <a
                       href={linuxApp}
-                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline cursor-pointer whitespace-nowrap text-navlink-default hover:text-navlink-hover"
                     >
                       <img
                         className="opacity-25"
@@ -142,7 +142,7 @@ const DesktopWallet = (props) => {
                   <li className="block px-4 py-3 whitespace-nowrap">
                     <a
                       href={armApp}
-                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
+                      className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline cursor-pointer whitespace-nowrap text-navlink-default hover:text-navlink-hover"
                     >
                       <img
                         className="opacity-25"
@@ -156,7 +156,7 @@ const DesktopWallet = (props) => {
                   <a
                     href="https://wiki.verus.io/#!how-to%5Chow-to_bootstrap.md"
                     target="_blank"
-                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline whitespace-nowrap cursor-pointer text-navlink-default hover:text-navlink-hover"
+                    className="flex flex-row items-center flex-shrink-0 py-2 space-x-2 no-underline cursor-pointer whitespace-nowrap text-navlink-default hover:text-navlink-hover"
                   >
                     <p className="pl-2 m-0">Download Bootstrap</p>
                   </a>
@@ -191,7 +191,7 @@ const DesktopWallet = (props) => {
                 />
                 <div className="">
                   <h2 className="mb-2 text-2xl font-normal">Easy & Secure</h2>
-                  <p className=" text-md leading-relaxed">
+                  <p className="leading-relaxed  text-md">
                     Verus Desktop is created for beginners and experts in mind.
                     Easy to use yet advanced in capabilities. Security has
                     highest priority that's why all Verus software is
@@ -209,7 +209,7 @@ const DesktopWallet = (props) => {
                   <h2 className="mb-2 text-2xl font-normal">
                     VerusID Capabilities
                   </h2>
-                  <p className=" text-md leading-relaxed">
+                  <p className="leading-relaxed  text-md">
                     Create and manage self-sovereign identities on the
                     blockchain. Use VerusID as friendly crypto name, sign and
                     verify files and message and many more features.
@@ -228,7 +228,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Multi-Currency Wallet
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                  <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                     Store hundreds of coins and tokens!
                   </p>
                 </div>
@@ -243,7 +243,7 @@ const DesktopWallet = (props) => {
                   <h3 className="mb-0 text-lg font-semibold text-white font-p">
                     Mining & Staking
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                  <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                     Earn VRSC with Verus Desktop. Mine and stake easily from
                     within your wallet.
                   </p>
@@ -260,7 +260,7 @@ const DesktopWallet = (props) => {
                     Converting{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                  <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                     Convert from one currency to another through multi-reserve
                     currencies.
                   </p>
@@ -277,7 +277,7 @@ const DesktopWallet = (props) => {
                     Currencies{' '}
                     <span className="text-green-500">TESTNET ONLY</span>
                   </h3>
-                  <p className="mt-1 text-sm text-theme-feature leading-relaxed">
+                  <p className="mt-1 text-sm leading-relaxed text-theme-feature">
                     Create multi-reserve and fractional currencies with a few
                     clicks.
                   </p>

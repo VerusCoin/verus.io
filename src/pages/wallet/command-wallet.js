@@ -1,8 +1,7 @@
-import Menu from '../../components/Menu'
-import { walletLinks } from '../../constants/wallet'
 import { NextSeo } from 'next-seo'
-import FooterMenu from '../../components/FooterMenu'
-import { formatDateFromString, date_diff_indays } from '../../utils/helpers'
+import { Menu, FooterMenu } from '@src/components'
+import { walletLinks } from '@src/constants/wallet'
+import { formatDateFromString, date_diff_indays } from '@src/utils/helpers'
 
 const CommandWallet = ({
   linuxApp,
@@ -119,7 +118,7 @@ const CommandWallet = ({
           </table>
 
           <div className="max-w-3xl p-8 space-y-8 bg-gray-100">
-            <p className="text-sm font-p text-gray-500">
+            <p className="text-sm text-gray-500 font-p">
               This is experimental and unfinished software. Use at your own
               risk! No warranty for any kind of damage! Permission is hereby
               granted, free of charge, to any person obtaining a copy of this
@@ -132,7 +131,7 @@ const CommandWallet = ({
               permission notice shall be included in all copies or substantial
               portions of the Software.
             </p>
-            <p className="text-sm font-p text-gray-500">
+            <p className="text-sm text-gray-500 font-p">
               THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
               EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
               MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND

@@ -1,7 +1,6 @@
-import Menu from '../../components/Menu'
-import { technologyLinks } from '../../constants/technology'
-import FooterMenu from '../../components/FooterMenu'
 import { NextSeo } from 'next-seo'
+import { Menu, FooterMenu } from '@src/components'
+import { technologyLinks } from '@src/constants/technology'
 
 const ProofOfPower = () => {
   return (
@@ -34,7 +33,7 @@ const ProofOfPower = () => {
             blocks come from mining (PoW), and the other half comes from staking
             (PoS).
           </p>
-          <div className="grid grid-cols-1 p-8 my-8 bg-center bg-cover gap-y-12 gap-x-12 rounded md:grid-cols-2 bg-features-bg md:gap-12">
+          <div className="grid grid-cols-1 p-8 my-8 bg-center bg-cover rounded gap-y-12 gap-x-12 md:grid-cols-2 bg-features-bg md:gap-12">
             <div className="flex flex-row items-center flex-shrink-0 space-x-3">
               <img
                 src="/images/icons/50-staking.svg"
@@ -42,8 +41,8 @@ const ProofOfPower = () => {
                 width="100"
               />
               <div>
-                <h4 className="text-white text-xl">Proof of Stake</h4>
-                <p className="mt-2 text-sm text-theme-feature leading-relaxed font-p">
+                <h4 className="text-xl text-white">Proof of Stake</h4>
+                <p className="mt-2 text-sm leading-relaxed text-theme-feature font-p">
                   50% of all blocks are generated through staking
                 </p>
               </div>
@@ -55,8 +54,8 @@ const ProofOfPower = () => {
                 width="100"
               />
               <div>
-                <h4 className="text-white text-xl">Proof of Work</h4>
-                <p className="mt-2 text-sm text-theme-feature leading-relaxed font-p">
+                <h4 className="text-xl text-white">Proof of Work</h4>
+                <p className="mt-2 text-sm leading-relaxed text-theme-feature font-p">
                   50% of all blocks are generated through mining
                 </p>
               </div>

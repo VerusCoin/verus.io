@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import Menu from '../../components/Menu'
-import { SlugMenu } from '../../components/SlugMenu'
-import { walletLinks } from '../../constants/wallet'
 import { NextSeo } from 'next-seo'
+import { Menu, SlugMenu } from '@src/components'
+import { walletLinks } from '@src/constants/wallet'
 
 const WalletOverview = () => {
   const nextRoute = walletLinks[0]

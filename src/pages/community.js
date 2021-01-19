@@ -1,7 +1,7 @@
 import {
   ContributorsList,
   AdditionalContributionList,
-} from '../constants/contributors'
+} from '@src/constants/contributors'
 import { Contributors } from '@src/components'
 import { NextSeo } from 'next-seo'
 

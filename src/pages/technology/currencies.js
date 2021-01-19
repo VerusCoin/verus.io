@@ -1,7 +1,6 @@
-import Menu from '../../components/Menu';
-import { technologyLinks } from '../../constants/technology';
-import FooterMenu from '../../components/FooterMenu';
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
+import { Menu, FooterMenu } from '@src/components'
+import { technologyLinks } from '@src/constants/technology'
 
 const Currencies = () => {
   return (
@@ -115,7 +114,7 @@ const Currencies = () => {
       </div>
       <FooterMenu hrefLocation="/technology" pathList={technologyLinks} />
     </>
-  );
-};
+  )
+}
 
-export default Currencies;
+export default Currencies

@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import Menu from '../../components/Menu'
-import { SlugMenu } from '../../components/SlugMenu'
-import { miningStakingLinks } from '../../constants/miningStaking'
 import { NextSeo } from 'next-seo'
+import { Menu, SlugMenu } from '@src/components'
+import { miningStakingLinks } from '@src/constants/miningStaking'
 
 const MiningOverview = () => {
   const nextRoute = miningStakingLinks[0]

@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Menu from '../../components/Menu'
-import { SlugMenu } from '../../components/SlugMenu'
-import { technologyLinks } from '../../constants/technology'
 import { NextSeo } from 'next-seo'
+import { Menu, SlugMenu } from '@src/components'
+
+import { technologyLinks } from '@src/constants/technology'
 
 const TechnologyOverview = () => {
   const nextRoute = technologyLinks[0]

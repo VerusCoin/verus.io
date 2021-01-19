@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import Menu from '../../components/Menu'
-import { technologyLinks } from '../../constants/technology'
-import FooterMenu from '../../components/FooterMenu'
 import { NextSeo } from 'next-seo'
+import { Menu, FooterMenu } from '@src/components'
+import { technologyLinks } from '@src/constants/technology'
 
 const VerusHash = () => {
   return (
