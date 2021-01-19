@@ -51,12 +51,11 @@
   }
   
   button {
-    font-family: geomanistregular, sans-serif;
-    @apply text-base text-center cursor-pointer focus:outline-none;
+    @apply text-base text-center cursor-pointer font-nav;
   }
-
-  .custombutton{
-    font-family: geomanistbook, sans-serif;
+  
+  button:focus{
+    outline: none;
   }
   
   .dropdown:hover .dropdown-menu {
