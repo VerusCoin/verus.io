@@ -54,10 +54,9 @@
     @apply text-base text-center cursor-pointer font-nav;
   }
   
-  button:focus{
+  button:focus {
     outline: none;
   }
-  
   .dropdown:hover .dropdown-menu {
     display: block;
     /* left: -28px; */
