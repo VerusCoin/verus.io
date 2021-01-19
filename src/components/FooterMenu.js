@@ -12,7 +12,7 @@ const FooterMenu = ({ pathList, hrefLocation }) => {
           href={hrefPath}
           as={`${hrefLocation}/${prevPath.slug || prevPath.path}`}
         >
-          <a className="flex flex-row items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton">
+          <a className="flex flex-row items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton-default">
             {' '}
             <svg
               width="8"
@@ -33,7 +33,7 @@ const FooterMenu = ({ pathList, hrefLocation }) => {
         </Link>
       ) : (
         <Link href="/wallet">
-          <a className="flex flex-row items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton">
+          <a className="flex flex-row items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton-default">
             {' '}
             <svg
               width="8"
@@ -58,7 +58,7 @@ const FooterMenu = ({ pathList, hrefLocation }) => {
           href={hrefPath}
           as={`${hrefLocation}/${nextPath.slug || nextPath.path}`}
         >
-          <a className="flex flex-row items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton">
+          <a className="flex flex-row items-center py-2 text-sm no-underline md:text-baseLink text-navlink-default hover:text-navlink-hover active:bg-blue-200 active:text-bluebutton-default">
             {nextPath.name}&nbsp;{' '}
             <svg
               width="8"

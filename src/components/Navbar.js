@@ -133,7 +133,7 @@ function Navbar() {
                   </ul>
                 </div>
               </div>
-              <div className="relative px-4 py-2 text-sm md:hidden text-navlink">
+              <div className="relative px-4 py-2 text-sm md:hidden text-navlink-default">
                 Resources
                 <hr />
                 <ul>

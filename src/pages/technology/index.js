@@ -112,7 +112,7 @@ const TechnologyOverview = () => {
               <p>
                 Consensus Algorithm:{' '}
                 <a
-                  className="underline text-bluebutton"
+                  className="underline text-bluebutton-default"
                   href="/technology/verus_proof_of_power"
                 >
                   Verus Proof of Power
@@ -124,7 +124,7 @@ const TechnologyOverview = () => {
               <p>
                 Hash Algorithm:{' '}
                 <a
-                  className="underline text-bluebutton"
+                  className="underline text-bluebutton-default"
                   href="/technology/verushash"
                 >
                   VerusHash 2.2
@@ -147,7 +147,7 @@ const TechnologyOverview = () => {
             <li className="inline-flex">
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
               <a
-                className="underline text-bluebutton"
+                className="underline text-bluebutton-default"
                 href="/docs/VerusVision.pdf"
                 target="_blank"
               >
@@ -161,7 +161,7 @@ const TechnologyOverview = () => {
                 alt=""
               />
               <a
-                className="underline text-bluebutton"
+                className="underline text-bluebutton-default"
                 href="/docs/VerusPoP.pdf"
                 target="_blank"
               >
@@ -171,7 +171,7 @@ const TechnologyOverview = () => {
             <li className="inline-flex">
               <img src="/images/icons/keyboard_arrow_right-24px.svg" alt="" />
               <a
-                className="underline text-bluebutton"
+                className="underline text-bluebutton-default"
                 href="/docs/VerusPhaseI.pdf"
                 target="_blank"
               >

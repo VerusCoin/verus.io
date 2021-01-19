@@ -1,7 +1,7 @@
-import Menu from '../../components/Menu';
-import { technologyLinks } from '../../constants/technology';
-import FooterMenu from '../../components/FooterMenu';
-import { NextSeo } from 'next-seo';
+import Menu from '../../components/Menu'
+import { technologyLinks } from '../../constants/technology'
+import FooterMenu from '../../components/FooterMenu'
+import { NextSeo } from 'next-seo'
 
 const ProofOfPower = () => {
   return (
@@ -65,7 +65,7 @@ const ProofOfPower = () => {
           <p className="my-8 leading-normal ">
             Verus’ staking algorithm{' '}
             <a
-              className="underline external text-bluebutton"
+              className="underline external text-bluebutton-default"
               href="https://medium.com/veruscoin/how-verus-solved-nothing-at-stake-and-weak-subjectivity-proof-of-stake-problems-b4dd6a85086e"
             >
               solves the two major theoretical issues undermining other PoS
@@ -93,7 +93,7 @@ const ProofOfPower = () => {
             In over two years of mainnet, VerusCoin has never experienced a
             successful 51% hash attack.{' '}
             <a
-              className="underline text-bluebutton"
+              className="underline text-bluebutton-default"
               href="/docs/VerusPoP.pdf"
               target="_blank"
             >
@@ -105,7 +105,7 @@ const ProofOfPower = () => {
       </div>
       <FooterMenu hrefLocation="/technology" pathList={technologyLinks} />
     </>
-  );
-};
+  )
+}
 
-export default ProofOfPower;
+export default ProofOfPower

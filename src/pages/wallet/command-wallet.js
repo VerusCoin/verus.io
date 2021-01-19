@@ -40,7 +40,7 @@ const CommandWallet = ({
               <a
                 href="https://wiki.verus.io/#!how-to%5Chow-to_bootstrap.md"
                 target="_blank"
-                className="underline external font-p text-bluebutton"
+                className="underline external font-p text-bluebutton-default"
               >
                 this bootstrap
               </a>

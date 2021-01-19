@@ -1,7 +1,7 @@
-import Menu from '../../components/Menu';
-import { walletLinks } from '../../constants/wallet';
-import { NextSeo } from 'next-seo';
-import FooterMenu from '../../components/FooterMenu';
+import Menu from '../../components/Menu'
+import { walletLinks } from '../../constants/wallet'
+import { NextSeo } from 'next-seo'
+import FooterMenu from '../../components/FooterMenu'
 
 const ThirdPartyWallet = () => {
   return (
@@ -41,7 +41,7 @@ const ThirdPartyWallet = () => {
                   alt="coincollect logo"
                 />
               </div>
-              <p className="pt-2 m-0 font-p text-custom">Mobile Only</p>
+              <p className="pt-2 m-0 font-p text-custom-default">Mobile Only</p>
               <a
                 href="http://www.coincollect.cc/"
                 target="_blank"
@@ -58,7 +58,9 @@ const ThirdPartyWallet = () => {
                   alt="vidulum logo"
                 />
               </div>
-              <p className="pt-2 m-0 font-p text-custom">Desktop & Mobile</p>
+              <p className="pt-2 m-0 font-p text-custom-default">
+                Desktop & Mobile
+              </p>
               <a
                 href="http://www.vidulum.app/"
                 target="_blank"
@@ -75,7 +77,7 @@ const ThirdPartyWallet = () => {
                   alt="chameleon logo"
                 />
               </div>
-              <p className="pt-2 m-0 font-p text-custom">Mobile Only</p>
+              <p className="pt-2 m-0 font-p text-custom-default">Mobile Only</p>
               <a
                 href="https://www.chainzilla.io/chameleonpay.html"
                 target="_blank"
@@ -90,7 +92,7 @@ const ThirdPartyWallet = () => {
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
     </>
-  );
-};
+  )
+}
 
-export default ThirdPartyWallet;
+export default ThirdPartyWallet

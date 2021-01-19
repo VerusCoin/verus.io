@@ -53,7 +53,7 @@ const VerifyResult = ({
       <p className="w-full m-0 break-all">{verusSignature.Signature}</p>
       <button
         onClick={resetCall}
-        className="px-12 py-5 mt-8 text-sm bg-white border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton"
+        className="px-12 py-5 mt-8 text-sm bg-white border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default"
       >
         Verify Another Signature
       </button>
@@ -126,7 +126,7 @@ const MessageContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton-default"
                 type="submit"
               >
                 Submit
@@ -217,7 +217,7 @@ const FileContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton-default"
                 type="submit"
               >
                 Submit
@@ -309,7 +309,7 @@ const HashContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton-default"
                 type="submit"
               >
                 Submit

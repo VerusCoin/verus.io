@@ -1,5 +1,12 @@
 import { useState } from 'react'
 import { NextSeo } from 'next-seo'
+import Link from 'next/link'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionCollapse,
+  AccordionToggle,
+} from '@src/components'
 
 const CustomAccordion = (props) => {
   const {
@@ -55,6 +62,7 @@ const FAQ = () => {
   const handleTabChange = (tab) => {
     setRadioTab(null)
   }
+  const FAQcontentClass = 'max-w-3xl px-6 pt-8 pb-4 leading-relaxed'
   return (
     <>
       <NextSeo
@@ -73,55 +81,76 @@ const FAQ = () => {
           <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl md:leading-relaxed">
             Frequently Asked Questions
           </h1>
-          <div className="tab-content">
+
+          <Accordion className="block">
+            {/* 0 */}
+            <AccordionContent>
+              <AccordionToggle eventKey={0}>
+                Was there an ICO for Verus?
+              </AccordionToggle>
+              <AccordionCollapse eventKey={0}>
+                <p className={FAQcontentClass}>
+                  No. Verus is fairly launced, with equal opportunity for
+                  everyone to earn coins through mining and staking. Also, Verus
+                  had no premine, and has no developer fees.
+                </p>
+              </AccordionCollapse>
+            </AccordionContent>
             {/* 1 */}
-            <CustomAccordion
-              id="1"
-              tabName="faqTab"
-              label="Was there an ICO for Verus?"
-              radioTab={radioTab}
-              handleTabChange={handleTabChange}
-              handleTabCheck={handleTabCheck}
-            >
-              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
-                No. Verus is fairly launced, with equal opportunity for everyone
-                to earn coins through mining and staking. Also, Verus had no
-                premine, and has no developer fees.
-              </p>
-            </CustomAccordion>
+            <AccordionContent>
+              <AccordionToggle eventKey={1}>
+                Where can I find a roadmap?
+              </AccordionToggle>
+              <AccordionCollapse eventKey={1}>
+                <p className={FAQcontentClass}>
+                  Verus has no roadmaps or deadlines. We are a community project
+                  without central entity or commercial interests.
+                </p>
+              </AccordionCollapse>
+            </AccordionContent>
             {/* 2 */}
-            <CustomAccordion
-              id="2"
-              tabName="faqTab"
-              label="Where can I find a roadmap?"
-              radioTab={radioTab}
-              handleTabChange={handleTabChange}
-              handleTabCheck={handleTabCheck}
-            >
-              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
-                Verus has no roadmaps or deadlines. We are a community project
-                without central entity or commercial interests.
-              </p>
-            </CustomAccordion>
+            <AccordionContent>
+              <AccordionToggle eventKey={2}>Can I mine Verus?</AccordionToggle>
+              <AccordionCollapse eventKey={2}>
+                <p className={FAQcontentClass}>
+                  Yes. Anyone can start mining Verus with a CPU and GPU.{' '}
+                  <Link
+                    className="underline text-bluebutton-default"
+                    href="/mining-and-staking/"
+                  >
+                    Learn more
+                  </Link>
+                </p>
+              </AccordionCollapse>
+            </AccordionContent>
             {/* 3 */}
-            <CustomAccordion
-              id="3"
-              tabName="faqTab"
-              label="Can I mine Verus?"
-              radioTab={radioTab}
-              handleTabChange={handleTabChange}
-              handleTabCheck={handleTabCheck}
-            >
-              <p className="max-w-3xl px-6 pt-8 pb-4 leading-relaxed">
-                Yes. Anyone can start mining Verus with a CPU and GPU.{' '}
-                <a
-                  className="underline text-bluebutton"
-                  href="/mining-and-staking/"
-                >
-                  Learn more
-                </a>{' '}
-              </p>
-            </CustomAccordion>
+            <AccordionContent>
+              <AccordionToggle eventKey={3}>Can I stake Verus?</AccordionToggle>
+              <AccordionCollapse eventKey={3}>
+                <p className={FAQcontentClass}>
+                  Yes. Anyone can start staking Verus without any minimum
+                  requirements.{' '}
+                  <Link
+                    className="underline text-bluebutton-default"
+                    href="/mining-and-staking/"
+                  >
+                    Learn more
+                  </Link>
+                </p>
+              </AccordionCollapse>
+            </AccordionContent>
+            {/* 4 */}
+            <AccordionContent>
+              <AccordionToggle eventKey={4}></AccordionToggle>
+              <AccordionCollapse eventKey={4}>
+                <p className={FAQcontentClass}></p>
+              </AccordionCollapse>
+            </AccordionContent>
+          </Accordion>
+
+          <div className="tab-content">
+            {/* 3 */}
+
             {/* 4 */}
             <CustomAccordion
               id="4"
@@ -135,7 +164,7 @@ const FAQ = () => {
                 Yes. Anyone can start staking Verus without any minimum
                 requirements.{' '}
                 <a
-                  className="underline text-bluebutton"
+                  className="underline text-bluebutton-default"
                   href="/mining-and-staking/"
                 >
                   Learn more

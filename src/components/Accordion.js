@@ -27,8 +27,16 @@ const useEventKey = (eventKey, onToggle) => {
   return [activeEventKey, setActiveEventKey]
 }
 
+// To use Accordion as default on everyview you need to declare className in calling
+// with className="block"
 export const Accordion = forwardRef((props, ref) => {
-  const { activeEventKey, onToggle, children, ...rest } = props
+  const {
+    activeEventKey,
+    onToggle,
+    children,
+    className = s.root,
+    ...rest
+  } = props
   const [eventKey = '0', setEventKey] = useEventKey(activeEventKey, onToggle)
   const handleToggle = useCallback(
     (eventKey) => {
@@ -46,7 +54,7 @@ export const Accordion = forwardRef((props, ref) => {
 
   return (
     <AccordContext.Provider value={context}>
-      <div className={s.root} {...rest} ref={ref}>
+      <div className={className} {...rest} ref={ref}>
         {children}
       </div>
     </AccordContext.Provider>

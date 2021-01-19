@@ -168,7 +168,7 @@ const Home = (props) => {
             target="_blank"
             className="justify-center text-center no-underline md:col-span-3"
           >
-            <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
+            <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default">
               Read all articles
             </button>
           </a>

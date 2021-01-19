@@ -297,7 +297,7 @@ const DesktopWallet = (props) => {
                   <a
                     href="https://wiki.verus.io/#!how-to%5Chow-to_bootstrap.md"
                     target="_blank"
-                    className="underline external font-p text-bluebutton"
+                    className="underline external font-p text-bluebutton-default"
                   >
                     Download Bootstrap
                   </a>
@@ -382,7 +382,7 @@ export async function getServerSideProps(context) {
               <a
                 href="https://github.com/VerusCoin/VerusCoin/releases/latest"
                 target="_blank"
-                className="no-underline external text-bluebutton"
+                className="no-underline external text-bluebutton-default"
               >
                 Bootstrap Install Instruction
               </a> */

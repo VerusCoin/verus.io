@@ -268,7 +268,7 @@ const Verusid = () => {
             </p>
           </div>
           <Link href="/verify-signatures">
-            <button className="px-12 py-5 mb-16 bg-transparent border border-solid rounded-full text-p border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
+            <button className="px-12 py-5 mb-16 bg-transparent border border-solid rounded-full text-p border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default">
               Verify signatures here
             </button>
           </Link>

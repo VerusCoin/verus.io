@@ -22,7 +22,7 @@ const VerusIDContent = () => {
             send and secure all cryptocurrencies.
           </p>
           <Link href="/technology/verusID">
-            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
+            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default">
               Learn More
             </button>
           </Link>
@@ -53,7 +53,7 @@ const DefiContent = () => {
             community liquidity.
           </p>
           <Link href="/technology/currencies">
-            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
+            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default">
               Learn More
             </button>
           </Link>
@@ -84,7 +84,7 @@ const PbaasContent = () => {
             provides a roadmap for practically unlimited scalability.
           </p>
           <Link href="/technology/PbaaS">
-            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
+            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default">
               Learn More
             </button>
           </Link>
@@ -114,7 +114,7 @@ const ErcContent = () => {
             represented as tokens on the Verus blockchain.
           </p>
           <Link href="/technology/bridges">
-            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
+            <button className="px-12 py-5 mt-8 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default">
               Learn More
             </button>
           </Link>
@@ -209,7 +209,7 @@ const IndexTabWindow = () => {
             }}
           />
           <label
-            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
+            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink-default"
             htmlFor="tab-single-one"
             onClick={() => {
               handleTabCheck('tab-single-one')
@@ -233,7 +233,7 @@ const IndexTabWindow = () => {
             }}
           />
           <label
-            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
+            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink-default"
             htmlFor="tab-single-two"
             onClick={() => {
               handleTabCheck('tab-single-two')
@@ -257,7 +257,7 @@ const IndexTabWindow = () => {
             }}
           />
           <label
-            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
+            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink-default"
             htmlFor="tab-single-three"
             onClick={() => {
               handleTabCheck('tab-single-three')
@@ -281,7 +281,7 @@ const IndexTabWindow = () => {
             }}
           />
           <label
-            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
+            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink-default"
             htmlFor="tab-single-four"
             onClick={() => {
               handleTabCheck('tab-single-four')

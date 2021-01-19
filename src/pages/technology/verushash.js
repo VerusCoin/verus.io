@@ -78,7 +78,7 @@ const VerusHash = () => {
               </button>
             </Link>
             <Link href="/mining-and-staking/mining_software">
-              <button className="w-full px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans-default hover:border-bluebutton-default text-bluebutton">
+              <button className="w-full px-12 py-5 bg-transparent border border-solid rounded-full text-p border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default">
                 Get mining software
               </button>
             </Link>

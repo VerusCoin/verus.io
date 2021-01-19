@@ -1,7 +1,7 @@
-import Menu from '../../components/Menu';
-import { walletLinks } from '../../constants/wallet';
-import FooterMenu from '../../components/FooterMenu';
-import { NextSeo } from 'next-seo';
+import Menu from '../../components/Menu'
+import { walletLinks } from '../../constants/wallet'
+import FooterMenu from '../../components/FooterMenu'
+import { NextSeo } from 'next-seo'
 
 const PaperWallet = () => {
   return (
@@ -34,7 +34,7 @@ const PaperWallet = () => {
           <a
             href="https://paperwallet.verus.io/"
             target="_blank"
-            className="underline external font-p text-bluebutton"
+            className="underline external font-p text-bluebutton-default"
           >
             Get PaperWallet here
           </a>
@@ -43,9 +43,9 @@ const PaperWallet = () => {
 
       <FooterMenu hrefLocation="/wallet" pathList={walletLinks} />
     </>
-  );
-};
+  )
+}
 
-export default PaperWallet;
+export default PaperWallet
 
 //https://paperwallet.verus.io/

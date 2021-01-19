@@ -136,7 +136,7 @@ const VerusIdLookup = () => {
               </div>
               <button
                 onClick={() => _handleReset()}
-                className="px-12 py-5 mt-8 text-sm bg-transparent border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton"
+                className="px-12 py-5 mt-8 text-sm bg-transparent border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default"
               >
                 Lookup Another VerusID
               </button>
