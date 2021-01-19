@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useDropzone } from 'react-dropzone'
+import cn from 'classnames'
 import CryptoJS from 'crypto-js'
 
 const get = (errors, name) => {
@@ -14,7 +15,7 @@ export const InputField = (props) => {
   const errorMessage = get(errors, name)?.message
   const ref = register(validate)
   return (
-    <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md shadow">
+    <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md shadow-outline">
       <label
         className={`block ${
           errorMessage ? 'text-red-600' : 'text-gray-700'
@@ -26,11 +27,10 @@ export const InputField = (props) => {
       </label>
       <input
         {...props}
-        className={` appearance-none border border-transparent rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none ${
-          errorMessage
-            ? 'border-red-600 focus:shadow-red bg-red-200'
-            : 'focus:ring'
-        }`}
+        className={cn(
+          'appearance-none border border-transparent rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring',
+          { 'border-red-600 focus:ring-red-500 bg-red-200': errorMessage }
+        )}
         id={name}
         ref={ref}
       />
@@ -49,11 +49,11 @@ export const TextAreaField = (props) => {
   const errorMessage = get(errors, name)?.message
   const ref = register(validate)
   return (
-    <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md shadow">
+    <div className="justify-center p-2 py-3 border border-gray-300 border-solid rounded-md shadow-outline">
       <label
-        className={`block ${
+        className={`block text-sm px-2 mb-2 ml-2 bg-white font-p capitalize ${
           errorMessage ? 'text-red-600' : 'text-gray-700'
-        } text-sm px-2 mb-2 ml-2 bg-white font-p capitalize`}
+        }`}
         style={{ marginTop: '-1.45rem', width: 'fit-content' }}
         htmlFor={name}
       >
@@ -61,11 +61,13 @@ export const TextAreaField = (props) => {
       </label>
       <textarea
         {...props}
-        className={` w-full max-w-full px-2 text-base text-gray-800 border-none outline-none ${
-          errorMessage
-            ? 'border-red-600 focus:shadow-red bg-red-200'
-            : 'focus:ring'
-        }`}
+        className={cn(
+          'w-full max-w-full px-2 text-base text-gray-800 outline-none focus:ring',
+          {
+            'border-red-600 border focus:ring-red-500 bg-red-200': errorMessage,
+            'border-none': !errorMessage,
+          }
+        )}
         id={name}
         ref={ref}
       />
@@ -125,7 +127,7 @@ export const FileInputField = (props) => {
           {...props}
           className={`w-full px-3 py-2 leading-tight ${
             errorMessage ? 'text-red-600' : 'text-gray-700'
-          } border rounded shadow appearance-none focus:outline-none focus:ring`}
+          } border rounded shadow-outline appearance-none focus:outline-none focus:ring`}
           id={name}
           {...getInputProps()}
         />
@@ -135,7 +137,7 @@ export const FileInputField = (props) => {
             (isDragActive
               ? 'bg-gray-400'
               : errorMessage
-              ? 'border-red-600 focus:shadow-red bg-red-200'
+              ? 'border-red-600 focus:ring-red-500bg-red-200'
               : 'bg-gray-200')
           }
           style={{ minHeight: '125px' }}

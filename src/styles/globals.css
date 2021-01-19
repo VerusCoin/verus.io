@@ -15,7 +15,7 @@
     @apply leading-relaxed bg-theme-white font-display;
   }
   body {
-    @apply p-0 m-0 text-base leading-snug text-navlink-default  ;
+    @apply p-0 m-0 text-base leading-snug text-navlink-default ;
   }
 
   header {
@@ -49,17 +49,72 @@
     border-color: #ebebeb;
     height: 1px;
   }
-
   
   button {
     font-family: geomanistregular, sans-serif;
     @apply text-base text-center cursor-pointer focus:outline-none;
   }
 
-   
+  .custombutton{
+    font-family: geomanistbook, sans-serif;
+  }
+  
   .dropdown:hover .dropdown-menu {
     display: block;
     /* left: -28px; */
+  }
+  
+  .menu-link a {
+    color: #8d8d8d;
+  }
+  .menu-link a:hover {
+    @apply text-navlink-hover;
+  }
+  
+  .menu-link.active {
+    @apply border border-solid rounded bg-menu-active border-bluebutton-default;
+  }
+  .menu-link.active > a {
+    @apply text-bluebutton-default;
+  }
+
+  .link-block-3:hover {
+    border-color: #fff;
+    background-color: hsla(0, 0%, 100%, 0.051);
+  }
+  
+  .link-block-3:visited {
+    @apply text-theme-white;
+  }
+  
+  .text-field {
+    /* width: 400px; */
+  
+    max-width: none;
+    border: 1px solid #3165d4;
+    color: #3165d4;
+  }
+
+  form span {
+    @apply text-red-700;
+  }
+  
+  .modal {
+    transition: opacity 0.25s ease;
+  }
+  
+  .modalBody.modal-active {
+    overflow-x: hidden;
+    overflow-y: visible !important;
+  }
+  
+  .text-span-code {
+    font-family: Inconsolata, monospace;
+    background-color: #ebebeb;
+  }
+  
+  .text-span-4 {
+    color: hsla(0, 0%, 100%, 0.66);
   }
   
   @screen lg {
@@ -74,6 +129,7 @@
 @tailwind utilities;
 
 @layer utilities {
+
   .rotate-0 {
     transform: rotate(0deg);
   }

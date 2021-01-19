@@ -1,30 +1,20 @@
-import 'nprogress/nprogress.css';
-import '../styles/globals.css';
-import '../styles/fonts/font.css';
-import '../styles/tab.css';
+import 'nprogress/nprogress.css'
+import '@src/styles/globals.css'
 
-import dynamic from 'next/dynamic';
-import { DefaultSeo } from 'next-seo';
-import { SEO } from '../seo.config';
+import { DefaultSeo } from 'next-seo'
+import { SEO } from '../seo.config'
 
-const TopProgressBar = dynamic(
-  () => {
-    return import('../components/TopProgressBar.js');
-  },
-  { ssr: false }
-);
-
-import Layout from '../components/Layout';
+import { Layout } from '@src/components'
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <TopProgressBar />
+      {/* <TopProgressBar /> */}
       <Layout>
         <Component {...pageProps} />
       </Layout>
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

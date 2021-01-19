@@ -86,7 +86,7 @@ module.exports = {
         lg: '.4375rem',
       },
       boxShadow: {
-        default: '2px 2px 3px 0 rgba(0,0,0,0.22)',
+        outline: '2px 2px 3px 0 rgba(0,0,0,0.22)',
         lg: '2px 2px 4px 0 rgba(0,0,0,0.07), 4px 4px 28px 0 rgba(0,0,0,0.13)',
         xl: '2px 2px 4px 0 rgba(0,0,0,0.07), 4px 4px 28px 0 rgba(0,0,0,0.33)',
         menu: '2px 2px 11px 0 rgba(0,0,0,0.4)',

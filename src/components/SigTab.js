@@ -1,11 +1,17 @@
 import { useState } from 'react'
-import {
-  useForm,
-  Controller,
-  useFormContext,
-  FormProvider,
-} from 'react-hook-form'
+import { useForm, FormProvider } from 'react-hook-form'
 import { InputField, TextAreaField, FileInputField } from './FormFields'
+
+import {
+  Tab,
+  TabItems,
+  TabToggle,
+  TabPanel,
+  Accordion,
+  AccordionContent,
+  AccordionCollapse,
+  AccordionToggle,
+} from '@src/components'
 
 const VerifyResult = ({
   sigResult,
@@ -326,107 +332,49 @@ const HashContent = () => {
   )
 }
 
-const SigTabWindow = () => {
+const SigTab = () => {
+  const [activeEventKey, setActiveEventKey] = useState(0)
   const [viewTab, setViewTab] = useState(0)
   return (
     <>
-      <div className="flex-col justify-center hidden space-x-4 md:flex sm:flex-row">
-        <a
-          onClick={() => setViewTab(0)}
-          className={
-            'px-5 text-center text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
-            (viewTab === 0
-              ? 'text-tablink-active border-tablink-active'
-              : 'text-tablink-default border-tablink')
-          }
-        >
-          Message/Text
-        </a>
-        <a
-          onClick={() => setViewTab(1)}
-          className={
-            'px-5 text-center text-lg p-1 flex-nowrap border-2 border-solid border-t-0 border-r-0 border-l-0  ' +
-            (viewTab === 1
-              ? 'text-tablink-active  border-tablink-active'
-              : 'text-tablink-default border-tablink')
-          }
-        >
-          File
-        </a>
-        <a
-          onClick={() => setViewTab(2)}
-          className={
-            'px-5 text-center cursor-pointer text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
-            (viewTab === 2
-              ? 'text-tablink-active  border-tablink-active'
-              : 'text-tablink-default border-tablink')
-          }
-        >
-          Hash
-        </a>
-      </div>
-      <div className="hidden md:block tab-content ">
-        <div>
-          {viewTab === 0 && <MessageContent />}
-          {viewTab === 1 && <FileContent />}
-          {viewTab === 2 && <HashContent />}
-        </div>
-      </div>
-      <div className="md:hidden tab-content">
-        <div className="w-full my-2 overflow-hidden tab b">
-          <input
-            className="absolute opacity-0"
-            id="tab-single-one"
-            type="radio"
-            name="tabs2"
-          />
-          <label
-            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
-            htmlFor="tab-single-one"
-          >
-            Message/Text
-          </label>
-          <div className="overflow-hidden leading-normal tab-content-accordion">
+      <Tab activeEventKey={activeEventKey} onToggle={setActiveEventKey}>
+        <TabItems classnames="space-x-4">
+          <TabToggle eventKey={0}>Message/Text</TabToggle>
+          <TabToggle eventKey={1}>File</TabToggle>
+          <TabToggle eventKey={2}>Hash</TabToggle>
+        </TabItems>
+        <TabPanel eventKey={0}>
+          <MessageContent />
+        </TabPanel>
+        <TabPanel eventKey={1}>
+          <FileContent />
+        </TabPanel>
+        <TabPanel eventKey={2}>
+          <HashContent />
+        </TabPanel>
+      </Tab>
+      <Accordion>
+        <AccordionContent>
+          <AccordionToggle eventKey={0}>Message/Text</AccordionToggle>
+          <AccordionCollapse eventKey={0}>
             <MessageContent />
-          </div>
-        </div>
-        <div className="w-full my-2 overflow-hidden tab b">
-          <input
-            className="absolute opacity-0"
-            id="tab-single-two"
-            type="radio"
-            name="tabs2"
-          />
-          <label
-            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
-            htmlFor="tab-single-two"
-          >
-            File
-          </label>
-          <div className="overflow-hidden leading-normal tab-content-accordion">
+          </AccordionCollapse>
+        </AccordionContent>
+        <AccordionContent>
+          <AccordionToggle eventKey={1}>File</AccordionToggle>
+          <AccordionCollapse eventKey={1}>
             <FileContent />
-          </div>
-        </div>
-        <div className="w-full my-2 overflow-hidden tab b">
-          <input
-            className="absolute opacity-0"
-            id="tab-single-three"
-            type="radio"
-            name="tabs2"
-          />
-          <label
-            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
-            htmlFor="tab-single-three"
-          >
-            Hash
-          </label>
-          <div className="overflow-hidden leading-normal tab-content-accordion">
+          </AccordionCollapse>
+        </AccordionContent>
+        <AccordionContent>
+          <AccordionToggle eventKey={2}>Hash</AccordionToggle>
+          <AccordionCollapse eventKey={2}>
             <HashContent />
-          </div>
-        </div>
-      </div>
+          </AccordionCollapse>
+        </AccordionContent>
+      </Accordion>
     </>
   )
 }
 
-export default SigTabWindow
+export default SigTab
