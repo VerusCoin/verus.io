@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
-import { SubjectPage } from '@src/components'
+import { SubjectPage, YoutubeLink } from '@src/components'
 import { technologyLinks } from '@src/constants/technology'
 
 const Verusid = () => {
@@ -37,20 +37,11 @@ const Verusid = () => {
             </Link>
             .
           </p>
-          <a
-            href="https://www.youtube.com/watch?v=EyC-EMiI4FM"
-            target="_blank"
-            className="flex items-center my-12"
-          >
-            <img
-              src="/images/icons/play-icon.svg"
-              alt="Play Logo"
-              className="w-8 mr-3"
-            />
-            <p className="text-lg text-black underline external font-foot">
-              Watch explainer video on YouTube
-            </p>
-          </a>
+
+          <YoutubeLink
+            title="Watch explainer video on YouTube"
+            URI="EyC-EMiI4FM"
+          />
         </div>
         <h2 className="mb-4 text-2xl">Features</h2>
 
