@@ -16,7 +16,11 @@ const Pbaas = () => {
           },
         ]}
       />
-      <SubjectPage menuList={technologyLinks} menuRef="/technology">
+      <SubjectPage
+        menuList={technologyLinks}
+        menuRef="/technology"
+        classnames="mb-12"
+      >
         <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
           Public Blockchains as a Service (PBaaS)
         </h1>

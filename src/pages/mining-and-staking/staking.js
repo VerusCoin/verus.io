@@ -17,7 +17,11 @@ const Staking = () => {
           },
         ]}
       />
-      <SubjectPage menuList={miningStakingLinks} menuRef="/mining-and-staking">
+      <SubjectPage
+        menuList={miningStakingLinks}
+        menuRef="/mining-and-staking"
+        classnames="mb-12"
+      >
         <h1 className="text-2xl font-normal md:leading-tight md:text-4xl ">
           Stake Verus to Earn
         </h1>

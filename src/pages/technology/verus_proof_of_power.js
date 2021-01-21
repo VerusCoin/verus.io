@@ -19,7 +19,11 @@ const ProofOfPower = () => {
           },
         ]}
       />
-      <SubjectPage menuList={technologyLinks} menuRef="/technology">
+      <SubjectPage
+        menuList={technologyLinks}
+        menuRef="/technology"
+        classnames="mb-12"
+      >
         <h1 className="p-0 m-0 text-2xl font-normal md:leading-tight md:text-4xl">
           Verus Proof of Power: Consensus Mechanism for Security
         </h1>

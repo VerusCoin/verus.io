@@ -20,7 +20,11 @@ const Privacy = () => {
           },
         ]}
       />
-      <SubjectPage menuList={technologyLinks} menuRef="/technology">
+      <SubjectPage
+        menuList={technologyLinks}
+        menuRef="/technology"
+        classnames="mb-12"
+      >
         <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">Privacy</h1>
         <p className="my-8">
           Information vies for our attention in today’s digital world, trying to

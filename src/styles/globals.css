@@ -81,10 +81,6 @@
     background-color: hsla(0, 0%, 100%, 0.051);
   }
   
-  .link-block-3:visited {
-    @apply text-theme-white;
-  }
-  
   .text-field {
     /* width: 400px; */
   
@@ -95,15 +91,6 @@
 
   form span {
     @apply text-red-700;
-  }
-  
-  .modal {
-    transition: opacity 0.25s ease;
-  }
-  
-  .modalBody.modal-active {
-    overflow-x: hidden;
-    overflow-y: visible !important;
   }
   
   .text-span-code {
