@@ -41,7 +41,7 @@ const Papers = () => {
       <div className="container max-w-4xl mt-8 ">
         <div className="p-6 ">
           <h1 className="p-0 m-0 mb-4 text-2xl font-normal md:text-4xl">
-            Verus Documetns & Papers
+            Verus Documents & Papers
           </h1>
           <DocSlugMenu pathList={PapersList} href="/mining-and-staking" />
         </div>
