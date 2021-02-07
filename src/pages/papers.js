@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo'
-import { DocSlugMenu } from '@/components'
+import { DocSlugMenu } from '@src/components'
 
 const PapersList = [
   {
