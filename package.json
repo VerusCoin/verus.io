@@ -8,20 +8,24 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "@fullhuman/postcss-purgecss": "^4.0.0",
+    "autoprefixer": "^10.2.4",
+    "classnames": "^2.2.6",
     "crypto-js": "^4.0.0",
-    "date-fns": "^2.16.1",
+    "date-fns": "^2.17.0",
     "memory-cache": "^0.2.0",
-    "next": "10.0.1",
-    "next-seo": "^4.17.0",
+    "next": "10.0.6",
+    "next-seo": "^4.19.0",
     "nprogress": "^0.2.0",
-    "postcss-flexbugs-fixes": "^5.0.1",
+    "postcss": "^8.2.5",
+    "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-dropzone": "^11.2.4",
-    "react-hook-form": "^6.11.0",
-    "tailwindcss": "^1.9.6",
+    "react-dropzone": "^11.3.0",
+    "react-hook-form": "^6.15.1",
+    "react-icons": "^4.2.0",
+    "tailwindcss": "^2.0.2",
     "tailwindcss-responsive-embed": "^1.0.0"
   }
 }

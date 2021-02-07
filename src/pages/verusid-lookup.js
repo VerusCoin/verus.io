@@ -1,30 +1,27 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { NextSeo } from 'next-seo';
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { NextSeo } from 'next-seo'
 
 const VerusIdLookup = () => {
-  const { register, handleSubmit, errors } = useForm();
-  const [formSubmit, setFormSubmit] = useState(false);
-  const [verusID, setVerusID] = useState({});
+  const { register, handleSubmit, errors } = useForm()
+  const [verusID, setVerusID] = useState({})
 
   const onSubmit = async (query) => {
     if (query) {
-      setFormSubmit(true);
-      let url = `/api/verusIDcheck?id=${query.verusID}`;
-      let result = await fetch(url);
-      let data = await result.json();
+      let url = `/api/verusIDcheck?id=${query.verusID}`
+      let result = await fetch(url)
+      let data = await result.json()
       if (data.result) {
-        setVerusID(data);
+        setVerusID(data)
       } else {
-        setVerusID({ error: data.error.message });
+        setVerusID({ error: data.error.message })
       }
     }
-  };
+  }
 
   const _handleReset = () => {
-    setFormSubmit(false);
-    setVerusID({});
-  };
+    setVerusID({})
+  }
 
   return (
     <>
@@ -57,7 +54,7 @@ const VerusIdLookup = () => {
               <div className="flex-grow">
                 <input
                   name="verusID"
-                  className="w-full px-6 py-5 rounded-full text-field text-bluebutton focus:outline-none focus:bg-bluetrans-alter "
+                  className="w-full px-6 py-5 rounded-full text-field text-bluebutton-default focus:outline-none focus:bg-bluetrans-alter "
                   type="text"
                   placeholder="Enter VerusID"
                   ref={register({ required: true })}
@@ -69,7 +66,7 @@ const VerusIdLookup = () => {
                 <input
                   type="submit"
                   value="Lookup"
-                  className="w-full px-10 py-5 text-white border-none rounded-full bg-bluebutton hover:bg-bluebutton-hover focus:outline-none "
+                  className="w-full px-10 py-5 text-white border-none rounded-full bg-bluebutton-default hover:bg-bluebutton-hover focus:outline-none "
                 />
                 <span></span>
               </div>
@@ -130,13 +127,13 @@ const VerusIdLookup = () => {
                       <div key={address} className="text-right">
                         {address}
                       </div>
-                    );
+                    )
                   })}
                 </div>
               </div>
               <button
                 onClick={() => _handleReset()}
-                className="px-12 py-5 mt-8 text-sm bg-transparent border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton"
+                className="px-12 py-5 mt-8 text-sm bg-transparent border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default"
               >
                 Lookup Another VerusID
               </button>
@@ -145,7 +142,7 @@ const VerusIdLookup = () => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default VerusIdLookup;
+export default VerusIdLookup

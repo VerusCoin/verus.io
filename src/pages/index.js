@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { format } from 'date-fns';
-import { NextSeo } from 'next-seo';
-import IndexTabWindow from '../components/Tab';
+import Link from 'next/link'
+import { format } from 'date-fns'
+import { NextSeo } from 'next-seo'
+import { IndexTab, GridCard, YoutubeLink } from '@src/components'
 
 const Home = (props) => {
-  const { data } = props;
+  const { data } = props
   return (
     <>
       <NextSeo
@@ -33,30 +33,19 @@ const Home = (props) => {
 
             <div className="flex flex-col items-center justify-center w-full mt-12 space-y-6 md:flex-row md:space-y-0 md:space-x-4 md:justify-start">
               <Link href="/mining-and-staking">
-                <button className="custombutton px-6 py-5 text-white border-0 rounded-full md:px-12 sm:mr-2 bg-bluebutton hover:bg-bluebutton-hover">
+                <button className="px-6 py-5 text-white border-0 rounded-full font-display md:px-12 sm:mr-2 bg-bluebutton-default hover:bg-bluebutton-hover">
                   Earn in the Network Economy
                 </button>
               </Link>
               <Link href="/technology">
-                <button className="custombutton px-12 py-5 bg-transparent border-2 border-black border-solid rounded-full hover:bg-gray-200">
+                <button className="px-12 py-5 bg-transparent border-2 border-black border-solid rounded-full font-display hover:bg-gray-200">
                   Technology Deep Dive
                 </button>
               </Link>
             </div>
-            <a
-              href=" https://www.youtube.com/watch?v=eOn9XpjkuCA"
-              target="_blank"
-              className="flex items-center mt-8"
-            >
-              <img
-                src="/images/icons/play-icon.svg"
-                alt="Play Logo"
-                className="w-8 mr-3"
-              />
-              <p className="text-lg text-black underline font-foot external">
-                Watch introductory video
-              </p>
-            </a>
+
+            <YoutubeLink title="Watch introductory video" URI="eOn9XpjkuCA" />
+
             <p className="max-w-xs m-0 mt-4 text-sm font-normal leading-relaxed font-p">
               We have a strict zero-tracking policy on our website. You are safe
               with us.
@@ -70,70 +59,39 @@ const Home = (props) => {
       <div className="pt-6 pb-12 sm:pt-24 md:pb-24">
         <div className="container max-w-5xl">
           <div className="justify-center">
-            <IndexTabWindow />
+            <IndexTab />
           </div>
         </div>
       </div>
 
-      <div className="pt-12 section-3 sm:pt-24 md:pb-24">
+      <div className="pt-12 bg-gray-100 border sm:pt-24 md:pb-24 border-gray-205">
         <div className="container justify-center max-w-5xl text-center section-4 ">
           <div className="grid grid-cols-1 space-y-6 text-center md:space-y-0 md:g-8 md:grid-cols-3">
-            <div className="flex flex-col justify-center p-6 text-center">
-              <img
-                src="images/icons/VerusID_Lookup_Icon.svg"
-                alt="VerusID Lookup Icon"
-                className="h-20"
-              />
-              <h2 className="mt-8 text-2xl font-normal">VerusID Lookup</h2>
-              <p className="my-3">
-                Search for identities registered on the Verus blockchain
-              </p>
-              <div>
-                <a href="/verusid-lookup">
-                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                    Search for identities
-                  </button>
-                </a>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center p-6 text-center">
-              <img
-                src="images/icons/Blockchain_Explorer_Icon.svg"
-                className="h-20"
-                alt="Blockchain Explorer Icon"
-              />
-              <h2 className="mt-8 text-2xl font-normal">Block Explorer</h2>
-              <p className="my-3">Search through addresses and transactions</p>
-              <div>
-                <a
-                  href="https://explorer.verus.io/"
-                  target="_blank"
-                  className="no-underline"
-                >
-                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                    See explorer
-                  </button>
-                </a>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center p-6 text-center">
-              <img
-                src="images/icons/signature-icon.svg"
-                className="h-20"
-                alt="verus signature icon"
-              />
-              <h2 className="mt-8 text-2xl font-normal">Verus Signatures</h2>
-              <p className="my-3">
-                Sign and verify documents and files for free
-              </p>
-              <div>
-                <Link href="/verify-signatures">
-                  <button className="px-12 py-5 mt-3 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
-                    Verify documents
-                  </button>
-                </Link>
-              </div>
-            </div>
+            <GridCard
+              imgSrc="VerusID_Lookup_Icon.svg"
+              imgAlt="VerusID Lookup Icon"
+              title="VerusID Lookup"
+              description="Search for identities registered on the Verus blockchain"
+              btnUrl="/verusid-lookup"
+              btnTxt="Search for identities"
+            />
+            <GridCard
+              imgSrc="Blockchain_Explorer_Icon.svg"
+              imgAlt="Blockchain Explorer Icon"
+              title="Block Explorer"
+              description="Search through addresses and transactions"
+              isExternal
+              btnUrl="https://explorer.verus.io/"
+              btnTxt="See explorer"
+            />
+            <GridCard
+              imgSrc="signature-icon.svg"
+              imgAlt="verus signature icon"
+              title="Verus Signatures"
+              description="Sign and verify documents and files for free"
+              btnUrl="/verify-signatures"
+              btnTxt="Verify documents"
+            />
           </div>
         </div>
       </div>
@@ -202,7 +160,7 @@ const Home = (props) => {
                     {format(new Date(article.PublishDateTime), 'MMM dd, yyyy')}
                   </p>
                 </div>
-              );
+              )
             })}
 
           <a
@@ -210,28 +168,28 @@ const Home = (props) => {
             target="_blank"
             className="justify-center text-center no-underline md:col-span-3"
           >
-            <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton">
+            <button className="px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default">
               Read all articles
             </button>
           </a>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 
 export async function getServerSideProps(ctx) {
-  let URI = ctx.req.headers.referer;
-  let data = null;
+  let URI = ctx.req.headers.referer
+  let data = null
   // let result = await fetch(`${URI}api/verusArticles`);
-  let result = await fetch('http://localhost:3000/api/verusArticles');
+  let result = await fetch('http://localhost:3000/api/verusArticles')
   try {
-    data = await result.json();
+    data = await result.json()
   } finally {
     return {
       props: { data },
-    };
+    }
   }
 }

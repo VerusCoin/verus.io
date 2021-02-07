@@ -1,11 +1,6 @@
 module.exports = {
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
-    removeDeprecatedGapUtilities: true,
-    defaultLineHeights: true,
-    standardFontWeights: true,
-  },
+  darkMode: false, // or 'media' or 'class'
+  preserveHtmlElements: false,
   theme: {
     screens: {
       sm: '640px',
@@ -42,6 +37,7 @@ module.exports = {
           105: '#fafafa',
           100: '#f5f5f5',
           200: '#eeeeee',
+          205: '#ddd',
           300: '#e0e0e0',
           305: '#e9e9e9',
           400: '#bdbdbd',
@@ -90,7 +86,7 @@ module.exports = {
         lg: '.4375rem',
       },
       boxShadow: {
-        default: '2px 2px 3px 0 rgba(0,0,0,0.22)',
+        outline: '2px 2px 3px 0 rgba(0,0,0,0.22)',
         lg: '2px 2px 4px 0 rgba(0,0,0,0.07), 4px 4px 28px 0 rgba(0,0,0,0.13)',
         xl: '2px 2px 4px 0 rgba(0,0,0,0.07), 4px 4px 28px 0 rgba(0,0,0,0.33)',
         menu: '2px 2px 11px 0 rgba(0,0,0,0.4)',
@@ -115,10 +111,15 @@ module.exports = {
       '21/9': [21, 9],
     },
   },
-  variants: { aspectRatio: ['responsive'] },
+  variants: {
+    aspectRatio: ['responsive'],
+    extend: {
+      display: ['hover'],
+    },
+  },
   plugins: [
     require('tailwindcss-responsive-embed'),
     require('tailwindcss-aspect-ratio'),
   ],
   purge: false,
-};
+}

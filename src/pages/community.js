@@ -1,9 +1,9 @@
 import {
   ContributorsList,
   AdditionalContributionList,
-} from '../constants/contributors';
-import Contributors from '../components/Contributors';
-import { NextSeo } from 'next-seo';
+} from '@src/constants/contributors'
+import { Contributors } from '@src/components'
+import { NextSeo } from 'next-seo'
 
 const Community = () => {
   return (
@@ -23,8 +23,8 @@ const Community = () => {
         <div className="max-w-4xl p-6 mb-12 md:mb-32">
           <div className="mb-16">
             <h1 className="mb-12 text-2xl font-normal md:leading-tight md:text-4xl">
-              We are a worldwide, inclusive community
-              effort, which welcomes and rewards those who contribute.
+              We are a worldwide, inclusive community effort, which welcomes and
+              rewards those who contribute.
             </h1>
             <p className="my-8 leading-relaxed">
               With Verus, we introduce digital tools to enable us all to build a
@@ -71,7 +71,7 @@ const Community = () => {
             <h2 className="text-2xl">Contributors:</h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
               {ContributorsList.map((person) => {
-                return <Contributors person={person} />;
+                return <Contributors person={person} />
               })}
             </div>
           </div>
@@ -83,17 +83,20 @@ const Community = () => {
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
               {AdditionalContributionList.map((person, index) => {
                 return (
-                  <p className="p-0 m-0 text-xl text-bluebutton" key={index}>
+                  <p
+                    className="p-0 m-0 text-xl text-bluebutton-default"
+                    key={index}
+                  >
                     {person.name}
                   </p>
-                );
+                )
               })}
             </div>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Community;
+export default Community

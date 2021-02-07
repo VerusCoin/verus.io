@@ -1,7 +1,5 @@
-import Link from 'next/link';
-import { DocSlugMenu } from '../components/SlugMenu';
-
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
+import { DocSlugMenu } from '@src/components'
 
 const PapersList = [
   {
@@ -25,7 +23,7 @@ const PapersList = [
     pages: 15,
     url: '/docs/VerusPoP.pdf',
   },
-];
+]
 const Papers = () => {
   return (
     <>
@@ -43,13 +41,13 @@ const Papers = () => {
       <div className="container max-w-4xl mt-8 ">
         <div className="p-6 ">
           <h1 className="p-0 m-0 mb-4 text-2xl font-normal md:text-4xl">
-            Verus Documetns & Papers
+            Verus Documents & Papers
           </h1>
           <DocSlugMenu pathList={PapersList} href="/mining-and-staking" />
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Papers;
+export default Papers
