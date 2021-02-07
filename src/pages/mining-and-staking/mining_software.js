@@ -70,11 +70,12 @@ const MiningSoftware = (props) => {
                 <p className="">macOS, CLI, VerusHash 2.0-2.2</p>
               </td>
               <td className="w-1/6 p-4 text-center ">
-                {OsURL && (
+                {/* {OsURL && (
                   <a href={OsURL} target="_blank">
                     Download
                   </a>
-                )}
+                )} */}
+                Not Available
               </td>
             </tr>
             <tr>
