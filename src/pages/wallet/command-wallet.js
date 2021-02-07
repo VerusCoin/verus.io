@@ -159,11 +159,12 @@ export async function getServerSideProps(context) {
     winApp,
     macApp,
     name,
-    armApp = '',
+    armApp = null,
     published_at = ''
 
   name = latestCMDwallet.name
   published_at = latestCMDwallet.published_at
+
   latestCMDwallet.assets.map((asset) => {
     if (asset.name.includes('arm64')) {
       armApp = asset.browser_download_url
@@ -176,10 +177,11 @@ export async function getServerSideProps(context) {
       macApp = asset.browser_download_url
     }
 
-    if (asset.name.includes('amd64')) {
+    if (asset.name.includes('x86_64' || 'amd64')) {
       linuxApp = asset.browser_download_url
     }
   })
+
   return {
     props: { linuxApp, winApp, macApp, armApp, name, published_at },
   }
