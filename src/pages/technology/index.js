@@ -9,7 +9,7 @@ const TechnologyOverview = () => {
   return (
     <>
       <NextSeo
-        title="Techonolgy"
+        title="Technology"
         description="We are an open-source platform available to anyone. We supply tools
         for individuals and organizations to build equitable frameworks for
         social and economic change."
