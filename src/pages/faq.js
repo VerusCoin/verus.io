@@ -43,7 +43,7 @@ const FAQ = () => {
               </AccordionToggle>
               <AccordionCollapse eventKey={0}>
                 <p className={FAQcontentClass}>
-                  No. Verus is fairly launced, with equal opportunity for
+                  No. Verus is fairly launched, with equal opportunity for
                   everyone to earn coins through mining and staking. Also, Verus
                   had no premine, and has no developer fees.
                 </p>
