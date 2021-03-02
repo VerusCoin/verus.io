@@ -5,7 +5,7 @@ const PapersList = [
   {
     id: 1,
     name: 'Verus Vision Paper',
-    description: 'Privay, Community, Power',
+    description: 'Privacy, Community, Power',
     pages: 26,
     url: '/docs/VerusVision.pdf',
   },
