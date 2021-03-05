@@ -1,0 +1,48 @@
+.accordionContent {
+  @apply w-full my-2 overflow-hidden;
+}
+
+.toggle {
+  @apply block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer;
+}
+
+.toggle::after{
+  float: right;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  text-align: center;
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+  content: '\25BE';
+  font-weight: bold; /*.font-bold*/
+  border-width: 1px; /*.border*/
+  border-radius: 9999px; /*.rounded-full */
+  border-color: #b8c2cc; /*.border-grey*/
+}
+
+.toggleActive::after{
+  transform: rotateX(180deg);
+  background-color: #3165d4; /*.bg-indigo*/
+  color: #f8fafc; /*.text-grey-lightest*/
+}
+
+.collapse {
+  max-height: 100vh;
+  -webkit-transition: max-height 0.35s;
+  -o-transition: max-height 0.35s;
+  transition: max-height 0.35s;
+}
+
+
+/* screen size above md */
+@screen md {
+  .root {
+    @apply hidden;
+  }
+}

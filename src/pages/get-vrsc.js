@@ -1,6 +1,6 @@
-import Exchange from '../components/Exchange';
-import { ExchangeLinks } from '../constants/exchange';
-import { NextSeo } from 'next-seo';
+import { Exchange } from '@src/components'
+import { ExchangeLinks } from '@src/constants/exchange'
+import { NextSeo } from 'next-seo'
 
 const GetVRSC = () => {
   return (
@@ -27,13 +27,13 @@ const GetVRSC = () => {
           </p>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {ExchangeLinks.map((exchange) => {
-              return <Exchange key={exchange.title} exchange={exchange} />;
+              return <Exchange key={exchange.title} exchange={exchange} />
             })}
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default GetVRSC;
+export default GetVRSC

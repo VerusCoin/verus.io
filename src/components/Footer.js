@@ -1,4 +1,4 @@
-import { SocialProfileJsonLd } from 'next-seo';
+import { SocialProfileJsonLd } from 'next-seo'
 
 const Footer = () => {
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
           />
           <h3 className="mt-0 mb-4 text-2xl">Discord Server</h3>
           <p className="text-sm leading-relaxed opacity-50 md:text-base text-theme-white ">
-            Join our most active community with over 4.900 members for all
+            Join our most active community with over 5,100 members for all
             questions and discussions.
           </p>
         </a>
@@ -187,7 +187,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

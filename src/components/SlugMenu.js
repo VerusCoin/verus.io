@@ -1,63 +1,91 @@
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
-const SlugMenu = ({ pathList, href }) => {
+const SlugContent = React.forwardRef((props, ref) => {
+  const { onClick, href, path } = props
+  // const { name, description, icon, colorControls } = props
+  return (
+    <div
+      href={href}
+      onClick={onClick}
+      ref={ref}
+      className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans-default hover:border-bluebutton-default hover:bg-menu-active text-bluebutton-default"
+    >
+      <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
+      <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
+        {path.description}
+      </p>
+    </div>
+  )
+})
+
+export const SlugMenu = ({ pathList, href }) => {
   return (
     <div className="grid grid-cols-1 gap-3 mb-16 sm:grid-cols-2">
       {pathList.map((path) => {
-        if (path.path) {
+        if (path.path || path.slug) {
+          //need to create a dynamic href link
+
           return (
             <Link
-              href={`${href}/${path.path}`}
-              as={`${href}/${path.path}`}
+              href={
+                href
+                  ? `${href}/${path.path || path.slug}`
+                  : `/${path.path || path.slug}`
+              }
               key={path.id}
+              passHref
             >
-              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
-                <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
-                <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
-                  {path.description}
-                </p>
-              </div>
+              <SlugContent path={path} />
             </Link>
-          );
-        }
-
-        if (path.href) {
+          )
+        } else {
           return (
             <a
               className="no-underline"
               href={path.href}
               key={path.id}
               target="_blank"
+              passHref
             >
-              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
-                <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
-                <p className="p-0 m-0 mt-2 text-base leading-normal text-black font-p">
-                  {path.description}
-                </p>
-              </div>
-            </a>
-          );
-        }
+              <SlugContent path={path} />
 
-        if (path.slug) {
-          return (
-            <Link
-              href={`${href}/[slug]`}
-              as={`${href}/${path.slug}`}
-              key={path.id}
-            >
-              <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans hover:border-bluebutton hover:bg-menu-active text-bluebutton">
+              {/* <div className="p-6 bg-transparent border border-solid rounded-lg cursor-pointer lg:px-8 lg:py-6 border-bluetrans-default hover:border-bluebutton-default hover:bg-menu-active text-bluebutton-default">
                 <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
-                <p className="p-0 m-0 mt-2 text-base leading-normal text-black font-p">
+                <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
                   {path.description}
                 </p>
-              </div>
-            </Link>
-          );
+              </div> */}
+            </a>
+          )
         }
       })}
     </div>
-  );
-};
+  )
+}
 
-export default SlugMenu;
+export const DocSlugMenu = ({ pathList, href }) => {
+  return (
+    <div className="grid grid-cols-1 gap-4 p-4 mb-16 sm:gap-16 sm:grid-cols-2">
+      {pathList.map((path) => {
+        return (
+          <div
+            className="p-6 bg-transparent border border-solid rounded-lg lg:px-8 lg:py-6 border-bluetrans-default "
+            key={path.id}
+          >
+            <h2 className="p-0 m-0 text-xl font-normal ">{path.name}</h2>
+            <p className="p-0 m-0 mt-2 text-base leading-normal font-p">
+              {path.description}
+            </p>
+            <p className="p-0 m-0 mt-4 text-sm font-semibold leading-normal">
+              {path.pages} pages
+            </p>
+            <a download href={path.url} className="text-base underline font-p">
+              Download
+            </a>
+          </div>
+        )
+      })}
+    </div>
+  )
+}

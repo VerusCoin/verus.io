@@ -1,11 +1,10 @@
-import Link from 'next/link';
-import Menu from '../../components/Menu';
-import SlugMenu from '../../components/SlugMenu';
-import { miningStakingLinks } from '../../constants/miningStaking';
-import { NextSeo } from 'next-seo';
+import Link from 'next/link'
+import { NextSeo } from 'next-seo'
+import { IndexPage, SlugMenu } from '@src/components'
+import { miningStakingLinks } from '@src/constants/miningStaking'
 
 const MiningOverview = () => {
-  const nextRoute = miningStakingLinks[0];
+  const nextRoute = miningStakingLinks[0]
 
   return (
     <>
@@ -22,10 +21,12 @@ const MiningOverview = () => {
           },
         ]}
       />
-      <div className="container grid max-w-5xl grid-cols-1 gap-6 mt-8 md:grid-cols-4">
-        <div className="">
-          <Menu pathList={miningStakingLinks} href="/mining-and-staking" />
-        </div>
+      <IndexPage
+        menuList={miningStakingLinks}
+        menuRef="/mining-and-staking"
+        nextRoutePath={`/mining-and-staking/${nextRoute.path}`}
+        nextRouteName={nextRoute.name}
+      >
         <div className="p-6 md:col-span-3">
           <h1 className="p-0 m-0 text-2xl font-normal md:text-4xl">
             Mining and Staking
@@ -44,29 +45,9 @@ const MiningOverview = () => {
           </p>
           <SlugMenu pathList={miningStakingLinks} href="/mining-and-staking" />
         </div>
-      </div>
-      <div className="flex flex-row items-center justify-end p-2 md:hidden">
-        <Link href={`/mining-and-staking/${nextRoute.path}`}>
-          <a className="items-center py-2 text-sm no-underline md:text-baseLink text-navlink hover:text-navlink-hover ">
-            {nextRoute.name}&nbsp;{' '}
-            <svg
-              width="8"
-              height="18"
-              viewBox="0 0 6 5"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7"
-                stroke="#999"
-                strokeLinecap="square"
-              ></path>
-            </svg>{' '}
-          </a>
-        </Link>
-      </div>
+      </IndexPage>
     </>
-  );
-};
+  )
+}
 
-export default MiningOverview;
+export default MiningOverview
