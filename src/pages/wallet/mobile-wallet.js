@@ -129,7 +129,7 @@ const MobileWallet = ({ latestAndroid }) => {
                 Easy and Safe & Always Secure
               </h2>
               <p className="leading-relaxed text-md">
-                Verus Desktop is created for beginners and experts in mind. Easy
+                Verus Mobile is created for beginners and experts in mind. Easy
                 to use yet advanced in capabilities. Security has highest
                 priority that's why all Verus software is open-source.
               </p>
