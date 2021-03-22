@@ -1,4 +1,5 @@
-import { Navbar, Footer } from '@src/components'
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Layout = ({ children }) => {
   return (
@@ -13,7 +14,7 @@ const Layout = ({ children }) => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

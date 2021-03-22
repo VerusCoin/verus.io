@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import { SigTab } from '@src/components'
-import { NextSeo } from 'next-seo'
+import Link from 'next/link';
+import SigTabWindow from '../components/sigTab';
+import { NextSeo } from 'next-seo';
 
 const VerifySignatures = () => {
   return (
@@ -28,7 +28,7 @@ const VerifySignatures = () => {
             </p>
           </div>
           <div className="mb-12">
-            <SigTab />
+            <SigTabWindow />
           </div>
 
           <div>
@@ -37,7 +37,7 @@ const VerifySignatures = () => {
             </h3>
             <p className="my-4">
               <Link href="/wallet/desktop-wallet/">
-                <span className="underline cursor-pointer text-bluebutton-default">
+                <span className="underline text-bluebutton cursor-pointer">
                   Download Verus Desktop
                 </span>
               </Link>
@@ -47,7 +47,7 @@ const VerifySignatures = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default VerifySignatures
+export default VerifySignatures;

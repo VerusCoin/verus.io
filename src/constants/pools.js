@@ -1,7 +1,7 @@
 export const PoolLinks = [
   {
     id: 1,
-    URI: 'https://pool.verus.io/',
+    URI: 'https://pool.veruscoin.io/',
     URIText: 'Verus Pool',
     percentageRate: 5,
   },
@@ -47,13 +47,7 @@ export const PoolLinks = [
     URIText: 'Wattpool',
     percentageRate: 0.5,
   },
-  {
-    id: 9,
-    URI: 'https://verusna.011data.com/',
-    URIText: '011DATA',
-    percentageRate: 0.5,
-  },
-]
+];
 
 // template format
 // {
