@@ -15,10 +15,7 @@ const PrivacyPolicy = () => {
         </p>
         <p className="my-8">
           This site doesn't set any cookies and uses no analytics or tracking
-          tools. Feel free to check the source. The 
-          <a href="https://insight.verus.io" target="_blank">Verus Insight Explorer</a>
-          stores the coin symbol as well as the supplied client language in the browser, 
-          albeit not as a cookie.
+          tools. Feel free to check the source.
         </p>
         <h3 className="mt-16 text-2xl font-normal">Logs</h3>
         <p className="my-8">
@@ -40,7 +37,7 @@ const PrivacyPolicy = () => {
           If you have any questions or concerns about this policy please contact
           us on our{' '}
           <a
-            href="https://verus.io/discord"
+            href="https://discord.gg/VRKMP2S"
             target="_blank"
             className="underline external"
           >

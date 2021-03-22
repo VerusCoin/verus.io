@@ -1,17 +1,11 @@
-import { useState } from 'react'
-import { useForm, FormProvider } from 'react-hook-form'
-import { InputField, TextAreaField, FileInputField } from './FormFields'
-
+import { useState } from 'react';
 import {
-  Tab,
-  TabItems,
-  TabToggle,
-  TabPanel,
-  Accordion,
-  AccordionContent,
-  AccordionCollapse,
-  AccordionToggle,
-} from '@src/components'
+  useForm,
+  Controller,
+  useFormContext,
+  FormProvider,
+} from 'react-hook-form';
+import { InputField, TextAreaField, FileInputField } from './FormFields';
 
 const VerifyResult = ({
   sigResult,
@@ -53,18 +47,18 @@ const VerifyResult = ({
       <p className="w-full m-0 break-all">{verusSignature.Signature}</p>
       <button
         onClick={resetCall}
-        className="px-12 py-5 mt-8 text-sm bg-white border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default text-bluebutton-default"
+        className="px-12 py-5 mt-8 text-sm bg-white border border-solid rounded-full border-bluetrans hover:border-bluebutton text-bluebutton"
       >
         Verify Another Signature
       </button>
     </div>
-  )
-}
+  );
+};
 
 const MessageContent = () => {
-  const methods = useForm({ mode: 'onBlur' })
-  const [verusSignature, setVerusSignature] = useState()
-  const [sigResult, setSigResult] = useState()
+  const methods = useForm({ mode: 'onBlur' });
+  const [verusSignature, setVerusSignature] = useState();
+  const [sigResult, setSigResult] = useState();
 
   const onSubmit = async (values) => {
     if (values) {
@@ -72,34 +66,34 @@ const MessageContent = () => {
         Message: values.Message,
         Identity: values.MessageIdentity,
         Signature: values.MessageSignature,
-      }
-      setVerusSignature(query)
+      };
+      setVerusSignature(query);
 
-      let url = '/api/verusSignatureMessage'
+      let url = '/api/verusSignatureMessage';
       let result = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(query),
-      })
-      let data = await result.json()
+      });
+      let data = await result.json();
       if (data) {
-        setSigResult(data)
+        setSigResult(data);
       } else {
         setSigResult({
           error: -5,
           error_text: 'Currently experiencing network issues. Try again later.',
-        })
+        });
       }
     }
-  }
+  };
 
   const _handleReset = () => {
-    setVerusSignature(null)
-    setSigResult()
-    methods.reset()
-  }
+    setVerusSignature(null);
+    setSigResult();
+    methods.reset();
+  };
   return (
     <>
       {!verusSignature && (
@@ -126,7 +120,7 @@ const MessageContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton-default"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
                 type="submit"
               >
                 Submit
@@ -146,13 +140,13 @@ const MessageContent = () => {
         </VerifyResult>
       )}
     </>
-  )
-}
+  );
+};
 
 const FileContent = () => {
-  const methods = useForm({ mode: 'onBlur' })
-  const [verusSignature, setVerusSignature] = useState()
-  const [sigResult, setSigResult] = useState()
+  const methods = useForm({ mode: 'onBlur' });
+  const [verusSignature, setVerusSignature] = useState();
+  const [sigResult, setSigResult] = useState();
 
   const onSubmit = async (values) => {
     if (values) {
@@ -161,10 +155,10 @@ const FileContent = () => {
         Signature: values.Signature,
         FileName: values.FileList[0].path,
         Hash: values.FileList[0].hash,
-      }
-      setVerusSignature(query)
+      };
+      setVerusSignature(query);
 
-      let url = '/api/verusSignatureHash'
+      let url = '/api/verusSignatureHash';
 
       let result = await fetch(url, {
         method: 'POST',
@@ -172,24 +166,24 @@ const FileContent = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(query),
-      })
-      let data = await result.json()
+      });
+      let data = await result.json();
       if (data) {
-        setSigResult(data)
+        setSigResult(data);
       } else {
         setSigResult({
           error: -5,
           error_text: 'Currently experiencing network issues. Try again later.',
-        })
+        });
       }
     }
-  }
+  };
 
   const _handleReset = () => {
-    setVerusSignature(null)
-    setSigResult()
-    methods.reset()
-  }
+    setVerusSignature(null);
+    setSigResult();
+    methods.reset();
+  };
   return (
     <>
       {!verusSignature && (
@@ -217,7 +211,7 @@ const FileContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton-default"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
                 type="submit"
               >
                 Submit
@@ -238,14 +232,14 @@ const FileContent = () => {
         </VerifyResult>
       )}
     </>
-  )
-}
+  );
+};
 
 const HashContent = () => {
-  const methods = useForm({ mode: 'onBlur' })
+  const methods = useForm({ mode: 'onBlur' });
 
-  const [verusSignature, setVerusSignature] = useState(null)
-  const [sigResult, setSigResult] = useState()
+  const [verusSignature, setVerusSignature] = useState(null);
+  const [sigResult, setSigResult] = useState();
 
   const onSubmit = async (values) => {
     if (values) {
@@ -253,35 +247,35 @@ const HashContent = () => {
         Hash: values.Hash,
         Identity: values.HashIdentity,
         Signature: values.HashSignature,
-      }
-      setVerusSignature(query)
+      };
+      setVerusSignature(query);
 
-      let url = '/api/verusSignatureHash'
+      let url = '/api/verusSignatureHash';
       let result = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(query),
-      })
-      let data = await result.json()
+      });
+      let data = await result.json();
 
       if (data) {
-        setSigResult(data)
+        setSigResult(data);
       } else {
         setSigResult({
           error: -5,
           error_text: 'Currently experiencing network issues. Try again later.',
-        })
+        });
       }
     }
-  }
+  };
 
   const _handleReset = () => {
-    setVerusSignature(null)
-    setSigResult()
-    methods.reset()
-  }
+    setVerusSignature(null);
+    setSigResult();
+    methods.reset();
+  };
   return (
     <>
       {!verusSignature && (
@@ -309,7 +303,7 @@ const HashContent = () => {
               />
 
               <button
-                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans-default hover:border-bluebutton-default hover:bg-bluebutton-default hover:text-white text-bluebutton-default"
+                className="w-full px-12 py-5 text-sm bg-transparent border border-solid rounded-full border-bluetrans hover:border-bluebutton hover:bg-bluebutton hover:text-white text-bluebutton"
                 type="submit"
               >
                 Submit
@@ -329,52 +323,110 @@ const HashContent = () => {
         </VerifyResult>
       )}
     </>
-  )
-}
+  );
+};
 
-const SigTab = () => {
-  const [activeEventKey, setActiveEventKey] = useState(0)
-  const [viewTab, setViewTab] = useState(0)
+const SigTabWindow = () => {
+  const [viewTab, setViewTab] = useState(0);
   return (
     <>
-      <Tab activeEventKey={activeEventKey} onToggle={setActiveEventKey}>
-        <TabItems classnames="space-x-4">
-          <TabToggle eventKey={0}>Message/Text</TabToggle>
-          <TabToggle eventKey={1}>File</TabToggle>
-          <TabToggle eventKey={2}>Hash</TabToggle>
-        </TabItems>
-        <TabPanel eventKey={0}>
-          <MessageContent />
-        </TabPanel>
-        <TabPanel eventKey={1}>
-          <FileContent />
-        </TabPanel>
-        <TabPanel eventKey={2}>
-          <HashContent />
-        </TabPanel>
-      </Tab>
-      <Accordion>
-        <AccordionContent>
-          <AccordionToggle eventKey={0}>Message/Text</AccordionToggle>
-          <AccordionCollapse eventKey={0}>
+      <div className="flex-col justify-center hidden space-x-4 md:flex sm:flex-row">
+        <a
+          onClick={() => setViewTab(0)}
+          className={
+            'px-5 text-center text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
+            (viewTab === 0
+              ? 'text-tablink-active border-tablink-active'
+              : 'text-tablink border-tablink')
+          }
+        >
+          Message/Text
+        </a>
+        <a
+          onClick={() => setViewTab(1)}
+          className={
+            'px-5 text-center text-lg p-1 flex-no-wrap border-2 border-solid border-t-0 border-r-0 border-l-0  ' +
+            (viewTab === 1
+              ? 'text-tablink-active  border-tablink-active'
+              : 'text-tablink border-tablink')
+          }
+        >
+          File
+        </a>
+        <a
+          onClick={() => setViewTab(2)}
+          className={
+            'px-5 text-center cursor-pointer text-lg p-1 border-2 border-solid border-t-0 border-r-0 border-l-0 ' +
+            (viewTab === 2
+              ? 'text-tablink-active  border-tablink-active'
+              : 'text-tablink border-tablink')
+          }
+        >
+          Hash
+        </a>
+      </div>
+      <div className="hidden md:block tab-content ">
+        <div>
+          {viewTab === 0 && <MessageContent />}
+          {viewTab === 1 && <FileContent />}
+          {viewTab === 2 && <HashContent />}
+        </div>
+      </div>
+      <div className="md:hidden tab-content">
+        <div className="w-full my-2 overflow-hidden tab b">
+          <input
+            className="absolute opacity-0"
+            id="tab-single-one"
+            type="radio"
+            name="tabs2"
+          />
+          <label
+            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
+            htmlFor="tab-single-one"
+          >
+            Message/Text
+          </label>
+          <div className="overflow-hidden leading-normal tab-content-accordion">
             <MessageContent />
-          </AccordionCollapse>
-        </AccordionContent>
-        <AccordionContent>
-          <AccordionToggle eventKey={1}>File</AccordionToggle>
-          <AccordionCollapse eventKey={1}>
+          </div>
+        </div>
+        <div className="w-full my-2 overflow-hidden tab b">
+          <input
+            className="absolute opacity-0"
+            id="tab-single-two"
+            type="radio"
+            name="tabs2"
+          />
+          <label
+            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
+            htmlFor="tab-single-two"
+          >
+            File
+          </label>
+          <div className="overflow-hidden leading-normal tab-content-accordion">
             <FileContent />
-          </AccordionCollapse>
-        </AccordionContent>
-        <AccordionContent>
-          <AccordionToggle eventKey={2}>Hash</AccordionToggle>
-          <AccordionCollapse eventKey={2}>
+          </div>
+        </div>
+        <div className="w-full my-2 overflow-hidden tab b">
+          <input
+            className="absolute opacity-0"
+            id="tab-single-three"
+            type="radio"
+            name="tabs2"
+          />
+          <label
+            className="block p-5 leading-normal border-2 border-t-0 border-b-0 border-r-0 border-solid cursor-pointer border-tablink"
+            htmlFor="tab-single-three"
+          >
+            Hash
+          </label>
+          <div className="overflow-hidden leading-normal tab-content-accordion">
             <HashContent />
-          </AccordionCollapse>
-        </AccordionContent>
-      </Accordion>
+          </div>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default SigTab
+export default SigTabWindow;
