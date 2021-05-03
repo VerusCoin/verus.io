@@ -144,7 +144,7 @@ const Home = (props) => {
                 <div key={article.title}>
                   <img
                     className="w-full"
-                    src={article.thumbnailref}
+                    src={article.thumbnail}
                     alt="Article Header Image"
                   />
                   <a
@@ -157,7 +157,7 @@ const Home = (props) => {
                     </h3>
                   </a>
                   <p className="text-base text-gray-500 font-lite font-p">
-                    {format(new Date(article.PublishDateTime), 'MMM dd, yyyy')}
+                    {format(new Date(article.pubDate), 'MMM dd, yyyy')}
                   </p>
                 </div>
               )
