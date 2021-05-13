@@ -58,11 +58,6 @@ export const ContributorsList = [
     description: 'Chris started programming in the 80s as a hobbyist, then got his Bachelor of Engineering in Electronic and Electrical Engineering. He\'s been working on mining software for 4 years and works on Verus community mining and pool software.',
   },
   {
-    name: '0x03',
-    title: 'Unix Systems Engineer',
-    description: '20 years of experience as a true IT allrounder, specializing in Unix, data privacy, data frugality and IT security. Technical operator of Verus.',
-  },
-  {
     name: 'rozo',
     title: 'Community Marketing Lead',
     description: ' ',
