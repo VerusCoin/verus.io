@@ -1,0 +1,113 @@
+import React, { Component } from 'react'
+import Bridge from './assets/bridge.svg'
+import Coin from './assets/coin.svg'
+
+interface ISVG {
+  name: string
+}
+
+export const etSVGs: React.FC<ISVG> = ({ name }) => {
+  const SVGs = {
+    bridge: <Bridge />,
+    coin: <Coin />,
+  }
+  return SVGs[name]
+}
+
+interface IconProps {
+  name: string
+  style: string
+}
+
+export const Icon: React.FC<IconProps> = ({ name, style }) => {
+  return (
+    <>
+      <getSVGs name={name} />
+    </>
+  )
+}
+
+export class SVGs extends Component {
+  getSVG = () => {
+    const { name } = this.props
+    const SVGIcon = {
+      bridge: <Bridge />,
+      coin: <Coin />,
+    }
+    return SVGIcon[name]
+  }
+
+  render() {
+    return <>{this.getSVG()}</>
+  }
+}
+
+{
+  /* interface UseDynamicSVGImportOptions {
+  onCompleted?: (
+    name: string,
+    SvgIcon: React.FC<React.SVGProps<SVGSVGElement>> | undefined
+  ) => void
+  onError?: (err: Error) => void
+}
+
+function useDynamicSVGImport(
+  name: string,
+  options: UseDynamicSVGImportOptions = {}
+) {
+  const ImportedIconRef = useRef<React.FC<React.SVGProps<SVGSVGElement>>>()
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error>()
+
+  const { onCompleted, onError } = options
+  useEffect(() => {
+    setLoading(true)
+    const importIcon = async (): Promise<void> => {
+      try {
+        ImportedIconRef.current = (
+          await import(`./assets/${name}.svg`)
+        ).ReactComponent
+        onCompleted?.(name, ImportedIconRef.current)
+      } catch (err) {
+        onError?.(err)
+        setError(err)
+      } finally {
+        setLoading(false)
+      }
+    }
+    importIcon()
+  }, [name, onCompleted, onError])
+
+  return { error, loading, SvgIcon: ImportedIconRef.current }
+}
+
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+  name: string
+  onCompleted?: UseDynamicSVGImportOptions['onCompleted']
+  onError?: UseDynamicSVGImportOptions['onError']
+}
+
+const SVGs: React.FC<IconProps> = ({
+  name,
+  onCompleted,
+  onError,
+  ...rest
+}): React.ReactNode | null => {
+  const { error, loading, SvgIcon } = useDynamicSVGImport(name, {
+    onCompleted,
+    onError,
+  })
+  if (error) {
+    return error.message
+  }
+  if (loading) {
+    return 'Loading...'
+  }
+  if (SvgIcon) {
+    return <SvgIcon {...rest} />
+  }
+  return null
+} */
+}
+
+export default SVGs

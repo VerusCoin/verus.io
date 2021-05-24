@@ -1,0 +1,5 @@
+export { default as Blog } from './Blog/Blog'
+export { default as UspBanner } from './UspBanner/UspBanner'
+export { default as UniqueSellingPoints } from './UniqueSellingPoints/UniqueSellingPoints'
+export { default as Services } from './Services/Services'
+export * from './UniqueSellingPoints/UniqueSellingPoints'

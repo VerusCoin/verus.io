@@ -29,16 +29,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-.env
 
 # vercel
 .vercel
-
-# vsCode
-/.vscode/
-.vscode/settings.json
-
-#package and yarn lock
-package-lock.json
-yarn.lock
-.env
+.idea
