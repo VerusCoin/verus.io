@@ -30,6 +30,13 @@ const StyledSVG = styled.div`
     margin-right: 11px;
   `};
 `
+
+const StyledText = styled.div`
+  p {
+    margin-top: 16px;
+  }
+`
+
 const StyledDidYouKnow = styled.div`
   border: solid 1px ${(props) => props.theme.colors.green};
   border-radius: ${(props) => props.theme.borders.sm};
@@ -62,10 +69,10 @@ const SovereignItem: React.FC<ISovereignItem> = ({
           <StyledSVG>
             <SVGs name={svg} />
           </StyledSVG>
-          <div>
+          <StyledText>
             <DefaultHeader as="h3">{title}</DefaultHeader>
             <DefaultText>{text}</DefaultText>
-          </div>
+          </StyledText>
         </StyledCard>
       )}
       {didYouKnow && (
