@@ -10,6 +10,7 @@ import Checkmark from './assets/checkmark.svg'
 import Data from './assets/data.svg'
 import Discord from './assets/discord.svg'
 import Documentation from './assets/documentation.svg'
+import Download from './assets/download.svg'
 import Exchanges from './assets/exchanges.svg'
 import Explorer from './assets/explorer.svg'
 import Faq from './assets/faq.svg'
@@ -56,6 +57,7 @@ const SVGIcon: SVGList = {
   data: <Data />,
   discord: <Discord />,
   documentation: <Documentation />,
+  download: <Download />,
   exchanges: <Exchanges />,
   explorer: <Explorer />,
   faq: <Faq />,
