@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Container, Row } from 'styled-bootstrap-grid'
+import { Container, Row, media } from 'styled-bootstrap-grid'
 import { DefaultText, DefaultHeader, SVGs } from '@/components/elements'
 import { spacer } from '@/styles/helpers'
 import { IPaper } from '@/types/paperspage'
@@ -9,10 +9,19 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const StyledContainer = styled(Container)`
   ${spacer('xxl')}
+  text-align: center;
+  ${media.tablet`text-align:left;`}
+`
+
+const StyledContainerRow = styled(Row)`
+  justify-content: center;
+  ${media.tablet`
+    justify-content: start;
+  `}
 `
 
 const StyledPageList = styled.div`
-  margin-bottom: 100px;
+  ${media.tablet`margin-bottom: 123px; `}
   h2 {
     font-size: 18px;
     font-weight: bold;
@@ -20,7 +29,7 @@ const StyledPageList = styled.div`
   }
   h3 {
     font-weight: bold;
-    max-width: 350px;
+    ${media.tablet`max-width: 350px;`}
   }
   p {
     color: #838383;
@@ -28,18 +37,26 @@ const StyledPageList = styled.div`
 `
 
 const StyledPDF = styled.div`
-  margin-right: 44px;
+  margin-bottom: 25px;
   box-shadow: 4px 4px 16px 0px #00000033;
+
+  ${media.tablet`
+  margin-right: 44px;
+  margin-bottom: 0;
+  `}
 `
 
 const StyledDownload = styled.a<any>`
+  ${media.tablet`
+    margin-left: ${(props: any) => props.theme.spaces.md};
+    margin-top: ${(props: any) => props.theme.spaces.sm};
+  `}
   display: flex;
   align-items: center;
   text-decoration: none;
   cursor: pointer;
-  margin-top: ${(props) => props.theme.spaces.sm};
+  margin: 0;
   color: ${(props) => props.theme.colors.blue.primary};
-  margin-left: ${(props) => props.theme.spaces.md};
   p {
     font-weight: bold;
   }
@@ -52,17 +69,19 @@ const StyledWrittenBy = styled.div`
   p:first-child {
     color: #838383;
   }
+  ${media.phone`
+    p:first-child{text-align:left;}
+  `}
 `
 const PaperList: React.FC<IPaper> = ({ file, title, heading, writtenBy }) => {
   const [numPages, setNumPages] = useState<null | number>(null)
-  const onDocumentLoadSuccess = ({ numPages }) => {
+  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages)
   }
-  const nameArray = Array.prototype.slice.call(writtenBy)
 
   return (
     <StyledContainer>
-      <Row>
+      <StyledContainerRow>
         <StyledPDF>
           <Document
             file={`/papers/${file}`}
@@ -70,8 +89,8 @@ const PaperList: React.FC<IPaper> = ({ file, title, heading, writtenBy }) => {
           >
             <Page
               pageNumber={1}
-              height={259}
-              renderAnnotationLayer="false"
+              height={300}
+              renderAnnotationLayer={false}
               renderMode="svg"
             />
           </Document>
@@ -84,22 +103,24 @@ const PaperList: React.FC<IPaper> = ({ file, title, heading, writtenBy }) => {
           </StyledPageList>
           <StyledWrittenBy>
             <DefaultText>Written by:</DefaultText>
-            {writtenBy.count > 0 ? (
-              <DefaultText>{nameArray.join(', ')}</DefaultText>
+            {Array.isArray(writtenBy) ? (
+              <DefaultText>
+                {Array.prototype.slice.call(writtenBy).join(', ')}
+              </DefaultText>
             ) : (
               <DefaultText>{writtenBy}</DefaultText>
             )}
           </StyledWrittenBy>
         </div>
-      </Row>
-      <Row>
+      </StyledContainerRow>
+      <StyledContainerRow>
         <StyledDownload href={`/papers/${file}`} download>
           <StyledSVG>
             <SVGs name="download" />
           </StyledSVG>
           <DefaultText>Download PDF</DefaultText>
         </StyledDownload>
-      </Row>
+      </StyledContainerRow>
     </StyledContainer>
   )
 }

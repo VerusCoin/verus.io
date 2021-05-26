@@ -39,6 +39,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@types/react-pdf": "^5.0.2",
     "body-scroll-lock": "^3.1.5",
     "dayjs": "^1.10.4",
     "html-react-parser": "^1.2.6",

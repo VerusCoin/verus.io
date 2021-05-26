@@ -1,5 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { IPapersProps } from '@/types/paperspage'
+import { IPapersPageProps, IPaper } from '@/types/paperspage'
 import { MainLayout, Section } from '@/components/layouts'
 import PaperList from '@/components/sections/Papers/PaperList'
 import { DefaultHeader } from '@/components/elements'
@@ -13,7 +13,8 @@ const StyledHeader = styled.div`
 
 const Papers = ({
   data,
-}: IPapersProps): InferGetStaticPropsType<typeof getStaticProps> => {
+}: IPapersPageProps): InferGetStaticPropsType<typeof getStaticProps> => {
+  const PaperListData = data.PapersJSON.data
   return (
     <MainLayout>
       <StyledHeader>
@@ -22,8 +23,8 @@ const Papers = ({
         </DefaultHeader>
       </StyledHeader>
       <Section width={720}>
-        {data.PapersJSON.data.map((paper, index) => (
-          <PaperList {...paper} key={index} />
+        {PaperListData.map((paper: IPaper, index: number) => (
+          <PaperList key={index} {...paper} />
         ))}
       </Section>
     </MainLayout>

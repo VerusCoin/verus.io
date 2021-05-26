@@ -20,6 +20,7 @@ const StyledCard = styled.div`
     align-items: baseline;
   `}
 `
+
 const StyledSVG = styled.div`
   margin-bottom: ${(props) => props.theme.spaces.md};
   color: ${(props) => props.theme.colors.white};

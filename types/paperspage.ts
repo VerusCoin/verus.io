@@ -1,4 +1,4 @@
-export type PapersPageProps = {
+export type IPapersPageProps = {
   data: {
     PapersJSON: IPapers
   }
