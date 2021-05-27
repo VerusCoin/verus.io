@@ -16,6 +16,7 @@ export interface IDefaultHeader {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   align?: 'center' | 'left'
   customColor?: 'white' | ''
+  fS?: 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
 }
 
 export interface IDefaultLink {
@@ -27,6 +28,7 @@ export interface IDefaultLink {
 export interface IDefaultText {
   children: React.ReactNode
   customColor?: string
+  width?: number
 }
 
 export interface INetTag {

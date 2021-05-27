@@ -1,22 +1,53 @@
-import { GetStaticProps } from 'next'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { MainLayout, Section } from '@/components/layouts'
 import { DefaultHeader } from '@/components/elements'
 import styled from 'styled-components'
-import { spacer } from '@/styles/helpers'
+import { Container, Row, Col } from 'styled-bootstrap-grid'
 
-const StyledHeader = styled.div`
-  ${spacer('xxl')}
+import { IExchangesPageProps, IExchange } from '@/types/exchanges'
+import { ExchangesJSON } from '@/data/exchanges'
+import ExchangeCard from '@/components/sections/Exchanges/ExchangeCard'
+
+const StyledSection = styled.div`
+  margin-top: 20px;
+  s h5 {
+    text-align: center;
+    font-size: 18px;
+  }
+  span {
+    color: red;
+  }
 `
 
-const Exchanges = () => {
+const Exchanges = ({
+  data,
+}: IExchangesPageProps): InferGetStaticPropsType<typeof getStaticProps> => {
   return (
     <MainLayout>
-      <StyledHeader>
+      <Section>
         <DefaultHeader as="h2" align="center">
-          Exchanges
+          {data.ExchangesJSON.title}
         </DefaultHeader>
-      </StyledHeader>
-      <Section>Map of Exchanges</Section>
+        <StyledSection>
+          <DefaultHeader as="h5">{data.ExchangesJSON.text}</DefaultHeader>
+          <DefaultHeader as="h5">
+            <span>{data.ExchangesJSON.text2}</span>
+          </DefaultHeader>
+        </StyledSection>
+      </Section>
+      <Section>
+        <Container>
+          <Row>
+            {data.ExchangesJSON.exchanges.map(
+              (exchange: IExchange, index: number) => (
+                <Col col={4} key={index}>
+                  <ExchangeCard {...exchange} />
+                </Col>
+              )
+            )}
+          </Row>
+        </Container>
+      </Section>
     </MainLayout>
   )
 }
@@ -24,7 +55,7 @@ const Exchanges = () => {
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
-      data: null,
+      data: { ExchangesJSON },
     },
   }
 }

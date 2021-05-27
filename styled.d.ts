@@ -68,6 +68,11 @@ declare module 'styled-components' {
           mobile: string
           desktop: string
         }
+        md2: {
+          mobile: string
+          tablet: string
+          desktop: string
+        }
         lg: {
           mobile: string
           desktop: string
@@ -78,6 +83,7 @@ declare module 'styled-components' {
         }
         xxl: {
           mobile: string
+          tablet: string
           desktop: string
         }
       }

@@ -5,10 +5,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { ISection } from '@/types/layouts'
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
-import { spacer } from '@/styles/helpers'
+import { spacer, bgColor } from '@/styles/helpers'
 
 const StyledSection = styled.div<any>`
   ${spacer('xxl')}
+  ${bgColor('white')}
   ${(props: any) =>
     props.border &&
     ` margin-bottom: ${props.theme.spaces.xl};

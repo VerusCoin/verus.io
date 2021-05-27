@@ -71,6 +71,11 @@ const primary: DefaultTheme = {
         mobile: '20px',
         desktop: '24px',
       },
+      md2: {
+        mobile: '20px',
+        tablet: '24px',
+        desktop: '28px',
+      },
       lg: {
         mobile: '22px',
         desktop: '32px',
@@ -81,6 +86,7 @@ const primary: DefaultTheme = {
       },
       xxl: {
         mobile: '40px',
+        tablet: '48px',
         desktop: '64px',
       },
     },

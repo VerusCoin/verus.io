@@ -9,11 +9,18 @@ const StyledDefaultText = styled.p<any>`
   margin: 0;
 
   ${(props) => props?.customColor && `color: ${props.customColor};`}
+  ${(props: any) => props?.width && 'max-width: ${props.width}px;'}
 `
 
-const DefaultText: React.FC<IDefaultText> = ({ customColor, children }) => {
+const DefaultText: React.FC<IDefaultText> = ({
+  width,
+  customColor,
+  children,
+}) => {
   return (
-    <StyledDefaultText customColor={customColor}>{children}</StyledDefaultText>
+    <StyledDefaultText width={width} customColor={customColor}>
+      {children}
+    </StyledDefaultText>
   )
 }
 
