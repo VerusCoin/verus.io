@@ -17,26 +17,22 @@ export const DefiSovereignJSON: ISovereign = {
     {
       svg: 'checkmark',
       title: 'DeFi Currencies',
-      text:
-        'Create DeFi currencies that are backed by other currencies. Our DeFi currencies function as automated market makers with liquidity pools attached to them.',
+      text: 'Create DeFi currencies that are backed by other currencies. Our DeFi currencies function as automated market makers with liquidity pools attached to them.',
     },
     {
       svg: 'checkmark',
       title: 'Low Fee Conversions',
-      text:
-        'Currency conversions cost as high as 0.05% or as low as 0.025%. These extremely low fees go toward the protocol.',
+      text: 'Currency conversions cost as high as 0.05% or as low as 0.025%. These extremely low fees go toward the protocol.',
     },
     {
       svg: 'checkmark',
       title: 'Kickstart Your Project',
-      text:
-        'Launch currencies on your blockchain or on Verus in a variety of ways.',
+      text: 'Launch currencies on your blockchain or on Verus in a variety of ways.',
     },
     {
       didYouKnow: true,
       title: 'Did you know',
-      text:
-        'Front-running is eliminated due to the fact that all transactions in a block are solved simultaneously.',
+      text: 'Front-running is eliminated due to the fact that all transactions in a block are solved simultaneously.',
       text2:
         'Interacting with the Verus DeFi system is safe. There are no risks of losing funds due to vulnerable smart contracts.',
     },

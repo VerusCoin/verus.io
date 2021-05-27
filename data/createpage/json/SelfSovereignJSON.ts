@@ -19,26 +19,22 @@ export const SelfSovereignJSON: ISovereign = {
     {
       svg: 'checkmark',
       title: 'Self-Sovereign Identities',
-      text:
-        'Completely self-sovereign identity namespaces with no third party control. Fully revokable and recoverable. Use to create systems that empower individuals.',
+      text: 'Completely self-sovereign identity namespaces with no third party control. Fully revokable and recoverable. Use to create systems that empower individuals.',
     },
     {
       svg: 'checkmark',
       title: 'Non-Fungible Tokens (NFT+)',
-      text:
-        'Use as highly versatile non-fungible tokens. Create decentralized systems of ownership.',
+      text: 'Use as highly versatile non-fungible tokens. Create decentralized systems of ownership.',
     },
     {
       svg: 'checkmark',
       title: 'Exchange and Store Data',
-      text:
-        'Use the VerusID contentmap to store data. Use decentralized file systems (e.g. IPFS) for data exchange, including cross-chain communication.',
+      text: 'Use the VerusID contentmap to store data. Use decentralized file systems (e.g. IPFS) for data exchange, including cross-chain communication.',
     },
     {
       svg: 'checkmark',
       title: 'Heightened Security',
-      text:
-        'Store cryptocurrencies in VerusID Vault for theft-proof workflows and vesting schedules. (Time)lock spend functions while still being able to stake and verify.',
+      text: 'Store cryptocurrencies in VerusID Vault for theft-proof workflows and vesting schedules. (Time)lock spend functions while still being able to stake and verify.',
     },
   ],
   closing:

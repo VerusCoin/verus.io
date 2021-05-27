@@ -6,14 +6,12 @@ export const CoinUtilitiesJSON: ICoinUtilities = {
     {
       net: 'main',
       title: 'Payments',
-      text:
-        'The $VRSC coin serves as the essential payment primitive for the whole Verus ecosystem.',
+      text: 'The $VRSC coin serves as the essential payment primitive for the whole Verus ecosystem.',
     },
     {
       net: 'main',
       title: 'Staking',
-      text:
-        'Anyone who has $VRSC can start staking. No minimum amounts required.',
+      text: 'Anyone who has $VRSC can start staking. No minimum amounts required.',
       link: {
         text: 'More on our Open Economy',
         href: '#',
@@ -52,8 +50,7 @@ export const CoinUtilitiesJSON: ICoinUtilities = {
     {
       net: 'test',
       title: 'DeFi',
-      text:
-        'All DeFi currencies on the Verus blockchain must have $VRSC in its reserve.',
+      text: 'All DeFi currencies on the Verus blockchain must have $VRSC in its reserve.',
       link: {
         text: 'More on decentralized finance',
         href: '#',

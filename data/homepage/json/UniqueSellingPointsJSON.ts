@@ -11,14 +11,12 @@ export const UniqueSellingPointsJSON: IUniqueSellingPoints = {
     {
       color: 'darkblue',
       title: 'Decentralized',
-      text:
-        'A network owned by a distributed decentralized community around the globe.',
+      text: 'A network owned by a distributed decentralized community around the globe.',
     },
     {
       color: 'white',
       title: 'Accessible',
-      text:
-        'Anyone, anywhere, can participate, earn and create on the network.',
+      text: 'Anyone, anywhere, can participate, earn and create on the network.',
     },
     {
       color: 'green',
