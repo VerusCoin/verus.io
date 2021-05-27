@@ -29,15 +29,15 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'Community',
-          href: '#',
+          href: '/community',
         },
         {
           name: 'FAQ',
-          href: '#',
+          href: '/coin/#FAQ',
         },
         {
           name: 'Exchanges',
-          href: '#',
+          href: 'exchanges',
         },
       ],
     },
@@ -50,7 +50,7 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'Foundations',
-          href: '#',
+          href: '/foundations',
         },
         {
           name: 'Coin',

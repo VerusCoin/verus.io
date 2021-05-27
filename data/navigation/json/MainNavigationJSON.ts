@@ -14,7 +14,7 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'foundations',
           link: 'Strong Foundations',
-          href: '#',
+          href: '/foundations',
           description: 'Built for a sustainable future',
         },
         {
@@ -26,13 +26,13 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'bridge',
           link: 'Bridges',
-          href: '/bridge',
+          href: '/bridges',
           description: 'Linking all cryptocurrencies together',
         },
       ],
     },
     { category: 'Open Economy', href: '#' },
-    { category: 'Community', href: '#' },
+    { category: 'Community', href: '/community' },
     {
       category: 'Resources',
       submenu: [
@@ -58,13 +58,13 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'papers',
           link: 'Papers',
-          href: '#',
+          href: '/papers',
           description: 'Browse research papers',
         },
         {
           svg: 'exchanges',
           link: 'Exchanges',
-          href: '#',
+          href: '/exchanges',
           description: 'Find out where to grab VRSC',
         },
       ],

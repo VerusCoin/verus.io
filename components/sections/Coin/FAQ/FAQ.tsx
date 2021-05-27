@@ -62,7 +62,7 @@ const StyledSVG = styled.div<any>`
 const FAQ: React.FC<IFAQ> = ({ title, data }) => {
   resetNextUuid()
   return (
-    <StyledFAQ>
+    <StyledFAQ id="FAQ">
       <Container>
         <Row justifyContent="center">
           <Col col={12}>
