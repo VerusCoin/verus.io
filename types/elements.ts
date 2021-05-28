@@ -16,7 +16,7 @@ export interface IDefaultHeader {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   align?: 'center' | 'left'
   customColor?: 'white' | ''
-  fS?: 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs'
+  fS?: 'xxl' | 'xl' | 'lg' | 'md2' | 'md' | 'sm' | 'xs'
 }
 
 export interface IDefaultLink {

@@ -2,15 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import { Row, Col } from 'styled-bootstrap-grid'
 import { Card, CardHeader, CardText } from '@/components/elements/Card'
-import { SVGs } from '@/components/elements'
+import { SVGs, Button } from '@/components/elements'
 import { MainLayout, Section } from '@/components/layouts'
 
 const StyledSVG = styled.div`
   text-align: center;
   color: ${(props) => props.theme.colors.white};
+  svg {
+    height: 100px;
+  }
 `
 
-const CreateVerus2 = (): void => {
+const CreateVerus2 = (): React.ReactNode => {
   return (
     <MainLayout>
       <Section>
@@ -26,6 +29,7 @@ const CreateVerus2 = (): void => {
                     Use the Verus rent-free, decentralized and permissionless
                     public infrastructure
                   </CardText>
+                  <Button>More Info</Button>
                 </Col>
                 <Col col={12} md={6}>
                   <StyledSVG>
@@ -39,6 +43,9 @@ const CreateVerus2 = (): void => {
         <Row>
           <Col col={12} md={6}>
             <Card bGcolor="#fff">
+              <StyledSVG>
+                <SVGs name="identity" />
+              </StyledSVG>
               <CardHeader align="center">Interoperable blockchains.</CardHeader>
               <CardText fS="md2">
                 Independent and customizable. The network takes card of the
@@ -48,6 +55,9 @@ const CreateVerus2 = (): void => {
           </Col>
           <Col col={12} md={6}>
             <Card bGcolor="blue">
+              <StyledSVG>
+                <SVGs name="privacy2" />
+              </StyledSVG>
               <CardHeader align="center" customColor="white">
                 Tailored token currencies.
               </CardHeader>
@@ -59,7 +69,7 @@ const CreateVerus2 = (): void => {
           <Col col={12}>
             <Card bGcolor="black">
               <StyledSVG>
-                <SVGs name="usp" />
+                <SVGs name="exchanges" />
               </StyledSVG>
               <CardHeader customColor="white">
                 Instant liquidity for your project.
