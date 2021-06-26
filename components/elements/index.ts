@@ -4,5 +4,5 @@ export { default as DefaultLink } from './DefaultLink/DefaultLink'
 export { default as DefaultText } from './DefaultText/DefaultText'
 export { default as NetTag } from './NetTag/NetTag'
 export { default as TypedJS } from './TypedJS/TypedJS'
-
+export { default as Modal } from './Modal/Modal'
 export * from './SVGs/SVGs'

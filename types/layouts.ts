@@ -5,6 +5,7 @@ import { ISocialCTA, ICategoryNavigation, ICopyright } from '@/types/molecules'
 export interface IMainLayout {
   children: ReactNode
   jumbotronData?: any
+  bG?: string
 }
 
 export interface IMainNavigation {
@@ -26,6 +27,7 @@ export interface ISection {
   children: ReactNode
   border?: boolean
   width?: number
+  bG?: string
 }
 
 export interface INarrowSection {

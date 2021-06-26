@@ -15,6 +15,7 @@ declare module 'styled-components' {
         primary: string
         secondary: string
         tertiary: string
+        quaternary: string
       }
 
       grey: {
@@ -57,28 +58,79 @@ declare module 'styled-components' {
     typo: {
       sizes: {
         xs: {
+          desktop: string
+        }
+        menuXs: {
+          desktop: string
+        }
+        menu: {
+          desktop: string
+        }
+        button: {
           mobile: string
+          tablet: string
           desktop: string
         }
         sm: {
           mobile: string
+          tablet: string
           desktop: string
         }
         md: {
-          mobile: string
-          desktop: string
-        }
-        md2: {
           mobile: string
           tablet: string
           desktop: string
         }
         lg: {
           mobile: string
+          tablet: string
           desktop: string
         }
         xl: {
           mobile: string
+          tablet: string
+          desktop: string
+        }
+        xxl: {
+          mobile: string
+          tablet: string
+          desktop: string
+        }
+      }
+      lineHeight: {
+        xs: {
+          desktop: string
+        }
+        sm: {
+          mobile: string
+          tablet: string
+          desktop: string
+        }
+        md: {
+          mobile: string
+          tablet: string
+          desktop: string
+        }
+        lg: {
+          mobile: string
+          tablet: string
+          desktop: string
+        }
+        xl: {
+          mobile: string
+          tablet: string
+          desktop: string
+        }
+        xxl: {
+          mobile: string
+          tablet: string
+          desktop: string
+        }
+      }
+      letterSpacing: {
+        xl: {
+          mobile: string
+          tablet: string
           desktop: string
         }
         xxl: {
@@ -89,6 +141,14 @@ declare module 'styled-components' {
       }
 
       primary: {
+        family: string
+        weight: {
+          normal: number
+          bold: number
+        }
+      }
+
+      secondary: {
         family: string
         weight: {
           normal: number

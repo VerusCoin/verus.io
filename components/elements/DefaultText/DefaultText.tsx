@@ -9,16 +9,18 @@ const StyledDefaultText = styled.p<any>`
   margin: 0;
 
   ${(props) => props?.customColor && `color: ${props.customColor};`}
-  ${(props: any) => props?.width && 'max-width: ${props.width}px;'}
+  ${(props: any) => props?.width && `max-width: ${props.width}px;`}
+  ${(props) => props?.gR && `font-family: ${props.theme.typo.secondary.family}`}
 `
 
 const DefaultText: React.FC<IDefaultText> = ({
+  gR,
   width,
   customColor,
   children,
 }) => {
   return (
-    <StyledDefaultText width={width} customColor={customColor}>
+    <StyledDefaultText gR={gR} width={width} customColor={customColor}>
       {children}
     </StyledDefaultText>
   )

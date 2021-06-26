@@ -21,7 +21,7 @@ const StyledContainerRow = styled(Row)`
 `
 
 const StyledPageList = styled.div`
-  ${media.tablet`margin-bottom: 123px; `}
+  ${media.tablet`margin-bottom: 40px; `}
   h2 {
     font-size: 18px;
     font-weight: bold;

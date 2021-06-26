@@ -1,17 +1,9 @@
 import { AppProps } from 'next/app'
-import styled, { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import GlobalStyle from 'styles/global'
 import { primary } from 'styles/themes'
 import Nexthead from 'next/head'
-import { BaseCSS, media } from 'styled-bootstrap-grid'
-
-const StyledContainer = styled.div`
-  padding-top: ${(props) => props.theme.spaces.custom.mobileMenu};
-
-  ${media.desktop`
-    padding-top: ${(props: any) => props.theme.spaces.custom.desktopMenu};
-  `}
-`
+import { BaseCSS } from 'styled-bootstrap-grid'
 
 export default function App({ Component, pageProps }: AppProps): any {
   return (
@@ -26,9 +18,7 @@ export default function App({ Component, pageProps }: AppProps): any {
         <title>Verus</title>
       </Nexthead>
       <ThemeProvider theme={primary}>
-        <StyledContainer>
-          <Component {...pageProps} />
-        </StyledContainer>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   )

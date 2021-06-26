@@ -31,7 +31,7 @@ export const MainNavigationJSON: IMainNavigation = {
         },
       ],
     },
-    { category: 'Open Economy', href: '#' },
+    { category: 'Open Economy', href: '/economy' },
     { category: 'Community', href: '/community' },
     {
       category: 'Resources',
@@ -89,7 +89,7 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'faq',
           link: 'FAQ',
-          href: '#',
+          href: '/coin/#FAQ',
           description: 'Frequently asked questions',
         },
       ],

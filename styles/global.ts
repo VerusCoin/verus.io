@@ -11,6 +11,14 @@ export default createGlobalStyle`
     src: url("/fonts/Geomanist-Book.woff2") format("woff2"), url("/fonts/Geomanist-Book.woff") format("woff");
     font-display: swap;
   }
+
+  @font-face {
+    font-family: "Geomanist Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/Geomanist-Regular.woff2") format("woff2"), url("/fonts/Geomanist-Regular.woff") format("woff");
+    font-display: swap;
+  }
   
   @font-face {
     font-family: "Source Sans Pro";

@@ -16,7 +16,7 @@ const StyledCopyright = styled.div`
       justify-content: flex-start;
   `}
 
-  ${fontSize('sm')}
+  ${fontSize('menu')}
 `
 
 const StyledCopyrightList = styled.ul`

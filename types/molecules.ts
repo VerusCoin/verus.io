@@ -30,7 +30,7 @@ export interface IListNavigation {
   menu: IMenuItem[]
 }
 
-//Footer Components at this time
+//Footer Components
 export interface ICategoryNavigation {
   category: string
   items: IFooterItem[]

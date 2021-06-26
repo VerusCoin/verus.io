@@ -36,7 +36,7 @@ const StyledNavigationMenu = styled.ul`
   align-items: flex-start;
   font-family: ${(props) => props.theme.typo.header.family};
 
-  ${fontSize('sm')}
+  ${fontSize('menu')}
 `
 
 const StyledLinkSVG = styled.div<{ openSubMenu: boolean }>`

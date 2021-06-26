@@ -9,26 +9,33 @@ export interface IButton {
     type: 'arrow' | 'tab'
     rotate?: boolean
   }
+  onClick?: () => void
+  small?: boolean
+  color?: string
+  fontRegular?: boolean
 }
 
 export interface IDefaultHeader {
   children: React.ReactNode
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   align?: 'center' | 'left'
-  customColor?: 'white' | ''
+  color?: string
   fS?: 'xxl' | 'xl' | 'lg' | 'md2' | 'md' | 'sm' | 'xs'
+  fontNormal?: boolean
+  customColor?: string
 }
 
 export interface IDefaultLink {
   children: React.ReactNode
   href: string
-  customColor?: 'grey'
+  customColor?: string
 }
 
 export interface IDefaultText {
   children: React.ReactNode
   customColor?: string
   width?: number
+  gR?: boolean
 }
 
 export interface INetTag {

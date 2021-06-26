@@ -20,7 +20,7 @@ const StyledContent = styled.div`
     margin-top: 5px;
     font-family: ${(props) => props.theme.typo.primary.family};
     color: ${(props) => props.theme.colors.black.primary};
-    ${fontSize('xs')}
+    ${fontSize('menuXs')}
   }
 `
 

@@ -12,7 +12,7 @@ const StyledLanguage = styled.span`
 `
 
 const StyledTopNavigation = styled.nav<any>`
-  ${fontSize('xs')}
+  ${fontSize('menuXs')}
 
   padding: 16px 0;
   margin-bottom: ${(props) => props.theme.spaces.sm};

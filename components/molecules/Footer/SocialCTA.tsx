@@ -13,7 +13,7 @@ const StyledLabel = styled.span<any>`
   padding: 2px 8px;
   border-radius: 2px;
   font-family: ${(props) => props.theme.typo.primary.family};
-  ${fontSize('xs')}
+  ${fontSize('menuXs')}
   font-weight: bold;
   margin-top: ${(props: any) => props.theme.spaces.xxs};
 

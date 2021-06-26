@@ -1,4 +1,7 @@
 import { ReactNode } from 'react'
+import styled from 'styled-components'
+// SVGs
+// TODO: need to clean up
 import ArrowDown from './assets/arrow-down.svg'
 import Arrow from './assets/arrow.svg'
 import BlockchainCreation from './assets/blockchain-creation.svg'
@@ -89,6 +92,21 @@ export function SVGs({ name }: { name: string }): any | undefined {
   return SVGIcon[name]
 }
 
+const StyledSVG = styled.div`
+  text-align: center;
+  color: ${(props) => props.theme.colors.white};
+  svg {
+    height: 100px;
+  }
+`
+
+export function DefaultSVGs({ name }: { name: string }): any | undefined {
+  return (
+    <StyledSVG>
+      <SVGs name={name} />
+    </StyledSVG>
+  )
+}
 // export const SVGs: ISVG = ({ name }) => SVGIcon[name] || null
 
 // interface IconProps {

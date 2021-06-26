@@ -9,7 +9,7 @@ import { spacer, bgColor } from '@/styles/helpers'
 
 const StyledSection = styled.div<any>`
   ${spacer('xxl')}
-  ${bgColor('white')}
+  ${(props) => bgColor(props.bG)}
   ${(props: any) =>
     props.border &&
     ` margin-bottom: ${props.theme.spaces.xl};
@@ -33,9 +33,15 @@ const StyledSectionText = styled.div<any>`
     margin-top: ${(props) => props.theme.spaces.sm};
   }
 `
-const SectionLayout: React.FC<ISection> = ({ width, border, children }) => {
+
+const SectionLayout: React.FC<ISection> = ({
+  bG = 'inherit',
+  width,
+  border,
+  children,
+}) => {
   return (
-    <StyledSection border={border}>
+    <StyledSection border={border} bG={bG}>
       <Container>
         <Row>
           <Col col={12}>

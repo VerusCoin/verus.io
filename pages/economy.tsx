@@ -1,36 +1,28 @@
 import React from 'react'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { HomepageProps } from 'types/homepage'
-import {
-  JumbotronJSON,
-  UspBannerJSON,
-  ServicesJSON,
-  UniqueSellingPointsJSON,
-  BlogJSON,
-} from '@/data/homepage'
+
+// import styled from 'styled-components'
 import { MainLayout, Section, Grid } from '@/components/layouts'
 import {
-  Button,
   DefaultHeader,
-  // TypedJS,
+  // DefaultText,
+  Button,
   DefaultSVGs,
 } from '@/components/elements'
+// import { Jumbotron } from '@/components/molecules'
 import { Card, CardHeader, CardText } from '@/components/elements/Card'
-import {
-  Blog,
-  // UspBanner,
-  // UniqueSellingPoints,
-  // Services,
-} from '@/components/sections/Home'
+// import { EconomyJSON } from '@/data/economy'
 
-const Home = ({
-  data,
-}: HomepageProps): InferGetStaticPropsType<typeof getStaticProps> => {
+const EjumbotronData = {
+  header: 'Participate and Create the Internet of Value',
+  button: { text: 'Earn in our Open Economy', href: '#' },
+}
+
+const Economy = () => {
   return (
     <MainLayout bG="greyQuin">
       <Section width={1000}>
         <DefaultHeader as="h1" fontNormal align="center">
-          Participate and Create the Internet of Value
+          {EjumbotronData.header}
         </DefaultHeader>
         <div style={{ textAlign: 'center' }}>
           <Button
@@ -189,66 +181,8 @@ const Home = ({
           </Button>
         </Card>
       </Grid>
-      {/* <Section border width={550}>
-        <DefaultHeader align="left">
-          <DefaultHeader as="h3">
-            Verus is decentralized & rent-free public infrastructure for{' '}
-            <TypedJS
-              strings={[
-                'self-sovereign identities',
-                'data exchange',
-                'blockchain creation',
-                'cross-chain interoperability',
-                'payments',
-                'finance solutions',
-                'privacy',
-              ]}
-            />
-            .
-          </DefaultHeader>
-        </DefaultHeader>
-      </Section>
-
-      <UspBanner {...data.UspBannerJSON} />
-
-      <Section width={710}>
-        <DefaultHeader as="h2" align="center">
-          A secure and scalable system with the most important functions at the
-          protocol level.
-          <div>
-            <Button
-              transparent
-              svg={{ type: 'arrow', rotate: false }}
-              href="#"
-              as="a"
-            >
-              Create with Us
-            </Button>
-          </div>
-        </DefaultHeader>
-      </Section>
-
-      <Services {...data.ServicesJSON} />
-
-      <UniqueSellingPoints {...data.UniqueSellingPointsJSON} /> */}
-
-      <Blog {...data.BlogJSON} />
     </MainLayout>
   )
 }
 
-export default Home
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      data: {
-        JumbotronJSON,
-        UspBannerJSON,
-        ServicesJSON,
-        UniqueSellingPointsJSON,
-        BlogJSON,
-      },
-    },
-  }
-}
+export default Economy

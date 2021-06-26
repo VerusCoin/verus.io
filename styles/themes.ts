@@ -18,6 +18,7 @@ const primary: DefaultTheme = {
       primary: '#3165D4',
       secondary: '#001135',
       tertiary: '#F5F8FF',
+      quaternary: '#04205c',
     },
 
     grey: {
@@ -60,39 +61,97 @@ const primary: DefaultTheme = {
   typo: {
     sizes: {
       xs: {
-        mobile: '14px',
         desktop: '14px',
       },
-      sm: {
-        mobile: '16px',
+      menuXs: {
+        desktop: '14px',
+      },
+      menu: {
         desktop: '16px',
       },
-      md: {
-        mobile: '20px',
-        desktop: '24px',
+      button: {
+        mobile: '17px',
+        tablet: '19px',
+        desktop: '21px',
       },
-      md2: {
-        mobile: '20px',
-        tablet: '24px',
+      sm: {
+        mobile: '19px',
+        tablet: '21px',
+        desktop: '21px',
+      },
+      md: {
+        mobile: '21px',
+        tablet: '28px',
         desktop: '28px',
       },
       lg: {
-        mobile: '22px',
+        mobile: '21px',
+        tablet: '21px',
         desktop: '32px',
       },
       xl: {
-        mobile: '26px',
-        desktop: '36px',
-      },
-      xxl: {
         mobile: '40px',
         tablet: '48px',
         desktop: '64px',
       },
+      xxl: {
+        mobile: '48px',
+        tablet: '80px',
+        desktop: '96px',
+      },
     },
-
+    lineHeight: {
+      xs: {
+        desktop: '18px',
+      },
+      sm: {
+        mobile: '23px',
+        tablet: '25px',
+        desktop: '25px',
+      },
+      md: {
+        mobile: '25px',
+        tablet: '32px',
+        desktop: '32px',
+      },
+      lg: {
+        mobile: '25px',
+        tablet: '25px',
+        desktop: '36px',
+      },
+      xl: {
+        mobile: '44px',
+        tablet: '52px',
+        desktop: '68px',
+      },
+      xxl: {
+        mobile: '52px',
+        tablet: '84px',
+        desktop: '100px',
+      },
+    },
+    letterSpacing: {
+      xl: {
+        mobile: '-0.1px',
+        tablet: '-0.1px',
+        desktop: '-0.6px',
+      },
+      xxl: {
+        mobile: '-0.1px',
+        tablet: '-1.2px',
+        desktop: '-1.4px',
+      },
+    },
     primary: {
       family: '"Source Sans Pro", sans-serif',
+      weight: {
+        normal: 300,
+        bold: 800,
+      },
+    },
+
+    secondary: {
+      family: ' "Geomanist Regular", sans-serif',
       weight: {
         normal: 300,
         bold: 800,

@@ -16,9 +16,10 @@ const StyledButton = styled.button<any>`
   cursor: pointer;
   transition: background-color ${(props) => props.theme.transitions.regular};
   text-decoration: none;
-  font-family: ${(props) => props.theme.typo.header.family};
-
-  ${fontSize('sm')}
+  font-family: ${(props) =>
+    props.fontRegular
+      ? props.theme.typo.secondary.family
+      : props.theme.typo.header.family};
 
   ${(props) => props.wide && `padding: 20px 30px;`}
 
@@ -69,19 +70,20 @@ const StyledButton = styled.button<any>`
     `
       padding: 0;
       background: transparent;
-      color: ${props.theme.buttons.secondary.text};
+      color: ${props.color || props.theme.buttons.secondary.text};
 
       &:hover {
         background: transparent;
       }
 
       svg {
-        fill: ${props.theme.buttons.secondary.text};
+        fill: ${props.color || props.theme.buttons.secondary.text};
 
         ${props.svg?.rotate ? 'transform: rotate(-45deg);' : ''}
       }
 
     `}
+    ${(props) => (props.small ? 'font-size: 17px' : fontSize('button'))}
 `
 
 const Button: React.FC<IButton> = ({
@@ -91,6 +93,10 @@ const Button: React.FC<IButton> = ({
   as,
   primary,
   transparent,
+  color,
+  fontRegular,
+  small,
+  onClick,
   children,
 }) => {
   return (
@@ -101,6 +107,10 @@ const Button: React.FC<IButton> = ({
       as={as}
       primary={primary}
       svg={svg}
+      color={color}
+      fontRegular={fontRegular}
+      small={small}
+      onClick={onClick}
     >
       {children}
 
