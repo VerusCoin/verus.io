@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "lint:css": "stylelint '**/*.@(ts|tsx)'",
-    "lint:all": "yarn lint",
+    "lint:all": "yarn lint && yarn type-check",
     "release": "release-it"
   },
   "license": "MIT",
