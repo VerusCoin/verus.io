@@ -8,7 +8,7 @@ import { Row, Col, Container, media } from 'styled-bootstrap-grid'
 import { spacer, bgColor } from '@/styles/helpers'
 
 const StyledSection = styled.div<any>`
-  ${spacer('xxl')}
+  ${(props) => props.base && spacer('xxl')}
   ${(props) => bgColor(props.bG)}
   ${(props: any) =>
     props.border &&
@@ -38,6 +38,7 @@ const SectionLayout: React.FC<ISection> = ({
   bG = 'inherit',
   width,
   border,
+  base = true,
   children,
 }) => {
   return (

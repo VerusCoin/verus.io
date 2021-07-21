@@ -26,7 +26,7 @@ const StyledContainer = styled.div<any>`
 
 const MainLayout: React.FC<IMainLayout> = ({
   jumbotronData,
-  bG = 'white',
+  bG = 'greyQuin',
   children,
 }) => {
   return (

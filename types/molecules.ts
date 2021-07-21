@@ -1,13 +1,21 @@
 import { IMenuItem, IMenuSubItem, IFooterItem } from '@/types/general'
 
 export interface IJumbotron {
-  text: string
+  header: string
+  color?: string
+  text?: string
   button?: {
     text: string
     href: string
   }
+  buttons?: JumboButtons[]
   width?: number
   left?: number
+}
+
+interface JumboButtons {
+  text: string
+  href: string
 }
 
 //Navbar Components

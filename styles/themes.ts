@@ -19,6 +19,7 @@ const primary: DefaultTheme = {
       secondary: '#001135',
       tertiary: '#F5F8FF',
       quaternary: '#04205c',
+      quinary: '#0A3FB1',
     },
 
     grey: {

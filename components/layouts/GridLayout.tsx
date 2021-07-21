@@ -3,32 +3,28 @@ import styled from 'styled-components'
 
 import { media } from 'styled-bootstrap-grid'
 import { spacer } from '@/styles/helpers'
-
+// grid-row-gap: 12px;
 const StyledContainer = styled.div<any>`
   ${spacer('xxl')}
   justify-content: center;
   grid-auto-rows: auto;
-  padding: 0 12px;
+  padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
-  grid-row-gap: 16px;
+
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
 
   ${media.tablet`
-display: grid;
-padding: 0;
-// grid-auto-rows: minmax(560px, auto);
-grid-column-gap: 12px;
-// grid-template-columns: repeat(2, minmax(0, 1fr));
-grid-template-columns: 1fr 1fr;
-grid-auto-columns: 1fr;
-max-width: 812px
-`}
-  ${media.desktop`
-grid-column-gap: 20px;
-//grid-auto-rows: minmax(740px, auto);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  `}
 
-max-width: 1140px;
-`}
+  ${media.giant`
+    padding: 0;
+    max-width: 1140px;
+  `}
 `
 
 interface IGridLayout {

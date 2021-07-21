@@ -1,26 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IDefaultText } from '@/types/elements'
+import { fontFam, fontSize } from '@/styles/helpers'
 
 const StyledDefaultText = styled.p<any>`
-  font-family: ${(props) => props.theme.typo.primary.family};
+  ${(props) => fontFam(props.fam)}
   width: 100%;
-  line-height: 1.6;
   margin: 0;
-
+  text-align: ${(props) => props.align || 'left'};
   ${(props) => props?.customColor && `color: ${props.customColor};`}
   ${(props: any) => props?.width && `max-width: ${props.width}px;`}
-  ${(props) => props?.gR && `font-family: ${props.theme.typo.secondary.family}`}
 `
 
 const DefaultText: React.FC<IDefaultText> = ({
-  gR,
   width,
   customColor,
   children,
+  align,
+  fam,
 }) => {
   return (
-    <StyledDefaultText gR={gR} width={width} customColor={customColor}>
+    <StyledDefaultText
+      width={width}
+      customColor={customColor}
+      align={align}
+      fam={fam}
+    >
       {children}
     </StyledDefaultText>
   )

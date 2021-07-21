@@ -1,57 +1,128 @@
 import React from 'react'
-
-// import styled from 'styled-components'
+import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Section, Grid } from '@/components/layouts'
 import {
   DefaultHeader,
-  // DefaultText,
+  DefaultText,
+  DefaultLink,
   Button,
   DefaultSVGs,
+  Img,
+  Progressbar,
 } from '@/components/elements'
-// import { Jumbotron } from '@/components/molecules'
-import { Card, CardHeader, CardText } from '@/components/elements/Card'
-// import { EconomyJSON } from '@/data/economy'
 
-const EjumbotronData = {
-  header: 'Participate and Create the Internet of Value',
-  button: { text: 'Earn in our Open Economy', href: '#' },
-}
+import Cards from '@/components/elements/Cards/Cards'
+import CardHeader from '@/components/elements/Cards/CardHeader'
+import CardText from '@/components/elements/Cards/CardText'
+
+import {
+  ParticipateCard,
+  EconomicCard,
+  Banner,
+} from '@/components/sections/Economy'
 
 const Economy = () => {
+  const { t } = useTranslation('economy')
+  const JumbotronJSON = {
+    header: t('jumbotron.heading'),
+    text: t('jumbotron.text'),
+    width: 1000,
+  }
+  const ProgressBarValue = 75
   return (
-    <MainLayout bG="greyQuin">
-      <Section width={1000}>
-        <DefaultHeader as="h1" fontNormal align="center">
-          {EjumbotronData.header}
-        </DefaultHeader>
-        <div style={{ textAlign: 'center' }}>
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="#"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            Earn in the network economy
-          </Button>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="#"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            Create with Verus
-          </Button>
-        </div>
-      </Section>
-
+    <MainLayout bG="greyQuin" jumbotronData={JumbotronJSON}>
       <Grid>
-        <Card
+        <Cards>
+          <CardText book fontSz="sm" text={t('staking.heading')} />
+          <CardText
+            book
+            fontSz="xl"
+            margin="27px 0 0 0"
+            color="blue"
+            text="42,631,653"
+          />
+          <CardText
+            book
+            fontSz="sm"
+            margin="16px 0 60px 0"
+            text={`/ 62,467,134 ${t('staking.outOf')}`}
+          />
+          <Progressbar
+            value={ProgressBarValue}
+            max={100}
+            color="#4AA658"
+            width="150px"
+          />
+          <CardText
+            fontSz="sm"
+            book
+            text={`${ProgressBarValue}% ${t('staking.staking')}`}
+          />
+        </Cards>
+        <Cards>
+          <CardText book fontSz="sm" text={t('hashrate.heading')} />
+          <CardText
+            book
+            fontSz="xl"
+            margin="27px 0 0 0"
+            color="blue"
+            text="356 GH/s"
+          />
+          <CardText
+            book
+            fontSz="xs"
+            margin="47px 0 0 0"
+            text={t('hashrate.text')}
+          />
+          <div
+            style={{
+              marginTop: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Img name="iconmonstr-smartphone" height={24} />
+            <CardText
+              book
+              fontSz="sm"
+              margin="0"
+              text={`118,666 ${t('hashrate.mobile')}`}
+            />
+          </div>
+          <CardText book fontSz="xs" text={t('hashrate.or')} />
+          <div
+            style={{
+              marginTop: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Img name="iconmonstr-cpu" height={24} />
+            <CardText
+              book
+              fontSz="sm"
+              margin="0"
+              text={`11,866 ${t('hashrate.desktop')}`}
+            />
+          </div>
+        </Cards>
+        <div
+          style={{
+            gridColumn: 'span 2',
+            width: '750px',
+            margin: 'auto',
+          }}
+        >
+          <DefaultText align="center">{t('note')}</DefaultText>
+        </div>
+        <ParticipateCard />
+        <EconomicCard />
+        <Banner />
+      </Grid>
+
+      {/* <Card
           bgImage="/images/round-publicinfrastructure.png"
           span={2}
           height="232px"
@@ -179,8 +250,7 @@ const Economy = () => {
           >
             More on bridges
           </Button>
-        </Card>
-      </Grid>
+        </Card> */}
     </MainLayout>
   )
 }

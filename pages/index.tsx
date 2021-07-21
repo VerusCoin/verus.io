@@ -1,236 +1,123 @@
 import React from 'react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import useTranslation from 'next-translate/useTranslation'
 import { HomepageProps } from 'types/homepage'
-import {
-  JumbotronJSON,
-  UspBannerJSON,
-  ServicesJSON,
-  UniqueSellingPointsJSON,
-  BlogJSON,
-} from '@/data/homepage'
+import { CardsJSON, BlogJSON } from '@/data/homepage'
 import { MainLayout, Section, Grid } from '@/components/layouts'
 import {
   Button,
   DefaultHeader,
   // TypedJS,
   DefaultSVGs,
+  Img,
 } from '@/components/elements'
-import { Card, CardHeader, CardText } from '@/components/elements/Card'
+
 import {
+  Banner,
   Blog,
-  // UspBanner,
-  // UniqueSellingPoints,
-  // Services,
+  BlueEarthCard,
+  LinkCards,
+  ChainLinkCards,
+  LifeBloodLinkCards,
+  KnowCards,
 } from '@/components/sections/Home'
+
+import Cards from '@/components/elements/Cards/Cards'
+import CardHeader from '@/components/elements/Cards/CardHeader'
+import CardText from '@/components/elements/Cards/CardText'
 
 const Home = ({
   data,
 }: HomepageProps): InferGetStaticPropsType<typeof getStaticProps> => {
+  const { t } = useTranslation('home')
+  const JumbotronJSON = {
+    header: t('jumbotron.heading'),
+    color: 'default',
+    buttons: [
+      { text: t('jumbotron.buttons.first'), href: '#' },
+      { text: t('jumbotron.buttons.second'), href: '/create-with-verus' },
+    ],
+    width: 1000,
+  }
   return (
-    <MainLayout bG="greyQuin">
-      <Section width={1000}>
-        <DefaultHeader as="h1" fontNormal align="center">
-          Participate and Create the Internet of Value
-        </DefaultHeader>
-        <div style={{ textAlign: 'center' }}>
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="#"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            Earn in the network economy
-          </Button>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="#"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            Create with Verus
-          </Button>
-        </div>
-      </Section>
-
+    <MainLayout bG="greyQuin" jumbotronData={JumbotronJSON}>
       <Grid>
-        <Card
-          bgImage="/images/round-publicinfrastructure.png"
-          span={2}
-          height="232px"
-        >
-          <CardHeader as="h3">
-            Use Verus decentralized & rent-free community infrastructure.
-          </CardHeader>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="payment" />
+        <Banner />
 
-          <CardHeader>Payments</CardHeader>
-          <CardText>
-            You get cheap, fast, scalable and final payments. An essential
-            element of all decentralized systems.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="privacy" />
-
-          <DefaultHeader align="center">Privacy</DefaultHeader>
-
-          <CardText>
-            Your privacy is a human right. Get fully encrypted zero knowledge
-            private transactions.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="identity" />
-
-          <DefaultHeader align="center">VerusID</DefaultHeader>
-
-          <CardText>
-            Use decentralized self-sovereign identities for your project.
-            Include any type of data. Set up vaults. Highly versatile and
-            customizable.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="finance" />
-
-          <DefaultHeader align="center">DeFi</DefaultHeader>
-
-          <CardText>
-            No front-running and low fees. Who doesn't want that? Use now for
-            lending, borrowing, funding, instant liquidity and conversions.
-          </CardText>
-        </Card>
-
-        <Card bGcolor="white">
-          <DefaultSVGs name="data" />
-
-          <DefaultHeader align="center">Data</DefaultHeader>
-
-          <CardText>
-            Define and publish verifiable data structures across blockchains and
-            other systems. With Verus Data Exchange Format (VDXF) it’s never
-            been easier.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="interoperability" />
-
-          <DefaultHeader align="center">Interoperability</DefaultHeader>
-
-          <CardText>
-            Exchange value and data seamlessly across blockchains. Connect any
-            systems together with Verus advanced bridging technology.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="blockchainCreation" />
-
-          <DefaultHeader align="center">PBaas</DefaultHeader>
-
-          <CardText>
-            Use Public Blockchains as a Service to deploy customizable, scalable
-            and interoperable blockchains within minutes. No need to provision
-            additional resources.
-          </CardText>
-        </Card>
-        <Card bgImage="/images/bg-create.png" pRight={40} pLeft={40} pTop={40}>
-          <div style={{ marginBottom: '60px' }}>
-            <CardHeader color="white">
-              Change the world. It's simple.
-            </CardHeader>
-          </div>
+        {CardsJSON.map((card, index) => {
+          const heading = t(`cards.${card.card}.header`)
+          return (
+            <Cards key={index}>
+              <Img name={card.svg} />
+              <CardHeader text={heading} />
+              <CardText regular={true} text={t(`cards.${card.card}.text`)} />
+            </Cards>
+          )
+        })}
+        <BlueEarthCard>
+          <CardHeader color="white" text={t('cards.createCard.header')} />
           <Button
             transparent
             svg={{ type: 'arrow', rotate: false }}
-            href="#"
+            href="/create-with-verus"
             as="a"
             color="white"
             fontRegular
           >
-            Create with Verus
+            {t('cards.createCard.link')}
           </Button>
-        </Card>
-        <Card bGcolor="white" span={2} padding="140px">
-          <div style={{ marginBottom: '60px', maxWidth: '600px' }}>
-            <CardHeader>Strong foundations. Built to last.</CardHeader>
-          </div>
+        </BlueEarthCard>
+        <LinkCards>
+          <CardHeader text={t('cards.foundationCard.header')} />
           <Button
             transparent
             svg={{ type: 'arrow', rotate: false }}
-            href="#"
+            href="/foundations"
             as="a"
             color="#3165d4"
             fontRegular
           >
-            More on strong foundations
+            {t('cards.foundationCard.link')}
           </Button>
-        </Card>
-        <Card bGcolor="white" span={2} padding="140px">
-          <div style={{ marginBottom: '60px', maxWidth: '600px' }}>
-            <CardHeader>The network that connects all cryptos.</CardHeader>
-          </div>
+        </LinkCards>
+        <ChainLinkCards>
+          <CardHeader text={t('cards.globalCard.header')} />
           <Button
             transparent
             svg={{ type: 'arrow', rotate: false }}
-            href="#"
+            href="/global-network"
             as="a"
             color="#3165d4"
             fontRegular
           >
-            More on bridges
+            {t('cards.globalCard.link')}
           </Button>
-        </Card>
+        </ChainLinkCards>
+        <LifeBloodLinkCards>
+          <CardHeader text={t('cards.coinCard.header')} />
+          <Button
+            transparent
+            svg={{ type: 'arrow', rotate: false }}
+            href="/coin"
+            as="a"
+            color="#3165d4"
+            fontRegular
+          >
+            {t('cards.coinCard.link')}
+          </Button>
+        </LifeBloodLinkCards>
+        <KnowCards>
+          <CardText fontSz="xs" color="white" text={t('cards.knowCard.know')} />
+          <CardHeader as="h5" color="white" text={t('cards.knowCard.header')} />
+
+          <CardHeader
+            width="50px"
+            as="h3"
+            color="white"
+            text={t('cards.knowCard.text')}
+          />
+        </KnowCards>
       </Grid>
-      {/* <Section border width={550}>
-        <DefaultHeader align="left">
-          <DefaultHeader as="h3">
-            Verus is decentralized & rent-free public infrastructure for{' '}
-            <TypedJS
-              strings={[
-                'self-sovereign identities',
-                'data exchange',
-                'blockchain creation',
-                'cross-chain interoperability',
-                'payments',
-                'finance solutions',
-                'privacy',
-              ]}
-            />
-            .
-          </DefaultHeader>
-        </DefaultHeader>
-      </Section>
-
-      <UspBanner {...data.UspBannerJSON} />
-
-      <Section width={710}>
-        <DefaultHeader as="h2" align="center">
-          A secure and scalable system with the most important functions at the
-          protocol level.
-          <div>
-            <Button
-              transparent
-              svg={{ type: 'arrow', rotate: false }}
-              href="#"
-              as="a"
-            >
-              Create with Us
-            </Button>
-          </div>
-        </DefaultHeader>
-      </Section>
-
-      <Services {...data.ServicesJSON} />
-
-      <UniqueSellingPoints {...data.UniqueSellingPointsJSON} /> */}
 
       <Blog {...data.BlogJSON} />
     </MainLayout>
@@ -239,14 +126,10 @@ const Home = ({
 
 export default Home
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       data: {
-        JumbotronJSON,
-        UspBannerJSON,
-        ServicesJSON,
-        UniqueSellingPointsJSON,
         BlogJSON,
       },
     },

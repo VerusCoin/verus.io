@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { IListNavigation } from '@/types/molecules'
 import { Button } from '@/components/elements'
 import LinkCard from './LinkCard'
+import useTranslation from 'next-translate/useTranslation'
 
 const StyledNavigationMenu = styled.ul`
   margin: 0;
@@ -72,6 +73,8 @@ const StyledSubMenu = styled.ul`
 `
 
 const ListNavigation: React.FC<IListNavigation> = ({ menu }) => {
+  const { t } = useTranslation('navigation')
+
   return (
     <StyledNavigationMenu>
       {menu.map((item, index) => {
@@ -81,15 +84,16 @@ const ListNavigation: React.FC<IListNavigation> = ({ menu }) => {
               <Button
                 as={item.href ? 'a' : 'span'}
                 href={item.href && item.href}
+                fontSize="menu"
               >
-                {item.category}
+                {t(`${item.category}.title`)}
               </Button>
             ) : (
               <StyledLink
                 as={item.href ? 'a' : 'span'}
                 href={item.href && item.href}
               >
-                {item.category}
+                {t(`${item.category}.title`)}
               </StyledLink>
             )}
 

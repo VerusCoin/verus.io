@@ -22,7 +22,10 @@ const FontColor = (bg: string): any => {
       return css`
         color: ${(props) => props.theme.colors.blue.primary};
       `
-
+    case 'black':
+      return css`
+        color: ${(props) => props.theme.colors.black.primary};
+      `
     default:
       return css`
         color: ${bg};

@@ -3,7 +3,7 @@ import { IMainNavigation } from '@/types/layouts'
 export const MainNavigationJSON: IMainNavigation = {
   menu: [
     {
-      category: 'Technology',
+      category: 'technology',
       submenu: [
         {
           svg: 'build',
@@ -15,7 +15,7 @@ export const MainNavigationJSON: IMainNavigation = {
           svg: 'foundations',
           link: 'Strong Foundations',
           href: '/foundations',
-          description: 'Built for a sustainable future',
+          description: 'Built for continual growth',
         },
         {
           svg: 'coin',
@@ -25,16 +25,32 @@ export const MainNavigationJSON: IMainNavigation = {
         },
         {
           svg: 'bridge',
-          link: 'Bridges',
-          href: '/bridges',
-          description: 'Linking all cryptocurrencies together',
+          link: 'Global Network',
+          href: '/global-network',
+          description: 'Connecting all blockchains',
         },
       ],
     },
-    { category: 'Open Economy', href: '/economy' },
-    { category: 'Community', href: '/community' },
+    { category: 'economy', href: '/economy' },
     {
-      category: 'Resources',
+      category: 'community',
+      submenu: [
+        {
+          svg: '',
+          link: 'People',
+          href: '/people',
+          description: 'Worldwide community contributors',
+        },
+        {
+          svg: '',
+          link: 'Contribute',
+          href: '/community/contribute',
+          description: 'Support Verus community',
+        },
+      ],
+    },
+    {
+      category: 'resources',
       submenu: [
         {
           svg: 'explorer',
@@ -70,7 +86,7 @@ export const MainNavigationJSON: IMainNavigation = {
       ],
     },
     {
-      category: 'Docs & Support',
+      category: 'docs',
       submenu: [
         {
           svg: 'documentation',
@@ -94,6 +110,6 @@ export const MainNavigationJSON: IMainNavigation = {
         },
       ],
     },
-    { category: 'Get Wallet', href: '#', button: true },
+    { category: 'wallet', href: '#', button: true },
   ],
 }

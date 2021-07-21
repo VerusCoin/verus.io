@@ -14,6 +14,9 @@ const StyledJumbotronContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  a {
+    margin-top: ${(props) => props.theme.spaces.sm};
+  }
 `
 
 const StyledJumbotronText = styled.h1<any>`
@@ -37,7 +40,7 @@ const StyledJumbotronText = styled.h1<any>`
       height: 417px;
       position: absolute;
       z-index: -1;
-      left:  ${(props: any) => (props.left ? `${props.left}px` : '20px')};
+      left: 20px;
       top: 120px;
       transform: translateY(-100%);
       `}
@@ -45,20 +48,54 @@ const StyledJumbotronText = styled.h1<any>`
   }
 `
 
-const Jumbotron: React.FC<IJumbotron> = ({ text, button, width, left }) => {
+//Two different Jumbotrons
+// 1) typical header with or without text or links
+// 2) header with split format at bottom one for button and the other for text
+
+const Jumbotron: React.FC<IJumbotron> = ({
+  header,
+  text,
+  color = 'blue',
+  button,
+  buttons,
+  width,
+}) => {
   return (
     <StyledJumbotron>
       <Container>
         <Row>
           <Col col={12}>
             <StyledJumbotronContainer>
-              <StyledJumbotronText customWidth={width} left={left}>
-                <DefaultHeader as="h1" align="center">
-                  {parse(text)}
+              <StyledJumbotronText customWidth={width}>
+                <DefaultHeader
+                  as="h1"
+                  customColor={color}
+                  fontNormal
+                  align="center"
+                >
+                  {parse(header)}
                 </DefaultHeader>
+                {text && (
+                  <DefaultHeader fontNormal align="center">
+                    {parse(text)}
+                  </DefaultHeader>
+                )}
               </StyledJumbotronText>
-
               {button && <Button wide>{button.text}</Button>}
+              {buttons &&
+                buttons.map((item, index) => (
+                  <Button
+                    transparent
+                    svg={{ type: 'arrow', rotate: false }}
+                    href="#"
+                    as="a"
+                    color="#3165d4"
+                    fontRegular
+                    key={index}
+                  >
+                    {item.text}
+                  </Button>
+                ))}
             </StyledJumbotronContainer>
           </Col>
         </Row>

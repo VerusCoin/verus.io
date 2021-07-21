@@ -5,8 +5,6 @@ import { Row, Col, Container } from 'styled-bootstrap-grid'
 import parse from 'html-react-parser'
 import { Button, DefaultHeader } from '@/components/elements'
 import BlogItem from './BlogItem'
-
-import { StyledButtonContainer } from '@/components/sections/Home'
 import { spacer } from '@/styles/helpers'
 
 const StyledBlogItem = styled.div`
@@ -15,6 +13,11 @@ const StyledBlogItem = styled.div`
   h2 {
     margin-bottom: ${(props) => props.theme.spaces.lg};
   }
+`
+const StyledButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: ${(props) => props.theme.spaces.lg};
 `
 
 const Blog: React.FC<IBlog> = ({ title, data }) => {

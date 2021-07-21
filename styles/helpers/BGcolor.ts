@@ -21,10 +21,15 @@ const bgColor = (bg: string): any => {
     case 'blue':
       return css`
         background-color: ${(props) => props.theme.colors.blue.primary};
+        color: ${(props) => props.theme.colors.white};
       `
     case 'blueQuin':
       return css`
         background-color: ${(props) => props.theme.colors.blue.quaternary};
+      `
+    case 'blueQuan':
+      return css`
+        background-color: ${(props) => props.theme.colors.blue.quinary};
       `
     default:
       return css`

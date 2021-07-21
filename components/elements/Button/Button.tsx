@@ -9,7 +9,7 @@ const StyledButton = styled.button<any>`
   display: inline-flex;
   align-items: center;
   border: 0;
-  padding: 16px 30px;
+  padding: ${(props) => (props.small ? '12px 20px' : '16px 30px')};
   background: ${(props) => props.theme.buttons.primary.bg};
   border-radius: ${(props) => props.theme.buttons.primary.radius};
   color: ${(props) => props.theme.buttons.primary.text};
@@ -83,7 +83,7 @@ const StyledButton = styled.button<any>`
       }
 
     `}
-    ${(props) => (props.small ? 'font-size: 17px' : fontSize('button'))}
+    ${(props) => (props.small ? 'font-size: 17px' : fontSize(props.fontSize))}
 `
 
 const Button: React.FC<IButton> = ({
@@ -95,6 +95,7 @@ const Button: React.FC<IButton> = ({
   transparent,
   color,
   fontRegular,
+  fontSize = 'button',
   small,
   onClick,
   children,
@@ -107,9 +108,10 @@ const Button: React.FC<IButton> = ({
       as={as}
       primary={primary}
       svg={svg}
+      small={small}
       color={color}
       fontRegular={fontRegular}
-      small={small}
+      fontSize={fontSize}
       onClick={onClick}
     >
       {children}
