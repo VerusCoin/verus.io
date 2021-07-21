@@ -1,0 +1,61 @@
+{
+  "jumbotron": {
+    "heading": "Participate and Create the Internet of Value",
+    "buttons": {
+      "first": "Earn in the network economy",
+      "second": "Create products and services"
+    }
+  },
+  "banner": "Verus is scalable public infrastructure for the world.",
+  "cards": {
+    "pbaasCard": {
+      "header": "PBaas",
+      "text": "Use Public Blockchains as a Service to deploy customizable, scalable and interoperable blockchains within minutes. No need to provision additional resources."
+    },
+    "verusCard": {
+      "header": "VerusID",
+      "text": "Use decentralized self-sovereign identities for projects. Include any type of data. Highly versatile and customizable."
+    },
+    "defiCard": {
+      "header": "DeFi",
+      "text": "No front-running and low fees. Who doesn't want that? Use for lending, borrowing, funding, instant liquidity and conversions."
+    },
+    "privCard": {
+      "header": "Privacy",
+      "text": "Your privacy is a human right. Get fully encrypted zero knowledge private transactions. "
+    },
+    "interopCard": {
+      "header": "Interoperability",
+      "text": "Exchange value and data seamlessly across blockchains. Connect any systems together with Verus advanced bridging technology."
+    },
+    "dataCard": {
+      "header": "Data",
+      "text": "Define and publish verifiable data structures across blockchains and other systems. With Verus Data Exchange Format - VDXF - it’s never been easier."
+    },
+    "paymentCard": {
+      "header": "Payments",
+      "text": "You get cheap, fast, scalable and final payments. An essential element of all decentralized systems."
+    },
+    "createCard": {
+      "header": "Change the world. It's simple.",
+      "link": "Create with Verus"
+    },
+    "foundationCard": {
+      "header": "Assured continual growth.",
+      "link": "More on string foundations"
+    },
+    "globalCard": {
+      "header": "Connecting everything together",
+      "link": "More on global network"
+    },
+    "coinCard": {
+      "header": "Lifeblood. Utility. Usage.",
+      "link": "More on the coin"
+    },
+    "knowCard": {
+      "know": "Did you know?",
+      "header": "Verus is Latin and means:",
+      "text": "truth real actual genuine"
+    }
+  }
+}
