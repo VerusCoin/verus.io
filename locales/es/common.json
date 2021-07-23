@@ -1,5 +1,4 @@
 {
-  "title": "Example with-next-translate",
-  "powered": "Powered by",
-  "alt": "Vercel logo"
+  "mainnet": "mainnet",
+  "testnet": "testnet"
 }

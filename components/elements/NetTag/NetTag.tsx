@@ -12,7 +12,7 @@ export const StyledNet = styled.div<any>`
   ${(props: any) => fontSize(props.fontSz)};
 `
 
-const StyledLabel = styled.span<{ netType: 'main' | 'test' }>`
+const StyledLabel = styled.span<any>`
   ${(props: any) =>
     props.netType === 'main'
       ? `background-color: ${props.theme.colors.green}; padding: 5px 15px;`
