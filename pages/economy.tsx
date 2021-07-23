@@ -21,7 +21,7 @@ const Economy = () => {
   }
   const ProgressBarValue = 75
   return (
-    <MainLayout bG="greyQuin" jumbotronData={JumbotronJSON}>
+    <MainLayout jumbotronData={JumbotronJSON}>
       <Grid>
         <Cards>
           <CardText book fontSz="sm" text={t('staking.heading')} />

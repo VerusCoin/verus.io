@@ -35,7 +35,7 @@ const Home = ({
 
   const CardList = data.CardsJSON
   return (
-    <MainLayout bG="greyQuin" jumbotronData={JumbotronJSON}>
+    <MainLayout jumbotronData={JumbotronJSON}>
       <Grid>
         <Banner />
 

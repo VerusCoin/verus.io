@@ -13,7 +13,8 @@ import {
   resetNextUuid,
 } from 'react-accessible-accordion'
 import { spacer } from '@/styles/helpers'
-import parse from 'html-react-parser'
+
+import useTranslation from 'next-translate/useTranslation'
 import { SVGs } from '@/components/elements/SVGs/SVGs'
 import { IFAQ } from '@/types/coinpage'
 
@@ -59,14 +60,17 @@ const StyledSVG = styled.div<any>`
   }
 `
 
-const FAQ: React.FC<IFAQ> = ({ title, data }) => {
+const FAQ: React.FC<IFAQ> = ({ data }) => {
   resetNextUuid()
+  const { t } = useTranslation('coin')
   return (
     <StyledFAQ id="FAQ">
       <Container>
         <Row justifyContent="center">
           <Col col={12}>
-            <DefaultHeader align="center">{parse(title)}</DefaultHeader>
+            <DefaultHeader as="h3" align="center">
+              {t('faq.heading')}
+            </DefaultHeader>
           </Col>
         </Row>
         <Row justifyContent="center">
@@ -75,7 +79,9 @@ const FAQ: React.FC<IFAQ> = ({ title, data }) => {
               <AccordionItem key={index}>
                 <AccordionItemHeading>
                   <AccordionItemButton>
-                    <DefaultHeader as="h5">{item.header}</DefaultHeader>
+                    <DefaultHeader as="h5">
+                      {t(`faq.${item.faq}.question`)}
+                    </DefaultHeader>
                     <AccordionItemState>
                       {({ expanded }) => (
                         <StyledSVG expanded={expanded}>
@@ -86,7 +92,7 @@ const FAQ: React.FC<IFAQ> = ({ title, data }) => {
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <DefaultText>{item.panel}</DefaultText>
+                  <DefaultText>{t(`faq.${item.faq}.question`)}</DefaultText>
                 </AccordionItemPanel>
               </AccordionItem>
             ))}

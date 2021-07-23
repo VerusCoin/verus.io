@@ -1,5 +1,4 @@
-import { JumbotronJSON } from './json/JumbotronJSON'
-import { CoinUtilitiesJSON } from './json/CoinUtilitiesJSON'
+import { CardJSON } from './json/CardJSON'
 import { FaqJSON } from './json/FaqJSON'
 
-export { JumbotronJSON, CoinUtilitiesJSON, FaqJSON }
+export { CardJSON, FaqJSON }

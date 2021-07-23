@@ -5,5 +5,6 @@ module.exports = {
     '*': ['navigation'],
     '/': ['home'],
     '/economy': ['economy'],
+    '/coin': ['coin'],
   },
 }
