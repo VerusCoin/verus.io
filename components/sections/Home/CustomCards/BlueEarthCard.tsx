@@ -1,9 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { Img } from '@/components/elements'
 import { bgColor } from '@/styles/helpers'
-import Cards from '@/components/elements/Cards/Cards'
 
 const StyledBlueEarthCard = styled.div`
   ${bgColor('blueQuan')};
@@ -34,7 +32,14 @@ const StyledBlueEarthCard = styled.div`
   `}
 `
 
-const BlueEarthCard: React.FC<{ children: ReactNode }> = ({ children }) => {
+const BlueEarthCard: React.FC<
+  React.PropsWithChildren<
+    React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLDivElement>,
+      HTMLDivElement
+    >
+  >
+> = ({ children }) => {
   return <StyledBlueEarthCard>{children}</StyledBlueEarthCard>
 }
 

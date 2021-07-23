@@ -1,15 +1,6 @@
-interface CardProps {
-  cardText: string
-  cards: Cards[]
-}
+import { ICard } from '@/types/homepage'
 
-interface Cards {
-  svg?: string
-  card: string
-  buttonHref?: string
-}
-
-export const CardsJSON: Cards = [
+export const CardsJSON: ICard[] = [
   {
     svg: 'blockchainCreation',
     card: 'pbaasCard',

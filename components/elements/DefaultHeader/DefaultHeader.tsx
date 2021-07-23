@@ -43,13 +43,15 @@ const StyledTextHeader = styled.h2<any>`
   ${(props) => props.align && `text-align: ${props.align}`}
 `
 
-const DefaultHeader: React.FC<IDefaultHeader> = ({
-  customColor,
-  align,
-  as,
-  fontNormal,
-  children,
-}) => {
+const DefaultHeader: React.FC<
+  React.PropsWithChildren<
+    React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLHeadingElement>,
+      HTMLHeadingElement
+    > &
+      IDefaultHeader
+  >
+> = ({ customColor, align, as, fontNormal, children }) => {
   return (
     <StyledTextContainer fontNormal={fontNormal}>
       <StyledTextHeader align={align} as={as} customColor={customColor}>

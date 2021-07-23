@@ -36,13 +36,13 @@ export const MainNavigationJSON: IMainNavigation = {
       category: 'community',
       submenu: [
         {
-          svg: '',
+          svg: 'people',
           link: 'People',
           href: '/people',
           description: 'Worldwide community contributors',
         },
         {
-          svg: '',
+          svg: 'contribute',
           link: 'Contribute',
           href: '/community/contribute',
           description: 'Support Verus community',

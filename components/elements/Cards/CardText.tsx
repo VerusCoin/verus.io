@@ -16,19 +16,14 @@ const StyledText = styled.p<any>`
   ${(props) => `text-align: ${props.align};`}
 `
 
-const CardText: React.FC<
-  DetailedHTMLFactory<
-    HTMLAttributes<HTMLParagraphElement>,
-    HTMLParagraphElement
-  > & {
-    color: string
-    text: string
-    regular?: boolean
-    book?: boolean
-    fontSz?: string
-    margin?: string
-  }
-> = ({ color = 'black', regular, book, text, fontSz, margin }) => {
+const CardText: React.FC<{
+  color?: string
+  text: string
+  regular?: boolean
+  book?: boolean
+  fontSz?: string
+  margin?: string
+}> = ({ color = 'black', regular, book, text, fontSz, margin }) => {
   return (
     <StyledText
       regular={regular}

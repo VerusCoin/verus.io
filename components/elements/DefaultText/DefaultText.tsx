@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IDefaultText } from '@/types/elements'
-import { fontFam, fontSize } from '@/styles/helpers'
+import { fontFam } from '@/styles/helpers'
 
 const StyledDefaultText = styled.p<any>`
   ${(props) => fontFam(props.fam)}

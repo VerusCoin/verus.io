@@ -1,9 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { Img } from '@/components/elements'
 import { bgColor } from '@/styles/helpers'
-import Cards from '@/components/elements/Cards/Cards'
 
 const StyledLifeBloodLinkCardLinkCards = styled.div`
   ${bgColor('white')}
@@ -24,7 +22,14 @@ const StyledLifeBloodLinkCardLinkCards = styled.div`
   `}
 `
 
-const LifeBloodLinkCard: React.FC<{ children: ReactNode }> = ({ children }) => {
+const LifeBloodLinkCard: React.FC<
+  React.PropsWithChildren<
+    React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLDivElement>,
+      HTMLDivElement
+    >
+  >
+> = ({ children }) => {
   return (
     <StyledLifeBloodLinkCardLinkCards>
       {children}

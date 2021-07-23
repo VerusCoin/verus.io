@@ -94,6 +94,7 @@ const HamburgerMenu: React.FC<IHamburgerMenu> = ({ menu, openMenu }) => {
                       <Button
                         as={item.href ? 'a' : 'span'}
                         href={item.href && item.href}
+                        fontSize="menu"
                       >
                         {item.category}
                       </Button>

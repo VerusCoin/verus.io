@@ -1,5 +1,6 @@
 export interface IButton {
   children: React.ReactNode
+  fontSize?: string
   primary?: boolean
   transparent?: boolean
   href?: string
@@ -35,12 +36,9 @@ export interface IDefaultText {
   children: React.ReactNode
   customColor?: string
   width?: number
+  align?: string
+  fam?: string
   gR?: boolean
-}
-
-export interface INetTag {
-  net: string
-  children?: React.ReactNode
 }
 
 export interface ITypedJS {

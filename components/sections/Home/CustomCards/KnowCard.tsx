@@ -1,9 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { Img } from '@/components/elements'
 import { bgColor } from '@/styles/helpers'
-import Cards from '@/components/elements/Cards/Cards'
 
 const StyledKnowCards = styled.div`
   ${bgColor('#03102C')}
@@ -24,7 +22,14 @@ const StyledKnowCards = styled.div`
   }
 `
 
-const KnowCards: React.FC<{ children: ReactNode }> = ({ children }) => {
+const KnowCards: React.FC<
+  React.PropsWithChildren<
+    React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLDivElement>,
+      HTMLDivElement
+    >
+  >
+> = ({ children }) => {
   return <StyledKnowCards>{children}</StyledKnowCards>
 }
 

@@ -5,15 +5,15 @@ import { Row, Col, Container, media } from 'styled-bootstrap-grid'
 import { ListNavigation } from '@/components/elements/Navbar'
 import { fontSize } from '@/styles/helpers'
 import { useWindowScroll } from 'react-use'
-import setLanguage from 'next-translate/setLanguage'
+// import setLanguage from 'next-translate/setLanguage'
 import useTranslation from 'next-translate/useTranslation'
-import i18nConfig from 'i18n.js'
-import Link from 'next/link'
+// import i18nConfig from 'i18n.js'
+// import Link from 'next/link'
 import I18nProvider from 'next-translate/I18nProvider'
 
 import languages from './languages.json'
 
-const { locales } = i18nConfig
+// const { locales } = i18nConfig
 
 const StyledLanguage = styled.span`
   color: ${(props) => props.theme.colors.grey.secondary};
@@ -49,7 +49,7 @@ const LanguageMenu = () => {
   return <StyledLanguage>English</StyledLanguage>
 }
 
-const TopNavigation: React.FC<ITopNavigation> = ({ language, menu }) => {
+const TopNavigation: React.FC<ITopNavigation> = ({ menu }) => {
   const { y } = useWindowScroll()
   const threshold = y >= 50
 

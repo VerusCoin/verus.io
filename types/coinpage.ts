@@ -16,7 +16,7 @@ export interface ICoinUtilities {
 }
 
 export interface ICoinUtilityItem {
-  net: string
+  net: 'main' | 'test'
   title: string
   text: string
   link?: {

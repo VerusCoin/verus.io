@@ -1,18 +1,9 @@
 import React from 'react'
 import useTranslation from 'next-translate/useTranslation'
-import { MainLayout, Section, Grid } from '@/components/layouts'
-import {
-  DefaultHeader,
-  DefaultText,
-  DefaultLink,
-  Button,
-  DefaultSVGs,
-  Img,
-  Progressbar,
-} from '@/components/elements'
+import { MainLayout, Grid } from '@/components/layouts'
+import { DefaultText, Img, Progressbar, NetTag } from '@/components/elements'
 
 import Cards from '@/components/elements/Cards/Cards'
-import CardHeader from '@/components/elements/Cards/CardHeader'
 import CardText from '@/components/elements/Cards/CardText'
 
 import {
@@ -47,12 +38,7 @@ const Economy = () => {
             margin="16px 0 60px 0"
             text={`/ 62,467,134 ${t('staking.outOf')}`}
           />
-          <Progressbar
-            value={ProgressBarValue}
-            max={100}
-            color="#4AA658"
-            width="150px"
-          />
+          <Progressbar value={ProgressBarValue} />
           <CardText
             fontSz="sm"
             book
@@ -120,137 +106,17 @@ const Economy = () => {
         <ParticipateCard />
         <EconomicCard />
         <Banner />
+        <Cards>
+          <NetTag net="test" />
+          <CardText book fontSz="xl" text={t('defi.heading')} />
+          <CardText book fontSz="sm" text={t('defi.text')} />
+        </Cards>
+        <Cards>
+          <NetTag net="main" />
+          <CardText book fontSz="xl" text={t('referral.heading')} />
+          <CardText book fontSz="sm" text={t('referral.text')} />
+        </Cards>
       </Grid>
-
-      {/* <Card
-          bgImage="/images/round-publicinfrastructure.png"
-          span={2}
-          height="232px"
-        >
-          <CardHeader as="h3">
-            Use Verus decentralized & rent-free community infrastructure.
-          </CardHeader>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="payment" />
-
-          <CardHeader>Payments</CardHeader>
-          <CardText>
-            You get cheap, fast, scalable and final payments. An essential
-            element of all decentralized systems.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="privacy" />
-
-          <DefaultHeader align="center">Privacy</DefaultHeader>
-
-          <CardText>
-            Your privacy is a human right. Get fully encrypted zero knowledge
-            private transactions.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="identity" />
-
-          <DefaultHeader align="center">VerusID</DefaultHeader>
-
-          <CardText>
-            Use decentralized self-sovereign identities for your project.
-            Include any type of data. Set up vaults. Highly versatile and
-            customizable.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="finance" />
-
-          <DefaultHeader align="center">DeFi</DefaultHeader>
-
-          <CardText>
-            No front-running and low fees. Who doesn't want that? Use now for
-            lending, borrowing, funding, instant liquidity and conversions.
-          </CardText>
-        </Card>
-
-        <Card bGcolor="white">
-          <DefaultSVGs name="data" />
-
-          <DefaultHeader align="center">Data</DefaultHeader>
-
-          <CardText>
-            Define and publish verifiable data structures across blockchains and
-            other systems. With Verus Data Exchange Format (VDXF) it’s never
-            been easier.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="interoperability" />
-
-          <DefaultHeader align="center">Interoperability</DefaultHeader>
-
-          <CardText>
-            Exchange value and data seamlessly across blockchains. Connect any
-            systems together with Verus advanced bridging technology.
-          </CardText>
-        </Card>
-        <Card bGcolor="white">
-          <DefaultSVGs name="blockchainCreation" />
-
-          <DefaultHeader align="center">PBaas</DefaultHeader>
-
-          <CardText>
-            Use Public Blockchains as a Service to deploy customizable, scalable
-            and interoperable blockchains within minutes. No need to provision
-            additional resources.
-          </CardText>
-        </Card>
-        <Card bgImage="/images/bg-create.png" pRight={40} pLeft={40} pTop={40}>
-          <div style={{ marginBottom: '60px' }}>
-            <CardHeader color="white">
-              Change the world. It's simple.
-            </CardHeader>
-          </div>
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="#"
-            as="a"
-            color="white"
-            fontRegular
-          >
-            Create with Verus
-          </Button>
-        </Card>
-        <Card bGcolor="white" span={2} padding="140px">
-          <div style={{ marginBottom: '60px', maxWidth: '600px' }}>
-            <CardHeader>Strong foundations. Built to last.</CardHeader>
-          </div>
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="#"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            More on strong foundations
-          </Button>
-        </Card>
-        <Card bGcolor="white" span={2} padding="140px">
-          <div style={{ marginBottom: '60px', maxWidth: '600px' }}>
-            <CardHeader>The network that connects all cryptos.</CardHeader>
-          </div>
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="#"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            More on bridges
-          </Button>
-        </Card> */}
     </MainLayout>
   )
 }

@@ -67,14 +67,16 @@ const Jumbotron: React.FC<IJumbotron> = ({
           <Col col={12}>
             <StyledJumbotronContainer>
               <StyledJumbotronText customWidth={width}>
-                <DefaultHeader
-                  as="h1"
-                  customColor={color}
-                  fontNormal
-                  align="center"
-                >
-                  {parse(header)}
-                </DefaultHeader>
+                {header && (
+                  <DefaultHeader
+                    as="h1"
+                    customColor={color}
+                    fontNormal
+                    align="center"
+                  >
+                    {parse(header)}
+                  </DefaultHeader>
+                )}
                 {text && (
                   <DefaultHeader fontNormal align="center">
                     {parse(text)}

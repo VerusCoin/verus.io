@@ -1,12 +1,11 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { FoundationsProps } from '@/types/foundations'
+// import { GetStaticProps, InferGetStaticPropsType } from 'next'
+// import { FoundationsProps } from '@/types/foundations'
 import { Row, Col } from 'styled-bootstrap-grid'
-import { DefaultHeader, DefaultText, Button } from '@/components/elements'
+import { DefaultHeader, Button } from '@/components/elements'
 import { Card, CardHeader, CardText } from '@/components/elements/Card'
 import { MainLayout, Section, Grid } from '@/components/layouts'
-const Foundations = ({
-  data,
-}: FoundationsProps): InferGetStaticPropsType<typeof getStaticProps> => {
+
+const Foundations = () => {
   return (
     <MainLayout bG="greyQuin">
       <Section width={1000}>
@@ -146,12 +145,12 @@ const Foundations = ({
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      data: null,
-    },
-  }
-}
+// export const getStaticProps: GetStaticProps = async () => {
+//   return {
+//     props: {
+//       data: null,
+//     },
+//   }
+// }
 
 export default Foundations

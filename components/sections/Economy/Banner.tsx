@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { DefaultHeader, DefaultText, NetTag } from '@/components/elements'
-import { bgColor, fontSize, fontFam, fontColor } from '@/styles/helpers'
+import { NetTag } from '@/components/elements'
+import { fontSize, fontFam, fontColor } from '@/styles/helpers'
 import useTranslation from 'next-translate/useTranslation'
 
 import CardText from '@/components/elements/Cards/CardText'
@@ -30,10 +30,10 @@ const StyledBanner = styled.div<any>`
 
 const ExtraCardText = styled.p`
   ${fontFam('geoReg')};
-  ${(props) => fontColor('white')};
+  ${fontColor('white')};
   ${fontSize('sm')};
   text-align: center;
-  margin: 30px 50px;
+  margin: 30px 0;
   ${media.tablet`
   margin:30px 100px;
   `}
@@ -42,9 +42,7 @@ const ExtraCardText = styled.p`
   `}
 `
 
-const Banner: React.FC<
-  DetailedHTMLFactory<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-> = (): ReactNode => {
+const Banner = () => {
   const { t } = useTranslation('economy')
   return (
     <StyledBanner>

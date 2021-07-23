@@ -9,6 +9,7 @@ import BlockchainCreation1 from './assets/blockchain-creation-1.svg'
 import Bridge from './assets/bridge.svg'
 import Build from './assets/build.svg'
 import Coin from './assets/coin.svg'
+import Contribute from './assets/contribute.svg'
 import Checkmark from './assets/checkmark.svg'
 import Data from './assets/data.svg'
 import Discord from './assets/discord.svg'
@@ -30,6 +31,7 @@ import Logo from './assets/logo.svg'
 import OpenInNew from './assets/open_in_new.svg'
 import Papers from './assets/papers.svg'
 import Payment from './assets/payment.svg'
+import People from './assets/people.svg'
 import PlaceHolder from './assets/placeholder.svg'
 import Plus from './assets/plus.svg'
 import Privacy from './assets/privacy.svg'
@@ -56,6 +58,7 @@ const SVGIcon: SVGList = {
   bridge: <Bridge />,
   build: <Build />,
   coin: <Coin />,
+  contribute: <Contribute />,
   checkmark: <Checkmark />,
   data: <Data />,
   discord: <Discord />,
@@ -75,6 +78,7 @@ const SVGIcon: SVGList = {
   interoperability1: <Interoperability1 />,
   logo: <Logo />,
   papers: <Papers />,
+  people: <People />,
   payment: <Payment />,
   placeHolder: <PlaceHolder />,
   plus: <Plus />,

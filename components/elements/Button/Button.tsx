@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { fontSize } from '@/styles/helpers'
 import { media } from 'styled-bootstrap-grid'
+import { fontSize } from '@/styles/helpers'
+
 import { SVGs } from '@/components/elements'
 import { IButton } from '@/types/elements'
 
@@ -86,7 +87,7 @@ const StyledButton = styled.button<any>`
     ${(props) => (props.small ? 'font-size: 17px' : fontSize(props.fontSize))}
 `
 
-const Button: React.FC<IButton> = ({
+const Button = ({
   svg,
   wide,
   href,
@@ -99,7 +100,7 @@ const Button: React.FC<IButton> = ({
   small,
   onClick,
   children,
-}) => {
+}: IButton) => {
   return (
     <StyledButton
       transparent={transparent}

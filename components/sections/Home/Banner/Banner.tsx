@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import { DefaultHeader } from '@/components/elements'
@@ -41,13 +41,11 @@ const StyledBanner = styled.div<any>`
   `}
 `
 
-const Banner: React.FC<
-  DetailedHTMLFactory<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-> = (): ReactNode => {
+const Banner = () => {
   const { t } = useTranslation('home')
   return (
     <StyledBanner>
-      <DefaultHeader as="h3" align="center" fontRegular customColor="white">
+      <DefaultHeader as="h3" align="center" customColor="white">
         {t('banner')}
       </DefaultHeader>
     </StyledBanner>

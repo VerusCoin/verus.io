@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { DefaultHeader } from '@/components/elements'
 import parse from 'html-react-parser'
 
-const StyledTextHeader = styled.div`
+const StyledTextHeader = styled.div<{ width?: string }>`
   vertical-align: middle;
   margin-top: 32px;
   display: flex;
@@ -13,12 +13,18 @@ const StyledTextHeader = styled.div`
 
 interface HeaderProps {
   color?: string
-  as?: string
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   width?: string
-  children: ReactNode
+  text: string
 }
 
-const CardHeader: React.FC<HeaderProps> = ({ as, color, width, text }) => {
+const CardHeader: React.FC<
+  React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > &
+    HeaderProps
+> = ({ as = 'h2', color, width, text }) => {
   return (
     <StyledTextHeader width={width}>
       <DefaultHeader align="center" customColor={color} as={as}>

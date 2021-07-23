@@ -17,7 +17,7 @@ const Background = styled(BaseBox)`
   width: 100%;
   height: 34px;
 `
-const Progress = styled(BaseBox)`
+const Progress = styled(BaseBox)<{ value: number }>`
   height: 24px;
   margin: 5px;
   transition: width 10s ease-in-out;
@@ -25,12 +25,7 @@ const Progress = styled(BaseBox)`
   width: ${(props) => `${props.value}%`};
 `
 
-const Progressbar: React.FC<{
-  value: number
-  max: number
-  color: string
-  width: string
-}> = ({ value, max, color, width }) => {
+const Progressbar: React.FC<{ value: number }> = ({ value }) => {
   return (
     <Container>
       <Background />

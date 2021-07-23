@@ -1,7 +1,7 @@
 import { IMenuItem, IMenuSubItem, IFooterItem } from '@/types/general'
 
 export interface IJumbotron {
-  header: string
+  header?: string
   color?: string
   text?: string
   button?: {

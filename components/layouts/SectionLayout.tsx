@@ -37,12 +37,12 @@ const StyledSectionText = styled.div<any>`
 const SectionLayout: React.FC<ISection> = ({
   bG = 'inherit',
   width,
-  border,
   base = true,
+  border,
   children,
 }) => {
   return (
-    <StyledSection border={border} bG={bG}>
+    <StyledSection base={base} border={border} bG={bG}>
       <Container>
         <Row>
           <Col col={12}>

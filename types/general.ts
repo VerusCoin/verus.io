@@ -10,15 +10,18 @@ export interface IMenuSubItem {
     | 'build'
     | 'bridge'
     | 'coin'
+    | 'contribute'
     | 'explorer'
     | 'foundations'
     | 'verusIdLookup'
     | 'verusSignatures'
     | 'papers'
+    | 'people'
     | 'exchanges'
     | 'documentation'
     | 'supportWiki'
     | 'faq'
+    | ''
   link: string
   description?: string
   href: string

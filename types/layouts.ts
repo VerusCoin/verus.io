@@ -28,6 +28,7 @@ export interface ISection {
   border?: boolean
   width?: number
   bG?: string
+  base?: boolean
 }
 
 export interface INarrowSection {

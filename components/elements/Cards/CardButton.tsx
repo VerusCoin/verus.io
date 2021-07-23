@@ -1,15 +1,12 @@
 import React, { ReactNode } from 'react'
 import { Button } from '@/components/elements'
 
-interface CardButtonProps {
+interface Props {
   href: string
   children: ReactNode
 }
 
-const CardButton: React.FC<CardButtonProps> = ({
-  href,
-  children,
-}): ReactNode => {
+const CardButton: React.FC<Props> = ({ href, children }) => {
   return (
     <Button small as="a" href={href}>
       {children}

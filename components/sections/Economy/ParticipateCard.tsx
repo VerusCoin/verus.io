@@ -1,19 +1,30 @@
 import React from 'react'
+import styled from 'styled-components'
+import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
-import { MainLayout, Section, Grid } from '@/components/layouts'
-import {
-  DefaultHeader,
-  DefaultText,
-  DefaultLink,
-  Button,
-  DefaultSVGs,
-  Img,
-  Progressbar,
-} from '@/components/elements'
+import { Section } from '@/components/layouts'
+import { Button, Img } from '@/components/elements'
+
+const StyledLinkSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  align-items: center;
+  justify-content: center;
+  ${media.tablet`
+    margin-top: 85px;
+  `}
+`
+const StyledSVG = styled.div`
+  margin-top: 17px;
+  ${media.tablet`
+    margin-top: 117px;
+  `}
+`
 
 import Cards from '@/components/elements/Cards/Cards'
 import CardHeader from '@/components/elements/Cards/CardHeader'
-import CardText from '@/components/elements/Cards/CardText'
 
 const ParticipateCard = () => {
   const { t } = useTranslation('economy')
@@ -21,14 +32,7 @@ const ParticipateCard = () => {
     <Cards span={2}>
       <Section base={false} width={750}>
         <CardHeader text={t('participate.heading')} />
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            marginTop: '85px',
-            alignItems: 'center',
-          }}
-        >
+        <StyledLinkSection>
           <Button
             transparent
             svg={{ type: 'tab', rotate: false }}
@@ -59,10 +63,10 @@ const ParticipateCard = () => {
           >
             {t('participate.schedule')}
           </Button>
-          <div style={{ marginTop: '117px' }}>
+          <StyledSVG>
             <Img name="mining" height="234px" />
-          </div>
-        </div>
+          </StyledSVG>
+        </StyledLinkSection>
       </Section>
     </Cards>
   )

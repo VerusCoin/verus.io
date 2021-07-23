@@ -1,45 +1,55 @@
+import React from 'react'
 import styled from 'styled-components'
 import { DefaultText } from '@/components/elements'
 import { fontSize } from '@/styles/helpers'
-import { INetTag } from '@/types/elements'
-import { media } from 'styled-bootstrap-grid'
 
-const StyledNet = styled.div`
+export const StyledNet = styled.div<any>`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin-bottom: ${(props) => props.theme.spaces.xs};
-  p:last-child {
-    text-align: center;
-  }
-  ${(props) => fontSize(props.fontSz)}
-  ${media.tablet`
-    flex-direction: row;
-    p:last-child {
-      text-align: left;
-    }
-  `}
+
+  ${(props: any) => fontSize(props.fontSz)};
 `
 
-const StyledLabel = styled.p<{ netType: string }>`
+const StyledLabel = styled.span<{ netType: 'main' | 'test' }>`
   ${(props: any) =>
     props.netType === 'main'
-      ? `background-color: ${props.theme.colors.green}; padding: 2px 15px;`
-      : `background-color: ${props.theme.colors.orange};padding: 2px 19px;`};
+      ? `background-color: ${props.theme.colors.green}; padding: 5px 15px;`
+      : `background-color: ${props.theme.colors.orange};padding: 5px 19px;`};
   color: ${(props) => props.theme.colors.white};
+  ${(props) => props.text && 'margin-right: 31px;'}
 
   border-radius: 25px;
   font-family: ${(props) => props.theme.typo.primary.family};
   ${fontSize('xs')}
   margin-bottom: ${(props) => props.theme.spaces.xxs};
-  margin-right: 31px;
 `
 
-const NetTag: React.FC<INetTag> = ({ net, fam, fontSz = 'sm', children }) => {
+export interface INetTag {
+  net: 'main' | 'test'
+  fam?: string
+  fontSz?:
+    | 'xxl'
+    | 'xl'
+    | 'lg'
+    | 'md'
+    | 'sm'
+    | 'xs'
+    | 'menu'
+    | 'menuXs'
+    | 'button'
+  text?: string
+}
+
+const NetTag = ({ net, fam, fontSz = 'sm', text }: INetTag) => {
   return (
     <StyledNet fontSz={fontSz}>
-      <StyledLabel netType={net}>{net}net</StyledLabel>
-      <DefaultText fam={fam}>{children}</DefaultText>
+      <p>
+        <StyledLabel netType={net}>{net}net</StyledLabel>
+      </p>
+
+      <DefaultText fam={fam}>{text}</DefaultText>
     </StyledNet>
   )
 }

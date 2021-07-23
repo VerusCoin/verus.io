@@ -3,14 +3,11 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import useTranslation from 'next-translate/useTranslation'
 import { HomepageProps } from 'types/homepage'
 import { CardsJSON, BlogJSON } from '@/data/homepage'
-import { MainLayout, Section, Grid } from '@/components/layouts'
-import {
-  Button,
-  DefaultHeader,
-  // TypedJS,
-  DefaultSVGs,
-  Img,
-} from '@/components/elements'
+import { MainLayout, Grid } from '@/components/layouts'
+import { Button, Img } from '@/components/elements'
+import Cards from '@/components/elements/Cards/Cards'
+import CardHeader from '@/components/elements/Cards/CardHeader'
+import CardText from '@/components/elements/Cards/CardText'
 
 import {
   Banner,
@@ -21,10 +18,6 @@ import {
   LifeBloodLinkCards,
   KnowCards,
 } from '@/components/sections/Home'
-
-import Cards from '@/components/elements/Cards/Cards'
-import CardHeader from '@/components/elements/Cards/CardHeader'
-import CardText from '@/components/elements/Cards/CardText'
 
 const Home = ({
   data,
@@ -39,12 +32,14 @@ const Home = ({
     ],
     width: 1000,
   }
+
+  const CardList = data.CardsJSON
   return (
     <MainLayout bG="greyQuin" jumbotronData={JumbotronJSON}>
       <Grid>
         <Banner />
 
-        {CardsJSON.map((card, index) => {
+        {CardList.map((card, index) => {
           const heading = t(`cards.${card.card}.header`)
           return (
             <Cards key={index}>
@@ -126,11 +121,12 @@ const Home = ({
 
 export default Home
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       data: {
         BlogJSON,
+        CardsJSON,
       },
     },
   }
