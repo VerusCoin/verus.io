@@ -2,7 +2,17 @@ import { css } from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 
 const fontSize = (
-  bp: 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'menu' | 'menuXs' | 'button'
+  bp:
+    | 'xxl'
+    | 'xl'
+    | 'lg'
+    | 'mdlg'
+    | 'md'
+    | 'sm'
+    | 'xs'
+    | 'menu'
+    | 'menuXs'
+    | 'button'
 ): any => {
   switch (bp) {
     case 'xs':
@@ -42,7 +52,17 @@ const fontSize = (
         line-height: ${(props: any) => props.theme.typo.lineHeight.md.desktop};
       `}
       `
+    case 'mdlg':
+      return css`
+        font-size: ${(props: any) => props.theme.typo.sizes.mdlg.mobile};
+        line-height: ${(props: any) => props.theme.typo.lineHeight.mdlg.mobile};
 
+        ${media.desktop`
+          font-size: ${(props: any) => props.theme.typo.sizes.mdlg.desktop};
+          line-height: ${(props: any) =>
+            props.theme.typo.lineHeight.mdlg.desktop};
+        `}
+      `
     case 'lg':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.lg.mobile};

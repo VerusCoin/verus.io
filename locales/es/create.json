@@ -1,0 +1,43 @@
+{
+  "jumbotron": {
+    "heading": "Change the world.",
+    "text": "Create products and services you care about."
+  },
+  "tryTest": "Try now on testnet",
+  "liveMain": "Live on mainnet",
+  "cards": {
+    "doc": {
+      "heading": "Blockchain or token?",
+      "text": "No problem either way.",
+      "link": "Get started on "
+    },
+    "launchBlockchain": {
+      "heading": "Launch blockchains.",
+      "text": "Interoperable. Customizable. Independent."
+    },
+    "createToken": {
+      "heading": "Create<br/>tokens.",
+      "text": "Tailor to<br/>your needs."
+    },
+    "instantLiquidity": {
+      "heading": "Instant liquidity<br/>for your projects.",
+      "text": "Create markets.<br/>Find funding."
+    },
+    "getPrivacy": {
+      "heading": "Get privacy<br/>by design.",
+      "text": "Make conscious<br/>decisions on what<br/>to share."
+    },
+    "digitalIdentity": {
+      "heading": "Digital identities<br/> and namespaces.",
+      "text": "Self-sovereign.<br/>Decentralized."
+    },
+    "dataValue": {
+      "heading": "Data & value: send<br/> it literally anywhere.",
+      "text": "Cross-chain.<br/>Cross-networks."
+    },
+    "changeWorld": {
+      "heading": "Change the world. It’s simple.",
+      "text": "Use these blockchain tools to create products and services you care about. Rent-free and decentralized with Verus scalable public infrastructure."
+    }
+  }
+}

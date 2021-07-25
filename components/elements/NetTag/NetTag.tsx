@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import useTranslation from 'next-translate/useTranslation'
 import { DefaultText } from '@/components/elements'
 import { fontSize } from '@/styles/helpers'
 
@@ -33,6 +34,7 @@ export interface INetTag {
     | 'xxl'
     | 'xl'
     | 'lg'
+    | 'mdlg'
     | 'md'
     | 'sm'
     | 'xs'
@@ -43,10 +45,12 @@ export interface INetTag {
 }
 
 const NetTag = ({ net, fam, fontSz = 'sm', text }: INetTag) => {
+  const { t } = useTranslation('common')
+
   return (
     <StyledNet fontSz={fontSz}>
       <p>
-        <StyledLabel netType={net}>{net}net</StyledLabel>
+        <StyledLabel netType={net}>{t(`${net}net`)}</StyledLabel>
       </p>
 
       <DefaultText fam={fam}>{text}</DefaultText>

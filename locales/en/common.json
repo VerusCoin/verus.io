@@ -1,4 +1,17 @@
 {
   "mainnet": "mainnet",
-  "testnet": "testnet"
+  "testnet": "testnet",
+  "findMore": "Find out more",
+  "globalCard": {
+    "header": "Connecting everything together",
+    "link": "More on global network"
+  },
+  "coinCard": {
+    "header": "Lifeblood. Utility. Usage.",
+    "link": "More on the coin"
+  },
+  "foundationCard": {
+    "header": "Assured continual growth.",
+    "link": "More on string foundations"
+  }
 }

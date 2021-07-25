@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IDefaultText } from '@/types/elements'
-import { fontFam } from '@/styles/helpers'
+import { fontFam, fontSize } from '@/styles/helpers'
 
 const StyledDefaultText = styled.p<any>`
   ${(props) => fontFam(props.fam)}
@@ -10,6 +10,7 @@ const StyledDefaultText = styled.p<any>`
   text-align: ${(props) => props.align || 'left'};
   ${(props) => props?.customColor && `color: ${props.customColor};`}
   ${(props: any) => props?.width && `max-width: ${props.width}px;`}
+  ${(props) => props.fontSz && fontSize(props.fontSz)}
 `
 
 const DefaultText: React.FC<IDefaultText> = ({
@@ -18,6 +19,7 @@ const DefaultText: React.FC<IDefaultText> = ({
   children,
   align,
   fam,
+  fontSz,
 }) => {
   return (
     <StyledDefaultText
@@ -25,6 +27,7 @@ const DefaultText: React.FC<IDefaultText> = ({
       customColor={customColor}
       align={align}
       fam={fam}
+      fontSz={fontSz}
     >
       {children}
     </StyledDefaultText>

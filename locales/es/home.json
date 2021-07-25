@@ -40,18 +40,7 @@
       "header": "Change the world. It's simple.",
       "link": "Create with Verus"
     },
-    "foundationCard": {
-      "header": "Assured continual growth.",
-      "link": "More on string foundations"
-    },
-    "globalCard": {
-      "header": "Connecting everything together",
-      "link": "More on global network"
-    },
-    "coinCard": {
-      "header": "Lifeblood. Utility. Usage.",
-      "link": "More on the coin"
-    },
+
     "knowCard": {
       "know": "Did you know?",
       "header": "<u>Verus</u> is Latin and means:",

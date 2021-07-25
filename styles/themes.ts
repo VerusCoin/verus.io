@@ -7,11 +7,12 @@ const primary: DefaultTheme = {
   colors: {
     white: '#FFFFFF',
     green: '#4AA658',
-    orange: '#DE9D3B',
+    orange: '#DF910B',
 
     black: {
       primary: '#272727',
       secondary: '#292A2D',
+      tertiary: '#242424',
     },
 
     blue: {
@@ -29,6 +30,7 @@ const primary: DefaultTheme = {
       quaternary: '#FBFBFB',
       quinary: `#F6F6F6`,
       senary: '#E8E8E8',
+      sectary: '#A1A1A1',
     },
   },
 
@@ -82,21 +84,25 @@ const primary: DefaultTheme = {
       },
       md: {
         mobile: '21px',
-        tablet: '28px',
-        desktop: '28px',
+        tablet: '25px',
+        desktop: '25px',
       },
-      lg: {
+      mdlg: {
         mobile: '21px',
-        tablet: '21px',
         desktop: '32px',
       },
+      lg: {
+        mobile: '24px',
+        tablet: '24px',
+        desktop: '44px',
+      },
       xl: {
-        mobile: '40px',
+        mobile: '32px',
         tablet: '48px',
         desktop: '64px',
       },
       xxl: {
-        mobile: '48px',
+        mobile: '40px',
         tablet: '80px',
         desktop: '96px',
       },
@@ -112,16 +118,20 @@ const primary: DefaultTheme = {
       },
       md: {
         mobile: '25px',
-        tablet: '32px',
-        desktop: '32px',
-      },
-      lg: {
-        mobile: '25px',
         tablet: '25px',
+        desktop: '25px',
+      },
+      mdlg: {
+        mobile: '25px',
         desktop: '36px',
       },
+      lg: {
+        mobile: '28px',
+        tablet: '48px',
+        desktop: '48px',
+      },
       xl: {
-        mobile: '44px',
+        mobile: '36px',
         tablet: '52px',
         desktop: '68px',
       },

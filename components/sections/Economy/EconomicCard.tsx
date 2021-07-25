@@ -9,8 +9,13 @@ import CardHeader from '@/components/elements/Cards/CardHeader'
 import CardText from '@/components/elements/Cards/CardText'
 import { StyledNet } from '@/components/elements/NetTag/NetTag'
 
+const StyledCardText = styled.div`
+  margin: 16px 0;
+  width: 500px;
+`
+
 const StyledTagSection = styled.div<any>`
-  margin: 30px 0;
+  margin: 32px 0;
   display: flex;
   flex-direction: column;
 
@@ -43,32 +48,34 @@ const EconomicCard = () => {
   return (
     <Cards span={2}>
       <CardHeader text={t('economic.heading')} />
-      <CardText book text={t('economic.text')} />
+      <StyledCardText>
+        <CardText book text={t('economic.text')} />
+      </StyledCardText>
       <StyledTagSection>
         <NetTag
           fam="geoHead"
-          fontSz="lg"
+          fontSz="mdlg"
           net="main"
           text={t('economic.verus')}
         />
 
         <NetTag
           fam="geoHead"
-          fontSz="lg"
+          fontSz="mdlg"
           net="test"
           text={t('economic.conversion')}
         />
 
         <NetTag
           fam="geoHead"
-          fontSz="lg"
+          fontSz="mdlg"
           net="test"
           text={t('economic.blockchain')}
         />
 
         <NetTag
           fam="geoHead"
-          fontSz="lg"
+          fontSz="mdlg"
           net="test"
           text={t('economic.token')}
         />

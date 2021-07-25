@@ -14,6 +14,8 @@ export interface IButton {
   small?: boolean
   color?: string
   fontRegular?: boolean
+  white?: boolean
+  margin?: string
 }
 
 export interface IDefaultHeader {
@@ -39,6 +41,7 @@ export interface IDefaultText {
   align?: string
   fam?: string
   gR?: boolean
+  fontSz?: string
 }
 
 export interface ITypedJS {

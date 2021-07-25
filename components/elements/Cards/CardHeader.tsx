@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { DefaultHeader } from '@/components/elements'
 import parse from 'html-react-parser'
 
-const StyledTextHeader = styled.div<{ width?: string }>`
+const StyledTextHeader = styled.div<{ margin?: string; width?: string }>`
   vertical-align: middle;
-  margin-top: 32px;
   display: flex;
   justify-content: center;
   ${(props) => props.width && `width: ${props.width}`}
+  margin: ${(props) => (props.margin ? props.margin : '32px 0 0 0')}
 `
 
 interface HeaderProps {
@@ -16,17 +16,12 @@ interface HeaderProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   width?: string
   text: string
+  margin?: string
 }
 
-const CardHeader: React.FC<
-  React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > &
-    HeaderProps
-> = ({ as = 'h2', color, width, text }) => {
+const CardHeader = ({ as = 'h2', color, width, text, margin }: HeaderProps) => {
   return (
-    <StyledTextHeader width={width}>
+    <StyledTextHeader width={width} margin={margin}>
       <DefaultHeader align="center" customColor={color} as={as}>
         {parse(text)}
       </DefaultHeader>

@@ -63,7 +63,10 @@ const Home = ({
           </Button>
         </BlueEarthCard>
         <LinkCards>
-          <CardHeader text={t('cards.foundationCard.header')} />
+          <CardHeader
+            margin="32px 0 64px"
+            text={t('cards.foundationCard.header')}
+          />
           <Button
             transparent
             svg={{ type: 'arrow', rotate: false }}
@@ -76,7 +79,10 @@ const Home = ({
           </Button>
         </LinkCards>
         <ChainLinkCards>
-          <CardHeader text={t('cards.globalCard.header')} />
+          <CardHeader
+            margin="32px 0 64px"
+            text={t('common:globalCard.header')}
+          />
           <Button
             transparent
             svg={{ type: 'arrow', rotate: false }}
@@ -85,11 +91,11 @@ const Home = ({
             color="#3165d4"
             fontRegular
           >
-            {t('cards.globalCard.link')}
+            {t('common:globalCard.link')}
           </Button>
         </ChainLinkCards>
         <LifeBloodLinkCards>
-          <CardHeader text={t('cards.coinCard.header')} />
+          <CardHeader margin="32px 0 64px" text={t('common:coinCard.header')} />
           <Button
             transparent
             svg={{ type: 'arrow', rotate: false }}
@@ -98,7 +104,7 @@ const Home = ({
             color="#3165d4"
             fontRegular
           >
-            {t('cards.coinCard.link')}
+            {t('common:coinCard.link')}
           </Button>
         </LifeBloodLinkCards>
         <KnowCards>

@@ -14,6 +14,10 @@ const FontColor = (bg: string): any => {
       return css`
         color: ${(props) => props.theme.colors.grey.quinary};
       `
+    case 'greySectary':
+      return css`
+        color: ${(props) => props.theme.colors.grey.sectary};
+      `
     case `white`:
       return css`
         color: ${(props) => props.theme.colors.white};
@@ -25,6 +29,10 @@ const FontColor = (bg: string): any => {
     case 'black':
       return css`
         color: ${(props) => props.theme.colors.black.primary};
+      `
+    case 'orange':
+      return css`
+        color: ${(props) => props.theme.colors.orange};
       `
     default:
       return css`

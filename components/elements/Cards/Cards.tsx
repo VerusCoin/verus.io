@@ -4,10 +4,10 @@ import { media } from 'styled-bootstrap-grid'
 import { bgColor } from '@/styles/helpers'
 
 const StyledCard = styled.div<any>`
-  ${bgColor('white')}
+  ${(props) => bgColor(props.bGcolor)}
   border-radius: 20px;
   padding: 100px 30px;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -25,10 +25,14 @@ const Cards: React.FC<
     React.DetailedHTMLProps<
       React.HTMLAttributes<HTMLDivElement>,
       HTMLDivElement
-    > & { span?: number }
+    > & { span?: number; bgColor?: string }
   >
-> = ({ span, children }) => {
-  return <StyledCard span={span}>{children}</StyledCard>
+> = ({ bgColor = 'white', span, children }) => {
+  return (
+    <StyledCard bGcolor={bgColor} span={span}>
+      {children}
+    </StyledCard>
+  )
 }
 
 export default Cards

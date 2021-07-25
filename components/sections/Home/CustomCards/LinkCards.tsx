@@ -6,7 +6,7 @@ import { bgColor } from '@/styles/helpers'
 const StyledLinkCards = styled.div`
   ${bgColor('white')}
   border-radius: 20px;
-  padding: 40px 50px 100px;
+  padding: 40px 40px 100px;
   justify-content: space-between;
   align-items: center;
   display: flex;

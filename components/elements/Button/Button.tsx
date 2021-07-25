@@ -85,6 +85,19 @@ const StyledButton = styled.button<any>`
 
     `}
     ${(props) => (props.small ? 'font-size: 17px' : fontSize(props.fontSize))}
+    ${(props) =>
+    props.white &&
+    `
+      padding: 16px 10px;
+      background: transparent;
+      border-radius: ${props.theme.buttons.primary.radius};
+      border: solid 2px ${props.theme.buttons.primary.text};
+      color: ${props.theme.buttons.primary.text};
+      ${media.tablet`
+        padding: 16px 30px;
+      `}
+    `}
+    ${(props) => props.margin && `margin: ${props.margin};`}
 `
 
 const Button = ({
@@ -93,11 +106,13 @@ const Button = ({
   href,
   as,
   primary,
+  white,
   transparent,
   color,
   fontRegular,
   fontSize = 'button',
   small,
+  margin,
   onClick,
   children,
 }: IButton) => {
@@ -113,7 +128,9 @@ const Button = ({
       color={color}
       fontRegular={fontRegular}
       fontSize={fontSize}
+      margin={margin}
       onClick={onClick}
+      white={white}
     >
       {children}
 

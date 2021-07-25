@@ -31,6 +31,10 @@ const bgColor = (bg: string): any => {
       return css`
         background-color: ${(props) => props.theme.colors.blue.quinary};
       `
+    case 'blackTer':
+      return css`
+        background-color: ${(props) => props.theme.colors.black.tertiary};
+      `
     default:
       return css`
         background-color: ${bg};

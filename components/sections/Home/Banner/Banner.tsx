@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { DefaultHeader } from '@/components/elements'
+import { DefaultText } from '@/components/elements'
 import { bgColor } from '@/styles/helpers'
 import useTranslation from 'next-translate/useTranslation'
 
@@ -9,7 +9,7 @@ const StyledBanner = styled.div<any>`
   ${bgColor('blueQuan')};
 
   border-radius: 20px;
-  padding: 60px;
+  padding: 30px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -45,9 +45,9 @@ const Banner = () => {
   const { t } = useTranslation('home')
   return (
     <StyledBanner>
-      <DefaultHeader as="h3" align="center" customColor="white">
+      <DefaultText fontSz="md" align="center" customColor="white">
         {t('banner')}
-      </DefaultHeader>
+      </DefaultText>
     </StyledBanner>
   )
 }

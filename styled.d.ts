@@ -9,6 +9,7 @@ declare module 'styled-components' {
       black: {
         primary: string
         secondary: string
+        tertiary: string
       }
 
       blue: {
@@ -26,6 +27,7 @@ declare module 'styled-components' {
         quaternary: string
         quinary: string
         senary: string
+        sectary: string
       }
     }
 
@@ -82,6 +84,10 @@ declare module 'styled-components' {
           tablet: string
           desktop: string
         }
+        mdlg: {
+          mobile: string
+          desktop: string
+        }
         lg: {
           mobile: string
           tablet: string
@@ -110,6 +116,10 @@ declare module 'styled-components' {
         md: {
           mobile: string
           tablet: string
+          desktop: string
+        }
+        mdlg: {
+          mobile: string
           desktop: string
         }
         lg: {

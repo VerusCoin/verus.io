@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { fontSize, fontColor } from '@/styles/helpers'
+import parse from 'html-react-parser'
 
 const StyledText = styled.p<any>`
   margin: ${(props) => props.margin || '16px 0 0 0'};
@@ -14,6 +15,7 @@ const StyledText = styled.p<any>`
   ${(props) => props.customColor && fontColor(props.customColor)};
   ${(props) => (props.fontSz ? fontSize(props.fontSz) : fontSize('sm'))};
   ${(props) => `text-align: ${props.align};`}
+  ${(props) => props?.styles}
 `
 
 const CardText: React.FC<{
@@ -23,7 +25,8 @@ const CardText: React.FC<{
   book?: boolean
   fontSz?: string
   margin?: string
-}> = ({ color = 'black', regular, book, text, fontSz, margin }) => {
+  styles?: string
+}> = ({ color = 'black', regular, book, text, fontSz, margin, styles }) => {
   return (
     <StyledText
       regular={regular}
@@ -32,8 +35,9 @@ const CardText: React.FC<{
       customColor={color}
       fontSz={fontSz}
       margin={margin}
+      styles={styles}
     >
-      {text}
+      {parse(text)}
     </StyledText>
   )
 }

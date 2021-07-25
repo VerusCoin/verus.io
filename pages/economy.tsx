@@ -1,6 +1,6 @@
 import React from 'react'
 import useTranslation from 'next-translate/useTranslation'
-import { MainLayout, Grid } from '@/components/layouts'
+import { MainLayout, Grid, Section } from '@/components/layouts'
 import { DefaultText, Img, Progressbar, NetTag } from '@/components/elements'
 
 import Cards from '@/components/elements/Cards/Cards'
@@ -101,7 +101,9 @@ const Economy = () => {
             margin: 'auto',
           }}
         >
-          <DefaultText align="center">{t('note')}</DefaultText>
+          <Section>
+            <DefaultText align="center">{t('note')}</DefaultText>
+          </Section>
         </div>
         <ParticipateCard />
         <EconomicCard />
@@ -109,12 +111,17 @@ const Economy = () => {
         <Cards>
           <NetTag net="test" />
           <CardText book fontSz="xl" text={t('defi.heading')} />
-          <CardText book fontSz="sm" text={t('defi.text')} />
+          <CardText margin="32px 0" book fontSz="sm" text={t('defi.text')} />
         </Cards>
         <Cards>
           <NetTag net="main" />
           <CardText book fontSz="xl" text={t('referral.heading')} />
-          <CardText book fontSz="sm" text={t('referral.text')} />
+          <CardText
+            margin="32px 0"
+            book
+            fontSz="sm"
+            text={t('referral.text')}
+          />
         </Cards>
       </Grid>
     </MainLayout>
