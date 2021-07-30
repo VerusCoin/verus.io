@@ -4,20 +4,15 @@ import useTranslation from 'next-translate/useTranslation'
 import { HomepageProps } from 'types/homepage'
 import { CardsJSON, BlogJSON } from '@/data/homepage'
 import { MainLayout, Grid } from '@/components/layouts'
-import { Button, Img } from '@/components/elements'
-import Cards from '@/components/elements/Cards/Cards'
-import CardHeader from '@/components/elements/Cards/CardHeader'
-import CardText from '@/components/elements/Cards/CardText'
-
 import {
-  Banner,
-  Blog,
-  BlueEarthCard,
-  LinkCards,
-  ChainLinkCards,
-  LifeBloodLinkCards,
-  KnowCards,
-} from '@/components/sections/Home'
+  Img,
+  Card,
+  CardHeader,
+  CardText,
+  DefaultLinkCard,
+} from '@/components/elements'
+
+import { Banner, Blog, KnowCards } from '@/components/sections/Home'
 
 const Home = ({
   data,
@@ -42,71 +37,18 @@ const Home = ({
         {CardList.map((card, index) => {
           const heading = t(`cards.${card.card}.header`)
           return (
-            <Cards key={index}>
+            <Card key={index}>
               <Img name={card.svg} />
               <CardHeader text={heading} />
               <CardText regular={true} text={t(`cards.${card.card}.text`)} />
-            </Cards>
+            </Card>
           )
         })}
-        <BlueEarthCard>
-          <CardHeader color="white" text={t('cards.createCard.header')} />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/create-with-verus"
-            as="a"
-            color="white"
-            fontRegular
-          >
-            {t('cards.createCard.link')}
-          </Button>
-        </BlueEarthCard>
-        <LinkCards>
-          <CardHeader
-            margin="32px 0 64px"
-            text={t('cards.foundationCard.header')}
-          />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/foundations"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            {t('cards.foundationCard.link')}
-          </Button>
-        </LinkCards>
-        <ChainLinkCards>
-          <CardHeader
-            margin="32px 0 64px"
-            text={t('common:globalCard.header')}
-          />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/global-network"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            {t('common:globalCard.link')}
-          </Button>
-        </ChainLinkCards>
-        <LifeBloodLinkCards>
-          <CardHeader margin="32px 0 64px" text={t('common:coinCard.header')} />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/coin"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            {t('common:coinCard.link')}
-          </Button>
-        </LifeBloodLinkCards>
+        <DefaultLinkCard card="create" />
+        <DefaultLinkCard card="foundation" />
+        <DefaultLinkCard card="global" />
+        <DefaultLinkCard card="coin" />
+
         <KnowCards>
           <CardText fontSz="xs" color="white" text={t('cards.knowCard.know')} />
           <CardHeader as="h5" color="white" text={t('cards.knowCard.header')} />

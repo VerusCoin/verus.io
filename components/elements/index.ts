@@ -7,4 +7,6 @@ export { default as TypedJS } from './TypedJS/TypedJS'
 export { default as Modal } from './Modal/Modal'
 export { default as Img } from './Img/Img'
 export { default as Progressbar } from './Progressbar/Progressbar'
+export * from './Card'
+
 export * from './SVGs/SVGs'

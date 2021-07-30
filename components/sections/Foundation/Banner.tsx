@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { NetTag, CardText } from '@/components/elements'
-import { fontSize, fontFam, fontColor } from '@/styles/helpers'
+import { Button, CardText } from '@/components/elements'
 import useTranslation from 'next-translate/useTranslation'
 
 const StyledBanner = styled.div<any>`
@@ -22,31 +21,21 @@ const StyledBanner = styled.div<any>`
 
   ${media.tablet`   
     
-    padding: 100px 60px;
+    padding: 120px 106px;
   `}
-`
-
-const ExtraCardText = styled.p`
-  ${fontFam('geoReg')};
-  ${fontColor('white')};
-  ${fontSize('sm')};
-  text-align: center;
-  margin: 30px 0;
-  ${media.tablet`
-  margin:30px 100px;
-  `}
-  ${media.giant`
-  margin:30px 200px;
+  ${media.desktop`
+    padding: 210px 106px;
   `}
 `
 
 const Banner = () => {
-  const { t } = useTranslation('economy')
+  const { t } = useTranslation('foundation')
   return (
     <StyledBanner>
-      <NetTag net="test" />
-      <CardText book fontSz="xl" color="white" text={t('banner.heading')} />
-      <ExtraCardText>{t('banner.text')}</ExtraCardText>
+      <CardText book fontSz="xl" color="white" text={t('highEfficient')} />
+      <Button white small color="#3165d4" fontRegular margin="63px 0 0 0">
+        {`${t('common:findMore')}`}
+      </Button>
     </StyledBanner>
   )
 }

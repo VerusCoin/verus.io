@@ -1,30 +1,54 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IDefaultHeader } from '@/types/elements'
 import { fontSize, fontColor } from '@/styles/helpers'
-
-const StyledTextContainer = styled.div`
-  color: ${(props) => props.theme.colors.black.primary};
-  margin-top: 16px;
-`
+import parse from 'html-react-parser'
 
 const StyledText = styled.p<any>`
-  font-family: ${(props) => props.theme.typo.secondary.family};
+  margin: ${(props) => props.margin || '16px 0 0 0'};
+  font-family: ${(props) =>
+    props.regular
+      ? props.theme.typo.secondary.family
+      : props.book
+      ? props.theme.typo.header.family
+      : props.theme.typo.primary.family};
+
   ${(props) => props.customColor && fontColor(props.customColor)};
-  ${fontSize('sm')};
+  ${(props) => (props.fontSz ? fontSize(props.fontSz) : fontSize('sm'))};
   ${(props) => `text-align: ${props.align};`}
+  ${(props) => props?.styles}
 `
-const CardText: React.FC<IDefaultHeader> = ({
-  color,
-  align = 'center',
-  children,
-}) => {
+
+export interface CardTextProps {
+  color?: string
+  text: string
+  regular?: boolean
+  book?: boolean
+  fontSz?: string
+  margin?: string
+  styles?: string
+}
+
+const CardText = ({
+  color = 'black',
+  regular,
+  book,
+  text,
+  fontSz,
+  margin,
+  styles,
+}: CardTextProps) => {
   return (
-    <StyledTextContainer>
-      <StyledText align={align} customColor={color}>
-        {children}
-      </StyledText>
-    </StyledTextContainer>
+    <StyledText
+      regular={regular}
+      book={book}
+      align="center"
+      customColor={color}
+      fontSz={fontSz}
+      margin={margin}
+      styles={styles}
+    >
+      {parse(text)}
+    </StyledText>
   )
 }
 

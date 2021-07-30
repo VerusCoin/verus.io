@@ -1,10 +1,14 @@
 import React from 'react'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid, Section } from '@/components/layouts'
-import { DefaultText, Img, Progressbar, NetTag } from '@/components/elements'
-
-import Cards from '@/components/elements/Cards/Cards'
-import CardText from '@/components/elements/Cards/CardText'
+import {
+  DefaultText,
+  Img,
+  Progressbar,
+  NetTag,
+  Card,
+  CardText,
+} from '@/components/elements'
 
 import {
   ParticipateCard,
@@ -23,7 +27,7 @@ const Economy = () => {
   return (
     <MainLayout jumbotronData={JumbotronJSON}>
       <Grid>
-        <Cards>
+        <Card>
           <CardText book fontSz="sm" text={t('staking.heading')} />
           <CardText
             book
@@ -44,8 +48,8 @@ const Economy = () => {
             book
             text={`${ProgressBarValue}% ${t('staking.staking')}`}
           />
-        </Cards>
-        <Cards>
+        </Card>
+        <Card>
           <CardText book fontSz="sm" text={t('hashrate.heading')} />
           <CardText
             book
@@ -93,7 +97,7 @@ const Economy = () => {
               text={`11,866 ${t('hashrate.desktop')}`}
             />
           </div>
-        </Cards>
+        </Card>
         <div
           style={{
             gridColumn: 'span 2',
@@ -108,12 +112,12 @@ const Economy = () => {
         <ParticipateCard />
         <EconomicCard />
         <Banner />
-        <Cards>
+        <Card>
           <NetTag net="test" />
           <CardText book fontSz="xl" text={t('defi.heading')} />
           <CardText margin="32px 0" book fontSz="sm" text={t('defi.text')} />
-        </Cards>
-        <Cards>
+        </Card>
+        <Card>
           <NetTag net="main" />
           <CardText book fontSz="xl" text={t('referral.heading')} />
           <CardText
@@ -122,7 +126,7 @@ const Economy = () => {
             fontSz="sm"
             text={t('referral.text')}
           />
-        </Cards>
+        </Card>
       </Grid>
     </MainLayout>
   )

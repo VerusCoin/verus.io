@@ -84,11 +84,10 @@ const StyledButton = styled.button<any>`
       }
 
     `}
-    ${(props) => (props.small ? 'font-size: 17px' : fontSize(props.fontSize))}
+    
     ${(props) =>
     props.white &&
     `
-      padding: 16px 10px;
       background: transparent;
       border-radius: ${props.theme.buttons.primary.radius};
       border: solid 2px ${props.theme.buttons.primary.text};
@@ -98,6 +97,7 @@ const StyledButton = styled.button<any>`
       `}
     `}
     ${(props) => props.margin && `margin: ${props.margin};`}
+    ${(props) => (props.small ? 'font-size: 17px' : fontSize(props.fontSize))}
 `
 
 const Button = ({

@@ -1,0 +1,32 @@
+{
+  "jumbotron": {
+    "heading": "Participate and earn.",
+    "text": "A thriving network economy."
+  },
+  "earthCard": {
+    "header": "Made for the world,<br/>by the community.",
+    "text": "No ICO.<br/>No premine.<br/>No founder fees."
+  },
+  "keychainCard": {
+    "header": "A safe network to store your wealth.",
+    "text": "Attack resistent.<br/>Secure vaults."
+  },
+  "scalableWithoutLimits": {
+    "header": "scalable without limits",
+    "text": "Ready for world demand."
+  },
+  "topTier": {
+    "header": "Top-tier decentralized network.",
+    "text": "Low barrier staking & mining."
+  },
+  "highEfficient": "A highly efficient environmentally friendly network.",
+  "smartContracts": "Don’t be afraid of faulty smart contracts.",
+  "quantumProof": {
+    "header": "Quantum proof.",
+    "text": "Ready for the future."
+  },
+  "mev": {
+    "header": "MEV can’t take advantage of you.",
+    "text": "No front-running.<br/>No chain reorgs."
+  }
+}

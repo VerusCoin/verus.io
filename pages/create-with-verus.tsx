@@ -1,6 +1,12 @@
 import React from 'react'
 import useTranslation from 'next-translate/useTranslation'
-import { Button, Img } from '@/components/elements'
+import {
+  Button,
+  Img,
+  DefaultLinkCard,
+  Card,
+  CardText,
+} from '@/components/elements'
 import { MainLayout, Grid } from '@/components/layouts'
 // import { GetStaticProps, InferGetStaticPropsType } from 'next'
 // import { CreateWithVerusProps } from 'types/createpage'
@@ -13,15 +19,6 @@ import {
   LiquidityCard,
   PrivacyCard,
 } from '@/components/sections/Create'
-
-import {
-  LinkCards,
-  LifeBloodLinkCards,
-  ChainLinkCards,
-} from '@/components/sections/Home'
-
-import Cards from '@/components/elements/Cards/Cards'
-import CardText from '@/components/elements/Cards/CardText'
 
 const CreateWithVerus = () => {
   const { t } = useTranslation('create')
@@ -61,13 +58,13 @@ const CreateWithVerus = () => {
             {`${t('cards.doc.link')} docs.verus.io`}
           </Button>
         </BlueEarthCard>
-        <Cards>
+        <Card>
           <div style={{ marginBottom: '115px' }}>
             <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
             <CardText
               margin="32px 32px 0 "
               book
-              fontSz="lg"
+              fontSz="xl"
               text={t('cards.launchBlockchain.heading')}
             />
 
@@ -82,15 +79,15 @@ const CreateWithVerus = () => {
           <Button fontRegular small>
             {`${t('common:findMore')}`}
           </Button>
-        </Cards>
-        <Cards>
+        </Card>
+        <Card>
           <div style={{ marginBottom: '115px' }}>
             <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
 
             <CardText
               margin="32px 32px 0 "
               book
-              fontSz="lg"
+              fontSz="xl"
               text={t('cards.createToken.heading')}
             />
 
@@ -105,14 +102,14 @@ const CreateWithVerus = () => {
           <Button small fontRegular>
             {`${t('common:findMore')}`}
           </Button>
-        </Cards>
+        </Card>
         <LiquidityCard>
-          <Cards>
+          <Card>
             <div style={{ marginBottom: '90px' }}>
               <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
               <CardText
                 book
-                fontSz="lg"
+                fontSz="xl"
                 margin="32px 32px 0 "
                 text={t('cards.instantLiquidity.heading')}
               />
@@ -127,7 +124,7 @@ const CreateWithVerus = () => {
             <Button small fontRegular>
               {`${t('common:findMore')}`}
             </Button>
-          </Cards>
+          </Card>
           <div className="liquidity-image">
             <Img name="liquidity-image" />
           </div>
@@ -136,13 +133,13 @@ const CreateWithVerus = () => {
           <div className="privacy-image">
             <Img name="privacy-image" />
           </div>
-          <Cards bgColor="blackTer">
+          <Card bgColor="blackTer">
             <div>
               <CardText book fontSz="xs" color="green" text={t('liveMain')} />
               <CardText
                 margin="32px 32px 0 "
                 book
-                fontSz="lg"
+                fontSz="xl"
                 color="white"
                 text={t('cards.getPrivacy.heading')}
               />
@@ -157,16 +154,16 @@ const CreateWithVerus = () => {
             <Button white small fontRegular margin="90px 0 0 0">
               {`${t('common:findMore')}`}
             </Button>
-          </Cards>
+          </Card>
         </PrivacyCard>
         <DigitalCard>
-          <Cards>
+          <Card>
             <div style={{ marginBottom: '90px' }}>
               <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
               <CardText
                 margin="32px auto"
                 book
-                fontSz="lg"
+                fontSz="xl"
                 text={t('cards.digitalIdentity.heading')}
               />
               <CardText
@@ -179,7 +176,7 @@ const CreateWithVerus = () => {
             <Button small fontRegular>
               {`${t('common:findMore')}`}
             </Button>
-          </Cards>
+          </Card>
           <div className="identity-image">
             <Img name="identity-image" />
           </div>
@@ -188,12 +185,12 @@ const CreateWithVerus = () => {
           <div className="earth-image">
             <Img name="earth-image" />
           </div>
-          <Cards>
+          <Card>
             <div style={{ marginBottom: '90px' }}>
               <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
               <CardText
                 book
-                fontSz="lg"
+                fontSz="xl"
                 margin="32px auto"
                 text={t('cards.dataValue.heading')}
               />
@@ -207,9 +204,9 @@ const CreateWithVerus = () => {
             <Button small fontRegular>
               {`${t('common:findMore')}`}
             </Button>
-          </Cards>
+          </Card>
         </EarthCard>
-        <Cards bgColor="#0A3FB1" span={2}>
+        <Card bgColor="#0A3FB1" span={2}>
           <CardText
             fontSz="xl"
             color="white"
@@ -227,7 +224,6 @@ const CreateWithVerus = () => {
 
           <Button
             white
-            small
             svg={{ type: 'tab', rotate: false }}
             href="#"
             as="a"
@@ -236,61 +232,10 @@ const CreateWithVerus = () => {
           >
             {`${t('cards.doc.link')} docs.verus.io`}
           </Button>
-        </Cards>
-        <ChainLinkCards>
-          <CardText
-            book
-            fontSz="xl"
-            margin="32px 0 64px"
-            text={t('common:globalCard.header')}
-          />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/global-network"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            {t('common:globalCard.link')}
-          </Button>
-        </ChainLinkCards>
-        <LinkCards>
-          <CardText
-            book
-            fontSz="xl"
-            margin="32px 0 64px"
-            text={t('common:foundationCard.header')}
-          />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/foundations"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            {t('common:foundationCard.link')}
-          </Button>
-        </LinkCards>
-        <LifeBloodLinkCards>
-          <CardText
-            book
-            fontSz="xl"
-            margin="32px 0 64px"
-            text={t('common:coinCard.header')}
-          />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/coin"
-            as="a"
-            color="#3165d4"
-            fontRegular
-          >
-            {t('common:coinCard.link')}
-          </Button>
-        </LifeBloodLinkCards>
+        </Card>
+        <DefaultLinkCard card="global" />
+        <DefaultLinkCard card="foundation" />
+        <DefaultLinkCard card="coin" />
       </Grid>
     </MainLayout>
   )

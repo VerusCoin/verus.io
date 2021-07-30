@@ -19,6 +19,7 @@ const StyledContainer = styled.div<any>`
   ${media.tablet`
     display: grid;
     grid-template-columns: 1fr 1fr;
+  
   `}
 
   ${media.giant`

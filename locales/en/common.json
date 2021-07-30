@@ -13,5 +13,9 @@
   "foundationCard": {
     "header": "Assured continual growth.",
     "link": "More on string foundations"
+  },
+  "createCard": {
+    "header": "Change the world. It's simple.",
+    "link": "Create with Verus"
   }
 }
