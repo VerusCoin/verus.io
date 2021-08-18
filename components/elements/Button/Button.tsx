@@ -92,9 +92,10 @@ const StyledButton = styled.button<any>`
       border-radius: ${props.theme.buttons.primary.radius};
       border: solid 2px ${props.theme.buttons.primary.text};
       color: ${props.theme.buttons.primary.text};
-      ${media.tablet`
-        padding: 16px 30px;
-      `}
+      padding: 10px 30px 10px 20px;
+      &:hover {
+        background: rgb(255,255,255,0.17)
+      }
     `}
     ${(props) => props.margin && `margin: ${props.margin};`}
     ${(props) => (props.small ? 'font-size: 17px' : fontSize(props.fontSize))}

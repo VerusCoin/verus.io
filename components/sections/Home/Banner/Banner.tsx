@@ -21,7 +21,6 @@ const StyledBanner = styled.div<any>`
   height: 120px;
   background-position: 50% 28px;
   background-size: 75%;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   ${media.tablet`
     background-position: 110% 36px;
@@ -45,7 +44,7 @@ const Banner = () => {
   const { t } = useTranslation('home')
   return (
     <StyledBanner>
-      <DefaultText fontSz="md" align="center" customColor="white">
+      <DefaultText fontSz="mdlg" align="center" customColor="white">
         {t('banner')}
       </DefaultText>
     </StyledBanner>

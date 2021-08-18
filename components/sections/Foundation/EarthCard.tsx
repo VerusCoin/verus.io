@@ -7,8 +7,8 @@ const StyledEarthCard = styled.div`
   ${bgColor('white')};
 
   border-radius: 20px;
-  padding: 120px 25px 60px 25px;
-
+  padding: 157px 25px 41px;
+  height: 520px;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -18,14 +18,24 @@ const StyledEarthCard = styled.div`
   background-image: url('/svg/earth.svg');
   background-repeat: no-repeat;
   min-height: 350px;
-  background-position: center -5vw;
-  background-size: 50vw;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: background-position 1s linear;
+  background-position: center top -35px;
+  background-size: 167px;
+
   ${media.tablet`
-    background-position: center right -50px;
-    background-size: 40vh;
-    padding: 15% 25% 15% 5%;
+    background-position: center right -35px;
+    background-size: 264px;
+    padding: 100px 250px 126px 90px;
+  `}
+  ${media.desktop`
+    height: 750px;
+    background-position: center right -47px;
+    background-size: 362px;
+    padding: 166px 350px 166px 90px;
+  `}
+  ${media.giant`
+    background-size: 460px;
+    background-position: center right -59px;
+    padding: 166px 450px 166px 90px;
   `}
 `
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { Button, CardText } from '@/components/elements'
+import { Button, CardText, Modal, useModal } from '@/components/elements'
 import useTranslation from 'next-translate/useTranslation'
 
 const StyledBanner = styled.div<any>`
@@ -17,25 +17,50 @@ const StyledBanner = styled.div<any>`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
+  height: 520px;
   ${media.tablet`   
     
     padding: 120px 106px;
   `}
   ${media.desktop`
     padding: 210px 106px;
+    height: 750px;
   `}
 `
 
 const Banner = () => {
   const { t } = useTranslation('foundation')
+  const { isShown, toggle } = useModal()
   return (
     <StyledBanner>
-      <CardText book fontSz="xl" color="white" text={t('highEfficient')} />
-      <Button white small color="#3165d4" fontRegular margin="63px 0 0 0">
+      <CardText
+        book
+        fontSz="xl"
+        color="white"
+        text={t('highEfficient.header')}
+      />
+      <Button
+        onClick={toggle}
+        white
+        small
+        color="#3165d4"
+        fontRegular
+        margin="63px 0 0 0"
+      >
         {`${t('common:findMore')}`}
       </Button>
+      <Modal
+        isShown={isShown}
+        hide={toggle}
+        title={t('highEfficient.modal.header')}
+      >
+        <CardText
+          fontSz="modal"
+          align="left"
+          text={t('highEfficient.modal.text')}
+        />
+      </Modal>
     </StyledBanner>
   )
 }

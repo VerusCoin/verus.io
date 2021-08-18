@@ -43,7 +43,7 @@ const BlogItem: React.FC<IBlogItem> = ({ image, title, date, href }) => {
         <Image src={image} alt={title} width={360} height={185} />
       </StyledImage>
 
-      <DefaultHeader as="h3">{title}</DefaultHeader>
+      <DefaultHeader as="h4">{title}</DefaultHeader>
 
       <DefaultText>{dayjs(date).format('DD MMM YYYY')}</DefaultText>
     </StyledBlogItem>

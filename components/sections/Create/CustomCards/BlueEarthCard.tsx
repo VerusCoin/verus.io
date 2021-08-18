@@ -7,9 +7,9 @@ const StyledBlueEarthCard = styled.div`
   ${bgColor('blueQuan')};
 
   border-radius: 20px;
-  padding: 120px 25px 60px 25px;
+  padding: 190px 25px 72px;
+  height: 520px;
 
-  justify-content: space-between;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -17,15 +17,30 @@ const StyledBlueEarthCard = styled.div`
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
   background-image: url('/svg/earth.svg');
   background-repeat: no-repeat;
-  min-height: 350px;
-  background-position: center -5vw;
-  background-size: 50vw;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: background-position 1s linear;
+  justify-content: space-between;
+  background-position: center top -35px;
+  background-size: 200px;
+
+  a {
+    padding: 10px 30px 10px 20px;
+  }
+  p {
+    margin: 0 25px;
+  }
   ${media.tablet`
-    background-position: center right -50px;
-    background-size: 40vh;
-    padding: 15% 25% 15% 5%;
+    background-position: center right -30px;
+    background-size: 303px;
+    padding: 174px 117px 164px 27px;
+    justify-content: space-between;
+    p {
+      margin: 0;
+    }
+    
+  `}
+  ${media.desktop`
+    height: 750px;
+    background-size: 460px;
+    padding: 263px 357px 253px 93px;
   `}
 `
 

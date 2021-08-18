@@ -40,7 +40,7 @@ const primary: DefaultTheme = {
     sm: spacing(3), //30px
     md: spacing(4), //40px
     lg: spacing(5), //50px
-    xl: spacing(6), //60px
+    xl: spacing(11), //110px
     xxl: spacing(15), //150px
 
     custom: {
@@ -91,6 +91,10 @@ const primary: DefaultTheme = {
         mobile: '21px',
         desktop: '32px',
       },
+      modal: {
+        mobile: '21px',
+        desktop: '28px',
+      },
       lg: {
         mobile: '24px',
         tablet: '24px',
@@ -105,40 +109,6 @@ const primary: DefaultTheme = {
         mobile: '40px',
         tablet: '80px',
         desktop: '96px',
-      },
-    },
-    lineHeight: {
-      xs: {
-        desktop: '18px',
-      },
-      sm: {
-        mobile: '23px',
-        tablet: '25px',
-        desktop: '25px',
-      },
-      md: {
-        mobile: '25px',
-        tablet: '25px',
-        desktop: '25px',
-      },
-      mdlg: {
-        mobile: '25px',
-        desktop: '36px',
-      },
-      lg: {
-        mobile: '28px',
-        tablet: '48px',
-        desktop: '48px',
-      },
-      xl: {
-        mobile: '36px',
-        tablet: '52px',
-        desktop: '68px',
-      },
-      xxl: {
-        mobile: '52px',
-        tablet: '84px',
-        desktop: '100px',
       },
     },
     letterSpacing: {
@@ -185,7 +155,7 @@ const primary: DefaultTheme = {
       radius: '30px',
 
       hover: {
-        bg: '#4C74C9',
+        bg: '#0C3DA7',
       },
     },
 

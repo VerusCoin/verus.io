@@ -11,6 +11,7 @@ import Build from './assets/build.svg'
 import Coin from './assets/coin.svg'
 import Contribute from './assets/contribute.svg'
 import Checkmark from './assets/checkmark.svg'
+import Close from './assets/close.svg'
 import Data from './assets/data.svg'
 import Discord from './assets/discord.svg'
 import Documentation from './assets/documentation.svg'
@@ -60,6 +61,7 @@ const SVGIcon: SVGList = {
   coin: <Coin />,
   contribute: <Contribute />,
   checkmark: <Checkmark />,
+  close: <Close />,
   data: <Data />,
   discord: <Discord />,
   documentation: <Documentation />,

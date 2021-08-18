@@ -104,6 +104,7 @@ const ListNavigation: React.FC<IListNavigation> = ({ menu }) => {
                     <LinkCard
                       key={`nav_${subitem.link}_${index}`}
                       {...subitem}
+                      category={item.category}
                     />
                   ))}
                 </StyledSubMenu>

@@ -24,7 +24,7 @@ const StyledTextContainer = styled.div<any>`
   }
 
   h4 {
-    ${fontSize('md')}
+    ${fontSize('mdlg')}
     font-weight: normal;
     margin: 0 0 ${(props) => props.theme.spaces.xs} 0;
   }
@@ -39,22 +39,26 @@ const StyledTextContainer = styled.div<any>`
 const StyledTextHeader = styled.h2<any>`
   font-family: ${(props) => props.theme.typo.header.family};
   ${(props) => props.customColor && fontColor(props.customColor)};
-
+  ${(props) => props?.headerStyle};
   ${(props) => props.align && `text-align: ${props.align}`}
 `
 
-const DefaultHeader: React.FC<
-  React.PropsWithChildren<
-    React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLHeadingElement>,
-      HTMLHeadingElement
-    > &
-      IDefaultHeader
-  >
-> = ({ customColor, align, as, fontNormal, children }) => {
+const DefaultHeader = ({
+  customColor,
+  align,
+  as,
+  fontNormal,
+  children,
+  headerStyle,
+}: IDefaultHeader) => {
   return (
     <StyledTextContainer fontNormal={fontNormal}>
-      <StyledTextHeader align={align} as={as} customColor={customColor}>
+      <StyledTextHeader
+        align={align}
+        as={as}
+        customColor={customColor}
+        headerStyle={headerStyle}
+      >
         {children}
       </StyledTextHeader>
     </StyledTextContainer>

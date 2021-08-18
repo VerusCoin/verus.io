@@ -13,27 +13,52 @@
     },
     "launchBlockchain": {
       "heading": "Launch blockchains.",
-      "text": "Interoperable. Customizable. Independent."
+      "text": "Interoperable. Customizable. Independent.",
+      "modal": {
+        "header": "Start your blockchain in a few steps.",
+        "text1": "Define your blockchain specifications. Customize to your liking. Push it to the worldwide Verus network. Miners and stakers are ready to support your independent blockchain with no additional cost or effort. Your new coin is instantly convertible to other valuable crypto without the need of a centralized exchange. It’s simple, elegant, and easy for all creators around the world.",
+        "text2": "Automatically inherit all Verus features. Use digital identities, namespaces, DeFi and so much more. Kickstart your project and raise funds. Create tokens, spawn blockchains. Interoperable with all ecosystem blockchains and bridged blockchains. Public or private. Everything is possible."
+      }
     },
     "createToken": {
       "heading": "Create<br/>tokens.",
-      "text": "Tailor to<br/>your needs."
+      "text": "Tailor to<br/>your needs.",
+      "modal": {
+        "header": "Create tokens for each use case.",
+        "text": "Choose any ecosystem blockchain to launch your token on. From tickets and coupons, to voting cards and meme-tokens. Fully customize tokens to your needs. Use fundraising tools. Give your token immediate real-world value and liquidity with Verus DeFi. Convert tokens to any other coin or token on the network. Even to bridged external blockchains. Combine with VerusID to have the most powerful token experience in the crypto industry. Verus token technology can provide for any use case."
+      }
     },
     "instantLiquidity": {
       "heading": "Instant liquidity<br/>for your projects.",
-      "text": "Create markets.<br/>Find funding."
+      "text": "Create markets.<br/>Find funding.",
+      "modal": {
+        "header": "Always be able to convert coins and tokens.",
+        "text": "Whether you start a blockchain or token, each project can connect to the global network of liquidity provided by Verus. Powerful built-in DeFi technology makes sure you have instant liquidity for your project. Remember the days when you needed an exchange listing to create a market or find liquidity? Those days are over. Convert your coin or token for all ecosystem coins and tokens, and even bridged blockchains. It doesn’t stop here. To help you on your way, advanced funding options can help kickstart a project and raise funds. Your users are delighted they always have a price for their coins and tokens, and can always convert them."
+      }
     },
     "getPrivacy": {
       "heading": "Get privacy<br/>by design.",
-      "text": "Make conscious<br/>decisions on what<br/>to share."
+      "text": "Make conscious<br/>decisions on what<br/>to share.",
+      "modal": {
+        "header": "Privacy is not an afterthought.",
+        "text": "Verus utilizes privacy technology called zk-SNARKs. It is the industry-leading standard for privacy enabling technology. The technology is embedded in the protocol layer of the network and can not be seen as an afterthought. Anyone can receive and send untraceable value and be private. It’s also possible to exchange data confidentially. Give yourself and your users the confidence to make conscious decisions on what to share, and keep private. After all, privacy is a human right."
+      }
     },
     "digitalIdentity": {
       "heading": "Digital identities<br/> and namespaces.",
-      "text": "Self-sovereign.<br/>Decentralized."
+      "text": "Self-sovereign.<br/>Decentralized.",
+      "modal": {
+        "header": "Digital identities for all uses.",
+        "text": "You can let users create identities on your blockchain, decentralized. Or even issue them yourself as a centralized entity. The identities also function as namespaces on the blockchain, to be used as friendly name addresses. Or use them as starting points for tokens and blockchains. That’s not all. You can hold any type of data on them. Even revoke and recover them, autonomously. Set up secure vaults, for personal safety or vesting periods. VerusID is the most complete self-sovereign identity system in the world. And it’s right here for you to use."
+      }
     },
     "dataValue": {
       "heading": "Data & value: send<br/> it literally anywhere.",
-      "text": "Cross-chain.<br/>Cross-networks."
+      "text": "Cross-chain.<br/>Cross-networks.",
+      "modal": {
+        "header": "Send data and value across blockchains.",
+        "text": "With Verus Data Exchange Format (VDXF) you can define and publish data structures across blockchains and other systems. Combined with IPFS it’s an industry-leading and seamless experience to share verifiable data between systems. Next to that, through advanced bridging technology, value is easily transferred and converted from blockchain to blockchain. Connecting all blockchains and other systems is one of many Verus pillars."
+      }
     },
     "changeWorld": {
       "heading": "Change the world. It’s simple.",

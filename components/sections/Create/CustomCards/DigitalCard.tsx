@@ -6,38 +6,58 @@ import { bgColor } from '@/styles/helpers'
 const StyledDigitalCard = styled.div`
   ${bgColor('white')}
   border-radius: 20px;
-  padding: 40px 0 100px;
-  justify-content: space-evenly;
+  padding: 0 0 41px;
+  justify-content: space-between;
   align-items: center;
   display: flex;
   flex-direction: column-reverse;
-  min-height: 275px;
+  height: 520px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
-
   grid-column: span 2;
   div.identity-image {
-    margin: 36px 0;
+    margin: 36px 0 0;
   }
-  > div:not(.identity-image) {
-    padding: 0;
+  div.card {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
   ${media.tablet`
   padding: 100px 0 100px 50px ;
     flex-direction: row;
-    min-height: 480px;
+    overflow: hidden;
     div.identity-image {
-      overflow: hidden;
+      
       img {
-        height: 390px;
+        height: 393px;
         position: relative;
-        right: -185px;
+        right: -90px;
+        
       } 
     }
-    > div { 
+    div.card {
       width: 600px;
     }
     
-    
+  `}
+  ${media.desktop`
+    height: 750px;
+    padding: 169px 0 124px 99px;
+    div.identity-image {
+      img {
+        
+        right: -115px;
+      } 
+    }
+  `}
+  ${media.giant`
+  div.identity-image {
+    img {
+      
+      right: -135px;
+    } 
+  }
   `}
 `
 

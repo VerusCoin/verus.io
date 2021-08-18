@@ -32,6 +32,7 @@ export interface IHamburgerMenu {
 export interface IHamburgerSubMenu {
   menu: IMenuSubItem[]
   openSubMenu: boolean
+  category: string
 }
 
 export interface IListNavigation {

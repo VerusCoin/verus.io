@@ -23,6 +23,7 @@ export interface CardTextProps {
   text: string
   regular?: boolean
   book?: boolean
+  align?: string
   fontSz?: string
   margin?: string
   styles?: string
@@ -33,6 +34,7 @@ const CardText = ({
   regular,
   book,
   text,
+  align = 'center',
   fontSz,
   margin,
   styles,
@@ -41,7 +43,7 @@ const CardText = ({
     <StyledText
       regular={regular}
       book={book}
-      align="center"
+      align={align}
       customColor={color}
       fontSz={fontSz}
       margin={margin}

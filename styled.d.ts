@@ -88,37 +88,7 @@ declare module 'styled-components' {
           mobile: string
           desktop: string
         }
-        lg: {
-          mobile: string
-          tablet: string
-          desktop: string
-        }
-        xl: {
-          mobile: string
-          tablet: string
-          desktop: string
-        }
-        xxl: {
-          mobile: string
-          tablet: string
-          desktop: string
-        }
-      }
-      lineHeight: {
-        xs: {
-          desktop: string
-        }
-        sm: {
-          mobile: string
-          tablet: string
-          desktop: string
-        }
-        md: {
-          mobile: string
-          tablet: string
-          desktop: string
-        }
-        mdlg: {
+        modal: {
           mobile: string
           desktop: string
         }

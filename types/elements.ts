@@ -26,6 +26,7 @@ export interface IDefaultHeader {
   fS?: 'xxl' | 'xl' | 'lg' | 'md2' | 'md' | 'sm' | 'xs'
   fontNormal?: boolean
   customColor?: string
+  headerStyle?: string
 }
 
 export interface IDefaultLink {

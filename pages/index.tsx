@@ -38,7 +38,7 @@ const Home = ({
           const heading = t(`cards.${card.card}.header`)
           return (
             <Card key={index}>
-              <Img name={card.svg} />
+              <Img height="75px" name={card.svg} />
               <CardHeader text={heading} />
               <CardText regular={true} text={t(`cards.${card.card}.text`)} />
             </Card>
@@ -50,13 +50,23 @@ const Home = ({
         <DefaultLinkCard card="coin" />
 
         <KnowCards>
-          <CardText fontSz="xs" color="white" text={t('cards.knowCard.know')} />
-          <CardHeader as="h5" color="white" text={t('cards.knowCard.header')} />
-
-          <CardHeader
-            width="50px"
-            as="h3"
+          <CardText
+            fontSz="xs"
+            regular
             color="white"
+            text={t('cards.knowCard.know')}
+          />
+          <CardText
+            book
+            fontSz="sm"
+            color="white"
+            text={t('cards.knowCard.header')}
+          />
+
+          <CardText
+            fontSz="mdlg"
+            color="white"
+            regular
             text={t('cards.knowCard.text')}
           />
         </KnowCards>

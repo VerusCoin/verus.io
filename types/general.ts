@@ -23,7 +23,7 @@ export interface IMenuSubItem {
     | 'faq'
     | ''
   link: string
-  description?: string
+  description?: boolean
   href: string
   external?: boolean
 }

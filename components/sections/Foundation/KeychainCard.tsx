@@ -11,33 +11,47 @@ const StyledKeychainCard = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: 275px;
-  box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
-  transition: all 1s linear;
-  grid-column: span 2;
 
+  box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
+
+  grid-column: span 2;
+  height: 520px;
   div.keychain-image {
-    margin: 36px 0;
+    img {
+      height: 113px;
+    }
+    margin: 2px 0 42px;
   }
-  div:not(.keychain-image) {
-    padding: 0;
+  div.card {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 23px;
   }
   ${media.tablet`
     padding: 100px 50px 100px 0 ;
     flex-direction: row;
-    min-height: 480px;
-  
+    
     div.keychain-image {
       overflow: hidden;
       img {
-        height: 440px;
+        height: 272px;
         position: relative;
-        left: -70px;
+        left: -35px;
       }
     }
-    > div:not(.keychain-image){
+    div.card{
       width: 600px;
       
+    }
+  `}
+  ${media.desktop`
+    height: 750px;
+    div.keychain-image{
+      img {
+        height: 431px;
+        left: -70px;
+      }
     }
   `}
 `

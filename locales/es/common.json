@@ -3,7 +3,7 @@
   "testnet": "testnet",
   "findMore": "Find out more",
   "globalCard": {
-    "header": "Connecting everything together",
+    "header": "Connecting everything together.",
     "link": "More on global network"
   },
   "coinCard": {
@@ -12,7 +12,7 @@
   },
   "foundationCard": {
     "header": "Assured continual growth.",
-    "link": "More on string foundations"
+    "link": "More on strong foundations"
   },
   "createCard": {
     "header": "Change the world. It's simple.",

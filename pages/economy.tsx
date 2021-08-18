@@ -101,12 +101,14 @@ const Economy = () => {
         <div
           style={{
             gridColumn: 'span 2',
-            width: '750px',
+            width: '800px',
             margin: 'auto',
           }}
         >
           <Section>
-            <DefaultText align="center">{t('note')}</DefaultText>
+            <DefaultText fam="geoReg" customColor="#676767" align="center">
+              {t('note')}
+            </DefaultText>
           </Section>
         </div>
         <ParticipateCard />

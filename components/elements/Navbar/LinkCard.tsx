@@ -3,9 +3,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { IMenuSubItem } from 'types/general'
 import { SVGs } from '@/components/elements/SVGs/SVGs'
+import useTranslation from 'next-translate/useTranslation'
 
 const StyledLink = styled.a`
   text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 `
 
 const StyledContent = styled.div`
@@ -68,31 +73,33 @@ const StyledLinkCard = styled.li`
   }
 `
 
-const LinkCard: React.FC<IMenuSubItem> = ({
+const LinkCard: React.FC<IMenuSubItem & { category: string }> = ({
   external,
   href,
   svg,
   link,
   description,
+  category,
 }) => {
+  const { t } = useTranslation('navigation')
   return (
     <StyledLinkCard>
-      {svg && (
-        <StyledSVG>
-          <SVGs name={svg} />
-        </StyledSVG>
-      )}
+      <StyledLink href={href}>
+        {svg && (
+          <StyledSVG>
+            <SVGs name={svg} />
+          </StyledSVG>
+        )}
 
-      <StyledContent>
-        <StyledLink href={href}>
-          <strong>{link}</strong>
-          {description && <span>{description}</span>}
-        </StyledLink>
-      </StyledContent>
+        <StyledContent>
+          <strong>{t(`${category}.${link}.title`)}</strong>
+          {description && <span>{t(`${category}.${link}.description`)}</span>}
+        </StyledContent>
 
-      <StyledLinkSVG>
-        {external ? <SVGs name="tab" /> : <SVGs name="arrow" />}
-      </StyledLinkSVG>
+        <StyledLinkSVG>
+          {external ? <SVGs name="tab" /> : <SVGs name="arrow" />}
+        </StyledLinkSVG>
+      </StyledLink>
     </StyledLinkCard>
   )
 }

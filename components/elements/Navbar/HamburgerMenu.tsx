@@ -6,6 +6,7 @@ import { Button } from '@/components/elements'
 import { fontSize } from '@/styles/helpers'
 import HamburgerSubMenu from './HamburgerSubMenu'
 import { SVGs } from '@/components/elements/SVGs/SVGs'
+import useTranslation from 'next-translate/useTranslation'
 
 export const StyledLink = styled.a<any>`
   display: flex;
@@ -76,6 +77,7 @@ export const StyledHamburgerMenu = styled.div<{ openMenu: boolean }>`
 `
 
 const HamburgerMenu: React.FC<IHamburgerMenu> = ({ menu, openMenu }) => {
+  const { t } = useTranslation('navigation')
   return (
     <StyledHamburgerMenu openMenu={openMenu}>
       <Container>
@@ -96,7 +98,7 @@ const HamburgerMenu: React.FC<IHamburgerMenu> = ({ menu, openMenu }) => {
                         href={item.href && item.href}
                         fontSize="menu"
                       >
-                        {item.category}
+                        {t(`${item.category}.title`)}
                       </Button>
                     ) : (
                       <StyledLink
@@ -104,7 +106,7 @@ const HamburgerMenu: React.FC<IHamburgerMenu> = ({ menu, openMenu }) => {
                         href={item.href && item.href}
                         openSubMenu={openSubMenu}
                       >
-                        {item.category}
+                        {t(`${item.category}.title`)}
 
                         {item.submenu && (
                           <StyledLinkSVG openSubMenu={openSubMenu}>
@@ -118,6 +120,7 @@ const HamburgerMenu: React.FC<IHamburgerMenu> = ({ menu, openMenu }) => {
                       <HamburgerSubMenu
                         openSubMenu={openSubMenu}
                         menu={item.submenu}
+                        category={item.category}
                       />
                     )}
                   </StyledNavigationMenuItem>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid } from '@/components/layouts'
@@ -8,6 +8,7 @@ import {
   Img,
   Card,
   CardText,
+  Modal,
 } from '@/components/elements'
 
 // import { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -19,26 +20,47 @@ import {
   NetworkCard,
 } from '@/components/sections/Foundation'
 
+// const ModalToggle=(modal, setModal)=>{
+
+// }
+
 const Foundations = () => {
   const { t } = useTranslation('foundation')
+  const [showEarthModal, setShowEarthModal] = useState(false)
+  const [showKeyChainModal, setShowKeyChainModal] = useState(false)
+  const [showScalableModal, setShowScalableModal] = useState(false)
+  const [showTopTierModal, setShowTopTierModal] = useState(false)
+  const [showContractsModal, setShowContractsModal] = useState(false)
+  const [showProofModal, setShowProofModal] = useState(false)
+  const [showMevModal, setShowMevModal] = useState(false)
+
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
     width: 1000,
   }
+
   return (
     <MainLayout jumbotronData={JumbotronJSON}>
       <Grid>
         <EarthCard>
-          <CardText book fontSz="xl" text={t('earthCard.header')} />
-          <CardText
-            book
-            fontSz="lg"
-            color="blue"
-            margin="32px 0"
-            text={t('earthCard.text')}
-          />
-          <Button fontRegular small>
+          <div>
+            <CardText book fontSz="xl" text={t('earthCard.header')} />
+
+            <CardText
+              book
+              fontSz="lg"
+              color="blue"
+              margin="32px 0"
+              text={t('earthCard.text')}
+            />
+          </div>
+          <Button
+            onClick={() => setShowEarthModal(!showEarthModal)}
+            fontRegular
+            small
+            margin="50px 0 0"
+          >
             {`${t('common:findMore')}`}
           </Button>
         </EarthCard>
@@ -46,9 +68,14 @@ const Foundations = () => {
           <div className="keychain-image">
             <Img name="keychain" />
           </div>
-          <Card>
+          <div className="card">
             <div>
-              <CardText book fontSz="xl" text={t('keychainCard.header')} />
+              <CardText
+                book
+                fontSz="xl"
+                margin="0"
+                text={t('keychainCard.header')}
+              />
               <CardText
                 book
                 fontSz="lg"
@@ -57,13 +84,29 @@ const Foundations = () => {
                 text={t('keychainCard.text')}
               />
             </div>
-            <Button fontRegular small>
+            <Button
+              onClick={() => setShowKeyChainModal(!showKeyChainModal)}
+              fontRegular
+              small
+              margin="50px 0 0 0 "
+            >
               {`${t('common:findMore')}`}
             </Button>
-          </Card>
+            <Modal
+              isShown={showKeyChainModal}
+              hide={() => setShowKeyChainModal(!showKeyChainModal)}
+              title={t('keychainCard.modal.header')}
+            >
+              <CardText
+                fontSz="modal"
+                align="left"
+                text={t('keychainCard.modal.text')}
+              />
+            </Modal>
+          </div>
         </KeychainCard>
-        <Card>
-          <div style={{ marginBottom: '90px' }}>
+        <Card large>
+          <div>
             <CardText
               book
               fontSz="xl"
@@ -78,12 +121,28 @@ const Foundations = () => {
               margin="32px 64px;"
             />
           </div>
-          <Button fontRegular small>
+          <Button
+            onClick={() => setShowScalableModal(!showScalableModal)}
+            fontRegular
+            small
+            margin="50px 0 0"
+          >
             {`${t('common:findMore')}`}
           </Button>
+          <Modal
+            isShown={showScalableModal}
+            hide={() => setShowScalableModal(!showScalableModal)}
+            title={t('scalableLimits.modal.header')}
+          >
+            <CardText
+              fontSz="modal"
+              align="left"
+              text={t('scalableLimits.modal.text')}
+            />
+          </Modal>
         </Card>
-        <Card>
-          <div style={{ marginBottom: '90px' }}>
+        <Card large>
+          <div>
             <CardText
               book
               fontSz="xl"
@@ -98,30 +157,62 @@ const Foundations = () => {
               margin="32px 70px;"
             />
           </div>
-          <Button fontRegular small>
+          <Button
+            onClick={() => setShowTopTierModal(!showTopTierModal)}
+            fontRegular
+            small
+            margin="50px 0 0"
+          >
             {`${t('common:findMore')}`}
           </Button>
+          <Modal
+            isShown={showTopTierModal}
+            hide={() => setShowTopTierModal(!showTopTierModal)}
+            title={t('topTier.modal.header')}
+          >
+            <CardText
+              fontSz="modal"
+              align="left"
+              text={t('topTier.modal.text')}
+            />
+          </Modal>
         </Card>
         <Banner />
         <NetworkCard>
           <div className="checkmark-image">
             <Img name="checkmark" />
           </div>
-          <Card>
+          <div className="card">
             <CardText
               book
               fontSz="xl"
-              margin="0 75px"
-              text={t('smartContracts')}
+              margin="32px 0"
+              text={t('smartContracts.header')}
             />
 
-            <Button fontRegular small margin="42px 0">
+            <Button
+              onClick={() => setShowContractsModal(!showContractsModal)}
+              fontRegular
+              small
+              margin="60px 0"
+            >
               {`${t('common:findMore')}`}
             </Button>
-          </Card>
+            <Modal
+              isShown={showContractsModal}
+              hide={() => setShowContractsModal(!showContractsModal)}
+              title={t('smartContracts.modal.header')}
+            >
+              <CardText
+                fontSz="modal"
+                align="left"
+                text={t('smartContracts.modal.text')}
+              />
+            </Modal>
+          </div>
         </NetworkCard>
-        <Card>
-          <div style={{ marginBottom: '90px' }}>
+        <Card large>
+          <div>
             <CardText
               book
               fontSz="xl"
@@ -133,19 +224,35 @@ const Foundations = () => {
               fontSz="lg"
               color="blue"
               text={t('quantumProof.text')}
-              margin="32px 100px;"
+              margin="56px 90px;"
             />
           </div>
-          <Button fontRegular small>
+          <Button
+            onClick={() => setShowProofModal(!showProofModal)}
+            fontRegular
+            small
+            margin="50px 0 0"
+          >
             {`${t('common:findMore')}`}
           </Button>
+          <Modal
+            isShown={showProofModal}
+            hide={() => setShowProofModal(!showProofModal)}
+            title={t('quantumProof.modal.header')}
+          >
+            <CardText
+              fontSz="modal"
+              align="left"
+              text={t('quantumProof.modal.text')}
+            />
+          </Modal>
         </Card>
-        <Card>
-          <div style={{ marginBottom: '90px' }}>
+        <Card large tabletStyles="padding: 100px 25px;">
+          <div>
             <CardText
               book
               fontSz="xl"
-              margin="32px 15px;"
+              margin="32px 0;"
               text={t('mev.header')}
             />
             <CardText
@@ -153,17 +260,40 @@ const Foundations = () => {
               fontSz="lg"
               color="blue"
               text={t('mev.text')}
-              margin="32px 50px;"
+              margin="32px 0;"
             />
           </div>
-          <Button fontRegular small>
+          <Button
+            onClick={() => setShowMevModal(!showMevModal)}
+            fontRegular
+            small
+            margin="5px 0 0"
+          >
             {`${t('common:findMore')}`}
           </Button>
+          <Modal
+            isShown={showMevModal}
+            hide={() => setShowMevModal(!showMevModal)}
+            title={t('mev.modal.header')}
+          >
+            <CardText fontSz="modal" align="left" text={t('mev.modal.text')} />
+          </Modal>
         </Card>
         <DefaultLinkCard card="global" />
         <DefaultLinkCard card="create" />
         <DefaultLinkCard card="coin" />
       </Grid>
+      <Modal
+        isShown={showEarthModal}
+        hide={() => setShowEarthModal(!showEarthModal)}
+        title={t('earthCard.modal.header')}
+      >
+        <CardText
+          fontSz="modal"
+          align="left"
+          text={t('earthCard.modal.text')}
+        />
+      </Modal>
     </MainLayout>
   )
 }

@@ -6,12 +6,12 @@ import { bgColor } from '@/styles/helpers'
 const StyledPrivacyCard = styled.div`
   ${bgColor('blackTer')}
   border-radius: 20px;
-  padding: 40px 0 100px;
+  padding: 40px 0;
   justify-content: space-between;
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: 275px;
+  height: 520px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
 
   grid-column: span 2;
@@ -20,13 +20,15 @@ const StyledPrivacyCard = styled.div`
       height: 87px;
     }
   }
-  > div:not(.privacy-image) {
-    padding: 0;
+  div.card {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
   }
   ${media.tablet`
-    padding: 0 25% 0 0 ;
+    padding: 87px 100px 87px 0;
     flex-direction: row;
-    min-height: 480px;
+    
     div.privacy-image {
       width: fit-content;
       height: fit-content;
@@ -37,11 +39,11 @@ const StyledPrivacyCard = styled.div`
         height: 257px;
       }
     }
-    > div:not(.privacy-image){
-      padding: 100px 0 ;
-      
-     
-    }
+    
+  `}
+  ${media.desktop`
+    height: 750px;
+    padding: 133px 269px 133px 0;
   `}
 `
 

@@ -6,46 +6,61 @@ import { bgColor } from '@/styles/helpers'
 const StyledNetworkCard = styled.div`
   ${bgColor('white')}
   border-radius: 20px;
-  padding: 0 0 100px;
+  padding: 0;
   justify-content: space-between;
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: 275px;
-  box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
-  transition: all 1s linear;
-  grid-column: span 2;
 
+  box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
+
+  grid-column: span 2;
+  height: 520px;
   div.checkmark-image {
     margin: 0;
     overflow: hidden;
     img {
-      height: 163px;
+      height: 196px;
       position: relative;
-      top: -39px;
+      top: -47px;
     }
   }
-  div:not(.checkmark-image) {
-    padding: 0;
+  div.card {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 23px;
+    button {
+      margin-top: 90px;
+    }
   }
   ${media.tablet`
     padding: 100px 50px 100px 0 ;
     flex-direction: row;
-    min-height: 480px;
   
     div.checkmark-image {
       overflow: hidden;
       img {
-        height: 440px;
+        height: 337px;
         top: 0;
-        left: -56px;
+        left: -35px;
       }
     }
-    > div:not(.checkmark-image){
+    div.card{
+      margin: 0;
       width: 600px;
-      justify-content: space-evenly;
-      
+      margin-top: 60px;
     }
+  `}
+  ${media.desktop`
+    height: 750px;
+    div.checkmark-image {
+      img{
+        height: 478px;
+        left: -62px;
+      }
+    }
+     
   `}
 `
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 import {
   Button,
@@ -6,6 +6,7 @@ import {
   DefaultLinkCard,
   Card,
   CardText,
+  Modal,
 } from '@/components/elements'
 import { MainLayout, Grid } from '@/components/layouts'
 // import { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -22,7 +23,13 @@ import {
 
 const CreateWithVerus = () => {
   const { t } = useTranslation('create')
-  // const { isShown, toggle } = useModal()
+
+  const [showBlockchain, setShowBlockchain] = useState(false)
+  const [showTokens, setShowTokens] = useState(false)
+  const [showLiquidity, setShowLiquidity] = useState(false)
+  const [showPrivacy, setShowPrivacy] = useState(false)
+  const [showIdentity, setShowIdentity] = useState(false)
+  const [showGlobal, setShowGlobal] = useState(false)
 
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
@@ -33,19 +40,20 @@ const CreateWithVerus = () => {
     <MainLayout jumbotronData={JumbotronJSON}>
       <Grid>
         <BlueEarthCard>
-          <CardText
-            fontSz="xl"
-            color="white"
-            book
-            text={t('cards.doc.heading')}
-          />
-          <CardText
-            fontSz="xl"
-            color="white"
-            book
-            margin="0"
-            text={t('cards.doc.text')}
-          />
+          <div>
+            <CardText
+              fontSz="xl"
+              color="white"
+              book
+              text={t('cards.doc.heading')}
+            />
+            <CardText
+              fontSz="xl"
+              color="white"
+              book
+              text={t('cards.doc.text')}
+            />
+          </div>
           <Button
             white
             svg={{ type: 'tab', rotate: false }}
@@ -53,41 +61,73 @@ const CreateWithVerus = () => {
             as="a"
             color="#3165d4"
             fontRegular
-            margin="42px 0 0 0"
           >
             {`${t('cards.doc.link')} docs.verus.io`}
           </Button>
         </BlueEarthCard>
-        <Card>
-          <div style={{ marginBottom: '115px' }}>
+        <Card
+          large
+          styles="padding: 77px 27px 41px;"
+          tabletStyles="padding: 79px 27px 71px;"
+          desktopStyles="padding: 143px 55px 73px;"
+        >
+          <div>
             <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
+
             <CardText
-              margin="32px 32px 0 "
               book
               fontSz="xl"
               text={t('cards.launchBlockchain.heading')}
+              margin="32px 0 0 0 "
             />
 
             <CardText
               book
               fontSz="lg"
               color="blue"
+              margin="32px 23px 0"
               text={t('cards.launchBlockchain.text')}
-              margin="32px 0 0 0 "
             />
           </div>
-          <Button fontRegular small>
+
+          <Button
+            onClick={() => setShowBlockchain(!showBlockchain)}
+            fontRegular
+            small
+            margin="50px 0 0 0 "
+          >
             {`${t('common:findMore')}`}
           </Button>
+          <Modal
+            isShown={showBlockchain}
+            hide={() => setShowBlockchain(!showBlockchain)}
+            title={t('cards.launchBlockchain.modal.header')}
+          >
+            <CardText
+              fontSz="modal"
+              align="left"
+              text={t('cards.launchBlockchain.modal.text1')}
+            />
+            <CardText
+              fontSz="modal"
+              align="left"
+              text={t('cards.launchBlockchain.modal.text2')}
+            />
+          </Modal>
         </Card>
-        <Card>
-          <div style={{ marginBottom: '115px' }}>
+        <Card
+          large
+          styles="padding: 77px 27px 41px;"
+          tabletStyles="padding: 79px 27px 71px;"
+          desktopStyles="padding: 143px 55px 73px;"
+        >
+          <div>
             <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
 
             <CardText
-              margin="32px 32px 0 "
               book
               fontSz="xl"
+              margin="32px 0 0 0 "
               text={t('cards.createToken.heading')}
             />
 
@@ -95,17 +135,28 @@ const CreateWithVerus = () => {
               book
               fontSz="lg"
               color="blue"
-              text={t('cards.createToken.text')}
               margin="32px 0 0 0 "
+              text={t('cards.createToken.text')}
             />
           </div>
-          <Button small fontRegular>
+          <Button onClick={() => setShowTokens(!showTokens)} small fontRegular>
             {`${t('common:findMore')}`}
           </Button>
+          <Modal
+            isShown={showTokens}
+            hide={() => setShowTokens(!showTokens)}
+            title={t('cards.createToken.modal.header')}
+          >
+            <CardText
+              fontSz="modal"
+              align="left"
+              text={t('cards.createToken.modal.text')}
+            />
+          </Modal>
         </Card>
         <LiquidityCard>
-          <Card>
-            <div style={{ marginBottom: '90px' }}>
+          <div className="card">
+            <div>
               <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
               <CardText
                 book
@@ -117,23 +168,39 @@ const CreateWithVerus = () => {
                 book
                 fontSz="lg"
                 color="blue"
-                margin="32px 0 0 "
+                margin="32px 0 "
                 text={t('cards.instantLiquidity.text')}
               />
             </div>
-            <Button small fontRegular>
+            <Button
+              onClick={() => setShowLiquidity(!showLiquidity)}
+              small
+              fontRegular
+              margin="50px 0 0 0 "
+            >
               {`${t('common:findMore')}`}
             </Button>
-          </Card>
+            <Modal
+              isShown={showLiquidity}
+              hide={() => setShowLiquidity(!showLiquidity)}
+              title={t('cards.instantLiquidity.modal.header')}
+            >
+              <CardText
+                fontSz="modal"
+                align="left"
+                text={t('cards.instantLiquidity.modal.text')}
+              />
+            </Modal>
+          </div>
           <div className="liquidity-image">
-            <Img name="liquidity-image" />
+            <Img name="drops" />
           </div>
         </LiquidityCard>
         <PrivacyCard>
           <div className="privacy-image">
             <Img name="privacy-image" />
           </div>
-          <Card bgColor="blackTer">
+          <div className="card">
             <div>
               <CardText book fontSz="xs" color="green" text={t('liveMain')} />
               <CardText
@@ -151,15 +218,32 @@ const CreateWithVerus = () => {
                 text={t('cards.getPrivacy.text')}
               />
             </div>
-            <Button white small fontRegular margin="90px 0 0 0">
+            <Button
+              onClick={() => setShowPrivacy(!showPrivacy)}
+              white
+              small
+              fontRegular
+              margin="50px 0 0 0"
+            >
               {`${t('common:findMore')}`}
             </Button>
-          </Card>
+            <Modal
+              isShown={showPrivacy}
+              hide={() => setShowPrivacy(!showPrivacy)}
+              title={t('cards.getPrivacy.modal.header')}
+            >
+              <CardText
+                fontSz="modal"
+                align="left"
+                text={t('cards.getPrivacy.modal.text')}
+              />
+            </Modal>
+          </div>
         </PrivacyCard>
         <DigitalCard>
-          <Card>
-            <div style={{ marginBottom: '90px' }}>
-              <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
+          <div className="card">
+            <div>
+              <CardText book fontSz="xs" color="green" text={t('liveMain')} />
               <CardText
                 margin="32px auto"
                 book
@@ -167,16 +251,33 @@ const CreateWithVerus = () => {
                 text={t('cards.digitalIdentity.heading')}
               />
               <CardText
+                margin="32px 0 0 "
                 book
                 fontSz="lg"
                 color="blue"
                 text={t('cards.digitalIdentity.text')}
               />
             </div>
-            <Button small fontRegular>
+            <Button
+              onClick={() => setShowIdentity(!showIdentity)}
+              small
+              fontRegular
+              margin="50px 0 0 0"
+            >
               {`${t('common:findMore')}`}
             </Button>
-          </Card>
+            <Modal
+              isShown={showIdentity}
+              hide={() => setShowIdentity(!showIdentity)}
+              title={t('cards.digitalIdentity.modal.header')}
+            >
+              <CardText
+                fontSz="modal"
+                align="left"
+                text={t('cards.digitalIdentity.modal.text')}
+              />
+            </Modal>
+          </div>
           <div className="identity-image">
             <Img name="identity-image" />
           </div>
@@ -185,8 +286,8 @@ const CreateWithVerus = () => {
           <div className="earth-image">
             <Img name="earth-image" />
           </div>
-          <Card>
-            <div style={{ marginBottom: '90px' }}>
+          <div className="card">
+            <div>
               <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
               <CardText
                 book
@@ -198,34 +299,59 @@ const CreateWithVerus = () => {
                 book
                 fontSz="lg"
                 color="blue"
+                margin="32px 0 0 "
                 text={t('cards.dataValue.text')}
               />
             </div>
-            <Button small fontRegular>
+            <Button
+              onClick={() => setShowGlobal(!showGlobal)}
+              small
+              fontRegular
+              margin="50px 0 0 0"
+            >
               {`${t('common:findMore')}`}
             </Button>
-          </Card>
+            <Modal
+              isShown={showGlobal}
+              hide={() => setShowGlobal(!showGlobal)}
+              title={t('cards.dataValue.modal.header')}
+            >
+              <CardText
+                fontSz="modal"
+                align="left"
+                text={t('cards.dataValue.modal.text')}
+              />
+            </Modal>
+          </div>
         </EarthCard>
-        <Card bgColor="#0A3FB1" span={2}>
-          <CardText
-            fontSz="xl"
-            color="white"
-            book
-            styles="max-width: 600px;"
-            text={t('cards.changeWorld.heading')}
-          />
-          <CardText
-            fontSz="sm"
-            color="white"
-            margin="32px 0 "
-            styles="max-width: 525px;"
-            text={t('cards.changeWorld.text')}
-          />
-
+        <Card
+          bgColor="#0A3FB1"
+          span={2}
+          large
+          styles="max-width: none; padding: 94px 22px;"
+          tabletStyles="max-width: none; padding: 94px 98px; p {max-width:400px;}"
+          desktopStyles="padding: 171px 120px;p {max-width:600px;}"
+        >
+          <div>
+            <CardText
+              fontSz="xl"
+              color="white"
+              book
+              margin="32px auto"
+              text={t('cards.changeWorld.heading')}
+            />
+            <CardText
+              fontSz="sm"
+              color="white"
+              margin="32px auto "
+              styles="max-width: 525px !important;"
+              text={t('cards.changeWorld.text')}
+            />
+          </div>
           <Button
             white
             svg={{ type: 'tab', rotate: false }}
-            href="#"
+            href="/foundations"
             as="a"
             color="#3165d4"
             fontRegular

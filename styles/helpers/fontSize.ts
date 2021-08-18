@@ -7,6 +7,7 @@ const fontSize = (
     | 'xl'
     | 'lg'
     | 'mdlg'
+    | 'modal'
     | 'md'
     | 'sm'
     | 'xs'
@@ -23,73 +24,95 @@ const fontSize = (
     case 'sm':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.sm.mobile};
-        line-height: ${(props: any) => props.theme.typo.lineHeight.sm.mobile};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.sm.mobile} + 4px)`};
 
         ${media.tablet`
           font-size: ${(props: any) => props.theme.typo.sizes.sm.tablet};
-          line-height: ${(props: any) => props.theme.typo.lineHeight.sm.tablet};
+          line-height: ${(props: any) =>
+            `calc(${props.theme.typo.sizes.sm.tablet} + 4px)`};
         `}
 
         ${media.desktop`
           font-size: ${(props: any) => props.theme.typo.sizes.sm.desktop};
           line-height: ${(props: any) =>
-            props.theme.typo.lineHeight.sm.desktop};
+            `calc(${props.theme.typo.sizes.sm.desktop} + 4px)`};
         `}
       `
 
     case 'md':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.md.mobile};
-        line-height: ${(props: any) => props.theme.typo.lineHeight.md.mobile};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.md.mobile} + 4px)`};
 
         ${media.tablet`
           font-size: ${(props: any) => props.theme.typo.sizes.md.tablet};
-          line-height: ${(props: any) => props.theme.typo.lineHeight.md.tablet};
+          line-height: ${(props: any) =>
+            `calc(${props.theme.typo.sizes.md.tablet} + 4px)`};
         `}
 
         ${media.desktop`
         font-size: ${(props: any) => props.theme.typo.sizes.md.desktop};
-        line-height: ${(props: any) => props.theme.typo.lineHeight.md.desktop};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.md.desktop} + 4px)`};
       `}
       `
     case 'mdlg':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.mdlg.mobile};
-        line-height: ${(props: any) => props.theme.typo.lineHeight.mdlg.mobile};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.mdlg.mobile} + 4px)`};
 
         ${media.desktop`
           font-size: ${(props: any) => props.theme.typo.sizes.mdlg.desktop};
           line-height: ${(props: any) =>
-            props.theme.typo.lineHeight.mdlg.desktop};
+            `calc(${props.theme.typo.sizes.mdlg.desktop} + 4px)`};
+        `}
+      `
+    case 'modal':
+      return css`
+        font-size: ${(props: any) => props.theme.typo.sizes.modal.mobile};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.modal.mobile} + 4px)`};
+
+        ${media.desktop`
+        font-size: ${(props: any) => props.theme.typo.sizes.modal.desktop};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.modal.desktop} + 4px)`};
         `}
       `
     case 'lg':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.lg.mobile};
-        line-height: ${(props: any) => props.theme.typo.lineHeight.lg.mobile};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.lg.mobile} + 4px)`};
 
         ${media.tablet`
           font-size: ${(props: any) => props.theme.typo.sizes.lg.tablet};
-          line-height: ${(props: any) => props.theme.typo.lineHeight.lg.tablet};
+          line-height: ${(props: any) =>
+            `calc(${props.theme.typo.sizes.lg.tablet} + 4px)`};
         `}
 
         ${media.desktop`
           font-size: ${(props: any) => props.theme.typo.sizes.lg.desktop};
           line-height: ${(props: any) =>
-            props.theme.typo.lineHeight.lg.desktop};
+            `calc(${props.theme.typo.sizes.lg.desktop} + 4px)`};
         `}
       `
 
     case 'xl':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.xl.mobile};
-        line-height: ${(props: any) => props.theme.typo.lineHeight.xl.mobile};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.xl.mobile} + 4px)`};
         letter-spacing: ${(props: any) =>
           props.theme.typo.letterSpacing.xl.mobile};
 
         ${media.tablet`
           font-size: ${(props: any) => props.theme.typo.sizes.xl.tablet};
-          line-height: ${(props: any) => props.theme.typo.lineHeight.xl.tablet};
+          line-height: ${(props: any) =>
+            `calc(${props.theme.typo.sizes.xl.tablet} + 4px)`};
           letter-spacing: ${(props: any) =>
             props.theme.typo.letterSpacing.xl.tablet};
         `}
@@ -97,7 +120,7 @@ const fontSize = (
         ${media.desktop`
           font-size: ${(props: any) => props.theme.typo.sizes.xl.desktop};
           line-height: ${(props: any) =>
-            props.theme.typo.lineHeight.xl.desktop};
+            `calc(${props.theme.typo.sizes.xl.desktop} + 4px)`};
           letter-spacing: ${(props: any) =>
             props.theme.typo.letterSpacing.xl.desktop};
         `}
@@ -106,14 +129,15 @@ const fontSize = (
     case 'xxl':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.xxl.mobile};
-        line-height: ${(props: any) => props.theme.typo.lineHeight.xxl.mobile};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.xxl.mobile} + 4px)`};
         letter-spacing: ${(props: any) =>
           props.theme.typo.letterSpacing.xxl.mobile};
 
         ${media.tablet`
           font-size: ${(props: any) => props.theme.typo.sizes.xxl.tablet};
           line-height: ${(props: any) =>
-            props.theme.typo.lineHeight.xxl.tablet};
+            `calc(${props.theme.typo.sizes.xxl.tablet} + 4px)`};
           letter-spacing: ${(props: any) =>
             props.theme.typo.letterSpacing.xxl.tablet};
         `}
@@ -121,7 +145,7 @@ const fontSize = (
         ${media.desktop`
           font-size: ${(props: any) => props.theme.typo.sizes.xxl.desktop};
           line-height: ${(props: any) =>
-            props.theme.typo.lineHeight.xxl.desktop};
+            `calc(${props.theme.typo.sizes.xxl.desktop} + 4px)`};
           letter-spacing: ${(props: any) =>
             props.theme.typo.letterSpacing.xxl.desktop};
         `}

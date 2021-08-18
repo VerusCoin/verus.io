@@ -6,39 +6,55 @@ import { bgColor } from '@/styles/helpers'
 const StyledEarthCard = styled.div`
   ${bgColor('white')}
   border-radius: 20px;
-  padding: 40px 0 100px;
+  padding: 0 0 41px;
   justify-content: space-between;
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: 275px;
+  height: 520px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
 
   grid-column: span 2;
 
   div.earth-image {
-    margin: 36px 0;
+    margin: 36px 0 0;
   }
-  div:not(.earth-image) {
-    padding: 0;
+  div.card {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
   }
   ${media.tablet`
     padding: 100px 50px 100px 0 ;
     flex-direction: row;
-    min-height: 480px;
-  
     div.earth-image {
       overflow: hidden;
       img {
-        height: 440px;
+        height: 214px;
         position: relative;
         left: -50px;
       }
     }
-    > div:not(.earth-image){
-      width: 600px;
-      
+
+    div.card{
+      width: 454px;
     }
+  `}
+
+  ${media.desktop`
+    height: 750px;
+    padding: 100px 23px 100px 0 ;
+    div.earth-image {
+      img {
+        height: 440px;
+      } 
+    }
+    div.card {
+      width: 600px;
+    }
+  `}
+  ${media.giant`
+  padding: 100px 99px 100px 0 ;
   `}
 `
 

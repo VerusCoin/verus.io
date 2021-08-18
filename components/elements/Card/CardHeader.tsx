@@ -7,7 +7,7 @@ const StyledTextHeader = styled.div<{ margin?: string; width?: string }>`
   vertical-align: middle;
   display: flex;
   justify-content: center;
-  ${(props) => props.width && `width: ${props.width}`}
+  ${(props) => props.width && `width: ${props.width};`}
   margin: ${(props) => (props.margin ? props.margin : '32px 0 0 0')}
 `
 

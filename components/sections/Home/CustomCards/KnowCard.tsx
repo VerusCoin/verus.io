@@ -13,13 +13,25 @@ const StyledKnowCards = styled.div`
   flex-direction: column;
   min-height: 275px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
-  ${media.tablet`
-    min-height: 480px;
-  `}
-  >p {
+
+  p:first-child {
     opacity: 58%;
     margin-top: 0;
   }
+  p:last-child {
+    width: 60px;
+  }
+  ${media.tablet`
+  min-height: 480px;
+  p:last-child {
+    width: 70px;
+  }
+`}
+  ${media.desktop`
+p:last-child {
+  width: 120px;
+}
+`}
 `
 
 const KnowCards: React.FC<

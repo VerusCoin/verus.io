@@ -14,11 +14,11 @@
     },
     "verusCard": {
       "header": "VerusID",
-      "text": "Use decentralized self-sovereign identities for projects. Include any type of data. Highly versatile and customizable."
+      "text": "Digital identities for any project. Self-sovereign, decentralized or even centralized. The most complete identity system in the world."
     },
     "defiCard": {
       "header": "DeFi",
-      "text": "No front-running and low fees. Who doesn't want that? Use for lending, borrowing, funding, instant liquidity and conversions."
+      "text": "Instant liquidity for blockchain and token projects. Create markets and find funding. Use for lending and borrowing."
     },
     "privCard": {
       "header": "Privacy",
@@ -30,7 +30,7 @@
     },
     "dataCard": {
       "header": "Data",
-      "text": "Define and publish verifiable data structures across blockchains and other systems. With Verus Data Exchange Format - VDXF - it’s never been easier."
+      "text": "Define and publish verifiable data structures across blockchains and other systems. With Verus Data Exchange Format (VDXF) it’s never been easier."
     },
     "paymentCard": {
       "header": "Payments",

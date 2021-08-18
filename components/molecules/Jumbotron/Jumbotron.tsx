@@ -7,7 +7,7 @@ import { Button, DefaultHeader } from '@/components/elements'
 import { spacer } from '@/styles/helpers'
 
 const StyledJumbotron = styled.section`
-  ${spacer('xxl')}
+  ${spacer('xl')}
 `
 
 const StyledJumbotronContainer = styled.div`
@@ -73,6 +73,7 @@ const Jumbotron: React.FC<IJumbotron> = ({
                     customColor={color}
                     fontNormal
                     align="center"
+                    headerStyle="margin-bottom: 32px;"
                   >
                     {parse(header)}
                   </DefaultHeader>

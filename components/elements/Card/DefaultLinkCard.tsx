@@ -5,7 +5,7 @@ import { bgColor } from '@/styles/helpers'
 import useTranslation from 'next-translate/useTranslation'
 
 import { Button, CardHeader } from '@/components/elements'
-
+// filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 const StyledLinkCard = styled.div<any>`
   ${(props) => (props.create ? bgColor('blueQuan') : bgColor('white'))}
   border-radius: 20px;
@@ -16,7 +16,7 @@ const StyledLinkCard = styled.div<any>`
   flex-direction: column;
   min-height: 275px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
-
+  max-width: 390px;
   ${(props) =>
     props.global &&
     `
@@ -41,16 +41,23 @@ const StyledLinkCard = styled.div<any>`
     min-height: 350px;
     background-position: 50% 255px;
     background-size: 371px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
   `}
   ${media.tablet`
     min-height: 480px;
+    max-width: 400px;
+    min-width: 342px;
     ${(props: any) =>
       props.create &&
       `
-      background-position: bottom -235.85% center;
+      background-position: bottom -260px center;
       padding: 30px 50px 120px;
     `}
+  `}
+  ${media.desktop`
+    min-width: 490px;
+    max-width: none;
+    height: 480px;
   `}
 `
 
@@ -106,7 +113,6 @@ const DefaultLinkCard = ({ card }: { card: string }) => {
           href={href}
           as="a"
           color="white"
-          fontRegular
         >
           {text}
         </Button>
@@ -117,7 +123,6 @@ const DefaultLinkCard = ({ card }: { card: string }) => {
           href={href}
           as="a"
           color="#3165d4"
-          fontRegular
         >
           {text}
         </Button>

@@ -6,44 +6,57 @@ import { bgColor } from '@/styles/helpers'
 const StyledLiquidityCard = styled.div`
   ${bgColor('white')}
   border-radius: 20px;
-  padding: 0 0 100px;
-  justify-content: space-evenly;
+  padding: 0 0 41px;
+  justify-content: space-between;
   align-items: center;
   display: flex;
   flex-direction: column-reverse;
-  min-height: 275px;
+  height: 520px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
   grid-column: span 2;
   div.liquidity-image {
     overflow: hidden;
     img {
       position: relative;
-      top: -27px;
+      top: -15px;
 
-      width: 77px;
+      height: 129px;
     }
   }
-  > div:not(.liquidity-image) {
-    padding: 0;
+  div.card {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
   }
 
   ${media.tablet`
-    padding: 0;
+    padding: 115px 0 61px 77px;
     flex-direction: row;
-    min-height: 480px;
+    
     div.liquidity-image{
       height: fit-content;
       overflow: hidden;
       img{
-        position: unset;
-        top:0;
-        width: auto;
-        height:257px;
+        
+        top:0;  
+        height:188px;
+        right: -20px;
       }
     }
-    > div:not(.liquidity-image){
-      padding: 100px 0 100px 30px;
+    
+    
+    
+  `}
+  ${media.desktop`
+    height: 750px;
+    padding: 157px 0 127px 99px;
+    div.liquidity-image{
+      img{
+        height:321px;
+        right: -35px;
+      }
     }
+    
   `}
 `
 
