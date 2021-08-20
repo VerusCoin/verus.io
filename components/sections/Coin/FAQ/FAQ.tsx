@@ -96,12 +96,13 @@ const FAQ = ({ data }: IFAQ) => {
                     <Trans
                       i18nKey={`faq:faqs.${item.faq}.answer`}
                       components={{
-                        0: <DefaultText />,
+                        0: <DefaultText fam="geoReg" />,
                         1: (
                           <Button
                             href={item.link}
                             transparent
                             small
+                            fontRegular
                             as="a"
                             color="#0A3FB1"
                           />
@@ -109,7 +110,7 @@ const FAQ = ({ data }: IFAQ) => {
                       }}
                     />
                   ) : item.query ? (
-                    <DefaultText>
+                    <DefaultText fam="geoReg">
                       {t(`faqs.${item.faq}.answer`, { circSupply: '[API]' })}
                     </DefaultText>
                   ) : (
