@@ -63,6 +63,12 @@ const Foundations = () => {
           >
             {`${t('common:findMore')}`}
           </Button>
+          <Modal
+            isShown={showEarthModal}
+            hide={() => setShowEarthModal(!showEarthModal)}
+            title={t('earthCard.modal.header')}
+            text={t('earthCard.modal.text')}
+          />
         </EarthCard>
         <KeychainCard>
           <div className="keychain-image">
@@ -96,13 +102,8 @@ const Foundations = () => {
               isShown={showKeyChainModal}
               hide={() => setShowKeyChainModal(!showKeyChainModal)}
               title={t('keychainCard.modal.header')}
-            >
-              <CardText
-                fontSz="modal"
-                align="left"
-                text={t('keychainCard.modal.text')}
-              />
-            </Modal>
+              text={t('keychainCard.modal.text')}
+            />
           </div>
         </KeychainCard>
         <Card large>
@@ -133,13 +134,8 @@ const Foundations = () => {
             isShown={showScalableModal}
             hide={() => setShowScalableModal(!showScalableModal)}
             title={t('scalableLimits.modal.header')}
-          >
-            <CardText
-              fontSz="modal"
-              align="left"
-              text={t('scalableLimits.modal.text')}
-            />
-          </Modal>
+            text={t('scalableLimits.modal.text')}
+          />
         </Card>
         <Card large>
           <div>
@@ -169,13 +165,8 @@ const Foundations = () => {
             isShown={showTopTierModal}
             hide={() => setShowTopTierModal(!showTopTierModal)}
             title={t('topTier.modal.header')}
-          >
-            <CardText
-              fontSz="modal"
-              align="left"
-              text={t('topTier.modal.text')}
-            />
-          </Modal>
+            text={t('topTier.modal.text')}
+          />
         </Card>
         <Banner />
         <NetworkCard>
@@ -202,13 +193,8 @@ const Foundations = () => {
               isShown={showContractsModal}
               hide={() => setShowContractsModal(!showContractsModal)}
               title={t('smartContracts.modal.header')}
-            >
-              <CardText
-                fontSz="modal"
-                align="left"
-                text={t('smartContracts.modal.text')}
-              />
-            </Modal>
+              text={t('smartContracts.modal.text')}
+            />
           </div>
         </NetworkCard>
         <Card large>
@@ -239,15 +225,14 @@ const Foundations = () => {
             isShown={showProofModal}
             hide={() => setShowProofModal(!showProofModal)}
             title={t('quantumProof.modal.header')}
-          >
-            <CardText
-              fontSz="modal"
-              align="left"
-              text={t('quantumProof.modal.text')}
-            />
-          </Modal>
+            text={t('quantumProof.modal.text')}
+          />
         </Card>
-        <Card large tabletStyles="padding: 100px 25px;">
+        <Card
+          large
+          tabletStyles="padding: 100px 25px;"
+          giantStyles="padding: 100px 50px;"
+        >
           <div>
             <CardText
               book
@@ -275,25 +260,13 @@ const Foundations = () => {
             isShown={showMevModal}
             hide={() => setShowMevModal(!showMevModal)}
             title={t('mev.modal.header')}
-          >
-            <CardText fontSz="modal" align="left" text={t('mev.modal.text')} />
-          </Modal>
+            text={t('mev.modal.text')}
+          />
         </Card>
         <DefaultLinkCard card="global" />
         <DefaultLinkCard card="create" />
         <DefaultLinkCard card="coin" />
       </Grid>
-      <Modal
-        isShown={showEarthModal}
-        hide={() => setShowEarthModal(!showEarthModal)}
-        title={t('earthCard.modal.header')}
-      >
-        <CardText
-          fontSz="modal"
-          align="left"
-          text={t('earthCard.modal.text')}
-        />
-      </Modal>
     </MainLayout>
   )
 }

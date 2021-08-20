@@ -5,7 +5,7 @@ import { Button, CardText, Modal, useModal } from '@/components/elements'
 import useTranslation from 'next-translate/useTranslation'
 
 const StyledBanner = styled.div<any>`
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 60px;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ const StyledBanner = styled.div<any>`
 
   height: 520px;
   ${media.tablet`   
-    
+    border-radius: 20px;
     padding: 120px 106px;
   `}
   ${media.desktop`
@@ -54,13 +54,8 @@ const Banner = () => {
         isShown={isShown}
         hide={toggle}
         title={t('highEfficient.modal.header')}
-      >
-        <CardText
-          fontSz="modal"
-          align="left"
-          text={t('highEfficient.modal.text')}
-        />
-      </Modal>
+        text={t('highEfficient.modal.text')}
+      />
     </StyledBanner>
   )
 }

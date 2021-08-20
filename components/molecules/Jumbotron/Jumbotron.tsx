@@ -17,6 +17,9 @@ const StyledJumbotronContainer = styled.div`
   a {
     margin-top: ${(props) => props.theme.spaces.sm};
   }
+  a.youtube {
+    margin-top: ${(props) => props.theme.spaces.lg};
+  }
 `
 
 const StyledJumbotronText = styled.h1<any>`
@@ -52,14 +55,15 @@ const StyledJumbotronText = styled.h1<any>`
 // 1) typical header with or without text or links
 // 2) header with split format at bottom one for button and the other for text
 
-const Jumbotron: React.FC<IJumbotron> = ({
+const Jumbotron = ({
   header,
   text,
   color = 'blue',
   button,
   buttons,
+  youtube,
   width,
-}) => {
+}: IJumbotron) => {
   return (
     <StyledJumbotron>
       <Container>
@@ -90,15 +94,27 @@ const Jumbotron: React.FC<IJumbotron> = ({
                   <Button
                     transparent
                     svg={{ type: 'arrow', rotate: false }}
-                    href="#"
+                    href={item.href}
                     as="a"
                     color="#3165d4"
-                    fontRegular
                     key={index}
                   >
                     {item.text}
                   </Button>
                 ))}
+              {youtube && (
+                <Button
+                  className="youtube"
+                  transparent
+                  svg={{ type: 'arrow', rotate: false }}
+                  href={youtube.href}
+                  as="a"
+                  color="#676767"
+                  margin="45px 0 0"
+                >
+                  {youtube.text}
+                </Button>
+              )}
             </StyledJumbotronContainer>
           </Col>
         </Row>

@@ -16,6 +16,7 @@ const StyledSection = styled.div<any>`
       padding-top: ${props.theme.spaces.xl};
       border-top: 1px solid ${props.theme.colors.grey.primary};
   `}
+  ${(props: any) => props?.styles}
 `
 
 const StyledSectionContainer = styled.div`
@@ -34,15 +35,16 @@ const StyledSectionText = styled.div<any>`
   }
 `
 
-const SectionLayout: React.FC<ISection> = ({
+const SectionLayout = ({
   bG = 'inherit',
   width,
   base = true,
   border,
+  styles,
   children,
-}) => {
+}: ISection) => {
   return (
-    <StyledSection base={base} border={border} bG={bG}>
+    <StyledSection base={base} border={border} bG={bG} styles={styles}>
       <Container>
         <Row>
           <Col col={12}>

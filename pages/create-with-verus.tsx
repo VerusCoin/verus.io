@@ -102,18 +102,11 @@ const CreateWithVerus = () => {
             isShown={showBlockchain}
             hide={() => setShowBlockchain(!showBlockchain)}
             title={t('cards.launchBlockchain.modal.header')}
-          >
-            <CardText
-              fontSz="modal"
-              align="left"
-              text={t('cards.launchBlockchain.modal.text1')}
-            />
-            <CardText
-              fontSz="modal"
-              align="left"
-              text={t('cards.launchBlockchain.modal.text2')}
-            />
-          </Modal>
+            text={[
+              t('cards.launchBlockchain.modal.text1'),
+              t('cards.launchBlockchain.modal.text2'),
+            ]}
+          />
         </Card>
         <Card
           large
@@ -146,13 +139,8 @@ const CreateWithVerus = () => {
             isShown={showTokens}
             hide={() => setShowTokens(!showTokens)}
             title={t('cards.createToken.modal.header')}
-          >
-            <CardText
-              fontSz="modal"
-              align="left"
-              text={t('cards.createToken.modal.text')}
-            />
-          </Modal>
+            text={t('cards.createToken.modal.text')}
+          />
         </Card>
         <LiquidityCard>
           <div className="card">
@@ -184,13 +172,8 @@ const CreateWithVerus = () => {
               isShown={showLiquidity}
               hide={() => setShowLiquidity(!showLiquidity)}
               title={t('cards.instantLiquidity.modal.header')}
-            >
-              <CardText
-                fontSz="modal"
-                align="left"
-                text={t('cards.instantLiquidity.modal.text')}
-              />
-            </Modal>
+              text={t('cards.instantLiquidity.modal.text')}
+            />
           </div>
           <div className="liquidity-image">
             <Img name="drops" />
@@ -231,13 +214,8 @@ const CreateWithVerus = () => {
               isShown={showPrivacy}
               hide={() => setShowPrivacy(!showPrivacy)}
               title={t('cards.getPrivacy.modal.header')}
-            >
-              <CardText
-                fontSz="modal"
-                align="left"
-                text={t('cards.getPrivacy.modal.text')}
-              />
-            </Modal>
+              text={t('cards.getPrivacy.modal.text')}
+            />
           </div>
         </PrivacyCard>
         <DigitalCard>
@@ -270,13 +248,8 @@ const CreateWithVerus = () => {
               isShown={showIdentity}
               hide={() => setShowIdentity(!showIdentity)}
               title={t('cards.digitalIdentity.modal.header')}
-            >
-              <CardText
-                fontSz="modal"
-                align="left"
-                text={t('cards.digitalIdentity.modal.text')}
-              />
-            </Modal>
+              text={t('cards.digitalIdentity.modal.text')}
+            />
           </div>
           <div className="identity-image">
             <Img name="identity-image" />
@@ -315,13 +288,8 @@ const CreateWithVerus = () => {
               isShown={showGlobal}
               hide={() => setShowGlobal(!showGlobal)}
               title={t('cards.dataValue.modal.header')}
-            >
-              <CardText
-                fontSz="modal"
-                align="left"
-                text={t('cards.dataValue.modal.text')}
-              />
-            </Modal>
+              text={t('cards.dataValue.modal.text')}
+            />
           </div>
         </EarthCard>
         <Card

@@ -22,9 +22,10 @@ const Home = ({
     header: t('jumbotron.heading'),
     color: 'default',
     buttons: [
-      { text: t('jumbotron.buttons.first'), href: '#' },
+      { text: t('jumbotron.buttons.first'), href: '/economy' },
       { text: t('jumbotron.buttons.second'), href: '/create-with-verus' },
     ],
+    youtube: { text: t('jumbotron.youtube'), href: '#' },
     width: 1000,
   }
 

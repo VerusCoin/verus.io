@@ -116,9 +116,11 @@ const Button = ({
   margin,
   onClick,
   children,
+  className,
 }: IButton) => {
   return (
     <StyledButton
+      className={className}
       transparent={transparent}
       wide={wide}
       href={href}

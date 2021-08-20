@@ -29,6 +29,7 @@ export interface ISection {
   width?: number
   bG?: string
   base?: boolean
+  styles?: string
 }
 
 export interface INarrowSection {

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
 import { DefaultText } from '@/components/elements'
 import { fontSize } from '@/styles/helpers'
@@ -11,6 +12,9 @@ export const StyledNet = styled.div<any>`
   margin-bottom: ${(props) => props.theme.spaces.xs};
 
   ${(props: any) => fontSize(props.fontSz)};
+  ${media.tablet`
+    margin-bottom: 0;
+  `}
 `
 
 const StyledLabel = styled.span<any>`
@@ -24,7 +28,6 @@ const StyledLabel = styled.span<any>`
   border-radius: 25px;
   font-family: ${(props) => props.theme.typo.primary.family};
   ${fontSize('xs')}
-  margin-bottom: ${(props) => props.theme.spaces.xxs};
 `
 
 export interface INetTag {

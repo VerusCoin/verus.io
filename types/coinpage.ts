@@ -20,4 +20,6 @@ export interface IFAQ {
 
 export interface IFAQItem {
   faq: string
+  link?: string
+  query?: string
 }

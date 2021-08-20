@@ -1,0 +1,25 @@
+{
+  "heading": "Frequently Asked Coin Questions",
+  "faqs": {
+    "circSupply": {
+      "question": "What is $VRSC circulating supply?",
+      "answer": "The circulating supply is {{circSupply}} VRSC."
+    },
+    "howDid": {
+      "question": "How did $VRSC come into circulation?",
+      "answer": "All $VRSC supply comes into public hands by mining and staking."
+    },
+    "maxSupply": {
+      "question": "What is $VRSC maximum supply?",
+      "answer": "The maximum supply ever to come on the market is 83,540,184 VRSC."
+    },
+    "purchase": {
+      "question": "Where can I buy $VRSC?",
+      "answer": "<0>You can buy $VRSC through multiple exchanges. The exchanges are listed <1>here</1></0>"
+    },
+    "ico": {
+      "question": "What was the $VRSC ICO price?",
+      "answer": "Verus never had an ICO. All coins came fairly into the market by mining and staking."
+    }
+  }
+}

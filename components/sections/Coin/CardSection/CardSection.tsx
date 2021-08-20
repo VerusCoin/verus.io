@@ -1,14 +1,14 @@
 import React from 'react'
 import useTranslation from 'next-translate/useTranslation'
 import styled from 'styled-components'
-// import { media } from 'styled-bootstrap-grid'
+import { media } from 'styled-bootstrap-grid'
 import { Grid } from '@/components/layouts'
 import { bgColor } from '@/styles/helpers'
 import { NetTag, CardText } from '@/components/elements'
 
 const StyledLifeBlood1Cards = styled.div`
   ${bgColor('white')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 100px 30px;
   justify-content: space-between;
   align-items: center;
@@ -19,10 +19,13 @@ const StyledLifeBlood1Cards = styled.div`
   background-image: url('/svg/lifeblood1.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  ${media.tablet`
+    border-radius: 20px
+  `}
 `
 const StyledLifeBlood2Cards = styled.div`
   ${bgColor('white')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 100px 30px;
   justify-content: space-between;
   align-items: center;
@@ -33,10 +36,13 @@ const StyledLifeBlood2Cards = styled.div`
   background-image: url('/svg/lifeblood2.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  ${media.tablet`
+    border-radius: 20px
+  `}
 `
 const StyledLifeBlood3Cards = styled.div`
   ${bgColor('white')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 100px 30px;
   justify-content: space-between;
   align-items: center;
@@ -47,10 +53,13 @@ const StyledLifeBlood3Cards = styled.div`
   background-image: url('/svg/lifeblood3.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  ${media.tablet`
+    border-radius: 20px
+  `}
 `
 const CoinCard = styled.div`
   ${bgColor('white')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 100px 30px;
   justify-content: space-between;
   align-items: center;
@@ -58,6 +67,9 @@ const CoinCard = styled.div`
   flex-direction: column;
   height: 425px;
   box-shadow: 0 0 13px -50px rgb(0 0 0 / 13%);
+  ${media.tablet`
+    border-radius: 20px
+  `}
 `
 
 const CardSection = () => {

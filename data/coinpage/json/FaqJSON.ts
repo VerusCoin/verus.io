@@ -4,25 +4,21 @@ export const FaqJSON: IFAQ = {
   title: 'heading',
   data: [
     {
-      faq: 'ico',
+      faq: 'circSupply',
+      query: 'circSupply',
     },
     {
-      faq: 'roadmap',
-    },
-    {
-      faq: 'canMine',
-    },
-    {
-      faq: 'canStake',
+      faq: 'howDid',
     },
     {
       faq: 'maxSupply',
     },
     {
-      faq: 'privacyCoin',
+      faq: 'purchase',
+      link: '/exchanges',
     },
     {
-      faq: 'impermanentLoss',
+      faq: 'ico',
     },
   ],
 }

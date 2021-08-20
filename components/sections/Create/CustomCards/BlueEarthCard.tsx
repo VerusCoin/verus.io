@@ -6,7 +6,7 @@ import { bgColor } from '@/styles/helpers'
 const StyledBlueEarthCard = styled.div`
   ${bgColor('blueQuan')};
 
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 190px 25px 72px;
   height: 520px;
 
@@ -28,6 +28,7 @@ const StyledBlueEarthCard = styled.div`
     margin: 0 25px;
   }
   ${media.tablet`
+    border-radius: 20px;
     background-position: center right -30px;
     background-size: 303px;
     padding: 174px 117px 164px 27px;

@@ -28,38 +28,5 @@
       "heading": "DeFi",
       "text": "DeFi tokens and currencies on the Verus mainchain must have $VRSC in its reserves."
     }
-  },
-  "faq": {
-    "heading": "Frequently Asked Coin Questions",
-    "ico": {
-      "question": "Was there an ICO for Verus?",
-      "answer": "No. Verus is fairly launched, with equal opportunity for everyone to earn coins through mining and staking. Also, Verus had no premine, and has no developer fees."
-    },
-    "roadmap": {
-      "question": "Where can I find a roadmap?",
-      "answer": "Verus has no roadmaps or deadlines. We are a community project without central entity or commercial interests."
-    },
-    "canMine": {
-      "question": "Can I mine Verus",
-      "answer": "Yes. Anyone can start mining Verus with a CPU and GPU.",
-      "link": "learn more"
-    },
-    "canStake": {
-      "question": "Can I stake Verus",
-      "answer": "Yes. Anyone can start staking Verus without any minimum requirements.",
-      "link": "learn more"
-    },
-    "maxSupply": {
-      "question": "What is the maximum supply of Verus?",
-      "answer": "83,540,184 VRSC"
-    },
-    "privacyCoin": {
-      "question": "Is Verus a privacy coin?",
-      "answer": "Verus supports fully private, zero knowledge transactions that use zk- SNARK technologies."
-    },
-    "impermanentLoss": {
-      "question": "What is impermanent loss?",
-      "answer": "Impermanent loss is nothing more than the difference between constant-mix vs buy-and-hold strategy. An example: when you hold a currency that is 50/50% backed by VRSC and BTC, you might suffer an opportunity loss when compared to holding VRSC and BTC directly. The upside is you will have less risk."
-    }
   }
 }

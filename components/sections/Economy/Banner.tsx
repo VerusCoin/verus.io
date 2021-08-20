@@ -6,7 +6,7 @@ import { fontSize, fontFam, fontColor } from '@/styles/helpers'
 import useTranslation from 'next-translate/useTranslation'
 
 const StyledBanner = styled.div<any>`
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 60px;
   justify-content: center;
   align-items: center;
@@ -20,8 +20,11 @@ const StyledBanner = styled.div<any>`
   background-position: center center;
 
   ${media.tablet`   
-    
+    border-radius: 20px;
     padding: 100px 60px;
+  `}
+  ${media.desktop`
+  height: 470px;
   `}
 `
 

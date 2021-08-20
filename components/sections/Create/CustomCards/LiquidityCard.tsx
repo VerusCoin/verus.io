@@ -5,7 +5,7 @@ import { bgColor } from '@/styles/helpers'
 
 const StyledLiquidityCard = styled.div`
   ${bgColor('white')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 0 0 41px;
   justify-content: space-between;
   align-items: center;
@@ -30,6 +30,7 @@ const StyledLiquidityCard = styled.div`
   }
 
   ${media.tablet`
+    border-radius: 20px;
     padding: 115px 0 61px 77px;
     flex-direction: row;
     

@@ -4,12 +4,13 @@
     "buttons": {
       "first": "Earn in the network economy",
       "second": "Create products and services"
-    }
+    },
+    "youtube": "Watch introductory video on YouTube"
   },
   "banner": "Verus is scalable public infrastructure for the world.",
   "cards": {
     "pbaasCard": {
-      "header": "PBaas",
+      "header": "PBaaS",
       "text": "Use Public Blockchains as a Service to deploy customizable, scalable and interoperable blockchains within minutes. No need to provision additional resources."
     },
     "verusCard": {

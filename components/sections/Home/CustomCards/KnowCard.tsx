@@ -5,7 +5,7 @@ import { bgColor } from '@/styles/helpers'
 
 const StyledKnowCards = styled.div`
   ${bgColor('#03102C')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 100px;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +22,7 @@ const StyledKnowCards = styled.div`
     width: 60px;
   }
   ${media.tablet`
+  border-radius: 20px;
   min-height: 480px;
   p:last-child {
     width: 70px;

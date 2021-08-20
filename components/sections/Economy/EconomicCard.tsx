@@ -49,7 +49,7 @@ const StyledTagSection = styled.div<any>`
 const EconomicCard = () => {
   const { t } = useTranslation('economy')
   return (
-    <Card span={2}>
+    <Card span={2} desktopStyles="height: unset !important;">
       <CardHeader text={t('economic.heading')} />
       <StyledCardText>
         <CardText book text={t('economic.text')} />

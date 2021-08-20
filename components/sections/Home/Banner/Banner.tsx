@@ -8,7 +8,7 @@ import useTranslation from 'next-translate/useTranslation'
 const StyledBanner = styled.div<any>`
   ${bgColor('blueQuan')};
 
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 30px;
   justify-content: center;
   align-items: center;
@@ -23,6 +23,7 @@ const StyledBanner = styled.div<any>`
   background-size: 75%;
 
   ${media.tablet`
+    border-radius: 20px;
     background-position: 110% 36px;
     height: 200px;  
     background-size: 30%;

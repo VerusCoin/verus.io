@@ -5,17 +5,19 @@ import { bgColor } from '@/styles/helpers'
 
 const StyledCard = styled.div<any>`
   ${(props) => bgColor(props.bGcolor)}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 100px 30px;
   justify-content: space-between;
   align-items: center;
   display: flex;
   flex-direction: column;
-  max-width: 390px;
+
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
-  ${(props) => props.large && `height: 520px;`}
+  ${(props: any) => props.large && `height: 520px;`}
   ${media.tablet`
-    max-width: 400px;
+    border-radius: 20px;
+    ${(props: any) => (props.span ? `` : 'max-width: 400px;')}
+    
     min-height: 480px;
     padding: 100px 60px;
     min-width: 342px;
@@ -29,8 +31,12 @@ const StyledCard = styled.div<any>`
     height: ${(props: any) => (props.large && '750px') || '480px'};
     
   `}
-  ${(props) => props.span && `grid-column: span ${props.span}`};
-  ${(props) => props?.styles}
+  ${media.giant`
+    ${(props: any) => props?.giantStyles}
+  `}
+  ${(props: any) =>
+    props.span ? `grid-column: span ${props.span};` : 'max-width: 390px;'}
+  ${(props: any) => props?.styles}
 `
 
 export interface CardProps {
@@ -40,6 +46,7 @@ export interface CardProps {
   styles?: string
   tabletStyles?: string
   desktopStyles?: string
+  giantStyles?: string
   large?: boolean
 }
 
@@ -50,6 +57,7 @@ const Card = ({
   styles,
   tabletStyles,
   desktopStyles,
+  giantStyles,
   large,
 }: CardProps) => {
   return (
@@ -59,6 +67,7 @@ const Card = ({
       styles={styles}
       tabletStyles={tabletStyles}
       desktopStyles={desktopStyles}
+      giantStyles={giantStyles}
       large={large}
     >
       {children}

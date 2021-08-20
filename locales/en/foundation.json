@@ -1,7 +1,7 @@
 {
   "jumbotron": {
-    "heading": "Participate and earn.",
-    "text": "A thriving network economy."
+    "heading": "Built to last.",
+    "text": "Strong foundations for continual growth."
   },
   "earthCard": {
     "header": "Made for the world,<br/>by the community.",
@@ -20,7 +20,7 @@
     }
   },
   "scalableLimits": {
-    "header": "scalable without limits",
+    "header": "Scalable without limits.",
     "text": "Ready for world demand.",
     "modal": {
       "header": "A multichain network designed to scale.",

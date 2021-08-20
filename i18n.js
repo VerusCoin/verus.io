@@ -5,7 +5,7 @@ module.exports = {
     '*': ['navigation', 'common'],
     '/': ['home'],
     '/economy': ['economy'],
-    '/coin': ['coin'],
+    '/coin': ['coin', 'faq'],
     '/create-with-verus': ['create'],
     '/foundations': ['foundation'],
   },

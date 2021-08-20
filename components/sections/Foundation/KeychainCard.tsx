@@ -5,7 +5,7 @@ import { bgColor } from '@/styles/helpers'
 
 const StyledKeychainCard = styled.div`
   ${bgColor('white')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 40px 0 100px;
   justify-content: space-between;
   align-items: center;
@@ -29,6 +29,7 @@ const StyledKeychainCard = styled.div`
     margin: 0 23px;
   }
   ${media.tablet`
+    border-radius: 20px;
     padding: 100px 50px 100px 0 ;
     flex-direction: row;
     

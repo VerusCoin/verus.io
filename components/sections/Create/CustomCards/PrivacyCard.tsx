@@ -5,7 +5,7 @@ import { bgColor } from '@/styles/helpers'
 
 const StyledPrivacyCard = styled.div`
   ${bgColor('blackTer')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 40px 0;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +26,7 @@ const StyledPrivacyCard = styled.div`
     align-items: center;
   }
   ${media.tablet`
+    border-radius: 20px;
     padding: 87px 100px 87px 0;
     flex-direction: row;
     

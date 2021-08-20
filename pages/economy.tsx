@@ -27,7 +27,7 @@ const Economy = () => {
   return (
     <MainLayout jumbotronData={JumbotronJSON}>
       <Grid>
-        <Card>
+        <Card styles="justify-content: flex-end;">
           <CardText book fontSz="sm" text={t('staking.heading')} />
           <CardText
             book
@@ -49,7 +49,7 @@ const Economy = () => {
             text={`${ProgressBarValue}% ${t('staking.staking')}`}
           />
         </Card>
-        <Card>
+        <Card styles="justify-content: flex-end;">
           <CardText book fontSz="sm" text={t('hashrate.heading')} />
           <CardText
             book
@@ -72,7 +72,11 @@ const Economy = () => {
               justifyContent: 'center',
             }}
           >
-            <Img name="iconmonstr-smartphone" height={24} />
+            <Img
+              name="iconmonstr-smartphone"
+              height={24}
+              styles="margin-right: 6px;"
+            />
             <CardText
               book
               fontSz="sm"
@@ -89,7 +93,11 @@ const Economy = () => {
               justifyContent: 'center',
             }}
           >
-            <Img name="iconmonstr-cpu" height={24} />
+            <Img
+              name="iconmonstr-cpu"
+              height={24}
+              styles="margin-right: 6px;"
+            />
             <CardText
               book
               fontSz="sm"
@@ -98,28 +106,22 @@ const Economy = () => {
             />
           </div>
         </Card>
-        <div
-          style={{
-            gridColumn: 'span 2',
-            width: '800px',
-            margin: 'auto',
-          }}
-        >
-          <Section>
-            <DefaultText fam="geoReg" customColor="#676767" align="center">
-              {t('note')}
-            </DefaultText>
-          </Section>
-        </div>
+
+        <Section styles="grid-column: span 2; margin: auto;" width={800}>
+          <DefaultText fam="geoReg" customColor="#676767" align="center">
+            {t('note')}
+          </DefaultText>
+        </Section>
+
         <ParticipateCard />
         <EconomicCard />
         <Banner />
-        <Card>
+        <Card desktopStyles="height: unset">
           <NetTag net="test" />
           <CardText book fontSz="xl" text={t('defi.heading')} />
           <CardText margin="32px 0" book fontSz="sm" text={t('defi.text')} />
         </Card>
-        <Card>
+        <Card desktopStyles="height: unset">
           <NetTag net="main" />
           <CardText book fontSz="xl" text={t('referral.heading')} />
           <CardText

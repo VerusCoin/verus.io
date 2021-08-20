@@ -5,7 +5,7 @@ import { bgColor } from '@/styles/helpers'
 
 const StyledDigitalCard = styled.div`
   ${bgColor('white')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 0 0 41px;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +24,8 @@ const StyledDigitalCard = styled.div`
     width: 100%;
   }
   ${media.tablet`
-  padding: 100px 0 100px 50px ;
+    border-radius: 20px;
+    padding: 100px 0 100px 50px ;
     flex-direction: row;
     overflow: hidden;
     div.identity-image {

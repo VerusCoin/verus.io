@@ -11,7 +11,8 @@ const StyledContainer = styled.div<any>`
   padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 390px;
+  max-width: 430px;
+
   display: flex;
   flex-direction: column;
   grid-gap: 20px;

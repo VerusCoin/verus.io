@@ -11,6 +11,10 @@ export interface IJumbotron {
   buttons?: JumboButtons[]
   width?: number
   left?: number
+  youtube?: {
+    text: string
+    href: string
+  }
 }
 
 interface JumboButtons {

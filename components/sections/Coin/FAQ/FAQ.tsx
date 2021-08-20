@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
-import DefaultText from '@/components/elements/DefaultText/DefaultText'
-import DefaultHeader from '@/components/elements/DefaultHeader/DefaultHeader'
+import { DefaultText, DefaultHeader, Button } from '@/components/elements'
 import {
   Accordion,
   AccordionItem,
@@ -15,6 +14,7 @@ import {
 import { spacer } from '@/styles/helpers'
 
 import useTranslation from 'next-translate/useTranslation'
+import Trans from 'next-translate/Trans'
 import { SVGs } from '@/components/elements/SVGs/SVGs'
 import { IFAQ } from '@/types/coinpage'
 
@@ -60,16 +60,16 @@ const StyledSVG = styled.div<any>`
   }
 `
 
-const FAQ: React.FC<IFAQ> = ({ data }) => {
+const FAQ = ({ data }: IFAQ) => {
   resetNextUuid()
-  const { t } = useTranslation('coin')
+  const { t } = useTranslation('faq')
   return (
     <StyledFAQ id="FAQ">
       <Container>
         <Row justifyContent="center">
           <Col col={12}>
             <DefaultHeader as="h3" align="center">
-              {t('faq.heading')}
+              {t('heading')}
             </DefaultHeader>
           </Col>
         </Row>
@@ -80,7 +80,7 @@ const FAQ: React.FC<IFAQ> = ({ data }) => {
                 <AccordionItemHeading>
                   <AccordionItemButton>
                     <DefaultHeader as="h5">
-                      {t(`faq.${item.faq}.question`)}
+                      {t(`faqs.${item.faq}.question`)}
                     </DefaultHeader>
                     <AccordionItemState>
                       {({ expanded }) => (
@@ -92,7 +92,29 @@ const FAQ: React.FC<IFAQ> = ({ data }) => {
                   </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                  <DefaultText>{t(`faq.${item.faq}.question`)}</DefaultText>
+                  {item.link ? (
+                    <Trans
+                      i18nKey={`faq:faqs.${item.faq}.answer`}
+                      components={{
+                        0: <DefaultText />,
+                        1: (
+                          <Button
+                            href={item.link}
+                            transparent
+                            small
+                            as="a"
+                            color="#0A3FB1"
+                          />
+                        ),
+                      }}
+                    />
+                  ) : item.query ? (
+                    <DefaultText>
+                      {t(`faqs.${item.faq}.answer`, { circSupply: '[API]' })}
+                    </DefaultText>
+                  ) : (
+                    <DefaultText>{t(`faqs.${item.faq}.answer`)}</DefaultText>
+                  )}
                 </AccordionItemPanel>
               </AccordionItem>
             ))}

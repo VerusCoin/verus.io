@@ -5,7 +5,7 @@ import { bgColor } from '@/styles/helpers'
 
 const StyledNetworkCard = styled.div`
   ${bgColor('white')}
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 0;
   justify-content: space-between;
   align-items: center;
@@ -35,6 +35,7 @@ const StyledNetworkCard = styled.div`
     }
   }
   ${media.tablet`
+    border-radius: 20px;
     padding: 100px 50px 100px 0 ;
     flex-direction: row;
   

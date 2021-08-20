@@ -1,5 +1,5 @@
 export interface IButton {
-  children: React.ReactNode
+  children?: React.ReactNode
   fontSize?: string
   primary?: boolean
   transparent?: boolean
@@ -16,6 +16,7 @@ export interface IButton {
   fontRegular?: boolean
   white?: boolean
   margin?: string
+  className?: string
 }
 
 export interface IDefaultHeader {
@@ -36,7 +37,7 @@ export interface IDefaultLink {
 }
 
 export interface IDefaultText {
-  children: React.ReactNode
+  children?: React.ReactNode
   customColor?: string
   width?: number
   align?: string

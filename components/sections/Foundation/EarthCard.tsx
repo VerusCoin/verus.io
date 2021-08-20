@@ -6,7 +6,7 @@ import { bgColor } from '@/styles/helpers'
 const StyledEarthCard = styled.div`
   ${bgColor('white')};
 
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 157px 25px 41px;
   height: 520px;
   justify-content: space-between;
@@ -22,6 +22,7 @@ const StyledEarthCard = styled.div`
   background-size: 167px;
 
   ${media.tablet`
+    border-radius: 20px;
     background-position: center right -35px;
     background-size: 264px;
     padding: 100px 250px 126px 90px;

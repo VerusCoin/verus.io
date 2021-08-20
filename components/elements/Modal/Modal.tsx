@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 // import { media } from 'styled-bootstrap-grid'
-import { DefaultHeader, SVGs } from '@/components/elements'
+import { DefaultHeader, SVGs, CardText } from '@/components/elements'
+
 // import Close from '../SVGs/assets/close.svg'
 
 // const Wrapper = styled.div<any>`
@@ -245,6 +246,9 @@ const StyledCardContent = styled.div`
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+  h2 {
+    margin-bottom: 40px;
+  }
   ${media.tablet`
     padding: 147px 90px ;
     box-sizing: border-box;
@@ -300,10 +304,11 @@ interface ModalType {
   isShown: boolean
   hide: () => void
   title?: string
-  children: ReactNode
+  text?: string[] | string
+  children?: ReactNode
 }
 
-const Modal = ({ isShown, hide, title, children }: ModalType) => {
+const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
   const modal = (
     <>
       <StyledModal>
@@ -314,6 +319,29 @@ const Modal = ({ isShown, hide, title, children }: ModalType) => {
               <ModalContent>
                 <StyledCardContent>
                   <DefaultHeader>{title}</DefaultHeader>
+
+                  {typeof text === 'object' &&
+                    text.map((element, index) => (
+                      <CardText
+                        key={index}
+                        fontSz="modal"
+                        color="#676767"
+                        align="left"
+                        regular
+                        text={element}
+                      />
+                    ))}
+
+                  {typeof text === 'string' && (
+                    <CardText
+                      fontSz="modal"
+                      color="#676767"
+                      align="left"
+                      regular
+                      text={text}
+                    />
+                  )}
+
                   {children}
                 </StyledCardContent>
               </ModalContent>
