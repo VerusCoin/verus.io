@@ -24,7 +24,9 @@ const StyledContainer = styled.div<any>`
     max-width: 812px;
     min-width: 696px;
   `}
-
+  ${media.desktop`
+    max-width: 1040px;
+  `}
   ${media.giant`
     padding: 0;
     min-width: 1004px;

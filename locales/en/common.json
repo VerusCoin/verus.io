@@ -1,6 +1,7 @@
 {
   "mainnet": "mainnet",
   "testnet": "testnet",
+  "planned": "planned",
   "findMore": "Find out more",
   "globalCard": {
     "header": "Connecting blockchains together.",

@@ -70,6 +70,7 @@ const CreateWithVerus = () => {
           styles="padding: 77px 27px 41px;"
           tabletStyles="padding: 79px 27px 71px;"
           desktopStyles="padding: 143px 55px 73px;"
+          chain
         >
           <div>
             <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
@@ -113,6 +114,7 @@ const CreateWithVerus = () => {
           styles="padding: 77px 27px 41px;"
           tabletStyles="padding: 79px 27px 71px;"
           desktopStyles="padding: 143px 55px 73px;"
+          coin
         >
           <div>
             <CardText book fontSz="xs" color="orange" text={t('tryTest')} />

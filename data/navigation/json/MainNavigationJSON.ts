@@ -44,7 +44,7 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'contribute',
           link: 'contributePage',
-          href: '/community/contribute',
+          href: '/contribute',
           description: true,
         },
       ],

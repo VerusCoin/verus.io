@@ -22,6 +22,7 @@ const StyledCard = styled.div<any>`
     padding: 100px 60px;
     min-width: 342px;
     ${(props: any) => props?.tabletStyles}
+    
   `}
 
   ${media.desktop`
@@ -29,14 +30,44 @@ const StyledCard = styled.div<any>`
     max-width: none;
     ${(props: any) => props?.desktopStyles}
     height: ${(props: any) => (props.large && '750px') || '480px'};
-    
+    ${(props: any) => props.chain && 'background-size: 500px;'}
+    ${(props: any) => props.coin && 'background-size: 550px;'}
+    ${(props: any) => props.grid && 'background-size: 575px;'}
   `}
   ${media.giant`
     ${(props: any) => props?.giantStyles}
+    ${(props: any) => props.chain && 'background-size: 600px;'}
+    ${(props: any) => props.coin && 'background-size: 600px;'}
+    ${(props: any) => props.grid && 'background-size: 650px;'}
   `}
   ${(props: any) =>
     props.span ? `grid-column: span ${props.span};` : 'max-width: 390px;'}
   ${(props: any) => props?.styles}
+
+  ${(props: any) =>
+    props.chain &&
+    `
+    background-image: url('/svg/blockchain.svg');
+    background-repeat: no-repeat;
+    background-position: center top 46px;
+    background-size: 400px;
+  `}
+  ${(props: any) =>
+    props.coin &&
+    `
+    background-image: url('/svg/coins.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom -3px;
+    background-size: 425px;
+  `}
+  ${(props: any) =>
+    props.grid &&
+    `
+    background-image: url('/svg/grid.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom -12px;
+    background-size: 450px;
+  `}
 `
 
 export interface CardProps {
@@ -48,6 +79,9 @@ export interface CardProps {
   desktopStyles?: string
   giantStyles?: string
   large?: boolean
+  chain?: boolean
+  coin?: boolean
+  grid?: boolean
 }
 
 const Card = ({
@@ -59,6 +93,9 @@ const Card = ({
   desktopStyles,
   giantStyles,
   large,
+  chain,
+  coin,
+  grid,
 }: CardProps) => {
   return (
     <StyledCard
@@ -69,6 +106,9 @@ const Card = ({
       desktopStyles={desktopStyles}
       giantStyles={giantStyles}
       large={large}
+      chain={chain}
+      coin={coin}
+      grid={grid}
     >
       {children}
     </StyledCard>

@@ -9,7 +9,8 @@ export const StyledNet = styled.div<any>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: ${(props) => props.theme.spaces.xs};
+  margin-bottom: ${(props: any) =>
+    (props.unMargin && '0') || props.theme.spaces.xs};
 
   ${(props: any) => fontSize(props.fontSz)};
   ${media.tablet`
@@ -21,7 +22,9 @@ const StyledLabel = styled.span<any>`
   ${(props: any) =>
     props.netType === 'main'
       ? `background-color: ${props.theme.colors.green}; padding: 5px 15px;`
-      : `background-color: ${props.theme.colors.orange};padding: 5px 19px;`};
+      : props.netType === 'test'
+      ? `background-color: ${props.theme.colors.orange}; padding: 5px 19px;`
+      : `background-color: #BEBEBE; padding: 5px 19px;`}
   color: ${(props) => props.theme.colors.white};
   ${(props) => props.text && 'margin-right: 31px;'}
 
@@ -31,7 +34,7 @@ const StyledLabel = styled.span<any>`
 `
 
 export interface INetTag {
-  net: 'main' | 'test'
+  net: 'main' | 'test' | 'plan'
   fam?: string
   fontSz?:
     | 'xxl'
@@ -45,18 +48,22 @@ export interface INetTag {
     | 'menuXs'
     | 'button'
   text?: string
+  unMargin?: boolean
 }
 
-const NetTag = ({ net, fam, fontSz = 'sm', text }: INetTag) => {
+const NetTag = ({ net, fam, fontSz = 'sm', text, unMargin }: INetTag) => {
   const { t } = useTranslation('common')
 
   return (
-    <StyledNet fontSz={fontSz}>
+    <StyledNet fontSz={fontSz} unMargin={unMargin}>
       <p>
-        <StyledLabel netType={net}>{t(`${net}net`)}</StyledLabel>
+        {net === 'plan' ? (
+          <StyledLabel netType={net}>{t('planned')}</StyledLabel>
+        ) : (
+          <StyledLabel netType={net}>{t(`${net}net`)}</StyledLabel>
+        )}
       </p>
-
-      <DefaultText fam={fam}>{text}</DefaultText>
+      {text && <DefaultText fam={fam}>{text}</DefaultText>}
     </StyledNet>
   )
 }

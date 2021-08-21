@@ -137,7 +137,7 @@ const Foundations = () => {
             text={t('scalableLimits.modal.text')}
           />
         </Card>
-        <Card large>
+        <Card large grid>
           <div>
             <CardText
               book

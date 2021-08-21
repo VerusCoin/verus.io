@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
 import { DefaultText, DefaultHeader, Button } from '@/components/elements'
 import {
@@ -25,8 +26,14 @@ const StyledFAQ = styled.div`
 const StyledAccordion = styled(Accordion)`
   width: 100%;
   margin-top: ${(props) => props.theme.spaces.xl};
+  ${media.tablet`
+    max-width: 600px;
+  `}
   ${media.desktop`
-    width: 732px;
+    max-width: 700px;
+  `}
+  ${media.giant`
+    max-width: 800px;
   `}
   .accordion__item + .accordion__item {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -96,25 +103,27 @@ const FAQ = ({ data }: IFAQ) => {
                     <Trans
                       i18nKey={`faq:faqs.${item.faq}.answer`}
                       components={{
-                        0: <DefaultText fam="geoReg" />,
+                        0: <DefaultText fam="geoReg" fontSz="sm" />,
                         1: (
                           <Button
                             href={item.link}
                             transparent
-                            small
                             fontRegular
                             as="a"
                             color="#0A3FB1"
+                            fontSize="sm"
                           />
                         ),
                       }}
                     />
                   ) : item.query ? (
-                    <DefaultText fam="geoReg">
+                    <DefaultText fam="geoReg" fontSz="sm">
                       {t(`faqs.${item.faq}.answer`, { circSupply: '[API]' })}
                     </DefaultText>
                   ) : (
-                    <DefaultText>{t(`faqs.${item.faq}.answer`)}</DefaultText>
+                    <DefaultText fam="geoReg" fontSz="sm">
+                      {t(`faqs.${item.faq}.answer`)}
+                    </DefaultText>
                   )}
                 </AccordionItemPanel>
               </AccordionItem>

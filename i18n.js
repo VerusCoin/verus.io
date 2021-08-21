@@ -8,5 +8,6 @@ module.exports = {
     '/coin': ['coin', 'faq'],
     '/create-with-verus': ['create'],
     '/foundations': ['foundation'],
+    '/global-network': ['globalNetwork', 'coins'],
   },
 }
