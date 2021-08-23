@@ -158,7 +158,7 @@ const Foundations = () => {
           <StyledTable>
             <StyledRow>
               <div>
-                <Img name="eth-logo" height={32} />
+                <Img name="ethereum-logo" height={32} />
               </div>
               <DefaultText fam="geoHead" fontSz="mdlg">
                 {t('coins:ethereum')}

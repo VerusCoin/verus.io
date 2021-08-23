@@ -17,6 +17,7 @@ export interface IButton {
   white?: boolean
   margin?: string
   className?: string
+  active?: boolean
 }
 
 export interface IDefaultHeader {

@@ -117,6 +117,7 @@ const Button = ({
   onClick,
   children,
   className,
+  active,
 }: IButton) => {
   return (
     <StyledButton
@@ -134,6 +135,7 @@ const Button = ({
       margin={margin}
       onClick={onClick}
       white={white}
+      active={active}
     >
       {children}
 
