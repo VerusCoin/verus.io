@@ -2,6 +2,14 @@
   "name": "verus-frontend",
   "version": "1.0.1",
   "description": "The official Next.js website of Verus.io",
+  "contributors": [
+    {
+      "name": "Nicholas Ward"
+    },
+    {
+      "name": "Max Theyse"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

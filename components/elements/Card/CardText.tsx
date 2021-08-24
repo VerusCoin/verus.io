@@ -27,6 +27,7 @@ export interface CardTextProps {
   fontSz?: string
   margin?: string
   styles?: string
+  className?: string
 }
 
 const CardText = ({
@@ -38,6 +39,7 @@ const CardText = ({
   fontSz,
   margin,
   styles,
+  className,
 }: CardTextProps) => {
   return (
     <StyledText
@@ -48,6 +50,7 @@ const CardText = ({
       fontSz={fontSz}
       margin={margin}
       styles={styles}
+      className={className}
     >
       {parse(text)}
     </StyledText>

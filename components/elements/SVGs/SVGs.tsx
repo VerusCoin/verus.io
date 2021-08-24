@@ -18,6 +18,7 @@ import Explorer from './assets/explorer.svg'
 import Faq from './assets/faq.svg'
 import Foundations from './assets/foundations.svg'
 import Github from './assets/github.svg'
+import LinkedIn from './assets/linkedIn.svg'
 import Logo from './assets/logo.svg'
 import OpenInNew from './assets/open_in_new.svg'
 import Papers from './assets/papers.svg'
@@ -54,6 +55,7 @@ const SVGIcon: Record<string, ReactElement> = {
   faq: <Faq />,
   foundations: <Foundations />,
   github: <Github />,
+  linkedIn: <LinkedIn />,
   logo: <Logo />,
   papers: <Papers />,
   people: <People />,

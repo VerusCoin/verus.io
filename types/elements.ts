@@ -18,6 +18,7 @@ export interface IButton {
   margin?: string
   className?: string
   active?: boolean
+  target?: string
 }
 
 export interface IDefaultHeader {

@@ -9,9 +9,6 @@ import {
   Modal,
 } from '@/components/elements'
 import { MainLayout, Grid } from '@/components/layouts'
-// import { GetStaticProps, InferGetStaticPropsType } from 'next'
-// import { CreateWithVerusProps } from 'types/createpage'
-// import { useModal } from '@/components/elements/Modal/Modal'
 
 import {
   BlueEarthCard,

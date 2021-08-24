@@ -10,5 +10,6 @@ module.exports = {
     '/foundations': ['foundation'],
     '/global-network': ['globalNetwork', 'coins'],
     '/contribute': ['contribute', 'coins'],
+    '/people': ['people'],
   },
 }
