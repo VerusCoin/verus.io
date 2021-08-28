@@ -11,7 +11,7 @@ export function mapNumberToMonths(input) {
     'Sep',
     'Oct',
     'Nov',
-    'Dec'
+    'Dec',
   ]
   return months[input]
 }
