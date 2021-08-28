@@ -110,6 +110,6 @@ export const MainNavigationJSON: IMainNavigation = {
         },
       ],
     },
-    { category: 'wallet', href: '#', button: true },
+    { category: 'wallet', href: '/wallet', button: true },
   ],
 }

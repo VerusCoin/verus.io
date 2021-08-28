@@ -2,5 +2,33 @@
   "jumbotron": {
     "heading": "Verus wallets.",
     "text": "Connect with the ecosystem, and beyond."
+  },
+  "cards": {
+    "desktop": {
+      "header": "Verus Desktop",
+      "text": "For Windows, macOS, Linux and ARM.",
+      "link": "Download Verus Desktop"
+    },
+    "mobile": {
+      "header": "Verus Mobile",
+      "text": "For Android and iOS.",
+      "link": "Download Verus Mobile"
+    },
+    "cli": {
+      "header": "CLI",
+      "text": "Command Line Interface for experienced users.",
+      "dropdown": {
+        "dropdown": "Dropdown",
+        "windows": "Windows CLI",
+        "mac": "macOS CLI",
+        "linux": "Linux CLI",
+        "arm": "Linux ARM CLI"
+      }
+    },
+    "storage": {
+      "header": "Cold Storage",
+      "text": "Use a paper wallet to store your coins offline.",
+      "download": "Download"
+    }
   }
 }

@@ -14,6 +14,7 @@ const StyledJumbotronContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   a {
     margin-top: ${(props) => props.theme.spaces.sm};
   }

@@ -11,5 +11,8 @@ module.exports = {
     '/global-network': ['globalNetwork', 'coins'],
     '/contribute': ['contribute', 'coins'],
     '/people': ['people'],
+    '/wallet': ['wallet'],
+    'rgx:/desktop': ['walletDesktop'],
+    'rgx:/mobile': ['walletMobile'],
   },
 }

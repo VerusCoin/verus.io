@@ -7,7 +7,7 @@ export interface IButton {
   as?: 'button' | 'a' | 'span'
   wide?: boolean
   svg?: {
-    type: 'arrow' | 'tab'
+    type: 'arrow' | 'tab' | 'miniTab'
     rotate?: boolean
   }
   onClick?: () => void

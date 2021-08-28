@@ -136,8 +136,8 @@ const Foundations = () => {
           <Modal
             isShown={showAdvantageModal}
             hide={() => setShowAdvantageModal(!showAdvantageModal)}
-            title={t('scalableLimits.modal.header')}
-            text={t('scalableLimits.modal.text')}
+            title={t('advantageCard.modal.header')}
+            text={t('advantageCard.modal.text')}
           />
         </Card>
         <Card

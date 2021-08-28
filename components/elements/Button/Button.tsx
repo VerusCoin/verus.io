@@ -39,7 +39,10 @@ const StyledButton = styled.button<any>`
     background: ${(props) => props.theme.buttons.primary.hover.bg};
 
     svg {
-      transform: ${(props) => props.svg?.type !== 'tab' && `translateX(6px)`};
+      transform: ${(props) =>
+        props.svg?.type !== 'tab' &&
+        props.svg?.type !== 'miniTab' &&
+        `translateX(6px)`};
     }
   }
 
