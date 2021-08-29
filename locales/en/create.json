@@ -7,8 +7,8 @@
   "liveMain": "Live on mainnet",
   "cards": {
     "doc": {
-      "heading": "Blockchain or token?",
-      "text": "No problem either way.",
+      "heading": "Start with a ",
+      "text": "blockchain or token.",
       "link": "Get started on "
     },
     "launchBlockchain": {

@@ -57,7 +57,7 @@ const StyledCard = styled.div<any>`
     `
     background-image: url('/svg/coins.svg');
     background-repeat: no-repeat;
-    background-position: center bottom -3px;
+    background-position: center bottom -13px;
     background-size: 425px;
   `}
   ${(props: any) =>
@@ -65,8 +65,32 @@ const StyledCard = styled.div<any>`
     `
     background-image: url('/svg/grid.svg');
     background-repeat: no-repeat;
-    background-position: center bottom -12px;
+    background-position: center bottom -42px;
     background-size: 450px;
+  `}
+  ${(props: any) =>
+    props.stars &&
+    `
+    background-image: url('/svg/stars.svg');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: center center;
+  `}
+  ${(props: any) =>
+    props.tools &&
+    `
+    background-image: url('/svg/tools.svg');
+    background-repeat: no-repeat;
+    background-size: 85%;
+    background-position: center center;
+  `}
+  ${(props: any) =>
+    props.scales &&
+    `
+    background-image: url('/svg/scale.svg');
+    background-repeat: no-repeat;
+    
+    background-position: left 5px bottom -5px;
   `}
 `
 
@@ -82,6 +106,9 @@ export interface CardProps {
   chain?: boolean
   coin?: boolean
   grid?: boolean
+  stars?: boolean
+  tools?: boolean
+  scales?: boolean
 }
 
 const Card = ({
@@ -96,6 +123,9 @@ const Card = ({
   chain,
   coin,
   grid,
+  stars,
+  tools,
+  scales,
 }: CardProps) => {
   return (
     <StyledCard
@@ -109,6 +139,9 @@ const Card = ({
       chain={chain}
       coin={coin}
       grid={grid}
+      stars={stars}
+      tools={tools}
+      scales={scales}
     >
       {children}
     </StyledCard>

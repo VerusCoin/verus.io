@@ -11,11 +11,12 @@ const WalletSubtext = () => {
         'background-color: transparent; justify-content:unset; min-height:unset; padding: 100px 30px 50px;'
       }
       tabletStyles={
-        'justify-content:unset; min-height:unset; padding: 100px 60px 50px;'
+        'justify-content:unset; min-height:unset; padding: 100px 160px 50px;'
       }
       desktopStyles={
-        'min-height:unset; padding: 100px 60px 0; height: unset !important;'
+        'min-height:unset; padding: 100px 200px 0; height: unset !important;'
       }
+      giantStyles={'padding: 100px 260px 0;'}
     >
       <CardText
         margin="0"

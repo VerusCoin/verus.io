@@ -86,7 +86,7 @@ const EconomicCard = () => {
       <Button
         transparent
         svg={{ type: 'tab', rotate: false }}
-        href="#"
+        href="https://docs.verus.io/economy/#block-fees"
         as="a"
         color="#3165d4"
         fontRegular

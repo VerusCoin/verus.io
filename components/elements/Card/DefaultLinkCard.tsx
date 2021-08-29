@@ -17,6 +17,7 @@ const StyledLinkCard = styled.div<any>`
   min-height: 275px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
   max-width: 390px;
+  text-decoration: none;
   ${(props) =>
     props.global &&
     `
@@ -43,6 +44,18 @@ const StyledLinkCard = styled.div<any>`
     background-size: 371px;
     
   `}
+  ${(props) =>
+    props.foundation &&
+    `
+    padding: 40px 60px 100px;
+    background-image: url('/svg/leaf1.svg'),url('/svg/leaf2.svg'),url('/svg/leaf3.svg');
+    background-repeat: no-repeat;
+    min-height: 350px;
+    background-position: bottom 34px left -21px, bottom 168px right -56px,bottom 141px right -56px;
+    background-size: 136px, 146px, 146px;
+    
+  `}
+  
   ${media.tablet`
     min-height: 480px;
     max-width: 400px;
@@ -103,6 +116,9 @@ const DefaultLinkCard = ({ card }: { card: string }) => {
       global={card === 'global'}
       coin={card === 'coin'}
       create={card === 'create'}
+      foundation={card === 'foundation'}
+      as="a"
+      href={href}
     >
       <CardHeader
         color={card === 'create' ? 'white' : 'default'}
@@ -113,8 +129,6 @@ const DefaultLinkCard = ({ card }: { card: string }) => {
         <Button
           transparent
           svg={{ type: 'arrow', rotate: false }}
-          href={href}
-          as="a"
           color="white"
         >
           {text}
@@ -123,8 +137,6 @@ const DefaultLinkCard = ({ card }: { card: string }) => {
         <Button
           transparent
           svg={{ type: 'arrow', rotate: false }}
-          href={href}
-          as="a"
           color="#3165d4"
         >
           {text}

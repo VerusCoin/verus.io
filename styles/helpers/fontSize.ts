@@ -11,11 +11,20 @@ const fontSize = (
     | 'md'
     | 'sm'
     | 'xs'
+    | 'xxs'
     | 'menu'
     | 'menuXs'
     | 'button'
 ): any => {
   switch (bp) {
+    case 'xxs':
+      return css`
+        font-size: 12px;
+
+        ${media.tablet`
+          font-size: ${(props: any) => props.theme.typo.sizes.xs.desktop};
+        `}
+      `
     case 'xs':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.xs.desktop};

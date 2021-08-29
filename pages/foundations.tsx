@@ -9,6 +9,7 @@ import {
   Card,
   CardText,
   Modal,
+  useModal,
 } from '@/components/elements'
 
 // import { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -26,13 +27,19 @@ import {
 
 const Foundations = () => {
   const { t } = useTranslation('foundation')
-  const [showEarthModal, setShowEarthModal] = useState(false)
-  const [showKeyChainModal, setShowKeyChainModal] = useState(false)
-  const [showScalableModal, setShowScalableModal] = useState(false)
-  const [showTopTierModal, setShowTopTierModal] = useState(false)
-  const [showContractsModal, setShowContractsModal] = useState(false)
-  const [showProofModal, setShowProofModal] = useState(false)
-  const [showMevModal, setShowMevModal] = useState(false)
+  const [modalTitle, setModalTitle] = useState<string>('')
+  const [modalText, setModalText] = useState<string | string[]>('')
+  const { isShown, toggle } = useModal()
+  const multiModal = (modalName: string) => {
+    if (modalName === 'undefined') {
+      setModalTitle('')
+      setModalText('')
+    } else {
+      setModalTitle(t(`${modalName}.modal.header`))
+      setModalText(t(`${modalName}.modal.text`))
+    }
+    toggle()
+  }
 
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
@@ -56,19 +63,13 @@ const Foundations = () => {
             />
           </div>
           <Button
-            onClick={() => setShowEarthModal(!showEarthModal)}
+            onClick={() => multiModal('earthCard')}
             fontRegular
             small
             margin="50px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showEarthModal}
-            hide={() => setShowEarthModal(!showEarthModal)}
-            title={t('earthCard.modal.header')}
-            text={t('earthCard.modal.text')}
-          />
         </EarthCard>
         <KeychainCard>
           <div className="keychain-image">
@@ -91,51 +92,41 @@ const Foundations = () => {
               />
             </div>
             <Button
-              onClick={() => setShowKeyChainModal(!showKeyChainModal)}
+              onClick={() => multiModal('keychainCard')}
               fontRegular
               small
               margin="50px 0 0 0 "
             >
               {`${t('common:findMore')}`}
             </Button>
-            <Modal
-              isShown={showKeyChainModal}
-              hide={() => setShowKeyChainModal(!showKeyChainModal)}
-              title={t('keychainCard.modal.header')}
-              text={t('keychainCard.modal.text')}
-            />
           </div>
         </KeychainCard>
-        <Card large>
+        <Card large scales bgColor="#0A3FB1">
           <div>
             <CardText
               book
+              color="white"
               fontSz="xl"
               margin="32px 64px;"
               text={t('scalableLimits.header')}
             />
             <CardText
               book
+              color="#C1D5FF"
               fontSz="lg"
-              color="blue"
               text={t('scalableLimits.text')}
               margin="32px 64px;"
             />
           </div>
           <Button
-            onClick={() => setShowScalableModal(!showScalableModal)}
+            white
+            onClick={() => multiModal('scalableLimits')}
             fontRegular
             small
             margin="50px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showScalableModal}
-            hide={() => setShowScalableModal(!showScalableModal)}
-            title={t('scalableLimits.modal.header')}
-            text={t('scalableLimits.modal.text')}
-          />
         </Card>
         <Card large grid>
           <div>
@@ -154,19 +145,13 @@ const Foundations = () => {
             />
           </div>
           <Button
-            onClick={() => setShowTopTierModal(!showTopTierModal)}
+            onClick={() => multiModal('topTier')}
             fontRegular
             small
             margin="50px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showTopTierModal}
-            hide={() => setShowTopTierModal(!showTopTierModal)}
-            title={t('topTier.modal.header')}
-            text={t('topTier.modal.text')}
-          />
         </Card>
         <Banner />
         <NetworkCard>
@@ -182,19 +167,13 @@ const Foundations = () => {
             />
 
             <Button
-              onClick={() => setShowContractsModal(!showContractsModal)}
+              onClick={() => multiModal('smartContracts')}
               fontRegular
               small
               margin="60px 0"
             >
               {`${t('common:findMore')}`}
             </Button>
-            <Modal
-              isShown={showContractsModal}
-              hide={() => setShowContractsModal(!showContractsModal)}
-              title={t('smartContracts.modal.header')}
-              text={t('smartContracts.modal.text')}
-            />
           </div>
         </NetworkCard>
         <Card large>
@@ -214,19 +193,13 @@ const Foundations = () => {
             />
           </div>
           <Button
-            onClick={() => setShowProofModal(!showProofModal)}
+            onClick={() => multiModal('quantumProof')}
             fontRegular
             small
             margin="50px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showProofModal}
-            hide={() => setShowProofModal(!showProofModal)}
-            title={t('quantumProof.modal.header')}
-            text={t('quantumProof.modal.text')}
-          />
         </Card>
         <Card
           large
@@ -249,24 +222,24 @@ const Foundations = () => {
             />
           </div>
           <Button
-            onClick={() => setShowMevModal(!showMevModal)}
+            onClick={() => multiModal('mev')}
             fontRegular
             small
             margin="5px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showMevModal}
-            hide={() => setShowMevModal(!showMevModal)}
-            title={t('mev.modal.header')}
-            text={t('mev.modal.text')}
-          />
         </Card>
         <DefaultLinkCard card="global" />
         <DefaultLinkCard card="create" />
         <DefaultLinkCard card="coin" />
       </Grid>
+      <Modal
+        isShown={isShown}
+        hide={() => multiModal('undefined')}
+        title={modalTitle}
+        text={modalText}
+      />
     </MainLayout>
   )
 }

@@ -11,6 +11,7 @@ import {
   CardText,
   NetTag,
   Modal,
+  useModal,
   SVGs,
 } from '@/components/elements'
 
@@ -20,10 +21,10 @@ const StyledTable = styled.div`
   display: flex-column;
 
   width: 100%;
-  > div:first-child {
-    border-bottom: 1px solid #ececec;
-  }
 `
+// > div:first-child {
+//   border-bottom: 1px solid #ececec;
+// }
 const StyledRow = styled.div`
   display: flex;
   align-items: center;
@@ -40,9 +41,19 @@ const StyledRow = styled.div`
 
 const Foundations = () => {
   const { t } = useTranslation('globalNetwork')
-  const [showConnectModal, setShowConnectModal] = useState(false)
-  const [showProvisionModal, setShowProvisionModal] = useState(false)
-  const [showAdvantageModal, setShowAdvantageModal] = useState(false)
+  const [modalTitle, setModalTitle] = useState<string>('')
+  const [modalText, setModalText] = useState<string | string[]>('')
+  const { isShown, toggle } = useModal()
+  const multiModal = (modalName: string) => {
+    if (modalName === 'undefined') {
+      setModalTitle('')
+      setModalText('')
+    } else {
+      setModalTitle(t(`${modalName}.modal.header`))
+      setModalText(t(`${modalName}.modal.text`))
+    }
+    toggle()
+  }
 
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
@@ -58,19 +69,13 @@ const Foundations = () => {
             <CardText book fontSz="xl" text={t('connectedCard.header')} />
 
             <Button
-              onClick={() => setShowConnectModal(!showConnectModal)}
+              onClick={() => multiModal('connectedCard')}
               fontRegular
               small
               margin="50px 0 0"
             >
               {`${t('common:findMore')}`}
             </Button>
-            <Modal
-              isShown={showConnectModal}
-              hide={() => setShowConnectModal(!showConnectModal)}
-              title={t('connectedCard.modal.header')}
-              text={t('connectedCard.modal.text')}
-            />
           </div>
           <div className="image">
             <SVGs name="chains" />
@@ -85,7 +90,7 @@ const Foundations = () => {
           />
 
           <Button
-            onClick={() => setShowProvisionModal(!showProvisionModal)}
+            onClick={() => multiModal('provisioningCard')}
             white
             small
             color="#3165d4"
@@ -94,12 +99,6 @@ const Foundations = () => {
           >
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showProvisionModal}
-            hide={() => setShowProvisionModal(!showProvisionModal)}
-            title={t('provisioningCard.modal.header')}
-            text={t('provisioningCard.modal.text')}
-          />
         </CurvCard>
 
         <Card
@@ -108,6 +107,7 @@ const Foundations = () => {
           styles="padding: 100px 5px;"
           desktopStyles="padding: 170px 100px;"
           giantStyles="padding: 170px 200px;"
+          stars
         >
           <div>
             <CardText
@@ -126,23 +126,16 @@ const Foundations = () => {
             />
           </div>
           <Button
-            onClick={() => setShowAdvantageModal(!showAdvantageModal)}
+            onClick={() => multiModal('advantageCard')}
             fontRegular
             small
             margin="50px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showAdvantageModal}
-            hide={() => setShowAdvantageModal(!showAdvantageModal)}
-            title={t('advantageCard.modal.header')}
-            text={t('advantageCard.modal.text')}
-          />
         </Card>
         <Card
           span={2}
-          large
           styles="padding: 50px 25px 75px; "
           tabletStyles="padding: 50px 100px 75px;"
           desktopStyles="padding: 100px 198px 150px;"
@@ -166,7 +159,7 @@ const Foundations = () => {
               <NetTag net="test" unMargin />
             </StyledRow>
 
-            <StyledRow>
+            {/* <StyledRow>
               <div>
                 <Img name="pirate-logo" height={32} />
               </div>
@@ -174,7 +167,7 @@ const Foundations = () => {
                 {t('coins:pirate')}
               </DefaultText>
               <NetTag net="plan" unMargin />
-            </StyledRow>
+            </StyledRow> */}
             <CardText
               regular
               fontSz="xs"
@@ -183,7 +176,7 @@ const Foundations = () => {
               color="#676767"
             />
           </StyledTable>
-          <Button
+          {/* <Button
             transparent
             svg={{ type: 'tab', rotate: false }}
             href="#"
@@ -191,19 +184,17 @@ const Foundations = () => {
             color="#3165d4"
           >
             {t('bridgeCard.link')}
-          </Button>
+          </Button> */}
         </Card>
       </Grid>
+      <Modal
+        isShown={isShown}
+        hide={() => multiModal('undefined')}
+        title={modalTitle}
+        text={modalText}
+      />
     </MainLayout>
   )
 }
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     props: {
-//       data: null,
-//     },
-//   }
-// }
 
 export default Foundations

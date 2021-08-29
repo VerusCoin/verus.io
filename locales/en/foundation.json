@@ -16,7 +16,7 @@
     "text": "Attack resistant.<br/>Secure vaults.",
     "modal": {
       "header": "Your wealth is safe against all attacks.",
-      "text": "Verus is protected by a very secure consensus mechanism. 50% is proof-of-stake, and 50% is proof-of-work. To successfully attack the network, a bad actor must have at least 51% of all mining power and at least 51% of all staking supply. And even then it’s a giant challenge to establish a successful attack. It is fair to conclude Verus is resistant to 51% hash attacks. On top of that, you can set up vaults to protect your wealth. Secure yourself against hacks, theft, key loss and even “5$ wrench attacks.” Use the network with peace of mind, short and long-term."
+      "text": "Protected by a unique and secure consensus mechanism called Verus Proof of Power. 50% is proof-of-stake, and 50% is proof-of-work. To successfully attack the network, a bad actor must have at least 51% of all mining power and at least 51% of all staking supply. Truly an unimaginable challenge for any actor. It is fair to conclude Verus is resistant to 51% hash attacks. On top of that, you can set up vaults to protect your wealth. Secure yourself against hacks, theft, key loss and even “5$ wrench attacks.” Use the network with peace of mind, short and long-term."
     }
   },
   "scalableLimits": {
@@ -54,7 +54,7 @@
     "text": "Ready for the future.",
     "modal": {
       "header": "Ready for quantum computers.",
-      "text": "As always, Verus developers are ahead of the curve. Already implemented Falcon512 signatures secure you against the inevitable arrival of quantum computers. Digital identity VerusID users can update to secure Q-addresses. Easily securing your funds against possible attacks. Users from other blockchain networks can flock to Verus as it is functioning as a safe harbor for wealth."
+      "text": "As always, Verus community developers are ahead of the curve. Already implemented Falcon512 signatures secure you against the inevitable arrival of quantum computers. Digital identity VerusID users can update to secure quantum resistant Q-addresses. Easily securing your funds against possible attacks. Users from other blockchain networks will flock to Verus as it is functioning as a safe harbor for wealth."
     }
   },
   "mev": {

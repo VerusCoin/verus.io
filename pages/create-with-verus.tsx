@@ -7,6 +7,7 @@ import {
   Card,
   CardText,
   Modal,
+  useModal,
 } from '@/components/elements'
 import { MainLayout, Grid } from '@/components/layouts'
 
@@ -20,13 +21,25 @@ import {
 
 const CreateWithVerus = () => {
   const { t } = useTranslation('create')
-
-  const [showBlockchain, setShowBlockchain] = useState(false)
-  const [showTokens, setShowTokens] = useState(false)
-  const [showLiquidity, setShowLiquidity] = useState(false)
-  const [showPrivacy, setShowPrivacy] = useState(false)
-  const [showIdentity, setShowIdentity] = useState(false)
-  const [showGlobal, setShowGlobal] = useState(false)
+  const [modalTitle, setModalTitle] = useState<string>('')
+  const [modalText, setModalText] = useState<string | string[]>('')
+  const { isShown, toggle } = useModal()
+  const multiModal = (modalName: string) => {
+    if (modalName === 'launchBlockchain') {
+      setModalTitle(t('cards.launchBlockchain.modal.header'))
+      setModalText([
+        t('cards.launchBlockchain.modal.text1'),
+        t('cards.launchBlockchain.modal.text2'),
+      ])
+    } else if (modalName === 'undefined') {
+      setModalTitle('')
+      setModalText('')
+    } else {
+      setModalTitle(t(`cards.${modalName}.modal.header`))
+      setModalText(t(`cards.${modalName}.modal.text`))
+    }
+    toggle()
+  }
 
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
@@ -89,22 +102,13 @@ const CreateWithVerus = () => {
           </div>
 
           <Button
-            onClick={() => setShowBlockchain(!showBlockchain)}
+            onClick={() => multiModal('launchBlockchain')}
             fontRegular
             small
             margin="50px 0 0 0 "
           >
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showBlockchain}
-            hide={() => setShowBlockchain(!showBlockchain)}
-            title={t('cards.launchBlockchain.modal.header')}
-            text={[
-              t('cards.launchBlockchain.modal.text1'),
-              t('cards.launchBlockchain.modal.text2'),
-            ]}
-          />
         </Card>
         <Card
           large
@@ -131,15 +135,9 @@ const CreateWithVerus = () => {
               text={t('cards.createToken.text')}
             />
           </div>
-          <Button onClick={() => setShowTokens(!showTokens)} small fontRegular>
+          <Button onClick={() => multiModal('createToken')} small fontRegular>
             {`${t('common:findMore')}`}
           </Button>
-          <Modal
-            isShown={showTokens}
-            hide={() => setShowTokens(!showTokens)}
-            title={t('cards.createToken.modal.header')}
-            text={t('cards.createToken.modal.text')}
-          />
         </Card>
         <LiquidityCard>
           <div className="card">
@@ -160,19 +158,13 @@ const CreateWithVerus = () => {
               />
             </div>
             <Button
-              onClick={() => setShowLiquidity(!showLiquidity)}
+              onClick={() => multiModal('instantLiquidity')}
               small
               fontRegular
               margin="50px 0 0 0 "
             >
               {`${t('common:findMore')}`}
             </Button>
-            <Modal
-              isShown={showLiquidity}
-              hide={() => setShowLiquidity(!showLiquidity)}
-              title={t('cards.instantLiquidity.modal.header')}
-              text={t('cards.instantLiquidity.modal.text')}
-            />
           </div>
           <div className="liquidity-image">
             <Img name="drops" />
@@ -201,7 +193,7 @@ const CreateWithVerus = () => {
               />
             </div>
             <Button
-              onClick={() => setShowPrivacy(!showPrivacy)}
+              onClick={() => multiModal('getPrivacy')}
               white
               small
               fontRegular
@@ -209,12 +201,6 @@ const CreateWithVerus = () => {
             >
               {`${t('common:findMore')}`}
             </Button>
-            <Modal
-              isShown={showPrivacy}
-              hide={() => setShowPrivacy(!showPrivacy)}
-              title={t('cards.getPrivacy.modal.header')}
-              text={t('cards.getPrivacy.modal.text')}
-            />
           </div>
         </PrivacyCard>
         <DigitalCard>
@@ -236,19 +222,13 @@ const CreateWithVerus = () => {
               />
             </div>
             <Button
-              onClick={() => setShowIdentity(!showIdentity)}
+              onClick={() => multiModal('digitalIdentity')}
               small
               fontRegular
               margin="50px 0 0 0"
             >
               {`${t('common:findMore')}`}
             </Button>
-            <Modal
-              isShown={showIdentity}
-              hide={() => setShowIdentity(!showIdentity)}
-              title={t('cards.digitalIdentity.modal.header')}
-              text={t('cards.digitalIdentity.modal.text')}
-            />
           </div>
           <div className="identity-image">
             <Img name="identity-image" />
@@ -276,19 +256,13 @@ const CreateWithVerus = () => {
               />
             </div>
             <Button
-              onClick={() => setShowGlobal(!showGlobal)}
+              onClick={() => multiModal('dataValue')}
               small
               fontRegular
               margin="50px 0 0 0"
             >
               {`${t('common:findMore')}`}
             </Button>
-            <Modal
-              isShown={showGlobal}
-              hide={() => setShowGlobal(!showGlobal)}
-              title={t('cards.dataValue.modal.header')}
-              text={t('cards.dataValue.modal.text')}
-            />
           </div>
         </EarthCard>
         <Card
@@ -298,6 +272,7 @@ const CreateWithVerus = () => {
           styles="max-width: none; padding: 94px 22px;"
           tabletStyles="max-width: none; padding: 94px 98px; p {max-width:400px;}"
           desktopStyles="padding: 171px 120px;p {max-width:600px;}"
+          tools
         >
           <div>
             <CardText
@@ -330,6 +305,12 @@ const CreateWithVerus = () => {
         <DefaultLinkCard card="foundation" />
         <DefaultLinkCard card="coin" />
       </Grid>
+      <Modal
+        isShown={isShown}
+        hide={() => multiModal('undefined')}
+        title={modalTitle}
+        text={modalText}
+      />
     </MainLayout>
   )
 }

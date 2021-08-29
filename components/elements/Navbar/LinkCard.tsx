@@ -5,7 +5,7 @@ import { IMenuSubItem } from 'types/general'
 import { SVGs } from '@/components/elements/SVGs/SVGs'
 import useTranslation from 'next-translate/useTranslation'
 
-const StyledLink = styled.a`
+const StyledLink = styled.div`
   text-decoration: none;
   display: flex;
   flex-direction: row;
@@ -83,8 +83,8 @@ const LinkCard: React.FC<IMenuSubItem & { category: string }> = ({
 }) => {
   const { t } = useTranslation('navigation')
   return (
-    <StyledLinkCard>
-      <StyledLink href={href}>
+    <StyledLinkCard href={href} as="a">
+      <StyledLink>
         {svg && (
           <StyledSVG>
             <SVGs name={svg} />

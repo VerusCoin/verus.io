@@ -13,6 +13,10 @@
   "supportCard": {
     "header": "Support Verus & donate.",
     "text": "As a true community project with no premine, no ICO and no developer or founder fees. All donations help to further develop Verus.",
-    "subtext": "Choose in which coin to donate:"
+    "subtext": "Choose in which coin to donate:",
+    "mine": "Mine with the Verus community pool:",
+    "mineLink": "pool.verus.io",
+    "referral": "Use as referral when registering VerusID:",
+    "referralLink": "Verus Coin Foundations@"
   }
 }

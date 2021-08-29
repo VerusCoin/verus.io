@@ -10,7 +10,7 @@
   },
   "hashrate": {
     "heading": "Mining Hashrate",
-    "text": "Devices mining estimation",
+    "text": "Amount of devices mining indication",
     "mobile": "mobile phones",
     "or": "or",
     "desktop": "high-end CPUs"

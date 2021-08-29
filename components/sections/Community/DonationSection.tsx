@@ -101,7 +101,7 @@ const StyledAddressBox = styled.div`
 
   margin-bottom: 10px;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: px;
   ${media.tablet`
     margin-bottom: 0;
     margin-right: 20px;

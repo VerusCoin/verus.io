@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout } from '@/components/layouts'
-import { Button, Card, CardText } from '@/components/elements'
+import { Button, Card, CardText, NetTag } from '@/components/elements'
 import {
   fontFam,
   bgColor,
@@ -49,7 +49,12 @@ const StyledInfo = styled.div`
 const StyledCard = styled.div<any>`
   ${bgColor('white')}
   border-radius: 8px;
-  padding: ${(props: any) => (props.bg ? '44px 50px 278px' : '75px 30px')};
+  padding: ${(props: any) =>
+    props.bg
+      ? '44px 50px 278px'
+      : props.convert
+      ? '24px 50px 300px'
+      : '75px 30px'};
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -60,8 +65,13 @@ const StyledCard = styled.div<any>`
   background-position: center bottom -30px;
   ${media.tablet`
     border-radius: 20px;
-    height: ${(props: any) => (props.bg ? '566px' : '370px')};
-    padding: ${(props: any) => (props.bg ? '86px 84px 378px' : '100px 185px')};
+    height: ${(props: any) => (props.bg || props.convert ? '566px' : '370px')};
+    padding: ${(props: any) =>
+      props.bg
+        ? '86px 84px 378px'
+        : props.convert
+        ? '56px 184px 400px'
+        : '100px 185px'};
     min-width: 342px;
     background-repeat: no-repeat;
     background-position: center bottom -60px;
@@ -70,7 +80,12 @@ const StyledCard = styled.div<any>`
     ${(props: any) => props.convert && 'background-size: 618px auto;'}
   `}
   ${media.desktop`
-    padding: ${(props: any) => (props.bg ? '86px 84px 378px' : '100px')};
+    padding: ${(props: any) =>
+      props.bg
+        ? '86px 84px 378px'
+        : props.convert
+        ? '56px 84px 378px'
+        : '100px'};
   `}
   ${(props: any) =>
     props.getToKnow &&
@@ -195,7 +210,8 @@ const Desktop = ({
         <StyledCard staking bg>
           <CardText book fontSz="mdlg" margin="0" text={t('cards.staking')} />
         </StyledCard>
-        <StyledCard convert bg>
+        <StyledCard convert>
+          <NetTag net="test" unMargin />
           <CardText book fontSz="mdlg" margin="0" text={t('cards.convert')} />
         </StyledCard>
 

@@ -108,7 +108,12 @@ const Economy = () => {
         </Card>
 
         <Section styles="grid-column: span 2; margin: auto;" width={800}>
-          <DefaultText fam="geoReg" customColor="#676767" align="center">
+          <DefaultText
+            fontSz="xxs"
+            fam="geoReg"
+            customColor="#676767"
+            align="center"
+          >
             {t('note')}
           </DefaultText>
         </Section>

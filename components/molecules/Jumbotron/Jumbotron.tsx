@@ -20,6 +20,11 @@ const StyledJumbotronContainer = styled.div`
   }
   a.youtube {
     margin-top: ${(props) => props.theme.spaces.lg};
+    text-decoration: underline;
+    svg {
+      height: 10px;
+      width: 10px;
+    }
   }
 `
 
@@ -107,8 +112,9 @@ const Jumbotron = ({
                 <Button
                   className="youtube"
                   transparent
-                  svg={{ type: 'arrow', rotate: false }}
+                  svg={{ type: 'miniTab', rotate: false }}
                   href={youtube.href}
+                  fontSize="xs"
                   as="a"
                   color="#676767"
                   margin="45px 0 0"
