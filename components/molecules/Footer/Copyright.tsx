@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import useTranslation from 'next-translate/useTranslation'
 import { ICopyright } from '@/types/molecules'
 import { Col, media } from 'styled-bootstrap-grid'
 import dayjs from 'dayjs'
@@ -51,6 +52,7 @@ const StyledCopyrightList = styled.ul`
 `
 
 const Copyright: React.FC<ICopyright> = ({ companyName, links }) => {
+  const { t } = useTranslation('footer')
   return (
     <Col col={12}>
       <StyledCopyright>
@@ -70,7 +72,7 @@ const Copyright: React.FC<ICopyright> = ({ companyName, links }) => {
           {links.map((item, index) => {
             return (
               <li key={`copyrightNav_${index}`}>
-                <DefaultLink href={item.href}>{item.name}</DefaultLink>
+                <DefaultLink href={item.href}>{t(item.name)}</DefaultLink>
               </li>
             )
           })}

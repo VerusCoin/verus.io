@@ -3,20 +3,18 @@ import { IFooter } from '@/types/layouts'
 export const FooterJSON: IFooter = {
   social: [
     {
-      svg: 'discord',
+      svg: 'discordIcon',
       title: 'discord',
-      href: '#',
-      text: 'Discuss everything Verus',
+      href: 'https://discord.com/invite/VRKMP2S',
+
       label: {
         color: 'green',
-        text: 'over 5,200 members!',
       },
     },
     {
-      svg: 'telegram',
+      svg: 'telegramIcon',
       title: 'telegram',
-      href: '#',
-      text: 'Join the community channel',
+      href: 'https://t.me/veruscommunity',
     },
   ],
   links: [
@@ -91,7 +89,7 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'telegram',
-          href: '#',
+          href: 'https://t.me/veruscommunity',
         },
         {
           name: 'youtube',
@@ -99,7 +97,7 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'discord',
-          href: '#',
+          href: 'https://discord.com/invite/VRKMP2S',
         },
         {
           name: 'reddit',
@@ -150,7 +148,7 @@ export const FooterJSON: IFooter = {
     links: [
       {
         href: '#',
-        name: 'Privacy Policy',
+        name: 'privacyPolicy',
       },
     ],
   },

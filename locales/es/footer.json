@@ -28,6 +28,16 @@
   "github": "Github",
   "documentation": "Documentation",
   "brand": "Brand Materials",
-  "copywrite": "© 2021 The Verus Project",
-  "privacyPolicy": "Privacy Policy"
+  "privacyPolicy": "Privacy Policy",
+  "socialCard": {
+    "discord": {
+      "title": "Discord Server",
+      "label": "Largest community hub",
+      "text": "Join the active Verus community with over 9K members for all questions and discussions."
+    },
+    "telegram": {
+      "title": "Telegram Community",
+      "text": "Jump in our community Telegram server. Ask questions and discuss everything related to Verus."
+    }
+  }
 }

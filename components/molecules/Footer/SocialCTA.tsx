@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import useTranslation from 'next-translate/useTranslation'
 import { ISocialCTA } from '@/types/molecules'
 import { DefaultText, DefaultHeader, SVGs } from '@/components/elements'
 import { media } from 'styled-bootstrap-grid'
@@ -26,66 +27,74 @@ const StyledLabel = styled.span<any>`
 const StyledHeader = styled.div`
   line-height: 1;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: row;
   margin-bottom: ${(props: any) => props.theme.spaces.xxs};
-
-  ${media.desktop`
-    flex-direction: row;
-    align-items: flex-end;
-  `}
+  align-items: center;
+  h5 {
+    ${fontSize('mdlg')}
+  }
 `
 
-const StyledSVG = styled.span`
-  margin-right: ${(props: any) => props.theme.spaces.xs};
+const StyledSVG = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 100%;
+  svg {
+    height: 32px;
+  }
 `
 
 const StyledSocialCTA = styled.a<any>`
   display: flex;
   text-decoration: none;
+  flex-direction: column;
   border: 1px solid ${(props) => props.theme.colors.grey.secondary};
   border-radius: ${(props) => props.theme.borders.sm};
-  padding: ${(props: any) => props.theme.spaces.xs};
+  padding: ${(props: any) => props.theme.spaces.sm};
   margin-bottom: ${(props) => props.theme.spaces.sm};
   width: 100%;
   justify-content: center;
   align-items: center;
-  transition: background-color ${(props) => props.theme.transitions.fast};
+
+  transition: background-color ${(props) => props.theme.transitions.fast},
+    border-color ${(props) => props.theme.transitions.fast};
 
   ${media.desktop`margin-bottom: 0;`}
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.white};
-
-    h5,
-    p {
-      color: ${(props) => props.theme.colors.black.primary};
-    }
+    background-color: hsla(0, 0%, 100%, 0.051);
+    border-color: white;
   }
-
-  &:hover ${StyledSVG} {
-    > svg {
-      fill: ${(props) => props.theme.colors.black.primary};
-    }
+  p {
+    opacity: 0.5;
   }
 `
 
-const SocialCTA: React.FC<ISocialCTA> = ({ href, svg, title, text, label }) => {
+const SocialCTA: React.FC<ISocialCTA> = ({ href, svg, title, label }) => {
+  const { t } = useTranslation('footer')
   return (
     <StyledSocialCTA href={href}>
-      <StyledSVG>{svg && <SVGs name={svg} />}</StyledSVG>
+      <StyledSVG>
+        <SVGs name={svg} />{' '}
+        {label && (
+          <StyledLabel customColor={label.color}>
+            {t(`socialCard.${title}.label`)}
+          </StyledLabel>
+        )}
+      </StyledSVG>
 
-      <div>
-        <StyledHeader>
-          <DefaultHeader as="h5" customColor="white">
-            {title}
-          </DefaultHeader>
-          {label && (
-            <StyledLabel customColor={label.color}>{label.text}</StyledLabel>
-          )}
-        </StyledHeader>
+      <StyledHeader>
+        <DefaultHeader as="h5" align="left" customColor="white">
+          {t(`socialCard.${title}.title`)}
+        </DefaultHeader>
+      </StyledHeader>
 
-        <DefaultText customColor="#FFFFFF">{text}</DefaultText>
-      </div>
+      <DefaultText customColor="#FFFFFF">
+        {t(`socialCard.${title}.text`)}
+      </DefaultText>
     </StyledSocialCTA>
   )
 }

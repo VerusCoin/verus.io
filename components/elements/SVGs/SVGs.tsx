@@ -12,6 +12,7 @@ import Contribute from './assets/contribute.svg'
 import Chains from './assets/chains.svg'
 import Close from './assets/close.svg'
 import Discord from './assets/discord.svg'
+import DiscordIcon from './assets/discordIcon.svg'
 import Documentation from './assets/documentation.svg'
 import Download from './assets/download.svg'
 import Dropdown from './assets/dropdown.svg'
@@ -30,6 +31,7 @@ import Papers from './assets/papers.svg'
 import People from './assets/people.svg'
 import SupportWiki from './assets/support-wiki.svg'
 import Telegram from './assets/telegram.svg'
+import TelegramIcon from './assets/telegramIcon.svg'
 import Twitter from './assets/twitter.svg'
 import VerusIdLookup from './assets/verusid-lookup.svg'
 import VerusSignatures from './assets/verusid-signatures.svg'
@@ -55,6 +57,7 @@ const SVGIcon: Record<string, ReactElement> = {
   coin: <Coin />,
   contribute: <Contribute />,
   discord: <Discord />,
+  discordIcon: <DiscordIcon />,
   documentation: <Documentation />,
   download: <Download />,
   dropdown: <Dropdown />,
@@ -73,6 +76,7 @@ const SVGIcon: Record<string, ReactElement> = {
   tab: <OpenInNew />,
   miniTab: <MiniOpenInNew />,
   telegram: <Telegram />,
+  telegramIcon: <TelegramIcon />,
   twitter: <Twitter />,
   verusIdLookup: <VerusIdLookup />,
   verusSignatures: <VerusSignatures />,

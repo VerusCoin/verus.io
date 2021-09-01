@@ -50,13 +50,11 @@ export interface ICategoryNavigation {
 }
 
 export interface ISocialCTA {
-  svg: 'discord' | 'telegram'
+  svg: 'discordIcon' | 'telegramIcon'
   title: string
-  text: string
   href: string
   label?: {
     color: 'green'
-    text: string
   }
 }
 

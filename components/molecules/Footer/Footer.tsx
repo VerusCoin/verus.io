@@ -33,7 +33,7 @@ const Footer: React.FC<IFooter> = ({ copyright, social, links }) => {
     <StyledFooter>
       <Container>
         <Row justifyContent="center">
-          <Col col={10} md={9}>
+          <Col col={10} md={11} xl={9}>
             <Row>
               {social.map((item, index) => {
                 return (
