@@ -78,6 +78,9 @@ const StyledButton = styled.button<any>`
 
       &:hover {
         background: transparent;
+        ${props.href && 'text-decoration: underline;'}
+        
+        
       }
 
       svg {
@@ -95,13 +98,14 @@ const StyledButton = styled.button<any>`
       border-radius: ${props.theme.buttons.primary.radius};
       border: solid 2px ${props.theme.buttons.primary.text};
       color: ${props.theme.buttons.primary.text};
-      padding: 10px 30px 10px 20px;
+      padding: ${(props: any) => (props.small ? '12px 20px' : '16px 30px')};;
       &:hover {
         background: rgb(255,255,255,0.17)
       }
     `}
-    ${(props) => props.margin && `margin: ${props.margin};`}
-    ${(props) => (props.small ? 'font-size: 17px' : fontSize(props.fontSize))}
+    ${(props: any) => props.margin && `margin: ${props.margin};`}
+    ${(props: any) =>
+    props.small ? 'font-size: 17px' : fontSize(props.fontSize)}
 `
 
 const Button = ({

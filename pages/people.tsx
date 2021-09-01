@@ -81,12 +81,17 @@ const StyledLinks = styled.div`
   margin: 16px 0 0;
   a {
     padding: 0 10px;
-
+    text-decoration: none;
     svg {
       fill: #3165d4;
       width: 24px;
       height: 24px;
       margin: 0;
+    }
+    &:hover {
+      svg {
+        transform: scale(1.5);
+      }
     }
   }
 `

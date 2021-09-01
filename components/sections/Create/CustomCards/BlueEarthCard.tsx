@@ -22,7 +22,12 @@ const StyledBlueEarthCard = styled.div`
   background-size: 200px;
 
   a {
-    padding: 10px 30px 10px 20px;
+    padding: 10px 30px;
+
+    svg {
+      height: 24px;
+      min-width: 24px;
+    }
   }
   p {
     margin: 0 25px;
@@ -37,11 +42,15 @@ const StyledBlueEarthCard = styled.div`
       margin: 0;
     }
     
+    
   `}
   ${media.desktop`
     height: 750px;
     background-size: 460px;
     padding: 263px 357px 253px 93px;
+    a {
+      padding: 17px 30px ;
+    }
   `}
 `
 

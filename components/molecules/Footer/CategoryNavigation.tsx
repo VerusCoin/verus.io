@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import useTranslation from 'next-translate/useTranslation'
 import { ICategoryNavigation } from '@/types/molecules'
 import { media } from 'styled-bootstrap-grid'
 import { DefaultHeader, DefaultLink } from '@/components/elements'
@@ -29,10 +30,11 @@ const CategoryNavigation: React.FC<ICategoryNavigation> = ({
   category,
   items,
 }) => {
+  const { t } = useTranslation('footer')
   return (
     <StyledCategoryNavigation>
       <DefaultHeader customColor="white" as="h5">
-        {category}
+        {t(`${category}`)}
       </DefaultHeader>
 
       <StyledNavigationList>
@@ -40,7 +42,7 @@ const CategoryNavigation: React.FC<ICategoryNavigation> = ({
           return (
             <li key={`categoryNav_${index}`}>
               <DefaultLink href={item.href} customColor="grey">
-                {item.name}
+                {t(`${item.name}`)}
               </DefaultLink>
             </li>
           )

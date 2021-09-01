@@ -22,7 +22,9 @@ const StyledCard = styled.div<any>`
     padding: 100px 60px;
     min-width: 342px;
     ${(props: any) => props?.tabletStyles}
-    
+    ${(props: any) =>
+      props.stars &&
+      "background-size: 90%; background-image: url('/svg/stars.svg');"}
   `}
 
   ${media.desktop`
@@ -71,9 +73,9 @@ const StyledCard = styled.div<any>`
   ${(props: any) =>
     props.stars &&
     `
-    background-image: url('/svg/stars.svg');
+    background-image: url('/svg/stars-mobile.svg');
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 253px 366px;
     background-position: center center;
   `}
   ${(props: any) =>

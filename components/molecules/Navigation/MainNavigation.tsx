@@ -2,13 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { IMainNavigation } from '@/types/layouts'
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
+
 import {
   Hamburger,
   HamburgerMenu,
   ListNavigation,
 } from '@/components/elements/Navbar'
 import { useWindowScroll } from 'react-use'
-import { SVGs } from '@/components/elements'
+import { DefaultText, SVGs } from '@/components/elements'
 
 const StyledMainNavigation = styled.nav`
   position: fixed;
@@ -44,6 +45,15 @@ const StyledMainNavigation = styled.nav`
     }
     
   `}
+`
+
+const StyledBanner = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  p {
+    color: #676767;
+  }
 `
 
 const StyledLogo = styled.a`
@@ -108,12 +118,19 @@ const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
               <SVGs name="logo" />
             </StyledLogo>
           </Col>
+          <Col col={4} lg={2}>
+            <StyledBanner>
+              <DefaultText fontSz="xs" fam="geoReg">
+                Truth and Privacy for All
+              </DefaultText>
+            </StyledBanner>
+          </Col>
 
-          <Col col={8} lg={10} hiddenLgDown>
+          <Col col={8} lg={8} hiddenLgDown>
             <ListNavigation menu={menu} />
           </Col>
 
-          <Col col={8} hiddenLgUp>
+          <Col col={4} hiddenLgUp>
             <Hamburger openMenu={openMenu} setOpenMenu={setOpenMenu} />
             <HamburgerMenu openMenu={openMenu} menu={menu} />
           </Col>
@@ -124,3 +141,11 @@ const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
 }
 
 export default MainNavigation
+
+{
+  /* <StyledBanner> */
+}
+{
+  /* <DefaultText>test</DefaultText>
+            </StyledBanner> */
+}

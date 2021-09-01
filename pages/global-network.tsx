@@ -104,9 +104,10 @@ const Foundations = () => {
         <Card
           span={2}
           large
-          styles="padding: 100px 5px;"
-          desktopStyles="padding: 170px 100px;"
-          giantStyles="padding: 170px 200px;"
+          styles="padding: 191px 5px 41px ;"
+          tabletStyles="padding: 120px 75px 150px;"
+          desktopStyles="padding: 220px 75px ;"
+          giantStyles="padding: 250px 200px;"
           stars
         >
           <div>
@@ -115,14 +116,6 @@ const Foundations = () => {
               fontSz="xl"
               margin="32px 64px;"
               text={t('advantageCard.header')}
-            />
-            <CardText
-              book
-              fontSz="lg"
-              color="blue"
-              text={t('advantageCard.text')}
-              margin="32px auto;"
-              styles="max-width: 350px;"
             />
           </div>
           <Button
@@ -153,7 +146,7 @@ const Foundations = () => {
               <div>
                 <Img name="ethereum-logo" height={32} />
               </div>
-              <DefaultText fam="geoHead" fontSz="mdlg">
+              <DefaultText fam="geoHead" fontSz="sm">
                 {t('coins:ethereum')}
               </DefaultText>
               <NetTag net="test" unMargin />

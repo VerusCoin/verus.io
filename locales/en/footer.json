@@ -1,5 +1,6 @@
 {
   "general": "General",
+  "community": "Community",
   "openEconomy": "Open Economy",
   "faq": "FAQ",
   "exchanges": "Exchanges",
@@ -24,7 +25,7 @@
   "bitcointalk": "Bitcointalk",
   "keybase": "Keybase",
   "createWithUs": "Create with Us",
-  "github": "github",
+  "github": "Github",
   "documentation": "Documentation",
   "brand": "Brand Materials",
   "copywrite": "© 2021 The Verus Project",

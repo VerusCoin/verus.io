@@ -66,11 +66,10 @@ const CreateWithVerus = () => {
           </div>
           <Button
             white
-            svg={{ type: 'tab', rotate: false }}
-            href="/foundations"
+            svg={{ type: 'miniTab', rotate: false }}
+            href="https://docs.verus.io"
             as="a"
             color="#3165d4"
-            fontRegular
           >
             {`${t('cards.doc.link')} docs.verus.io`}
           </Button>
@@ -271,7 +270,7 @@ const CreateWithVerus = () => {
           large
           styles="max-width: none; padding: 94px 22px;"
           tabletStyles="max-width: none; padding: 94px 98px; p {max-width:400px;}"
-          desktopStyles="padding: 171px 120px;p {max-width:600px;}"
+          desktopStyles="padding: 171px 120px;p {max-width:600px;} a {padding: 17px 30px;}"
           tools
         >
           <div>
@@ -293,8 +292,9 @@ const CreateWithVerus = () => {
           <Button
             white
             svg={{ type: 'tab', rotate: false }}
-            href="/foundations"
+            href="https://docs.verus.io"
             as="a"
+            target="_blank"
             color="#3165d4"
             fontRegular
           >

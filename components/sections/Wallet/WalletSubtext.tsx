@@ -22,9 +22,17 @@ const WalletSubtext = () => {
         margin="0"
         align="left"
         fontSz="xs"
+        color="#676767"
+        regular
         text={t('walletSubtext.para1')}
       />
-      <CardText align="left" fontSz="xs" text={t('walletSubtext.para2')} />
+      <CardText
+        align="left"
+        fontSz="xs"
+        color="#676767"
+        regular
+        text={t('walletSubtext.para2')}
+      />
     </Card>
   )
 }

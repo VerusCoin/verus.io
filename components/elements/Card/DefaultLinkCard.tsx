@@ -18,12 +18,20 @@ const StyledLinkCard = styled.div<any>`
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
   max-width: 390px;
   text-decoration: none;
+  &:hover {
+    button {
+      text-decoration: underline;
+      svg {
+        transform: translateX(6px);
+      }
+    }
+  }
   ${(props) =>
     props.global &&
     `
     background-image: url('/svg/chains.svg');
     background-repeat: no-repeat;
-    background-position: 100% 100%;
+    background-position: center right;
     padding: 40px 50px 100px;
   `}
   ${(props) =>
@@ -42,6 +50,7 @@ const StyledLinkCard = styled.div<any>`
     min-height: 350px;
     background-position: 50% 255px;
     background-size: 371px;
+    padding: 40px 50px 100px;
     
   `}
   ${(props) =>
@@ -53,27 +62,52 @@ const StyledLinkCard = styled.div<any>`
     min-height: 350px;
     background-position: bottom 34px left -21px, bottom 168px right -56px,bottom 141px right -56px;
     background-size: 136px, 146px, 146px;
-    
+    div {
+      margin: 32px 90px 64px;
+    }
   `}
   
   ${media.tablet`
     min-height: 480px;
     max-width: 400px;
     min-width: 342px;
+    border-radius: 20px;
+    padding: 30px 40px 110px;
     ${(props: any) =>
       props.create &&
       `
       background-position: bottom -260px center;
-      padding: 30px 50px 120px;
+      padding: 30px 50px 110px;
+    `}
+    ${(props: any) =>
+      props.global &&
+      `
+        background-position: center right -15px;
+    `}
+    ${(props: any) =>
+      props.foundation &&
+      `
+      padding: 40px 40px 110px;
+      >div {
+        margin: 32px 0 64px;
+      }
     `}
   `}
-  ${media.tablet`
-    border-radius: 20px;
-  `}
+  
   ${media.desktop`
     min-width: 490px;
     max-width: none;
     height: 480px;
+    ${(props: any) =>
+      props.global &&
+      `
+        background-position: center right;
+    `}
+    ${(props: any) =>
+      props.foundation &&
+      `
+      padding: 40px 60px 100px;
+    `}
   `}
 `
 

@@ -14,7 +14,7 @@ import { StyledNet } from '@/components/elements/NetTag/NetTag'
 
 const StyledCardText = styled.div`
   margin: 16px 0;
-  width: 500px;
+  max-width: 500px;
 `
 
 const StyledTagSection = styled.div<any>`

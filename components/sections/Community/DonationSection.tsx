@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { Button, DefaultText, Img, SVGs } from '@/components/elements'
 import useTranslation from 'next-translate/useTranslation'
 import { QRCode } from 'react-qrcode-logo'
-import { bgColor } from '@/styles/helpers'
+import { bgColor, fontFam, fontSize } from '@/styles/helpers'
 
 const StyledContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
+
   margin: auto;
   justify-content: space-between;
   align-items: center;
+  ${media.tablet`
+    width: 75%;
+  `}
 `
 const StyledCol = styled.div`
   position: relative;
@@ -24,9 +27,11 @@ const StyledCol = styled.div`
   flex: 0 0 50%;
   max-width: 50%;
   text-align: center;
-  button.active {
-    min-width: 125px;
+  button {
+    min-width: 100px;
     min-height: 100px;
+  }
+  button.active {
     border-radius: 12px;
     ${bgColor('#F3F3F3')}
   }
@@ -45,7 +50,7 @@ const StyledCoin = styled.div`
   align-items: center;
   margin: 10px auto;
   img {
-    height: 48px;
+    margin-bottom: 10px;
   }
 `
 const StyledDonationSection = styled.div`
@@ -81,6 +86,7 @@ const StyledQRCode = styled.div`
 `
 
 const StyledAddress = styled.div`
+  position: relative;
   margin-top: 30px;
   margin-bottom: 10px;
   justify-content: center;
@@ -98,14 +104,34 @@ const StyledAddress = styled.div`
 const StyledAddressBox = styled.div`
   ${bgColor('#F3F3F3')}
   border: solid 1px;
-
-  margin-bottom: 10px;
+  margin-right: 20px;
   padding: 15px;
   border-radius: px;
-  ${media.tablet`
-    margin-bottom: 0;
-    margin-right: 20px;
-  `}
+`
+
+const TooltipBox = styled.div<any>`
+  ${fontFam('geoReg')}
+  ${fontSize('xxs')}
+  position: absolute;
+  top: calc(100% - 77px);
+  left: calc(100% - 30px);
+  color: #fff;
+  background-color: #3165d4;
+  visibility: ${(props: any) => (props.copyStat ? 'visible' : 'hidden')};
+  padding: 8px 8px;
+  border-radius: 8px;
+  opacity: ${(props: any) => (props.copyStat ? '1' : '0')};
+  transition: visibility 2.5s, opacity 1s ease-in-out;
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -15px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #3165d4 transparent transparent transparent;
+  }
 `
 
 const DonationInfo: Record<string, string> = {
@@ -141,6 +167,12 @@ const DonationSection = () => {
       coin: coin,
     })
   }
+  useEffect(() => {
+    setTimeout(() => {
+      // do something 1 sec after clicked has changed
+      setCopy(false)
+    }, 5000)
+  }, [copy])
   return (
     <StyledContainer>
       {list.map((coin) => (
@@ -148,14 +180,13 @@ const DonationSection = () => {
           <Button
             transparent
             onClick={() => ShowDonationSection(coin)}
-            href="#"
             color="#3165d4"
             className={
               donationInfo.coin === coin && showDonation ? 'active' : ''
             }
           >
             <StyledCoin>
-              <Img name={`${coin}-logo`} />
+              <Img name={`${coin}-logo`} height={24} />
               {t(coin)}
             </StyledCoin>
           </Button>
@@ -182,15 +213,12 @@ const DonationSection = () => {
               onCopy={() => setCopy(true)}
             >
               <Button transparent>
+                <TooltipBox copyStat={copy}>Copied</TooltipBox>
                 <Img name="copy" height={21} />
               </Button>
             </CopyToClipboard>
           </StyledAddress>
-          {copy && (
-            <DefaultText align="center" customColor="green">
-              Copied
-            </DefaultText>
-          )}
+
           <a
             target="_blank"
             href={ExternalLink[donationInfo.coin] + donationInfo.value}

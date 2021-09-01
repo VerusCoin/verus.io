@@ -45,6 +45,11 @@ const StyledPrivacyCard = styled.div`
   ${media.desktop`
     height: 750px;
     padding: 133px 269px 133px 0;
+    div.privacy-image {
+      img{
+      height: 379px;
+      }
+    }
   `}
 `
 

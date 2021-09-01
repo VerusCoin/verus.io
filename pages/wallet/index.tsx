@@ -22,14 +22,15 @@ const StyledCard = styled.div<any>`
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
-  padding: ${(props: any) => (props.large ? '100px 65px 332px' : '100px 25px')};
+  padding: ${(props: any) =>
+    props.large ? '100px 65px 332px' : '100px 25px 50px'};
   height: ${(props: any) => (props.large ? '536px' : '540px')};
   ${media.tablet`
     border-radius: 20px;
     max-width: 400px;
     min-width: 342px;
     padding: ${(props: any) =>
-      props.large ? '100px 25px 275px' : '100px 65px'};
+      props.large ? '100px 25px 275px' : '100px 65px 50px'};
     height: ${(props: any) => (props.large ? '586px' : '540px')};
     ${(props: any) =>
       props.desktop &&
@@ -49,7 +50,7 @@ const StyledCard = styled.div<any>`
     min-width: 490px;
     max-width: none;
     padding: ${(props: any) =>
-      props.large ? '100px 35px 332px' : '100px 95px'};
+      props.large ? '100px 35px 332px' : '100px 95px 50px'};
     height: ${(props: any) => (props.large ? '636px' : '540px')};
     ${(props: any) => props.desktop && 'background-size:  387px auto;'}
     ${(props: any) =>
@@ -62,7 +63,7 @@ const StyledCard = styled.div<any>`
 
   ${media.giant`
     padding: ${(props: any) =>
-      props.large ? '100px 65px 332px' : '100px 95px'};
+      props.large ? '100px 65px 332px' : '100px 95px 50px'};
     ${(props: any) => props.desktop && 'background-size:  434px auto;'}
     ${(props: any) =>
       props.mobile &&
@@ -93,8 +94,7 @@ const StyledCard = styled.div<any>`
   }
   a.external {
     svg {
-      height: 10px;
-      width: 10px;
+      height: 13px;
     }
   }
 `
@@ -106,7 +106,7 @@ const StyledDownload = styled.a`
   display: inline-flex;
   width: 228px;
   margin-top: 61px;
-  margin-bottom: 87px;
+  margin-bottom: 120px;
   justify-content: space-between;
   align-items: center;
   padding: 14px 20px;
@@ -190,7 +190,7 @@ const Wallet = ({
             <CardText
               className="info"
               regular
-              margin="0"
+              margin="16px 0"
               fontSz="xs"
               align="left"
               text={t('common:released', {

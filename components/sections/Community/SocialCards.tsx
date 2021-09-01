@@ -48,11 +48,11 @@ const StyledCard = styled.div<any>`
   > div {
     margin-left: 25px;
   }
-  ${media.tablet`
-    a {
-      font-size: 17px;
+  a {
+    svg {
+      height: 25px;
     }
-  `}
+  }
 `
 
 const SocialList: Record<string, string> = {
@@ -75,13 +75,14 @@ const SocialCards = () => {
             <CardText
               book
               align="left"
-              margin="0"
+              margin="0 0 5px"
+              fontSz="md"
               text={t(`footer:${element}`)}
             />
             <Button
               transparent
               svg={{ type: 'tab', rotate: false }}
-              href="#"
+              href={SocialList[element]}
               as="a"
               color="#3165d4"
             >

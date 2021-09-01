@@ -102,7 +102,7 @@ const Contribute = () => {
               <DefaultText>{t('supportCard.referralLink')}</DefaultText>
             </StyledAddressBox>
             <CopyToClipboard
-              text={t('supportCard.referralLink')}
+              text="Verus Coin Foundation@"
               onCopy={() => setCopy(true)}
             >
               <Button transparent>

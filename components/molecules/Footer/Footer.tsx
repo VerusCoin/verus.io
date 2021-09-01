@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import { IFooter } from '@/types/layouts'
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
 import {

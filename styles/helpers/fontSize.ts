@@ -28,6 +28,8 @@ const fontSize = (
     case 'xs':
       return css`
         font-size: ${(props: any) => props.theme.typo.sizes.xs.desktop};
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.xs.desktop} + 4px)`};
       `
 
     case 'sm':

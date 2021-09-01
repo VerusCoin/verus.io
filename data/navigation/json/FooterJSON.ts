@@ -4,7 +4,7 @@ export const FooterJSON: IFooter = {
   social: [
     {
       svg: 'discord',
-      title: 'Discord',
+      title: 'discord',
       href: '#',
       text: 'Discuss everything Verus',
       label: {
@@ -14,132 +14,132 @@ export const FooterJSON: IFooter = {
     },
     {
       svg: 'telegram',
-      title: 'Telegram',
+      title: 'telegram',
       href: '#',
       text: 'Join the community channel',
     },
   ],
   links: [
     {
-      category: 'General',
+      category: 'general',
       items: [
         {
-          name: 'Open Economy',
-          href: '#',
+          name: 'openEconomy',
+          href: '/Economy',
         },
         {
-          name: 'Community',
+          name: 'community',
           href: '/community',
         },
         {
-          name: 'FAQ',
+          name: 'faq',
           href: '/coin/#FAQ',
         },
         {
-          name: 'Exchanges',
-          href: 'exchanges',
+          name: 'exchanges',
+          href: '/exchanges',
         },
       ],
     },
     {
-      category: 'Technology',
+      category: 'technology',
       items: [
         {
-          name: 'Create',
+          name: 'create',
           href: '/create-with-verus',
         },
         {
-          name: 'Foundations',
+          name: 'foundation',
           href: '/foundations',
         },
         {
-          name: 'Coin',
+          name: 'coin',
           href: '/coin',
         },
         {
-          name: 'Bridges',
-          href: '/bridges',
+          name: 'global',
+          href: '/global-network',
         },
         {
-          name: 'Vision Paper',
+          name: 'paper',
+          href: '/papers',
+        },
+        {
+          name: 'explorer',
           href: '#',
         },
         {
-          name: 'Explorer',
+          name: 'verusID',
           href: '#',
         },
         {
-          name: 'VerusID Lookup',
-          href: '#',
-        },
-        {
-          name: 'VerusID Signature',
-          href: '#',
-        },
-      ],
-    },
-    {
-      category: 'Socials',
-      items: [
-        {
-          name: 'Twitter',
-          href: '#',
-        },
-        {
-          name: 'Facebook',
-          href: '#',
-        },
-        {
-          name: 'Telegram',
-          href: '#',
-        },
-        {
-          name: 'Youtube',
-          href: '#',
-        },
-        {
-          name: 'Discord',
-          href: '#',
-        },
-        {
-          name: 'Reddit',
-          href: '#',
-        },
-        {
-          name: 'Medium',
-          href: '#',
-        },
-        {
-          name: 'QQ',
-          href: '#',
-        },
-        {
-          name: 'Bitcointalk',
-          href: '#',
-        },
-        {
-          name: 'Keybase',
+          name: 'verusSig',
           href: '#',
         },
       ],
     },
     {
-      category: 'Create with Us',
+      category: 'socials',
       items: [
         {
-          name: 'Discord',
+          name: 'twitter',
           href: '#',
         },
         {
-          name: 'Github',
+          name: 'facebook',
           href: '#',
         },
         {
-          name: 'Documentation',
+          name: 'telegram',
           href: '#',
         },
         {
-          name: 'Brand Materials',
+          name: 'youtube',
+          href: '#',
+        },
+        {
+          name: 'discord',
+          href: '#',
+        },
+        {
+          name: 'reddit',
+          href: '#',
+        },
+        {
+          name: 'medium',
+          href: '#',
+        },
+        {
+          name: 'qq',
+          href: '#',
+        },
+        {
+          name: 'bitcointalk',
+          href: '#',
+        },
+        {
+          name: 'keybase',
+          href: '#',
+        },
+      ],
+    },
+    {
+      category: 'createWithUs',
+      items: [
+        {
+          name: 'discord',
+          href: '#',
+        },
+        {
+          name: 'github',
+          href: '#',
+        },
+        {
+          name: 'documentation',
+          href: '#',
+        },
+        {
+          name: 'brand',
           href: '#',
         },
       ],

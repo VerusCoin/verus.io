@@ -22,8 +22,7 @@ const StyledJumbotronContainer = styled.div`
     margin-top: ${(props) => props.theme.spaces.lg};
     text-decoration: underline;
     svg {
-      height: 10px;
-      width: 10px;
+      height: 13px;
     }
   }
 `

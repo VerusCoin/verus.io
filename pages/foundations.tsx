@@ -83,13 +83,6 @@ const Foundations = () => {
                 margin="0"
                 text={t('keychainCard.header')}
               />
-              <CardText
-                book
-                fontSz="lg"
-                color="blue"
-                margin="32px 0"
-                text={t('keychainCard.text')}
-              />
             </div>
             <Button
               onClick={() => multiModal('keychainCard')}
@@ -101,7 +94,13 @@ const Foundations = () => {
             </Button>
           </div>
         </KeychainCard>
-        <Card large scales bgColor="#0A3FB1">
+        <Card
+          large
+          scales
+          bgColor="#0A3FB1"
+          tabletStyles="padding: 50px 60px 100px;"
+          desktopStyles="padding: 100px 60px ;"
+        >
           <div>
             <CardText
               book
@@ -123,12 +122,17 @@ const Foundations = () => {
             onClick={() => multiModal('scalableLimits')}
             fontRegular
             small
-            margin="50px 0 0"
+            margin="40px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>
         </Card>
-        <Card large grid>
+        <Card
+          large
+          grid
+          tabletStyles="padding: 50px 60px 100px;"
+          desktopStyles="padding: 100px 60px ;"
+        >
           <div>
             <CardText
               book
@@ -136,19 +140,12 @@ const Foundations = () => {
               margin="32px 64px;"
               text={t('topTier.header')}
             />
-            <CardText
-              book
-              fontSz="lg"
-              color="blue"
-              text={t('topTier.text')}
-              margin="32px 70px;"
-            />
           </div>
           <Button
             onClick={() => multiModal('topTier')}
             fontRegular
             small
-            margin="50px 0 0"
+            margin="40px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>
@@ -176,7 +173,11 @@ const Foundations = () => {
             </Button>
           </div>
         </NetworkCard>
-        <Card large>
+        <Card
+          large
+          tabletStyles="padding: 50px 60px 100px;"
+          desktopStyles="padding: 100px 60px;"
+        >
           <div>
             <CardText
               book
@@ -203,7 +204,8 @@ const Foundations = () => {
         </Card>
         <Card
           large
-          tabletStyles="padding: 100px 25px;"
+          tabletStyles="padding: 50px 5px 100px;"
+          desktopStyles="padding: 100px 5px;"
           giantStyles="padding: 100px 50px;"
         >
           <div>
@@ -225,7 +227,7 @@ const Foundations = () => {
             onClick={() => multiModal('mev')}
             fontRegular
             small
-            margin="5px 0 0"
+            margin="50px 0 0"
           >
             {`${t('common:findMore')}`}
           </Button>

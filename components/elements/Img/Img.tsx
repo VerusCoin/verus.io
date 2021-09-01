@@ -6,6 +6,7 @@ const StyledImg = styled.img<any>`
   vertical-align: middle;
   display: inline-block;
   ${(props) => props?.styles}
+  height: ${(props) => props.height}px;
 `
 interface ImgProp {
   name: string | undefined

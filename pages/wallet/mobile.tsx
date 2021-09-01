@@ -148,7 +148,7 @@ const Mobile = ({
               <CardText
                 className="info"
                 regular
-                margin="0"
+                margin="16px 0"
                 fontSz="xs"
                 align="left"
                 text={t('common:released', {
