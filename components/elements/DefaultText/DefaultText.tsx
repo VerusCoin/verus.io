@@ -20,6 +20,7 @@ const DefaultText: React.FC<IDefaultText> = ({
   align,
   fam,
   fontSz,
+  className,
 }) => {
   return (
     <StyledDefaultText
@@ -28,6 +29,7 @@ const DefaultText: React.FC<IDefaultText> = ({
       align={align}
       fam={fam}
       fontSz={fontSz}
+      className={className}
     >
       {children}
     </StyledDefaultText>

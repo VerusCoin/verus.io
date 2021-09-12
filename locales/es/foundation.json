@@ -12,8 +12,8 @@
     }
   },
   "keychainCard": {
-    "header": "A safe network to store your wealth.",
-    "text": "Attack resistant.<br/>Secure vaults.",
+    "header": "The most secure technology for storing wealth.",
+
     "modal": {
       "header": "Your wealth is safe against all attacks.",
       "text": "Protected by a unique and secure consensus mechanism called Verus Proof of Power. 50% is proof-of-stake, and 50% is proof-of-work. To successfully attack the network, a bad actor must have at least 51% of all mining power and at least 51% of all staking supply. Truly an unimaginable challenge for any actor. It is fair to conclude Verus is resistant to 51% hash attacks. On top of that, you can set up vaults to protect your wealth. Secure yourself against hacks, theft, key loss and even “5$ wrench attacks.” Use the network with peace of mind, short and long-term."
@@ -28,7 +28,8 @@
     }
   },
   "topTier": {
-    "header": "The most secure technology for storing wealth.",
+    "header": "Top-tier decentralized network.",
+    "text": "Proof-of-work & proof-of-stake.",
     "modal": {
       "header": "A naturally created decentralized network.",
       "text": "The latest node count on the network was 20 000. An unprecedented high amount for any network. The network achieves high-grade decentralization through the fact that it’s proof-of-work and proof-of-stake combined. The miner ecosystem is naturally decentralized because you don’t need specialized equipment to start mining. You can mine most efficiently with consumer-grade CPUs, mobile phones and ARM devices. A great source of income for people in developing countries. Now take staking, it has never been easier to do. You only need a full node running, and any amount of $VRSC will do. A Raspberry Pi does the job. Combined with a worldwide network of supporters and contributors, Verus is one of the most decentralized networks in the crypto industry."

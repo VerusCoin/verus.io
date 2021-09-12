@@ -64,15 +64,15 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'explorer',
-          href: '#',
+          href: 'https://explorer.verus.io/',
         },
         {
           name: 'verusID',
-          href: '#',
+          href: '/verusid-lookup',
         },
         {
           name: 'verusSig',
-          href: '#',
+          href: '/signatures',
         },
       ],
     },
@@ -81,11 +81,11 @@ export const FooterJSON: IFooter = {
       items: [
         {
           name: 'twitter',
-          href: '#',
+          href: 'https://twitter.com/veruscoin',
         },
         {
           name: 'facebook',
-          href: '#',
+          href: 'https://www.facebook.com/VerusCoin',
         },
         {
           name: 'telegram',
@@ -93,7 +93,7 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'youtube',
-          href: '#',
+          href: 'https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg',
         },
         {
           name: 'discord',
@@ -101,23 +101,23 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'reddit',
-          href: '#',
+          href: 'https://reddit.com/r/veruscoin',
         },
         {
           name: 'medium',
-          href: '#',
+          href: 'https://medium.com/veruscoin',
         },
         {
           name: 'qq',
-          href: '#',
+          href: 'https://qm.qq.com/cgi-bin/qm/qr?k=giXYZCf2m7UpB_I5uVs8yaxCB2oRuw3L&authKey=IiivzBvhfNBk3Pd8LJB9sn+GyrL9o39RkLB7k83Z+nLfZ2hBi0c3jbh9G0HNHjrV&noverify=0',
         },
         {
           name: 'bitcointalk',
-          href: '#',
+          href: 'https://bitcointalk.org/index.php?topic=4070404.0',
         },
         {
           name: 'keybase',
-          href: '#',
+          href: 'https://keybase.io/team/veruscoin',
         },
       ],
     },
@@ -126,15 +126,15 @@ export const FooterJSON: IFooter = {
       items: [
         {
           name: 'discord',
-          href: '#',
+          href: 'https://discord.gg/VRKMP2S',
         },
         {
           name: 'github',
-          href: '#',
+          href: 'https://github.com/VerusCoin',
         },
         {
           name: 'documentation',
-          href: '#',
+          href: 'https://docs.verus.io',
         },
         {
           name: 'brand',

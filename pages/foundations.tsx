@@ -140,6 +140,13 @@ const Foundations = () => {
               margin="32px 64px;"
               text={t('topTier.header')}
             />
+            <CardText
+              book
+              fontSz="lg"
+              color="blue"
+              text={t('topTier.text')}
+              margin="32px 70px;"
+            />
           </div>
           <Button
             onClick={() => multiModal('topTier')}

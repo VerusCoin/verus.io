@@ -55,20 +55,20 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'explorer',
           link: 'explorerPage',
-          href: '#',
+          href: 'https://explorer.verus.io/',
           description: true,
           external: true,
         },
         {
           svg: 'verusIdLookup',
           link: 'lookupPage',
-          href: '#',
+          href: '/verusid-lookup',
           description: true,
         },
         {
           svg: 'verusSignatures',
           link: 'signaturePage',
-          href: '#',
+          href: '/signatures',
           description: true,
         },
         {
@@ -91,14 +91,14 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'documentation',
           link: 'documentationPage',
-          href: '#',
+          href: 'https://docs.verus.io',
           description: true,
           external: true,
         },
         {
           svg: 'supportWiki',
           link: 'wikiPage',
-          href: '#',
+          href: 'https://wiki.verus.io/',
           description: true,
           external: true,
         },

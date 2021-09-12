@@ -14,5 +14,7 @@ module.exports = {
     '/wallet': ['wallet'],
     'rgx:/desktop': ['walletDesktop'],
     'rgx:/mobile': ['walletMobile'],
+    '/verusid-lookup': ['verusid'],
+    '/signatures': ['signatures'],
   },
 }

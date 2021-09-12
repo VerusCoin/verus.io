@@ -46,6 +46,7 @@ export interface IDefaultText {
   fam?: string
   gR?: boolean
   fontSz?: string
+  className?: string
 }
 
 export interface ITypedJS {

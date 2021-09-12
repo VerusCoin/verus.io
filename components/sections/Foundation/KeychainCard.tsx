@@ -42,7 +42,7 @@ const StyledKeychainCard = styled.div`
       }
     }
     div.card{
-      width: 600px;
+      width: 700px;
       
     }
   `}
@@ -54,6 +54,7 @@ const StyledKeychainCard = styled.div`
         left: -70px;
       }
     }
+   
   `}
 `
 
