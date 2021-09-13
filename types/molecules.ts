@@ -41,6 +41,7 @@ export interface IHamburgerSubMenu {
 
 export interface IListNavigation {
   menu: IMenuItem[]
+  target?: string
 }
 
 //Footer Components

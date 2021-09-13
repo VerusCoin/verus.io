@@ -4,12 +4,12 @@ export const PeopleJSON: IPeopleJSON = {
   leads: [
     {
       per: 'michaelJToutonghi',
-      linkedIn: '#',
+
       twitter: '#',
     },
     {
       per: 'michaelFToutonghi',
-      linkedIn: '#',
+
       twitter: '#',
     },
     {

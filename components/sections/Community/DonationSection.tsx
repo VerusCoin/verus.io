@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
-import { Button, DefaultText, Img, SVGs } from '@/components/elements'
+
+import {
+  Button,
+  DefaultText,
+  Img,
+  SVGs,
+  AddressCopy,
+} from '@/components/elements'
 import useTranslation from 'next-translate/useTranslation'
 import { QRCode } from 'react-qrcode-logo'
-import { bgColor, fontFam, fontSize } from '@/styles/helpers'
+import { bgColor } from '@/styles/helpers'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -65,9 +71,12 @@ const StyledDonationSection = styled.div`
     color: #3165d4;
     align-items: center;
     display: inline-flex;
-    margin-top: 30px;
+    text-decoration: none;
     padding: 0 0 0 10px;
     width: contain-content;
+    &:hover {
+      text-decoration: underline;
+    }
     svg {
       height: 24px;
       width: 30px;
@@ -83,55 +92,6 @@ const StyledQRCode = styled.div`
   padding: 20px;
   border: solid 1px;
   border-radius: 5px;
-`
-
-const StyledAddress = styled.div`
-  position: relative;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  justify-content: center;
-  display: inline-flex;
-  flex-wrap: wrap;
-
-  p {
-    font-size: 12px;
-  }
-  ${media.tablet`
-    p{font-size: inherit;}
-  `}
-`
-
-const StyledAddressBox = styled.div`
-  ${bgColor('#F3F3F3')}
-  border: solid 1px;
-  margin-right: 20px;
-  padding: 15px;
-  border-radius: px;
-`
-
-const TooltipBox = styled.div<any>`
-  ${fontFam('geoReg')}
-  ${fontSize('xxs')}
-  position: absolute;
-  top: calc(100% - 77px);
-  left: calc(100% - 30px);
-  color: #fff;
-  background-color: #3165d4;
-  visibility: ${(props: any) => (props.copyStat ? 'visible' : 'hidden')};
-  padding: 8px 8px;
-  border-radius: 8px;
-  opacity: ${(props: any) => (props.copyStat ? '1' : '0')};
-  transition: visibility 2.5s, opacity 1s ease-in-out;
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 100%; /* At the bottom of the tooltip */
-    left: 50%;
-    margin-left: -15px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: #3165d4 transparent transparent transparent;
-  }
 `
 
 const DonationInfo: Record<string, string> = {
@@ -204,32 +164,22 @@ const DonationSection = () => {
               qrStyle="dots"
             />
           </StyledQRCode>
-          <StyledAddress>
-            <StyledAddressBox>
-              <DefaultText>{donationInfo.value}</DefaultText>
-            </StyledAddressBox>
-            <CopyToClipboard
-              text={donationInfo.value}
-              onCopy={() => setCopy(true)}
-            >
-              <Button transparent>
-                <TooltipBox copyStat={copy}>Copied</TooltipBox>
-                <Img name="copy" height={21} />
-              </Button>
-            </CopyToClipboard>
-          </StyledAddress>
+          <AddressCopy text={donationInfo.value} />
 
           <a
             target="_blank"
             href={ExternalLink[donationInfo.coin] + donationInfo.value}
             rel="noreferrer"
           >
-            <DefaultText fam="geoBook" fontSz="xs">
+            <DefaultText fam="geoBook" fontSz="menu">
               Open in Explorer
             </DefaultText>
 
             <SVGs name="tab" />
           </a>
+          {donationInfo.coin === 'verus' && (
+            <AddressCopy text="Verus Coin Foundation@" />
+          )}
         </StyledDonationSection>
       )}
     </StyledContainer>

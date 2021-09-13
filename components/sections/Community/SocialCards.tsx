@@ -56,11 +56,11 @@ const StyledCard = styled.div<any>`
 `
 
 const SocialList: Record<string, string> = {
-  discord: '#',
-  twitter: '#',
-  github: '#',
-  telegram: '#',
-  youtube: '#',
+  discord: 'https://discord.com/invite/VRKMP2S',
+  twitter: 'https://twitter.com/veruscoin',
+  github: 'https://github.com/VerusCoin',
+  telegram: 'https://t.me/veruscommunity',
+  youtube: 'https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg',
 }
 
 const SocialCards = () => {

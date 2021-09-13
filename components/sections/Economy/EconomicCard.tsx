@@ -36,8 +36,15 @@ const StyledTagSection = styled.div<any>`
   
     > ${StyledNet} {
       flex-direction: row;
+      justify-content: center;
+      align-items:center;
+      p {
+        margin: 20px 0;
+        line-height: 0;
+      }
       p > span {
         margin-right: 31px;
+        
       }
       p:last-child {
         text-align: left;
@@ -89,7 +96,7 @@ const EconomicCard = () => {
         href="https://docs.verus.io/economy/#block-fees"
         as="a"
         color="#3165d4"
-        fontRegular
+        target="_blank"
       >
         {t('economic.link')}
       </Button>

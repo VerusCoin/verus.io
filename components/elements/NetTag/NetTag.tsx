@@ -9,6 +9,7 @@ export const StyledNet = styled.div<any>`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   margin-bottom: ${(props: any) =>
     (props.unMargin && '0') || props.theme.spaces.xs};
 

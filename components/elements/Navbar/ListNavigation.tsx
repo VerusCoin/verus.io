@@ -72,7 +72,7 @@ const StyledSubMenu = styled.ul`
   }
 `
 
-const ListNavigation: React.FC<IListNavigation> = ({ menu }) => {
+const ListNavigation: React.FC<IListNavigation> = ({ menu, target }) => {
   const { t } = useTranslation('navigation')
 
   return (
@@ -92,6 +92,7 @@ const ListNavigation: React.FC<IListNavigation> = ({ menu }) => {
               <StyledLink
                 as={item.href ? 'a' : 'span'}
                 href={item.href && item.href}
+                target={target}
               >
                 {t(`${item.category}.title`)}
               </StyledLink>

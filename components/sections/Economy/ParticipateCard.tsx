@@ -43,7 +43,7 @@ const ParticipateCard = () => {
           href="https://docs.verus.io/economy/start-mining.html"
           as="a"
           color="#3165d4"
-          fontRegular
+          target="_blank"
         >
           {t('participate.mining')}
         </Button>
@@ -53,7 +53,7 @@ const ParticipateCard = () => {
           href="https://docs.verus.io/economy/start-staking.html"
           as="a"
           color="#3165d4"
-          fontRegular
+          target="_blank"
           margin="32px 0"
         >
           {t('participate.staking')}
@@ -64,7 +64,7 @@ const ParticipateCard = () => {
           href="https://docs.verus.io/economy/#block-rewards"
           as="a"
           color="#3165d4"
-          fontRegular
+          target="_blank"
         >
           {t('participate.schedule')}
         </Button>

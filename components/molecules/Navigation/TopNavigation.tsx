@@ -71,7 +71,7 @@ const TopNavigation: React.FC<ITopNavigation> = ({ menu }) => {
             </I18nProvider>
           </Col>
           <Col col={4} hiddenMdDown>
-            <ListNavigation menu={menu} />
+            <ListNavigation menu={menu} target="_blank" />
           </Col>
         </Row>
       </Container>

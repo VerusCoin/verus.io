@@ -1,6 +1,6 @@
 {
   "jumbotron": {
-    "heading": "Change the world.",
+    "heading": "Launch your project.",
     "text": "Create products and services you care about."
   },
   "tryTest": "Try now on testnet",
@@ -61,7 +61,7 @@
       }
     },
     "changeWorld": {
-      "heading": "Change the world. It’s simple.",
+      "heading": "Launch your project with Verus now.",
       "text": "Use these blockchain tools to create products and services you care about. Rent-free and decentralized with Verus scalable public infrastructure."
     }
   }
