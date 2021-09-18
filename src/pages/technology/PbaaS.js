@@ -41,10 +41,9 @@ const Pbaas = () => {
           priced by the creator of MyChain.
         </p>
         <p className="my-8">
-          New chains inherit the 50/50% PoW/PoS consensus mechanism (this may be
-          customizable in the future) and has all of the advanced capabilities
-          of Verus such as fractional currencies and Verus Vault protection for
-          IDs.
+          New chains inherit the 50/50% PoW/PoS consensus mechanism and has all
+          of the advanced capabilities of Verus such as fractional currencies
+          and Verus Vault protection for IDs.
         </p>
         <p className="my-8">
           A newly created chain can be mined by the miners of Verus. A miner in
