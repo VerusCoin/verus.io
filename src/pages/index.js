@@ -157,7 +157,10 @@ const Home = (props) => {
                     </h3>
                   </a>
                   <p className="text-base text-gray-500 font-lite font-p">
-                    {format(new Date(article.pubDate), 'MMM dd, yyyy')}
+                    {format(
+                      new Date(new Date(article.pubDate.replace(/\s/, 'T'))),
+                      'MMM dd, yyyy'
+                    )}
                   </p>
                 </div>
               )
