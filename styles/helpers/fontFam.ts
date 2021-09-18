@@ -8,7 +8,7 @@ const FontFam = (fam: string): any => {
       `
     case 'geoReg':
       return css`
-        font-family: ${(props) => props.theme.typo.secondary.family};
+        font-family: ${(props) => props.theme.typo.primary.family};
       `
 
     default:

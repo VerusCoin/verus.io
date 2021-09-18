@@ -51,7 +51,7 @@ const CoinCard = ({ header, text }: { header: string; text: string }) => {
         <Img name="binance-logo" height={32} />
         <Img name="ethereum-logo" height={32} />
       </StyledCoinSection>
-      <CardText regular fontSz="xs" margin="0" text={text} />
+      <CardText fontSz="xs" margin="0" text={text} />
     </StyledCard>
   )
 }

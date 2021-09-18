@@ -41,7 +41,7 @@ const Home = ({
             <Card key={index}>
               <Img height="75px" name={card.svg} />
               <CardHeader text={heading} />
-              <CardText regular={true} text={t(`cards.${card.card}.text`)} />
+              <CardText text={t(`cards.${card.card}.text`)} />
             </Card>
           )
         })}
@@ -51,12 +51,7 @@ const Home = ({
         <DefaultLinkCard card="coin" />
 
         <KnowCards>
-          <CardText
-            fontSz="xs"
-            regular
-            color="white"
-            text={t('cards.knowCard.know')}
-          />
+          <CardText fontSz="xs" color="white" text={t('cards.knowCard.know')} />
           <CardText
             book
             fontSz="sm"
@@ -67,7 +62,6 @@ const Home = ({
           <CardText
             fontSz="mdlg"
             color="white"
-            regular
             text={t('cards.knowCard.text')}
           />
         </KnowCards>

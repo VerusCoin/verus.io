@@ -6,9 +6,7 @@ import parse from 'html-react-parser'
 const StyledText = styled.p<any>`
   margin: ${(props) => props.margin || '16px 0 0 0'};
   font-family: ${(props) =>
-    props.regular
-      ? props.theme.typo.secondary.family
-      : props.book
+    props.book
       ? props.theme.typo.header.family
       : props.theme.typo.primary.family};
 
@@ -21,7 +19,6 @@ const StyledText = styled.p<any>`
 export interface CardTextProps {
   color?: string
   text: string
-  regular?: boolean
   book?: boolean
   align?: string
   fontSz?: string
@@ -32,7 +29,6 @@ export interface CardTextProps {
 
 const CardText = ({
   color = 'black',
-  regular,
   book,
   text,
   align = 'center',
@@ -43,7 +39,6 @@ const CardText = ({
 }: CardTextProps) => {
   return (
     <StyledText
-      regular={regular}
       book={book}
       align={align}
       customColor={color}

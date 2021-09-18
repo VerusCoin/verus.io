@@ -15,7 +15,14 @@ interface ImgProp {
 }
 
 const Img = ({ name, height = 100, styles }: ImgProp) => {
-  return <StyledImg src={`/svg/${name}.svg`} height={height} styles={styles} />
+  return (
+    <StyledImg
+      src={`/svg/${name}.svg`}
+      height={height}
+      styles={styles}
+      alt=""
+    />
+  )
 }
 
 export default Img

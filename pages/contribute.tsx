@@ -38,7 +38,6 @@ const Contribute = () => {
             styles="max-width: 550px;"
           />
           <CardText
-            regular
             fontSz="xs"
             text={t('supportCard.subtext')}
             margin="32px auto;"

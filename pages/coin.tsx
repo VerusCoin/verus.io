@@ -18,6 +18,7 @@ const Coin = ({
     text: t('jumbotron.text'),
     width: 1000,
   }
+
   return (
     <MainLayout jumbotronData={JumbotronJSON}>
       <CardSection />

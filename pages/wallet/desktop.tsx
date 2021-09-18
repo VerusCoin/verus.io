@@ -36,8 +36,9 @@ const StyledInfo = styled.div`
   }
   a.external {
     svg {
-      height: 10px;
-      width: 10px;
+      margin-left: 5px;
+      height: 12px;
+      width: 12px;
     }
   }
   ${media.tablet`
@@ -174,13 +175,11 @@ const Desktop = ({
                 className="info"
                 margin="0"
                 fontSz="xs"
-                regular
                 align="left"
                 text={t('common:latestVersion', { walletVersion: name })}
               />
               <CardText
                 className="info"
-                regular
                 margin="16px 0"
                 fontSz="xs"
                 align="left"

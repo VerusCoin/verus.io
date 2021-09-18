@@ -142,11 +142,16 @@ const People = ({
         </StyledSVG>
         {leads.map((lead) => (
           <StyledCard key={lead.per}>
-            <CardText book fontSz="modal" text={t(`leads.${lead.per}.name`)} />
             <CardText
-              regular
+              book
+              fontSz="modal"
+              margin="6px 0 0 0"
+              text={t(`leads.${lead.per}.name`)}
+            />
+            <CardText
               color="#676767"
               fontSz="sm"
+              margin="12px 0 0 0"
               text={t(`leads.${lead.per}.title`)}
             />
             <StyledLinks>

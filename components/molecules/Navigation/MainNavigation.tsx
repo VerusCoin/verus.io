@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+
 import { IMainNavigation } from '@/types/layouts'
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
 
@@ -30,7 +31,9 @@ const StyledMainNavigation = styled.nav`
     padding: 20px 0;
     height: 90px;
     border: 0;
-    
+    div.tagline {
+      display: none;
+    }
     &.showBorder {
       border-bottom: 1px solid ${(props: any) =>
         props.theme.colors.grey.primary};
@@ -45,6 +48,11 @@ const StyledMainNavigation = styled.nav`
     }
     
   `}
+  ${media.giant`
+    div.tagline {
+      display: block;
+    }
+  `}
 `
 
 const StyledBanner = styled.div`
@@ -53,7 +61,13 @@ const StyledBanner = styled.div`
   height: 100%;
   p {
     color: #676767;
+    margin-left: 0;
   }
+  ${media.giant`
+    p{
+      margin-left:16px;
+    }
+  `}
 `
 
 const StyledLogo = styled.a`
@@ -118,7 +132,7 @@ const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
               <SVGs name="logo" />
             </StyledLogo>
           </Col>
-          <Col col={4} lg={2}>
+          <Col col={4} lg={2} className="tagline">
             <StyledBanner>
               <DefaultText fontSz="xs" fam="geoReg">
                 Truth and Privacy for All
@@ -126,7 +140,7 @@ const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
             </StyledBanner>
           </Col>
 
-          <Col col={8} lg={8} hiddenLgDown>
+          <Col col={10} hiddenLgDown xl={8}>
             <ListNavigation menu={menu} />
           </Col>
 

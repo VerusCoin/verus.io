@@ -92,7 +92,7 @@ const StyledCard = styled.div<any>`
     background-image: url('/svg/scale.svg');
     background-repeat: no-repeat;
     
-    background-position: left 5px bottom -5px;
+    background-position: left bottom -5px;
   `}
 `
 

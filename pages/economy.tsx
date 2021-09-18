@@ -27,7 +27,7 @@ const Economy = () => {
   return (
     <MainLayout jumbotronData={JumbotronJSON}>
       <Grid>
-        <Card styles="justify-content: flex-end;">
+        <Card styles="justify-content: flex-end; padding: 50px 20px;">
           <CardText book fontSz="sm" text={t('staking.heading')} />
           <CardText
             book
@@ -49,7 +49,7 @@ const Economy = () => {
             text={`${ProgressBarValue}% ${t('staking.staking')}`}
           />
         </Card>
-        <Card styles="justify-content: flex-end;">
+        <Card styles="justify-content: flex-end; padding: 50px 20px;">
           <CardText book fontSz="sm" text={t('hashrate.heading')} />
           <CardText
             book

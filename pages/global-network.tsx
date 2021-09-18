@@ -130,7 +130,7 @@ const Foundations = () => {
         <Card
           span={2}
           styles="padding: 50px 25px 75px; "
-          tabletStyles="padding: 50px 100px 75px;"
+          tabletStyles="padding: 50px 100px 75px; min-height: unset;"
           desktopStyles="padding: 100px 198px 150px;"
           giantStyles="padding: 100px 270px 150px;"
         >
@@ -162,7 +162,6 @@ const Foundations = () => {
               <NetTag net="plan" unMargin />
             </StyledRow> */}
             <CardText
-              regular
               fontSz="xs"
               text={t('bridgeCard.text')}
               margin="32px auto;"

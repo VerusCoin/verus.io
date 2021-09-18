@@ -19,7 +19,7 @@ const StyledButton = styled.button<any>`
   text-decoration: none;
   font-family: ${(props) =>
     props.fontRegular
-      ? props.theme.typo.secondary.family
+      ? props.theme.typo.primary.family
       : props.theme.typo.header.family};
 
   ${(props) => props.wide && `padding: 20px 30px;`}

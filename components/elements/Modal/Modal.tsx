@@ -212,7 +212,6 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
                         fontSz="modal"
                         color="#676767"
                         align="left"
-                        regular
                         text={element}
                       />
                     ))}
@@ -222,7 +221,6 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
                       fontSz="modal"
                       color="#676767"
                       align="left"
-                      regular
                       text={text}
                     />
                   )}

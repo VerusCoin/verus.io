@@ -124,14 +124,6 @@ const primary: DefaultTheme = {
       },
     },
     primary: {
-      family: '"Source Sans Pro", sans-serif',
-      weight: {
-        normal: 300,
-        bold: 800,
-      },
-    },
-
-    secondary: {
       family: ' "Geomanist Regular", sans-serif',
       weight: {
         normal: 300,

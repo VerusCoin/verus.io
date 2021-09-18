@@ -94,7 +94,8 @@ const StyledCard = styled.div<any>`
   }
   a.external {
     svg {
-      height: 13px;
+      height: 12px;
+      margin-left: 5px;
     }
   }
 `
@@ -183,13 +184,11 @@ const Wallet = ({
               className="info"
               margin="29px 0 0 "
               fontSz="xs"
-              regular
               align="left"
               text={t('common:latestVersion', { walletVersion: name })}
             />
             <CardText
               className="info"
-              regular
               margin="16px 0"
               fontSz="xs"
               align="left"

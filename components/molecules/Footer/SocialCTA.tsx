@@ -16,12 +16,8 @@ const StyledLabel = styled.span<any>`
   font-family: ${(props) => props.theme.typo.primary.family};
   ${fontSize('menuXs')}
   font-weight: bold;
-  margin-top: ${(props: any) => props.theme.spaces.xxs};
-
-  ${media.desktop`
-    margin-top: 0;
-    margin-left: ${(props: any) => props.theme.spaces.xxs};
-  `}
+  margin-top: 0;
+  margin-left: ${(props: any) => props.theme.spaces.xxs};
 `
 
 const StyledHeader = styled.div`
@@ -92,7 +88,7 @@ const SocialCTA: React.FC<ISocialCTA> = ({ href, svg, title, label }) => {
         </DefaultHeader>
       </StyledHeader>
 
-      <DefaultText customColor="#FFFFFF">
+      <DefaultText fontSz="xs" customColor="#FFFFFF">
         {t(`socialCard.${title}.text`)}
       </DefaultText>
     </StyledSocialCTA>

@@ -129,14 +129,6 @@ declare module 'styled-components' {
         }
       }
 
-      secondary: {
-        family: string
-        weight: {
-          normal: number
-          bold: number
-        }
-      }
-
       header: {
         family: string
         weight: {

@@ -5,7 +5,7 @@ import { bgColor } from '@/styles/helpers'
 import useTranslation from 'next-translate/useTranslation'
 
 import { Button, CardHeader } from '@/components/elements'
-// filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
 const StyledLinkCard = styled.div<any>`
   ${(props) => (props.create ? bgColor('blueQuan') : bgColor('white'))}
   border-radius: 8px;
