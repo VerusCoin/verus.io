@@ -5,7 +5,7 @@
       "@/components/*": ["./components/*"],
       "@/types/*": ["./types/*"],
       "@/styles/*": ["./styles/*"],
-      "@/data/*": ["./data/*"],
+      "@/data/*": ["./data/*"]
     },
     "target": "esnext",
     "module": "esnext",
