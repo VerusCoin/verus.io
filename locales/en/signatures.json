@@ -1,8 +1,5 @@
 {
-  "jumbotron": {
-    "heading": "Verify Verus Signatures",
-    "text": "Verify signatures from messages, files or hashes with our easy to use tool."
-  },
+  "heading": "Verify signatures from messages, files and hashes.",
   "tab": {
     "message": {
       "tab": "Message/Text",

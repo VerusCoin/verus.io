@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
@@ -42,21 +42,34 @@ const TooltipBox = styled.div<any>`
   padding: 8px 8px;
   border-radius: 8px;
   opacity: ${(props: any) => (props.copyStat ? '1' : '0')};
-  transition: visibility 2.5s, opacity 1s ease-in-out;
+
   &:after {
     content: ' ';
     position: absolute;
     top: 100%; /* At the bottom of the tooltip */
-    left: 50%;
+    right: 50%;
     margin-left: -15px;
     border-width: 10px;
     border-style: solid;
     border-color: #3165d4 transparent transparent transparent;
   }
 `
+// transition: visibility 1s, opacity 1s ease-in-out;
 const AddressCopy = ({ text }: { text: string }) => {
   const { t } = useTranslation('common')
+
   const [copy, setCopy] = useState(false)
+  useEffect(() => {
+    let timer: any = null
+    if (copy) {
+      timer = setTimeout(() => {
+        setCopy(!copy)
+      }, 2000)
+    }
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [copy])
   return (
     <StyledAddress>
       <StyledAddressBox>
