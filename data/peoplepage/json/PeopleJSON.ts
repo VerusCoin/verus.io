@@ -4,40 +4,45 @@ export const PeopleJSON: IPeopleJSON = {
   leads: [
     {
       per: 'michaelJToutonghi',
-
-      twitter: '#',
+      twitter: 'https://twitter.com/MikeToutonghi',
     },
     {
       per: 'michaelFToutonghi',
-
-      twitter: '#',
+      twitter: 'https://twitter.com/michaeltooot',
     },
     {
       per: 'alexREnglish',
+      twitter: 'https://twitter.com/solidfreez',
     },
     {
       per: 'asherDawes',
     },
     {
       per: 'davidDawes',
+      twitter: 'https://twitter.com/DavidLDawes',
     },
     {
       per: 'jl777',
     },
     {
       per: 'nicholasLyons',
+      twitter: 'https://twitter.com/lyonsnicholas1',
     },
     {
       per: 'oink',
+      twitter: 'https://twitter.com/oink1970',
     },
     {
       per: 'maxTheyse',
+      twitter: 'https://twitter.com/M_eyse',
     },
     {
       per: 'chrisMonkins',
+      twitter: 'https://twitter.com/monkins1010',
     },
     {
       per: 'rozo',
+      twitter: 'https://twitter.com/BitcoinMinerNC',
     },
     {
       per: 'diesmaster',

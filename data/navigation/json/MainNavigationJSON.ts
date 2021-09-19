@@ -105,7 +105,7 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'faq',
           link: 'faqPage',
-          href: '/coin/#FAQ',
+          href: '/faq',
           description: true,
         },
       ],

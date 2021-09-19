@@ -31,7 +31,7 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'faq',
-          href: '/coin/#FAQ',
+          href: '/faq',
         },
         {
           name: 'exchanges',
