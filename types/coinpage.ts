@@ -23,3 +23,9 @@ export interface IFAQItem {
   link?: string
   query?: string
 }
+
+export type FaqpageProps = {
+  data: {
+    FaqJSON: IFAQ
+  }
+}

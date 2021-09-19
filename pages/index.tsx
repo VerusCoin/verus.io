@@ -1,4 +1,5 @@
 import React from 'react'
+import { NextSeo } from 'next-seo'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import useTranslation from 'next-translate/useTranslation'
 import { HomepageProps } from 'types/homepage'
@@ -18,6 +19,8 @@ const Home = ({
   data,
 }: HomepageProps): InferGetStaticPropsType<typeof getStaticProps> => {
   const { t } = useTranslation('home')
+  const title = t('seo:page.index.title')
+  const description = t('seo.page.index.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     color: 'default',
@@ -31,44 +34,51 @@ const Home = ({
 
   const CardList = data.CardsJSON
   return (
-    <MainLayout jumbotronData={JumbotronJSON}>
-      <Grid>
-        <Banner />
+    <>
+      <NextSeo title={title} description={description} />
+      <MainLayout jumbotronData={JumbotronJSON}>
+        <Grid>
+          <Banner />
 
-        {CardList.map((card, index) => {
-          const heading = t(`cards.${card.card}.header`)
-          return (
-            <Card key={index}>
-              <Img height="75px" name={card.svg} />
-              <CardHeader text={heading} />
-              <CardText text={t(`cards.${card.card}.text`)} />
-            </Card>
-          )
-        })}
-        <DefaultLinkCard card="create" />
-        <DefaultLinkCard card="foundation" />
-        <DefaultLinkCard card="global" />
-        <DefaultLinkCard card="coin" />
+          {CardList.map((card, index) => {
+            const heading = t(`cards.${card.card}.header`)
+            return (
+              <Card key={index}>
+                <Img height="75px" name={card.svg} />
+                <CardHeader text={heading} />
+                <CardText text={t(`cards.${card.card}.text`)} />
+              </Card>
+            )
+          })}
+          <DefaultLinkCard card="create" />
+          <DefaultLinkCard card="foundation" />
+          <DefaultLinkCard card="global" />
+          <DefaultLinkCard card="coin" />
 
-        <KnowCards>
-          <CardText fontSz="xs" color="white" text={t('cards.knowCard.know')} />
-          <CardText
-            book
-            fontSz="sm"
-            color="white"
-            text={t('cards.knowCard.header')}
-          />
+          <KnowCards>
+            <CardText
+              fontSz="xs"
+              color="white"
+              text={t('cards.knowCard.know')}
+            />
+            <CardText
+              book
+              fontSz="sm"
+              color="white"
+              text={t('cards.knowCard.header')}
+            />
 
-          <CardText
-            fontSz="mdlg"
-            color="white"
-            text={t('cards.knowCard.text')}
-          />
-        </KnowCards>
-      </Grid>
+            <CardText
+              fontSz="mdlg"
+              color="white"
+              text={t('cards.knowCard.text')}
+            />
+          </KnowCards>
+        </Grid>
 
-      <Blog {...data.BlogJSON} />
-    </MainLayout>
+        <Blog {...data.BlogJSON} />
+      </MainLayout>
+    </>
   )
 }
 

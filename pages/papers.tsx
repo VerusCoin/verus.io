@@ -1,3 +1,5 @@
+import { NextSeo } from 'next-seo'
+import useTranslation from 'next-translate/useTranslation'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { IPapersPageProps, IPaper } from '@/types/paperspage'
 import { MainLayout, Section } from '@/components/layouts'
@@ -15,19 +17,25 @@ const Papers = ({
   data,
 }: IPapersPageProps): InferGetStaticPropsType<typeof getStaticProps> => {
   const PaperListData = data.PapersJSON.data
+  const { t } = useTranslation()
+  const title = t('seo:page.papers.title')
+  const description = t('seo.page.papers.description')
   return (
-    <MainLayout>
-      <StyledHeader>
-        <DefaultHeader as="h2" align="center">
-          {data.PapersJSON.title}
-        </DefaultHeader>
-      </StyledHeader>
-      <Section width={720}>
-        {PaperListData.map((paper: IPaper, index: number) => (
-          <PaperList key={index} {...paper} />
-        ))}
-      </Section>
-    </MainLayout>
+    <>
+      <NextSeo title={title} description={description} />
+      <MainLayout>
+        <StyledHeader>
+          <DefaultHeader as="h2" align="center">
+            {data.PapersJSON.title}
+          </DefaultHeader>
+        </StyledHeader>
+        <Section width={720}>
+          {PaperListData.map((paper: IPaper, index: number) => (
+            <PaperList key={index} {...paper} />
+          ))}
+        </Section>
+      </MainLayout>
+    </>
   )
 }
 

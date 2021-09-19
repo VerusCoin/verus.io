@@ -1,4 +1,5 @@
 import React from 'react'
+import { NextSeo } from 'next-seo'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
@@ -126,6 +127,8 @@ const People = ({
   data,
 }: PeoplePageProps): InferGetStaticPropsType<typeof getStaticProps> => {
   const { t } = useTranslation('people')
+  const title = t('seo:page.people.title')
+  const description = t('seo.page.people.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
@@ -135,53 +138,56 @@ const People = ({
   const support = data.PeopleJSON.support
 
   return (
-    <MainLayout jumbotronData={JumbotronJSON}>
-      <StyledGridContainer>
-        <StyledSVG>
-          <Img name="contribute" height={323} />
-        </StyledSVG>
-        {leads.map((lead) => (
-          <StyledCard key={lead.per}>
-            <CardText
-              book
-              fontSz="modal"
-              margin="6px 0 0 0"
-              text={t(`leads.${lead.per}.name`)}
-            />
-            <CardText
-              color="#676767"
-              fontSz="sm"
-              margin="12px 0 0 0"
-              text={t(`leads.${lead.per}.title`)}
-            />
-            <StyledLinks>
-              {lead.linkedIn && (
-                <Button transparent as="a" href="#" target="_blank">
-                  <SVGs name="linkedIn" />
-                </Button>
-              )}
-              {lead.twitter && (
-                <Button transparent as="a" href="#" target="_blank">
-                  <SVGs name="twitter" />
-                </Button>
-              )}
-            </StyledLinks>
-            <CardText
-              className="bio"
-              align="left"
-              text={t(`leads.${lead.per}.description`)}
-            />
-          </StyledCard>
-        ))}
-        <StyledSmallContainer>
-          {support.map((person) => (
-            <DefaultText key={person.per} fam="geoHead" fontSz="modal">
-              {person.per}
-            </DefaultText>
+    <>
+      <NextSeo title={title} description={description} />
+      <MainLayout jumbotronData={JumbotronJSON}>
+        <StyledGridContainer>
+          <StyledSVG>
+            <Img name="contribute" height={323} />
+          </StyledSVG>
+          {leads.map((lead) => (
+            <StyledCard key={lead.per}>
+              <CardText
+                book
+                fontSz="modal"
+                margin="6px 0 0 0"
+                text={t(`leads.${lead.per}.name`)}
+              />
+              <CardText
+                color="#676767"
+                fontSz="sm"
+                margin="12px 0 0 0"
+                text={t(`leads.${lead.per}.title`)}
+              />
+              <StyledLinks>
+                {lead.linkedIn && (
+                  <Button transparent as="a" href="#" target="_blank">
+                    <SVGs name="linkedIn" />
+                  </Button>
+                )}
+                {lead.twitter && (
+                  <Button transparent as="a" href="#" target="_blank">
+                    <SVGs name="twitter" />
+                  </Button>
+                )}
+              </StyledLinks>
+              <CardText
+                className="bio"
+                align="left"
+                text={t(`leads.${lead.per}.description`)}
+              />
+            </StyledCard>
           ))}
-        </StyledSmallContainer>
-      </StyledGridContainer>
-    </MainLayout>
+          <StyledSmallContainer>
+            {support.map((person) => (
+              <DefaultText key={person.per} fam="geoHead" fontSz="modal">
+                {person.per}
+              </DefaultText>
+            ))}
+          </StyledSmallContainer>
+        </StyledGridContainer>
+      </MainLayout>
+    </>
   )
 }
 

@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next'
+import { NextSeo } from 'next-seo'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
@@ -146,96 +147,106 @@ const Desktop = ({
   published_at: string
 }) => {
   const { t } = useTranslation('walletDesktop')
+  const title = t('seo:page.desktop.title')
+  const description = t('seo.page.desktop.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
     width: 1000,
   }
   return (
-    <MainLayout jumbotronData={JumbotronJSON}>
-      <StyledContainer>
-        <Card
-          styles={
-            'background-color: transparent; min-height:unset; padding: 0 30px 50px ;'
-          }
-          tabletStyles={
-            ' min-height:unset; padding: 0 60px 75px ; max-width:unset;'
-          }
-          desktopStyles={' padding: 0 60px 100px; height: unset !important;'}
-        >
-          <StyledMenu>
+    <>
+      <NextSeo title={title} description={description} />
+      <MainLayout jumbotronData={JumbotronJSON}>
+        <StyledContainer>
+          <Card
+            styles={
+              'background-color: transparent; min-height:unset; padding: 0 30px 50px ;'
+            }
+            tabletStyles={
+              ' min-height:unset; padding: 0 60px 75px ; max-width:unset;'
+            }
+            desktopStyles={' padding: 0 60px 100px; height: unset !important;'}
+          >
+            <StyledMenu>
+              <DesktopDownload
+                linuxApp={linuxApp}
+                winApp={winApp}
+                macApp={macApp}
+                armApp={armApp}
+              />
+              <StyledInfo>
+                <CardText
+                  className="info"
+                  margin="0"
+                  fontSz="xs"
+                  align="left"
+                  text={t('common:latestVersion', { walletVersion: name })}
+                />
+                <CardText
+                  className="info"
+                  margin="16px 0"
+                  fontSz="xs"
+                  align="left"
+                  text={t('common:released', {
+                    release: formatDateFromString(published_at),
+                  })}
+                />
+                <Button
+                  className="external"
+                  transparent
+                  svg={{ type: 'miniTab', rotate: false }}
+                  href="https://github.com/VerusCoin/Verus-Desktop/releases/latest"
+                  as="a"
+                  color="#3165d4"
+                  margin="0"
+                  fontSize="xs"
+                  target="_blank"
+                >
+                  {t('common:githubRepo')}
+                </Button>
+              </StyledInfo>
+            </StyledMenu>
+          </Card>
+          <StyledCard getToKnow bg>
+            <CardText
+              book
+              fontSz="mdlg"
+              margin="0"
+              text={t('cards.getToKnow')}
+            />
+          </StyledCard>
+          <StyledCard staking bg>
+            <CardText book fontSz="mdlg" margin="0" text={t('cards.staking')} />
+          </StyledCard>
+          <StyledCard convert>
+            <NetTag net="test" unMargin />
+            <CardText book fontSz="mdlg" margin="0" text={t('cards.convert')} />
+          </StyledCard>
+
+          <CoinCard
+            header={t('cards.support.header')}
+            text={t('cards.support.text')}
+          />
+
+          <StyledCard>
+            <CardText
+              book
+              fontSz="mdlg"
+              margin="0 0 50px"
+              text={t('cards.store')}
+            />
             <DesktopDownload
               linuxApp={linuxApp}
               winApp={winApp}
               macApp={macApp}
               armApp={armApp}
             />
-            <StyledInfo>
-              <CardText
-                className="info"
-                margin="0"
-                fontSz="xs"
-                align="left"
-                text={t('common:latestVersion', { walletVersion: name })}
-              />
-              <CardText
-                className="info"
-                margin="16px 0"
-                fontSz="xs"
-                align="left"
-                text={t('common:released', {
-                  release: formatDateFromString(published_at),
-                })}
-              />
-              <Button
-                className="external"
-                transparent
-                svg={{ type: 'miniTab', rotate: false }}
-                href="https://github.com/VerusCoin/Verus-Desktop/releases/latest"
-                as="a"
-                color="#3165d4"
-                margin="0"
-                fontSize="xs"
-                target="_blank"
-              >
-                {t('common:githubRepo')}
-              </Button>
-            </StyledInfo>
-          </StyledMenu>
-        </Card>
-        <StyledCard getToKnow bg>
-          <CardText book fontSz="mdlg" margin="0" text={t('cards.getToKnow')} />
-        </StyledCard>
-        <StyledCard staking bg>
-          <CardText book fontSz="mdlg" margin="0" text={t('cards.staking')} />
-        </StyledCard>
-        <StyledCard convert>
-          <NetTag net="test" unMargin />
-          <CardText book fontSz="mdlg" margin="0" text={t('cards.convert')} />
-        </StyledCard>
-
-        <CoinCard
-          header={t('cards.support.header')}
-          text={t('cards.support.text')}
-        />
-
-        <StyledCard>
-          <CardText
-            book
-            fontSz="mdlg"
-            margin="0 0 50px"
-            text={t('cards.store')}
-          />
-          <DesktopDownload
-            linuxApp={linuxApp}
-            winApp={winApp}
-            macApp={macApp}
-            armApp={armApp}
-          />
-        </StyledCard>
-        <WalletSubtext />
-      </StyledContainer>
-    </MainLayout>
+          </StyledCard>
+          <WalletSubtext />
+        </StyledContainer>
+      </MainLayout>
+    </>
   )
 }
 

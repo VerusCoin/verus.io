@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo'
 import { GetServerSideProps } from 'next'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
@@ -118,81 +119,86 @@ const Mobile = ({
   published_at: string
 }) => {
   const { t } = useTranslation('walletMobile')
+  const title = t('seo:page.mobile.title')
+  const description = t('seo.page.mobile.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
     width: 1000,
   }
   return (
-    <MainLayout jumbotronData={JumbotronJSON}>
-      <StyledContainer>
-        <Card
-          styles={
-            'background-color: transparent; min-height:unset; padding: 0 30px 50px ;'
-          }
-          tabletStyles={
-            ' min-height:unset; padding: 0 60px 75px ; max-width:unset;'
-          }
-          desktopStyles={' padding: 0 60px 100px; height: unset !important;'}
-        >
-          <StyledMenu>
-            <MobileDownload />
-            <StyledInfo>
-              <CardText
-                className="info"
-                margin="0"
-                fontSz="xs"
-                align="left"
-                text={t('common:latestVersion', { walletVersion: name })}
-              />
-              <CardText
-                className="info"
-                margin="16px 0"
-                fontSz="xs"
-                align="left"
-                text={t('common:released', {
-                  release: formatDateFromString(published_at),
-                })}
-              />
-              <Button
-                className="external"
-                transparent
-                svg={{ type: 'miniTab', rotate: false }}
-                href="https://github.com/VerusCoin/Verus-Mobile/releases/latest"
-                as="a"
-                color="#3165d4"
-                margin="0"
-                fontSize="xs"
-                target="_blank"
-              >
-                {t('common:githubRepo')}
-              </Button>
-            </StyledInfo>
-          </StyledMenu>
-        </Card>
-        <StyledCard wallet bg>
-          <CardText book fontSz="mdlg" margin="0" text={t('cards.wallet')} />
-        </StyledCard>
-        <StyledCard verusId bg>
-          <CardText book fontSz="mdlg" margin="0" text={t('cards.verusId')} />
-        </StyledCard>
+    <>
+      <NextSeo title={title} description={description} />
+      <MainLayout jumbotronData={JumbotronJSON}>
+        <StyledContainer>
+          <Card
+            styles={
+              'background-color: transparent; min-height:unset; padding: 0 30px 50px ;'
+            }
+            tabletStyles={
+              ' min-height:unset; padding: 0 60px 75px ; max-width:unset;'
+            }
+            desktopStyles={' padding: 0 60px 100px; height: unset !important;'}
+          >
+            <StyledMenu>
+              <MobileDownload />
+              <StyledInfo>
+                <CardText
+                  className="info"
+                  margin="0"
+                  fontSz="xs"
+                  align="left"
+                  text={t('common:latestVersion', { walletVersion: name })}
+                />
+                <CardText
+                  className="info"
+                  margin="16px 0"
+                  fontSz="xs"
+                  align="left"
+                  text={t('common:released', {
+                    release: formatDateFromString(published_at),
+                  })}
+                />
+                <Button
+                  className="external"
+                  transparent
+                  svg={{ type: 'miniTab', rotate: false }}
+                  href="https://github.com/VerusCoin/Verus-Mobile/releases/latest"
+                  as="a"
+                  color="#3165d4"
+                  margin="0"
+                  fontSize="xs"
+                  target="_blank"
+                >
+                  {t('common:githubRepo')}
+                </Button>
+              </StyledInfo>
+            </StyledMenu>
+          </Card>
+          <StyledCard wallet bg>
+            <CardText book fontSz="mdlg" margin="0" text={t('cards.wallet')} />
+          </StyledCard>
+          <StyledCard verusId bg>
+            <CardText book fontSz="mdlg" margin="0" text={t('cards.verusId')} />
+          </StyledCard>
 
-        <CoinCard
-          header={t('cards.support.header')}
-          text={t('cards.support.text')}
-        />
-        <StyledCard>
-          <CardText
-            book
-            fontSz="mdlg"
-            margin="0 0 50px"
-            text={t('cards.useMobile')}
+          <CoinCard
+            header={t('cards.support.header')}
+            text={t('cards.support.text')}
           />
-          <MobileDownload />
-        </StyledCard>
-        <WalletSubtext />
-      </StyledContainer>
-    </MainLayout>
+          <StyledCard>
+            <CardText
+              book
+              fontSz="mdlg"
+              margin="0 0 50px"
+              text={t('cards.useMobile')}
+            />
+            <MobileDownload />
+          </StyledCard>
+          <WalletSubtext />
+        </StyledContainer>
+      </MainLayout>
+    </>
   )
 }
 

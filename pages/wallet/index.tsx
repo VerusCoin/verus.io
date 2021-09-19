@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo'
 import { GetServerSideProps } from 'next'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
@@ -133,99 +134,103 @@ const Wallet = ({
   published_at: string
 }) => {
   const { t } = useTranslation('wallet')
-
+  const title = t('seo:page.wallet.title')
+  const description = t('seo.page.wallet.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
     width: 1000,
   }
   return (
-    <MainLayout jumbotronData={JumbotronJSON}>
-      <Grid>
-        <StyledCard large desktop>
-          <CardHeader margin="0" text={t('cards.desktop.header')} />
-          <CardText margin="25px 0 0 " text={t('cards.desktop.text')} />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/wallet/desktop"
-            as="a"
-            color="#3165d4"
-            margin="65px 0 0 "
-          >
-            {t('cards.desktop.link')}
-          </Button>
-        </StyledCard>
-        <StyledCard large mobile>
-          <CardHeader margin="0" text={t('cards.mobile.header')} />
-          <CardText margin="25px 0 0 " text={t('cards.mobile.text')} />
-          <Button
-            transparent
-            svg={{ type: 'arrow', rotate: false }}
-            href="/wallet/mobile"
-            as="a"
-            color="#3165d4"
-            margin="65px 0 0 "
-          >
-            {t('cards.mobile.link')}
-          </Button>
-        </StyledCard>
-        <StyledCard>
-          <CardHeader margin="0" text={t('cards.cli.header')} />
-          <CardText margin="25px 0 0 " text={t('cards.cli.text')} />
-          <CLIdownload
-            linuxApp={linuxApp}
-            winApp={winApp}
-            macApp={macApp}
-            armApp={armApp}
-          />
-          <div>
-            <CardText
-              className="info"
-              margin="29px 0 0 "
-              fontSz="xs"
-              align="left"
-              text={t('common:latestVersion', { walletVersion: name })}
-            />
-            <CardText
-              className="info"
-              margin="16px 0"
-              fontSz="xs"
-              align="left"
-              text={t('common:released', {
-                release: formatDateFromString(published_at),
-              })}
-            />
+    <>
+      <NextSeo title={title} description={description} />
+      <MainLayout jumbotronData={JumbotronJSON}>
+        <Grid>
+          <StyledCard large desktop>
+            <CardHeader margin="0" text={t('cards.desktop.header')} />
+            <CardText margin="25px 0 0 " text={t('cards.desktop.text')} />
             <Button
-              className="external"
               transparent
-              svg={{ type: 'miniTab', rotate: false }}
-              href="https://github.com/VerusCoin/VerusCoin/releases/latest"
+              svg={{ type: 'arrow', rotate: false }}
+              href="/wallet/desktop"
               as="a"
               color="#3165d4"
-              margin="0"
-              fontSize="xs"
-              target="_blank"
+              margin="65px 0 0 "
             >
-              {t('common:githubRepo')}
+              {t('cards.desktop.link')}
             </Button>
-          </div>
-        </StyledCard>
-        <StyledCard>
-          <CardHeader margin="0" text={t('cards.storage.header')} />
-          <CardText margin="25px 0 0 " text={t('cards.storage.text')} />
-          <StyledDownload
-            href="https://paperwallet.veruscoin.io/VerusPaperWallet.zip"
-            download
-          >
-            <DefaultText align="center" fam="geoHead" fontSz="menu">
-              {t('cards.storage.download')}
-            </DefaultText>
-          </StyledDownload>
-        </StyledCard>
-        <WalletSubtext />
-      </Grid>
-    </MainLayout>
+          </StyledCard>
+          <StyledCard large mobile>
+            <CardHeader margin="0" text={t('cards.mobile.header')} />
+            <CardText margin="25px 0 0 " text={t('cards.mobile.text')} />
+            <Button
+              transparent
+              svg={{ type: 'arrow', rotate: false }}
+              href="/wallet/mobile"
+              as="a"
+              color="#3165d4"
+              margin="65px 0 0 "
+            >
+              {t('cards.mobile.link')}
+            </Button>
+          </StyledCard>
+          <StyledCard>
+            <CardHeader margin="0" text={t('cards.cli.header')} />
+            <CardText margin="25px 0 0 " text={t('cards.cli.text')} />
+            <CLIdownload
+              linuxApp={linuxApp}
+              winApp={winApp}
+              macApp={macApp}
+              armApp={armApp}
+            />
+            <div>
+              <CardText
+                className="info"
+                margin="29px 0 0 "
+                fontSz="xs"
+                align="left"
+                text={t('common:latestVersion', { walletVersion: name })}
+              />
+              <CardText
+                className="info"
+                margin="16px 0"
+                fontSz="xs"
+                align="left"
+                text={t('common:released', {
+                  release: formatDateFromString(published_at),
+                })}
+              />
+              <Button
+                className="external"
+                transparent
+                svg={{ type: 'miniTab', rotate: false }}
+                href="https://github.com/VerusCoin/VerusCoin/releases/latest"
+                as="a"
+                color="#3165d4"
+                margin="0"
+                fontSize="xs"
+                target="_blank"
+              >
+                {t('common:githubRepo')}
+              </Button>
+            </div>
+          </StyledCard>
+          <StyledCard>
+            <CardHeader margin="0" text={t('cards.storage.header')} />
+            <CardText margin="25px 0 0 " text={t('cards.storage.text')} />
+            <StyledDownload
+              href="https://paperwallet.veruscoin.io/VerusPaperWallet.zip"
+              download
+            >
+              <DefaultText align="center" fam="geoHead" fontSz="menu">
+                {t('cards.storage.download')}
+              </DefaultText>
+            </StyledDownload>
+          </StyledCard>
+          <WalletSubtext />
+        </Grid>
+      </MainLayout>
+    </>
   )
 }
 

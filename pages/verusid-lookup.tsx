@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { NextSeo } from 'next-seo'
 import styled from 'styled-components'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import useTranslation from 'next-translate/useTranslation'
@@ -135,7 +136,8 @@ type Inputs = {
 const VerusidLookup = () => {
   const { t } = useTranslation('verusid')
   const [verusID, setVerusID] = useState<any>({})
-
+  const title = t('seo:page.lookup.title')
+  const description = t('seo.page.lookup.description')
   const {
     register,
     handleSubmit,
@@ -163,87 +165,89 @@ const VerusidLookup = () => {
   }
 
   return (
-    <MainLayout>
-      <Grid>
-        <StyledContainer>
-          <Img name="VerusID_Search_Icon" height={132} />
-          {!verusID.result && (
-            <StyledForm onSubmit={handleSubmit(onSubmit)}>
-              <StyledFormRow>
-                <StyledInput
-                  type="text"
-                  placeholder={t('placeholder')}
-                  {...register('verusID', { required: true })}
-                />
-                {errors.verusID && <StyledError>{t('error')}</StyledError>}
-              </StyledFormRow>
-              <StyledSubmitButton type="submit" value={t('lookup')} />
-            </StyledForm>
-          )}
-          {verusID.error && (
-            <StyledResultError>
-              {t('resultError')} <pre>{verusID.error}</pre>
-            </StyledResultError>
-          )}
-          {verusID.result && (
-            <StyledData>
-              <StyledInputValue>
-                {verusID.result.identity.name}
-              </StyledInputValue>
-              <StyledResultsRow className="row">
-                <StyledResultLeft>{t('identity')}</StyledResultLeft>
-                <StyledResultRight>
-                  {verusID.result.identity.identityaddress}
-                </StyledResultRight>
-              </StyledResultsRow>
-              <StyledResultsRow className="row">
-                <StyledResultLeft>{t('revocation')}</StyledResultLeft>
-                <StyledResultRight>
-                  {verusID.result.identity.revocationauthority ===
-                  verusID.result.identity.identityaddress
-                    ? t('self')
-                    : verusID.result.identity.revocationauthority}
-                </StyledResultRight>
-              </StyledResultsRow>
-              <StyledResultsRow className="row">
-                <StyledResultLeft>{t('recovery')}</StyledResultLeft>
-                <StyledResultRight>
-                  {verusID.result.identity.recoveryauthority ===
-                  verusID.result.identity.identityaddress
-                    ? t('self')
-                    : verusID.result.identity.recoveryauthority}
-                </StyledResultRight>
-              </StyledResultsRow>
-              <StyledResultsRow className="row">
-                <StyledResultLeft>{t('private')}</StyledResultLeft>
-                <StyledResultRight>
-                  {verusID.result.identity.privateaddress}
-                </StyledResultRight>
-              </StyledResultsRow>
-              <StyledResultsRow>
-                <StyledResultLeft>{t('primary')}</StyledResultLeft>
-                <StyledResultRight>
-                  {verusID.result.identity.primaryaddresses.map(
-                    (address: string) => {
-                      return <p key={address}>{address}</p>
-                    }
-                  )}
-                </StyledResultRight>
-              </StyledResultsRow>
-              <Button
-                onClick={() => _handleReset()}
-                transparent
-                color="#3165d4"
-                margin="50px 0"
-              >
-                {t('another')}
-              </Button>
-            </StyledData>
-          )}
-        </StyledContainer>
-      </Grid>
-      <pre>{JSON.stringify(verusID.result, null, 2)}</pre>
-    </MainLayout>
+    <>
+      <NextSeo title={title} description={description} />
+      <MainLayout>
+        <Grid>
+          <StyledContainer>
+            <Img name="VerusID_Search_Icon" height={132} />
+            {!verusID.result && (
+              <StyledForm onSubmit={handleSubmit(onSubmit)}>
+                <StyledFormRow>
+                  <StyledInput
+                    type="text"
+                    placeholder={t('placeholder')}
+                    {...register('verusID', { required: true })}
+                  />
+                  {errors.verusID && <StyledError>{t('error')}</StyledError>}
+                </StyledFormRow>
+                <StyledSubmitButton type="submit" value={t('lookup')} />
+              </StyledForm>
+            )}
+            {verusID.error && (
+              <StyledResultError>
+                {t('resultError')} <pre>{verusID.error}</pre>
+              </StyledResultError>
+            )}
+            {verusID.result && (
+              <StyledData>
+                <StyledInputValue>
+                  {verusID.result.identity.name}
+                </StyledInputValue>
+                <StyledResultsRow className="row">
+                  <StyledResultLeft>{t('identity')}</StyledResultLeft>
+                  <StyledResultRight>
+                    {verusID.result.identity.identityaddress}
+                  </StyledResultRight>
+                </StyledResultsRow>
+                <StyledResultsRow className="row">
+                  <StyledResultLeft>{t('revocation')}</StyledResultLeft>
+                  <StyledResultRight>
+                    {verusID.result.identity.revocationauthority ===
+                    verusID.result.identity.identityaddress
+                      ? t('self')
+                      : verusID.result.identity.revocationauthority}
+                  </StyledResultRight>
+                </StyledResultsRow>
+                <StyledResultsRow className="row">
+                  <StyledResultLeft>{t('recovery')}</StyledResultLeft>
+                  <StyledResultRight>
+                    {verusID.result.identity.recoveryauthority ===
+                    verusID.result.identity.identityaddress
+                      ? t('self')
+                      : verusID.result.identity.recoveryauthority}
+                  </StyledResultRight>
+                </StyledResultsRow>
+                <StyledResultsRow className="row">
+                  <StyledResultLeft>{t('private')}</StyledResultLeft>
+                  <StyledResultRight>
+                    {verusID.result.identity.privateaddress}
+                  </StyledResultRight>
+                </StyledResultsRow>
+                <StyledResultsRow>
+                  <StyledResultLeft>{t('primary')}</StyledResultLeft>
+                  <StyledResultRight>
+                    {verusID.result.identity.primaryaddresses.map(
+                      (address: string) => {
+                        return <p key={address}>{address}</p>
+                      }
+                    )}
+                  </StyledResultRight>
+                </StyledResultsRow>
+                <Button
+                  onClick={() => _handleReset()}
+                  transparent
+                  color="#3165d4"
+                  margin="50px 0"
+                >
+                  {t('another')}
+                </Button>
+              </StyledData>
+            )}
+          </StyledContainer>
+        </Grid>
+      </MainLayout>
+    </>
   )
 }
 

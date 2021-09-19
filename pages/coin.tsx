@@ -1,4 +1,5 @@
 import React from 'react'
+import { NextSeo } from 'next-seo'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout } from '@/components/layouts'
@@ -13,6 +14,8 @@ const Coin = ({
   data,
 }: CoinpageProps): InferGetStaticPropsType<typeof getStaticProps> => {
   const { t } = useTranslation('coin')
+  const title = t('seo:page.coin.title')
+  const description = t('seo.page.coin.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
@@ -20,10 +23,13 @@ const Coin = ({
   }
 
   return (
-    <MainLayout jumbotronData={JumbotronJSON}>
-      <CardSection />
-      <FAQ {...data.FaqJSON} />
-    </MainLayout>
+    <>
+      <NextSeo title={title} description={description} />
+      <MainLayout jumbotronData={JumbotronJSON}>
+        <CardSection />
+        <FAQ {...data.FaqJSON} />
+      </MainLayout>
+    </>
   )
 }
 

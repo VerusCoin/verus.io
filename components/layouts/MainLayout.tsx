@@ -1,5 +1,6 @@
 // This will be the main standard layout for all pages
 import React from 'react'
+
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import { IMainLayout } from '@/types/layouts'

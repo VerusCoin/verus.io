@@ -80,6 +80,7 @@ const FAQ = ({ data }: IFAQ) => {
             </DefaultHeader>
           </Col>
         </Row>
+
         <Row justifyContent="center">
           <StyledAccordion allowZeroExpanded>
             {data.map((item, index) => (
