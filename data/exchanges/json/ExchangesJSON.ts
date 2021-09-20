@@ -1,39 +1,30 @@
 import { IExchanges } from '@/types/exchanges'
 
 export const ExchangesJSON: IExchanges = {
-  title: 'Exchange Listings',
-  text: 'We simply list the exchanges that are known to us that trade $VRSC.',
-  text2: 'Perform sufficient due-diligence on the exchange.',
   exchanges: [
     {
-      logo: '',
-      url: '#',
-      name: 'SafeTrade',
+      logo: 'safeTrade',
+      url: 'safe.trade',
     },
     {
-      logo: '',
-      url: '#',
-      name: 'Bithumb Global',
+      logo: 'atomicDex',
+      url: 'atomicdex.io',
     },
     {
-      logo: '',
-      url: '#',
-      name: 'WhiteBIT',
+      logo: 'whiteBit',
+      url: 'whitebit.com',
     },
     {
-      logo: '',
-      url: '#',
-      name: 'AtomicDEX',
+      logo: 'bitGlobal',
+      url: 'bitglobal.com',
     },
     {
-      logo: '',
-      url: '#',
-      name: 'Graviex',
+      logo: 'graviex',
+      url: 'graviex.net',
     },
     {
-      logo: '',
-      url: '#',
-      name: 'STEX',
+      logo: 'stex',
+      url: 'stex.com',
     },
   ],
 }

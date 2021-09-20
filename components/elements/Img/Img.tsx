@@ -12,12 +12,21 @@ interface ImgProp {
   name: string | undefined
   height?: number | string
   styles?: string
+  logo?: boolean
+  className?: string
 }
 
-const Img = ({ name, height = 100, styles }: ImgProp) => {
+const Img = ({ name, height = 100, styles, logo, className }: ImgProp) => {
+  let srcLocation = ''
+  if (logo) {
+    srcLocation = `/logos/${name}.svg`
+  } else {
+    srcLocation = `/svg/${name}.svg`
+  }
   return (
     <StyledImg
-      src={`/svg/${name}.svg`}
+      className={className}
+      src={srcLocation}
       height={height}
       styles={styles}
       alt=""

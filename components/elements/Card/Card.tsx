@@ -31,7 +31,8 @@ const StyledCard = styled.div<any>`
     min-width: 490px;
     max-width: none;
     ${(props: any) => props?.desktopStyles}
-    height: ${(props: any) => (props.large && '750px') || '480px'};
+    height: ${(props: any) =>
+      (props.large && '750px') || (props.medium && '570px') || '480px'};
     ${(props: any) => props.chain && 'background-size: 500px;'}
     ${(props: any) => props.coin && 'background-size: 550px;'}
     ${(props: any) => props.grid && 'background-size: 575px;'}
@@ -104,6 +105,7 @@ export interface CardProps {
   tabletStyles?: string
   desktopStyles?: string
   giantStyles?: string
+  medium?: boolean
   large?: boolean
   chain?: boolean
   coin?: boolean
@@ -121,6 +123,7 @@ const Card = ({
   tabletStyles,
   desktopStyles,
   giantStyles,
+  medium,
   large,
   chain,
   coin,
@@ -137,6 +140,7 @@ const Card = ({
       tabletStyles={tabletStyles}
       desktopStyles={desktopStyles}
       giantStyles={giantStyles}
+      medium={medium}
       large={large}
       chain={chain}
       coin={coin}

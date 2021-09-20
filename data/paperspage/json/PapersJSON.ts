@@ -12,12 +12,14 @@ export const PapersJSON: IPapers = {
         'Michael F. Toutonghi',
         'Alex R. English',
       ],
+      pages: 27,
     },
     {
       file: 'VerusPhaseI.pdf',
       title: 'Verus Phase I',
       heading: 'zk-SNARK Privacy and a Holistic Approach to ASICs',
-      writtenBy: 'Michael J. Toutonghi',
+      writtenBy: ['Michael J. Toutonghi'],
+      pages: 7,
     },
     {
       file: 'VerusPoP.pdf',
@@ -28,6 +30,7 @@ export const PapersJSON: IPapers = {
         'Michael F. Toutonghi',
         'John Westbrook',
       ],
+      pages: 15,
     },
   ],
 }

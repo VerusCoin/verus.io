@@ -13,5 +13,6 @@ export interface IPaper {
   file: string
   title: string
   heading: string
-  writtenBy: string | string[]
+  writtenBy: string[]
+  pages: number
 }
