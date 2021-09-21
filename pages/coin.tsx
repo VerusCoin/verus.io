@@ -2,8 +2,8 @@ import React from 'react'
 import { NextSeo } from 'next-seo'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import useTranslation from 'next-translate/useTranslation'
-import { MainLayout } from '@/components/layouts'
-
+import { MainLayout, Grid } from '@/components/layouts'
+import { DefaultLinkCard } from '@/components/elements'
 import { CoinpageProps } from '@/types/coinpage'
 
 import { FaqJSON } from '@/data/coinpage'
@@ -28,6 +28,11 @@ const Coin = ({
       <MainLayout jumbotronData={JumbotronJSON}>
         <CardSection />
         <FAQ {...data.FaqJSON} />
+        <Grid>
+          <DefaultLinkCard card="create" />
+          <DefaultLinkCard card="global" />
+          <DefaultLinkCard card="foundation" />
+        </Grid>
       </MainLayout>
     </>
   )

@@ -44,7 +44,7 @@ export const FooterJSON: IFooter = {
       items: [
         {
           name: 'create',
-          href: '/create-with-verus',
+          href: '/create',
         },
         {
           name: 'foundation',

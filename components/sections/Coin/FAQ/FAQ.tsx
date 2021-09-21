@@ -67,7 +67,7 @@ const StyledSVG = styled.div<any>`
   }
 `
 
-const FAQ = ({ data }: IFAQ) => {
+const FAQ = ({ title, data }: IFAQ) => {
   resetNextUuid()
   const { t } = useTranslation('faq')
   return (
@@ -76,7 +76,7 @@ const FAQ = ({ data }: IFAQ) => {
         <Row justifyContent="center">
           <Col col={12}>
             <DefaultHeader as="h3" align="center">
-              {t('heading')}
+              {t(title)}
             </DefaultHeader>
           </Col>
         </Row>

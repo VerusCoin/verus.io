@@ -26,9 +26,12 @@ const Home = ({
     color: 'default',
     buttons: [
       { text: t('jumbotron.buttons.first'), href: '/economy' },
-      { text: t('jumbotron.buttons.second'), href: '/create-with-verus' },
+      { text: t('jumbotron.buttons.second'), href: '/create' },
     ],
-    youtube: { text: t('jumbotron.youtube'), href: '#' },
+    youtube: {
+      text: t('jumbotron.youtube'),
+      href: 'https://www.youtube.com/watch?v=eOn9XpjkuCA',
+    },
     width: 1000,
   }
 

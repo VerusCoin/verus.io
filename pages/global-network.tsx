@@ -6,6 +6,7 @@ import { MainLayout, Grid } from '@/components/layouts'
 import {
   Button,
   DefaultText,
+  DefaultLinkCard,
   Img,
   Card,
   CardText,
@@ -181,6 +182,11 @@ const Foundations = () => {
             {t('bridgeCard.link')}
           </Button> */}
           </Card>
+
+          <DefaultLinkCard card="create" />
+
+          <DefaultLinkCard card="foundation" />
+          <DefaultLinkCard card="coin" />
         </Grid>
         <Modal
           isShown={isShown}

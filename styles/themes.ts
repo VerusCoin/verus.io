@@ -35,7 +35,7 @@ const primary: DefaultTheme = {
   },
 
   spaces: {
-    xxs: spacing(1), //10px
+    xxs: spacing(0.5), //10px
     xs: spacing(2), //20px
     sm: spacing(3), //30px
     md: spacing(4), //40px

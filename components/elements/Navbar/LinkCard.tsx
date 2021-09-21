@@ -24,7 +24,7 @@ const StyledContent = styled.div`
   span {
     margin-top: 5px;
     font-family: ${(props) => props.theme.typo.primary.family};
-    color: ${(props) => props.theme.colors.black.primary};
+    color: #676767;
     ${fontSize('menuXs')}
   }
 `

@@ -135,7 +135,7 @@ const CardInfo = (name: string) => {
     case 'create':
       header = t('createCard.header')
       text = t('createCard.link')
-      href = '/create-with-verus'
+      href = '/create'
       return { header, href, text }
     default:
       return { header, href, text }

@@ -8,7 +8,7 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'build',
           link: 'createPage',
-          href: '/create-with-verus',
+          href: '/create',
           description: true,
         },
         {

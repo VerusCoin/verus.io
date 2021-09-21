@@ -1,7 +1,7 @@
 import { IFAQ } from '@/types/coinpage'
 
 export const FaqJSON: IFAQ = {
-  title: 'heading',
+  title: 'header',
   data: [
     {
       faq: 'ico',
