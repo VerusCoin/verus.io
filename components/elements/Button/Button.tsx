@@ -87,6 +87,7 @@ const StyledButton = styled.button<any>`
         fill: ${props.color || props.theme.buttons.secondary.text};
 
         ${props.svg?.rotate ? 'transform: rotate(-45deg);' : ''}
+        ${props.svg?.size ? `height: ${props.svg.size}px;` : ''}
       }
 
     `}
@@ -145,6 +146,7 @@ const Button = ({
       white={white}
       active={active}
       target={target}
+      rel={target && 'noreferrer'}
     >
       {children}
 

@@ -161,12 +161,22 @@ const People = ({
               />
               <StyledLinks>
                 {lead.linkedIn && (
-                  <Button transparent as="a" href="#" target="_blank">
+                  <Button
+                    transparent
+                    as="a"
+                    href={lead.linkedIn}
+                    target="_blank"
+                  >
                     <SVGs name="linkedIn" />
                   </Button>
                 )}
                 {lead.twitter && (
-                  <Button transparent as="a" href="#" target="_blank">
+                  <Button
+                    transparent
+                    as="a"
+                    href={lead.twitter}
+                    target="_blank"
+                  >
                     <SVGs name="twitter" />
                   </Button>
                 )}

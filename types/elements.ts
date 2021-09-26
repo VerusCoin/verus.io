@@ -9,6 +9,7 @@ export interface IButton {
   svg?: {
     type: 'arrow' | 'tab' | 'miniTab'
     rotate?: boolean
+    size?: number
   }
   onClick?: () => void
   small?: boolean
@@ -42,6 +43,7 @@ export interface IDefaultLink {
 export interface IDefaultText {
   children?: React.ReactNode
   customColor?: string
+  customMargin?: string
   width?: number
   align?: string
   fam?: string

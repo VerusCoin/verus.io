@@ -165,7 +165,7 @@ export const FooterJSON: IFooter = {
     companyName: 'The Verus Project',
     links: [
       {
-        href: '#',
+        href: '/privacy-policy',
         name: 'privacyPolicy',
       },
     ],

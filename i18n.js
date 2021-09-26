@@ -14,6 +14,7 @@ module.exports = {
     '/contribute': ['contribute', 'coins'],
     '/people': ['people'],
     '/papers': ['papers'],
+    '/privacy-policy': ['privacyPolicy'],
     '/wallet': ['wallet'],
     'rgx:/desktop': ['walletDesktop'],
     'rgx:/mobile': ['walletMobile'],

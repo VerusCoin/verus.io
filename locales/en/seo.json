@@ -63,6 +63,10 @@
     "faq": {
       "title": "FAQ",
       "description": "FAQ - frequently asked questions. The most common questions answered for you."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "Verus Privacy Policy"
     }
   },
   "keywords": {

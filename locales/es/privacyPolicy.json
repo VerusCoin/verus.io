@@ -1,0 +1,20 @@
+{
+  "heading": "Privacy Policy",
+  "general": {
+    "heading": "General",
+    "text1": "<0><1>We don't track you. We mean it.</1> We're big advocates for maximizing privacy and freedom.</0>",
+    "text2": "<0>This site doesn't set any cookies and uses no analytics or tracking tools. Feel free to check the source. The <1>Verus Insight Explorer</1> stores the coin symbol as well as the supplied client language in the browser, albeit not as a cookie.</0>"
+  },
+  "logs": {
+    "heading": "Logs",
+    "text": "Request information such as IP addresses and user agents may be stored in server log files for up to 14 days on encrypted volumes for maintenance and diagnostic purposes, and are not shared with third-parties."
+  },
+  "forms": {
+    "heading": "Forms",
+    "text": "Data submitted using forms, such as the Verus ID lookup or signature verification are only ever used to complete your request. The URL of the request is logged (refer to \"Logs\"); the response is not logged. Specifically, the API lookups will be proxied to an external API endpoint. Your IP address is not part of the proxied request."
+  },
+  "contact": {
+    "heading": "Contact",
+    "text": "<0>If you have any questions or concerns about this policy please contact us on our <1>official Discord</1> server.</0>"
+  }
+}
