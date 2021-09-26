@@ -137,7 +137,7 @@ const VerusidLookup = () => {
   const { t } = useTranslation('verusid')
   const [verusID, setVerusID] = useState<any>({})
   const title = t('seo:page.lookup.title')
-  const description = t('seo.page.lookup.description')
+  const description = t('seo:page.lookup.description')
   const {
     register,
     handleSubmit,

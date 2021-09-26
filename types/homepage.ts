@@ -1,15 +1,15 @@
 export type HomepageProps = {
   data: {
     CardsJSON: ICard[]
-    BlogJSON: IBlog
+    BlogJSON: IBlogItem[]
   }
 }
 
 export interface IBlogItem {
-  image: string
+  thumbnail: string
   title: string
-  date: string
-  href: string
+  pubDate: string
+  link: string
 }
 
 export interface IBlog {

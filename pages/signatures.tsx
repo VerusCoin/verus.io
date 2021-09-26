@@ -7,7 +7,7 @@ import { SigTab } from '@/components/sections/Signatures'
 const Signatures = () => {
   const { t } = useTranslation('signatures')
   const title = t('seo:page.signatures.title')
-  const description = t('seo.page.signatures.description')
+  const description = t('seo:page.signatures.description')
   return (
     <>
       <NextSeo title={title} description={description} />

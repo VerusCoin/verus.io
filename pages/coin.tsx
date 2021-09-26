@@ -1,6 +1,6 @@
 import React from 'react'
 import { NextSeo } from 'next-seo'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { GetServerSideProps } from 'next'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid } from '@/components/layouts'
 import { DefaultLinkCard } from '@/components/elements'
@@ -10,12 +10,10 @@ import { FaqJSON } from '@/data/coinpage'
 
 import { CardSection, FAQ } from '@/components/sections/Coin'
 
-const Coin = ({
-  data,
-}: CoinpageProps): InferGetStaticPropsType<typeof getStaticProps> => {
+const Coin = ({ data }: CoinpageProps) => {
   const { t } = useTranslation('coin')
   const title = t('seo:page.coin.title')
-  const description = t('seo.page.coin.description')
+  const description = t('seo:page.coin.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
@@ -40,12 +38,31 @@ const Coin = ({
 
 export default Coin
 
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      data: {
-        FaqJSON,
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const result = await fetch('https://explorer.verus.io/api/coinsupply')
+    let coinSupply = await result.json()
+    coinSupply = parseFloat(coinSupply.total)
+      .toFixed(0)
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    FaqJSON.coinSupply = coinSupply
+    return {
+      props: {
+        data: {
+          FaqJSON,
+        },
       },
-    },
+    }
+  } catch (err) {
+    console.error('error in coin page: %s', err)
+    FaqJSON.coinSupply = '62,467,134'
+    return {
+      props: {
+        data: {
+          FaqJSON,
+        },
+      },
+    }
   }
 }

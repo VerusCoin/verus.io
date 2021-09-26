@@ -5,12 +5,8 @@ import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout } from '@/components/layouts'
 import { Button, Card, CardText } from '@/components/elements'
-import {
-  fontFam,
-  bgColor,
-  formatDateFromString,
-  spacer,
-} from '@/styles/helpers'
+import dayjs from 'dayjs'
+import { fontFam, bgColor, spacer } from '@/styles/helpers'
 
 import {
   MobileDownload,
@@ -120,7 +116,7 @@ const Mobile = ({
 }) => {
   const { t } = useTranslation('walletMobile')
   const title = t('seo:page.mobile.title')
-  const description = t('seo.page.mobile.description')
+  const description = t('seo:page.mobile.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
@@ -156,7 +152,7 @@ const Mobile = ({
                   fontSz="xs"
                   align="left"
                   text={t('common:released', {
-                    release: formatDateFromString(published_at),
+                    release: dayjs(published_at).format('MMM DD, YYYY'),
                   })}
                 />
                 <Button

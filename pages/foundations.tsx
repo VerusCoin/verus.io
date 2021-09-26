@@ -41,7 +41,7 @@ const Foundations = () => {
     toggle()
   }
   const title = t('seo:page.foundations.title')
-  const description = t('seo.page.foundations.description')
+  const description = t('seo:page.foundations.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),

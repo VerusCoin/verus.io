@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-unused-vars */
 import React from 'react'
 import styled from 'styled-components'
 import { IBlogItem } from 'types/homepage'
@@ -18,7 +19,9 @@ const StyledBlogItem = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  max-width: 390px;
+  margin-right: auto;
+  margin-left: auto;
   border-radius: ${(props) => props.theme.borders.sm};
   box-shadow: 0 0 26px -4px rgba(0, 0, 0, 0.15);
   text-decoration: none;
@@ -36,16 +39,26 @@ const StyledBlogItem = styled.a`
   `}
 `
 
-const BlogItem: React.FC<IBlogItem> = ({ image, title, date, href }) => {
+const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
   return (
-    <StyledBlogItem href={href}>
+    <StyledBlogItem href={link} target="_blank" rel="noreferrer">
       <StyledImage>
-        <Image src={image} alt={title} width={360} height={185} />
+        <Image
+          src="/images/blog-example.png"
+          alt={thumbnail}
+          width={360}
+          height={185}
+        />
       </StyledImage>
 
-      <DefaultHeader as="h4">{title}</DefaultHeader>
+      <DefaultHeader
+        as="h4"
+        headerStyle="display:-webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"
+      >
+        {title}
+      </DefaultHeader>
 
-      <DefaultText>{dayjs(date).format('DD MMM YYYY')}</DefaultText>
+      <DefaultText>{dayjs(pubDate).format('DD MMM YYYY')}</DefaultText>
     </StyledBlogItem>
   )
 }

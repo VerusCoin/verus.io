@@ -1,5 +1,6 @@
 import React from 'react'
 import { NextSeo } from 'next-seo'
+import { GetServerSideProps } from 'next'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid, Section } from '@/components/layouts'
 import {
@@ -16,17 +17,35 @@ import {
   EconomicCard,
   Banner,
 } from '@/components/sections/Economy'
+import { HashRateConverter } from '@/styles/helpers'
 
-const Economy = () => {
+interface EconomyProps {
+  staking: string
+  hashRate: string
+  ProgressBarValue: number
+  coinSupply: string
+  mobile: string
+  desktop: string
+}
+
+const Economy = ({
+  staking,
+  hashRate,
+  ProgressBarValue,
+  coinSupply,
+  mobile,
+  desktop,
+}: EconomyProps) => {
   const { t } = useTranslation('economy')
+
   const title = t('seo:page.economy.title')
-  const description = t('seo.page.economy.description')
+  const description = t('seo:page.economy.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
     width: 1000,
   }
-  const ProgressBarValue = 75
+
   return (
     <>
       <NextSeo title={title} description={description} />
@@ -39,13 +58,13 @@ const Economy = () => {
               fontSz="xl"
               margin="27px 0 0 0"
               color="blue"
-              text="42,631,653"
+              text={staking}
             />
             <CardText
               book
               fontSz="sm"
               margin="16px 0 60px 0"
-              text={`/ 62,467,134 ${t('staking.outOf')}`}
+              text={`/ ${coinSupply} ${t('staking.outOf')}`}
             />
             <Progressbar value={ProgressBarValue} />
             <CardText
@@ -61,8 +80,9 @@ const Economy = () => {
               fontSz="xl"
               margin="27px 0 0 0"
               color="blue"
-              text="356 GH/s"
+              text={hashRate}
             />
+
             <CardText
               book
               fontSz="xs"
@@ -86,7 +106,7 @@ const Economy = () => {
                 book
                 fontSz="sm"
                 margin="0"
-                text={`118,666 ${t('hashrate.mobile')}`}
+                text={`${mobile} ${t('hashrate.mobile')}`}
               />
             </div>
             <CardText book fontSz="xs" text={t('hashrate.or')} />
@@ -107,7 +127,7 @@ const Economy = () => {
                 book
                 fontSz="sm"
                 margin="0"
-                text={`11,866 ${t('hashrate.desktop')}`}
+                text={`${desktop} ${t('hashrate.desktop')}`}
               />
             </div>
           </Card>
@@ -148,3 +168,56 @@ const Economy = () => {
 }
 
 export default Economy
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const MobileHash = 3000000 //3Mh
+  const DesktopHash = 30000000 //30Mh
+  try {
+    let result = await fetch('https://explorer.verus.io/api/getmininginfo')
+    const miningInfo = await result.json()
+    result = await fetch('https://explorer.verus.io/api/coinsupply')
+    let coinSupply = await result.json()
+    const mobile = (miningInfo.networkhashps / MobileHash)
+      .toFixed(0)
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    const desktop = (miningInfo.networkhashps / DesktopHash)
+      .toFixed(0)
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+
+    miningInfo.networkhashps = HashRateConverter(miningInfo.networkhashps)
+    const stakingSupply: any = parseFloat(miningInfo.stakingsupply).toFixed(0)
+    coinSupply = parseFloat(coinSupply.total).toFixed(0)
+    const ProgressBarValue: any = ((stakingSupply / coinSupply) * 100).toFixed(
+      0
+    )
+    coinSupply = coinSupply.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+
+    miningInfo.stakingsupply = stakingSupply
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    return {
+      props: {
+        staking: miningInfo.stakingsupply,
+        hashRate: miningInfo.networkhashps,
+        coinSupply: coinSupply,
+        ProgressBarValue: ProgressBarValue,
+        mobile: mobile,
+        desktop: desktop,
+      },
+    }
+  } catch (err) {
+    console.error('error in economy: %s', err)
+    return {
+      props: {
+        staking: '42,631,653',
+        hashRate: '800 GH/s',
+        coinSupply: '62,467,134',
+        ProgressBarValue: 75,
+        mobile: '118,666',
+        desktop: '11,866',
+      },
+    }
+  }
+}

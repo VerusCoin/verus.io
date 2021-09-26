@@ -14,7 +14,7 @@ const Papers = ({
   const PaperListData = data.PapersJSON.data
   const { t } = useTranslation('papers')
   const title = t('seo:page.papers.title')
-  const description = t('seo.page.papers.description')
+  const description = t('seo:page.papers.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     width: 1000,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { NextSeo } from 'next-seo'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { GetServerSideProps } from 'next'
 import useTranslation from 'next-translate/useTranslation'
 import { HomepageProps } from 'types/homepage'
 import { CardsJSON, BlogJSON } from '@/data/homepage'
@@ -15,12 +15,10 @@ import {
 
 import { Banner, Blog, KnowCards } from '@/components/sections/Home'
 
-const Home = ({
-  data,
-}: HomepageProps): InferGetStaticPropsType<typeof getStaticProps> => {
+const Home = ({ data }: HomepageProps) => {
   const { t } = useTranslation('home')
   const title = t('seo:page.index.title')
-  const description = t('seo.page.index.description')
+  const description = t('seo:page.index.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     color: 'default',
@@ -79,7 +77,7 @@ const Home = ({
           </KnowCards>
         </Grid>
 
-        <Blog {...data.BlogJSON} />
+        <Blog title={t('blog')} data={data.BlogJSON} />
       </MainLayout>
     </>
   )
@@ -87,13 +85,22 @@ const Home = ({
 
 export default Home
 
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      data: {
-        BlogJSON,
-        CardsJSON,
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const result = await fetch('http://localhost:3000/api/verusArticles')
+    const blogJSON = await result.json()
+
+    return {
+      props: {
+        data: { BlogJSON: blogJSON, CardsJSON },
       },
-    },
+    }
+  } catch (err) {
+    const blogJSON = BlogJSON.data
+    return {
+      props: {
+        data: { BlogJSON: blogJSON, CardsJSON },
+      },
+    }
   }
 }

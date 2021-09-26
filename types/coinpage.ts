@@ -16,6 +16,7 @@ export interface ICard {
 export interface IFAQ {
   title: string
   data: IFAQItem[]
+  coinSupply?: string | number
 }
 
 export interface IFAQItem {

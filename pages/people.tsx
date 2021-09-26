@@ -128,7 +128,7 @@ const People = ({
 }: PeoplePageProps): InferGetStaticPropsType<typeof getStaticProps> => {
   const { t } = useTranslation('people')
   const title = t('seo:page.people.title')
-  const description = t('seo.page.people.description')
+  const description = t('seo:page.people.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),

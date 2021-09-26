@@ -25,6 +25,7 @@ export interface CardTextProps {
   margin?: string
   styles?: string
   className?: string
+  odometer?: boolean
 }
 
 const CardText = ({

@@ -5,12 +5,8 @@ import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout } from '@/components/layouts'
 import { Button, Card, CardText, NetTag } from '@/components/elements'
-import {
-  fontFam,
-  bgColor,
-  formatDateFromString,
-  spacer,
-} from '@/styles/helpers'
+import dayjs from 'dayjs'
+import { fontFam, bgColor, spacer } from '@/styles/helpers'
 
 import {
   DesktopDownload,
@@ -148,7 +144,7 @@ const Desktop = ({
 }) => {
   const { t } = useTranslation('walletDesktop')
   const title = t('seo:page.desktop.title')
-  const description = t('seo.page.desktop.description')
+  const description = t('seo:page.desktop.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
@@ -183,13 +179,14 @@ const Desktop = ({
                   align="left"
                   text={t('common:latestVersion', { walletVersion: name })}
                 />
+
                 <CardText
                   className="info"
                   margin="16px 0"
                   fontSz="xs"
                   align="left"
                   text={t('common:released', {
-                    release: formatDateFromString(published_at),
+                    release: dayjs(published_at).format('MMM DD, YYYY'),
                   })}
                 />
                 <Button

@@ -3,36 +3,36 @@
   "header": "Frequently Asked Questions",
   "faqs": {
     "circSupply": {
-      "question": "What is VRSC circulating supply?",
-      "answer": "The circulating supply is {{circSupply}} VRSC."
+      "question": "What is $VRSC circulating supply?",
+      "answer": "The circulating supply is {{circSupply}} $VRSC."
     },
     "howDid": {
-      "question": "How did VRSC come into circulation?",
-      "answer": "All VRSC supply comes into public hands by mining and staking."
+      "question": "How did $VRSC come into circulation?",
+      "answer": "All $VRSC supply comes into public hands by mining and staking."
     },
     "maxSupply": {
-      "question": "What is VRSC maximum supply?",
-      "answer": "The maximum supply ever to come on the market is 83,540,184 VRSC."
+      "question": "What is $VRSC maximum supply?",
+      "answer": "The maximum supply ever to come on the market is 83,540,184 $VRSC."
     },
     "purchase": {
-      "question": "Where can I buy VRSC?",
-      "answer": "<0>You can buy VRSC through multiple exchanges. The exchanges are listed <1>here</1></0>"
+      "question": "Where can I buy $VRSC?",
+      "answer": "<0>You can buy $VRSC through multiple exchanges. The exchanges are listed <1>here</1></0>"
     },
     "ico": {
-      "question": "Was there an ICO for $Verus?",
-      "answer": "No. $Verus is fairly launched, with equal opportunity for everyone to earn coins through mining and staking. Also, $Verus had no premine, and has no developer fees."
+      "question": "Was there an ICO for Verus?",
+      "answer": "No. Verus is fairly launched, with equal opportunity for everyone to earn coins through mining and staking. Also, Verus had no premine, and has no developer fees."
     },
     "icoPrice": {
-      "question": "What was the VRSC ICO price?",
+      "question": "What was the $VRSC ICO price?",
       "answer": "Verus never had an ICO. All coins came fairly into the market by mining and staking."
     },
     "roadmap": {
       "question": "Where can I find a roadmap?",
-      "answer": "$Verus has no roadmaps or deadlines. We are a community project without central entity or commercial interests."
+      "answer": "Verus has no roadmaps or deadlines. We are a community project without central entity or commercial interests."
     },
     "mine": {
       "question": "Can I mine Verus?",
-      "answer": "<0>Yes. Anyone can start mining $Verus with a CPU and GPU. <1>Learn more</1></0>"
+      "answer": "<0>Yes. Anyone can start mining Verus with a CPU and GPU. <1>Learn more</1></0>"
     },
     "stake": {
       "question": "Can I stake Verus?",
@@ -44,7 +44,7 @@
     },
     "impermanent": {
       "question": "What is impermanent loss?",
-      "answer": "Impermanent loss is nothing more than the difference between constant-mix vs buy-and-hold strategy. An example: when you hold a currency that is 50/50% backed by VRSC and BTC, you might suffer an opportunity loss when compared to holding VRSC and BTC directly. The upside is you will have less risk."
+      "answer": "Impermanent loss is nothing more than the difference between constant-mix vs buy-and-hold strategy. An example: when you hold a currency that is 50/50% backed by $VRSC and BTC, you might suffer an opportunity loss when compared to holding $VRSC and BTC directly. The upside is you will have less risk."
     }
   }
 }

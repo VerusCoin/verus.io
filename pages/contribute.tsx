@@ -8,7 +8,7 @@ import { SocialCards, DonationSection } from '@/components/sections/Community'
 const Contribute = () => {
   const { t } = useTranslation('contribute')
   const title = t('seo:page.contribute.title')
-  const description = t('seo.page.contribute.description')
+  const description = t('seo:page.contribute.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),

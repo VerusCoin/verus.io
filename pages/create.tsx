@@ -42,7 +42,7 @@ const CreateWithVerus = () => {
     toggle()
   }
   const title = t('seo:page.create.title')
-  const description = t('seo.page.create.description')
+  const description = t('seo:page.create.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),

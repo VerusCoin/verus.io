@@ -3,6 +3,7 @@ import { GetServerSideProps } from 'next'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
+import dayjs from 'dayjs'
 import { MainLayout, Grid } from '@/components/layouts'
 import {
   Button,
@@ -10,7 +11,8 @@ import {
   CardText,
   DefaultText,
 } from '@/components/elements'
-import { fontFam, bgColor, formatDateFromString } from '@/styles/helpers'
+
+import { fontFam, bgColor } from '@/styles/helpers'
 
 import { CLIdownload, WalletSubtext } from '@/components/sections/Wallet'
 
@@ -135,7 +137,7 @@ const Wallet = ({
 }) => {
   const { t } = useTranslation('wallet')
   const title = t('seo:page.wallet.title')
-  const description = t('seo.page.wallet.description')
+  const description = t('seo:page.wallet.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     text: t('jumbotron.text'),
@@ -197,7 +199,7 @@ const Wallet = ({
                 fontSz="xs"
                 align="left"
                 text={t('common:released', {
-                  release: formatDateFromString(published_at),
+                  release: dayjs(published_at).format('MMM DD, YYYY'),
                 })}
               />
               <Button

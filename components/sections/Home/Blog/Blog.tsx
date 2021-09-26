@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import { IBlog } from '@/types/homepage'
 import { Row, Col, Container } from 'styled-bootstrap-grid'
 import parse from 'html-react-parser'
@@ -20,7 +21,7 @@ const StyledButtonContainer = styled.div`
   margin-top: ${(props) => props.theme.spaces.lg};
 `
 
-const Blog: React.FC<IBlog> = ({ title, data }) => {
+const Blog = ({ title, data }: IBlog) => {
   return (
     <StyledBlogItem>
       <Container>
@@ -31,7 +32,7 @@ const Blog: React.FC<IBlog> = ({ title, data }) => {
             <Row>
               {data.map((item, index) => {
                 return (
-                  <Col key={`blog_${index}`} col={12} lg={4}>
+                  <Col key={`blog_${index}`} col={12} md={6} lg={4}>
                     <BlogItem {...item} />
                   </Col>
                 )

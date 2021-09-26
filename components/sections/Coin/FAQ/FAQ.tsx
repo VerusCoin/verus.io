@@ -67,9 +67,11 @@ const StyledSVG = styled.div<any>`
   }
 `
 
-const FAQ = ({ title, data }: IFAQ) => {
+const FAQ = ({ title, data, coinSupply }: IFAQ) => {
   resetNextUuid()
   const { t } = useTranslation('faq')
+
+  const circSupply: string | number = coinSupply || '62,469,401'
   return (
     <StyledFAQ id="FAQ">
       <Container>
@@ -119,7 +121,7 @@ const FAQ = ({ title, data }: IFAQ) => {
                     />
                   ) : item.query ? (
                     <DefaultText fam="geoReg" fontSz="sm">
-                      {t(`faqs.${item.faq}.answer`, { circSupply: '[API]' })}
+                      {t(`faqs.${item.faq}.answer`, { circSupply: circSupply })}
                     </DefaultText>
                   ) : (
                     <DefaultText fam="geoReg" fontSz="sm">

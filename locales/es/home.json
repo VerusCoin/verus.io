@@ -2,7 +2,7 @@
   "jumbotron": {
     "heading": "Launch Your Project on the Internet of Value",
     "buttons": {
-      "first": "Earn in the network economy",
+      "first": "Earn: mining, staking, and more",
       "second": "Create products and services"
     },
     "youtube": "Watch introductory video on YouTube"
@@ -42,5 +42,6 @@
       "header": "<u>Verus</u> is Latin and means:",
       "text": "truth real actual genuine"
     }
-  }
+  },
+  "blog": "Latest articles from our blog."
 }

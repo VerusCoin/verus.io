@@ -12,7 +12,7 @@ const Exchanges = ({
 }: IExchangesPageProps): InferGetStaticPropsType<typeof getStaticProps> => {
   const { t } = useTranslation('exchanges')
   const title = t('seo:page.exchanges.title')
-  const description = t('seo.page.exchanges.description')
+  const description = t('seo:page.exchanges.description')
   const JumbotronJSON = {
     header: t('jumbotron.heading'),
     width: 1000,

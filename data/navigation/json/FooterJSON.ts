@@ -140,6 +140,10 @@ export const FooterJSON: IFooter = {
           name: 'brand',
           href: '#',
         },
+        {
+          name: 'contribute',
+          href: '/contribute',
+        },
       ],
     },
   ],
