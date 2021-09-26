@@ -20,10 +20,16 @@ const StyledDefaultLink = styled.a<any>`
 const DefaultLink: React.FC<IDefaultLink> = ({
   customColor,
   href,
+  external,
   children,
 }) => {
   return (
-    <StyledDefaultLink customColor={customColor} href={href}>
+    <StyledDefaultLink
+      customColor={customColor}
+      href={href}
+      target={external && '_blank'}
+      rel={external && 'noreferrer'}
+    >
       {children}
     </StyledDefaultLink>
   )

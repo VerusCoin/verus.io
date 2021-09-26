@@ -6,7 +6,6 @@ export const FooterJSON: IFooter = {
       svg: 'discordIcon',
       title: 'discord',
       href: 'https://discord.com/invite/VRKMP2S',
-
       label: {
         color: 'green',
       },
@@ -26,8 +25,8 @@ export const FooterJSON: IFooter = {
           href: '/Economy',
         },
         {
-          name: 'community',
-          href: '/community',
+          name: 'people',
+          href: '/people',
         },
         {
           name: 'faq',
@@ -64,7 +63,8 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'explorer',
-          href: 'https://explorer.verus.io/',
+          href: 'https://insight.verus.io/',
+          external: true,
         },
         {
           name: 'verusID',
@@ -82,42 +82,52 @@ export const FooterJSON: IFooter = {
         {
           name: 'twitter',
           href: 'https://twitter.com/veruscoin',
+          external: true,
         },
         {
           name: 'facebook',
           href: 'https://www.facebook.com/VerusCoin',
+          external: true,
         },
         {
           name: 'telegram',
           href: 'https://t.me/veruscommunity',
+          external: true,
         },
         {
           name: 'youtube',
           href: 'https://www.youtube.com/channel/UC_-KCHBxaDwSgNMdE3LMThg',
+          external: true,
         },
         {
           name: 'discord',
           href: 'https://discord.com/invite/VRKMP2S',
+          external: true,
         },
         {
           name: 'reddit',
           href: 'https://reddit.com/r/veruscoin',
+          external: true,
         },
         {
           name: 'medium',
           href: 'https://medium.com/veruscoin',
+          external: true,
         },
         {
           name: 'qq',
           href: 'https://qm.qq.com/cgi-bin/qm/qr?k=giXYZCf2m7UpB_I5uVs8yaxCB2oRuw3L&authKey=IiivzBvhfNBk3Pd8LJB9sn+GyrL9o39RkLB7k83Z+nLfZ2hBi0c3jbh9G0HNHjrV&noverify=0',
+          external: true,
         },
         {
           name: 'bitcointalk',
           href: 'https://bitcointalk.org/index.php?topic=4070404.0',
+          external: true,
         },
         {
           name: 'keybase',
           href: 'https://keybase.io/team/veruscoin',
+          external: true,
         },
       ],
     },
@@ -127,18 +137,22 @@ export const FooterJSON: IFooter = {
         {
           name: 'discord',
           href: 'https://discord.gg/VRKMP2S',
+          external: true,
         },
         {
           name: 'github',
           href: 'https://github.com/VerusCoin',
+          external: true,
         },
         {
           name: 'documentation',
           href: 'https://docs.verus.io',
+          external: true,
         },
         {
           name: 'brand',
-          href: '#',
+          href: 'https://github.com/VerusCoin/Media-Assets',
+          external: true,
         },
         {
           name: 'contribute',

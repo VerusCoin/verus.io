@@ -31,4 +31,5 @@ export interface IMenuSubItem {
 export interface IFooterItem {
   name: string
   href: string
+  external?: boolean
 }

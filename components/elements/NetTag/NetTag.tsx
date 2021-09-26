@@ -23,7 +23,7 @@ const StyledLabel = styled.span<any>`
   ${(props: any) =>
     props.netType === 'main'
       ? `background-color: ${props.theme.colors.green}; padding: 5px 15px;`
-      : props.netType === 'test'
+      : props.netType === 'test' || props.netType === 'pretest'
       ? `background-color: ${props.theme.colors.orange}; padding: 5px 19px;`
       : `background-color: #BEBEBE; padding: 5px 19px;`}
   color: ${(props) => props.theme.colors.white};
@@ -35,7 +35,7 @@ const StyledLabel = styled.span<any>`
 `
 
 export interface INetTag {
-  net: 'main' | 'test' | 'plan'
+  net: 'main' | 'test' | 'plan' | 'pretest'
   fam?: string
   fontSz?:
     | 'xxl'

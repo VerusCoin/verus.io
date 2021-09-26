@@ -41,7 +41,11 @@ const CategoryNavigation: React.FC<ICategoryNavigation> = ({
         {items.map((item, index) => {
           return (
             <li key={`categoryNav_${index}`}>
-              <DefaultLink href={item.href} customColor="grey">
+              <DefaultLink
+                href={item.href}
+                external={item.external}
+                customColor="grey"
+              >
                 {t(`${item.name}`)}
               </DefaultLink>
             </li>

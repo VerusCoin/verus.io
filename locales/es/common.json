@@ -1,6 +1,7 @@
 {
   "mainnet": "mainnet",
   "testnet": "testnet",
+  "pretestnet": "pre-testnet",
   "planned": "planned",
   "findMore": "Find out more",
   "globalCard": {

@@ -35,7 +35,7 @@ const StyledRow = styled.div`
     text-align: center;
   }
   div:last-child {
-    min-width: 87px;
+    min-width: 110px;
     justify-content: center;
   }
 `
@@ -153,7 +153,7 @@ const Foundations = () => {
                 <DefaultText fam="geoHead" fontSz="sm">
                   {t('coins:ethereum')}
                 </DefaultText>
-                <NetTag net="test" unMargin />
+                <NetTag net="pretest" unMargin />
               </StyledRow>
 
               {/* <StyledRow>

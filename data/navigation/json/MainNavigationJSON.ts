@@ -55,7 +55,7 @@ export const MainNavigationJSON: IMainNavigation = {
         {
           svg: 'explorer',
           link: 'explorerPage',
-          href: 'https://explorer.verus.io/',
+          href: 'https://insight.verus.io/',
           description: true,
           external: true,
         },

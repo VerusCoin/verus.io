@@ -102,7 +102,7 @@ const DonationInfo: Record<string, string> = {
 }
 
 const ExternalLink: Record<string, string> = {
-  verus: 'https://explorer.verus.io/address/',
+  verus: 'https://insight.verus.io/address/',
   bitcoin: 'https://www.blockchain.com/btc/address/',
   komodo: 'https://kmdexplorer.io/address/',
   ethereum: 'https://etherscan.io/address/',

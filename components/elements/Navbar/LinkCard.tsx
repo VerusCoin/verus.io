@@ -50,7 +50,7 @@ const StyledLinkSVG = styled.div`
   transition: opacity ${(props) => props.theme.transitions.regular};
 `
 
-const StyledLinkCard = styled.li`
+const StyledLinkCard = styled.li<any>`
   display: flex;
 
   text-decoration: none;
@@ -83,7 +83,12 @@ const LinkCard: React.FC<IMenuSubItem & { category: string }> = ({
 }) => {
   const { t } = useTranslation('navigation')
   return (
-    <StyledLinkCard href={href} as="a">
+    <StyledLinkCard
+      href={href}
+      as="a"
+      target={external && '_blank'}
+      rel={external && 'noreferrer'}
+    >
       <StyledLink>
         {svg && (
           <StyledSVG>

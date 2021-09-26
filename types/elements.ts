@@ -35,6 +35,7 @@ export interface IDefaultHeader {
 export interface IDefaultLink {
   children: React.ReactNode
   href: string
+  external?: boolean
   customColor?: string
 }
 
