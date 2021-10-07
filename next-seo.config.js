@@ -14,7 +14,7 @@ export const SEO = {
     description,
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_SITEURL}/images/logos/verus_og_image.png`,
+        url: `${process.env.NEXT_PUBLIC_SITEURL}/images/logos/open_graph_image.png`,
         alt: title,
         width: 1200,
         height: 630,

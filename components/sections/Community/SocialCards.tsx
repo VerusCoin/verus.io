@@ -85,6 +85,7 @@ const SocialCards = () => {
               href={SocialList[element]}
               as="a"
               color="#3165d4"
+              target="_blank"
             >
               {t(`links.${element}`)}
             </Button>

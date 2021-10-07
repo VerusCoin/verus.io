@@ -117,6 +117,7 @@ const Jumbotron = ({
                   as="a"
                   color="#676767"
                   margin="45px 0 0"
+                  target="_blank"
                 >
                   {youtube.text}
                 </Button>

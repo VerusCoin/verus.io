@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   result = null
 
   // NOTE: Comment below for master branch.
-  cache.clear()
+  cache.del(cacheArticles)
 
   if (!cache.get(cacheArticles)) {
     result = await fetch(

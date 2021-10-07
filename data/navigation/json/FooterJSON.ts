@@ -22,7 +22,7 @@ export const FooterJSON: IFooter = {
       items: [
         {
           name: 'openEconomy',
-          href: '/Economy',
+          href: '/economy',
         },
         {
           name: 'people',

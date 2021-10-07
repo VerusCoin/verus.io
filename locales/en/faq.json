@@ -28,11 +28,11 @@
     },
     "roadmap": {
       "question": "Where can I find a roadmap?",
-      "answer": "Verus has no roadmaps or deadlines. We are a community project without central entity or commercial interests."
+      "answer": "Verus has no roadmaps or deadlines. Verus is a community project without central entities dictating project direction or commercial interests."
     },
     "mine": {
       "question": "Can I mine Verus?",
-      "answer": "<0>Yes. Anyone can start mining Verus with a CPU and GPU. <1>Learn more</1></0>"
+      "answer": "<0>Yes. Anyone can start mining Verus efficiently with CPUs, mobile phone and ARM devices. <1>Learn more</1></0>"
     },
     "stake": {
       "question": "Can I stake Verus?",

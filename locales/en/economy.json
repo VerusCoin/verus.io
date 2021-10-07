@@ -15,7 +15,7 @@
     "or": "or",
     "desktop": "high-end CPUs"
   },
-  "note": "Reported hashrate on the network is 712 GH/s. 50% of reported hashrate is accounted for by proof-of-stake. Mobile phone average mining hashrate is 3 MH/s. High-end CPU average mining hashrate is 30 MH/s. Updates every 15 minutes.",
+  "note": "Reported hashrate on the network is {{totalHash}}. 50% of reported hashrate is accounted for by proof-of-stake. Mobile phone average mining hashrate is 3 MH/s. High-end CPU average mining hashrate is 30 MH/s. Updates every 15 minutes.",
   "participate": {
     "heading": "Participate in the network economy.",
     "mining": "Start mining",
@@ -41,6 +41,6 @@
   },
   "referral": {
     "heading": "VerusID referrals.",
-    "text": "Receive 20 $VRSC for each identity created with your VerusID as referral. This referral system goes three levels down. So you can earn up to 60 $VRSC."
+    "text": "Receive 20 VRSC for each identity created with your VerusID as referral. This referral system goes three levels down. So you can earn up to 60 VRSC."
   }
 }

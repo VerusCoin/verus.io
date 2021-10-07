@@ -5,7 +5,8 @@
       "@/components/*": ["./components/*"],
       "@/types/*": ["./types/*"],
       "@/styles/*": ["./styles/*"],
-      "@/data/*": ["./data/*"]
+      "@/data/*": ["./data/*"],
+      "@/helpers/*": ["./helpers/*"]
     },
     "target": "esnext",
     "module": "esnext",
@@ -28,5 +29,5 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.js"]
 }

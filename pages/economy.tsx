@@ -1,8 +1,10 @@
 import React from 'react'
+import useSWR from 'swr'
 import { NextSeo } from 'next-seo'
 import { GetServerSideProps } from 'next'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid, Section } from '@/components/layouts'
+
 import {
   DefaultText,
   Img,
@@ -17,26 +19,27 @@ import {
   EconomicCard,
   Banner,
 } from '@/components/sections/Economy'
-import { HashRateConverter } from '@/styles/helpers'
 
-interface EconomyProps {
-  staking: string
-  hashRate: string
-  ProgressBarValue: number
-  coinSupply: string
-  mobile: string
-  desktop: string
-}
+import { getVerusStats } from './api/verusNetworkStats'
 
-const Economy = ({
-  staking,
-  hashRate,
-  ProgressBarValue,
-  coinSupply,
-  mobile,
-  desktop,
-}: EconomyProps) => {
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
+
+// interface EconomyProps {
+//   staking: string
+//   hashRate: string
+//   ProgressBarValue: number
+//   coinSupply: string
+//   mobile: string
+//   desktop: string
+
+// }
+
+const Economy = ({ fallback }: { fallback: any }) => {
   const { t } = useTranslation('economy')
+  const { data } = useSWR('/api/verusNetworkStats', fetcher, {
+    refreshInterval: 60000,
+    fallback,
+  })
 
   const title = t('seo:page.economy.title')
   const description = t('seo:page.economy.description')
@@ -58,19 +61,19 @@ const Economy = ({
               fontSz="xl"
               margin="27px 0 0 0"
               color="blue"
-              text={staking}
+              text={data.staking}
             />
             <CardText
               book
               fontSz="sm"
               margin="16px 0 60px 0"
-              text={`/ ${coinSupply} ${t('staking.outOf')}`}
+              text={`/ ${data.coinSupply} ${t('staking.outOf')}`}
             />
-            <Progressbar value={ProgressBarValue} />
+            <Progressbar value={data.progressBarValue} />
             <CardText
               fontSz="sm"
               book
-              text={`${ProgressBarValue}% ${t('staking.staking')}`}
+              text={`${data.progressBarValue}% ${t('staking.staking')}`}
             />
           </Card>
           <Card styles="justify-content: flex-end; padding: 50px 20px;">
@@ -80,15 +83,18 @@ const Economy = ({
               fontSz="xl"
               margin="27px 0 0 0"
               color="blue"
-              text={hashRate}
+              text={data.miningHashRate}
             />
 
             <CardText
               book
               fontSz="xs"
               margin="47px 0 0 0"
-              text={t('hashrate.text')}
+              text={t('hashrate.text', {
+                totalHash: '0 h/s',
+              })}
             />
+
             <div
               style={{
                 marginTop: '16px',
@@ -106,7 +112,7 @@ const Economy = ({
                 book
                 fontSz="sm"
                 margin="0"
-                text={`${mobile} ${t('hashrate.mobile')}`}
+                text={`${data.mobile} ${t('hashrate.mobile')}`}
               />
             </div>
             <CardText book fontSz="xs" text={t('hashrate.or')} />
@@ -127,7 +133,7 @@ const Economy = ({
                 book
                 fontSz="sm"
                 margin="0"
-                text={`${desktop} ${t('hashrate.desktop')}`}
+                text={`${data.desktop} ${t('hashrate.desktop')}`}
               />
             </div>
           </Card>
@@ -170,54 +176,12 @@ const Economy = ({
 export default Economy
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const MobileHash = 3000000 //3Mh
-  const DesktopHash = 30000000 //30Mh
-  try {
-    let result = await fetch('https://explorer.verus.io/api/getmininginfo')
-    const miningInfo = await result.json()
-    result = await fetch('https://explorer.verus.io/api/coinsupply')
-    let coinSupply = await result.json()
-    const mobile = (miningInfo.networkhashps / MobileHash)
-      .toFixed(0)
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-    const desktop = (miningInfo.networkhashps / DesktopHash)
-      .toFixed(0)
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-
-    miningInfo.networkhashps = HashRateConverter(miningInfo.networkhashps)
-    const stakingSupply: any = parseFloat(miningInfo.stakingsupply).toFixed(0)
-    coinSupply = parseFloat(coinSupply.total).toFixed(0)
-    const ProgressBarValue: any = ((stakingSupply / coinSupply) * 100).toFixed(
-      0
-    )
-    coinSupply = coinSupply.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-
-    miningInfo.stakingsupply = stakingSupply
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-    return {
-      props: {
-        staking: miningInfo.stakingsupply,
-        hashRate: miningInfo.networkhashps,
-        coinSupply: coinSupply,
-        ProgressBarValue: ProgressBarValue,
-        mobile: mobile,
-        desktop: desktop,
+  const stats = await getVerusStats()
+  return {
+    props: {
+      fallback: {
+        '/api/verusNetworkStats': stats,
       },
-    }
-  } catch (err) {
-    console.error('error in economy: %s', err)
-    return {
-      props: {
-        staking: '42,631,653',
-        hashRate: '800 GH/s',
-        coinSupply: '62,467,134',
-        ProgressBarValue: 75,
-        mobile: '118,666',
-        desktop: '11,866',
-      },
-    }
+    },
   }
 }

@@ -38,17 +38,12 @@ const StyledBlogItem = styled.a`
     min-height: 350px;
   `}
 `
-
+// src="/images/blog-example.png"
 const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
   return (
     <StyledBlogItem href={link} target="_blank" rel="noreferrer">
       <StyledImage>
-        <Image
-          src="/images/blog-example.png"
-          alt={thumbnail}
-          width={360}
-          height={185}
-        />
+        <Image src={thumbnail} alt={thumbnail} width={360} height={185} />
       </StyledImage>
 
       <DefaultHeader

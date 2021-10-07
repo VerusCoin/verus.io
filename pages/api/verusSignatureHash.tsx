@@ -10,7 +10,7 @@ interface Query {
 }
 const FetchHash = async (query: Query) => {
   const signer = encodeURI(query.Identity)
-  const url = `${process.env.NEXT_PUBLIC_VERUSTOOL_URL}/verifyhash/?hash=${query.Hash}&signer=${signer}&signature=${query.Signature}`
+  const url = `${process.env.NEXT_PUBLIC_VERUSTOOL_URL}/verifyhash/?hash=${query['Hash']}&signer=${signer}&signature=${query['Signature']}`
   try {
     const result = await fetch(url)
     const data = await result.json()

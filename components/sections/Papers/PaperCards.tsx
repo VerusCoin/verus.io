@@ -11,19 +11,14 @@ const StyledDownload = styled.a<any>`
   display: inline-flex;
   align-items: center;
   border: 0;
-  padding: ${(props) => (props.small ? '12px 20px' : '16px 30px')};
+  padding: 16px 30px;
   background: ${(props) => props.theme.buttons.primary.bg};
   border-radius: ${(props) => props.theme.buttons.primary.radius};
   color: ${(props) => props.theme.buttons.primary.text};
   cursor: pointer;
   transition: background-color ${(props) => props.theme.transitions.regular};
   text-decoration: none;
-  font-family: ${(props) =>
-    props.fontRegular
-      ? props.theme.typo.primary.family
-      : props.theme.typo.header.family};
-
-  ${(props) => props.wide && `padding: 20px 30px;`}
+  font-family: ${(props) => props.theme.typo.header.family};
 
   ${media.desktop`
     ${(props: any) => props.wide && `padding: 20px 60px;`}
@@ -34,12 +29,7 @@ const StyledDownload = styled.a<any>`
   }
 
   &:hover {
-    background: ${(props) => props.theme.buttons.secondary.hover.bg};
-    color: ${(props) => props.theme.buttons.primary.bg};
-
-    svg {
-      fill: ${(props) => props.theme.buttons.primary.bg};
-    }
+    background: ${(props) => props.theme.buttons.primary.hover.bg};
   }
 `
 const StyledSVG = styled.div`

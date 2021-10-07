@@ -48,20 +48,23 @@ const VerifyResult = ({
   fileName,
 }: IVerifyResult) => {
   const { t } = useTranslation('signatures')
+
   return (
     <StyledContainer>
       <DefaultText fam="geoHead" fontSz="md">
         {t('results.title')}
         {sigResult !== undefined ? (
-          sigResult.valid === 'true' ? (
+          sigResult?.valid === 'true' ? (
             <span className="green">{t('results.valid')}</span>
-          ) : !sigResult.error ? (
+          ) : sigResult?.valid === 'false' ? (
             <span className="red">{t('results.inValid')}</span>
-          ) : (
+          ) : sigResult?.error ? (
             <span className="red">{sigResult.error_text}</span>
+          ) : (
+            t('results.processing')
           )
         ) : (
-          t('processing')
+          t('results.processing')
         )}
       </DefaultText>
 

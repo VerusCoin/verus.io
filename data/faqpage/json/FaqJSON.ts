@@ -11,11 +11,13 @@ export const FaqJSON: IFAQ = {
     },
     {
       faq: 'mine',
-      link: '/wallet',
+      link: 'https://docs.verus.io/economy/start-mining.html',
+      external: true,
     },
     {
       faq: 'stake',
-      link: '/wallet',
+      link: 'https://docs.verus.io/economy/start-staking.html',
+      external: true,
     },
     {
       faq: 'maxSupply',

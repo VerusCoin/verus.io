@@ -38,7 +38,8 @@ const MessageContent = () => {
         body: JSON.stringify(query),
       })
       const data = await result.json()
-      if (data) {
+
+      if (data.valid) {
         setSigResult(data)
       } else {
         setSigResult({

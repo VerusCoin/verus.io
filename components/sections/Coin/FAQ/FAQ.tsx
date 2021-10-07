@@ -115,6 +115,7 @@ const FAQ = ({ title, data, coinSupply }: IFAQ) => {
                             as="a"
                             color="#0A3FB1"
                             fontSize="sm"
+                            target={item.external && '_blank'}
                           />
                         ),
                       }}

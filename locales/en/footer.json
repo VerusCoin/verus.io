@@ -2,7 +2,7 @@
   "general": "General",
   "people": "People",
   "community": "Community",
-  "openEconomy": "Open Economy",
+  "openEconomy": "Mining & Staking",
   "faq": "FAQ",
   "exchanges": "Exchanges",
   "technology": "Technology",
@@ -35,7 +35,7 @@
     "discord": {
       "title": "Discord Server",
       "label": "Largest community hub",
-      "text": "Join the active Verus community with over 9K members for all questions and discussions."
+      "text": "Join the active Verus community with over 10K members for all questions and discussions."
     },
     "telegram": {
       "title": "Telegram Community",

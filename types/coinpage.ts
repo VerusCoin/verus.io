@@ -23,6 +23,7 @@ export interface IFAQItem {
   faq: string
   link?: string
   query?: string
+  external?: boolean
 }
 
 export type FaqpageProps = {

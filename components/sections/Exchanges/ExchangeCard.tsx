@@ -86,9 +86,10 @@ const ExchangeCard = ({ exchanges }: IExchanges) => {
           <Button
             transparent
             svg={{ type: 'tab', rotate: false }}
-            href={element.url}
+            href={`https://${element.url}`}
             as="a"
             color="#3165d4"
+            target="_blank"
           >
             {element.url}
           </Button>

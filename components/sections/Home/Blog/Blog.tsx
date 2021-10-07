@@ -40,7 +40,15 @@ const Blog = ({ title, data }: IBlog) => {
             </Row>
 
             <StyledButtonContainer>
-              <Button transparent wide svg={{ type: 'arrow', rotate: false }}>
+              <Button
+                transparent
+                as="a"
+                wide
+                color="#3165d4"
+                svg={{ type: 'tab', rotate: false }}
+                href="https://medium.com/veruscoin"
+                target="_blank"
+              >
                 Go to Blog
               </Button>
             </StyledButtonContainer>

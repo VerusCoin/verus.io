@@ -1,7 +1,7 @@
 const HashRate = ['H/s', 'KH/s', 'MH/s', 'GH/s', 'TH/s']
 
-const HashRateConverter = (hash: number): string => {
-  let hashValue: number | string = hash / 2 //GH/s
+const HashRateConverter = (hash: number, factor: number): string => {
+  let hashValue: number | string = hash / factor //GH/s
 
   const hashRateSize: number = Math.floor(Math.log(hashValue) / Math.log(1000))
   hashValue = (hashValue / Math.pow(1000, hashRateSize)).toFixed(0)

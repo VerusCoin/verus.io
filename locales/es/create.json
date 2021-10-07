@@ -57,7 +57,7 @@
       "text": "Cross-chain.<br/>Cross-networks.",
       "modal": {
         "header": "Send data and value across blockchains.",
-        "text": "With Verus Data Exchange Format (VDXF) you can define and publish data structures across blockchains and other systems. Combined with IPFS it’s an industry-leading and seamless experience to share verifiable data between systems. Next to that, through advanced bridging technology, value is easily transferred and converted from blockchain to blockchain. Connecting all blockchains and other systems is one of many Verus pillars."
+        "text": "With Verus Data Exchange Format (VDXF) you can define and publish data structures across blockchains and other systems. Combined with Arweave it’s an industry-leading and seamless experience to share verifiable data between systems. Next to that, through advanced bridging technology, value is easily transferred and converted from blockchain to blockchain. Connecting all blockchains and other systems is one of many Verus pillars."
       }
     },
     "changeWorld": {
