@@ -72,7 +72,7 @@ const StyledSocialCTA = styled.a<any>`
 const SocialCTA: React.FC<ISocialCTA> = ({ href, svg, title, label }) => {
   const { t } = useTranslation('footer')
   return (
-    <StyledSocialCTA href={href} target="_blank">
+    <StyledSocialCTA href={href} target="_blank" rel="norefferer">
       <StyledSVG>
         <SVGs name={svg} />{' '}
         {label && (

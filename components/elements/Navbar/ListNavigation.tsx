@@ -93,6 +93,7 @@ const ListNavigation: React.FC<IListNavigation> = ({ menu, target }) => {
                 as={item.href ? 'a' : 'span'}
                 href={item.href && item.href}
                 target={target}
+                rel={target && 'noreferrer'}
               >
                 {t(`${item.category}.title`)}
               </StyledLink>
