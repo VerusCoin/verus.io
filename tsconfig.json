@@ -29,5 +29,10 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "helpers/VerusIdProfile/CreateProfile.js"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "helpers/VerusIdProfile/CreateProfile.js"
+  ]
 }

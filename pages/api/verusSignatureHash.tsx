@@ -9,12 +9,21 @@ interface Query {
   [key: string]: string
 }
 const FetchHash = async (query: Query) => {
-  const signer = encodeURI(query.Identity)
-  const url = `${process.env.NEXT_PUBLIC_VERUSTOOL_URL}/verifyhash/?hash=${query['Hash']}&signer=${signer}&signature=${query['Signature']}`
+  const endpoint = `${process.env.NEXT_PUBLIC_VERUSTOOL_URL}/verify`
   try {
-    const result = await fetch(url)
-    const data = await result.json()
-    return data
+    const result = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        hash: query.Hash,
+        signer: query.Identity,
+        signature: query.Signature,
+      }),
+    }).then((res) => res.json())
+
+    return result
   } catch (error) {
     return {
       error: -5,
@@ -25,6 +34,7 @@ const FetchHash = async (query: Query) => {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const result = await FetchHash(req.body)
+
   if (!result.error) {
     res.json(result)
   } else {
