@@ -15,7 +15,7 @@ import Modal, { useModal } from '@/components/elements/Modal/Modal'
 import {
   EarthCard,
   KeychainCard,
-  Banner,
+  FoundationBanner,
   NetworkCard,
 } from '@/components/sections/Foundation'
 
@@ -158,7 +158,7 @@ const Foundations = () => {
               {`${t('common:findMore')}`}
             </Button>
           </Card>
-          <Banner />
+          <FoundationBanner />
           <NetworkCard>
             <div className="checkmark-image">
               <Img name="checkmark" />

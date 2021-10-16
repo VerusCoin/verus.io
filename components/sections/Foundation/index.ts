@@ -1,6 +1,6 @@
-import EarthCard from '../Create/CustomCards/EarthCard'
+import EarthCard from './EarthCard'
 import KeychainCard from './KeychainCard'
-import Banner from '../Economy/Banner'
+import FoundationBanner from './FoundationBanner'
 import NetworkCard from './NetworkCard'
 
-export { EarthCard, KeychainCard, Banner, NetworkCard }
+export { EarthCard, KeychainCard, FoundationBanner, NetworkCard }

@@ -1,4 +1,4 @@
-import Banner from '../Economy/Banner'
+import Banner from './Banner/Banner'
 import Blog from './Blog/Blog'
 import KnowCards from './CustomCards/KnowCard'
 

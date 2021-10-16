@@ -17,7 +17,7 @@ import {
 import {
   ParticipateCard,
   EconomicCard,
-  Banner,
+  EconomyBanner,
 } from '@/components/sections/Economy'
 
 import { getVerusStats } from './api/verusNetworkStats'
@@ -139,7 +139,7 @@ const Economy = ({ fallback }: { fallback: any }) => {
 
           <ParticipateCard />
           <EconomicCard />
-          <Banner />
+          <EconomyBanner />
           <Card desktopStyles="height: unset">
             <NetTag net="test" />
             <CardText book fontSz="xl" text={t('defi.heading')} />

@@ -1,5 +1,5 @@
-import Banner from './Banner'
+import EconomyBanner from './EconomyBanner'
 import ParticipateCard from './ParticipateCard'
 import EconomicCard from './EconomicCard'
 
-export { ParticipateCard, EconomicCard, Banner }
+export { ParticipateCard, EconomicCard, EconomyBanner }
