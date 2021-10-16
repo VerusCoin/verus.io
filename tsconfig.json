@@ -33,6 +33,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "helpers/VerusIdProfile/CreateProfile.js"
+    "helpers/**/*.js"
   ]
 }
