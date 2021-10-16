@@ -1,5 +1,10 @@
 import { IExchanges } from '@/types/exchanges'
 
+// {
+//   logo: 'bitGlobal',
+//   url: 'bitglobal.com',
+// },
+
 export const ExchangesJSON: IExchanges = {
   exchanges: [
     {
@@ -13,10 +18,6 @@ export const ExchangesJSON: IExchanges = {
     {
       logo: 'whiteBit',
       url: 'whitebit.com',
-    },
-    {
-      logo: 'bitGlobal',
-      url: 'bitglobal.com',
     },
     {
       logo: 'graviex',

@@ -10,7 +10,7 @@
   },
   "hashrate": {
     "heading": "Mining Hashrate",
-    "text": "Amount of devices mining indication",
+    "text": "Number of devices mining indication",
     "mobile": "mobile phones",
     "or": "or",
     "desktop": "high-end CPUs"
@@ -24,7 +24,7 @@
   },
   "economic": {
     "heading": "Earn from economic activity.",
-    "text": "Beside coinbase rewards, miners and stakers earn on fees paid to the protocol.",
+    "text": "Besides block rewards, miners and stakers earn on fees paid to the protocol.",
     "verus": "VerusID creation fees",
     "conversion": "Conversion fees",
     "blockchain": "Blockchain creation fees",

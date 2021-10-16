@@ -85,5 +85,6 @@ export const PeopleJSON: IPeopleJSON = {
     { per: 'Paia' },
     { per: 'Oliver Westbrook' },
     { per: "Ben O'Hanlon" },
+    { per: 'tango808' },
   ],
 }

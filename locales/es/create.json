@@ -33,7 +33,7 @@
       "text": "Create markets.<br/>Find funding.",
       "modal": {
         "header": "Always be able to convert coins and tokens.",
-        "text": "Whether you start a blockchain or token, each project can connect to the global network of liquidity provided by Verus. Powerful built-in DeFi technology makes sure you have instant liquidity for your project. Remember the days when you needed an exchange listing to create a market or find liquidity? Those days are over. Convert your coin or token for all ecosystem coins and tokens, and even bridged blockchains. It doesn’t stop here. To help you on your way, advanced funding options can help kickstart a project and raise funds. Your users are delighted they always have a price for their coins and tokens, and can always convert them."
+        "text": "Whether you start a blockchain or token, each project is connected to the global network of liquidity provided by Verus. Powerful built-in DeFi technology makes sure you have instant liquidity for your project. Remember the days when you needed an exchange listing to create a market or find liquidity? Those days are over. Convert your coin or token for all ecosystem coins and tokens, and even bridged blockchains. It doesn’t stop here. To help you on your way, advanced funding options can help kickstart a project and raise funds. Your users are delighted they always have a price for their coins and tokens, and can always convert them."
       }
     },
     "getPrivacy": {
@@ -57,7 +57,7 @@
       "text": "Cross-chain.<br/>Cross-networks.",
       "modal": {
         "header": "Send data and value across blockchains.",
-        "text": "With Verus Data Exchange Format (VDXF) you can define and publish data structures across blockchains and other systems. Combined with Arweave it’s an industry-leading and seamless experience to share verifiable data between systems. Next to that, through advanced bridging technology, value is easily transferred and converted from blockchain to blockchain. Connecting all blockchains and other systems is one of many Verus pillars."
+        "text": "With Verus Data Exchange Format (VDXF) you can define and publish data structures across blockchains and other systems. Combined with Arweave or any other decentralized storage, it’s an industry-leading and seamless experience to share verifiable data between systems. Next to that, through advanced bridging technology, value is easily transferred and converted from blockchain to blockchain. Connecting all blockchains and other systems is one of many Verus pillars."
       }
     },
     "changeWorld": {

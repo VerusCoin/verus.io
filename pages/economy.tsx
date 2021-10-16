@@ -24,16 +24,6 @@ import { getVerusStats } from './api/verusNetworkStats'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-// interface EconomyProps {
-//   staking: string
-//   hashRate: string
-//   ProgressBarValue: number
-//   coinSupply: string
-//   mobile: string
-//   desktop: string
-
-// }
-
 const Economy = ({ fallback }: { fallback: any }) => {
   const { t } = useTranslation('economy')
   const { data } = useSWR('/api/verusNetworkStats', fetcher, {
@@ -90,9 +80,7 @@ const Economy = ({ fallback }: { fallback: any }) => {
               book
               fontSz="xs"
               margin="47px 0 0 0"
-              text={t('hashrate.text', {
-                totalHash: '0 h/s',
-              })}
+              text={t('hashrate.text')}
             />
 
             <div
@@ -145,7 +133,7 @@ const Economy = ({ fallback }: { fallback: any }) => {
               customColor="#676767"
               align="center"
             >
-              {t('note')}
+              {t('note', { totalHash: data.totalHashRate })}
             </DefaultText>
           </Section>
 

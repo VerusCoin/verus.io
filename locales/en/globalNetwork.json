@@ -7,7 +7,7 @@
     "header": "Connecting </br> all blockchains together.",
     "modal": {
       "header": "All roads lead to Verus.",
-      "text": "Verus is uniquely positioned to be at the centre of the crypto industry. Here’s why. All blockchains, public or private, can easily connect to Verus through advanced bridging technology. As a multichain network, the blockchains created within the ecosystem can communicate with all other connected blockchains. All these internal and external interoperable blockchains can share data and value flawlessly. At the same time, they  leverage all Verus core technology, and the core technologies of the connected blockchains. Creating a giant network of value and data."
+      "text": "Verus is uniquely positioned to be at the centre of the crypto industry. Here’s why. All blockchains, public or private, can easily connect to Verus through advanced bridging technology. As a multichain network, the blockchains created within the ecosystem can communicate with all other connected blockchains in a completely decentralized fashion. All these internal and external interoperable blockchains can share data and value flawlessly. At the same time, they  leverage all Verus core technology, and the core technologies of the connected blockchains. Creating a giant network of value and data."
     }
   },
   "provisioningCard": {
@@ -27,7 +27,7 @@
   },
   "bridgeCard": {
     "header": "Bridged external blockchains.",
-    "text": "All PBaaS-blockchains can be automatically connected to the global network.",
+    "text": "All PBaaS-blockchains are automatically connected to the global network.",
     "link": "Get help to bridge your blockchain to Verus"
   }
 }
