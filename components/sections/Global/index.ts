@@ -1,2 +1,4 @@
-export { default as ChainCard } from './ChainCard'
-export { default as CurvCard } from './CurvCard'
+import ChainCard from './ChainCard'
+import CurvCard from './CurvCard'
+
+export { ChainCard, CurvCard }

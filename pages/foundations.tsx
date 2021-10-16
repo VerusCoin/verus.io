@@ -8,10 +8,8 @@ import {
   Img,
   Card,
   CardText,
-  Modal,
-  useModal,
 } from '@/components/elements'
-
+import Modal, { useModal } from '@/components/elements/Modal/Modal'
 // import { GetStaticProps, InferGetStaticPropsType } from 'next'
 // import { FoundationsProps } from '@/types/foundations'
 import {

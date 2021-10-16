@@ -1,2 +1,4 @@
-export { default as SocialCards } from './SocialCards'
-export { default as DonationSection } from './DonationSection'
+import SocialCards from './SocialCards'
+import DonationSection from './DonationSection'
+
+export { SocialCards, DonationSection }

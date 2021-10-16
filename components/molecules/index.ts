@@ -1,7 +1,17 @@
-export { default as CategoryNavigation } from './Footer/CategoryNavigation'
-export { default as Copyright } from './Footer/Copyright'
-export { default as Jumbotron } from './Jumbotron/Jumbotron'
-export { default as SocialCTA } from './Footer/SocialCTA'
-export { default as TopNavigation } from './Navigation/TopNavigation'
-export { default as MainNavigation } from './Navigation/MainNavigation'
-export { default as Footer } from './Footer/Footer'
+import CategoryNavigation from './Footer/CategoryNavigation'
+import Copyright from './Footer/Copyright'
+import Jumbotron from './Jumbotron/Jumbotron'
+import SocialCTA from './Footer/SocialCTA'
+import TopNavigation from './Navigation/TopNavigation'
+import MainNavigation from './Navigation/MainNavigation'
+import Footer from './Footer/Footer'
+
+export {
+  CategoryNavigation,
+  Copyright,
+  Jumbotron,
+  SocialCTA,
+  TopNavigation,
+  MainNavigation,
+  Footer,
+}

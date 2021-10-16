@@ -11,11 +11,9 @@ import {
   Card,
   CardText,
   NetTag,
-  Modal,
-  useModal,
   SVGs,
 } from '@/components/elements'
-
+import Modal, { useModal } from '@/components/elements/Modal/Modal'
 import { ChainCard, CurvCard } from '@/components/sections/Global'
 
 const StyledTable = styled.div`

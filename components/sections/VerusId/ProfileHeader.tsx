@@ -43,11 +43,11 @@ const ProfileHeader = ({
   profileHeader,
   verusId,
 }: {
-  profileHeader: any
+  profileHeader: Record<string, any>
   verusId: string
 }) => {
-  const avatar = profileHeader?.avatar
-  const header = profileHeader?.header
+  const avatar = profileHeader?.profileAvatar
+  const header = profileHeader?.profileHeader
 
   return (
     <>

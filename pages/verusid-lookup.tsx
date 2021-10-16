@@ -33,7 +33,7 @@ const VerusidLookup = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
   } = useForm<Inputs>()
 
@@ -47,8 +47,7 @@ const VerusidLookup = () => {
         setVerusID(data)
         setVerus(!verus)
       } else {
-        setVerusID({ error: data.error.message })
-        setVerus(!verus)
+        setVerusID({ error: 'error.message' })
       }
     }
   }
@@ -59,21 +58,13 @@ const VerusidLookup = () => {
     reset()
   }
 
-  // useEffect(async () => {
-  //   if (verusID) {
-  //     let result = await ArweaveData(
-  //       'UgykBtjqX91rfXstySlQQogpFhgTObNB17leqLBoF3Q'
-  //     )
-  //     console.log(result)
-  //   }
-  // }, [verusID])
   return (
     <>
       <NextSeo title={title} description={description} />
       <MainLayout>
         <Grid>
           <StyledContainer verus={verus}>
-            {verusID.result ? (
+            {isSubmitSuccessful && verusID.result ? (
               <ProfileHeader
                 profileHeader={verusID.profileJSON}
                 verusId={verusID.result.identity.name}
@@ -86,7 +77,7 @@ const VerusidLookup = () => {
                 <TypedJS strings={['Fetching', 'VerusID']} />
               </div>
             )}
-            {!verusID.result && !isSubmitting && (
+            {!isSubmitting && !verusID.result && (
               <StyledForm onSubmit={handleSubmit(onSubmit)}>
                 <StyledFormRow>
                   <StyledInput
@@ -99,16 +90,18 @@ const VerusidLookup = () => {
                 <StyledSubmitButton type="submit" value={t('lookup')} />
               </StyledForm>
             )}
-            {verusID.error && (
+            {!isSubmitting && verusID.error && (
               <StyledResultError>
                 {t('resultError')} <pre>{verusID.error}</pre>
               </StyledResultError>
             )}
-            {verusID.result && (
+            {isSubmitSuccessful && verusID.result && (
               <>
-                {verusID?.profileJSON && (
+                {verusID.profileJSON && (
                   <>
-                    <ProfileAccounts profileAccounts={verusID.profileJSON} />
+                    <ProfileAccounts
+                      profileAccounts={verusID.profileJSON.accounts}
+                    />
                     {/* <ProfileContent
                       profileContent={verusID.profileJSON}
                       vdxfidList={verusID.vdxfidList}

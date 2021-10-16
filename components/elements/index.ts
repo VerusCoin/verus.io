@@ -1,14 +1,25 @@
-export { default as Button } from './Button/Button'
-export { default as DefaultHeader } from './DefaultHeader/DefaultHeader'
-export { default as DefaultLink } from './DefaultLink/DefaultLink'
-export { default as DefaultText } from './DefaultText/DefaultText'
-export { default as NetTag } from './NetTag/NetTag'
-export { default as TypedJS } from './TypedJS/TypedJS'
-export { default as Modal } from './Modal/Modal'
-export { default as Img } from './Img/Img'
-export { default as Progressbar } from './Progressbar/Progressbar'
-export { default as AddressCopy } from './AddressCopy/AddressCopy'
-
+import Button from './Button/Button'
+import DefaultHeader from './DefaultHeader/DefaultHeader'
+import DefaultLink from './DefaultLink/DefaultLink'
+import DefaultText from './DefaultText/DefaultText'
+import NetTag from './NetTag/NetTag'
+import TypedJS from './TypedJS/TypedJS'
+import Img from './Img/Img'
+import Progressbar from './Progressbar/Progressbar'
+import AddressCopy from './AddressCopy/AddressCopy'
+import { SVGs } from './SVGs/SVGs'
 export * from './Card'
-export * from './Modal/Modal'
-export * from './SVGs/SVGs'
+
+// export * from './SVGs/SVGs'
+export {
+  Button,
+  DefaultHeader,
+  DefaultLink,
+  DefaultText,
+  NetTag,
+  TypedJS,
+  Img,
+  Progressbar,
+  AddressCopy,
+  SVGs,
+}

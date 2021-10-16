@@ -1,2 +1,4 @@
-export { default as CardSection } from './CardSection/CardSection'
-export { default as FAQ } from './FAQ/FAQ'
+import CardSection from './CardSection/CardSection'
+import FAQ from './FAQ/FAQ'
+
+export { CardSection, FAQ }

@@ -1,19 +1,17 @@
-import FetchVdxfId from './FetchVdxfId'
+import BuildVdxfid from './BuildVdxfid'
+
 import FetchVerusId from './FetchVerusId'
-import CreateProfileJSON from './CreateProfileJSON.js'
-import { ProfileLib, cacheProfiles } from './ProfileTypes.js'
-import BuildVdxfidCache from './ProfileTypes.js'
-import { isHex, isBase64url, reverseHex } from './TypeTests.js'
-import GetAccounts from './GetAccounts.js'
+import CreateProfile from './CreateProfile.js'
+import { reverseHex } from './Validators'
+
+import FetchArweaveProfile from './FetchArweaveProfile'
+
+export * from './ProfileTypes'
+
 export {
-  CreateProfileJSON,
-  FetchVdxfId,
+  FetchArweaveProfile,
   FetchVerusId,
-  isHex,
-  isBase64url,
+  BuildVdxfid,
+  CreateProfile,
   reverseHex,
-  BuildVdxfidCache,
-  ProfileLib,
-  cacheProfiles,
-  GetAccounts,
 }

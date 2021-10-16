@@ -1,4 +1,11 @@
-export { default as MainLayout } from './MainLayout'
-export { default as Section } from './SectionLayout'
-export { default as NarrowSection } from './NarrowSectionLayout'
-export { default as Grid } from './GridLayout'
+import MainLayout from './MainLayout'
+import NarrowSectionLayout from './NarrowSectionLayout'
+import SectionLayout from './SectionLayout'
+import GridLayout from './GridLayout'
+
+export {
+  MainLayout,
+  SectionLayout as Section,
+  NarrowSectionLayout as NarrowSection,
+  GridLayout as Grid,
+}

@@ -1,3 +1,5 @@
+import CryptoJS from 'crypto-js'
+
 const hexCharsregex = /[0-9A-Fa-f]{6}/g
 const base64urlregex = /^[A-Za-z0-9_-]+$/
 
@@ -15,4 +17,14 @@ export const isBase64url = (str) => {
 
 export const reverseHex = (hex) => {
   return hex.match(/../g).reverse().join('')
+}
+
+export const HexToBase64 = (hex) => {
+  if (isHex(hex)) {
+    return CryptoJS.enc.Hex.parse(hex)
+      .toString(CryptoJS.enc.Base64)
+      .replace('+', '-')
+      .replace('/', '_')
+      .replace(/=+$/, '')
+  }
 }

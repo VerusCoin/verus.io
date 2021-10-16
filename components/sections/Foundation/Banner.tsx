@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { Button, CardText, Modal, useModal } from '@/components/elements'
+import { Button, CardText } from '@/components/elements'
+import Modal, { useModal } from '@/components/elements/Modal/Modal'
 import useTranslation from 'next-translate/useTranslation'
 
 const StyledBanner = styled.div<any>`

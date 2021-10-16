@@ -7,9 +7,8 @@ import {
   DefaultLinkCard,
   Card,
   CardText,
-  Modal,
-  useModal,
 } from '@/components/elements'
+import Modal, { useModal } from '@/components/elements/Modal/Modal'
 import { MainLayout, Grid } from '@/components/layouts'
 
 import {

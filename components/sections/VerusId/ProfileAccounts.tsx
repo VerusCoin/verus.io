@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Img } from '@/components/elements'
 import { fontFam, bgColor } from '@/styles/helpers'
-import { GetAccounts } from '@/helpers/VerusIdProfile'
+import { AccountObjects } from '@/helpers/VerusIdProfile/ProfileTypes'
 import * as FontAwesome from 'react-icons/fa'
 
 const StyledContainer = styled.div`
@@ -53,9 +53,11 @@ function capitalizeFirstLetter(string: string) {
   return string[0].toUpperCase() + string.slice(1)
 }
 //TODO: need to clean up code
-const ProfileAccounts = ({ profileAccounts }: { profileAccounts: any }) => {
-  const accounts = GetAccounts(profileAccounts)
-
+const ProfileAccounts = ({
+  profileAccounts,
+}: {
+  profileAccounts: Record<string, AccountObjects>
+}) => {
   return (
     <>
       <StyledContainer>
@@ -64,25 +66,27 @@ const ProfileAccounts = ({ profileAccounts }: { profileAccounts: any }) => {
             Service Accounts
           </DefaultHeader>
         </StyledLabel> */}
-        {Object.keys(accounts.online).map((element: string, index: number) => {
-          const Icon = ObjectFinder(`Fa${capitalizeFirstLetter(element)}`)(
-            FontAwesome
-          )
+        {Object.keys(profileAccounts.online).map(
+          (element: string, index: number) => {
+            const Icon = ObjectFinder(`Fa${capitalizeFirstLetter(element)}`)(
+              FontAwesome
+            )
 
-          let accountName: any = ObjectFinder(element)(accounts.online)
-          if (accountName.accountname) {
-            accountName = accountName.accountname
-          } else {
-            accountName = accountName.accountid
+            let accountName: any = ObjectFinder(element)(profileAccounts.online)
+            if (accountName.accountname) {
+              accountName = accountName.accountname
+            } else {
+              accountName = accountName.accountid
+            }
+
+            return (
+              <StyledSocial key={index}>
+                <Icon size="1.5em" />
+                <p>{accountName}</p>
+              </StyledSocial>
+            )
           }
-
-          return (
-            <StyledSocial key={index}>
-              <Icon size="1.5em" />
-              <p>{accountName}</p>
-            </StyledSocial>
-          )
-        })}
+        )}
       </StyledContainer>
       <StyledContainer>
         {/* <StyledLabel>
@@ -90,19 +94,46 @@ const ProfileAccounts = ({ profileAccounts }: { profileAccounts: any }) => {
             Blockchain Accounts
           </DefaultHeader>
         </StyledLabel> */}
-        {Object.keys(accounts.crypto.identities).map((element, index) => {
+        {Object.keys(profileAccounts.crypto.identities).map(
+          (element, index) => {
+            return (
+              <StyledSocial key={index}>
+                {element === 'vrsc' && <Img name="verus-logo" />}
+                <p>
+                  {
+                    ObjectFinder(element)(profileAccounts.crypto.identities)
+                      .address
+                  }
+                </p>
+              </StyledSocial>
+            )
+          }
+        )}
+        {Object.keys(profileAccounts.crypto.addresses).map((element, index) => {
+          let image
+          switch (element) {
+            case 'vrsc':
+              image = 'verus-logo'
+              break
+            case 'eth':
+              image = 'ethereum-logo'
+              break
+            case 'btc':
+              image = 'bitcoin-logo'
+              break
+            default:
+              image = element
+          }
+
           return (
             <StyledSocial key={index}>
-              {element === 'vrsc' && <Img name="verus-logo" />}
-              <p>{ObjectFinder(element)(accounts.crypto.identities).address}</p>
-            </StyledSocial>
-          )
-        })}
-        {Object.keys(accounts.crypto.addresses).map((element, index) => {
-          return (
-            <StyledSocial key={index}>
-              {element === 'vrsc' && <Img name="verus-logo" />}
-              <p>{ObjectFinder(element)(accounts.crypto.addresses).address}</p>
+              <Img name={image} />
+              <p>
+                {
+                  ObjectFinder(element)(profileAccounts.crypto.addresses)
+                    .address
+                }
+              </p>
             </StyledSocial>
           )
         })}

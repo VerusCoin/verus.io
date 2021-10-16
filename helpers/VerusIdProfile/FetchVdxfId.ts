@@ -1,7 +1,6 @@
-// interface Query {
-//   [key: string]: string | number | Query | []
-// }
-const FetchVdxfId = async (vdxfuri: string) => {
+import { VDXFID } from './ProfileTypes'
+
+const FetchVdxfId = async (vdxfuri: string): Promise<VDXFID | null> => {
   const url = `${process.env.NEXT_PUBLIC_VERUSTOOL_URL}/getvdxfid`
   try {
     const result = await fetch(url, {

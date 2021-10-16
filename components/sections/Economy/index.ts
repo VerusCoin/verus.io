@@ -1,3 +1,5 @@
-export { default as ParticipateCard } from './ParticipateCard'
-export { default as EconomicCard } from './EconomicCard'
-export { default as Banner } from './Banner'
+import Banner from './Banner'
+import ParticipateCard from './ParticipateCard'
+import EconomicCard from './EconomicCard'
+
+export { ParticipateCard, EconomicCard, Banner }

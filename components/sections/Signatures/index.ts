@@ -1,1 +1,3 @@
-export { default as SigTab } from './SigTab'
+import SigTab from './SigTab'
+
+export { SigTab }

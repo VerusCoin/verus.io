@@ -1,4 +1,5 @@
-export { default as Banner } from './Banner/Banner'
+import Banner from '../Economy/Banner'
+import Blog from './Blog/Blog'
+import KnowCards from './CustomCards/KnowCard'
 
-export { default as Blog } from './Blog/Blog'
-export { default as KnowCards } from './CustomCards/KnowCard'
+export { Banner, Blog, KnowCards }
