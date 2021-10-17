@@ -22,9 +22,11 @@ const DefaultText: React.FC<IDefaultText> = ({
   fam,
   fontSz,
   className,
+  as,
 }) => {
   return (
     <StyledDefaultText
+      as={as}
       width={width}
       customColor={customColor}
       customMargin={customMargin}

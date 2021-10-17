@@ -1,14 +1,16 @@
 import styled from 'styled-components'
 import { PublicProfileLib } from '@/helpers/VerusIdProfile/ProfileTypes'
+import { DefaultText } from '@/components/elements'
 
 // const StyledText = styled.div`
 //   padding: 8px;
 // `
 
-const StyledImages = styled.div`
+const StyledImages = styled(DefaultText)`
   border: solid 1px rgba(0, 0, 0, 0.125);
   border-radius: 8px;
   padding: 8px;
+  width: fit-content;
 `
 
 const WebContent = ({ content }: { content: PublicProfileLib }) => {
@@ -16,15 +18,20 @@ const WebContent = ({ content }: { content: PublicProfileLib }) => {
     case 'text':
       //need to add sanitizer
       // const htmlElement = { __html: content.text.toString() }
-      return (
-        <div dangerouslySetInnerHTML={{ __html: content.text.toString() }} />
-      )
+      //need to check if has iframe or not. If not put content in DefaultText
+
+      if (content.text.toString().includes('iframe')) {
+        return (
+          <div dangerouslySetInnerHTML={{ __html: content.text.toString() }} />
+        )
+      } else {
+        return <DefaultText>{content.text.toString()}</DefaultText>
+      }
+
     case 'pre':
       //need to add sanitizer
       // const preElement = {  content.text.toString() }
-      return (
-        <pre dangerouslySetInnerHTML={{ __html: content.text.toString() }} />
-      )
+      return <DefaultText as="pre">{content.text.toString()}</DefaultText>
     case 'image':
       return (
         <StyledImages>

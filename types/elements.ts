@@ -50,6 +50,7 @@ export interface IDefaultText {
   gR?: boolean
   fontSz?: string
   className?: string
+  as?: 'p' | 'pre'
 }
 
 export interface ITypedJS {
