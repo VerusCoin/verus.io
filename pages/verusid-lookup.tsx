@@ -6,6 +6,7 @@ import { MainLayout, Grid } from '@/components/layouts'
 import { Img, TypedJS } from '@/components/elements'
 import {
   ProfileAccounts,
+  ProfileContent,
   ProfileHeader,
   VerusIdResults,
 } from '@/components/sections/VerusId'
@@ -55,6 +56,7 @@ const VerusidLookup = () => {
   const _handleReset = () => {
     setVerusID({})
     setVerus(!verus)
+    window.scrollTo(0, 0)
     reset()
   }
 
@@ -102,10 +104,9 @@ const VerusidLookup = () => {
                     <ProfileAccounts
                       profileAccounts={verusID.profileJSON.accounts}
                     />
-                    {/* <ProfileContent
-                      profileContent={verusID.profileJSON}
-                      vdxfidList={verusID.vdxfidList}
-                    /> */}
+                    <ProfileContent
+                      profileContent={verusID.profileJSON.content}
+                    />
                   </>
                 )}
                 <VerusIdResults
