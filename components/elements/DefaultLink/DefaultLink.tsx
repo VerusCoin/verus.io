@@ -10,6 +10,8 @@ const StyledDefaultLink = styled.a<any>`
   color: ${(props) =>
     props.customColor === 'grey'
       ? props.theme.colors.grey.tertiary
+      : props.customColor === 'blue'
+      ? '#3165d4'
       : props.theme.colors.white};
 
   &:hover {

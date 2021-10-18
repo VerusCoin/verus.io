@@ -47,21 +47,6 @@ const ProfileContent = ({
   } else {
     return null
   }
-  //need to filter each one but group those that are arweave and those that are web
-
-  //one content at a time, so filter out requirments and then fetch them. with the appropriate return
-  //first location of content
-  // let str: string | string[] = profileContent.qualifiedname
-  //   .toString()
-  //   .split('.')
-  // const strLength = str.length
-  //ether getting arweave or post for now
-  //second if arweave else web
-  // if (str[strLength - 2] === 'arweave') {
-
-  // } else {
-  //   return <WebContent content={profileContent} />
-  // }
 }
 
 export default ProfileContent

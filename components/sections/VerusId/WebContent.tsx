@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { PublicProfileLib } from '@/helpers/VerusIdProfile/ProfileTypes'
-import { DefaultText } from '@/components/elements'
+import { DefaultText, DefaultLink } from '@/components/elements'
 
 // const StyledText = styled.div`
 //   padding: 8px;
@@ -19,8 +19,12 @@ const WebContent = ({ content }: { content: PublicProfileLib }) => {
       //need to add sanitizer
       // const htmlElement = { __html: content.text.toString() }
       //need to check if has iframe or not. If not put content in DefaultText
-
-      if (content.text.toString().includes('iframe')) {
+      if (content.text.toString().includes('<iframe>')) {
+        return (
+          <div dangerouslySetInnerHTML={{ __html: content.text.toString() }} />
+        )
+      } else if (content.text.toString()[0] === '<') {
+        //found html beginning tag, need to control ouput
         return (
           <div dangerouslySetInnerHTML={{ __html: content.text.toString() }} />
         )
@@ -30,7 +34,6 @@ const WebContent = ({ content }: { content: PublicProfileLib }) => {
 
     case 'pre':
       //need to add sanitizer
-      // const preElement = {  content.text.toString() }
       return <DefaultText as="pre">{content.text.toString()}</DefaultText>
     case 'image':
       return (
@@ -41,13 +44,36 @@ const WebContent = ({ content }: { content: PublicProfileLib }) => {
           />
         </StyledImages>
       )
+    case 'url':
+      if (content.url.toString().includes('http')) {
+        return (
+          <DefaultLink
+            customColor="blue"
+            external
+            href={content.url.toString()}
+          >
+            {content.name.toString()}
+          </DefaultLink>
+        )
+      } else {
+        return (
+          <div>
+            Sorry, unable to process {content.type} content to display for{' '}
+            {content.name}
+          </div>
+        )
+      }
     default:
-      return (
-        <>
-          <div>Sorry, unable to process content to display</div>
-          <pre>{JSON.stringify(content, null, 2)}</pre>
-        </>
-      )
+      if (content.name) {
+        return (
+          <div>
+            Sorry, unable to process {content.type} content to display for{' '}
+            {content.name}
+          </div>
+        )
+      } else {
+        return <div>Sorry, unable to process content to display</div>
+      }
   }
 }
 
