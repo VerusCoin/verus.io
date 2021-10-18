@@ -1,11 +1,7 @@
-module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: '/downloads/:slug',
-        destination: '/docs/:slug',
-      },
-    ];
+const nextTranslate = require('next-translate')
+
+module.exports = nextTranslate({
+  images: {
+    domains: ['cdn-images-1.medium.com'],
   },
-  poweredByHeader: false,
-};
+})

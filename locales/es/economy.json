@@ -1,0 +1,46 @@
+{
+  "jumbotron": {
+    "heading": "Participate and earn.",
+    "text": "A thriving network economy."
+  },
+  "staking": {
+    "heading": "$VRSC Actively Staking",
+    "outOf": "total supply",
+    "staking": "is staking"
+  },
+  "hashrate": {
+    "heading": "Mining Hashrate",
+    "text": "Number of devices mining indication",
+    "mobile": "mobile phones",
+    "or": "or",
+    "desktop": "high-end CPUs"
+  },
+  "note": "Reported hashrate on the network is {{totalHash}}. 50% of reported hashrate is accounted for by proof-of-stake. Mobile phone average mining hashrate is 3 MH/s. High-end CPU average mining hashrate is 30 MH/s. Updates every 15 minutes.",
+  "participate": {
+    "heading": "Participate in the network economy.",
+    "mining": "Start mining",
+    "staking": "Start staking",
+    "schedule": "Halving schedule"
+  },
+  "economic": {
+    "heading": "Earn from economic activity.",
+    "text": "Besides coinbase rewards, miners and stakers earn on fees paid to the protocol.",
+    "verus": "VerusID creation fees",
+    "conversion": "Conversion fees",
+    "blockchain": "Blockchain creation fees",
+    "token": "Token creation fees",
+    "link": "Protocol fees"
+  },
+  "banner": {
+    "heading": "A green mining revolution.",
+    "text": "In the Verus multichain protocol you can mine up to 22 blockchains on one device. With the same hashrate. Boosting your mining efficiency and profits to great heights."
+  },
+  "defi": {
+    "heading": "DeFi conversions.",
+    "text": "If you hold DeFi tokens, you indirectly earn fees. When conversions happen between its reserves, a 0.025% fee stays in the token, giving it a higher value."
+  },
+  "referral": {
+    "heading": "VerusID referrals.",
+    "text": "Receive 20 VRSC for each identity created with your VerusID as referral. This referral system goes three levels down. So you can earn up to 60 VRSC."
+  }
+}

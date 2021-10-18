@@ -1,0 +1,47 @@
+{
+  "jumbotron": {
+    "heading": "Launch Your Project on the Internet of Value",
+    "buttons": {
+      "first": "Earn: mining, staking, and more",
+      "second": "Create products and services"
+    },
+    "youtube": "Watch introductory video on YouTube"
+  },
+  "banner": "Verus is scalable public infrastructure for the world.",
+  "cards": {
+    "pbaasCard": {
+      "header": "PBaaS",
+      "text": "Use Public Blockchains as a Service to deploy customizable, scalable and interoperable blockchains within minutes. No need to provision additional resources."
+    },
+    "verusCard": {
+      "header": "VerusID",
+      "text": "Digital identities for any project. Self-sovereign, decentralized or even centralized. The most complete identity system in the world."
+    },
+    "defiCard": {
+      "header": "DeFi",
+      "text": "Instant liquidity for blockchain and token projects. Create markets and find funding. Use for lending and borrowing."
+    },
+    "privCard": {
+      "header": "Privacy",
+      "text": "Your privacy is a human right. Get fully encrypted zero knowledge private transactions. "
+    },
+    "interopCard": {
+      "header": "Interoperability",
+      "text": "Exchange value and data seamlessly across blockchains. Connect any systems together with Verus advanced bridging technology."
+    },
+    "dataCard": {
+      "header": "Data",
+      "text": "Define and publish verifiable data structures across blockchains and other systems. With Verus Data Exchange Format (VDXF) it’s never been easier."
+    },
+    "paymentCard": {
+      "header": "Payments",
+      "text": "You get cheap, fast, scalable and final payments. An essential element of all decentralized systems."
+    },
+    "knowCard": {
+      "know": "Did you know?",
+      "header": "<u>Verus</u> is Latin and means:",
+      "text": "truth real actual genuine"
+    }
+  },
+  "blog": "Latest articles from our blog."
+}

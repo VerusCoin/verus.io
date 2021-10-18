@@ -1,0 +1,43 @@
+{
+  "heading": "Verify signatures from messages, files and hashes.",
+  "tab": {
+    "message": {
+      "tab": "Message/Text",
+      "input": "Message / Text",
+      "validate": "Message or text is required."
+    },
+    "file": {
+      "tab": "File",
+      "processing": "Please wait obtaining hash of file...",
+      "input": "Click to select or Drop the files here...",
+      "validate": "File is required"
+    },
+    "hash": {
+      "tab": "Hash",
+
+      "input": "Hash",
+      "validate": "Hash is required."
+    },
+    "error": "Currently experiencing network issues. Try again later."
+  },
+  "formField": {
+    "verusID": {
+      "input": "VerusID / i-address",
+      "validate": "VerusID or i-address is required."
+    },
+    "signature": {
+      "input": "Signature",
+      "validate": "Verus Signature is required."
+    }
+  },
+  "sign": "Sign files, messages or hashes yourself",
+  "text": "<1>Download Verus Desktop</1>, register your VerusID and start signing!",
+  "results": {
+    "title": "Verification Results: ",
+    "valid": "Is Valid",
+    "inValid": "Is not valid or incorrect information",
+    "processing": "Processing...",
+    "file": "File",
+    "button": "Verify Another Signature"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "placeholder": "Enter VerusID",
+  "lookup": "Lookup",
+  "error": "Please enter a VerusID",
+  "resultError": "Error in obtaining VerusID.",
+  "identity": "Identity Address",
+  "revocation": "Revocation Authority",
+  "self": "Self",
+  "recovery": "Recovery Authority",
+  "private": "Private Address",
+  "primary": "Primary Address(es)",
+  "another": "Lookup Another VerusID"
+}

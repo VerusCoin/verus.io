@@ -1,0 +1,68 @@
+{
+  "jumbotron": {
+    "heading": "Built to last.",
+    "text": "Strong foundations for continual growth."
+  },
+  "earthCard": {
+    "header": "Made for the world,<br/>by the community.",
+    "text": "No ICO.<br/>No premine.<br/>No founder fees.",
+    "modal": {
+      "header": "A true community project in the spirit of Bitcoin.",
+      "text": "Just like Bitcoin, every coin in circulation is fairly mined and staked. A quality to care deeply about. Here's why. Unlike other projects, Verus had no premine or ICO; funding which often goes into the pockets of a few, or can be dumped on the market at will. No venture capitalists or other obscured and parasitic entities dictate project direction. Who determines the direction of Verus you might ask yourself? You are. You are the community. Verus is uniquely positioned as a network for the public, made by the public. And nothing ever changes that."
+    }
+  },
+  "keychainCard": {
+    "header": "The most secure technology for storing wealth.",
+
+    "modal": {
+      "header": "Your wealth is protected against all attacks.",
+      "text": "Protected by a unique and secure consensus mechanism called Verus Proof of Power. 50% is proof-of-stake, and 50% is proof-of-work. To successfully attack the network, a bad actor must have at least 51% of all mining power and at least 51% of all staking supply. Truly an unimaginable challenge for any actor. It is fair to conclude Verus is resistant to 51% hash attacks. On top of that, you can set up vaults to protect your wealth. Use Verus Vault for vesting periods, trusts and inheritance. And secure yourself against hacks, theft, key loss and even “5$ wrench attacks.” Use the network with peace of mind, short and long-term."
+    }
+  },
+  "scalableLimits": {
+    "header": "Scalable without limits.",
+    "text": "Ready for world demand.",
+    "modal": {
+      "header": "A multichain network designed to scale.",
+      "text": "The network of blockchains is unlimitedly scalable. Blockchains are spawned from the Verus multichain and are maintained by the worldwide network. This is already one layer of scalability, but it won’t stop there. Blockchains that are spawned from the Verus mainchain, will be able to spawn blockchains too, and those will be able to spawn blockchains too. Creating an unprecedented network of blockchains that can grow and scale each direction. Miners can merge-mine up to 22 blockchains on the multichain network at once with no loss of performance, and can stake on any number of chains. The whole network shares mining power, increasing the total strength of the network, making unlimited scalability possible."
+    }
+  },
+  "topTier": {
+    "header": "Top-tier decentralized network.",
+    "text": "Proof-of-work & proof-of-stake.",
+    "modal": {
+      "header": "A naturally created decentralized network.",
+      "text": "The Verus network has more than 20,000 nodes. An unprecedentedly high number for any network. The network achieves high-grade decentralization through the combination of proof-of-work and proof-of-stake. The miner ecosystem is naturally decentralized because you don’t need specialized equipment to start mining. You can mine most cost-efficiently with consumer-grade CPUs, mobile phones and ARM devices. A great source of income for people in developing countries. Staking has never been easier. You only need a full node running on even modest hardware (a Raspberry Pi does the job), and any amount of $VRSC, there is no minimum and your funds aren't locked up while you're staking. Combined with a worldwide network of supporters and contributors, Verus is one of the most decentralized networks in the crypto industry."
+    }
+  },
+  "highEfficient": {
+    "header": "A highly efficient environmentally friendly network.",
+    "modal": {
+      "header": "A network that cares for the environment.",
+      "text": "The Verus multichain network is highly efficient. Here’s how. Each device can mine 22 other blockchains in the multichain network simultaneously, functionally multiplying hashrate by a factor of twenty-two. Low power devices such as mobile phones and ARMs can mine efficiently, making proof-of-work greener than ever before. The whole network shares mining power, making optimal use of all available miners, and strengthening the total network at the same time. Truly a green mining revolution. As for proof-of-stake, it has a negligible environmental impact, evidenced by the fact that Raspberry Pi’s are perfect staking devices."
+    }
+  },
+  "smartContracts": {
+    "header": "Don’t be afraid of faulty smart contracts.",
+    "modal": {
+      "header": "Use the network with confidence.",
+      "text": "To guarantee your and the system’s security, all functionality on the Verus blockchain is programmed in the protocol. Elements such as DeFi are considered mission-critical and must find their origin in the consensus layer. Functionality is directly connected to the miners and stakers. Verus prevents application developers from being responsible for systems security. Here’s why that’s an important design choice. You can see many problems arise with smart contracts on other blockchain systems. Vulnerabilities, bugs, abuse. New smart contract incidents occur each day. Not with Verus. Use Verus with confidence."
+    }
+  },
+  "quantumProof": {
+    "header": "Quantum resistant.",
+    "text": "Ready for the future.",
+    "modal": {
+      "header": "Ready for quantum computers.",
+      "text": "As always, Verus community developers are ahead of the curve. Already implemented Falcon512 signatures secure you against the inevitable arrival of quantum computers. Digital identity VerusID users can update to secure quantum resistant Q-addresses. Easily securing your funds against possible attacks. Users from other blockchain networks will flock to Verus as it is functioning as a safe harbor for wealth."
+    }
+  },
+  "mev": {
+    "header": "MEV can’t take advantage of you.",
+    "text": "No front-running.<br/>No chain reorgs.",
+    "modal": {
+      "header": "Miners and stakers can’t game the network.",
+      "text": "In many blockchain networks, users are taken advantage of. Here’s how. Miners and stakers can front-run conversions to get better deals for themselves. Meaning they extract value and negatively impact unassuming users. Or even worse, miners and stakers reorganize blockchains for monetary gain, jeopardizing chain security. The problem is called Miner Extractable Value (MEV) and is widely recognized. Verus solves the problem in an incredibly smart way. All conversions are simultaneously solved inside blocks, making it impossible to front-run users. And there’s more to keep miners and stakers honest without jeopardizing chain security. All protocol fees are collected in the Verus Fee Pool. Each new block receives 1% of the Fee Pool, added on top of the coinbase rewards. It’s a great way to keep the chain secure. And the network fair for all participants involved."
+    }
+  }
+}

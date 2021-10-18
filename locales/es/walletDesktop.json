@@ -1,0 +1,23 @@
+{
+  "jumbotron": {
+    "heading": "Verus Desktop.",
+    "text": "The easiest way to connect with the ecosystem."
+  },
+  "dropdown": {
+    "dropdown": "Download Verus Desktop",
+    "windows": "Download Windows app",
+    "mac": "Download Mac app",
+    "linux": "Download Linux app",
+    "arm": "Download Linux ARM app"
+  },
+  "cards": {
+    "getToKnow": "Get to know VerusID. Use features like revoking and recovering with ease.",
+    "staking": "Staking is a breeze. Just flip a switch.",
+    "convert": "Convert tokens and currencies. Made possible by Verus DeFi.",
+    "support": {
+      "header": "Support for many different cryptocurrencies.",
+      "text": "+ all ERC-20, and many many more!"
+    },
+    "store": "Connect to the ecosystem and download Verus Desktop."
+  }
+}
