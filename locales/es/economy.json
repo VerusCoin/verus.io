@@ -24,7 +24,7 @@
   },
   "economic": {
     "heading": "Earn from economic activity.",
-    "text": "Besides block rewards, miners and stakers earn on fees paid to the protocol.",
+    "text": "Besides coinbase rewards, miners and stakers earn on fees paid to the protocol.",
     "verus": "VerusID creation fees",
     "conversion": "Conversion fees",
     "blockchain": "Blockchain creation fees",
