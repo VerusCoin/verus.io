@@ -207,8 +207,8 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
         <Backdrop />
         <ContentContainer ref={nodeRef}>
           <Wrapper>
-            <ContentPadding ref={modalRef}>
-              <ModalContent body-scroll-lock-ignore>
+            <ContentPadding>
+              <ModalContent ref={modalRef}>
                 <StyledCardContent>
                   <DefaultHeader>{title}</DefaultHeader>
 
