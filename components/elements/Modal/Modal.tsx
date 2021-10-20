@@ -194,9 +194,7 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
   })
   useEffect(() => {
     if (isShown) {
-      disableBodyScroll(targetElement, {
-        allowTouchMove: (el) => el.tagName === 'DIV',
-      })
+      disableBodyScroll(targetElement)
     } else {
       clearAllBodyScrollLocks()
     }
@@ -204,11 +202,11 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
   const modal = (
     <>
       <StyledModal>
-        <Backdrop />
+        <Backdrop ref={modalRef}/>
         <ContentContainer ref={nodeRef}>
           <Wrapper>
             <ContentPadding>
-              <ModalContent ref={modalRef}>
+              <ModalContent >
                 <StyledCardContent>
                   <DefaultHeader>{title}</DefaultHeader>
 
