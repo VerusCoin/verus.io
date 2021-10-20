@@ -175,6 +175,9 @@ interface ModalType {
 
 const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
   const nodeRef = createRef<HTMLDivElement>()
+  const modalRef = createRef<HTMLDivElement>()
+  let targetElement: any = null
+  // const targetElement = document.querySelector(ModalContent) as HTMLElement
   useEffect(() => {
     const handleBodyClick = (e: any) => {
       if (nodeRef.current === e.target) {
@@ -182,14 +185,18 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
       }
     }
     document.addEventListener('mousedown', handleBodyClick)
+    targetElement = modalRef.current
+
     return () => {
       document.removeEventListener('mousedown', handleBodyClick)
+      clearAllBodyScrollLocks()
     }
   })
   useEffect(() => {
-    const targetElement = document.querySelector(ModalContent) as HTMLElement
     if (isShown) {
-      disableBodyScroll(targetElement)
+      disableBodyScroll(targetElement, {
+        allowTouchMove: (el) => el.tagName === 'DIV',
+      })
     } else {
       clearAllBodyScrollLocks()
     }
@@ -200,8 +207,8 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
         <Backdrop />
         <ContentContainer ref={nodeRef}>
           <Wrapper>
-            <ContentPadding>
-              <ModalContent>
+            <ContentPadding ref={modalRef}>
+              <ModalContent body-scroll-lock-ignore>
                 <StyledCardContent>
                   <DefaultHeader>{title}</DefaultHeader>
 
