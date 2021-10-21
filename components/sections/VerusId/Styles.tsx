@@ -63,7 +63,7 @@ export const StyledInput = styled.input`
   border-radius: ${(props) => props.theme.buttons.primary.radius};
   border: 1px solid ${(props) => props.theme.colors.blue.primary};
   outline: none;
-
+  height: 60px;
   &:focus {
     background-color: #e8f0fe;
     color: ${(props) => props.theme.colors.blue.quinary};
@@ -78,13 +78,16 @@ export const StyledSubmitButton = styled.input`
   background-color: #3165d4;
   border-radius: ${(props) => props.theme.buttons.primary.radius};
   margin-top: 20px;
+  height: 60px;
+
+  z-index: 1;
   &:hover {
     cursor: pointer;
   }
   ${media.tablet`
     margin-top: 0;
-    margin-left: -106px;
-    max-height: 60px;  
+    margin-left: -127px;
+    width: 127px;
   `}
 `
 

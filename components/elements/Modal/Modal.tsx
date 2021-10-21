@@ -2,7 +2,7 @@ import React, { useState, ReactNode, createRef, useEffect } from 'react'
 import { media } from 'styled-bootstrap-grid'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+//import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 import { DefaultHeader, SVGs, CardText } from '@/components/elements'
 
@@ -175,6 +175,9 @@ interface ModalType {
 
 const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
   const nodeRef = createRef<HTMLDivElement>()
+  const modalRef = createRef<HTMLDivElement>()
+  // let targetElement: any = null
+  // const targetElement = document.querySelector(ModalContent) as HTMLElement
   useEffect(() => {
     const handleBodyClick = (e: any) => {
       if (nodeRef.current === e.target) {
@@ -182,18 +185,20 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
       }
     }
     document.addEventListener('mousedown', handleBodyClick)
+    // targetElement = modalRef.current
+
     return () => {
       document.removeEventListener('mousedown', handleBodyClick)
+      // clearAllBodyScrollLocks()
     }
   })
-  useEffect(() => {
-    const targetElement = document.querySelector(ModalContent) as HTMLElement
-    if (isShown) {
-      disableBodyScroll(targetElement)
-    } else {
-      clearAllBodyScrollLocks()
-    }
-  }, [isShown])
+  // useEffect(() => {
+  //  if (isShown) {
+  //    disableBodyScroll(targetElement)
+  //  } else {
+  //    clearAllBodyScrollLocks()
+  //  }
+  // }, [isShown])
   const modal = (
     <>
       <StyledModal>
@@ -201,7 +206,7 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
         <ContentContainer ref={nodeRef}>
           <Wrapper>
             <ContentPadding>
-              <ModalContent>
+              <ModalContent ref={modalRef}>
                 <StyledCardContent>
                   <DefaultHeader>{title}</DefaultHeader>
 

@@ -92,20 +92,20 @@ const StyledButton = styled.button<any>`
 
     `}
     
-    ${(props) =>
+  ${(props) =>
     props.white &&
     `
-      background: transparent;
-      border-radius: ${props.theme.buttons.primary.radius};
-      border: solid 2px ${props.theme.buttons.primary.text};
-      color: ${props.theme.buttons.primary.text};
-      padding: ${(props: any) => (props.small ? '12px 20px' : '16px 30px')};;
-      &:hover {
-        background: rgb(255,255,255,0.17)
-      }
-    `}
-    ${(props: any) => props.margin && `margin: ${props.margin};`}
-    ${(props: any) =>
+    background: transparent;
+    border-radius: ${props.theme.buttons.primary.radius};
+    border: solid 2px ${props.theme.buttons.primary.text};
+    color: ${props.theme.buttons.primary.text};
+    padding: ${(props: any) => (props.small ? '12px 20px' : '16px 30px')};;
+    &:hover {
+      background: rgb(255,255,255,0.17)
+    }
+  `}
+  ${(props: any) => props.margin && `margin: ${props.margin};`}
+  ${(props: any) =>
     props.small ? 'font-size: 17px' : fontSize(props.fontSize)}
 `
 
