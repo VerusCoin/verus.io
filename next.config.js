@@ -4,7 +4,7 @@ module.exports = nextTranslate({
   async redirects() {
     return [
       {
-        source: '/techonolgy',
+        source: '/technology',
         destination: '/',
         permanent: true,
       },
