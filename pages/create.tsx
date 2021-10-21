@@ -73,6 +73,7 @@ const CreateWithVerus = () => {
               href="https://docs.verus.io"
               as="a"
               color="#3165d4"
+              target="_blank"
             >
               {`${t('cards.doc.link')} docs.verus.io`}
             </Button>
