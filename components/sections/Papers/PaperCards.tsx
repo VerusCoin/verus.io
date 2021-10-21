@@ -79,7 +79,7 @@ const PaperCards = ({ paper }: { paper: IPaper }) => {
         </div>
       </div>
       <StyledCardFooter>
-        <StyledDownload href={`/papers/${file}`} download>
+        <StyledDownload href={`/papers/${paper.file}`} download>
           <StyledSVG>
             <SVGs name="download" />
           </StyledSVG>
