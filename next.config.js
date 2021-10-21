@@ -75,8 +75,8 @@ module.exports = nextTranslate({
         permanent: true,
       },
       {
-        source: '/docs/*',
-        destination: '/papers/*',
+        source: '/docs*',
+        destination: '/papers*',
         permanent: true,
       },
     ]
