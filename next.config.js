@@ -74,6 +74,11 @@ module.exports = nextTranslate({
         destination: '/wallet',
         permanent: true,
       },
+      {
+        source: '/docs/:path*',
+        destination: '/papers/:path*',
+        permanent: true,
+      },
     ]
   },
 
