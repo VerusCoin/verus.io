@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
               ),
               1: (
                 <Button
-                  href="https://insight.verus.io"
+                  href="https://discord.com/invite/VRKMP2S"
                   svg={{ type: 'miniTab', rotate: false, size: 16 }}
                   transparent
                   fontRegular
