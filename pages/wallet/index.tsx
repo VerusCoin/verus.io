@@ -221,7 +221,7 @@ const Wallet = ({
             <CardHeader margin="0" text={t('cards.storage.header')} />
             <CardText margin="25px 0 0 " text={t('cards.storage.text')} />
             <StyledDownload
-              href="https://paperwallet.veruscoin.io/VerusPaperWallet.zip"
+              href="https://paperwallet.verus.io/VerusPaperWallet.zip"
               download
             >
               <DefaultText align="center" fam="geoHead" fontSz="menu">
