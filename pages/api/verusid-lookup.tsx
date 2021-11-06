@@ -5,10 +5,10 @@ import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid } from '@/components/layouts'
 import { Img, TypedJS } from '@/components/elements'
 import {
-  ProfileAccounts,
-  ProfileContent,
+  Profile,
   ProfileHeader,
   VerusIdResults,
+  VerusIDContext,
 } from '@/components/sections/VerusId'
 import {
   StyledContainer,
@@ -39,6 +39,7 @@ const VerusidLookup = () => {
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (query) => {
+    // console.log(query)
     if (query) {
       const url = `/api/verusIdProfile?id=${query.verusID}`
       const result = await fetch(url)
@@ -68,7 +69,7 @@ const VerusidLookup = () => {
           <StyledContainer verus={verus}>
             {isSubmitSuccessful && verusID.result ? (
               <ProfileHeader
-                profileHeader={verusID.profileJSON}
+                profileHeader={verusID.profileJSON?.public}
                 verusId={verusID.result.identity.name}
               />
             ) : (
@@ -98,22 +99,11 @@ const VerusidLookup = () => {
               </StyledResultError>
             )}
             {isSubmitSuccessful && verusID.result && (
-              <>
-                {verusID.profileJSON && (
-                  <>
-                    <ProfileAccounts
-                      profileAccounts={verusID.profileJSON.accounts}
-                    />
-                    <ProfileContent
-                      profileContent={verusID.profileJSON.content}
-                    />
-                  </>
-                )}
-                <VerusIdResults
-                  onClick={() => _handleReset()}
-                  verusIDresults={verusID.result.identity}
-                />
-              </>
+              <VerusIDContext.Provider value={verusID}>
+                <Profile />
+
+                <VerusIdResults onClick={() => _handleReset()} />
+              </VerusIDContext.Provider>
             )}
           </StyledContainer>
         </Grid>

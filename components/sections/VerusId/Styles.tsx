@@ -23,6 +23,23 @@ export const StyledContainer = styled.div<any>`
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
   `}
 `
+
+export const StyledProfileContainer = styled.div`
+  width: 100%;
+  ${bgColor('white')}
+  margin: auto;
+  text-align: center;
+
+  border-radius: 8px;
+  padding: 0 0 100px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
+`
+
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
-import ProfileAccounts from './ProfileAccounts'
-import ProfileContent from './ProfileContent'
-import ProfileHeader from './ProfileHeader'
+import Profile from './Profile'
 import VerusIdResults from './VerusIdResults'
+import ProfileHeader from './ProfileHeader'
+import VerusIDContext from './VerusContext'
 
-export { ProfileAccounts, ProfileContent, ProfileHeader, VerusIdResults }
+export { VerusIdResults, Profile, ProfileHeader, VerusIDContext }

@@ -17,6 +17,8 @@ export interface ProfileProps {
   profileHeader: VDXFID | string
   profileImage: VDXFID | string
   profilePublic: VDXFID | string
+  profileAbout: VDXFID | string
+  profileSettings: VDXFID | string
 }
 
 export const ProfileLib: ProfileProps = {
@@ -29,6 +31,8 @@ export const ProfileLib: ProfileProps = {
   profileHeader: 'vrsc::system.identity.profile.header',
   profileImage: 'vrsc::system.identity.profile.image',
   profilePublic: 'vrsc::system.identity.profile.public',
+  profileAbout: 'vrsc::system.identity.profile.about',
+  profileSettings: 'vrsc::system.identity.profile.settings',
 }
 
 export interface PublicProfileLib {
@@ -37,17 +41,20 @@ export interface PublicProfileLib {
 }
 
 export interface PublicProfileProps {
-  [key: string]: PublicProfileLib | Accounts | string
+  [key: string]: PublicProfileLib | Partial<Accounts> | string
 }
 
 export interface AccountObjects {
-  [key: string]: PublicProfileLib
+  [key: string]: PublicProfileLib | AccountObjects
 }
 
 export interface Accounts {
-  online: AccountObjects[] | null
-  crypto: {
-    addresses: AccountObjects[] | null
-    identities: AccountObjects[] | null
-  }
+  [key: string]: AccountObjects | ProfileProps
+}
+
+export interface VerusResult {
+  result: Record<string, any> | null
+  error: Record<string, any> | null
+  profileJSON?: PublicProfileProps
+  id?: string
 }

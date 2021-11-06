@@ -1,5 +1,5 @@
 import CryptoJS from 'crypto-js'
-
+const he = require('he')
 const hexCharsregex = /[0-9A-Fa-f]{6}/g
 const base64urlregex = /^[A-Za-z0-9_-]+$/
 
@@ -27,4 +27,47 @@ export const HexToBase64 = (hex) => {
       .replace('/', '_')
       .replace(/=+$/, '')
   }
+}
+
+export const isValidUrl = (url) => {
+  try {
+    new URL(url)
+  } catch {
+    return false
+  }
+  return true
+}
+
+const htmlStripRegex = /<[^>]+>/g
+const verusProofMsgRegex =
+  /(^|['"\n>;])i[A-Za-z0-9]+ [0-9]+: controller of VerusID .* controls .*:[A-Za-z0-9/+=:]+(\1|[<&\n])/g
+
+const cleanupProofMsg = (msg) => {
+  // unescape quotes
+  msg = msg.replace(/\\"/g, '"').replace(/\\'/g, "'")
+  // trim off extra start chars
+  msg = msg.replace(/^['"\n ;>]/, '')
+  // trim off extra end chars
+  msg = msg.replace(/['"\n &<]$/, '')
+  return msg
+}
+
+export const verusProof = (content) => {
+  const proofs = content.match(verusProofMsgRegex)
+  if (proofs && Array.isArray(proofs)) {
+    const proof = he.decode(
+      cleanupProofMsg(proofs[0].replace(htmlStripRegex, ''))
+    )
+    const s = proof.split(':')
+    let message = ''
+    let signature = ''
+    if (s.length > 2) {
+      message = s[0] + ':' + s[1]
+      signature = s[2]
+    }
+
+    const result = { Message: message, Signature: signature }
+    return result
+  }
+  return false
 }

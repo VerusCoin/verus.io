@@ -15,6 +15,7 @@ const arweave = Arweave.init(arConfig)
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { id, type } = req.query
+
   try {
     const data = await arweave.transactions.getData(id.toString(), {
       decode: true,

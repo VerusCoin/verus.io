@@ -6,7 +6,6 @@ const FetchVerusId = async (query: Query) => {
   const endpoint = `${process.env.NEXT_PUBLIC_VERUSTOOL_URL}/getidentity`
 
   let result: Record<string, any> = {}
-
   try {
     result = await fetch(endpoint, {
       method: 'POST',

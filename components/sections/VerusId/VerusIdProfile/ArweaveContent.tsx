@@ -9,6 +9,8 @@ import { Button } from '@/components/elements'
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+
   margin: 0 0 35px;
   border: solid 1px rgba(0, 0, 0, 0.125);
   border-radius: 8px;
@@ -17,6 +19,7 @@ const StyledContainer = styled.div`
   button {
     justify-content: center;
   }
+  overflow-x: scroll;
 `
 // const StyledHr = styled.hr`
 //   width: 90%;

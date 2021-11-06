@@ -33,6 +33,7 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    font-family: "Geomanist Regular", sans-serif;
   }
   
 `
