@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 // import Arweave from 'arweave'
-import { FetchVerusId, FetchVerusProfile } from '@/helpers/VerusIdProfile'
-import { VerusResult } from '@/helpers/VerusIdProfile/ProfileTypes'
+import { FetchVerusId, FetchVerusProfile } from '@/lib/VerusIdProfile'
+import { VerusResult } from '@/lib/VerusIdProfile/ProfileTypes'
 
 // const arConfig = {
 //   host: 'arweave.net', // Hostname or IP address for a Arweave host

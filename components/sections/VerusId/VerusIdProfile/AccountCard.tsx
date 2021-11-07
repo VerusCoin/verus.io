@@ -1,4 +1,4 @@
-import { AccountObjects } from '@/helpers/VerusIdProfile/ProfileTypes'
+import { AccountObjects } from '@/lib/VerusIdProfile/ProfileTypes'
 import { StyledServiceCard } from './ProfileStyles'
 import { Img } from '@/components/elements'
 

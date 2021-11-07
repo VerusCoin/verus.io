@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { FetchMessage } from './verusSignatureMessage'
-import { isValidUrl, verusProof } from '@/helpers/VerusIdProfile/Validators'
-import { BuildVdxfid } from '@/helpers/VerusIdProfile'
+import { isValidUrl, verusProof } from '@/lib/VerusIdProfile/Validators'
+import { BuildVdxfid } from '@/lib/VerusIdProfile'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let data: any = req.query?.query
