@@ -4,7 +4,7 @@ import {
   ProfileAccounts,
   ProfileCollections,
 } from './VerusIdProfile'
-import VerusIDContext from './VerusContext'
+import { VerusIDContext } from '@/lib/Contexts'
 
 //things of knowing are located in the context
 // 1) collections - this is from arwave, content, or from web

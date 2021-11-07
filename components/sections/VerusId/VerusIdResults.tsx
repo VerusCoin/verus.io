@@ -3,7 +3,7 @@ import useTranslation from 'next-translate/useTranslation'
 import { Button, DefaultHeader } from '@/components/elements'
 import { fontFam, fontSize } from '@/styles/helpers'
 import { useContext } from 'react'
-import VerusIDContext from './VerusContext'
+import { VerusIDContext } from '@/lib/Contexts'
 
 const StyledData = styled.div`
   display: flex;

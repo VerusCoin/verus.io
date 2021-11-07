@@ -7,8 +7,10 @@ import Nexthead from 'next/head'
 import { BaseCSS } from 'styled-bootstrap-grid'
 import { DefaultSeo } from 'next-seo'
 import { SEO } from '../next-seo.config'
+import { NotifyContext } from '@/lib/Contexts'
 
 export default function App({ Component, pageProps }: AppProps): any {
+  //TODO: need to do a quick fetch once to make sure value is still true for Notify
   return (
     <>
       <GlobalStyle />
@@ -21,7 +23,9 @@ export default function App({ Component, pageProps }: AppProps): any {
         />
       </Nexthead>
       <ThemeProvider theme={primary}>
-        <Component {...pageProps} />
+        <NotifyContext.Provider value={true}>
+          <Component {...pageProps} />
+        </NotifyContext.Provider>
       </ThemeProvider>
     </>
   )
