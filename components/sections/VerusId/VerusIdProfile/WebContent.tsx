@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { PublicProfileLib } from '@/helpers/VerusIdProfile/ProfileTypes'
+import { PublicProfileLib } from '@/lib/verusIdProfile/ProfileTypes'
 import { DefaultText, DefaultLink } from '@/components/elements'
 
 // const StyledText = styled.div`

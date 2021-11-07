@@ -4,7 +4,7 @@ import {
   CreateProfile,
   FetchArweaveProfile,
   reverseHex,
-} from '@/helpers/VerusIdProfile'
+} from '@/lib/verusIdProfile'
 import { PublicProfileProps } from './ProfileTypes'
 
 const arConfig = {

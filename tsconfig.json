@@ -6,7 +6,7 @@
       "@/types/*": ["./types/*"],
       "@/styles/*": ["./styles/*"],
       "@/data/*": ["./data/*"],
-      "@/helpers/*": ["./helpers/*"]
+      "@/lib/*": ["./lib/*"]
     },
     "target": "esnext",
     "module": "esnext",

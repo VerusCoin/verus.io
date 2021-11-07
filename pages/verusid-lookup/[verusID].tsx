@@ -8,8 +8,8 @@ import {
   VerusIDContext,
 } from '@/components/sections/VerusId'
 import { StyledProfileContainer } from '@/components/sections/VerusId/Styles'
-import { VerusResult } from '@/helpers/VerusIdProfile/ProfileTypes'
-import { FetchVerusId, FetchVerusProfile } from '@/helpers/VerusIdProfile'
+import { VerusResult } from '@/lib/verusIdProfile/ProfileTypes'
+import { FetchVerusId, FetchVerusProfile } from '@/lib/verusIdProfile'
 
 const VerusIDResult = ({ data }: { data: Record<string, any> }) => {
   const { id, profileJSON } = data

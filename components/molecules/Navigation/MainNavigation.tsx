@@ -12,9 +12,9 @@ import {
 import { useWindowScroll } from 'react-use'
 import { DefaultText, SVGs } from '@/components/elements'
 
-const StyledMainNavigation = styled.nav`
+const StyledMainNavigation = styled.nav<any>`
   position: fixed;
-  top: 0;
+  top: ${(props: any) => (props.notify ? '42px' : 0)};
   width: 100%;
   z-index: 15;
   background: ${(props) => props.theme.colors.white};
@@ -25,7 +25,7 @@ const StyledMainNavigation = styled.nav`
   transition: transform ${(props) => props.theme.transitions.fast};
 
   ${media.desktop`
-    top: 50px;
+    top: ${(props: any) => (props.notify && '92px') || '50px'};
     right: 0;
     left: 0;
     padding: 20px 0;
@@ -93,7 +93,7 @@ const usePreviousValue = (value: any) => {
   return ref.current ?? 0
 }
 
-const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
+const MainNavigation: React.FC<IMainNavigation> = ({ menu, notify }) => {
   const { y } = useWindowScroll()
   const previousY = usePreviousValue(y)
   const direction = previousY > y ? 'up' : 'down'
@@ -124,7 +124,7 @@ const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
   }
 
   return (
-    <StyledMainNavigation className={mainMenuClasses}>
+    <StyledMainNavigation className={mainMenuClasses} notify={notify}>
       <Container>
         <Row>
           <Col col={4} lg={2}>

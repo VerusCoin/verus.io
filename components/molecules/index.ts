@@ -5,6 +5,7 @@ import SocialCTA from './Footer/SocialCTA'
 import TopNavigation from './Navigation/TopNavigation'
 import MainNavigation from './Navigation/MainNavigation'
 import Footer from './Footer/Footer'
+import NotifyBanner from './Navigation/NotifyBanner'
 
 export {
   CategoryNavigation,
@@ -14,4 +15,5 @@ export {
   TopNavigation,
   MainNavigation,
   Footer,
+  NotifyBanner,
 }

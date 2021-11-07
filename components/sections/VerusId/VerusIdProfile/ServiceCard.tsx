@@ -1,6 +1,6 @@
 import * as FontAwesome from 'react-icons/fa'
 // import useSWR from 'swr'
-import { AccountObjects } from '@/helpers/VerusIdProfile/ProfileTypes'
+import { AccountObjects } from '@/lib/verusIdProfile/ProfileTypes'
 import { StyledServiceCard } from './ProfileStyles'
 import { ObjectFinder, capitalizeFirstLetter } from './Helper'
 

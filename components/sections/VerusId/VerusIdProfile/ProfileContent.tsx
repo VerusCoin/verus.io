@@ -2,10 +2,10 @@ import styled from 'styled-components'
 // import { Button, Img } from '@/components/elements'
 // import { media } from 'styled-bootstrap-grid'
 // import { fontFam, fontSize } from '@/styles/helpers'
-import { PublicProfileLib } from '@/helpers/VerusIdProfile/ProfileTypes'
+import { PublicProfileLib } from '@/lib/verusIdProfile/ProfileTypes'
 import WebContent from './WebContent'
 import ArweaveContent from './ArweaveContent'
-import GroupContent from '@/helpers/VerusIdProfile/GroupContent'
+import GroupContent from '@/lib/verusIdProfile/GroupContent'
 
 const StyledContainer = styled.div`
   display: flex;

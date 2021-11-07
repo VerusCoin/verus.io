@@ -31,7 +31,7 @@ const StyledTopNavigation = styled.nav<any>`
   width: 100%;
   right: 0;
   left: 0;
-  top: 0;
+  top: ${(props) => (props.notify ? '42px' : 0)};
   z-index: 9999;
   background-color: ${(props) => props.theme.colors.white};
   transition: transform ${(props) => props.theme.transitions.fast};
@@ -49,7 +49,7 @@ const LanguageMenu = () => {
   return <StyledLanguage>English</StyledLanguage>
 }
 
-const TopNavigation: React.FC<ITopNavigation> = ({ menu }) => {
+const TopNavigation: React.FC<ITopNavigation> = ({ menu, notify }) => {
   const { y } = useWindowScroll()
   const threshold = y >= 50
 
@@ -62,7 +62,7 @@ const TopNavigation: React.FC<ITopNavigation> = ({ menu }) => {
   const { lang } = useTranslation()
 
   return (
-    <StyledTopNavigation className={hideTopNav && 'hideTopNav'}>
+    <StyledTopNavigation className={hideTopNav && 'hideTopNav'} notify={notify}>
       <Container>
         <Row>
           <Col col={8}>
