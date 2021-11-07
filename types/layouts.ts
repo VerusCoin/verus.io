@@ -10,13 +10,13 @@ export interface IMainLayout {
 
 export interface IMainNavigation {
   menu: IMenuItem[]
-  notify: boolean
+  notify?: boolean
 }
 
 export interface ITopNavigation {
   language: string
   menu: IMenuItem[]
-  notify: boolean
+  notify?: boolean
 }
 
 export interface IFooter {

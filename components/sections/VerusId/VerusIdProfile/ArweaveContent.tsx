@@ -2,7 +2,7 @@ import { useState } from 'react'
 import useSWR from 'swr'
 import { MDXRemote } from 'next-mdx-remote'
 import styled from 'styled-components'
-import { PublicProfileLib } from '@/lib/verusIdProfile/ProfileTypes'
+import { PublicProfileLib } from '@/lib/VerusIdProfile/ProfileTypes'
 import ArweaveComponents from './ArweaveComponents'
 import { Button } from '@/components/elements'
 

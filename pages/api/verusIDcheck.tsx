@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { FetchVerusId } from '@/lib/verusIdProfile'
+import { FetchVerusId } from '@/lib/VerusIdProfile'
 
 interface Query {
   [key: string]: string | string[]
