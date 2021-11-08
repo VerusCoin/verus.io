@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-
 import useTranslation from 'next-translate/useTranslation'
 import { media } from 'styled-bootstrap-grid'
 import { fontSize, bgColor } from '@/styles/helpers'
 import { DefaultText, SVGs } from '@/components/elements'
+import { useNotifyContext } from '@/lib/Contexts'
 
 const StyledNotification = styled.div<any>`
   ${bgColor('green')};
@@ -72,13 +72,11 @@ const StyledActivation = styled(DefaultText)`
   padding: 4px 12px;
   margin: 0 7px;
 `
-interface IBanner {
-  notify: boolean
-  setNote: () => void
-}
 
-const NotifyBanner = ({ notify, setNote }: IBanner) => {
+const NotifyBanner = () => {
   const { t } = useTranslation('common')
+  const { notify, setNotify } = useNotifyContext()
+
   return (
     <StyledNotification notify={notify}>
       <DefaultText
@@ -93,7 +91,7 @@ const NotifyBanner = ({ notify, setNote }: IBanner) => {
       <StyledActivation fontSz="xxs" customColor="green" align="center">
         {t(`upgradeCounter`, { count: '50,000' })}
       </StyledActivation>
-      <CloseButton onClick={setNote}>
+      <CloseButton onClick={() => setNotify(false)}>
         <SVGs name="close" />
       </CloseButton>
     </StyledNotification>

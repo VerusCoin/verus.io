@@ -1,5 +1,5 @@
 // This will be the main standard layout for all pages
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import { IMainLayout } from '@/types/layouts'
@@ -31,13 +31,12 @@ const MainLayout: React.FC<IMainLayout> = ({
   bG = 'greyQuin',
   children,
 }) => {
-  const [notify, setNotify] = useState(true)
   return (
     <StyledContainer bG={bG}>
       <header>
-        <NotifyBanner notify={notify} setNote={() => setNotify(!notify)} />
-        <TopNavigation {...TopNavigationJSON} notify={notify} />
-        <MainNavigation {...MainNavigationJSON} notify={notify} />
+        <NotifyBanner />
+        <TopNavigation {...TopNavigationJSON} />
+        <MainNavigation {...MainNavigationJSON} />
         {jumbotronData && <Jumbotron {...jumbotronData} />}
       </header>
       <main>{children}</main>

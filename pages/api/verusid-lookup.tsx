@@ -8,8 +8,8 @@ import {
   Profile,
   ProfileHeader,
   VerusIdResults,
-  VerusIDContext,
 } from '@/components/sections/VerusId'
+import { VerusIDContext } from '@/lib/Contexts'
 import {
   StyledContainer,
   StyledForm,

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import { bgColor } from '@/styles/helpers'
 import useTranslation from 'next-translate/useTranslation'
-
+import Link from 'next/link'
 import { Button, CardHeader } from '@/components/elements'
 
 const StyledLinkCard = styled.div<any>`
@@ -146,37 +146,38 @@ const DefaultLinkCard = ({ card }: { card: string }) => {
   const { href, header, text } = CardInfo(card)
 
   return (
-    <StyledLinkCard
-      global={card === 'global'}
-      coin={card === 'coin'}
-      create={card === 'create'}
-      foundation={card === 'foundation'}
-      as="a"
-      href={href}
-    >
-      <CardHeader
-        color={card === 'create' ? 'white' : 'default'}
-        margin="32px 0 64px"
-        text={header}
-      />
-      {card === 'create' ? (
-        <Button
-          transparent
-          svg={{ type: 'arrow', rotate: false }}
-          color="white"
-        >
-          {text}
-        </Button>
-      ) : (
-        <Button
-          transparent
-          svg={{ type: 'arrow', rotate: false }}
-          color="#3165d4"
-        >
-          {text}
-        </Button>
-      )}
-    </StyledLinkCard>
+    <Link href={href} passHref>
+      <StyledLinkCard
+        global={card === 'global'}
+        coin={card === 'coin'}
+        create={card === 'create'}
+        foundation={card === 'foundation'}
+        as="a"
+      >
+        <CardHeader
+          color={card === 'create' ? 'white' : 'default'}
+          margin="32px 0 64px"
+          text={header}
+        />
+        {card === 'create' ? (
+          <Button
+            transparent
+            svg={{ type: 'arrow', rotate: false }}
+            color="white"
+          >
+            {text}
+          </Button>
+        ) : (
+          <Button
+            transparent
+            svg={{ type: 'arrow', rotate: false }}
+            color="#3165d4"
+          >
+            {text}
+          </Button>
+        )}
+      </StyledLinkCard>
+    </Link>
   )
 }
 

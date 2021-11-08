@@ -12,6 +12,7 @@ import useTranslation from 'next-translate/useTranslation'
 import I18nProvider from 'next-translate/I18nProvider'
 
 import languages from './languages.json'
+import { useNotifyContext } from '@/lib/Contexts'
 
 // const { locales } = i18nConfig
 
@@ -49,7 +50,7 @@ const LanguageMenu = () => {
   return <StyledLanguage>English</StyledLanguage>
 }
 
-const TopNavigation: React.FC<ITopNavigation> = ({ menu, notify }) => {
+const TopNavigation: React.FC<ITopNavigation> = ({ menu }) => {
   const { y } = useWindowScroll()
   const threshold = y >= 50
 
@@ -60,7 +61,7 @@ const TopNavigation: React.FC<ITopNavigation> = ({ menu, notify }) => {
   }, [y])
 
   const { lang } = useTranslation()
-
+  const { notify } = useNotifyContext()
   return (
     <StyledTopNavigation className={hideTopNav && 'hideTopNav'} notify={notify}>
       <Container>

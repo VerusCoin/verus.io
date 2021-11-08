@@ -8,9 +8,12 @@ import { BaseCSS } from 'styled-bootstrap-grid'
 import { DefaultSeo } from 'next-seo'
 import { SEO } from '../next-seo.config'
 import { NotifyContext } from '@/lib/Contexts'
+import { useState } from 'react'
 
 export default function App({ Component, pageProps }: AppProps): any {
   //TODO: need to do a quick fetch once to make sure value is still true for Notify
+  const [notify, setNotify] = useState<boolean>(true)
+
   return (
     <>
       <GlobalStyle />
@@ -22,11 +25,11 @@ export default function App({ Component, pageProps }: AppProps): any {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </Nexthead>
-      <ThemeProvider theme={primary}>
-        <NotifyContext.Provider value={true}>
+      <NotifyContext.Provider value={{ notify, setNotify }}>
+        <ThemeProvider theme={primary}>
           <Component {...pageProps} />
-        </NotifyContext.Provider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </NotifyContext.Provider>
     </>
   )
 }

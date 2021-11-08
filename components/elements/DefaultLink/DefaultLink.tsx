@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import { IDefaultLink } from '@/types/elements'
+import Link from 'next/link'
 
 const StyledDefaultLink = styled.a<any>`
   text-decoration: none;
@@ -25,16 +27,26 @@ const DefaultLink: React.FC<IDefaultLink> = ({
   external,
   children,
 }) => {
-  return (
-    <StyledDefaultLink
-      customColor={customColor}
-      href={href}
-      target={external && '_blank'}
-      rel={external && 'noreferrer'}
-    >
-      {children}
-    </StyledDefaultLink>
-  )
+  if (external) {
+    return (
+      <StyledDefaultLink
+        customColor={customColor}
+        href={href}
+        target={external && '_blank'}
+        rel={external && 'noreferrer'}
+      >
+        {children}
+      </StyledDefaultLink>
+    )
+  } else {
+    return (
+      <Link href={href} passHref>
+        <StyledDefaultLink customColor={customColor}>
+          {children}
+        </StyledDefaultLink>
+      </Link>
+    )
+  }
 }
 
 export default DefaultLink

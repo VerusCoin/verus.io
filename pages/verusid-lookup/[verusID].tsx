@@ -5,8 +5,8 @@ import {
   ProfileHeader,
   Profile,
   VerusIdResults,
-  VerusIDContext,
 } from '@/components/sections/VerusId'
+import { VerusIDContext } from '@/lib/Contexts'
 import { StyledProfileContainer } from '@/components/sections/VerusId/Styles'
 import { VerusResult } from '@/lib/VerusIdProfile/ProfileTypes'
 import { FetchVerusId, FetchVerusProfile } from '@/lib/VerusIdProfile'

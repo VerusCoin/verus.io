@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { DefaultHeader } from '@/components/elements'
-import VerusIDContext from '../VerusContext'
+import { VerusIDContext } from '@/lib/Contexts'
 import { StyledContainer, StyledLabel } from './ProfileStyles'
 import ProfileContent from './ProfileContent'
 // import ProfileArweave from './ProfileArweave'
