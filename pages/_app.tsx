@@ -12,7 +12,7 @@ import { useState } from 'react'
 
 export default function App({ Component, pageProps }: AppProps): any {
   //TODO: need to do a quick fetch once to make sure value is still true for Notify
-  const [notify, setNotify] = useState<boolean>(true)
+  const [notify, setNotify] = useState<boolean>(false)
 
   return (
     <>

@@ -9,7 +9,7 @@
     "link": "More on global network"
   },
   "coinCard": {
-    "header": "Lifeblood. </BR>Utility. </BR>Usage.",
+    "header": "Lifeblood.<0/>Utility.<0/>Usage.",
     "link": "More on the coin"
   },
   "foundationCard": {
@@ -17,7 +17,7 @@
     "link": "More on strong foundations"
   },
   "createCard": {
-    "header": "Launch</br> your</br> project.",
+    "header": "Launch<0/>your<0/>project.",
     "link": "Create with Verus"
   },
   "latestVersion": "Latest version: <span>{{walletVersion}}</span>",

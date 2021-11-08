@@ -5,6 +5,7 @@ import { bgColor } from '@/styles/helpers'
 import useTranslation from 'next-translate/useTranslation'
 import Link from 'next/link'
 import { Button, CardHeader } from '@/components/elements'
+import Trans from 'next-translate/Trans'
 
 const StyledLinkCard = styled.div<any>`
   ${(props) => (props.create ? bgColor('blueQuan') : bgColor('white'))}
@@ -144,7 +145,9 @@ const CardInfo = (name: string) => {
 
 const DefaultLinkCard = ({ card }: { card: string }) => {
   const { href, header, text } = CardInfo(card)
-
+  const HeaderText = (header: string) => {
+    return <Trans i18nKey={header} components={{ 0: <br /> }} />
+  }
   return (
     <Link href={href} passHref>
       <StyledLinkCard
@@ -157,8 +160,9 @@ const DefaultLinkCard = ({ card }: { card: string }) => {
         <CardHeader
           color={card === 'create' ? 'white' : 'default'}
           margin="32px 0 64px"
-          text={header}
-        />
+        >
+          {HeaderText(header)}
+        </CardHeader>
         {card === 'create' ? (
           <Button
             transparent
