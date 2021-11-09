@@ -25,8 +25,10 @@ const ServiceCard = ({
   } else {
     Icon = ObjectFinder(`Fa${capitalizeFirstLetter(type)}`)(FontAwesome)
   }
+
   const context = useContext(VerusIDContext)
   const verusUser = context.id
+
   const { data } = useSWR(
     `/api/verificationCheck?query=${JSON.stringify({
       user: verusUser,
@@ -34,19 +36,19 @@ const ServiceCard = ({
     })}`,
     fetcher
   )
-
   if (data) {
-    // console.log(data)
+    // console.log('data', data)
     switch (data?.valid) {
-      case 'valid':
+      case 'true':
         StatusIcon = FontAwesome['FaUserCheck']
         break
-      case 'invalid':
+      case 'false':
         StatusIcon = FontAwesome['FaExclamationTriangle']
         break
       default:
         StatusIcon = FontAwesome['FaCog']
     }
+    // console.log(StatusIcon)
   }
 
   return (

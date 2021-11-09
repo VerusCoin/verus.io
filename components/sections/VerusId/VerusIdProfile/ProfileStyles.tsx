@@ -65,9 +65,9 @@ export const StyledServiceCard = styled.div<any>`
   svg.status {
     margin-left: 10px;
     fill: ${(props) =>
-      props.status === 'valid'
+      props.status === 'true'
         ? props.theme.colors.green
-        : props.status === 'invalid'
+        : props.status === 'false'
         ? 'red'
         : props.status === 'error'
         ? 'red'

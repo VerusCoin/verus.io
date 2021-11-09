@@ -5,44 +5,41 @@ import { BuildVdxfid } from '@/lib/VerusIdProfile'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let data: any = req.query?.query
-  const result: Record<string, boolean | string> = { valid: false }
+
+  let result: Record<string, boolean | string> = { valid: 'error' }
   if (data) {
     data = JSON.parse(data)
     let user = data.user
     user = user.toLowerCase()
-    user = user + '@'
+    if (user.slice(-1) != '@') {
+      user = user + '@'
+    }
     // i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw
     const vdxfID = await BuildVdxfid()
     const verifyKey = data[vdxfID.controller.vdxfid]
 
     if (isValidUrl(verifyKey)) {
-      try {
-        let verifiedData: any = await fetch(verifyKey).then((res) => res.text())
+      let verifiedData: any = await fetch(verifyKey).then((res) => res.text())
+      // console.log('check-user', user)
+      verifiedData = verusProof(verifiedData)
+      if (verifiedData) {
+        //   Message: values?.message,
+        // Identity: values?.verusId,
+        // Signature: values?.signature,
+        // console.log(user)
+        const validate = await FetchMessage({
+          ...verifiedData,
+          Identity: user,
+        })
+        // console.log(verifiedData)
+        // console.log(validate.valid)
 
-        verifiedData = verusProof(verifiedData)
-        if (verifiedData) {
-          //   Message: values?.message,
-          // Identity: values?.verusId,
-          // Signature: values?.signature,
-
-          const validate = await FetchMessage({
-            ...verifiedData,
-            Identity: user,
-          })
-
-          if (validate.valid) {
-            result.valid = 'valid'
-          } else {
-            result.valid = 'invalid'
-          }
-        } else {
-          result.valid = 'error'
-        }
-      } catch (err) {
-        console.error(err)
+        result = validate
+      } else {
+        result.valid = 'error'
       }
     }
   }
-  res.statusCode = 200
+
   res.json(result)
 }

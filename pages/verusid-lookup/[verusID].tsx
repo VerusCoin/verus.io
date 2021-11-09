@@ -40,8 +40,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   let verusId = ctx.query.verusID //{ verusID: 'naward@' }
 
   if (verusId) {
-    if (verusId.slice(-1) != '@') {
+    if (verusId.slice(-1) !== '@') {
       verusId = verusId + '@'
+
       return {
         redirect: {
           destination: `/verusid-lookup/${verusId}`,
@@ -49,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         },
       }
     }
-
+    // console.log(verusId)
     const profileData = await FetchVerusId({ id: verusId })
     if (profileData.result) {
       let data: VerusResult = { ...profileData, id: verusId.toString() }
