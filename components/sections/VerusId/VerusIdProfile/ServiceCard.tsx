@@ -1,11 +1,13 @@
+import { useContext } from 'react'
 import * as FontAwesome from 'react-icons/fa'
-// import useSWR from 'swr'
+import useSWR from 'swr'
 import { AccountObjects } from '@/lib/VerusIdProfile/ProfileTypes'
 import { StyledServiceCard } from './ProfileStyles'
 import { ObjectFinder, capitalizeFirstLetter } from './Helper'
+import { VerusIDContext } from '@/lib/Contexts'
 
-// const fetcher = async (url: string) =>
-//   await fetch(url).then((res) => res.json())
+const fetcher = async (url: string) =>
+  await fetch(url).then((res) => res.json())
 // TODO: work on nesting for servicecard
 
 const ServiceCard = ({
@@ -17,18 +19,43 @@ const ServiceCard = ({
 }) => {
   //TODO: bring in user using useContext
   let Icon: any
+  let StatusIcon = FontAwesome['FaCog']
   if (type === 'website') {
     Icon = FontAwesome['FaGlobeAmericas']
   } else {
     Icon = ObjectFinder(`Fa${capitalizeFirstLetter(type)}`)(FontAwesome)
   }
+  const context = useContext(VerusIDContext)
+  const verusUser = context.id
+  const { data } = useSWR(
+    `/api/verificationCheck?query=${JSON.stringify({
+      user: verusUser,
+      ...serviceAccount,
+    })}`,
+    fetcher
+  )
+
+  if (data) {
+    // console.log(data)
+    switch (data?.valid) {
+      case 'valid':
+        StatusIcon = FontAwesome['FaUserCheck']
+        break
+      case 'invalid':
+        StatusIcon = FontAwesome['FaExclamationTriangle']
+        break
+      default:
+        StatusIcon = FontAwesome['FaCog']
+    }
+  }
 
   return (
-    <StyledServiceCard>
+    <StyledServiceCard status={data?.valid}>
       <Icon size="1.5em" className="logo" />
       {serviceAccount.accountname ||
         serviceAccount.accountid ||
         serviceAccount.name}
+      <StatusIcon className="status" />
     </StyledServiceCard>
   )
 }

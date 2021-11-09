@@ -2,6 +2,8 @@ import { createContext, useContext } from 'react'
 
 export const VerusIDContext = createContext<any>('empty')
 
+// export const useVerusIDContext = () => useContext(VerusIDContext)
+
 type INotify = {
   notify: boolean
   setNotify: (c: boolean) => void

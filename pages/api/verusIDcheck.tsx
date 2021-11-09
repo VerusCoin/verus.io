@@ -6,12 +6,13 @@ interface Query {
 }
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Check for vanity '@' before doing fetch
+
   const IDvariable: Query = req.query
 
   if (IDvariable.id.slice(-1) != '@') {
     IDvariable.id = IDvariable.id + '@'
   }
-
+  // console.log(IDvariable)
   let result = await FetchVerusId(IDvariable)
   if (result.result) {
     result = { result: IDvariable, error: null }

@@ -12,10 +12,28 @@ export const StyledContainer = styled.div`
 `
 
 export const StyledLabel = styled.div`
+  display: flex;
+  align-content: center;
+
   width: 100%;
   padding: 0 0 8px;
   h5 {
     text-decoration: underline;
+  }
+  span {
+    margin-left: 10px;
+  }
+  svg {
+    margin-left: 10px;
+  }
+  svg.initial {
+    fill: ${(props) => props.theme.colors.orange};
+  }
+  svg.good {
+    fill: ${(props) => props.theme.colors.green};
+  }
+  svg.invalid {
+    fill: red;
   }
 `
 export const StyledServiceCard = styled.div<any>`
@@ -45,14 +63,17 @@ export const StyledServiceCard = styled.div<any>`
     height: 25px;
   }
   svg.status {
+    margin-left: 10px;
     fill: ${(props) =>
       props.status === 'valid'
         ? props.theme.colors.green
         : props.status === 'invalid'
         ? 'red'
+        : props.status === 'error'
+        ? 'red'
         : props.theme.colors.orange};
     ${(props) =>
-      props.status === (null || undefined || 'error') &&
+      props.status === (null || undefined) &&
       `animation: spin 2s linear infinite`}
   }
   @keyframes spin {

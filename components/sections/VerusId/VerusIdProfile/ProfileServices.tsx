@@ -3,7 +3,7 @@ import { DefaultHeader } from '@/components/elements'
 import { VerusIDContext } from '@/lib/Contexts'
 import ServiceCard from './ServiceCard'
 import { StyledContainer, StyledLabel } from './ProfileStyles'
-
+import { FaCog, FaUserCheck, FaExclamationTriangle } from 'react-icons/fa'
 // We know there are accounts and website.
 // Need to create a loop service just in case.
 
@@ -36,10 +36,18 @@ const ProfileServices = () => {
     <StyledContainer>
       <StyledLabel>
         <DefaultHeader as="h5" align="left">
-          Accounts & Services
+          Accounts & Services:{' '}
         </DefaultHeader>
+        <span>
+          <FaCog className="initial" />
+          Validating <FaUserCheck className="good" />
+          Valid <FaExclamationTriangle className="invalid" />
+          Invalid <FaCog className="invalid" />
+          Error Validating
+        </span>
       </StyledLabel>
       {services && <Recursive list={services} />}
+
       {/* {accountServices &&
           Object.keys(accountServices).map((account, index) => (
             <ServiceCard
