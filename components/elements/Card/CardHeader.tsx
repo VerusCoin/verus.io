@@ -15,15 +15,24 @@ export interface HeaderProps {
   color?: string
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   width?: string
-  text: string
+  text?: string
+  children?: React.ReactNode
   margin?: string
 }
 
-const CardHeader = ({ as = 'h2', color, width, text, margin }: HeaderProps) => {
+const CardHeader = ({
+  as = 'h2',
+  color,
+  width,
+  text,
+  children,
+  margin,
+}: HeaderProps) => {
   return (
     <StyledTextHeader width={width} margin={margin}>
       <DefaultHeader align="center" customColor={color} as={as}>
-        {parse(text)}
+        {text && parse(text)}
+        {children && children}
       </DefaultHeader>
     </StyledTextHeader>
   )

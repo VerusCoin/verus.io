@@ -4,6 +4,7 @@ import { IListNavigation } from '@/types/molecules'
 import { Button } from '@/components/elements'
 import LinkCard from './LinkCard'
 import useTranslation from 'next-translate/useTranslation'
+import Link from 'next/link'
 
 const StyledNavigationMenu = styled.ul`
   margin: 0;
@@ -88,6 +89,10 @@ const ListNavigation: React.FC<IListNavigation> = ({ menu, target }) => {
               >
                 {t(`${item.category}.title`)}
               </Button>
+            ) : item.href && !target ? (
+              <Link href={item.href} passHref>
+                <StyledLink as={'a'}>{t(`${item.category}.title`)}</StyledLink>
+              </Link>
             ) : (
               <StyledLink
                 as={item.href ? 'a' : 'span'}

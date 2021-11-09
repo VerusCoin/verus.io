@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { IMainNavigation } from '@/types/layouts'
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
-
+import Link from 'next/link'
 import {
   Hamburger,
   HamburgerMenu,
@@ -12,9 +12,11 @@ import {
 import { useWindowScroll } from 'react-use'
 import { DefaultText, SVGs } from '@/components/elements'
 
-const StyledMainNavigation = styled.nav`
+import { useNotifyContext } from '../../../lib/Contexts'
+
+const StyledMainNavigation = styled.nav<any>`
   position: fixed;
-  top: 0;
+  top: ${(props: any) => (props.notify ? '42px' : 0)};
   width: 100%;
   z-index: 15;
   background: ${(props) => props.theme.colors.white};
@@ -25,7 +27,7 @@ const StyledMainNavigation = styled.nav`
   transition: transform ${(props) => props.theme.transitions.fast};
 
   ${media.desktop`
-    top: 50px;
+    top: ${(props: any) => (props.notify && '92px') || '50px'};
     right: 0;
     left: 0;
     padding: 20px 0;
@@ -97,7 +99,7 @@ const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
   const { y } = useWindowScroll()
   const previousY = usePreviousValue(y)
   const direction = previousY > y ? 'up' : 'down'
-
+  const { notify } = useNotifyContext()
   const [openMenu, setOpenMenu] = useState(false)
   const [mainMenuClasses, setMainMenuClasses] = useState('')
 
@@ -124,13 +126,15 @@ const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
   }
 
   return (
-    <StyledMainNavigation className={mainMenuClasses}>
+    <StyledMainNavigation className={mainMenuClasses} notify={notify}>
       <Container>
         <Row>
           <Col col={4} lg={2}>
-            <StyledLogo href="/">
-              <SVGs name="logo" />
-            </StyledLogo>
+            <Link href="/" passHref>
+              <StyledLogo href="/">
+                <SVGs name="logo" />
+              </StyledLogo>
+            </Link>
           </Col>
           <Col col={4} lg={2} className="tagline">
             <StyledBanner>

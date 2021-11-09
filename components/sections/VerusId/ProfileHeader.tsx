@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { DefaultHeader } from '@/components/elements'
 
 const StyledHeader = styled.div<any>`
@@ -35,10 +36,10 @@ const StyledAvatar = styled.div<any>`
 `
 const StyledContent = styled.div<any>`
   width: 100%;
-  padding: ${(props) => (props.heading && '0 32px') || '32px'};
+  padding: 0 32px;
   margin: 0;
 `
-
+//${(props) => (props.heading && '0 32px') || '32px'};
 const ProfileHeader = ({
   profileHeader,
   verusId,
@@ -48,6 +49,7 @@ const ProfileHeader = ({
 }) => {
   const avatar = profileHeader?.profileAvatar
   const header = profileHeader?.profileHeader
+  const about = profileHeader?.profileAbout
 
   return (
     <>
@@ -61,11 +63,19 @@ const ProfileHeader = ({
       ) : avatar ? (
         <StyledAvatar avatar={avatar.image} header={header} />
       ) : null}
+
       <StyledContent heading={avatar || header}>
         <DefaultHeader as="h3" align="left">
-          {verusId}@
+          {verusId}
         </DefaultHeader>
       </StyledContent>
+      {about ? (
+        <StyledContent heading={true}>
+          <DefaultHeader as="h5" align="left">
+            {profileHeader.profileAbout.text}
+          </DefaultHeader>
+        </StyledContent>
+      ) : null}
     </>
   )
 }

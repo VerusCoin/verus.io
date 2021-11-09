@@ -1,5 +1,6 @@
 import { fontSize } from '@/styles/helpers'
 import React from 'react'
+import Link from 'next/link'
 import styled from 'styled-components'
 import { IMenuSubItem } from 'types/general'
 import { SVGs } from '@/components/elements/SVGs/SVGs'
@@ -82,31 +83,58 @@ const LinkCard: React.FC<IMenuSubItem & { category: string }> = ({
   category,
 }) => {
   const { t } = useTranslation('navigation')
-  return (
-    <StyledLinkCard
-      href={href}
-      as="a"
-      target={external && '_blank'}
-      rel={external && 'noreferrer'}
-    >
-      <StyledLink>
-        {svg && (
-          <StyledSVG>
-            <SVGs name={svg} />
-          </StyledSVG>
-        )}
+  if (external) {
+    return (
+      <StyledLinkCard
+        href={href}
+        as="a"
+        target={external && '_blank'}
+        rel={external && 'noreferrer'}
+      >
+        <StyledLink>
+          {svg && (
+            <StyledSVG>
+              <SVGs name={svg} />
+            </StyledSVG>
+          )}
 
-        <StyledContent>
-          <strong>{t(`${category}.${link}.title`)}</strong>
-          {description && <span>{t(`${category}.${link}.description`)}</span>}
-        </StyledContent>
+          <StyledContent>
+            <strong>{t(`${category}.${link}.title`)}</strong>
+            {description && <span>{t(`${category}.${link}.description`)}</span>}
+          </StyledContent>
 
-        <StyledLinkSVG>
-          {external ? <SVGs name="tab" /> : <SVGs name="arrow" />}
-        </StyledLinkSVG>
-      </StyledLink>
-    </StyledLinkCard>
-  )
+          <StyledLinkSVG>
+            {external ? <SVGs name="tab" /> : <SVGs name="arrow" />}
+          </StyledLinkSVG>
+        </StyledLink>
+      </StyledLinkCard>
+    )
+  } else {
+    return (
+      <Link href={href} passHref>
+        <StyledLinkCard as="a">
+          <StyledLink>
+            {svg && (
+              <StyledSVG>
+                <SVGs name={svg} />
+              </StyledSVG>
+            )}
+
+            <StyledContent>
+              <strong>{t(`${category}.${link}.title`)}</strong>
+              {description && (
+                <span>{t(`${category}.${link}.description`)}</span>
+              )}
+            </StyledContent>
+
+            <StyledLinkSVG>
+              {external ? <SVGs name="tab" /> : <SVGs name="arrow" />}
+            </StyledLinkSVG>
+          </StyledLink>
+        </StyledLinkCard>
+      </Link>
+    )
+  }
 }
 
 export default LinkCard

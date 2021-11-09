@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import useTranslation from 'next-translate/useTranslation'
 import { Button, DefaultHeader } from '@/components/elements'
 import { fontFam, fontSize } from '@/styles/helpers'
+import { useContext } from 'react'
+import { VerusIDContext } from '@/lib/Contexts'
 
 const StyledData = styled.div`
   display: flex;
@@ -43,13 +45,9 @@ const StyledResultRight = styled.div`
   padding: 6px;
 `
 
-const VerusIdResults = ({
-  verusIDresults,
-  onClick,
-}: {
-  verusIDresults: any
-  onClick: () => void
-}) => {
+const VerusIdResults = ({ onClick }: { onClick: () => void }) => {
+  const verusIDResults = useContext(VerusIDContext)
+  const verusID = verusIDResults.result.identity
   const { t } = useTranslation('verusid')
   return (
     <StyledData>
@@ -61,32 +59,32 @@ const VerusIdResults = ({
       </StyledLabel>
       <StyledResultsRow className="row">
         <StyledResultLeft>{t('identity')}</StyledResultLeft>
-        <StyledResultRight>{verusIDresults.identityaddress}</StyledResultRight>
+        <StyledResultRight>{verusID.identityaddress}</StyledResultRight>
       </StyledResultsRow>
       <StyledResultsRow className="row">
         <StyledResultLeft>{t('revocation')}</StyledResultLeft>
         <StyledResultRight>
-          {verusIDresults.revocationauthority === verusIDresults.identityaddress
+          {verusID.revocationauthority === verusID.identityaddress
             ? t('self')
-            : verusIDresults.revocationauthority}
+            : verusID.revocationauthority}
         </StyledResultRight>
       </StyledResultsRow>
       <StyledResultsRow className="row">
         <StyledResultLeft>{t('recovery')}</StyledResultLeft>
         <StyledResultRight>
-          {verusIDresults.recoveryauthority === verusIDresults.identityaddress
+          {verusID.recoveryauthority === verusID.identityaddress
             ? t('self')
-            : verusIDresults.recoveryauthority}
+            : verusID.recoveryauthority}
         </StyledResultRight>
       </StyledResultsRow>
       <StyledResultsRow className="row">
         <StyledResultLeft>{t('private')}</StyledResultLeft>
-        <StyledResultRight>{verusIDresults.privateaddress}</StyledResultRight>
+        <StyledResultRight>{verusID.privateaddress}</StyledResultRight>
       </StyledResultsRow>
       <StyledResultsRow>
         <StyledResultLeft>{t('primary')}</StyledResultLeft>
         <StyledResultRight>
-          {verusIDresults.primaryaddresses.map((address: string) => {
+          {verusID.primaryaddresses.map((address: string) => {
             return <p key={address}>{address}</p>
           })}
         </StyledResultRight>

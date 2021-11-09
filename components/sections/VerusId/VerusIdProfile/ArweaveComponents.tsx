@@ -9,7 +9,7 @@ const ArweaveComponents = () => {
       <DefaultText fontSz="sm" customMargin="8px 0" fam="geoHead" {...props} />
     ),
     p: (props: any) => (
-      <DefaultText fontSz="xs" customMargin="5px 0" {...props} />
+      <DefaultText fontSz="xs" mdx={true} customMargin="5px 0" {...props} />
     ),
     a: (props: any) => <DefaultLink external {...props} />,
   }

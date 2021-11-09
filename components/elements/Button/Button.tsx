@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import { fontSize } from '@/styles/helpers'
-
+import Link from 'next/link'
 import { SVGs } from '@/components/elements'
 import { IButton } from '@/types/elements'
 
@@ -128,31 +128,58 @@ const Button = ({
   active,
   target,
 }: IButton) => {
-  return (
-    <StyledButton
-      className={className}
-      transparent={transparent}
-      wide={wide}
-      href={href}
-      as={as}
-      primary={primary}
-      svg={svg}
-      small={small}
-      color={color}
-      fontRegular={fontRegular}
-      fontSize={fontSize}
-      margin={margin}
-      onClick={onClick}
-      white={white}
-      active={active}
-      target={target}
-      rel={target && 'noreferrer'}
-    >
-      {children}
+  if (href && !target) {
+    return (
+      <Link href={href} passHref>
+        <StyledButton
+          className={className}
+          transparent={transparent}
+          wide={wide}
+          as={as}
+          primary={primary}
+          svg={svg}
+          small={small}
+          color={color}
+          fontRegular={fontRegular}
+          fontSize={fontSize}
+          margin={margin}
+          onClick={onClick}
+          white={white}
+          active={active}
+        >
+          {children}
 
-      {svg && <SVGs name={svg.type} />}
-    </StyledButton>
-  )
+          {svg && <SVGs name={svg.type} />}
+        </StyledButton>
+      </Link>
+    )
+  } else {
+    return (
+      <StyledButton
+        className={className}
+        transparent={transparent}
+        wide={wide}
+        href={href}
+        as={as}
+        primary={primary}
+        svg={svg}
+        small={small}
+        color={color}
+        fontRegular={fontRegular}
+        fontSize={fontSize}
+        margin={margin}
+        onClick={onClick}
+        white={white}
+        active={active}
+        target={target}
+        rel={target && 'noreferrer'}
+      >
+        {children}
+
+        {svg && <SVGs name={svg.type} />}
+      </StyledButton>
+    )
+  }
 }
 
 export default Button

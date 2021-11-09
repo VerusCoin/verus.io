@@ -9,7 +9,7 @@ interface Query {
   [key: string]: string
 }
 
-const FetchMessage = async (query: Query) => {
+export const FetchMessage = async (query: Query) => {
   const endpoint = `${process.env.NEXT_PUBLIC_VERUSTOOL_URL}/verify`
   try {
     const result = await fetch(endpoint, {

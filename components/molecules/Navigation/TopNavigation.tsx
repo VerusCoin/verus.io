@@ -12,6 +12,7 @@ import useTranslation from 'next-translate/useTranslation'
 import I18nProvider from 'next-translate/I18nProvider'
 
 import languages from './languages.json'
+import { useNotifyContext } from '@/lib/Contexts'
 
 // const { locales } = i18nConfig
 
@@ -31,7 +32,7 @@ const StyledTopNavigation = styled.nav<any>`
   width: 100%;
   right: 0;
   left: 0;
-  top: 0;
+  top: ${(props) => (props.notify ? '42px' : 0)};
   z-index: 9999;
   background-color: ${(props) => props.theme.colors.white};
   transition: transform ${(props) => props.theme.transitions.fast};
@@ -60,9 +61,9 @@ const TopNavigation: React.FC<ITopNavigation> = ({ menu }) => {
   }, [y])
 
   const { lang } = useTranslation()
-
+  const { notify } = useNotifyContext()
   return (
-    <StyledTopNavigation className={hideTopNav && 'hideTopNav'}>
+    <StyledTopNavigation className={hideTopNav && 'hideTopNav'} notify={notify}>
       <Container>
         <Row>
           <Col col={8}>

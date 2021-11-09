@@ -12,6 +12,7 @@ const BuildVdxfid = async () => {
     cache.del(cacheProfiles)
     init = 0
   }
+  // cache.del(cacheProfiles)
   if (!cache.get(cacheProfiles)) {
     const input: Record<string, any> = {}
     for (const [key, value] of Object.entries(ProfileLib)) {
