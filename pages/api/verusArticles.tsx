@@ -1,20 +1,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import cache from 'memory-cache'
+import { Hour12 } from '@/lib/clocks'
 
 const cacheArticles = '@articlesList'
-// const Min15 = 900000 //15 minutes
-const Hour12 = 43200000 //12 Hours
-// const Hour24 = 86400000 //24 hours
+
+let index = 1
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let articles: any = null
   let data: any = null
   let result: any = req //used to clear no-unused-variable error
   result = null
-
-  // NOTE: Comment below for master branch.
-  cache.del(cacheArticles)
+  if (index) {
+    // NOTE: Comment below for master branch.
+    // cache.del(cacheArticles)
+    cache.clear()
+    index = 0
+  }
 
   if (!cache.get(cacheArticles)) {
+    // console.log(index)
     result = await fetch(
       'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/veruscoin'
     )

@@ -1,5 +1,3 @@
-import BuildVdxfid from './BuildVdxfid'
-
 import FetchVerusId from './FetchVerusId'
 import CreateProfile from './CreateProfile.js'
 import { reverseHex } from './Validators'
@@ -13,7 +11,6 @@ export {
   FetchArweaveProfile,
   FetchVerusId,
   FetchVerusProfile,
-  BuildVdxfid,
   CreateProfile,
   reverseHex,
 }

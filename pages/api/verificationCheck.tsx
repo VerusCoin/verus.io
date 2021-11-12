@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { FetchMessage } from './verusSignatureMessage'
 import { isValidUrl, verusProof } from '@/lib/VerusIdProfile/Validators'
-import { BuildVdxfid } from '@/lib/VerusIdProfile'
+import { ProofsJSON } from '@/data/vdxfid'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let data: any = req.query?.query
@@ -15,13 +15,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       user = user + '@'
     }
     // i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw
-    const vdxfID = await BuildVdxfid()
-    const verifyKey = data[vdxfID.controller.vdxfid]
-
+    const verifyKey = data[ProofsJSON.controller.vdxfid]
+    // console.log(verifyKey)
     if (isValidUrl(verifyKey)) {
       let verifiedData: any = await fetch(verifyKey).then((res) => res.text())
       // console.log('check-user', user)
+
       verifiedData = verusProof(verifiedData)
+      // console.log(verifiedData)
       if (verifiedData) {
         //   Message: values?.message,
         // Identity: values?.verusId,

@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
-import { MainLayout, Section } from '@/components/layouts'
+import { MainLayout, Grid } from '@/components/layouts'
 import {
   ProfileHeader,
   Profile,
@@ -14,14 +14,10 @@ import { FetchVerusId, FetchVerusProfile } from '@/lib/VerusIdProfile'
 const VerusIDResult = ({ data }: { data: Record<string, any> }) => {
   const { id, profileJSON } = data
   const Router = useRouter()
-  // console.log('result', result)
-  // console.log('error', error)
-  // console.log('profile', profileJSON)
-  // console.log('id', id)
 
   return (
     <MainLayout>
-      <Section width={1000}>
+      <Grid>
         <StyledProfileContainer>
           <ProfileHeader profileHeader={profileJSON?.public} verusId={id} />
           <VerusIDContext.Provider value={data}>
@@ -29,7 +25,7 @@ const VerusIDResult = ({ data }: { data: Record<string, any> }) => {
             <VerusIdResults onClick={() => Router.push('/verusid-lookup')} />
           </VerusIDContext.Provider>
         </StyledProfileContainer>
-      </Section>
+      </Grid>
     </MainLayout>
   )
 }
@@ -53,13 +49,17 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     // console.log(verusId)
     const profileData = await FetchVerusId({ id: verusId })
     if (profileData.result) {
-      let data: VerusResult = { ...profileData, id: verusId.toString() }
+      let data: VerusResult = {
+        ...profileData,
+        id: `${profileData.result.identity.name}@`,
+      }
 
       const contentMap = profileData.result.identity.contentmap
       const profileJSON = await FetchVerusProfile(contentMap)
       if (profileJSON) {
         data = { ...data, profileJSON: profileJSON }
       }
+
       return {
         props: {
           data,

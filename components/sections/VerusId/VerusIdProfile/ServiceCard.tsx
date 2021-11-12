@@ -2,7 +2,11 @@ import { useContext } from 'react'
 import * as FontAwesome from 'react-icons/fa'
 import useSWR from 'swr'
 import { AccountObjects } from '@/lib/VerusIdProfile/ProfileTypes'
-import { StyledServiceCard } from './ProfileStyles'
+import {
+  StyledServiceCard,
+  // TooltipBox,
+  // TooltipBoxContainer,
+} from './ProfileStyles'
 import { ObjectFinder, capitalizeFirstLetter } from './Helper'
 import { VerusIDContext } from '@/lib/Contexts'
 
@@ -58,6 +62,9 @@ const ServiceCard = ({
         serviceAccount.accountid ||
         serviceAccount.name}
       <StatusIcon className="status" />
+      {/* <TooltipBoxContainer>
+        <TooltipBox classname="tooltip">test</TooltipBox>
+      </TooltipBoxContainer> */}
     </StyledServiceCard>
   )
 }

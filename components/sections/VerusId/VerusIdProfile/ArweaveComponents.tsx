@@ -11,6 +11,17 @@ const ArweaveComponents = () => {
     p: (props: any) => (
       <DefaultText fontSz="xs" mdx={true} customMargin="5px 0" {...props} />
     ),
+    pre: (props: any) => (
+      <DefaultText
+        as="pre"
+        fontSz="xs"
+        className="pre"
+        mdx={true}
+        customMargin="5px 0"
+        {...props}
+      />
+    ),
+
     a: (props: any) => <DefaultLink external {...props} />,
   }
 }

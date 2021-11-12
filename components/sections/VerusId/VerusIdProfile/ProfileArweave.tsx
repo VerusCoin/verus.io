@@ -39,7 +39,7 @@ const ProfileArweave = ({
           key={`${index}_${item}`}
         />
       ))}
-      <pre>{JSON.stringify(ArweaveSources, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(ArweaveSources, null, 2)}</pre> */}
     </>
   )
 }
