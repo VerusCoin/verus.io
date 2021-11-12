@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 // import { media } from 'styled-bootstrap-grid'
-import { fontFam, bgColor } from '@/styles/helpers'
+import { fontFam, fontSize, bgColor } from '@/styles/helpers'
 
 export const StyledContainer = styled.div`
   margin: 12px 0;
@@ -81,4 +81,31 @@ export const StyledServiceCard = styled.div<any>`
       transform: rotate(360deg);
     }
   }
+`
+
+export const TooltipBox = styled.div<any>`
+  ${fontFam('geoReg')}
+  ${fontSize('xxs')}
+  position: absolute;
+  top: calc(100% - 45px);
+  left: calc(100% - 20px);
+  color: #fff;
+  background-color: #3165d4;
+  visibility: visible;
+  padding: 8px 8px;
+  border-radius: 8px;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -12px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #3165d4 transparent transparent transparent;
+  }
+`
+export const TooltipBoxContainer = styled.div`
+  position: relative;
 `

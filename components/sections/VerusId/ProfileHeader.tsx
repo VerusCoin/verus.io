@@ -47,9 +47,9 @@ const ProfileHeader = ({
   profileHeader: Record<string, any>
   verusId: string
 }) => {
-  const avatar = profileHeader?.profileAvatar
-  const header = profileHeader?.profileHeader
-  const about = profileHeader?.profileAbout
+  const avatar = profileHeader?.avatar
+  const header = profileHeader?.header
+  const about = profileHeader?.about
 
   return (
     <>
@@ -72,7 +72,7 @@ const ProfileHeader = ({
       {about ? (
         <StyledContent heading={true}>
           <DefaultHeader as="h5" align="left">
-            {profileHeader.profileAbout.text}
+            {about.text}
           </DefaultHeader>
         </StyledContent>
       ) : null}

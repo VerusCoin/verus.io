@@ -25,6 +25,8 @@ export const StyledContainer = styled.div<any>`
 `
 
 export const StyledProfileContainer = styled.div`
+  grid-column: span 2;
+  max-width: 750px;
   width: 100%;
   ${bgColor('white')}
   margin: auto;

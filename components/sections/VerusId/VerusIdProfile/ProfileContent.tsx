@@ -10,8 +10,6 @@ import GroupContent from '@/lib/VerusIdProfile/GroupContent'
 const StyledContainer = styled.div`
   display: flex;
   width: 100%;
-  margin: 12px 10px;
-  padding: 8px 32px;
 
   flex-direction: column;
   text-align: left;

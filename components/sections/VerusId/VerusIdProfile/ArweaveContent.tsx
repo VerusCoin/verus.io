@@ -19,7 +19,6 @@ const StyledContainer = styled.div`
   button {
     justify-content: center;
   }
-  overflow-x: scroll;
 `
 // const StyledHr = styled.hr`
 //   width: 90%;
@@ -31,8 +30,19 @@ const StyledPostContent = styled.div<any>`
   display: -webkit-box;
   -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow-y: hidden;
   `}
+  pre {
+    background: black;
+    color: white;
+    overflow-x: auto;
+    padding: 4px 10px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   a {
     color: #3165d4;
   }
