@@ -28,6 +28,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const contentMap = result.result.identity.contentmap
     const profileJSON = await FetchVerusProfile(contentMap)
     if (profileJSON) {
+      // console.log(profileJSON)
       data = { ...data, profileJSON: profileJSON }
     }
     // const VdxfidList = await BuildVdxfid()

@@ -119,22 +119,22 @@ const CardInfo = (name: string) => {
   let text = ''
   switch (name) {
     case 'foundation':
-      header = t('foundationCard.header')
+      header = 'foundationCard.header'
       text = t('foundationCard.link')
       href = '/foundations'
       return { header, text, href }
     case 'global':
-      header = t('globalCard.header')
+      header = 'globalCard.header'
       text = t('globalCard.link')
       href = '/global-network'
       return { header, text, href }
     case 'coin':
-      header = t('coinCard.header')
+      header = 'coinCard.header'
       text = t('coinCard.link')
       href = '/coin'
       return { header, text, href }
     case 'create':
-      header = t('createCard.header')
+      header = 'createCard.header'
       text = t('createCard.link')
       href = '/create'
       return { header, href, text }
@@ -146,7 +146,9 @@ const CardInfo = (name: string) => {
 const DefaultLinkCard = ({ card }: { card: string }) => {
   const { href, header, text } = CardInfo(card)
   const HeaderText = (header: string) => {
-    return <Trans i18nKey={header} components={{ 0: <br /> }} />
+    const headerContext = 'common:' + header
+
+    return <Trans i18nKey={headerContext} components={{ 0: <br /> }} />
   }
   return (
     <Link href={href} passHref>

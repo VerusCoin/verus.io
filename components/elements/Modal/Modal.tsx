@@ -191,7 +191,7 @@ const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
       document.removeEventListener('mousedown', handleBodyClick)
       // clearAllBodyScrollLocks()
     }
-  })
+  }, [])
   // useEffect(() => {
   //  if (isShown) {
   //    disableBodyScroll(targetElement)

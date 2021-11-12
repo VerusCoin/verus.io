@@ -15,14 +15,12 @@ const arConfig = {
 const arweave = Arweave.init(arConfig)
 
 const FetchVerusProfile = async (content: Record<string, any>) => {
-  // console.log(content)
   //check for arweave
   const arweaveVdxfid = CollectionsJSON.arweave.hash160result
   const arweaveTxId = await FetchArweaveProfile(
     content[arweaveVdxfid] || content[reverseHex(arweaveVdxfid)],
     IdentityJSON.public.vdxfid
   )
-  // console.log('txid return', arweaveTxId)
   if (arweaveTxId) {
     const arweaveJSON = await arweave.transactions
       .getData(arweaveTxId, { decode: true, string: true })
@@ -30,6 +28,7 @@ const FetchVerusProfile = async (content: Record<string, any>) => {
     // console.log(arweaveJSON)
     if (arweaveJSON) {
       //we have profile json lets organize it so it can be presented.
+      // console.log(arweaveJSON)
       const profileJSON: PublicProfileProps = await CreateProfile(
         arweaveJSON[IdentityJSON.public.vdxfid]
       )
