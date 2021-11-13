@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IBlogItem } from 'types/homepage'
-import Image from 'next/image'
+// import Image from 'next/image'
 import dayjs from 'dayjs'
 import { DefaultHeader, DefaultText } from '@/components/elements'
 import { media } from 'styled-bootstrap-grid'
@@ -10,9 +10,47 @@ import { media } from 'styled-bootstrap-grid'
 const StyledImage = styled.div`
   margin-bottom: ${(props) => props.theme.spaces.xs};
 
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  width: initial;
+  height: initial;
+  background: none;
+  opacity: 1;
+  border: 0px;
+
+  padding: 0px;
+  position: relative;
+  max-width: 100%;
+
   ${media.desktop`
     margin-bottom: 0;
   `}
+`
+const StyledImageContainer = styled.span`
+  box-sizing: border-box;
+  display: block;
+  width: initial;
+  height: initial;
+  background: none;
+  opacity: 1;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  max-width: 100%;
+  img {
+    inset: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+    border: none;
+    margin: auto;
+    display: block;
+
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
 `
 
 const StyledBlogItem = styled.a`
@@ -43,7 +81,11 @@ const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
   return (
     <StyledBlogItem href={link} target="_blank" rel="noreferrer">
       <StyledImage>
-        <Image src={thumbnail} alt={thumbnail} width={360} height={185} />
+        <StyledImageContainer>
+          <img src={thumbnail} alt={thumbnail} width="360px" height="185px" />
+        </StyledImageContainer>
+
+        {/* <Image src={thumbnail} alt={thumbnail} width={360} height={185} /> */}
       </StyledImage>
 
       <DefaultHeader

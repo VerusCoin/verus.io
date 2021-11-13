@@ -1,6 +1,11 @@
 const nextTranslate = require('next-translate')
 
 module.exports = nextTranslate({
+  images: {
+    domains: ['cdn-images-1.medium.com', 'www.cryptocompare.com'],
+    minimumCacheTTL: 60,
+    disableStaticImages: true,
+  },
   async redirects() {
     return [
       {
@@ -80,9 +85,5 @@ module.exports = nextTranslate({
         permanent: true,
       },
     ]
-  },
-
-  images: {
-    domains: ['cdn-images-1.medium.com', 'https://www.cryptocompare.com'],
   },
 })

@@ -63,6 +63,7 @@ const ArweaveContent = ({ content }: { content: PublicProfileLib }) => {
   )
   if (error) return <div>Failed to load content</div>
   if (!data) return <div>Fetching content from arweave...</div>
+
   switch (content.type) {
     case 'post':
       // const source = data.body
@@ -77,14 +78,16 @@ const ArweaveContent = ({ content }: { content: PublicProfileLib }) => {
           <StyledPostContent readStatus={readMore}>
             <MDXRemote {...data} components={ArweaveComponents} />
           </StyledPostContent>
-          <Button
-            onClick={() => setReadMore(!readMore)}
-            fontRegular
-            small
-            margin="8px 0 0 0 "
-          >
-            {readMore ? 'Read Less' : 'Read More'}
-          </Button>
+          {data.compiledSource.length > 1700 && (
+            <Button
+              onClick={() => setReadMore(!readMore)}
+              fontRegular
+              small
+              margin="8px 0 0 0 "
+            >
+              {readMore ? 'Read Less' : 'Read More'}
+            </Button>
+          )}
         </StyledContainer>
       )
     default:
@@ -92,7 +95,7 @@ const ArweaveContent = ({ content }: { content: PublicProfileLib }) => {
         <>
           <p>unknown</p>
           <p>{content.type}</p>
-          <pre>{JSON.stringify(content, null, 2)}</pre>
+          {/* <pre>{JSON.stringify(content, null, 2)}</pre> */}
         </>
       )
   }
