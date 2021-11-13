@@ -59,22 +59,22 @@
     "he": "^1.2.0",
     "html-react-parser": "^1.4.0",
     "memory-cache": "^0.2.0",
-    "next": "^11.1.2",
-    "next-mdx-remote": "^3.0.7",
+    "next": "^12.0.3",
+    "next-mdx-remote": "^3.0.8",
     "next-seo": "^4.28.1",
-    "next-translate": "^1.1.1",
+    "next-translate": "^1.2.0",
     "react": "^17.0.2",
     "react-accessible-accordion": "^4.0.0",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.4.2",
-    "react-hook-form": "^7.18.0",
+    "react-hook-form": "^7.19.5",
     "react-icons": "^4.3.1",
     "react-pdf": "^5.5.0",
     "react-qrcode-logo": "^2.5.0",
     "react-typed": "^1.2.0",
     "react-use": "^17.3.1",
-    "spacing-helper": "4.1.2",
+    "spacing-helper": "4.1.6",
     "styled-bootstrap-grid": "^3.1.1",
     "styled-components": "^5.3.3",
     "styled-normalize": "^8.0.7",
@@ -92,5 +92,8 @@
       "yarn lint:css",
       "yarn format"
     ]
+  },
+  "engines": {
+    "node": ">=16"
   }
 }

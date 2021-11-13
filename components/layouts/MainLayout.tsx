@@ -11,6 +11,7 @@ import {
   Jumbotron,
 } from '@/components/molecules'
 import { bgColor } from '@/styles/helpers'
+import { useNotifyContext } from '@/lib/Contexts'
 
 import {
   TopNavigationJSON,
@@ -24,6 +25,7 @@ const StyledContainer = styled.div<any>`
   ${media.desktop`
     padding-top: ${(props: any) => props.theme.spaces.custom.desktopMenu};
   `}
+  ${(props) => props.notify && 'margin-top: 42px;'}
 `
 
 const MainLayout: React.FC<IMainLayout> = ({
@@ -31,8 +33,9 @@ const MainLayout: React.FC<IMainLayout> = ({
   bG = 'greyQuin',
   children,
 }) => {
+  const { notify } = useNotifyContext()
   return (
-    <StyledContainer bG={bG}>
+    <StyledContainer bG={bG} notify={notify}>
       <header>
         <NotifyBanner />
         <TopNavigation {...TopNavigationJSON} />
