@@ -109,3 +109,31 @@ export const TooltipBox = styled.div<any>`
 export const TooltipBoxContainer = styled.div`
   position: relative;
 `
+
+export const DropDownContainer = styled.div`
+  position: relative;
+`
+
+export const ServiceCardDropDown = styled.div<any>`
+  display: ${(props) => (props.show ? 'block' : 'none')};
+  position: absolute;
+  z-index: 10;
+  padding: 20px;
+  left: 50%;
+  bottom: -5px;
+  width: 450px;
+  transform: translateY(100%) translateX(-50%);
+`
+
+export const ServiceCardDropDownArea = styled.div`
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  font-family: ${(props) => props.theme.typo.header.family};
+  color: ${(props) => props.theme.colors.grey.secondary};
+  padding: ${(props) => props.theme.spaces.xs};
+  border-radius: ${(props) => props.theme.borders.sm};
+  box-shadow: 2px 2px 58px 4px rgba(0, 0, 0, 0.09);
+`

@@ -4,32 +4,6 @@ import { StyledContainer } from './ProfileStyles'
 import AccountCard from './AccountCard'
 //TODO: need to clean up code
 
-// const Recursive = ({ list, type }: { list: any; type: string }) => {
-//   return (
-//     <>
-//       {Object.keys(list).map((item: string, index: number) => {
-//         if (item !== 'address') {
-//           type = item
-//         }
-
-//         if (list[item]?.qualifiedname) {
-//           return (
-//             <AccountCard
-//               key={`${item}_${index}`}
-//               type={type}
-//               account={list[item]}
-//             />
-//           )
-//         } else {
-//           return (
-//             <Recursive list={list[item]} type={type} key={`${type}_${index}`} />
-//           )
-//         }
-//       })}
-//     </>
-//   )
-// }
-
 const ProfileAccounts = () => {
   const context = useContext(VerusIDContext)
   const accounts = context.profileJSON.keys
@@ -49,7 +23,6 @@ const ProfileAccounts = () => {
           />
         )
       })}
-      {/* <Recursive list={accounts} type="" /> */}
     </StyledContainer>
   )
 }

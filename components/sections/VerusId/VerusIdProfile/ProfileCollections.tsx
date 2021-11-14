@@ -18,16 +18,8 @@ const ProfileCollections = () => {
       {collectionsContent && (
         <ProfileContent profileContent={collectionsContent} />
       )}
-      {/* {collectionsArweave && (
-        <ProfileArweave arweaveContent={collectionsArweave} />
-      )}
-      <pre>{JSON.stringify(collectionsContent, null, 2)}</pre> */}
     </StyledContainer>
   )
 }
 
 export default ProfileCollections
-
-{
-  /* <ProfileContent profileContent={profileJSON.collections.content} /> */
-}
