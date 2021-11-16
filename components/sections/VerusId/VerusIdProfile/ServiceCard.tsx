@@ -1,20 +1,16 @@
-import { useState, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import * as FontAwesome from 'react-icons/fa'
-import useSWR from 'swr'
+// import useSWR from 'swr'
 import { AccountObjects } from '@/lib/VerusIdProfile/ProfileTypes'
 import {
   StyledServiceCard,
-  // ServiceCardDropDown,
-  // ServiceCardDropDownArea,
+  StyledAccountContainer,
   // TooltipBox,
   // TooltipBoxContainer,
 } from './ProfileStyles'
 import { ObjectFinder, capitalizeFirstLetter } from './Helper'
 import { VerusIDContext } from '@/lib/Contexts'
-// import { DropDownContainer } from './ProfileStyles'
-
-const fetcher = async (url: string) =>
-  await fetch(url).then((res) => res.json())
+import ServiceCardDropDown from './ServiceCardDropDown'
 // TODO: work on proof card
 
 const ServiceCard = ({
@@ -35,16 +31,24 @@ const ServiceCard = ({
 
   const context = useContext(VerusIDContext)
   const verusUser = context.id
+  const dataFetch = {
+    user: verusUser,
+    ...serviceAccount,
+  }
+  const [data, setData] = useState<Record<string, any> | null>(null)
 
-  const { data } = useSWR(
-    `/api/verificationCheck?query=${JSON.stringify({
-      user: verusUser,
-      ...serviceAccount,
-    })}`,
-    fetcher
-  )
+  useEffect(() => {
+    fetch('/api/verificationCheck', {
+      method: 'POST',
+      body: JSON.stringify(dataFetch),
+    })
+      .then((res) => res.json())
+      .then((result) => setData(result))
+    return () => {
+      setData(null)
+    }
+  }, [])
   if (data) {
-    // console.log('data', data)
     switch (data?.valid) {
       case 'true':
         StatusIcon = FontAwesome['FaUserCheck']
@@ -55,27 +59,46 @@ const ServiceCard = ({
       default:
         StatusIcon = FontAwesome['FaCog']
     }
-    // console.log(StatusIcon)
   }
 
   const [show, setShow] = useState(false)
+  let shortUrl: string | string[] =
+    serviceAccount.i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw.toString()
+  try {
+    let domain: URL | string = new URL(shortUrl)
+    domain = domain.hostname
+    shortUrl = domain.toString()
+    shortUrl = shortUrl.split('.')
+    shortUrl =
+      '(' +
+      shortUrl[shortUrl.length - 2] +
+      '.' +
+      shortUrl[shortUrl.length - 1] +
+      ')'
+  } catch {
+    shortUrl = ''
+  }
 
   return (
-    <StyledServiceCard status={data?.valid} onClick={() => setShow(!show)}>
-      <Icon size="1.5em" className="logo" />
-      {serviceAccount.accountname ||
-        serviceAccount.accountid ||
-        serviceAccount.name}
-      <StatusIcon className="status" />
-      {/* <TooltipBoxContainer>
+    <StyledAccountContainer>
+      <StyledServiceCard status={data?.valid} onClick={() => setShow(!show)}>
+        <Icon size="1.5em" className="logo" />
+        <p>
+          {serviceAccount.accountname ||
+            serviceAccount.accountid ||
+            serviceAccount.name}{' '}
+          {shortUrl}
+        </p>
+        <StatusIcon className="status" />
+        {/* <TooltipBoxContainer>
         <TooltipBox classname="tooltip">test</TooltipBox>
       </TooltipBoxContainer> */}
-      {/* <DropDownContainer>
-        <ServiceCardDropDown show={show}>
-          <ServiceCardDropDownArea>test</ServiceCardDropDownArea>
-        </ServiceCardDropDown>
-      </DropDownContainer> */}
-    </StyledServiceCard>
+      </StyledServiceCard>
+      <ServiceCardDropDown
+        show={show}
+        data={{ ...data, ...serviceAccount, type: type }}
+      />
+    </StyledAccountContainer>
   )
 }
 

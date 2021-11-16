@@ -1,12 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { FetchMessage } from './verusSignatureMessage'
-import { isValidUrl, verusProof } from '@/lib/VerusIdProfile/Validators'
+import {
+  isValidUrl,
+  verusWebProof,
+  verusBlockchainProof,
+} from '@/lib/VerusIdProfile/Validators'
 import { ProofsJSON } from '@/data/vdxfid'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  let data: any = req.query?.query
+  let data: any = req.query?.query || req.body
 
-  let result: Record<string, boolean | string> = { valid: 'error' }
+  let result: any = { valid: 'error' }
   if (data) {
     data = JSON.parse(data)
     let user = data.user
@@ -16,29 +20,45 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
     // i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw
     const verifyKey = data[ProofsJSON.controller.vdxfid]
-    // console.log(verifyKey)
     if (isValidUrl(verifyKey)) {
       let verifiedData: any = await fetch(verifyKey).then((res) => res.text())
-      // console.log('check-user', user)
 
-      verifiedData = verusProof(verifiedData)
-      // console.log(verifiedData)
+      verifiedData = verusWebProof(verifiedData)
+
       if (verifiedData) {
-        //   Message: values?.message,
-        // Identity: values?.verusId,
-        // Signature: values?.signature,
-        // console.log(user)
         const validate = await FetchMessage({
           ...verifiedData,
           Identity: user,
         })
-        // console.log(verifiedData)
-        // console.log(validate.valid)
 
         result = validate
       } else {
         result.valid = 'error'
       }
+    } else {
+      const proofChecks: any = verusBlockchainProof(verifyKey)
+      //we have two keys to check: 1) against address; and 2) against profile
+      let validate = await FetchMessage({
+        ...proofChecks.key1,
+        Identity: user,
+      })
+
+      proofChecks.key1 = validate
+      validate = await FetchMessage({
+        ...proofChecks.key2,
+        Identity: data.address,
+      })
+      proofChecks.key2 = validate
+      if (
+        proofChecks.key1.valid === 'true' &&
+        proofChecks.key2.valid === 'true'
+      ) {
+        proofChecks.overall = { valid: 'true' }
+      } else {
+        proofChecks.overall = { valid: 'false' }
+      }
+
+      result = proofChecks
     }
   }
 

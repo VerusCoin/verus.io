@@ -36,23 +36,31 @@ export const StyledLabel = styled.div`
     fill: red;
   }
 `
+
+export const StyledAccountContainer = styled.div`
+  position: relative;
+`
+
 export const StyledServiceCard = styled.div<any>`
   ${bgColor('#F3F3F3')}
+
   border: solid 1px;
   margin: 5px 10px;
   padding: 8px 12px;
   border-radius: 8px;
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  flex-wrap: wrap;
   ${fontFam('')}
   font-size:16px;
   p {
     ${fontFam('')}
     padding: 0;
-    font-weight: bold;
-    margin: 0 10px;
+    margin: 0 10px 5px;
+    overflow-wrap: anywhere;
   }
   img.logo,
   svg.logo {
@@ -112,28 +120,104 @@ export const TooltipBoxContainer = styled.div`
 
 export const DropDownContainer = styled.div`
   position: relative;
+  display: inline-block;
 `
 
-export const ServiceCardDropDown = styled.div<any>`
-  display: ${(props) => (props.show ? 'block' : 'none')};
+export const ServiceDropDown = styled.div<any>`
+  display: ${(props) => (props.show ? 'flex' : 'none')};
+  flex-direction: column;
   position: absolute;
   z-index: 10;
   padding: 20px;
-  left: 50%;
-  bottom: -5px;
-  width: 450px;
-  transform: translateY(100%) translateX(-50%);
-`
-
-export const ServiceCardDropDownArea = styled.div`
+  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+  border: black solid 0.5px;
   background-color: white;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  font-family: ${(props) => props.theme.typo.header.family};
-  color: ${(props) => props.theme.colors.grey.secondary};
-  padding: ${(props) => props.theme.spaces.xs};
   border-radius: ${(props) => props.theme.borders.sm};
   box-shadow: 2px 2px 58px 4px rgba(0, 0, 0, 0.09);
+  left: 0;
+`
+
+export const AccountDropDown = styled.div<any>`
+  display: ${(props) => (props.show ? 'flex' : 'none')};
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  padding: 20px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+  border: black solid 0.5px;
+  background-color: white;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: ${(props) => props.theme.borders.sm};
+  box-shadow: 2px 2px 58px 4px rgba(0, 0, 0, 0.09);
+  left: 0;
+`
+
+export const DropDownText = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  svg {
+    margin-right: 10px;
+  }
+  p {
+    color: black;
+    width: fit-content;
+    margin-bottom: 0;
+  }
+  p.pass {
+    color: ${(props) => props.theme.colors.green};
+    font-weight: bold;
+  }
+  p.fail {
+    color: red;
+    font-weight: bold;
+  }
+  p.error {
+    color: ${(props) => props.theme.colors.orange};
+    font-weight: bold;
+  }
+  svg.key {
+    fill: black;
+  }
+  svg.pass {
+    fill: ${(props) => props.theme.colors.green} !important;
+    margin-left: 10px;
+  }
+  svg.fail {
+    fill: red !important;
+    margin-left: 10px;
+  }
+  svg.error {
+    fill: ${(props) => props.theme.colors.orange} !important;
+    margin-left: 10px;
+  }
+`
+
+export const DropDownLinkText = styled.a`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.blue.primary};
+  p {
+    color: ${(props) => props.theme.colors.blue.primary};
+    width: fit-content;
+    margin-bottom: 0;
+  }
+  svg {
+    margin-right: 10px;
+  }
 `

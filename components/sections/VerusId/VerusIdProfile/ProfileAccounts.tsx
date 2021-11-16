@@ -8,21 +8,17 @@ const ProfileAccounts = () => {
   const context = useContext(VerusIDContext)
   const accounts = context.profileJSON.keys
 
-  // console.log(accounts)
   //We know vrsc has address and identity while all other should only have address
 
   return (
     <StyledContainer>
-      {Object.keys(accounts).map((account, index) => {
-        const type = account.toString().split('.')[0]
-        return (
-          <AccountCard
-            key={`${account}_${index}`}
-            type={type}
-            account={accounts[account]}
-          />
-        )
-      })}
+      {Object.keys(accounts).map((account, index) => (
+        <AccountCard
+          key={`${account}_${index}`}
+          type={account.toString().split('.')[0]}
+          account={accounts[account]}
+        />
+      ))}
     </StyledContainer>
   )
 }

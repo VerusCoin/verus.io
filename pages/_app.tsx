@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyle from 'styles/global'
 import { primary } from 'styles/themes'
 import Nexthead from 'next/head'
-// import FetchCounter from '@/lib/FetchCounter'
 import { BaseCSS } from 'styled-bootstrap-grid'
 import { DefaultSeo } from 'next-seo'
 import { SEO } from '../next-seo.config'
@@ -20,13 +19,10 @@ export default function App({ Component, pageProps }: AppProps): any {
     refreshInterval: 60000,
   })
   useEffect(() => {
-    // console.log(data)
     if (data?.blockCount > 0) {
       setNotify(true)
-      // useBannerContext=data
     } else {
       setNotify(false)
-      // useBannerContext={blockCount: 0, blockString: '0'}
     }
   }, [data])
 
