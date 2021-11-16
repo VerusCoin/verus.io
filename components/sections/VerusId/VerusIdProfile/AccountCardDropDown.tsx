@@ -5,7 +5,7 @@ import AccountCardDropDownLink from './AccountCardDropDownLink'
 const KeyImage = FontAwesome['FaKey']
 const PassImage = FontAwesome['FaCheckCircle']
 const FailImage = FontAwesome['FaExclamationCircle']
-
+const ErrorIcon = FontAwesome['FaExclamationTriangle']
 const DropDownTextArea = ({ text, valid }: { text: string; valid: string }) => {
   return (
     <DropDownText>
@@ -20,7 +20,12 @@ const DropDownTextArea = ({ text, valid }: { text: string; valid: string }) => {
           <FailImage className="fail" />
           <DefaultText className="fail">FAIL</DefaultText>
         </>
-      ) : null}
+      ) : (
+        <>
+          <ErrorIcon className="error" />
+          <DefaultText className="error">ERROR</DefaultText>
+        </>
+      )}
     </DropDownText>
   )
 }
@@ -32,8 +37,7 @@ const AccountCardDropDown = ({ data, show }: { data: any; show: boolean }) => {
         {data?.overall.valid === 'false' && (
           <DefaultText customColor="red">
             FAIL: Potential fraud / impersonation detected. The controller of
-            this verus profile does not control the provided verus proof
-            message.
+            this verus profile does not control the provided proof message.
           </DefaultText>
         )}
         <DropDownTextArea text="Signature 1" valid={data?.key1.valid} />
