@@ -3,6 +3,7 @@ export interface IMenuItem {
   href?: string
   button?: boolean
   submenu?: IMenuSubItem[]
+  external?: boolean
 }
 
 export interface IMenuSubItem {
