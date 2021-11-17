@@ -7,6 +7,7 @@ const StyledTextHeader = styled.div<{ margin?: string; width?: string }>`
   vertical-align: middle;
   display: flex;
   justify-content: center;
+
   ${(props) => props.width && `max-width: ${props.width};`}
   margin: ${(props) => (props.margin ? props.margin : '32px 0 0 0')}
 `
@@ -18,6 +19,7 @@ export interface HeaderProps {
   text?: string
   children?: React.ReactNode
   margin?: string
+  align?: 'center' | 'left'
 }
 
 const CardHeader = ({
@@ -27,10 +29,11 @@ const CardHeader = ({
   text,
   children,
   margin,
+  align = 'center',
 }: HeaderProps) => {
   return (
     <StyledTextHeader width={width} margin={margin}>
-      <DefaultHeader align="center" customColor={color} as={as}>
+      <DefaultHeader align={align} customColor={color} as={as}>
         {text && parse(text)}
         {children && children}
       </DefaultHeader>

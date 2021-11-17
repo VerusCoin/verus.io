@@ -1,4 +1,6 @@
 import React from 'react'
+import styled from 'styled-components'
+import { bgColor } from '@/styles/helpers'
 import { NextSeo } from 'next-seo'
 import { GetServerSideProps } from 'next'
 import useTranslation from 'next-translate/useTranslation'
@@ -7,13 +9,27 @@ import { CardsJSON, BlogJSON } from '@/data/homepage'
 import { MainLayout, Grid } from '@/components/layouts'
 import {
   Img,
-  Card,
   CardHeader,
   CardText,
   DefaultLinkCard,
 } from '@/components/elements'
-
+import { Container, Row, Col } from 'styled-bootstrap-grid'
 import { Banner, Blog, KnowCards } from '@/components/sections/Home'
+
+const StyledCardContainer = styled(Container)`
+  ${bgColor('white')}
+  border-radius: 8px;
+  padding: 75px;
+  grid-column: span 2;
+  box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
+`
+
+const StyledCard = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin: 45px 0;
+`
 
 const Home = ({ data }: HomepageProps) => {
   const { t } = useTranslation('home')
@@ -40,8 +56,27 @@ const Home = ({ data }: HomepageProps) => {
       <MainLayout jumbotronData={JumbotronJSON}>
         <Grid>
           <Banner />
-
-          {CardList.map((card, index) => {
+          <StyledCardContainer>
+            <Row justifyContent="center">
+              {CardList.map((card, index) => {
+                const heading = t(`cards.${card.card}.header`)
+                return (
+                  <Col key={index} md={6} lg={4}>
+                    <StyledCard>
+                      <Img height="75px" name={card.svg} />
+                      <CardHeader align="left" text={heading} as="h4" />
+                      <CardText
+                        align="left"
+                        text={t(`cards.${card.card}.text`)}
+                        margin="0 0 16px"
+                      />
+                    </StyledCard>
+                  </Col>
+                )
+              })}
+            </Row>
+          </StyledCardContainer>
+          {/* {CardList.map((card, index) => {
             const heading = t(`cards.${card.card}.header`)
             return (
               <Card key={index}>
@@ -50,7 +85,7 @@ const Home = ({ data }: HomepageProps) => {
                 <CardText text={t(`cards.${card.card}.text`)} />
               </Card>
             )
-          })}
+          })} */}
           <DefaultLinkCard card="create" />
           <DefaultLinkCard card="foundation" />
           <DefaultLinkCard card="global" />

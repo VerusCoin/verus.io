@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IHamburger } from '@/types/molecules'
-import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-import { StyledHamburgerMenu } from './HamburgerMenu'
+// import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+// import { StyledHamburgerMenu } from './HamburgerMenu'
 
 type HamburgerProps = {
   openMenu: boolean
@@ -47,24 +47,19 @@ const StyledHamburger = styled.div<HamburgerProps>`
 
 const Hamburger: React.FC<IHamburger> = ({ openMenu, setOpenMenu }) => {
   const handleClick = () => {
-    const targetElement = document.querySelector(
-      StyledHamburgerMenu
-    ) as HTMLElement
+    // const targetElement = document.querySelector(
+    //   StyledHamburgerMenu
+    // ) as HTMLElement
 
     setOpenMenu(!openMenu)
+
     // if (!openMenu) {
-    //   console.log('!openMenu', openMenu)
-    //   console.log('tag', targetElement.className)
+    //   disableBodyScroll(targetElement, {
+    //     allowTouchMove: (el) => el.className === targetElement.className,
+    //   })
     // } else {
-    //   console.log('openMenu', openMenu)
+    //   clearAllBodyScrollLocks()
     // }
-    if (!openMenu) {
-      disableBodyScroll(targetElement, {
-        allowTouchMove: (el) => el.className === targetElement.className,
-      })
-    } else {
-      clearAllBodyScrollLocks()
-    }
   }
 
   return (
