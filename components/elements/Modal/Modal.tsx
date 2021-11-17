@@ -1,8 +1,8 @@
-import React, { useState, ReactNode, createRef, useEffect } from 'react'
+import React, { useState, ReactNode, useEffect } from 'react'
 import { media } from 'styled-bootstrap-grid'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
-//import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+// import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 import { DefaultHeader, SVGs, CardText } from '@/components/elements'
 
@@ -174,39 +174,32 @@ interface ModalType {
 }
 
 const Modal = ({ isShown, hide, title, children, text }: ModalType) => {
-  const nodeRef = createRef<HTMLDivElement>()
-  const modalRef = createRef<HTMLDivElement>()
-  // let targetElement: any = null
-  // const targetElement = document.querySelector(ModalContent) as HTMLElement
   useEffect(() => {
+    const nodeRef = document.querySelector(ContentContainer) as HTMLElement
+
     const handleBodyClick = (e: any) => {
-      if (nodeRef.current === e.target) {
+      if (nodeRef === e.target) {
         hide()
       }
     }
-    document.addEventListener('mousedown', handleBodyClick)
-    // targetElement = modalRef.current
-
+    if (isShown) {
+      document.addEventListener('mousedown', handleBodyClick)
+    } else {
+      document.removeEventListener('mousedown', handleBodyClick)
+    }
     return () => {
       document.removeEventListener('mousedown', handleBodyClick)
-      // clearAllBodyScrollLocks()
     }
-  }, [])
-  // useEffect(() => {
-  //  if (isShown) {
-  //    disableBodyScroll(targetElement)
-  //  } else {
-  //    clearAllBodyScrollLocks()
-  //  }
-  // }, [isShown])
+  }, [isShown])
+
   const modal = (
     <>
       <StyledModal>
         <Backdrop />
-        <ContentContainer ref={nodeRef}>
+        <ContentContainer>
           <Wrapper>
             <ContentPadding>
-              <ModalContent ref={modalRef}>
+              <ModalContent>
                 <StyledCardContent>
                   <DefaultHeader>{title}</DefaultHeader>
 
