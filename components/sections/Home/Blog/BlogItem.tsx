@@ -65,7 +65,7 @@ const StyledBlogItem = styled.a`
   text-decoration: none;
   color: ${(props) => props.theme.colors.black.primary};
   padding: ${(props) => props.theme.spaces.custom.gutter};
-  margin-bottom: ${(props) => props.theme.spaces.sm};
+
   transition: box-shadow ${(props) => props.theme.transitions.regular};
 
   &:hover {

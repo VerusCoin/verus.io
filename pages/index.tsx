@@ -86,6 +86,11 @@ const Home = ({ data }: HomepageProps) => {
               </Card>
             )
           })} */}
+        </Grid>
+        <Blog title={t('highlighted')} data={data.HighlightJSON} />
+
+        <Blog title={t('latest')} data={data.LatestJSON} link />
+        <Grid>
           <DefaultLinkCard card="create" />
           <DefaultLinkCard card="foundation" />
           <DefaultLinkCard card="global" />
@@ -111,8 +116,6 @@ const Home = ({ data }: HomepageProps) => {
             />
           </KnowCards>
         </Grid>
-
-        <Blog title={t('blog')} data={data.BlogJSON} />
       </MainLayout>
     </>
   )
@@ -123,18 +126,22 @@ export default Home
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const result = await fetch('http://localhost:3000/api/verusArticles')
-    const blogJSON = await result.json()
+    const latestJSON = await result.json()
 
     return {
       props: {
-        data: { BlogJSON: blogJSON, CardsJSON },
+        data: {
+          HighlightJSON: BlogJSON.data,
+          LatestJSON: latestJSON,
+          CardsJSON,
+        },
       },
     }
   } catch (err) {
     const blogJSON = BlogJSON.data
     return {
       props: {
-        data: { BlogJSON: blogJSON, CardsJSON },
+        data: { HighlightJSON: blogJSON, LatestJSON: blogJSON, CardsJSON },
       },
     }
   }

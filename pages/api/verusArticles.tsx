@@ -23,7 +23,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     )
     try {
       articles = await result.json()
-      data = articles.items.splice(0, 6)
+      data = articles.items.splice(0, 3)
     } catch (error) {
       console.error('%s: fetching Articles %s', Date().toString(), error)
     }
