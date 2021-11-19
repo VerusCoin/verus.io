@@ -18,7 +18,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (!cache.get(cacheArticles)) {
-    // console.log(index)
     result = await fetch(
       'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/veruscoin'
     )

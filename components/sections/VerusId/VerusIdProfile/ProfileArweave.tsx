@@ -12,10 +12,8 @@ const ArweaveReSource = (content: Record<string, any>) => {
   //now we have the keys, lets match the keys to content
   const newArweave: Record<string, any> = {}
   for (let i = 0; i < contentKeys.length; i++) {
-    // console.log(contentKeys[i])
     let type = content[contentKeys[i]].split('.')
     type = type[type.length - 1]
-    // console.log(type)
     newArweave[i] = {
       txid: content.content[i],
       type: type,

@@ -25,7 +25,8 @@ const StyledContainer = styled.div<any>`
   ${media.desktop`
     padding-top: ${(props: any) => props.theme.spaces.custom.desktopMenu};
   `}
-  ${(props) => props.notify && 'margin-top: 42px;'}
+  
+  ${(props) => props.notify && ' main {transform: translateY(50px);}'}
 `
 
 const MainLayout: React.FC<IMainLayout> = ({

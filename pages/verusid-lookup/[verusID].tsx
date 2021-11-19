@@ -46,7 +46,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         },
       }
     }
-    // console.log(verusId)
+
     const profileData = await FetchVerusId({ id: verusId })
     if (profileData.result) {
       let data: VerusResult = {

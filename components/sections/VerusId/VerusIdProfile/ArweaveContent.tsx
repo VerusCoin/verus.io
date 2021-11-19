@@ -66,15 +66,8 @@ const ArweaveContent = ({ content }: { content: PublicProfileLib }) => {
 
   switch (content.type) {
     case 'post':
-      // const source = data.body
-      // onst mdxSource = serialize(source)
-
       return (
         <StyledContainer>
-          {/* <DefaultText fam="geoHead" fontSz="mdlg" customMargin="0">
-            Arweave Post
-          </DefaultText> */}
-          {/* <StyledHr /> */}
           <StyledPostContent readStatus={readMore}>
             <MDXRemote {...data} components={ArweaveComponents} />
           </StyledPostContent>

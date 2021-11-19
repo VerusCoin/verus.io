@@ -39,7 +39,6 @@ const VerusidLookup = () => {
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (query) => {
-    // console.log(query)
     if (query) {
       const url = `/api/verusIdProfile?id=${query.verusID}`
       const result = await fetch(url)

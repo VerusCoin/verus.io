@@ -25,14 +25,14 @@ const FetchVerusProfile = async (content: Record<string, any>) => {
     const arweaveJSON = await arweave.transactions
       .getData(arweaveTxId, { decode: true, string: true })
       .then((res) => JSON.parse(res.toString()))
-    // console.log(arweaveJSON)
+
     if (arweaveJSON) {
       //we have profile json lets organize it so it can be presented.
-      // console.log(arweaveJSON)
+
       const profileJSON: PublicProfileProps = await CreateProfile(
         arweaveJSON[IdentityJSON.public.vdxfid]
       )
-      // console.log(profileJSON)
+
       return profileJSON
     }
   } else {

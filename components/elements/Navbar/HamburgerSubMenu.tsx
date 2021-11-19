@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { StyledLink } from './HamburgerMenu'
 import { IHamburgerSubMenu } from '@/types/molecules'
 import useTranslation from 'next-translate/useTranslation'
+import Link from 'next/link'
 
 const StyledSubMenu = styled.ul<{ openSubMenu: boolean }>`
   overflow: hidden;
@@ -30,12 +31,20 @@ const HamburgerSubMenu: React.FC<IHamburgerSubMenu> = ({
     <StyledSubMenu openSubMenu={openSubMenu}>
       {menu.map((subitem, index) => (
         <StyledNavigationMenuSubItem key={`subnav_${subitem.link}_${index}`}>
-          <StyledLink
-            as={subitem.href ? 'a' : 'span'}
-            href={subitem.href && subitem.href}
-          >
-            {t(`${category}.${subitem.link}.title`)}
-          </StyledLink>
+          {subitem.href && !subitem.external ? (
+            <Link href={subitem.href} passHref>
+              <StyledLink as="a">
+                {t(`${category}.${subitem.link}.title`)}
+              </StyledLink>
+            </Link>
+          ) : (
+            <StyledLink
+              as={subitem.href ? 'a' : 'span'}
+              href={subitem.href && subitem.href}
+            >
+              {t(`${category}.${subitem.link}.title`)}
+            </StyledLink>
+          )}
         </StyledNavigationMenuSubItem>
       ))}
     </StyledSubMenu>
