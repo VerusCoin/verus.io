@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (IDvariable.id.slice(-1) != '@') {
     IDvariable.id = IDvariable.id + '@'
   }
-  // console.log(IDvariable)
+
   let result = await FetchVerusId(IDvariable)
   if (result.result) {
     result = { result: IDvariable, error: null }

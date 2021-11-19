@@ -33,7 +33,6 @@ const ProfileServices = () => {
 
   return (
     <StyledContainer>
-      {/* {services && <Recursive list={services} />} */}
       {Object.keys(services).map((item, index) => (
         <ServiceCard
           type={item}

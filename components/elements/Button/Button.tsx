@@ -101,7 +101,7 @@ const StyledButton = styled.button<any>`
     color: ${props.theme.buttons.primary.text};
     padding: ${(props: any) => (props.small ? '12px 20px' : '16px 30px')};;
     &:hover {
-      background: rgb(255,255,255,0.17)
+      background: rgb(255,255,255,0.17);
     }
   `}
   ${(props: any) => props.margin && `margin: ${props.margin};`}

@@ -1,18 +1,17 @@
-import { useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import * as FontAwesome from 'react-icons/fa'
-import useSWR from 'swr'
+// import useSWR from 'swr'
 import { AccountObjects } from '@/lib/VerusIdProfile/ProfileTypes'
 import {
   StyledServiceCard,
+  StyledAccountContainer,
   // TooltipBox,
   // TooltipBoxContainer,
 } from './ProfileStyles'
 import { ObjectFinder, capitalizeFirstLetter } from './Helper'
 import { VerusIDContext } from '@/lib/Contexts'
-
-const fetcher = async (url: string) =>
-  await fetch(url).then((res) => res.json())
-// TODO: work on nesting for servicecard
+import ServiceCardDropDown from './ServiceCardDropDown'
+// TODO: work on proof card
 
 const ServiceCard = ({
   type,
@@ -32,16 +31,24 @@ const ServiceCard = ({
 
   const context = useContext(VerusIDContext)
   const verusUser = context.id
+  const dataFetch = {
+    user: verusUser,
+    ...serviceAccount,
+  }
+  const [data, setData] = useState<Record<string, any> | null>(null)
 
-  const { data } = useSWR(
-    `/api/verificationCheck?query=${JSON.stringify({
-      user: verusUser,
-      ...serviceAccount,
-    })}`,
-    fetcher
-  )
+  useEffect(() => {
+    fetch('/api/verificationCheck', {
+      method: 'POST',
+      body: JSON.stringify(dataFetch),
+    })
+      .then((res) => res.json())
+      .then((result) => setData(result))
+    return () => {
+      setData(null)
+    }
+  }, [])
   if (data) {
-    // console.log('data', data)
     switch (data?.valid) {
       case 'true':
         StatusIcon = FontAwesome['FaUserCheck']
@@ -52,106 +59,47 @@ const ServiceCard = ({
       default:
         StatusIcon = FontAwesome['FaCog']
     }
-    // console.log(StatusIcon)
+  }
+
+  const [show, setShow] = useState(false)
+  let shortUrl: string | string[] =
+    serviceAccount.i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw.toString()
+  try {
+    let domain: URL | string = new URL(shortUrl)
+    domain = domain.hostname
+    shortUrl = domain.toString()
+    shortUrl = shortUrl.split('.')
+    shortUrl =
+      '(' +
+      shortUrl[shortUrl.length - 2] +
+      '.' +
+      shortUrl[shortUrl.length - 1] +
+      ')'
+  } catch {
+    shortUrl = ''
   }
 
   return (
-    <StyledServiceCard status={data?.valid}>
-      <Icon size="1.5em" className="logo" />
-      {serviceAccount.accountname ||
-        serviceAccount.accountid ||
-        serviceAccount.name}
-      <StatusIcon className="status" />
-      {/* <TooltipBoxContainer>
+    <StyledAccountContainer>
+      <StyledServiceCard status={data?.valid} onClick={() => setShow(!show)}>
+        <Icon size="1.5em" className="logo" />
+        <p>
+          {serviceAccount.accountname ||
+            serviceAccount.accountid ||
+            serviceAccount.name}{' '}
+          {shortUrl}
+        </p>
+        <StatusIcon className="status" />
+        {/* <TooltipBoxContainer>
         <TooltipBox classname="tooltip">test</TooltipBox>
       </TooltipBoxContainer> */}
-    </StyledServiceCard>
+      </StyledServiceCard>
+      <ServiceCardDropDown
+        show={show}
+        data={{ ...data, ...serviceAccount, type: type }}
+      />
+    </StyledAccountContainer>
   )
 }
 
 export default ServiceCard
-
-//conduct a nested service check
-// if (serviceAccount?.qualifiedname) {
-//   // some pre-declared fontAwesome
-//   if (type === 'website') {
-//     Icon = FontAwesome['FaGlobeAmericas']
-//   }
-//   return (
-//     <StyledServiceCard>
-//       <Icon size="1.5em" className="logo" />
-//       {serviceAccount.accountname ||
-//         serviceAccount.accountid ||
-//         serviceAccount.name}
-//     </StyledServiceCard>
-//   )
-// } else {
-//   return (
-//     <>
-//       {Object.keys(serviceAccount).map((element, index) => {
-//         const newObject:AccountObjects = serviceAccount[element]
-//         return (
-//           <ServiceCard
-//             verusUser={verusUser}
-//             type={element}
-//             serviceAccount={newObject}
-//             key={element + index}
-//           />
-//         )
-//       })}
-//     </>
-//   )
-// return (
-//   <>
-//     {Object.keys(serviceAccount).map((element, index) => {
-//       return (
-//         <>
-//           {element}
-//           {/* <ServiceCard
-//             verusUser={verusUser}
-//             type={element}
-//             serviceAccount={serviceAccount[element]}
-//             key={element + index}
-//           /> */}
-//           <pre key={index}>
-//             {JSON.stringify(serviceAccount[element], null, 2)}
-//           </pre>
-//         </>
-//       )
-//     })}
-
-//     {/* <pre>{JSON.stringify(serviceAccount, null, 2)}</pre> */}
-//   </>
-// )
-
-// console.log('type', capitalizeFirstLetter(type))
-
-// const Icon = ObjectFinder(`Fa${capitalizeFirstLetter(type)}`)(FontAwesome)
-// let StatusIcon = ObjectFinder('FaCog')(FontAwesome)
-// const { data } = useSWR(
-//   `/api/verificationCheck?query=${JSON.stringify({
-//     user: verusUser,
-//     ...account,
-//   })}`,
-//   fetcher
-// )
-// if (data) {
-//   if (data?.valid === 'valid') {
-//     StatusIcon = ObjectFinder('FaUserCheck')(FontAwesome)
-//   } else if (data?.valid === 'invalid') {
-//     StatusIcon = ObjectFinder('FaExclamationTriangle')(FontAwesome)
-//   }
-// }
-
-// const handleAccount = () => {
-//   alert('test')
-// }
-
-// return (
-// <StyledServiceCard status={data?.valid} onClick={() => handleAccount()}>
-//   <Icon size="1.5em" className="logo" />
-//   <p>{account.accountname || account.accountid}</p>
-//   <StatusIcon className="status" />
-// </StyledServiceCard>
-// )
-// return <StyledServiceCard>Test</StyledServiceCard>

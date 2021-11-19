@@ -8,6 +8,7 @@ const URLMiningStats = 'https://explorer.verus.io/api/getmininginfo'
 const URLCoinSupply = 'https://explorer.verus.io/api/coinsupply'
 
 interface Data {
+  blockCount: any
   staking: any
   miningHashRate: any
   totalHashRate: any
@@ -19,6 +20,7 @@ interface Data {
 
 export async function getVerusStats() {
   const data: Data = {
+    blockCount: 0,
     staking: 0,
     miningHashRate: 0,
     totalHashRate: 0,
@@ -41,6 +43,7 @@ export async function getVerusStats() {
   data.totalHashRate = HashRateConverter(results.networkhashps, 1)
   data.miningHashRate = HashRateConverter(results.networkhashps, 2)
   data.staking = parseFloat(results.stakingsupply).toFixed(0)
+  data.blockCount = parseFloat(results.blocks).toFixed(0)
   data.progressBarValue = ((data.staking / data.coinSupply) * 100).toFixed(0)
   data.coinSupply = data.coinSupply
     .toString()

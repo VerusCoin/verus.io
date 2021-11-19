@@ -52,9 +52,16 @@ const Hamburger: React.FC<IHamburger> = ({ openMenu, setOpenMenu }) => {
     ) as HTMLElement
 
     setOpenMenu(!openMenu)
-
+    // if (!openMenu) {
+    //   console.log('!openMenu', openMenu)
+    //   console.log('tag', targetElement.className)
+    // } else {
+    //   console.log('openMenu', openMenu)
+    // }
     if (!openMenu) {
-      disableBodyScroll(targetElement)
+      disableBodyScroll(targetElement, {
+        allowTouchMove: (el) => el.className === targetElement.className,
+      })
     } else {
       clearAllBodyScrollLocks()
     }
