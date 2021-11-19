@@ -18,11 +18,15 @@ export default function App({ Component, pageProps }: AppProps): any {
   const { data } = useSWR('/api/notifyBannerCounter', fetcher, {
     refreshInterval: 60000,
   })
+  const [initialize, setInitialize] = useState(true)
   useEffect(() => {
-    if (data?.blockCount > 0) {
-      setNotify(true)
-    } else {
-      setNotify(false)
+    if (initialize) {
+      if (data?.blockCount > 0) {
+        setNotify(true)
+        setInitialize(false)
+      } else {
+        setNotify(false)
+      }
     }
   }, [data])
 
