@@ -33,7 +33,6 @@ const CloseButton = styled.button`
     cursor: pointer;
   }
   svg {
-    display: none;
     height: 26px;
     path:first-child {
       fill: white;
@@ -52,9 +51,6 @@ const CloseButton = styled.button`
         fill: black;
       }
     }
-    ${media.tablet`
-      display:block;
-    `}
   }
 `
 const StyledReadMore = styled.button`
@@ -64,18 +60,26 @@ const StyledReadMore = styled.button`
   background: transparent;
   border-radius: 12px;
   color: white;
+  text-decoration: none;
   ${fontSize('xxs')}
+  &:hover {
+    background: rgb(255, 255, 255, 0.17);
+  }
 `
 const StyledActivation = styled(DefaultText)`
+  display: none;
   border-radius: 12px;
   ${bgColor('white')}
   padding: 4px 12px;
   margin: 0 7px;
+  ${media.tablet`
+    display:block;
+  `}
 `
 
 const NotifyBanner = () => {
   const { t } = useTranslation('common')
-  const { notify, setNotify } = useNotifyContext()
+  const { notify, setNotify, blockString } = useNotifyContext()
 
   return (
     <StyledNotification notify={notify}>
@@ -87,9 +91,16 @@ const NotifyBanner = () => {
       >
         {t('upgradeComing')}
       </DefaultText>
-      <StyledReadMore>{t('upgradereadMore')}</StyledReadMore>
+      <StyledReadMore
+        as="a"
+        href={process.env.NEXT_PUBLIC_NOTIFY_BANNER_LINK}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {t('upgradereadMore')}
+      </StyledReadMore>
       <StyledActivation fontSz="xxs" customColor="green" align="center">
-        {t(`upgradeCounter`, { count: '50,000' })}
+        {t(`upgradeCounter`, { count: blockString })}
       </StyledActivation>
       <CloseButton onClick={() => setNotify(false)}>
         <SVGs name="close" />

@@ -12,25 +12,6 @@ import { VerusIDContext } from '@/lib/Contexts'
 // 3) keys - which are blockchain addresses
 // 4) services - this can be accounts, websites, and more.
 // the order of listing will be services, keys, and then collections as public is taken care of by the header of the profile.
-// TODO: work on nesting for servicecard
-
-// const FindServices = (user, type, content) => {
-//   if (content?.qualifiedname) {
-//     console.log('content', content)
-//     return <ServiceCard verusUser={user} type={type} serviceAccount={content} />
-//   } else {
-//     let serviceList: any
-
-//     Object.keys(content).forEach((element) => {
-//       if (serviceList) {
-//         serviceList = serviceList + FindServices(user, type, content[element])
-//       } else {
-//         serviceList = FindServices(user, type, content[element])
-//       }
-//     })
-//     return serviceList
-//   }
-// }
 
 const Profile = () => {
   const context = useContext(VerusIDContext)

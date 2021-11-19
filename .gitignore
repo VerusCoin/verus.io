@@ -39,4 +39,7 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 .env
+
+#nextjs 12
 next.lock
+tsconfig.tsbuildinfo

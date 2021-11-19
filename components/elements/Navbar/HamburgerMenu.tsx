@@ -7,6 +7,7 @@ import { fontSize } from '@/styles/helpers'
 import HamburgerSubMenu from './HamburgerSubMenu'
 import { SVGs } from '@/components/elements/SVGs/SVGs'
 import useTranslation from 'next-translate/useTranslation'
+import Link from 'next/link'
 
 export const StyledLink = styled.a<any>`
   display: flex;
@@ -100,6 +101,12 @@ const HamburgerMenu: React.FC<IHamburgerMenu> = ({ menu, openMenu }) => {
                       >
                         {t(`${item.category}.title`)}
                       </Button>
+                    ) : item.href && !item.external ? (
+                      <Link href={item.href} passHref>
+                        <StyledLink as="a">
+                          {t(`${item.category}.title`)}
+                        </StyledLink>
+                      </Link>
                     ) : (
                       <StyledLink
                         as={item.href ? 'a' : 'span'}

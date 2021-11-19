@@ -32,34 +32,14 @@ const VerusidLookup = () => {
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (query) => {
-    // console.log('query', query)
     if (query) {
-      // if (query.verusID.match('/:*?"<>|')) {
-      //   console.log(query)
-      //   //quick test for inproper verusID content, whould add @ however, that would be at the end.
-      //   setVerusID({ error: 'Invalid VerusID' })
-      // } else {
       query.verusID = escape(query.verusID)
       const url = `/api/verusIDcheck?id=${query.verusID}`
       const result = await fetch(url)
       const data = await result.json()
-      // console.log(query)
-      // console.log(data)
       if (data.result) {
-        // console.log(data.result)
         setVerusID(result)
         router.push(`/verusid-lookup/${data.result.id}`)
-        // router.push({
-        //   pathname: '/verusid-lookup/[verusID]',
-        //   query: { verusID: escape(data.result.id) },
-        // })
-        // router.push({
-        //   pathname: '/verusid-lookup/[id]',
-        //   query: { id: data.result.id },
-        // })
-        // } else {
-        //   setVerusID({ error: data.error.message })
-        // }
       }
     }
   }
