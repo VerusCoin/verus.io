@@ -14,7 +14,7 @@ const StyledNotification = styled.div<any>`
   left: 0;
   width: 100%;
   height: 42px;
-  z-index: 19999;
+  z-index: 9999;
   flex-direction: row;
   justify-content: center;
   align-items: center;

@@ -13,22 +13,25 @@ import {
   CardText,
   DefaultLinkCard,
 } from '@/components/elements'
-import { Container, Row, Col } from 'styled-bootstrap-grid'
+import { Container, Row, Col, media } from 'styled-bootstrap-grid'
 import { Banner, Blog, KnowCards } from '@/components/sections/Home'
 
 const StyledCardContainer = styled(Container)`
   ${bgColor('white')}
   border-radius: 8px;
-  padding: 75px;
+  padding: 35px;
   grid-column: span 2;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
+  ${media.tablet`
+  padding: 75px;
+  `}
 `
 
 const StyledCard = styled.div`
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  margin: 45px 0;
+  margin: 35px 0;
 `
 
 const Home = ({ data }: HomepageProps) => {
@@ -54,7 +57,7 @@ const Home = ({ data }: HomepageProps) => {
     <>
       <NextSeo title={title} description={description} />
       <MainLayout jumbotronData={JumbotronJSON}>
-        <Grid>
+        <Grid bottom>
           <Banner />
           <StyledCardContainer>
             <Row justifyContent="center">
@@ -63,12 +66,13 @@ const Home = ({ data }: HomepageProps) => {
                 return (
                   <Col key={index} md={6} lg={4}>
                     <StyledCard>
-                      <Img height="75px" name={card.svg} />
+                      <Img height="60px" name={card.svg} />
                       <CardHeader align="left" text={heading} as="h4" />
                       <CardText
                         align="left"
                         text={t(`cards.${card.card}.text`)}
                         margin="0 0 16px"
+                        fontSz="xa"
                       />
                     </StyledCard>
                   </Col>
@@ -90,6 +94,7 @@ const Home = ({ data }: HomepageProps) => {
         <Blog title={t('highlighted')} data={data.HighlightJSON} />
 
         <Blog title={t('latest')} data={data.LatestJSON} link />
+
         <Grid>
           <DefaultLinkCard card="create" />
           <DefaultLinkCard card="foundation" />

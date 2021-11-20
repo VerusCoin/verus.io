@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid } from '@/components/layouts'
-import { Img } from '@/components/elements'
+import { Img, TypedJS } from '@/components/elements'
 import {
   StyledContainer,
   StyledForm,
@@ -28,7 +28,7 @@ const VerusidLookup = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitted },
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (query) => {
@@ -51,7 +51,11 @@ const VerusidLookup = () => {
         <Grid>
           <StyledContainer>
             <Img name="VerusID_Search_Icon" height={132} />
-
+            {(isSubmitting || isSubmitted) && (
+              <div>
+                <TypedJS strings={['Fetching', 'VerusID']} />
+              </div>
+            )}
             <StyledForm onSubmit={handleSubmit(onSubmit)}>
               <StyledFormRow>
                 <StyledInput

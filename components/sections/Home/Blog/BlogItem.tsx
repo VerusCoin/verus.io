@@ -18,7 +18,7 @@ const StyledImage = styled.div`
   background: none;
   opacity: 1;
   border: 0px;
-
+  border-radius: 12px;
   padding: 0px;
   position: relative;
   max-width: 100%;
@@ -78,6 +78,9 @@ const StyledBlogItem = styled.a`
 `
 // src="/images/blog-example.png"
 const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
+  if (title.includes('&amp')) {
+    title = title.replace(/&amp;/g, '&')
+  }
   return (
     <StyledBlogItem href={link} target="_blank" rel="noreferrer">
       <StyledImage>
@@ -89,7 +92,7 @@ const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
       </StyledImage>
 
       <DefaultHeader
-        as="h4"
+        as="h5"
         headerStyle="display:-webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"
       >
         {title}

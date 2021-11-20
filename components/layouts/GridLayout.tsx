@@ -5,7 +5,7 @@ import { media } from 'styled-bootstrap-grid'
 import { spacer } from '@/styles/helpers'
 // grid-row-gap: 12px;
 const StyledContainer = styled.div<any>`
-  ${spacer('xxl')}
+  ${(props) => (props.bottom ? spacer('xl') : spacer('xxl'))}
   justify-content: center;
   grid-auto-rows: auto;
   padding: 0 20px;
@@ -36,10 +36,11 @@ const StyledContainer = styled.div<any>`
 
 interface IGridLayout {
   children: React.ReactNode
+  bottom?: boolean
 }
 
-const GridLayout: React.FC<IGridLayout> = ({ children }) => {
-  return <StyledContainer>{children}</StyledContainer>
+const GridLayout: React.FC<IGridLayout> = ({ children, bottom }) => {
+  return <StyledContainer bottom={bottom}>{children}</StyledContainer>
 }
 
 export default GridLayout

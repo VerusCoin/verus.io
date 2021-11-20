@@ -9,7 +9,7 @@ import BlogItem from './BlogItem'
 import { spacer } from '@/styles/helpers'
 
 const StyledBlogItem = styled.div`
-  ${spacer('xxl')}
+  ${spacer('xl')}
 
   h4 {
     margin-bottom: ${(props) => props.theme.spaces.md};
