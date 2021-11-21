@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid } from '@/components/layouts'
-import { Img, TypedJS } from '@/components/elements'
+import { Img, DefaultText } from '@/components/elements'
 import {
   StyledContainer,
   StyledForm,
@@ -13,6 +13,7 @@ import {
   StyledResultError,
   StyledInput,
   StyledSubmitButton,
+  StyledTypedDiv,
 } from '@/components/sections/VerusId/Styles'
 
 type Inputs = {
@@ -28,7 +29,7 @@ const VerusidLookup = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitted },
+    formState: { errors, isSubmitting },
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (query) => {
@@ -38,8 +39,10 @@ const VerusidLookup = () => {
       const result = await fetch(url)
       const data = await result.json()
       if (data.result) {
-        setVerusID(result)
+        setVerusID(data)
         router.push(`/verusid-lookup/${data.result.id}`)
+      } else {
+        setVerusID({ error: data.error.message })
       }
     }
   }
@@ -51,11 +54,14 @@ const VerusidLookup = () => {
         <Grid>
           <StyledContainer>
             <Img name="VerusID_Search_Icon" height={132} />
-            {(isSubmitting || isSubmitted) && (
-              <div>
-                <TypedJS strings={['Fetching', 'VerusID']} />
-              </div>
-            )}
+            <StyledTypedDiv>
+              {isSubmitting && (
+                <DefaultText align="center">Fetching VerusID</DefaultText>
+              )}
+              {verusID.result && (
+                <DefaultText align="center">Loading VerusID</DefaultText>
+              )}
+            </StyledTypedDiv>
             <StyledForm onSubmit={handleSubmit(onSubmit)}>
               <StyledFormRow>
                 <StyledInput

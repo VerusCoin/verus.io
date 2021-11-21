@@ -86,7 +86,9 @@ const CLIdownload = ({
     <StyledMenu>
       <StyledSubMenuDiv>
         <StyledButton
-          onClick={() => showDropdown(!dropdown)}
+          onClick={() => {
+            showDropdown(!dropdown)
+          }}
           openSubMenu={dropdown}
         >
           <DefaultText fam="geoHead" fontSz="menu">

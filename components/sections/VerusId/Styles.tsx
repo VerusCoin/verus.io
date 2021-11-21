@@ -23,6 +23,9 @@ export const StyledContainer = styled.div<any>`
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
   `}
 `
+export const StyledTypedDiv = styled.div`
+  height: 30px;
+`
 
 export const StyledProfileContainer = styled.div`
   grid-column: span 2;
