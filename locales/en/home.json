@@ -15,7 +15,7 @@
     },
     "verusCard": {
       "header": "VerusID",
-      "text": "Digital identities for any project. Self-sovereign, decentralized or even centralized. The most complete identity system in the world."
+      "text": "Digital identities, assets and namespaces for any project. Self-sovereign, decentralized or even centralized. The most complete identity system in the world."
     },
     "defiCard": {
       "header": "DeFi",
@@ -27,7 +27,7 @@
     },
     "interopCard": {
       "header": "Interoperability",
-      "text": "Exchange value and data seamlessly across blockchains. Connect any systems together with Verus advanced bridging technology."
+      "text": "Exchange value and data seamlessly across blockchains and other systems. Connect any system together with Verus Interchain Protocol."
     },
     "dataCard": {
       "header": "Data",
@@ -43,5 +43,6 @@
       "text": "truth real actual genuine"
     }
   },
-  "blog": "Latest articles from our blog."
+  "highlighted": "Highlighted Articles",
+  "latest": "Latest Articles"
 }

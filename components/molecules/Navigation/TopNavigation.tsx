@@ -33,7 +33,7 @@ const StyledTopNavigation = styled.nav<any>`
   right: 0;
   left: 0;
   top: ${(props) => (props.notify ? '42px' : 0)};
-  z-index: 9999;
+  z-index: 8999;
   background-color: ${(props) => props.theme.colors.white};
   transition: transform ${(props) => props.theme.transitions.fast};
 

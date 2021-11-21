@@ -18,7 +18,7 @@ const StyledImage = styled.div`
   background: none;
   opacity: 1;
   border: 0px;
-
+  border-radius: 12px;
   padding: 0px;
   position: relative;
   max-width: 100%;
@@ -58,26 +58,29 @@ const StyledBlogItem = styled.a`
   flex-direction: column;
   justify-content: space-between;
   max-width: 390px;
-  margin-right: auto;
-  margin-left: auto;
+
   border-radius: ${(props) => props.theme.borders.sm};
   box-shadow: 0 0 26px -4px rgba(0, 0, 0, 0.15);
   text-decoration: none;
   color: ${(props) => props.theme.colors.black.primary};
   padding: ${(props) => props.theme.spaces.custom.gutter};
-  margin-bottom: ${(props) => props.theme.spaces.sm};
-  transition: box-shadow ${(props) => props.theme.transitions.regular};
 
+  transition: box-shadow ${(props) => props.theme.transitions.regular};
+  margin: 10px auto;
   &:hover {
     box-shadow: 0 0 26px -4px rgba(0, 0, 0, 0.25);
   }
 
   ${media.desktop`
     min-height: 350px;
+    height:100%;
   `}
 `
 // src="/images/blog-example.png"
 const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
+  if (title.includes('&amp')) {
+    title = title.replace(/&amp;/g, '&')
+  }
   return (
     <StyledBlogItem href={link} target="_blank" rel="noreferrer">
       <StyledImage>
@@ -88,16 +91,15 @@ const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
         {/* <Image src={thumbnail} alt={thumbnail} width={360} height={185} /> */}
       </StyledImage>
 
-      <DefaultHeader
-        as="h4"
-        headerStyle="display:-webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"
-      >
-        {title}
-      </DefaultHeader>
+      <DefaultHeader as="h5">{title}</DefaultHeader>
 
-      <DefaultText>{dayjs(pubDate).format('DD MMM YYYY')}</DefaultText>
+      <DefaultText customMargin="10px 0">
+        {dayjs(pubDate).format('DD MMM YYYY')}
+      </DefaultText>
     </StyledBlogItem>
   )
 }
 
 export default BlogItem
+
+// just in case for default header  headerStyle="display:-webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;"

@@ -9,6 +9,7 @@ import { SEO } from '../next-seo.config'
 import { NotifyContext } from '@/lib/Contexts'
 import { useState, useEffect } from 'react'
 import useSWR from 'swr'
+import NextNProgress from 'nextjs-progressbar'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }: AppProps): any {
 
   return (
     <>
+      <NextNProgress />
       <GlobalStyle />
       <BaseCSS />
       <DefaultSeo {...SEO} />

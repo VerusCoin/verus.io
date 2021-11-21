@@ -43,3 +43,4 @@ yarn.lock
 #nextjs 12
 next.lock
 tsconfig.tsbuildinfo
+*.tsbuildinfo

@@ -138,7 +138,7 @@ const MainNavigation: React.FC<IMainNavigation> = ({ menu }) => {
           </Col>
           <Col col={4} lg={2} className="tagline">
             <StyledBanner>
-              <DefaultText align="left" fontSz="xs" fam="geoReg">
+              <DefaultText align="left" fontSz="xs">
                 Truth and Privacy for All
               </DefaultText>
             </StyledBanner>

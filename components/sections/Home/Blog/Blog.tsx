@@ -9,25 +9,27 @@ import BlogItem from './BlogItem'
 import { spacer } from '@/styles/helpers'
 
 const StyledBlogItem = styled.div`
-  ${spacer('xxl')}
+  ${spacer('xl')}
 
-  h2 {
-    margin-bottom: ${(props) => props.theme.spaces.lg};
+  h4 {
+    margin-bottom: ${(props) => props.theme.spaces.md};
   }
 `
 const StyledButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: ${(props) => props.theme.spaces.lg};
+  margin-top: ${(props) => props.theme.spaces.md};
 `
 
-const Blog = ({ title, data }: IBlog) => {
+const Blog = ({ title, data, link }: IBlog) => {
   return (
     <StyledBlogItem>
       <Container>
         <Row justifyContent="center">
           <Col col={12}>
-            <DefaultHeader align="center">{parse(title)}</DefaultHeader>
+            <DefaultHeader align="center" as="h4">
+              {parse(title)}
+            </DefaultHeader>
 
             <Row>
               {data.map((item, index) => {
@@ -38,20 +40,21 @@ const Blog = ({ title, data }: IBlog) => {
                 )
               })}
             </Row>
-
-            <StyledButtonContainer>
-              <Button
-                transparent
-                as="a"
-                wide
-                color="#3165d4"
-                svg={{ type: 'tab', rotate: false }}
-                href="https://medium.com/veruscoin"
-                target="_blank"
-              >
-                Go to Blog
-              </Button>
-            </StyledButtonContainer>
+            {link && (
+              <StyledButtonContainer>
+                <Button
+                  transparent
+                  as="a"
+                  wide
+                  color="#3165d4"
+                  svg={{ type: 'tab', rotate: false }}
+                  href="https://medium.com/veruscoin"
+                  target="_blank"
+                >
+                  Go to Blog
+                </Button>
+              </StyledButtonContainer>
+            )}
           </Col>
         </Row>
       </Container>
