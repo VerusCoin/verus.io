@@ -31,5 +31,6 @@
   "copied": "Copied",
   "upgradeComing": "Vault & Marketplace Mainnet Upgrade",
   "upgradereadMore": "read more",
-  "upgradeCounter": "Activation in {{count}} blocks"
+  "upgradeCounter": "Activation in {{count}} blocks",
+  "upgradeComplete":"Activated!"
 }

@@ -80,6 +80,16 @@ const StyledActivation = styled(DefaultText)`
 const NotifyBanner = () => {
   const { t } = useTranslation('common')
   const { notify, setNotify, blockString } = useNotifyContext()
+  let statusText: string | undefined = undefined
+  if (blockString) {
+    let newString: string | string[] = blockString.split(',')
+    newString = newString[0] + newString[1]
+    if (parseInt(newString) > 0) {
+      statusText = t(`upgradeCounter`, { count: blockString })
+    } else {
+      statusText = t(`upgradeComplete`)
+    }
+  }
 
   return (
     <StyledNotification notify={notify}>
@@ -99,9 +109,14 @@ const NotifyBanner = () => {
       >
         {t('upgradereadMore')}
       </StyledReadMore>
-      <StyledActivation fontSz="xxs" customColor="green" align="center">
-        {t(`upgradeCounter`, { count: blockString })}
-      </StyledActivation>
+
+      {/* {t(`upgradeCounter`, { count: blockString })} */}
+      {statusText !== undefined && (
+        <StyledActivation fontSz="xxs" customColor="green" align="center">
+          {statusText}
+        </StyledActivation>
+      )}
+
       <CloseButton onClick={() => setNotify(false)}>
         <SVGs name="close" />
       </CloseButton>
