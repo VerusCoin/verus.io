@@ -239,36 +239,46 @@ const Wallet = ({
 export default Wallet
 
 export const getServerSideProps: GetServerSideProps = async () => {
+  // const result = await fetch(
+  //   'https://api.github.com/repos/VerusCoin/VerusCoin/releases/latest'
+  // )
   const result = await fetch(
-    'https://api.github.com/repos/VerusCoin/VerusCoin/releases/latest'
-  )
-  const latestCMDwallet = await result.json()
-  let linuxApp,
-    winApp,
-    macApp,
-    armApp = null
+    'http://localhost:3000/api/verusWallets?wallet=cli'
+  ).then((res) => res.json())
+  // const latestCMDwallet = await result.json()
+  // let linuxApp,
+  //   winApp,
+  //   macApp,
+  //   armApp= ''
 
-  const name = latestCMDwallet.name
-  const published_at = latestCMDwallet.published_at
+  // const name = latestCMDwallet.name
+  // const published_at = latestCMDwallet.published_at
 
-  latestCMDwallet.assets.map((asset: any) => {
-    if (asset.name.includes('arm64')) {
-      armApp = asset.browser_download_url
-    }
-    if (asset.name.includes('Windows')) {
-      winApp = asset.browser_download_url
-    }
+  // latestCMDwallet.assets.map((asset: any) => {
+  //   if (asset.name.includes('arm64')) {
+  //     armApp = asset.browser_download_url
+  //   }
+  //   if (asset.name.includes('Windows')) {
+  //     winApp = asset.browser_download_url
+  //   }
 
-    if (asset.name.includes('MacOS')) {
-      macApp = asset.browser_download_url
-    }
+  //   if (asset.name.includes('MacOS')) {
+  //     macApp = asset.browser_download_url
+  //   }
 
-    if (asset.name.includes('x86_64' || 'amd64')) {
-      linuxApp = asset.browser_download_url
-    }
-  })
+  //   if (asset.name.includes('x86_64' || 'amd64')) {
+  //     linuxApp = asset.browser_download_url
+  //   }
+  // })
 
+  // const linuxApp = data.linuxApp
+  // const winApp = data.winApp
+  // const macApp = data.macApp
+  // const armApp = data.armApp
+  // const name = data.name
+  // const published_at = data.published_at
   return {
-    props: { linuxApp, winApp, macApp, armApp, name, published_at },
+    // props: { linuxApp, winApp, macApp, armApp, name, published_at },
+    props: result,
   }
 }

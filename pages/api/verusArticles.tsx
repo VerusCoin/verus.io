@@ -12,8 +12,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   result = null
   if (index) {
     // NOTE: Comment below for master branch.
-    // cache.del(cacheArticles)
-    cache.clear()
+    cache.del(cacheArticles)
+    // cache.clear()
     index = 0
   }
 
