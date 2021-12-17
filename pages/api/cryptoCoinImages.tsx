@@ -10,7 +10,8 @@ export default async (res: NextApiResponse) => {
   // let result: any = req //used to clear no-unused-variable error
   // result = null
   if (index) {
-    cache.clear()
+    // cache.clear()
+    cache.del(cacheCryptoCoins)
     index = 0
   }
   if (!cache.get(cacheCryptoCoins)) {

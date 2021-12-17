@@ -201,8 +201,11 @@ const Mobile = ({
 export default Mobile
 
 export const getServerSideProps: GetServerSideProps = async () => {
+  // const result = await fetch(
+  //   'https://api.github.com/repos/VerusCoin/Verus-Mobile/releases'
+  // )
   const result = await fetch(
-    'https://api.github.com/repos/VerusCoin/Verus-Mobile/releases'
+    'http://localhost:3000/api/verusWallets?wallet=mobile'
   )
   const latestAndroid = await result.json()
   const name = latestAndroid[0].name
