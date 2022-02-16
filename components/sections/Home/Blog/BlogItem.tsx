@@ -81,11 +81,18 @@ const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
   if (title.includes('&amp')) {
     title = title.replace(/&amp;/g, '&')
   }
+  //need to get the png from url
+  let newThumbnail: string | string[] = thumbnail.split('/')
+
+  newThumbnail = newThumbnail[newThumbnail.length - 1]
+
+  const srcURL = `https://cdn-images-1.medium.com/max/640/${newThumbnail}`
+
   return (
     <StyledBlogItem href={link} target="_blank" rel="noreferrer">
       <StyledImage>
         <StyledImageContainer>
-          <img src={thumbnail} alt={thumbnail} width="360px" height="185px" />
+          <img src={srcURL} alt={thumbnail} width="360px" height="185px" />
         </StyledImageContainer>
 
         {/* <Image src={thumbnail} alt={thumbnail} width={360} height={185} /> */}

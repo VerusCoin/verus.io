@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps): any {
   const [initialize, setInitialize] = useState(true)
   useEffect(() => {
     if (initialize) {
-      if (data?.blockCount > 0) {
+      if (data?.blockCount) {
         setNotify(true)
         setInitialize(false)
       } else {
