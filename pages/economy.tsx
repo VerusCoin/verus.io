@@ -33,16 +33,11 @@ const Economy = ({ fallback }: { fallback: any }) => {
 
   const title = t('seo:page.economy.title')
   const description = t('seo:page.economy.description')
-  const JumbotronJSON = {
-    header: t('jumbotron.heading'),
-    text: t('jumbotron.text'),
-    width: 1000,
-  }
 
   return (
     <>
       <NextSeo title={title} description={description} />
-      <MainLayout jumbotronData={JumbotronJSON}>
+      <MainLayout>
         <Grid>
           <Card styles="justify-content: flex-end; padding: 50px 20px;">
             <CardText book fontSz="sm" text={t('staking.heading')} />

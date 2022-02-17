@@ -138,15 +138,11 @@ const Wallet = ({
   const { t } = useTranslation('wallet')
   const title = t('seo:page.wallet.title')
   const description = t('seo:page.wallet.description')
-  const JumbotronJSON = {
-    header: t('jumbotron.heading'),
-    text: t('jumbotron.text'),
-    width: 1000,
-  }
+
   return (
     <>
       <NextSeo title={title} description={description} />
-      <MainLayout jumbotronData={JumbotronJSON}>
+      <MainLayout>
         <Grid>
           <StyledCard large desktop>
             <CardHeader margin="0" text={t('cards.desktop.header')} />

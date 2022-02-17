@@ -79,6 +79,7 @@ export const StyledHamburgerMenu = styled.div<{ openMenu: boolean }>`
 
 const HamburgerMenu: React.FC<IHamburgerMenu> = ({ menu, openMenu }) => {
   const { t } = useTranslation('navigation')
+
   return (
     <StyledHamburgerMenu openMenu={openMenu}>
       <Container>

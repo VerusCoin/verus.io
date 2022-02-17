@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const StyledSubMenu = styled.ul<{ openSubMenu: boolean }>`
   overflow: hidden;
-  max-height: ${(props) => (props.openSubMenu ? '300px' : '0')};
+  max-height: ${(props) => (props.openSubMenu ? '400px' : '0')};
   height: ${(props) => (props.openSubMenu ? 'auto' : '0')};
   transition: max-height ${(props) => props.theme.transitions.fast};
   margin: 0;
@@ -27,6 +27,7 @@ const HamburgerSubMenu: React.FC<IHamburgerSubMenu> = ({
   category,
 }) => {
   const { t } = useTranslation('navigation')
+
   return (
     <StyledSubMenu openSubMenu={openSubMenu}>
       {menu.map((subitem, index) => (

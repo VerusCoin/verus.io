@@ -7,8 +7,8 @@ export const VerusIDContext = createContext<any>('empty')
 type INotify = {
   notify: boolean
   setNotify: (c: boolean) => void
-  blockCount: number
-  blockString: string
+  blockCount?: number
+  blockString?: string
 }
 
 export const NotifyContext = createContext<INotify>({
