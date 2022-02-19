@@ -1,53 +1,64 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
-import { DefaultText } from '@/components/elements'
+import { Button, DefaultText, Img } from '@/components/elements'
 import { bgColor } from '@/styles/helpers'
 import useTranslation from 'next-translate/useTranslation'
 
 const StyledBanner = styled.div<any>`
-  ${bgColor('blueQuan')};
-
+  ${bgColor('white')};
   border-radius: 8px;
   padding: 30px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
   grid-column: span 2;
-  background-image: url('/svg/earth.svg');
-  background-repeat: no-repeat;
-  height: 120px;
-  background-position: 50% 28px;
-  background-size: 75%;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 200px;
   ${media.tablet`
+    min-height: auto;
     border-radius: 20px;
-    background-position: 110% 36px;
-    height: 200px;  
-    background-size: 30%;
-    padding: 100px 60px;
-
+    flex-direction: row;
   `}
-  ${media.desktop`
-    background-position: 102% 50px;
-    background-size: 20%;
-  `}
-
-  ${media.giant`
-    background-position: 102% 25px;
-    
-  `}
+`
+const StyledImgContainer = styled.div`
+  ${bgColor('blueQuan')}
+  height: 48px;
+  width: 48px;
+  padding: 8px;
+  border-radius: 10px;
+  margin-right: 18px;
+`
+const StyledLeft = styled.div`
+  display: flex;
+  justify-content: between;
+  align-items: center;
+`
+const StyledCenter = styled.div`
+  max-width: 316px;
 `
 
 const Banner = () => {
   const { t } = useTranslation('home')
   return (
     <StyledBanner>
-      <DefaultText fontSz="mdlg" align="center" customColor="white">
-        {t('banner')}
-      </DefaultText>
+      <StyledLeft>
+        <StyledImgContainer>
+          <Img height="32px" name="iconmonstr-school" />
+        </StyledImgContainer>
+        <DefaultText fontSz="mdlg" align="center">
+          {t('banner.title')}
+        </DefaultText>
+      </StyledLeft>
+      <StyledCenter>
+        <DefaultText fontSz="menu" align="center">
+          {t('banner.text')}
+        </DefaultText>
+      </StyledCenter>
+      <Button transparent svg={{ type: 'arrow', rotate: false }} href="" as="a">
+        {t('banner.link')}
+      </Button>
     </StyledBanner>
   )
 }

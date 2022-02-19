@@ -1,13 +1,20 @@
 {
   "jumbotron": {
-    "heading": "Launch Your Project on the Internet of Value",
+    "heading": "Create Businesses on the Internet of Value",
     "buttons": {
-      "first": "Earn: mining, staking, and more",
-      "second": "Create products and services"
+      "first": "Create businesses with Verus",
+      "second": "Start mining and staking",
+      "third": "Protocol foundations",
+      "fourth": "VerusID"
     },
     "youtube": "Watch introductory video on YouTube"
   },
-  "banner": "Verus is scalable public infrastructure for the world.",
+  "banner": {
+    "title": "Get started",
+    "text": "Learn how to get VRSC, which wallets to use and how to interact with the Verus network.",
+    "link": "Learn more"
+  },
+  "cardBanner": "Verus is scalable public infrastructure for the world.",
   "cards": {
     "pbaasCard": {
       "header": "PBaaS",

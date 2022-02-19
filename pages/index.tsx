@@ -12,18 +12,30 @@ import {
   CardHeader,
   CardText,
   DefaultLinkCard,
+  DefaultHeader,
 } from '@/components/elements'
 import { Container, Row, Col, media } from 'styled-bootstrap-grid'
 import { Banner, Blog, KnowCards } from '@/components/sections/Home'
 
 const StyledCardContainer = styled(Container)`
-  ${bgColor('white')}
+  ${bgColor('blueQuan')}
   border-radius: 8px;
-  padding: 35px;
+  padding: 100px 35px 35px;
   grid-column: span 2;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
+  background-image: url('/svg/earth-big.svg');
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: 50% 100%;
   ${media.tablet`
-  padding: 75px;
+    padding: 75px;
+  
+    background-size: 50%;
+  `}
+
+  ${media.giant`
+    background-size: 613px;
+    
   `}
 `
 
@@ -34,6 +46,14 @@ const StyledCard = styled.div`
   margin: 35px 0;
 `
 
+const StyledImgContainer = styled.div`
+  ${bgColor('white')}
+  height: 48px;
+  width: 48px;
+  padding: 8px;
+  border-radius: 10px;
+`
+
 const Home = ({ data }: HomepageProps) => {
   const { t } = useTranslation('home')
   const title = t('seo:page.index.title')
@@ -42,8 +62,10 @@ const Home = ({ data }: HomepageProps) => {
     header: t('jumbotron.heading'),
     color: 'default',
     buttons: [
-      { text: t('jumbotron.buttons.first'), href: '/economy' },
-      { text: t('jumbotron.buttons.second'), href: '/create' },
+      { text: t('jumbotron.buttons.first'), href: '/create' },
+      { text: t('jumbotron.buttons.second'), href: '/economy' },
+      { text: t('jumbotron.buttons.third'), href: '/foundations' },
+      { text: t('jumbotron.buttons.fourth'), href: '/verusid' },
     ],
     youtube: {
       text: t('jumbotron.youtube'),
@@ -61,18 +83,29 @@ const Home = ({ data }: HomepageProps) => {
           <Banner />
           <StyledCardContainer>
             <Row justifyContent="center">
+              <DefaultHeader as="h4" align="center" customColor="white">
+                {t('cardBanner')}
+              </DefaultHeader>
               {CardList.map((card, index) => {
                 const heading = t(`cards.${card.card}.header`)
                 return (
                   <Col key={index} md={6} lg={4}>
                     <StyledCard>
-                      <Img height="60px" name={card.svg} />
-                      <CardHeader align="left" text={heading} as="h4" />
+                      <StyledImgContainer>
+                        <Img height="32px" name={card.svg} />
+                      </StyledImgContainer>
+                      <CardHeader
+                        align="left"
+                        text={heading}
+                        as="h4"
+                        color="white"
+                      />
                       <CardText
                         align="left"
                         text={t(`cards.${card.card}.text`)}
                         margin="0 0 16px"
-                        fontSz="xa"
+                        fontSz="menu"
+                        color="white"
                       />
                     </StyledCard>
                   </Col>
@@ -80,16 +113,6 @@ const Home = ({ data }: HomepageProps) => {
               })}
             </Row>
           </StyledCardContainer>
-          {/* {CardList.map((card, index) => {
-            const heading = t(`cards.${card.card}.header`)
-            return (
-              <Card key={index}>
-                <Img height="75px" name={card.svg} />
-                <CardHeader text={heading} />
-                <CardText text={t(`cards.${card.card}.text`)} />
-              </Card>
-            )
-          })} */}
         </Grid>
         <Blog title={t('highlighted')} data={data.HighlightJSON} />
 

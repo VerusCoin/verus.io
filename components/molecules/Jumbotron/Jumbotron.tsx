@@ -5,6 +5,8 @@ import { Row, Col, Container, media } from 'styled-bootstrap-grid'
 import parse from 'html-react-parser'
 import { Button, DefaultHeader } from '@/components/elements'
 import { spacer } from '@/styles/helpers'
+import { Grid } from '@/components/layouts'
+import { FaYoutube } from 'react-icons/fa'
 
 const StyledJumbotron = styled.section`
   ${spacer('xl')}
@@ -19,12 +21,22 @@ const StyledJumbotronContainer = styled.div`
     margin-top: ${(props) => props.theme.spaces.sm};
   }
   a.youtube {
-    margin-top: ${(props) => props.theme.spaces.lg};
     text-decoration: underline;
     svg {
       height: 13px;
     }
   }
+  .jumboGrid {
+    min-width: 0px;
+    max-width: 800px;
+    grid-gap: 20px 100px;
+    margin: 0 auto;
+  }
+  ${media.desktop`
+    .jumboGrid {
+      grid-gap: 20px 130px;
+    }
+  `}
 `
 
 const StyledJumbotronText = styled.h1<any>`
@@ -53,6 +65,22 @@ const StyledJumbotronText = styled.h1<any>`
       transform: translateY(-100%);
       `}
     }
+  }
+`
+
+const YouTubeFrame = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-column: span 2;
+  margin-top: ${(props) => props.theme.spaces.md};
+  svg.logo {
+    margin-right: 5px;
+    color: red;
+  }
+  a {
+    margin-top: 0;
   }
 `
 
@@ -94,33 +122,40 @@ const Jumbotron = ({
                 )}
               </StyledJumbotronText>
               {button && <Button wide>{button.text}</Button>}
-              {buttons &&
-                buttons.map((item, index) => (
-                  <Button
-                    transparent
-                    svg={{ type: 'arrow', rotate: false }}
-                    href={item.href}
-                    as="a"
-                    color="#3165d4"
-                    key={index}
-                  >
-                    {item.text}
-                  </Button>
-                ))}
-              {youtube && (
-                <Button
-                  className="youtube"
-                  transparent
-                  svg={{ type: 'miniTab', rotate: false }}
-                  href={youtube.href}
-                  fontSize="xs"
-                  as="a"
-                  color="#676767"
-                  margin="45px 0 0"
-                  target="_blank"
-                >
-                  {youtube.text}
-                </Button>
+
+              {buttons && (
+                <Grid className="jumboGrid">
+                  {buttons.map((item, index) => (
+                    <Button
+                      transparent
+                      svg={{ type: 'arrow', rotate: false }}
+                      href={item.href}
+                      as="a"
+                      color="#3165d4"
+                      key={index}
+                    >
+                      {item.text}
+                    </Button>
+                  ))}
+                  {youtube && (
+                    <YouTubeFrame>
+                      <FaYoutube className="logo" size="24px" />
+                      <Button
+                        className="youtube"
+                        transparent
+                        svg={{ type: 'miniTab', rotate: false }}
+                        href={youtube.href}
+                        fontSize="xs"
+                        as="a"
+                        color="#676767"
+                        margin="45px 0 0"
+                        target="_blank"
+                      >
+                        {youtube.text}
+                      </Button>
+                    </YouTubeFrame>
+                  )}
+                </Grid>
               )}
             </StyledJumbotronContainer>
           </Col>

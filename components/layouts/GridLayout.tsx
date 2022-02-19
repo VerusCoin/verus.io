@@ -37,10 +37,15 @@ const StyledContainer = styled.div<any>`
 interface IGridLayout {
   children: React.ReactNode
   bottom?: boolean
+  className?: string
 }
 
-const GridLayout: React.FC<IGridLayout> = ({ children, bottom }) => {
-  return <StyledContainer bottom={bottom}>{children}</StyledContainer>
+const GridLayout: React.FC<IGridLayout> = ({ children, bottom, className }) => {
+  return (
+    <StyledContainer bottom={bottom} className={className}>
+      {children}
+    </StyledContainer>
+  )
 }
 
 export default GridLayout
