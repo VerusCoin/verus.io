@@ -7,7 +7,7 @@ import { Img, DefaultText } from '@/components/elements'
 import { Grid } from '@/components/layouts'
 
 const StyledCard = styled.div`
-  ${bgColor('white')}
+  ${bgColor('blueQuan')}
   border-radius: 8px;
   padding: 40px 25px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
@@ -35,9 +35,6 @@ const StyledHeadingContainer = styled.div`
 
   img {
     margin-top: 10px;
-    height: 120px;
-    width: 120px;
-    border-radius: 10px;
   }
   ${media.tablet`
     flex-direction: row;
@@ -82,79 +79,63 @@ const StyledGridCard = styled.div`
 `
 
 const StyledImgContainer = styled.div`
-  ${bgColor('#465F2B')}
+  ${bgColor('white')}
   height: 48px;
   width: 48px;
   padding: 8px;
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `
 
-const FoundationBanner = () => {
+const MultiChainCard = () => {
   const { t } = useTranslation('foundation')
-
   return (
     <StyledCard>
       <StyledHeadingContainer>
-        <img height={120} src="/images/bg-green.png" />
+        <Img height={120} name="scale" />
         <StyledHeading>
-          <DefaultText fam="geoHead" fontSz="xl" customColor="#465F2B">
-            {t('highEfficient.header')}
+          <DefaultText fam="geoHead" fontSz="xl" customColor="white">
+            {t('scalableLimits.header')}
           </DefaultText>
-          <DefaultText fontSz="md" customColor="#676767" className="subtext">
-            {t('highEfficient.text')}
+          <DefaultText
+            fontSz="md"
+            customColor="rgba(255, 255, 255, 0.85)"
+            className="subtext"
+          >
+            {t('scalableLimits.text')}
           </DefaultText>
         </StyledHeading>
       </StyledHeadingContainer>
       <Grid className="subGrid">
         <StyledGridCard>
           <StyledImgContainer>
-            <Img height={24} name="iconmonstr-battery" />
+            <Img height="32px" name="blockchainCreation" />
           </StyledImgContainer>
           <DefaultText
             fam="geoHead"
             fontSz="sm"
             customMargin="25px 0 10px"
-            customColor="#0F0F0F"
+            customColor="white"
           >
-            {t('highEfficient.card1.heading')}
+            {t('scalableLimits.card1.heading')}
           </DefaultText>
-          <DefaultText customColor="#0F0F0F">
-            {t('highEfficient.card1.text')}
+          <DefaultText customColor="white">
+            {t('scalableLimits.card1.text')}
           </DefaultText>
         </StyledGridCard>
         <StyledGridCard>
           <StyledImgContainer>
-            <Img height={24} name="iconmonstr-tree" />
+            <Img height="32px" name="mined-icon" />
           </StyledImgContainer>
           <DefaultText
             fam="geoHead"
             fontSz="sm"
             customMargin="25px 0 10px"
-            customColor="#0F0F0F"
+            customColor="white"
           >
-            {t('highEfficient.card2.heading')}
+            {t('scalableLimits.card2.heading')}
           </DefaultText>
-          <DefaultText customColor="#0F0F0F">
-            {t('highEfficient.card2.text')}
-          </DefaultText>
-        </StyledGridCard>
-        <StyledGridCard>
-          <StyledImgContainer>
-            <Img height={24} name="staking-icon" />
-          </StyledImgContainer>
-          <DefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-            customColor="#0F0F0F"
-          >
-            {t('highEfficient.card3.heading')}
-          </DefaultText>
-          <DefaultText customColor="#0F0F0F">
-            {t('highEfficient.card3.text')}
+          <DefaultText customColor="white">
+            {t('scalableLimits.card2.text')}
           </DefaultText>
         </StyledGridCard>
       </Grid>
@@ -162,4 +143,4 @@ const FoundationBanner = () => {
   )
 }
 
-export default FoundationBanner
+export default MultiChainCard

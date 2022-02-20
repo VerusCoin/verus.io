@@ -17,6 +17,7 @@ import {
   KeychainCard,
   FoundationBanner,
   NetworkCard,
+  MultiChainCard,
 } from '@/components/sections/Foundation'
 
 // const ModalToggle=(modal, setModal)=>{
@@ -72,92 +73,8 @@ const Foundations = () => {
               {`${t('common:findMore')}`}
             </Button>
           </EarthCard>
-          <KeychainCard>
-            <div className="keychain-image">
-              <Img name="keychain" />
-            </div>
-            <div className="card">
-              <div>
-                <CardText
-                  book
-                  fontSz="xl"
-                  margin="0"
-                  text={t('keychainCard.header')}
-                />
-              </div>
-              <Button
-                onClick={() => multiModal('keychainCard')}
-                fontRegular
-                small
-                margin="50px 0 0 0 "
-              >
-                {`${t('common:findMore')}`}
-              </Button>
-            </div>
-          </KeychainCard>
-          <Card
-            large
-            scales
-            bgColor="#0A3FB1"
-            tabletStyles="padding: 50px 60px 100px;"
-            desktopStyles="padding: 100px 60px ;"
-          >
-            <div>
-              <CardText
-                book
-                color="white"
-                fontSz="xl"
-                margin="32px 64px;"
-                text={t('scalableLimits.header')}
-              />
-              <CardText
-                book
-                color="#C1D5FF"
-                fontSz="lg"
-                text={t('scalableLimits.text')}
-                margin="32px 64px;"
-              />
-            </div>
-            <Button
-              white
-              onClick={() => multiModal('scalableLimits')}
-              fontRegular
-              small
-              margin="40px 0 0"
-            >
-              {`${t('common:findMore')}`}
-            </Button>
-          </Card>
-          <Card
-            large
-            grid
-            tabletStyles="padding: 50px 60px 100px;"
-            desktopStyles="padding: 100px 60px ;"
-          >
-            <div>
-              <CardText
-                book
-                fontSz="xl"
-                margin="32px 64px;"
-                text={t('topTier.header')}
-              />
-              <CardText
-                book
-                fontSz="lg"
-                color="blue"
-                text={t('topTier.text')}
-                margin="32px 70px;"
-              />
-            </div>
-            <Button
-              onClick={() => multiModal('topTier')}
-              fontRegular
-              small
-              margin="40px 0 0"
-            >
-              {`${t('common:findMore')}`}
-            </Button>
-          </Card>
+          <KeychainCard />
+          <MultiChainCard />
           <FoundationBanner />
           <NetworkCard>
             <div className="checkmark-image">

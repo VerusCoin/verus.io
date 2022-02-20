@@ -14,6 +14,10 @@ const bgColor = (bg: string): any => {
       return css`
         background-color: ${(props) => props.theme.colors.grey.quinary};
       `
+    case 'grey97':
+      return css`
+        background-color: #979797;
+      `
     case `white`:
       return css`
         background-color: ${(props) => props.theme.colors.white};
