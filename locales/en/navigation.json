@@ -5,6 +5,10 @@
       "title": "Create with Verus",
       "description": "Blockchain technology for any project"
     },
+    "verusID": {
+      "title": "VerusID",
+      "description": "Identities and namespaces"
+    },
     "foundationPage": {
       "title": "Strong Foundations",
       "description": "Built for continual growth"

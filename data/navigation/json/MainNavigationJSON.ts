@@ -12,6 +12,12 @@ export const MainNavigationJSON: IMainNavigation = {
           description: true,
         },
         {
+          svg: 'verusid',
+          link: 'verusID',
+          href: '/verusid',
+          description: true,
+        },
+        {
           svg: 'foundations',
           link: 'foundationPage',
           href: '/foundations',

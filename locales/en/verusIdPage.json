@@ -1,0 +1,55 @@
+{
+  "jumbotron": {
+    "heading": " ",
+    "text": "<span>VerusID</span> is a new paradigm in digital identity and ownership."
+  },
+  "takeControl": {
+    "heading": "Take control of your digital identities.",
+    "text": "VerusID is for self-sovereign individuals, and conscious organizations that value their data.",
+    "empower": "VerusID empowers individuals in every way.",
+    "cards": {
+      "store": {
+        "heading": "Store Cryptocurrency Assets",
+        "text": "VerusID has friendly name addresses that make receiving and sending cryptocurrency assets easy. Store any Verus ecosystem or externally bridged assets on a VerusID."
+      },
+      "privacy": {
+        "heading": "Privacy First",
+        "text": "VerusID utilizes latest zero-knowledge privacy technology so you don’t have to worry about anyone tracking you."
+      },
+      "data": {
+        "heading": "Data Ownership",
+        "text": "Data attached to your VerusID is truly yours. You control your data. Only you give explicit permission what happens with your data."
+      },
+      "passwordless": {
+        "heading": "Passwordless Login",
+        "text": "Login to supported VerusID services without ever needing a password."
+      },
+      "recovery": {
+        "heading": "Key Recovery",
+        "text": "You have the possibility to autonomously revoke access to your VerusID, and to recover all data and assets on your VerusID."
+      },
+      "vault": {
+        "heading": "Vault",
+        "text": "When Vault is activated funds on your VerusID can not be spent. Use Verus Vault for vesting periods, trusts and inheritance. And secure yourself against hacks, theft, key loss and even “5$ wrench attacks.”"
+      }
+    }
+  },
+  "verusid": {
+    "heading": "VerusID is the root to build with Verus.",
+    "text": "VerusID is the naming system for blockchains, currencies, tokens and identities.",
+    "cards": {
+      "blockchains": {
+        "heading": "Blockchains",
+        "text": "Get a VerusID to use as a root for an interoperable blockchain (a PBaaS-chain). This blockchain has its creator defined VerusID fee which people can use for new currencies, tokens, identities, and later when the system goes fractal, blockchains."
+      },
+      "currencies": {
+        "heading": "Currencies and Tokens",
+        "text": "Get a VerusID to use as a root for currencies and tokens, whether on the Verus blockchain or its interoperable PBaaS-chains. The blockchain creator defines the fees for the creation of currencies and tokens on the chain."
+      },
+      "identities": {
+        "heading": "Identities and NFTs",
+        "text": "Get a VerusID to use as identities for individuals, or to create highly specialized Non-Fungible Tokens (NFTs)."
+      }
+    }
+  }
+}

@@ -16,6 +16,7 @@ module.exports = {
     '/papers': ['papers'],
     '/privacy-policy': ['privacyPolicy'],
     '/wallet': ['wallet'],
+    '/verusid': ['verusIdPage'],
     'rgx:/desktop': ['walletDesktop'],
     'rgx:/mobile': ['walletMobile'],
     'rgx:/verusid-lookup': ['verusid'],

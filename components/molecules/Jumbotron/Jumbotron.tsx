@@ -51,22 +51,22 @@ const StyledJumbotronText = styled.h1<any>`
   span {
     color: ${(props) => props.theme.colors.blue.primary};
     position: relative;
-
-    &::after {
-      ${media.tablet`
-      content: '';
-      background-image: url("data:image/svg+xml,%3Csvg width='416' height='417' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='208' cy='208.5' rx='208' ry='208.5' transform='rotate(-180 208 208.5)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='208' y1='0' x2='208.609' y2='251.659' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E8EFFF'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-      width: 416px;
-      height: 417px;
-      position: absolute;
-      z-index: -1;
-      left: 20px;
-      top: 120px;
-      transform: translateY(-100%);
-      `}
-    }
   }
 `
+
+// &::after {
+//   ${media.tablet`
+//   content: '';
+//   background-image: url("data:image/svg+xml,%3Csvg width='416' height='417' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='208' cy='208.5' rx='208' ry='208.5' transform='rotate(-180 208 208.5)' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='208' y1='0' x2='208.609' y2='251.659' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E8EFFF'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+//   width: 416px;
+//   height: 417px;
+//   position: absolute;
+//   z-index: -1;
+//   left: 20px;
+//   top: 120px;
+//   transform: translateY(-100%);
+//   `}
+// }
 
 const YouTubeFrame = styled.div`
   display: flex;

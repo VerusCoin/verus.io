@@ -67,6 +67,10 @@
     "privacyPolicy": {
       "title": "Verus Privacy Policy",
       "description": "Verus takes your privacy seriously. This website does not track you in any way."
+    },
+    "verusid": {
+      "title": "VerusID",
+      "description": "VerusID is the self-sovereign identity and namespace protocol for Verus."
     }
   },
   "keywords": {

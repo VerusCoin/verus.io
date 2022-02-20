@@ -35,6 +35,7 @@ import TelegramIcon from './assets/telegramIcon.svg'
 import Twitter from './assets/twitter.svg'
 import VerusIdLookup from './assets/verusid-lookup.svg'
 import VerusSignatures from './assets/verusid-signatures.svg'
+import VerusIcon from './assets/identity.svg'
 import Windows from './assets/windows.svg'
 import Youtube from './assets/youtube.svg'
 
@@ -80,6 +81,7 @@ const SVGIcon: Record<string, ReactElement> = {
   twitter: <Twitter />,
   verusIdLookup: <VerusIdLookup />,
   verusSignatures: <VerusSignatures />,
+  verusid: <VerusIcon />,
   windows: <Windows />,
   youtube: <Youtube />,
 }
