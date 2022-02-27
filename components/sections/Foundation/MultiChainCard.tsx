@@ -97,7 +97,7 @@ const MultiChainCard = () => {
             {t('scalableLimits.header')}
           </DefaultText>
           <DefaultText
-            fontSz="md"
+            fontSz="modal"
             customColor="rgba(255, 255, 255, 0.85)"
             className="subtext"
           >

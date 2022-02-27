@@ -26,7 +26,11 @@ const StyledContainer = styled.div<any>`
     padding-top: ${(props: any) => props.theme.spaces.custom.desktopMenu};
   `}
   
-  ${(props) => props.notify && ' main {transform: translateY(50px);}'}
+  ${(props) =>
+    props.notify &&
+    (props.jumbo
+      ? 'header > section {transform: translateY(50px);} main {transform: translateY(50px);}'
+      : 'main {transform: translateY(50px);}')}
 `
 
 const MainLayout: React.FC<IMainLayout> = ({
@@ -36,7 +40,7 @@ const MainLayout: React.FC<IMainLayout> = ({
 }) => {
   const { notify } = useNotifyContext()
   return (
-    <StyledContainer bG={bG} notify={notify}>
+    <StyledContainer bG={bG} notify={notify} jumbo={jumbotronData}>
       <header>
         <NotifyBanner />
         <TopNavigation {...TopNavigationJSON} />

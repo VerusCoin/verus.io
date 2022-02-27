@@ -103,7 +103,7 @@ const FoundationBanner = () => {
           <DefaultText fam="geoHead" fontSz="xl" customColor="#465F2B">
             {t('highEfficient.header')}
           </DefaultText>
-          <DefaultText fontSz="md" customColor="#676767" className="subtext">
+          <DefaultText fontSz="modal" customColor="#676767" className="subtext">
             {t('highEfficient.text')}
           </DefaultText>
         </StyledHeading>

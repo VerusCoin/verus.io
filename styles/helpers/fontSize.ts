@@ -3,6 +3,7 @@ import { media } from 'styled-bootstrap-grid'
 
 const fontSize = (
   bp:
+    | 'xxxl'
     | 'xxl'
     | 'xl'
     | 'lg'
@@ -157,6 +158,34 @@ const fontSize = (
           font-size: ${(props: any) => props.theme.typo.sizes.xxl.desktop};
           line-height: ${(props: any) =>
             `calc(${props.theme.typo.sizes.xxl.desktop} + 4px)`};
+          letter-spacing: ${(props: any) =>
+            props.theme.typo.letterSpacing.xxl.desktop};
+        `}
+      `
+    case 'xxxl':
+      return css`
+        font-size: calc(
+          ${(props: any) => props.theme.typo.sizes.xxl.mobile} + 18px
+        );
+        line-height: ${(props: any) =>
+          `calc(${props.theme.typo.sizes.xxl.mobile} + 4px + 18px)`};
+        letter-spacing: ${(props: any) =>
+          props.theme.typo.letterSpacing.xxl.mobile};
+
+        ${media.tablet`
+          font-size: calc(${(props: any) =>
+            props.theme.typo.sizes.xxl.tablet} + 18px);
+          line-height: ${(props: any) =>
+            `calc(${props.theme.typo.sizes.xxl.tablet} + 4px + 18px)`};
+          letter-spacing: ${(props: any) =>
+            props.theme.typo.letterSpacing.xxl.tablet};
+        `}
+
+        ${media.desktop`
+          font-size: calc(${(props: any) =>
+            props.theme.typo.sizes.xxl.desktop} + 18px);
+          line-height: ${(props: any) =>
+            `calc(${props.theme.typo.sizes.xxl.desktop} + 4px + 18px)`};
           letter-spacing: ${(props: any) =>
             props.theme.typo.letterSpacing.xxl.desktop};
         `}

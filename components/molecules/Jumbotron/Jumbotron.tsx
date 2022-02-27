@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { IJumbotron } from '@/types/molecules'
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
 import parse from 'html-react-parser'
-import { Button, DefaultHeader } from '@/components/elements'
-import { spacer } from '@/styles/helpers'
+import { Button, DefaultHeader, DefaultText } from '@/components/elements'
+import { fontSize, spacer } from '@/styles/helpers'
 import { Grid } from '@/components/layouts'
 import { FaYoutube } from 'react-icons/fa'
 
@@ -29,17 +29,18 @@ const StyledJumbotronContainer = styled.div`
   .jumboGrid {
     min-width: 0px;
     max-width: 800px;
-    grid-gap: 20px 100px;
+    grid-gap: 0;
     margin: 0 auto;
   }
+
   ${media.desktop`
     .jumboGrid {
-      grid-gap: 20px 130px;
+      grid-gap: 0 130px;
     }
   `}
 `
 
-const StyledJumbotronText = styled.h1<any>`
+const StyledJumbotronText = styled.div<any>`
   width: 100%;
 
   ${media.desktop`
@@ -51,6 +52,16 @@ const StyledJumbotronText = styled.h1<any>`
   span {
     color: ${(props) => props.theme.colors.blue.primary};
     position: relative;
+  }
+`
+const StyledJumbotronTitle = styled.div`
+  .extraLarge {
+    max-width: 925px;
+    ${fontSize('xxxl')}
+    background: linear-gradient(92.26deg, #0A3FB1 18.26%, #3165D4 52.63%, #0A3FB1 88.45%);
+    margin: 25px 0 32px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `
 
@@ -89,6 +100,7 @@ const YouTubeFrame = styled.div`
 // 2) header with split format at bottom one for button and the other for text
 
 const Jumbotron = ({
+  title,
   header,
   text,
   color = 'blue',
@@ -103,24 +115,36 @@ const Jumbotron = ({
         <Row>
           <Col col={12}>
             <StyledJumbotronContainer>
-              <StyledJumbotronText customWidth={width}>
-                {header && (
-                  <DefaultHeader
-                    as="h1"
-                    customColor={color}
-                    fontNormal
-                    align="center"
-                    headerStyle="margin-bottom: 32px;"
-                  >
+              {title && header ? (
+                <StyledJumbotronTitle>
+                  <DefaultText fontSz="sm" align="center">
+                    {parse(title)}
+                  </DefaultText>
+                  <DefaultHeader as="h1" align="center" className="extraLarge">
                     {parse(header)}
                   </DefaultHeader>
-                )}
-                {text && (
-                  <DefaultHeader fontNormal align="center">
-                    {parse(text)}
-                  </DefaultHeader>
-                )}
-              </StyledJumbotronText>
+                </StyledJumbotronTitle>
+              ) : (
+                <StyledJumbotronText customWidth={width}>
+                  {header && (
+                    <DefaultHeader
+                      as="h1"
+                      customColor={color}
+                      fontNormal
+                      align="center"
+                      headerStyle="margin-bottom: 32px;"
+                    >
+                      {parse(header)}
+                    </DefaultHeader>
+                  )}
+                  {text && (
+                    <DefaultHeader fontNormal align="center">
+                      {parse(text)}
+                    </DefaultHeader>
+                  )}
+                </StyledJumbotronText>
+              )}
+
               {button && <Button wide>{button.text}</Button>}
 
               {buttons && (

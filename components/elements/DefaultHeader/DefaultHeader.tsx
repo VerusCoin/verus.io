@@ -50,6 +50,7 @@ const DefaultHeader = ({
   fontNormal,
   children,
   headerStyle,
+  className,
 }: IDefaultHeader) => {
   return (
     <StyledTextContainer fontNormal={fontNormal}>
@@ -58,6 +59,7 @@ const DefaultHeader = ({
         as={as}
         customColor={customColor}
         headerStyle={headerStyle}
+        className={className}
       >
         {children}
       </StyledTextHeader>

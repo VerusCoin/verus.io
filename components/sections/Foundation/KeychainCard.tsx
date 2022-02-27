@@ -109,7 +109,7 @@ const KeychainCard = () => {
           <DefaultText fam="geoHead" fontSz="xl">
             {t('keychainCard.header')}
           </DefaultText>
-          <DefaultText fontSz="md" customColor="#676767" className="subtext">
+          <DefaultText fontSz="modal" customColor="#676767" className="subtext">
             <Trans
               i18nKey={'foundation:keychainCard.subheading'}
               components={{

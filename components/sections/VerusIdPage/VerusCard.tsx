@@ -132,7 +132,7 @@ const VerusCard = () => {
           <DefaultText fam="geoHead" fontSz="xl">
             {t('verusid.heading')}
           </DefaultText>
-          <DefaultText fontSz="md" customColor="#676767" className="subtext">
+          <DefaultText fontSz="modal" customColor="#676767" className="subtext">
             {t('verusid.text')}
           </DefaultText>
         </StyledHeading>

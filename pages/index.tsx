@@ -44,6 +44,9 @@ const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   margin: 35px 0;
+  .cardText {
+    line-height: 20px;
+  }
 `
 
 const StyledImgContainer = styled.div`
@@ -59,6 +62,7 @@ const Home = ({ data }: HomepageProps) => {
   const title = t('seo:page.index.title')
   const description = t('seo:page.index.description')
   const JumbotronJSON = {
+    title: t('jumbotron.title'),
     header: t('jumbotron.heading'),
     color: 'default',
     buttons: [
@@ -99,6 +103,7 @@ const Home = ({ data }: HomepageProps) => {
                         text={heading}
                         as="h4"
                         color="white"
+                        margin="20px 0 0"
                       />
                       <CardText
                         align="left"
@@ -106,6 +111,7 @@ const Home = ({ data }: HomepageProps) => {
                         margin="0 0 16px"
                         fontSz="menu"
                         color="white"
+                        className="cardText"
                       />
                     </StyledCard>
                   </Col>

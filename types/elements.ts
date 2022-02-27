@@ -31,6 +31,7 @@ export interface IDefaultHeader {
   fontNormal?: boolean
   customColor?: string
   headerStyle?: string
+  className?: string
 }
 
 export interface IDefaultLink {

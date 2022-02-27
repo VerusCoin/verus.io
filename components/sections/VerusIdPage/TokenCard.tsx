@@ -81,6 +81,7 @@ const StyledGridCard = styled.div`
 
   ${media.tablet`
     align-items: start;
+    justify-content: flex-start;
   `}
 `
 const StyledDefaultText = styled(DefaultText)`
@@ -114,7 +115,7 @@ const TokenCard = () => {
           <DefaultText fam="geoHead" fontSz="xl">
             {t('takeControl.heading')}
           </DefaultText>
-          <DefaultText fontSz="md" customColor="#676767" className="subtext">
+          <DefaultText fontSz="modal" customColor="#676767" className="subtext">
             {t('takeControl.text')}
           </DefaultText>
         </StyledHeading>
