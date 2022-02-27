@@ -39,9 +39,14 @@ const StyledHeadingContainer = styled.div`
 
   img {
     margin-top: 10px;
+    height: 70px;
+    margin-bottom: 15px;
   }
   ${media.tablet`
     flex-direction: row;
+    img {
+      height: 120px;
+    }
   `}
 `
 const StyledHeading = styled.div`
@@ -72,6 +77,9 @@ const StyledEmpower = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 400px;
+  img {
+    margin-bottom: 5px;
+  }
 `
 const StyledGridCard = styled.div`
   display: flex;
@@ -86,13 +94,20 @@ const StyledGridCard = styled.div`
 `
 const StyledDefaultText = styled(DefaultText)`
   text-align: center;
+  margin: 10px 0 0;
   ${media.tablet`
     text-align: left;
+    margin: 25px 0 0;
   `};
 `
 
+const StyledSubText = styled(StyledDefaultText)`
+  line-height: 20px;
+  opacity: 0.87;
+`
+
 const StyledImgContainer = styled.div`
-  ${bgColor('blueQuan')}
+  ${bgColor('blue')}
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +125,7 @@ const TokenCard = () => {
   return (
     <StyledCard>
       <StyledHeadingContainer>
-        <Img height={120} name="identity-bgBlue" />
+        <Img name="identity-bgBlue" />
         <StyledHeading>
           <DefaultText fam="geoHead" fontSz="xl">
             {t('takeControl.heading')}
@@ -138,84 +153,54 @@ const TokenCard = () => {
           >
             {t('takeControl.cards.store.heading')}
           </StyledDefaultText>
-          <StyledDefaultText>
-            {t('takeControl.cards.store.text')}
-          </StyledDefaultText>
+          <StyledSubText>{t('takeControl.cards.store.text')}</StyledSubText>
         </StyledGridCard>
         <StyledGridCard>
           <StyledImgContainer>
             <Eye />
           </StyledImgContainer>
-          <StyledDefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-          >
+          <StyledDefaultText fam="geoHead" fontSz="sm">
             {t('takeControl.cards.privacy.heading')}
           </StyledDefaultText>
-          <StyledDefaultText>
-            {t('takeControl.cards.privacy.text')}
-          </StyledDefaultText>
+          <StyledSubText>{t('takeControl.cards.privacy.text')}</StyledSubText>
         </StyledGridCard>
         <StyledGridCard>
           <StyledImgContainer>
             <File />
           </StyledImgContainer>
-          <StyledDefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-          >
+          <StyledDefaultText fam="geoHead" fontSz="sm">
             {t('takeControl.cards.data.heading')}
           </StyledDefaultText>
-          <StyledDefaultText>
-            {t('takeControl.cards.data.text')}
-          </StyledDefaultText>
+          <StyledSubText>{t('takeControl.cards.data.text')}</StyledSubText>
         </StyledGridCard>
         <StyledGridCard>
           <StyledImgContainer>
             <User />
           </StyledImgContainer>
-          <StyledDefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-          >
+          <StyledDefaultText fam="geoHead" fontSz="sm">
             {t('takeControl.cards.passwordless.heading')}
           </StyledDefaultText>
-          <StyledDefaultText>
+          <StyledSubText>
             {t('takeControl.cards.passwordless.text')}
-          </StyledDefaultText>
+          </StyledSubText>
         </StyledGridCard>
         <StyledGridCard>
           <StyledImgContainer>
             <Key />
           </StyledImgContainer>
-          <StyledDefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-          >
+          <StyledDefaultText fam="geoHead" fontSz="sm">
             {t('takeControl.cards.recovery.heading')}
           </StyledDefaultText>
-          <StyledDefaultText>
-            {t('takeControl.cards.recovery.text')}
-          </StyledDefaultText>
+          <StyledSubText>{t('takeControl.cards.recovery.text')}</StyledSubText>
         </StyledGridCard>
         <StyledGridCard>
           <StyledImgContainer>
             <Lock />
           </StyledImgContainer>
-          <StyledDefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-          >
+          <StyledDefaultText fam="geoHead" fontSz="sm">
             {t('takeControl.cards.vault.heading')}
           </StyledDefaultText>
-          <StyledDefaultText>
-            {t('takeControl.cards.vault.text')}
-          </StyledDefaultText>
+          <StyledSubText>{t('takeControl.cards.vault.text')}</StyledSubText>
         </StyledGridCard>
       </Grid>
     </StyledCard>

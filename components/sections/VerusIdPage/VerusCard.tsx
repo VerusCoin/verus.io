@@ -108,14 +108,19 @@ const StyledImgContainer = styled.div`
 `
 
 const StyledHeadImg = styled(StyledImgContainer)`
-  height: 120px;
-  width: 120px;
+  height: 70px;
+  width: 70px;
   margin: 0 auto;
   svg {
-    height: 80px;
+    height: 47px;
   }
   ${media.tablet`
     margin: 0;
+    height: 120px;
+    width: 120px;
+    svg {
+      height: 80px;
+    }
   `}
 `
 

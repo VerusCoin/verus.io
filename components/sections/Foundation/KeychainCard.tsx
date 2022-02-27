@@ -155,7 +155,7 @@ const KeychainCard = () => {
             className="external"
             transparent
             svg={{ type: 'miniTab', rotate: false }}
-            href=""
+            href="https://docs.verus.io/overview/verus-proof-of-power.htm"
             as="a"
             color="#3165d4"
             margin="25px 0"
@@ -177,7 +177,7 @@ const KeychainCard = () => {
             className="external"
             transparent
             svg={{ type: 'miniTab', rotate: false }}
-            href=""
+            href="https://docs.verus.io/verusid/#verus-vault"
             as="a"
             color="#3165d4"
             margin="25px 0"

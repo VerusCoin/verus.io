@@ -45,8 +45,21 @@ const StyledCard = styled.div`
   flex-direction: column;
   margin: 35px 0;
   .cardText {
+    margin: 10px 0 0;
     line-height: 20px;
   }
+  h4 {
+    margin: 10px 0 0;
+  }
+
+  ${media.tablet`
+    h4 {
+      margin: 25px 0 0;
+    }
+    .cardText {
+      margin: 25px 0 0;
+    }
+  `}
 `
 
 const StyledImgContainer = styled.div`
@@ -102,13 +115,12 @@ const Home = ({ data }: HomepageProps) => {
                         align="left"
                         text={heading}
                         as="h4"
+                        margin="0"
                         color="white"
-                        margin="20px 0 0"
                       />
                       <CardText
                         align="left"
                         text={t(`cards.${card.card}.text`)}
-                        margin="0 0 16px"
                         fontSz="menu"
                         color="white"
                         className="cardText"
