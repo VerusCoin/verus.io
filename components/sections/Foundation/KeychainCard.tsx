@@ -48,7 +48,6 @@ const StyledHeading = styled.div`
   .subtext {
     margin-top: 25px;
     text-align: justify;
-    text-decoration: underline;
     span {
       font-weight: bold;
       color: initial;
@@ -73,6 +72,9 @@ const StyledGridCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  p:last-child {
+    line-height: 20px;
+  }
   a.external {
     svg {
       height: 12px;
@@ -106,7 +108,7 @@ const KeychainCard = () => {
       <StyledHeadingContainer>
         <Img height={120} name="keychain" />
         <StyledHeading>
-          <DefaultText fam="geoHead" fontSz="xl">
+          <DefaultText fam="geoHead" fontSz="xl" customColor="#272727">
             {t('keychainCard.header')}
           </DefaultText>
           <DefaultText fontSz="modal" customColor="#676767" className="subtext">
@@ -127,10 +129,17 @@ const KeychainCard = () => {
               PoW
             </DefaultText>
           </StyledImgContainer>
-          <DefaultText fam="geoHead" fontSz="sm" customMargin="25px 0 10px">
+          <DefaultText
+            fam="geoHead"
+            fontSz="sm"
+            customMargin="25px 0 10px"
+            customColor="#0F0F0F"
+          >
             {t('keychainCard.card1.heading')}
           </DefaultText>
-          <DefaultText>{t('keychainCard.card1.text')}</DefaultText>
+          <DefaultText customColor="#0F0F0FDE">
+            {t('keychainCard.card1.text')}
+          </DefaultText>
         </StyledGridCard>
         <StyledGridCard>
           <StyledImgContainer color="#979797">
@@ -138,19 +147,33 @@ const KeychainCard = () => {
               PoS
             </DefaultText>
           </StyledImgContainer>
-          <DefaultText fam="geoHead" fontSz="sm" customMargin="25px 0 10px">
+          <DefaultText
+            fam="geoHead"
+            fontSz="sm"
+            customMargin="25px 0 10px"
+            customColor="#0F0F0F"
+          >
             {t('keychainCard.card2.heading')}
           </DefaultText>
-          <DefaultText>{t('keychainCard.card2.text')}</DefaultText>
+          <DefaultText customColor="#0F0F0FDE">
+            {t('keychainCard.card2.text')}
+          </DefaultText>
         </StyledGridCard>
         <StyledGridCard>
           <StyledImgContainer color="#3165D4">
             <Img height={24} name="iconmonstr-shield" />
           </StyledImgContainer>
-          <DefaultText fam="geoHead" fontSz="sm" customMargin="25px 0 10px">
+          <DefaultText
+            fam="geoHead"
+            fontSz="sm"
+            customMargin="25px 0 10px"
+            customColor="#0F0F0F"
+          >
             {t('keychainCard.card3.heading')}
           </DefaultText>
-          <DefaultText>{t('keychainCard.card3.text')}</DefaultText>
+          <DefaultText customColor="#0F0F0FDE">
+            {t('keychainCard.card3.text')}
+          </DefaultText>
           <Button
             className="external"
             transparent

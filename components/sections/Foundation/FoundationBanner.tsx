@@ -70,6 +70,9 @@ const StyledGridCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  p:last-child {
+    line-height: 20px;
+  }
   a.external {
     svg {
       height: 12px;
@@ -121,7 +124,7 @@ const FoundationBanner = () => {
           >
             {t('highEfficient.card1.heading')}
           </DefaultText>
-          <DefaultText customColor="#0F0F0F">
+          <DefaultText customColor="#0F0F0FDE">
             {t('highEfficient.card1.text')}
           </DefaultText>
         </StyledGridCard>
@@ -137,7 +140,7 @@ const FoundationBanner = () => {
           >
             {t('highEfficient.card2.heading')}
           </DefaultText>
-          <DefaultText customColor="#0F0F0F">
+          <DefaultText customColor="#0F0F0FDE">
             {t('highEfficient.card2.text')}
           </DefaultText>
         </StyledGridCard>
@@ -153,7 +156,7 @@ const FoundationBanner = () => {
           >
             {t('highEfficient.card3.heading')}
           </DefaultText>
-          <DefaultText customColor="#0F0F0F">
+          <DefaultText customColor="#0F0F0FDE">
             {t('highEfficient.card3.text')}
           </DefaultText>
         </StyledGridCard>

@@ -67,6 +67,10 @@ const StyledGridCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  p:last-child {
+    line-height: 20px;
+    opacity: 0.87;
+  }
   a.external {
     svg {
       height: 12px;
