@@ -69,7 +69,10 @@ const StyledGridCard = styled.div`
   align-items: center;
   max-width: 575px;
   margin: 0 auto 50px;
-
+  p:last-child {
+    opacity: 0.87;
+    line-height: 20px;
+  }
   ${media.tablet`
     flex-direction: row;
     align-items: start;
