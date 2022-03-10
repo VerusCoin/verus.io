@@ -27,6 +27,7 @@ const StyledBanner = styled.div<any>`
     min-height: auto;
     border-radius: 20px;
     flex-direction: row;
+    height: 140px;
   `}
 `
 const StyledImgContainer = styled.div`

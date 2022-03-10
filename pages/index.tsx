@@ -28,9 +28,10 @@ const StyledCardContainer = styled(Container)`
   background-size: 75%;
   background-position: 50% 100%;
   ${media.tablet`
-    padding: 75px;
+    padding: 110px 75px;
   
     background-size: 50%;
+
   `}
 
   ${media.giant`
@@ -100,7 +101,12 @@ const Home = ({ data }: HomepageProps) => {
           <Banner />
           <StyledCardContainer>
             <Row justifyContent="center">
-              <DefaultHeader as="h4" align="center" customColor="white">
+              <DefaultHeader
+                as="h4"
+                align="center"
+                customColor="white"
+                headerStyle="margin: 0 0 70px 0 !important;"
+              >
                 {t('cardBanner')}
               </DefaultHeader>
               {CardList.map((card, index) => {

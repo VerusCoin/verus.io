@@ -55,6 +55,7 @@ const StyledJumbotronText = styled.div<any>`
   }
 `
 const StyledJumbotronTitle = styled.div`
+  margin-top: 70px;
   .extraLarge {
     max-width: 925px;
     ${fontSize('xxxl')}
@@ -117,7 +118,11 @@ const Jumbotron = ({
             <StyledJumbotronContainer>
               {title && header ? (
                 <StyledJumbotronTitle>
-                  <DefaultText fontSz="sm" align="center">
+                  <DefaultText
+                    fontSz="sm"
+                    align="center"
+                    customColor="##676767"
+                  >
                     {parse(title)}
                   </DefaultText>
                   <DefaultHeader as="h1" align="center" className="extraLarge">
