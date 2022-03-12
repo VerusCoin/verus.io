@@ -86,7 +86,9 @@ const StyledGridCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  p {
+    color: #0f0f0f;
+  }
   ${media.tablet`
     align-items: start;
     justify-content: flex-start;
@@ -127,7 +129,7 @@ const TokenCard = () => {
       <StyledHeadingContainer>
         <Img name="identity-bgBlue" />
         <StyledHeading>
-          <DefaultText fam="geoHead" fontSz="xl">
+          <DefaultText fam="geoHead" fontSz="xl" customColor="#0F0F0F">
             {t('takeControl.heading')}
           </DefaultText>
           <DefaultText fontSz="modal" customColor="#676767" className="subtext">

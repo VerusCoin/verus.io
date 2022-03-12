@@ -118,11 +118,7 @@ const Jumbotron = ({
             <StyledJumbotronContainer>
               {title && header ? (
                 <StyledJumbotronTitle>
-                  <DefaultText
-                    fontSz="sm"
-                    align="center"
-                    customColor="##676767"
-                  >
+                  <DefaultText fontSz="sm" align="center" customColor="#676767">
                     {parse(title)}
                   </DefaultText>
                   <DefaultHeader as="h1" align="center" className="extraLarge">

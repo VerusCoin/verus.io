@@ -72,7 +72,11 @@ const StyledGridCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  p:last-child {
+  p {
+    color: #0f0f0f;
+  }
+  .subtext {
+    opacity: 0.87;
     line-height: 20px;
   }
   a.external {
@@ -129,15 +133,10 @@ const KeychainCard = () => {
               PoW
             </DefaultText>
           </StyledImgContainer>
-          <DefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-            customColor="#0F0F0F"
-          >
+          <DefaultText fam="geoHead" fontSz="sm" customMargin="25px 0 10px">
             {t('keychainCard.card1.heading')}
           </DefaultText>
-          <DefaultText customColor="#0F0F0FDE">
+          <DefaultText className="subtext">
             {t('keychainCard.card1.text')}
           </DefaultText>
         </StyledGridCard>
@@ -147,15 +146,10 @@ const KeychainCard = () => {
               PoS
             </DefaultText>
           </StyledImgContainer>
-          <DefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-            customColor="#0F0F0F"
-          >
+          <DefaultText fam="geoHead" fontSz="sm" customMargin="25px 0 10px">
             {t('keychainCard.card2.heading')}
           </DefaultText>
-          <DefaultText customColor="#0F0F0FDE">
+          <DefaultText className="subtext">
             {t('keychainCard.card2.text')}
           </DefaultText>
         </StyledGridCard>
@@ -163,15 +157,10 @@ const KeychainCard = () => {
           <StyledImgContainer color="#3165D4">
             <Img height={24} name="iconmonstr-shield" />
           </StyledImgContainer>
-          <DefaultText
-            fam="geoHead"
-            fontSz="sm"
-            customMargin="25px 0 10px"
-            customColor="#0F0F0F"
-          >
+          <DefaultText fam="geoHead" fontSz="sm" customMargin="25px 0 10px">
             {t('keychainCard.card3.heading')}
           </DefaultText>
-          <DefaultText customColor="#0F0F0FDE">
+          <DefaultText className="subtext">
             {t('keychainCard.card3.text')}
           </DefaultText>
           <Button
@@ -195,7 +184,9 @@ const KeychainCard = () => {
           <DefaultText fam="geoHead" fontSz="sm" customMargin="25px 0 10px">
             {t('keychainCard.card4.heading')}
           </DefaultText>
-          <DefaultText>{t('keychainCard.card4.text')}</DefaultText>
+          <DefaultText className="subtext">
+            {t('keychainCard.card4.text')}
+          </DefaultText>
           <Button
             className="external"
             transparent

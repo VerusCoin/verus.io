@@ -69,6 +69,9 @@ const StyledGridCard = styled.div`
   align-items: center;
   max-width: 575px;
   margin: 0 auto 50px;
+  p {
+    color: #0f0f0f;
+  }
   p:last-child {
     opacity: 0.87;
     line-height: 20px;
@@ -137,7 +140,7 @@ const VerusCard = () => {
         </StyledHeadImg>
 
         <StyledHeading>
-          <DefaultText fam="geoHead" fontSz="xl">
+          <DefaultText fam="geoHead" fontSz="xl" customColor="#0F0F0F">
             {t('verusid.heading')}
           </DefaultText>
           <DefaultText fontSz="modal" customColor="#676767" className="subtext">
