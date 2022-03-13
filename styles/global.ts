@@ -5,6 +5,14 @@ export default createGlobalStyle`
   ${normalize}
 
   @font-face {
+    font-family: "Geomanist Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/Geomanist-Bold.woff2") format("woff2"), url("/fonts/Geomanist-Bold.woff") format("woff");
+    font-display: swap;
+  }
+
+  @font-face {
     font-family: "Geomanist Book";
     font-style: normal;
     font-weight: normal;

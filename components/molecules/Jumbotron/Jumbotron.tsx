@@ -56,6 +56,9 @@ const StyledJumbotronText = styled.div<any>`
 `
 const StyledJumbotronTitle = styled.div`
   margin-top: 70px;
+  h1 {
+    font-family: 'Geomanist Bold', sans-serif;
+  }
   .extraLarge {
     max-width: 925px;
     ${fontSize('xxxl')}
