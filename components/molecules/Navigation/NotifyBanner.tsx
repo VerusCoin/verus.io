@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import useTranslation from 'next-translate/useTranslation'
-import { media } from 'styled-bootstrap-grid'
+// import { media } from 'styled-bootstrap-grid'
 import { fontSize, bgColor } from '@/styles/helpers'
 import { DefaultText, SVGs } from '@/components/elements'
 import { useNotifyContext } from '@/lib/Contexts'
 
 const StyledNotification = styled.div<any>`
-  ${bgColor('green')};
+  ${bgColor('#2E374A')};
   display: ${(props) => (props.notify ? 'flex' : 'none')};
   position: fixed;
   top: 0;
@@ -66,30 +66,31 @@ const StyledReadMore = styled.button`
     background: rgb(255, 255, 255, 0.17);
   }
 `
-const StyledActivation = styled(DefaultText)`
-  display: none;
-  border-radius: 12px;
-  ${bgColor('white')}
-  padding: 4px 12px;
-  margin: 0 7px;
-  ${media.tablet`
-    display:block;
-  `}
-`
+// const StyledActivation = styled(DefaultText)`
+//   display: none;
+//   border-radius: 12px;
+//   ${bgColor('white')}
+//   padding: 4px 12px;
+//   margin: 0 7px;
+//   ${media.tablet`
+//     display:block;
+//   `}
+// `
 
 const NotifyBanner = () => {
   const { t } = useTranslation('common')
-  const { notify, setNotify, blockString } = useNotifyContext()
-  let statusText: string | undefined = undefined
-  if (blockString) {
-    let newString: string | string[] = blockString.split(',')
-    newString = newString[0] + newString[1]
-    if (parseInt(newString) > 0) {
-      statusText = t(`upgradeCounter`, { count: blockString })
-    } else {
-      statusText = t(`upgradeComplete`)
-    }
-  }
+  const { notify, setNotify } = useNotifyContext()
+  // const { notify, setNotify, blockString } = useNotifyContext()
+  // let statusText: string | undefined = undefined
+  // if (blockString) {
+  //   let newString: string | string[] = blockString.split(',')
+  //   newString = newString[0] + newString[1]
+  //   if (parseInt(newString) > 0) {
+  //     statusText = t(`upgradeCounter`, { count: blockString })
+  //   } else {
+  //     statusText = t(`upgradeComplete`)
+  //   }
+  // }
 
   return (
     <StyledNotification notify={notify}>
@@ -99,7 +100,7 @@ const NotifyBanner = () => {
         align="center"
         customMargin="0 21px 0 0"
       >
-        {t('upgradeComing')}
+        {t('banner')}
       </DefaultText>
       <StyledReadMore
         as="a"
@@ -107,15 +108,14 @@ const NotifyBanner = () => {
         target="_blank"
         rel="noreferrer"
       >
-        {t('upgradereadMore')}
+        {t('readMore')}
       </StyledReadMore>
 
-      {/* {t(`upgradeCounter`, { count: blockString })} */}
-      {statusText !== undefined && (
+      {/* {statusText !== undefined && (
         <StyledActivation fontSz="xxs" customColor="green" align="center">
           {statusText}
         </StyledActivation>
-      )}
+      )} */}
 
       <CloseButton onClick={() => setNotify(false)}>
         <SVGs name="close" />

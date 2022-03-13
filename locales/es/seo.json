@@ -1,0 +1,79 @@
+{
+  "page": {
+    "index": {
+      "title": "Verus - Truth and Privacy for All",
+      "description": "Use Verus scalable public infrastructure and blockchain technology to create products, services and systems. Or start earning in the global network economy."
+    },
+    "create": {
+      "title": "Create with Verus",
+      "description": "Create products, services and systems with Verus. Start launching blockchains and tokens. Get privacy, digital identities, DeFi and more."
+    },
+    "foundations": {
+      "title": "Strong Foundations for Verus",
+      "description": "Verus is built to last. The multi-chain network has all the right conditions for continual growth. A scalable, decentralized and secure community network."
+    },
+    "coin": {
+      "title": "VRSC Coin",
+      "description": "VRSC is the Verus blockchain coin. Use for payments, staking, blockchain, token and VerusID creation, and for reserves in DeFi tokens."
+    },
+    "global": {
+      "title": "Verus Global Network",
+      "description": "Verus is the center where all blockchains connect together. Creating a global network of value and liquidity."
+    },
+    "economy": {
+      "title": "Earn in the Network Economy",
+      "description": "Participate in the network economy and earn from economic activity. Start mining and staking today. Or start earning in one of many other ways."
+    },
+    "people": {
+      "title": "People Contributing to Verus",
+      "description": "People from all over the world contribute to Verus. A true community project where anyone can contribute. And you too can be a part of it!"
+    },
+    "contribute": {
+      "title": "Join the Verus Community",
+      "description": "The Verus community is welcome to everyone and can use your help! Donate funds or join the community channels to find out how you can contribute."
+    },
+    "papers": {
+      "title": "Verus Papers",
+      "description": "Download one of many Verus published papers. Verus Vision Paper, Verus Proof of Power, Verus Phase I."
+    },
+    "exchanges": {
+      "title": "$VRSC Exchanges",
+      "description": "All exchanges where you can trade $VRSC. Do your own due diligence on the exchanges."
+    },
+    "wallet": {
+      "title": "Download Wallet",
+      "description": "Download wallets to connect to the ecosystem. Verus Desktop, Verus Mobile, CLI and paper wallet. Wallets available for everyone."
+    },
+    "desktop": {
+      "title": "Download Verus Desktop",
+      "description": "Download Verus Desktop cryptocurrency wallet now for Windows, macOS, Linux and ARM devices. Connect to the Verus ecosystem and more."
+    },
+    "mobile": {
+      "title": "Download Verus Mobile",
+      "description": "Download Verus Mobile cryptocurrency wallet now for Android and iOS. Connect to the Verus ecosystem and more."
+    },
+    "lookup": {
+      "title": "Search for VerusID",
+      "description": "Search for VerusID. Find primary address, revocation and recovery VerusID, identity address and private address."
+    },
+    "signatures": {
+      "title": "Verify Signed Files, Messages and Hashes",
+      "description": "Verify files, messages and hashes for their authenticity. Make sure they are signed by the correct VerusID."
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "FAQ - frequently asked questions. The most common questions answered for you."
+    },
+    "privacyPolicy": {
+      "title": "Verus Privacy Policy",
+      "description": "Verus takes your privacy seriously. This website does not track you in any way."
+    },
+    "verusid": {
+      "title": "VerusID",
+      "description": "VerusID is the self-sovereign identity and namespace protocol for Verus."
+    }
+  },
+  "keywords": {
+    "bitcoin": "BITCOIN"
+  }
+}

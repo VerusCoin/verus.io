@@ -29,8 +29,6 @@
   },
   "submit": "Submit",
   "copied": "Copied",
-  "upgradeComing": "Vault & Marketplace Mainnet Upgrade",
-  "upgradereadMore": "read more",
-  "upgradeCounter": "Activation in {{count}} blocks",
-  "upgradeComplete": "Activated!"
+  "banner": "🔥 Verus attends Consensus 2022, June 9-12, Austin, TX 🔥",
+  "readMore": "read more"
 }
