@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import useTranslation from 'next-translate/useTranslation'
-// import { media } from 'styled-bootstrap-grid'
+import { media } from 'styled-bootstrap-grid'
 import { fontSize, bgColor } from '@/styles/helpers'
 import { DefaultText, SVGs } from '@/components/elements'
 import { useNotifyContext } from '@/lib/Contexts'
@@ -21,6 +21,20 @@ const StyledNotification = styled.div<any>`
   p {
     width: fit-content;
   }
+  .mobile-text {
+    display: block;
+  }
+  .tablet-text {
+    display: none;
+  }
+  ${media.tablet`
+  .mobile-text {
+    display: none;
+  }
+  .tablet-text {
+    display: block;
+  }
+  `}
 `
 
 const CloseButton = styled.button`
@@ -100,7 +114,8 @@ const NotifyBanner = () => {
         align="center"
         customMargin="0 21px 0 0"
       >
-        {t('banner')}
+        <span className="mobile-text">{t('bannerMobile')}</span>
+        <span className="tablet-text">{t('banner')}</span>
       </DefaultText>
       <StyledReadMore
         as="a"

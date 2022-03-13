@@ -12,11 +12,10 @@ export const BlogJSON: IBlog = {
     },
     {
       thumbnail:
-        'https://cdn-images-1.medium.com/max/1024/1*5N-bBDKLJZr5nBAYzNvGKA.png',
-      title:
-        'Verus Announces New Multicurrency, Multichain DeFi Protocols and Immediate Public Availability of Fully Functional, Multichain Testnet',
-      pubDate: '2021-05-08T07:18:20Z',
-      link: 'https://medium.com/veruscoin/verus-announces-new-multicurrency-multichain-defi-protocols-and-immediate-public-availability-of-f1868f259ce5',
+        'https://cdn-images-1.medium.com/max/1024/1*kda5JRt7HiLNp7rHRk_YTQ.png',
+      title: 'Verus Vault & VerusID (NFT) Marketplace Mainnet Upgrade',
+      pubDate: '2021-11-15T11:01:57Z',
+      link: 'https://medium.com/veruscoin/verus-vault-verusid-nft-marketplace-mainnet-upgrade-7abb5092c81b',
     },
     {
       thumbnail:

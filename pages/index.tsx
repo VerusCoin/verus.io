@@ -15,7 +15,8 @@ import {
   DefaultHeader,
 } from '@/components/elements'
 import { Container, Row, Col, media } from 'styled-bootstrap-grid'
-import { Banner, Blog, KnowCards } from '@/components/sections/Home'
+// import { Banner, Blog, KnowCards } from '@/components/sections/Home'
+import { Blog, KnowCards } from '@/components/sections/Home'
 
 const StyledCardContainer = styled(Container)`
   ${bgColor('blueQuan')}
@@ -98,7 +99,7 @@ const Home = ({ data }: HomepageProps) => {
       <NextSeo title={title} description={description} />
       <MainLayout jumbotronData={JumbotronJSON}>
         <Grid bottom>
-          <Banner />
+          {/* <Banner /> */}
           <StyledCardContainer>
             <Row justifyContent="center">
               <DefaultHeader
