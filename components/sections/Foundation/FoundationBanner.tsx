@@ -34,13 +34,20 @@ const StyledHeadingContainer = styled.div`
   margin-bottom: 75px;
 
   img {
-    margin-top: 10px;
-    height: 120px;
-    width: 120px;
+    margin: 10px auto 40px;
+    height: 70px;
+    width: 70px;
+
     border-radius: 10px;
   }
   ${media.tablet`
     flex-direction: row;
+    img {
+      height: 120px;
+      
+      margin: 10px initial initial;
+    width: 120px;
+    }
   `}
 `
 const StyledHeading = styled.div`

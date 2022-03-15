@@ -35,9 +35,15 @@ const StyledHeadingContainer = styled.div`
 
   img {
     margin-top: 10px;
+    margin-bottom: 40px;
+    height: 70px;
   }
   ${media.tablet`
     flex-direction: row;
+    img {
+      margin-bottom: 0;
+      height: 120px;
+    }
   `}
 `
 const StyledHeading = styled.div`
@@ -45,8 +51,12 @@ const StyledHeading = styled.div`
   p {
     text-align: center;
   }
+  .title {
+    margin-bottom: 40px;
+  }
   .subtext {
     margin-top: 25px;
+
     text-align: justify;
     span {
       font-weight: bold;
@@ -56,6 +66,9 @@ const StyledHeading = styled.div`
   ${media.tablet`
     p {
       text-align: left;
+    }
+    .title{
+      margin-bottom: initial;
     }
     margin-top:0;
     margin-left: 70px;
@@ -74,6 +87,9 @@ const StyledGridCard = styled.div`
   align-items: center;
   p {
     color: #0f0f0f;
+  }
+  p.img {
+    color: #ffffff;
   }
   .subtext {
     opacity: 0.87;
@@ -110,9 +126,14 @@ const KeychainCard = () => {
   return (
     <StyledKeychainCard>
       <StyledHeadingContainer>
-        <Img height={120} name="keychain" />
+        <Img name="keychain" />
         <StyledHeading>
-          <DefaultText fam="geoHead" fontSz="xl" customColor="#272727">
+          <DefaultText
+            fam="geoHead"
+            fontSz="xl"
+            customColor="#272727"
+            className="title"
+          >
             {t('keychainCard.header')}
           </DefaultText>
           <DefaultText fontSz="modal" customColor="#676767" className="subtext">
