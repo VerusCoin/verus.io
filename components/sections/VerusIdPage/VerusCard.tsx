@@ -84,16 +84,13 @@ const StyledGridCard = styled.div`
 
 const StyledCardText = styled.div`
   max-width: 500px;
-  margin-top: 25px;
-
-  ${media.tablet`
-    margin-top: 0;
-  `}
 `
 const StyledDefaultText = styled(DefaultText)`
   text-align: center;
+  margin: 20px 0 0;
   ${media.tablet`
     text-align: left;
+    margin: 25px 0 0;
   `};
 `
 
@@ -105,23 +102,25 @@ const StyledImgContainer = styled.div`
   height: 48px;
   width: 48px;
   border-radius: 10px;
-  margin-right: 25px;
   margin-top: 0;
   svg {
     height: 24px;
     fill: ${(props) => props.theme.colors.white};
   }
+  ${media.tablet`
+    margin-right: 25px;
+  `}
 `
 
 const StyledHeadImg = styled(StyledImgContainer)`
   height: 70px;
   width: 70px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   svg {
     height: 47px;
   }
   ${media.tablet`
-    margin: 0;
+    margin: 10px 0;
     height: 120px;
     width: 120px;
     svg {

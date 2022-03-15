@@ -35,9 +35,15 @@ const StyledHeadingContainer = styled.div`
 
   img {
     margin-top: 10px;
+    height: 70px;
+    margin-bottom: 40px;
   }
   ${media.tablet`
     flex-direction: row;
+    img {
+      height: 120px;
+      margin-bottom: initial;
+    }
   `}
 `
 const StyledHeading = styled.div`

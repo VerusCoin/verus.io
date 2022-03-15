@@ -89,14 +89,17 @@ const StyledGridCard = styled.div`
   p {
     color: #0f0f0f;
   }
+
+  margin: 20px 0;
   ${media.tablet`
     align-items: start;
     justify-content: flex-start;
+    margin: initial;
   `}
 `
 const StyledDefaultText = styled(DefaultText)`
   text-align: center;
-  margin: 10px 0 0;
+  margin: 20px 0 0;
   ${media.tablet`
     text-align: left;
     margin: 25px 0 0;
