@@ -17,13 +17,18 @@ const arweave = Arweave.init(arConfig)
 const FetchVerusProfile = async (content: Record<string, any>) => {
   //check for arweave
   const arweaveVdxfid = CollectionsJSON.arweave.hash160result
+
   const arweaveTxId = await FetchArweaveProfile(
     content[arweaveVdxfid] || content[reverseHex(arweaveVdxfid)],
     IdentityJSON.public.vdxfid
   )
+
   if (arweaveTxId) {
     const arweaveJSON = await arweave.transactions
-      .getData(arweaveTxId, { decode: true, string: true })
+      .getData(arweaveTxId, {
+        decode: true,
+        string: true,
+      })
       .then((res) => JSON.parse(res.toString()))
 
     if (arweaveJSON) {
@@ -35,6 +40,8 @@ const FetchVerusProfile = async (content: Record<string, any>) => {
 
       return profileJSON
     }
+
+    return null
   } else {
     return null
   }
