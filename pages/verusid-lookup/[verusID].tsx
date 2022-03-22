@@ -55,6 +55,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       }
 
       const contentMap = profileData.result.identity.contentmap
+
       const profileJSON = await FetchVerusProfile(contentMap)
       if (profileJSON) {
         data = { ...data, profileJSON: profileJSON }

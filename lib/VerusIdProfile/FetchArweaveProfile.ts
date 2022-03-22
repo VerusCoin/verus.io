@@ -4,6 +4,7 @@ const endpoint = 'https://arweave.net/graphql'
 
 const FetchArweaveProfile = async (tag: string, publicVdxfid: string) => {
   const address = HexToBase64(tag)
+
   if (isBase64url(address)) {
     const queryStr = `query {
       transactions(
