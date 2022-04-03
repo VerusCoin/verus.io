@@ -1,7 +1,7 @@
 {
   "jumbotron": {
     "title": "Welcome to Verus",
-    "heading": "The World’s Internet of Value",
+    "heading": "The Internet of Value",
     "buttons": {
       "first": "Create businesses with Verus",
       "second": "Start mining and staking",
@@ -48,7 +48,7 @@
     "knowCard": {
       "know": "Did you know?",
       "header": "<u>Verus</u> is Latin and means:",
-      "text": "truth real actual genuine"
+      "text": "true real actual genuine"
     }
   },
   "highlighted": "Highlighted Articles",
