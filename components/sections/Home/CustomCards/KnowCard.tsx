@@ -14,24 +14,17 @@ const StyledKnowCards = styled.div`
   min-height: 275px;
   box-shadow: 0 0 13px -10px rgb(0 0 0 / 13%);
 
-  p:first-child {
+  .title {
     opacity: 58%;
     margin-top: 0;
   }
-  p:last-child {
-    width: 60px;
+  div {
+    margin-top: 20px;
   }
   ${media.tablet`
   border-radius: 20px;
   min-height: 480px;
-  p:last-child {
-    width: 70px;
-  }
-`}
-  ${media.desktop`
-p:last-child {
-  width: 120px;
-}
+  
 `}
 `
 
