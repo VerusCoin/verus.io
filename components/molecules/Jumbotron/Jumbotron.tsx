@@ -60,13 +60,23 @@ const StyledJumbotronTitle = styled.div`
     font-family: 'Geomanist Bold', sans-serif;
   }
   .extraLarge {
-    max-width: 925px;
+    max-width: 350px;
     ${fontSize('xxxl')}
     background: linear-gradient(92.26deg, #0A3FB1 18.26%, #3165D4 52.63%, #0A3FB1 88.45%);
     margin: 25px 0 32px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  ${media.tablet`
+    .extraLarge {
+      max-width: 600px;
+    }
+  `}
+  ${media.desktop`
+    .extraLarge {
+      max-width: 700px;
+    }
+  `}
 `
 
 // &::after {
