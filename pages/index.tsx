@@ -94,6 +94,8 @@ const Home = ({ data }: HomepageProps) => {
   }
 
   const CardList = data.CardsJSON
+  const knowCardList = t('cards.knowCard.text').split(' ')
+
   return (
     <>
       <NextSeo title={title} description={description} />
@@ -154,6 +156,7 @@ const Home = ({ data }: HomepageProps) => {
               fontSz="xs"
               color="white"
               text={t('cards.knowCard.know')}
+              className="title"
             />
             <CardText
               book
@@ -161,12 +164,17 @@ const Home = ({ data }: HomepageProps) => {
               color="white"
               text={t('cards.knowCard.header')}
             />
-
-            <CardText
-              fontSz="mdlg"
-              color="white"
-              text={t('cards.knowCard.text')}
-            />
+            <div>
+              {knowCardList.map((w) => (
+                <CardText
+                  fontSz="mdlg"
+                  color="white"
+                  text={w}
+                  key={w}
+                  margin="0"
+                />
+              ))}
+            </div>
           </KnowCards>
         </Grid>
       </MainLayout>
