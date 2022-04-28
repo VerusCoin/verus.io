@@ -18,12 +18,28 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (!cache.get(cacheArticles)) {
+    // result = await fetch(
+    //   'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/veruscoin'
+    // )
     result = await fetch(
-      'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/veruscoin'
+      'https://api.factmaven.com/xml-to-json/?xml=https://medium.com/feed/veruscoin'
     )
+    //!Data comes in as xml converted to json
+    //!need to extrapulate the information into
+    //* {thumbnail, title, pubDate, link} json format
     try {
       articles = await result.json()
-      data = articles.items.splice(0, 3)
+      articles = articles.rss.channel.item.splice(0, 3)
+      data = articles.map((item: any) => {
+        const img = /\d\*\w*.(?:jpg|gif|png|jpeg)/g
+
+        return {
+          title: item.title,
+          pubDate: item.pubDate,
+          link: item.link,
+          thumbnail: item.encoded.match(img)[0],
+        }
+      })
     } catch (error) {
       console.error('%s: fetching Articles %s', Date().toString(), error)
     }
