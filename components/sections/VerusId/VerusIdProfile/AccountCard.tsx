@@ -77,7 +77,9 @@ const AccountCard = ({
         onClick={() => setShow(!show)}
       >
         {image && <Img name={image} className="logo" />}{' '}
-        <p>{account.address}</p>
+        <p>
+          <>{account.address}</>
+        </p>
         <StatusIcon className="status" />
         {/* <TooltipBoxContainer>
         <TooltipBox classname="tooltip">test</TooltipBox>

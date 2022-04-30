@@ -25,7 +25,7 @@ const FileInputField = (props: any) => {
   const files = watch(name)
 
   const onDrop = useCallback(
-    (droppedFiles) => {
+    (droppedFiles: any) => {
       droppedFiles.forEach(async (file: any) => {
         setIsProcessing(true)
         const reader = new FileReader()

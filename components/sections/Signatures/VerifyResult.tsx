@@ -71,7 +71,9 @@ const VerifyResult = ({
       {fileName && (
         <>
           <DefaultText fam="geoHead">{t('results.file')}:</DefaultText>
-          <DefaultText className="break">{fileName}</DefaultText>
+          <DefaultText className="break">
+            <>{fileName}</>
+          </DefaultText>
         </>
       )}
       <DefaultText fam="geoHead">{title}</DefaultText>

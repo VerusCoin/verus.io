@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout, Grid } from '@/components/layouts'
-import { Img, TypedJS } from '@/components/elements'
+import { Img } from '@/components/elements'
 import {
   Profile,
   ProfileHeader,
@@ -76,7 +76,8 @@ const VerusidLookup = () => {
             )}
             {isSubmitting && (
               <div>
-                <TypedJS strings={['Fetching', 'VerusID']} />
+                <p>Fetching VerusID</p>
+                {/* TypedJS strings={['Fetching', 'VerusID']} /> */}
               </div>
             )}
             {!isSubmitting && !verusID.result && (

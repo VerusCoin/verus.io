@@ -84,10 +84,12 @@ const ServiceCard = ({
       <StyledServiceCard status={data?.valid} onClick={() => setShow(!show)}>
         <Icon size="1.5em" className="logo" />
         <p>
-          {serviceAccount.accountname ||
-            serviceAccount.accountid ||
-            serviceAccount.name}{' '}
-          {shortUrl}
+          <>
+            {serviceAccount.accountname ||
+              serviceAccount.accountid ||
+              serviceAccount.name}{' '}
+            {shortUrl}
+          </>
         </p>
         <StatusIcon className="status" />
         {/* <TooltipBoxContainer>

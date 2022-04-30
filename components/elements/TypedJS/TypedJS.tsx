@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Typed from 'react-typed'
+// import Typed from 'react-typed'
 import { ITypedJS } from '@/types/elements'
 
 const StyledTyped = styled.div`
@@ -18,7 +18,8 @@ const StyledTyped = styled.div`
 const TypedJS: React.FC<ITypedJS> = ({ strings }) => {
   return (
     <StyledTyped>
-      <Typed
+      {strings}
+      {/* <Typed
         strings={strings}
         typeSpeed={125}
         backSpeed={80}
@@ -26,7 +27,7 @@ const TypedJS: React.FC<ITypedJS> = ({ strings }) => {
         showCursor={false}
         smartBackspace={false}
         loop={true}
-      />
+      /> */}
     </StyledTyped>
   )
 }
