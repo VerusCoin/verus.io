@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@types/react-copy-to-clipboard": "^5.0.2",
-    "arweave": "1.10.23",
+    "arweave": "1.10.18",
     "bitcoinjs-message": "^2.2.0",
     "body-scroll-lock": "^4.0.0-beta.0",
     "cheerio": "^1.0.0-rc.10",
