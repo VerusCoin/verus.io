@@ -6,7 +6,8 @@
       "@/types/*": ["types/*"],
       "@/styles/*": ["styles/*"],
       "@/data/*": ["data/*"],
-      "@/lib/*": ["lib/*"]
+      "@/lib/*": ["lib/*"],
+      "react": ["node_modules/@types/react"]
     },
     "target": "esnext",
     "module": "esnext",
