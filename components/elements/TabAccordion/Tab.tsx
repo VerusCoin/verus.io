@@ -13,7 +13,7 @@ const Tab = forwardRef<HTMLDivElement, ITab>((props, ref) => {
   const { activeEventKey, onToggle, children, tabItems, ...rest } = props
   const [eventKey = '0', setEventKey] = useEventKey(activeEventKey, onToggle)
   const handleToggle = useCallback(
-    (eventKey) => {
+    (eventKey: any) => {
       if (activeEventKey !== undefined) {
         onToggle(eventKey)
         return
