@@ -66,7 +66,7 @@
     "header": "Don’t be afraid of faulty smart contracts.",
     "modal": {
       "header": "Use the network with confidence.",
-      "text": "To guarantee your and the system’s security, all functionality on the Verus blockchain is programmed in the protocol. Elements such as DeFi are considered mission-critical and must find their origin in the consensus layer. Functionality is directly connected to the miners and stakers. Verus prevents application developers from being responsible for systems security. Here’s why that’s an important design choice. You can see many problems arise with smart contracts on other blockchain systems. Vulnerabilities, bugs, abuse. New smart contract incidents occur each day. Not with Verus. Use Verus with confidence."
+      "text": "All functionality on the Verus blockchain is programmed in the protocol. Elements such as DeFi are considered mission-critical and must find their origin in the consensus layer. Functionality is directly connected to the miners and stakers. Verus prevents application developers from being responsible for systems security. Here’s why that’s an important design choice. You can see many problems arise with smart contracts on other blockchain systems. Vulnerabilities, bugs, abuse. New smart contract incidents occur each day."
     }
   },
   "quantumProof": {
