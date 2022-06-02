@@ -185,25 +185,25 @@ const Home = ({ data }: HomepageProps) => {
 export default Home
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  //try {
-    //const result = await fetch('http://localhost:3000/api/verusArticles')
-    //const latestJSON = await result.json()
+  try {
+    const result = await fetch('http://localhost:3000/api/verusArticles')
+    const latestJSON = await result.json()
 
-    //return {
-      //props: {
-        //data: {
-          //HighlightJSON: BlogJSON.data,
-          //LatestJSON: latestJSON,
-          //CardsJSON,
-        //},
-      //},
-    //}
-  //} catch (err) {
+    return {
+      props: {
+        data: {
+          HighlightJSON: BlogJSON.data,
+          LatestJSON: latestJSON,
+          CardsJSON,
+        },
+      },
+    }
+  } catch (err) {
     const blogJSON = BlogJSON.data
     return {
       props: {
         data: { HighlightJSON: blogJSON, LatestJSON: blogJSON, CardsJSON },
       },
     }
-  //}
+  }
 }
