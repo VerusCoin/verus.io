@@ -4,6 +4,10 @@ import { Hour12 } from '@/lib/clocks'
 
 const cacheArticles = '@articlesList'
 
+//REGEX for finding images.
+//!NEED to make it be more universal
+const img = /\d\*?(:\w*|\w*\W\w*).(?:jpg|gif|png|jpeg)/g
+
 let index = 1
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let articles: any = null
@@ -32,7 +36,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       articles = await result.json()
       articles = articles.rss.channel.item.splice(0, 3)
       data = articles.map((item: any) => {
-        const img = /\d\*\w*\W\w*.(?:jpg|gif|png|jpeg)/g
+        
         
         return {
           title: item.title,
