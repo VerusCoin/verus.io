@@ -6,6 +6,7 @@ module.exports = nextTranslate({
     minimumCacheTTL: 60,
     disableStaticImages: true,
   },
+  reactStrictmode: true,
   async redirects() {
     return [
       {
