@@ -1,5 +1,5 @@
 /* eslint-disable  @typescript-eslint/no-unused-vars */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { IBlogItem } from 'types/homepage'
 // import Image from 'next/image'
@@ -87,6 +87,10 @@ const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
   newThumbnail = newThumbnail[newThumbnail.length - 1]
 
   const srcURL = `https://cdn-images-1.medium.com/max/640/${newThumbnail}`
+  const [useDate, setDate] = useState<string>()
+  useEffect(() => {
+    setDate(dayjs(pubDate).format('DD MMM YYYY'))
+  }, [pubDate])
 
   return (
     <StyledBlogItem href={link} target="_blank" rel="noreferrer">
@@ -100,9 +104,7 @@ const BlogItem = ({ thumbnail, title, pubDate, link }: IBlogItem) => {
 
       <DefaultHeader as="h5">{title}</DefaultHeader>
 
-      <DefaultText customMargin="10px 0">
-        {dayjs(pubDate).format('DD MMM YYYY')}
-      </DefaultText>
+      <DefaultText customMargin="10px 0">{useDate}</DefaultText>
     </StyledBlogItem>
   )
 }
