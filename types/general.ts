@@ -35,3 +35,7 @@ export interface IFooterItem {
   href: string
   external?: boolean
 }
+
+export interface IdQuery {
+  [key: string]: string | string[]
+}
