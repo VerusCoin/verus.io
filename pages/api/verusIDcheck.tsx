@@ -1,13 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { FetchVerusId } from '@/lib/VerusIdProfile'
+import { IdQuery } from '@/types/general'
 
-interface Query {
-  [key: string]: string | string[]
-}
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // Check for vanity '@' before doing fetch
 
-  const IDvariable: Query = req.query
+  const IDvariable = req.query as IdQuery
 
   if (IDvariable.id.slice(-1) != '@') {
     IDvariable.id = IDvariable.id + '@'

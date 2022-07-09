@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Arweave from 'arweave'
 import { serialize } from 'next-mdx-remote/serialize'
-
+import { IdQuery } from '@/types/general'
 // interface Query {
 //   [key: string]: string | string[]
 // }
@@ -14,7 +14,7 @@ const arConfig = {
 const arweave = Arweave.init(arConfig)
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { id, type } = req.query
+  const { id, type } = req.query as IdQuery
 
   try {
     const data = await arweave.transactions.getData(id.toString(), {

@@ -1,13 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { FetchVerusId, FetchVerusProfile } from '@/lib/VerusIdProfile'
 import { VerusResult } from '@/lib/VerusIdProfile/ProfileTypes'
-
-interface Query {
-  [key: string]: string | string[]
-}
+import { IdQuery } from '@/types/general'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const IDVariable: Query = req.query
+  const IDVariable = req.query as IdQuery
   if (IDVariable.id.slice(-1) != '@') {
     IDVariable.id = IDVariable.id + '@'
   }
