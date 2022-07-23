@@ -80,7 +80,7 @@ const VerifyResult = ({
       <DefaultText className="break">{children}</DefaultText>
       <DefaultText fam="geoHead">{t('formField.verusID.input')}:</DefaultText>
       <DefaultText className="break">{verusSignature.Identity}</DefaultText>
-      <DefaultText fam="geoHead">{t('formField.verusID.input')}:</DefaultText>
+      <DefaultText fam="geoHead">{t('formField.signature.input')}:</DefaultText>
       <DefaultText className="break">{verusSignature.Signature}</DefaultText>
       <StyledButton onClick={resetCall}>{t('results.button')}</StyledButton>
     </StyledContainer>
