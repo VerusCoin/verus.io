@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 /public/robots.txt
+/.vscode
 
 # debug
 npm-debug.log*
