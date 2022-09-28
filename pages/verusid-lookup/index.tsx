@@ -34,7 +34,7 @@ const VerusidLookup = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (query) => {
     if (query) {
-      query.verusID = escape(query.verusID)
+      //query.verusID = escape(query.verusID) //this breaks emojis
       const url = `/api/verusIDcheck?id=${query.verusID}`
       const result = await fetch(url)
       const data = await result.json()
