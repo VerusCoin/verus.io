@@ -5,6 +5,8 @@ export interface IJumbotron {
   header?: string
   color?: string
   text?: string
+  texts?: string[]
+  main?: boolean
   button?: {
     text: string
     href: string

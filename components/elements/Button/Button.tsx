@@ -127,6 +127,7 @@ const Button = ({
   className,
   active,
   target,
+  download,
 }: IButton) => {
   if (href && !target) {
     return (
@@ -146,6 +147,7 @@ const Button = ({
           onClick={onClick}
           white={white}
           active={active}
+          download={download}
         >
           {children}
 

@@ -11,9 +11,13 @@ import {
   Img,
   CardHeader,
   CardText,
+  Button,
   DefaultLinkCard,
   DefaultHeader,
+  DefaultText,
+  SVGs,
 } from '@/components/elements'
+import { FaMedium } from 'react-icons/fa'
 import { Container, Row, Col, media } from 'styled-bootstrap-grid'
 // import { Banner, Blog, KnowCards } from '@/components/sections/Home'
 import { Blog, KnowCards } from '@/components/sections/Home'
@@ -38,6 +42,50 @@ const StyledCardContainer = styled(Container)`
   ${media.giant`
     background-size: 613px;
     
+  `}
+`
+
+const StyledMultiChainCard = styled(StyledCardContainer)`
+  ${bgColor('white')}
+  background-image: none;
+  .medium {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .btn1,
+  .btn2 {
+    margin-top: 12px;
+  }
+  .btn2 {
+    color: black;
+    background-color: transparent;
+    border: black solid 2px;
+    svg {
+      fill: black;
+    }
+    &:hover {
+      svg {
+        transform: inherit;
+      }
+    }
+  }
+  .btn3 {
+    svg:first-child {
+      margin-right: 6px;
+      min-height: 24px;
+      min-width: 24px;
+    }
+    svg:last-child {
+      height: 17px;
+      min-width: 17px;
+    }
+  }
+
+  ${media.tablet`
+    .btn1, .btn2 {
+      margin:initial;
+    }
   `}
 `
 
@@ -80,17 +128,17 @@ const Home = ({ data }: HomepageProps) => {
     title: t('jumbotron.title'),
     header: t('jumbotron.heading'),
     color: 'default',
+    texts: [t('jumbotron.text1'), t('jumbotron.text2')],
     buttons: [
       { text: t('jumbotron.buttons.first'), href: '/create' },
-      { text: t('jumbotron.buttons.second'), href: '/economy' },
-      { text: t('jumbotron.buttons.third'), href: '/foundations' },
-      { text: t('jumbotron.buttons.fourth'), href: '/verusid' },
+      { text: t('jumbotron.buttons.second'), href: '/verusid' },
     ],
     youtube: {
       text: t('jumbotron.youtube'),
-      href: 'https://www.youtube.com/watch?v=eOn9XpjkuCA',
+      href: 'https://www.youtube.com/watch?v=qN30YmG3nEg',
     },
     width: 1000,
+    main: true,
   }
 
   const CardList = data.CardsJSON
@@ -102,6 +150,65 @@ const Home = ({ data }: HomepageProps) => {
       <MainLayout jumbotronData={JumbotronJSON}>
         <Grid bottom>
           {/* <Banner /> */}
+          <StyledMultiChainCard>
+            <Row justifyContent="center">
+              <Col md={10} lg={9} xl={8}>
+                <DefaultHeader
+                  as="h2"
+                  align="center"
+                  headerStyle="margin: 0 0 30px 0 !important; font-weight:bold !important; "
+                >
+                  {t('multiChainCard.title')}
+                </DefaultHeader>
+              </Col>
+            </Row>
+            <Row justifyContent="center">
+              <Col lg={10} xl={9}>
+                <DefaultText fontSz="md" align="center" customMargin="0 0 40px">
+                  {t('multiChainCard.description')}
+                </DefaultText>
+              </Col>
+            </Row>
+            <Row justifyContent="center">
+              <Col auto offset-1>
+                <Button
+                  className="btn1"
+                  href="/foundations"
+                  as="a"
+                  color="#3165d4"
+                >
+                  {t('multiChainCard.btn1')}
+                </Button>
+              </Col>
+              <Col auto offset-1>
+                <Button
+                  className="btn2"
+                  href="/papers/VerusVision.pdf"
+                  as="a"
+                  download
+                >
+                  {t('multiChainCard.btn2')}
+                  <SVGs name="download" />
+                </Button>
+              </Col>
+            </Row>
+            <Row justifyContent="center">
+              <Col className="medium">
+                <Button
+                  className="btn3"
+                  small
+                  transparent
+                  svg={{ type: 'miniTab', rotate: false }}
+                  href="https://medium.com/veruscoin/community-currencies-a-case-study-to-explore-new-technical-possibilities-ede897433b55"
+                  as="a"
+                  target="_blank"
+                >
+                  <FaMedium size={24} />
+                  {t('multiChainCard.medium')}
+                </Button>
+              </Col>
+            </Row>
+          </StyledMultiChainCard>
           <StyledCardContainer>
             <Row justifyContent="center">
               <DefaultHeader
