@@ -93,6 +93,7 @@
   "lint-staged": {
     "*.@(ts|tsx)": [
       "yarn lint",
+      "yarn lint:css",
       "yarn format"
     ]
   },
