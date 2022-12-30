@@ -167,14 +167,14 @@ const Jumbotron = ({
                   {texts && (
                     <StyledJumbotronText main={main} customWidth={width}>
                       {texts.map((item, index) => (
-                        <DefaultHeader
+                        <DefaultText
                           key={index}
-                          as="h5"
-                          fontNormal
+                          fontSz="md"
+                          fam="geoHead"
                           align="center"
                         >
                           {parse(item)}
-                        </DefaultHeader>
+                        </DefaultText>
                       ))}
                     </StyledJumbotronText>
                   )}
@@ -204,7 +204,12 @@ const Jumbotron = ({
               {buttons && main && (
                 <Row justifyContent="center">
                   <Col auto>
-                    <Button small href={buttons[0].href} as="a" color="#3165d4">
+                    <Button
+                      fontSize="menu"
+                      href={buttons[0].href}
+                      as="a"
+                      color="#3165d4"
+                    >
                       {buttons[0].text}
                     </Button>
                   </Col>
@@ -212,7 +217,7 @@ const Jumbotron = ({
                     <Button
                       className="btn2"
                       white
-                      small
+                      fontSize="menu"
                       href={buttons[1].href}
                       as="a"
                     >
