@@ -16,7 +16,7 @@ const StyledJumbotron = styled.section<any>`
     props.main &&
     `
     
-      background-image: url('/images/bg-header-website.png');
+      background-image: url('/images/bg-header-website-1.png');
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
