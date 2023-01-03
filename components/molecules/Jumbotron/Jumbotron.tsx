@@ -10,16 +10,29 @@ import { FaYoutube } from 'react-icons/fa'
 
 const StyledJumbotron = styled.section<any>`
   ${spacer('xl')}
+
   ${media.tablet`
   ${(props: any) =>
     props.main &&
     `
-  background-image: url('/images/bg-header-website.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  `}
+    
+      background-image: url('/images/bg-header-website.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      
+  }
+    
+    `}
   
+  `}
+  ${(props) =>
+    props.main &&
+    `
+    max-width: 1440px;
+    @media (min-width: 1440px) {
+      margin-left: auto;
+      margin-right: auto;
   `}
 `
 
@@ -48,6 +61,7 @@ const StyledJumbotronContainer = styled.div`
     color: black;
     border: solid 2px black;
   }
+
   ${media.desktop`
     .jumboGrid {
       grid-gap: 0 130px;
@@ -169,7 +183,7 @@ const Jumbotron = ({
                       {texts.map((item, index) => (
                         <DefaultText
                           key={index}
-                          fontSz="md"
+                          fontSz="mdlg"
                           fam="geoHead"
                           align="center"
                         >
@@ -236,7 +250,6 @@ const Jumbotron = ({
                           href={youtube.href}
                           fontSize="xs"
                           as="a"
-                          color="#676767"
                           margin="45px 0 0"
                           target="_blank"
                         >

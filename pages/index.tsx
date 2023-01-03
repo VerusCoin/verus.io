@@ -77,8 +77,7 @@ const StyledMultiChainCard = styled(StyledCardContainer)`
       min-width: 24px;
     }
     svg:last-child {
-      height: 17px;
-      min-width: 17px;
+      height: 13px;
     }
   }
 
@@ -163,8 +162,12 @@ const Home = ({ data }: HomepageProps) => {
               </Col>
             </Row>
             <Row justifyContent="center">
-              <Col lg={10} xl={9}>
-                <DefaultText fontSz="md" align="center" customMargin="0 0 40px">
+              <Col lg={12} xl={11}>
+                <DefaultText
+                  fontSz="mdlg"
+                  align="center"
+                  customMargin="0 0 40px"
+                >
                   {t('multiChainCard.description')}
                 </DefaultText>
               </Col>
@@ -172,6 +175,7 @@ const Home = ({ data }: HomepageProps) => {
             <Row justifyContent="center">
               <Col auto offset-1>
                 <Button
+                  fontSize="menu"
                   className="btn1"
                   href="/foundations"
                   as="a"
@@ -182,6 +186,7 @@ const Home = ({ data }: HomepageProps) => {
               </Col>
               <Col auto offset-1>
                 <Button
+                  fontSize="menu"
                   className="btn2"
                   href="/papers/VerusVision.pdf"
                   as="a"
@@ -196,11 +201,12 @@ const Home = ({ data }: HomepageProps) => {
               <Col className="medium">
                 <Button
                   className="btn3"
-                  small
+                  fontSize="xs"
                   transparent
                   svg={{ type: 'miniTab', rotate: false }}
                   href="https://medium.com/veruscoin/community-currencies-a-case-study-to-explore-new-technical-possibilities-ede897433b55"
                   as="a"
+                  margin="45px 0 0"
                   target="_blank"
                 >
                   <FaMedium size={24} />
