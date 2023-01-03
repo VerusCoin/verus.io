@@ -57,6 +57,9 @@ const StyledMultiChainCard = styled(StyledCardContainer)`
   .btn2 {
     margin-top: 12px;
   }
+  .btn1 {
+    border: #3165d4 solid 2px;
+  }
   .btn2 {
     color: black;
     background-color: transparent;
@@ -71,6 +74,7 @@ const StyledMultiChainCard = styled(StyledCardContainer)`
     }
   }
   .btn3 {
+    text-decoration: underline;
     svg:first-child {
       margin-right: 6px;
       min-height: 24px;
@@ -81,6 +85,9 @@ const StyledMultiChainCard = styled(StyledCardContainer)`
     }
   }
 
+  .chainText {
+    line-height: 35px;
+  }
   ${media.tablet`
     .btn1, .btn2 {
       margin:initial;
@@ -162,11 +169,12 @@ const Home = ({ data }: HomepageProps) => {
               </Col>
             </Row>
             <Row justifyContent="center">
-              <Col lg={12} xl={11}>
+              <Col lg={10} xl={9}>
                 <DefaultText
-                  fontSz="mdlg"
+                  fontSz="md"
                   align="center"
                   customMargin="0 0 40px"
+                  className="chainText"
                 >
                   {t('multiChainCard.description')}
                 </DefaultText>
@@ -190,7 +198,7 @@ const Home = ({ data }: HomepageProps) => {
                   className="btn2"
                   href="/papers/VerusVision.pdf"
                   as="a"
-                  download
+                  target="_blank"
                 >
                   {t('multiChainCard.btn2')}
                   <SVGs name="download" />

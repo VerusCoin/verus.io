@@ -56,7 +56,9 @@ const StyledJumbotronContainer = styled.div`
     grid-gap: 0;
     margin: 0 auto;
   }
-
+  .btn1 {
+    border: #3165d4 2px solid;
+  }
   .btn2 {
     color: black;
     border: solid 2px black;
@@ -71,7 +73,9 @@ const StyledJumbotronContainer = styled.div`
 
 const StyledJumbotronText = styled.div<any>`
   width: 100%;
-
+  .titleText {
+    line-height: 35px;
+  }
   ${media.desktop`
   width: ${(props: any) =>
     props.customWidth ? `${props.customWidth}px` : '720px'};
@@ -91,10 +95,8 @@ const StyledJumbotronTitle = styled.div`
   .extraLarge {
     max-width: 350px;
     ${fontSize('xxxl')}
-    background: linear-gradient(92.26deg, #0A3FB1 18.26%, #3165D4 52.63%, #0A3FB1 88.45%);
+
     margin: 25px 0 32px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   ${media.tablet`
     .extraLarge {
@@ -174,6 +176,7 @@ const Jumbotron = ({
                       as="h1"
                       align="center"
                       className="extraLarge"
+                      customColor="#3165d4"
                     >
                       {parse(header)}
                     </DefaultHeader>
@@ -183,9 +186,10 @@ const Jumbotron = ({
                       {texts.map((item, index) => (
                         <DefaultText
                           key={index}
-                          fontSz="mdlg"
+                          fontSz="md"
                           fam="geoHead"
                           align="center"
+                          className="titleText"
                         >
                           {parse(item)}
                         </DefaultText>
@@ -223,6 +227,7 @@ const Jumbotron = ({
                       href={buttons[0].href}
                       as="a"
                       color="#3165d4"
+                      className="btn1"
                     >
                       {buttons[0].text}
                     </Button>
