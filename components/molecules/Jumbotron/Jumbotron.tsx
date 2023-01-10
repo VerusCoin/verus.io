@@ -8,8 +8,32 @@ import { fontSize, spacer } from '@/styles/helpers'
 import { Grid } from '@/components/layouts'
 import { FaYoutube } from 'react-icons/fa'
 
-const StyledJumbotron = styled.section`
+const StyledJumbotron = styled.section<any>`
   ${spacer('xl')}
+
+  ${media.tablet`
+  ${(props: any) =>
+    props.main &&
+    `
+    
+      background-image: url('/images/bg-header-website-1.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      
+  }
+    
+    `}
+  
+  `}
+  ${(props) =>
+    props.main &&
+    `
+    max-width: 1440px;
+    @media (min-width: 1440px) {
+      margin-left: auto;
+      margin-right: auto;
+  `}
 `
 
 const StyledJumbotronContainer = styled.div`
@@ -32,6 +56,13 @@ const StyledJumbotronContainer = styled.div`
     grid-gap: 0;
     margin: 0 auto;
   }
+  .btn1 {
+    border: #3165d4 2px solid;
+  }
+  .btn2 {
+    color: black;
+    border: solid 2px black;
+  }
 
   ${media.desktop`
     .jumboGrid {
@@ -42,11 +73,13 @@ const StyledJumbotronContainer = styled.div`
 
 const StyledJumbotronText = styled.div<any>`
   width: 100%;
-
+  .titleText {
+    line-height: 35px;
+  }
   ${media.desktop`
   width: ${(props: any) =>
     props.customWidth ? `${props.customWidth}px` : '720px'};
-    
+  
   `}
 
   span {
@@ -62,10 +95,8 @@ const StyledJumbotronTitle = styled.div`
   .extraLarge {
     max-width: 350px;
     ${fontSize('xxxl')}
-    background: linear-gradient(92.26deg, #0A3FB1 18.26%, #3165D4 52.63%, #0A3FB1 88.45%);
+
     margin: 25px 0 32px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   ${media.tablet`
     .extraLarge {
@@ -117,27 +148,55 @@ const Jumbotron = ({
   title,
   header,
   text,
+  texts,
   color = 'blue',
   button,
   buttons,
   youtube,
   width,
+  main = false,
 }: IJumbotron) => {
   return (
-    <StyledJumbotron>
+    <StyledJumbotron main={main}>
       <Container>
         <Row>
           <Col col={12}>
             <StyledJumbotronContainer>
               {title && header ? (
-                <StyledJumbotronTitle>
-                  <DefaultText fontSz="sm" align="center" customColor="#676767">
-                    {parse(title)}
-                  </DefaultText>
-                  <DefaultHeader as="h1" align="center" className="extraLarge">
-                    {parse(header)}
-                  </DefaultHeader>
-                </StyledJumbotronTitle>
+                <>
+                  <StyledJumbotronTitle>
+                    <DefaultText
+                      fontSz="sm"
+                      align="center"
+                      customColor="#676767"
+                    >
+                      {parse(title)}
+                    </DefaultText>
+                    <DefaultHeader
+                      as="h1"
+                      align="center"
+                      className="extraLarge"
+                      customColor="#3165d4"
+                    >
+                      {parse(header)}
+                    </DefaultHeader>
+                  </StyledJumbotronTitle>
+                  {texts && (
+                    <StyledJumbotronText main={main} customWidth={width}>
+                      {texts.map((item, index) => (
+                        <DefaultText
+                          key={index}
+                          fontSz="md"
+                          fam="geoHead"
+                          align="center"
+                          className="titleText"
+                        >
+                          {parse(item)}
+                        </DefaultText>
+                      ))}
+                    </StyledJumbotronText>
+                  )}
+                </>
               ) : (
                 <StyledJumbotronText customWidth={width}>
                   {header && (
@@ -160,8 +219,53 @@ const Jumbotron = ({
               )}
 
               {button && <Button wide>{button.text}</Button>}
+              {buttons && main && (
+                <Row justifyContent="center">
+                  <Col auto>
+                    <Button
+                      fontSize="menu"
+                      href={buttons[0].href}
+                      as="a"
+                      color="#3165d4"
+                      className="btn1"
+                    >
+                      {buttons[0].text}
+                    </Button>
+                  </Col>
+                  <Col auto>
+                    <Button
+                      className="btn2"
+                      white
+                      fontSize="menu"
+                      href={buttons[1].href}
+                      as="a"
+                    >
+                      {buttons[1].text}
+                    </Button>
+                  </Col>
 
-              {buttons && (
+                  {youtube && (
+                    <Col xs={12}>
+                      <YouTubeFrame>
+                        <FaYoutube className="logo" size="24px" />
+                        <Button
+                          className="youtube"
+                          transparent
+                          svg={{ type: 'miniTab', rotate: false }}
+                          href={youtube.href}
+                          fontSize="xs"
+                          as="a"
+                          margin="45px 0 0"
+                          target="_blank"
+                        >
+                          {youtube.text}
+                        </Button>
+                      </YouTubeFrame>
+                    </Col>
+                  )}
+                </Row>
+              )}
+              {buttons && !main && (
                 <Grid className="jumboGrid">
                   {buttons.map((item, index) => (
                     <Button

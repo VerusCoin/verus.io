@@ -31,13 +31,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     //!Data comes in as xml converted to json
     //!need to extrapulate the information into
     //* {thumbnail, title, pubDate, link} json format
-    //!TODO: Need to create default image if image not found. 
+    //!TODO: Need to create default image if image not found.
     try {
       articles = await result.json()
       articles = articles.rss.channel.item.splice(0, 3)
       data = articles.map((item: any) => {
-        
-        
         return {
           title: item.title,
           pubDate: item.pubDate,

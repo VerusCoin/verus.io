@@ -187,7 +187,7 @@ const fontSize = (
           line-height: ${(props: any) =>
             `calc(${props.theme.typo.sizes.xxl.desktop} + 4px + 18px)`};
           letter-spacing: ${(props: any) =>
-            props.theme.typo.letterSpacing.xxl.desktop};
+            `calc(${props.theme.typo.letterSpacing.xxl.desktop} - 1.6px)`};
         `}
       `
 

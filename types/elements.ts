@@ -20,6 +20,7 @@ export interface IButton {
   className?: string
   active?: boolean
   target?: string | false
+  download?: boolean
 }
 
 export interface IDefaultHeader {
