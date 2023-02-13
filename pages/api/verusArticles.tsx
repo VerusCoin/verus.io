@@ -3,7 +3,7 @@ import cache from 'memory-cache'
 import { Hour12 } from '@/lib/clocks'
 
 const cacheArticles = '@articlesList'
-
+import { BlogJSON } from '@/data/homepage'
 //REGEX for finding images.
 //!NEED to make it be more universal
 const img = /\d\*?(:\w*|\w*\W\w*).(?:jpg|gif|png|jpeg)/g
@@ -45,6 +45,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       })
     } catch (error) {
       console.error('%s: fetching Articles %s', Date().toString(), error)
+      data = BlogJSON.data
     }
     cache.put(cacheArticles, data, Hour12)
   } else {
