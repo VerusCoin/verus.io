@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import cache from 'memory-cache'
 import { Hour12 } from '@/lib/clocks'
-
+import FetchArticleXML from '@/lib/FetchArticleXML'
 const cacheArticles = '@articlesList'
 import { BlogJSON } from '@/data/homepage'
 //REGEX for finding images.
@@ -22,30 +22,38 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (!cache.get(cacheArticles)) {
-    // result = await fetch(
-    //   'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/veruscoin'
-    // )
     result = await fetch(
-      'https://api.factmaven.com/xml-to-json/?xml=https://medium.com/feed/veruscoin'
+      'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/veruscoin'
     )
+
+    // result = await fetch(
+    //   'https://api.factmaven.com/xml-to-json/?xml=https://medium.com/feed/veruscoin'
+    // )
     //!Data comes in as xml converted to json
     //!need to extrapulate the information into
     //* {thumbnail, title, pubDate, link} json format
     //!TODO: Need to create default image if image not found.
     try {
       articles = await result.json()
-      articles = articles.rss.channel.item.splice(0, 3)
+
+      // articles = articles.rss.channel.item.splice(0, 3)
+      articles = articles.items.splice(0, 3)
+
       data = articles.map((item: any) => {
         return {
           title: item.title,
           pubDate: item.pubDate,
           link: item.link,
-          thumbnail: item.encoded.match(img)[0],
+          thumbnail: item.description.match(img)[0],
         }
       })
     } catch (error) {
-      console.error('%s: fetching Articles %s', Date().toString(), error)
-      data = BlogJSON.data
+      try {
+        data = await FetchArticleXML()
+      } catch (e) {
+        console.error('%s: fetching Articles %s', Date().toString(), error)
+        data = BlogJSON.data
+      }
     }
     cache.put(cacheArticles, data, Hour12)
   } else {
