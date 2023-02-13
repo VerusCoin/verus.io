@@ -5,7 +5,8 @@ import { parseString } from 'xml2js'
 const img = /\d\*?(:\w*|\w*\W\w*).(?:jpg|gif|png|jpeg)/g
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const response = await fetch('https://www.medium.com/feed/veruscoin')
+  let response: any = req
+  response = await fetch('https://www.medium.com/feed/veruscoin')
   const body = await response.text()
   const ArticleList: any = []
   // title: item.title,
