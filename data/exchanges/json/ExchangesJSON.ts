@@ -16,10 +16,6 @@ export const ExchangesJSON: IExchanges = {
       url: 'atomicdex.io',
     },
     {
-      logo: 'whiteBit',
-      url: 'whitebit.com',
-    },
-    {
       logo: 'graviex',
       url: 'graviex.net',
     },
