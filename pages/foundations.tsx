@@ -8,6 +8,7 @@ import {
   Img,
   Card,
   CardText,
+  CardHeader,
 } from '@/components/elements'
 import Modal, { useModal } from '@/components/elements/Modal/Modal'
 // import { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -98,7 +99,7 @@ const Foundations = () => {
               </Button>
             </div>
           </NetworkCard>
-          <Card
+          {/* <Card
             large
             tabletStyles="padding: 50px 60px 100px;"
             desktopStyles="padding: 100px 60px;"
@@ -126,33 +127,33 @@ const Foundations = () => {
             >
               {`${t('common:findMore')}`}
             </Button>
-          </Card>
+          </Card> */}
           <Card
-            large
-            tabletStyles="padding: 50px 5px 100px;"
-            desktopStyles="padding: 100px 5px;"
-            giantStyles="padding: 100px 50px;"
+            // large
+            tabletStyles="padding: 30px 5px 100px;"
+            desktopStyles="padding: 30px 5px;"
+            // giantStyles="padding: 30px 50px;"
           >
             <div>
-              <CardText
-                book
-                fontSz="xl"
+              <CardHeader
+                // book
+                // fontSz="xl"
                 margin="32px 0;"
                 text={t('mev.header')}
               />
               <CardText
                 book
-                fontSz="lg"
+                fontSz="mdlg"
                 color="blue"
                 text={t('mev.text')}
-                margin="32px 0;"
+                margin="32px 0 ;"
               />
             </div>
             <Button
               onClick={() => multiModal('mev')}
               fontRegular
               small
-              margin="50px 0 0"
+              // margin="50px 0 0"
             >
               {`${t('common:findMore')}`}
             </Button>
