@@ -3,7 +3,7 @@ import { IExchanges } from '@/types/exchanges'
 // {
 //   logo: 'bitGlobal',
 //   url: 'bitglobal.com',
-// }
+// },
 
 export const ExchangesJSON: IExchanges = {
   exchanges: [
