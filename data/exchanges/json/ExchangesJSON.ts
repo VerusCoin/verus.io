@@ -12,6 +12,10 @@ export const ExchangesJSON: IExchanges = {
       url: 'safe.trade',
     },
     {
+      logo: 'tradeogre',
+      url: 'tradeogre.com',
+    },
+    {
       logo: 'atomicDex',
       url: 'atomicdex.io',
     },
