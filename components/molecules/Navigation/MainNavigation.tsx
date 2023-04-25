@@ -17,6 +17,7 @@ import { useNotifyContext } from '../../../lib/Contexts'
 const StyledMainNavigation = styled.nav<any>`
   position: fixed;
   top: ${(props: any) => (props.notify ? '42px' : 0)};
+
   width: 100%;
   z-index: 15;
   background: ${(props) => props.theme.colors.white};
