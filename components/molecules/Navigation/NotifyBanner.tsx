@@ -6,8 +6,12 @@ import { DefaultText, SVGs } from '@/components/elements'
 import { useNotifyContext } from '@/lib/Contexts'
 
 const StyledNotification = styled.div<any>`
-  ${bgColor('#2E374A')};
-  display: ${(props) => (props.notify ? 'flex' : 'none')};
+  ${bgColor('#C83F3F')};
+  display: none;
+  ${media.tablet`
+    display: ${(props: any) => (props.notify ? 'flex' : 'none')};  
+  `}
+
   position: fixed;
   top: 0;
   right: 0;
@@ -80,16 +84,17 @@ const StyledReadMore = styled.button`
     background: rgb(255, 255, 255, 0.17);
   }
 `
-// const StyledActivation = styled(DefaultText)`
-//   display: none;
-//   border-radius: 12px;
-//   ${bgColor('white')}
-//   padding: 4px 12px;
-//   margin: 0 7px;
-//   ${media.tablet`
-//     display:block;
-//   `}
-// `
+const StyledActivation = styled(DefaultText)`
+  display: none;
+  border-radius: 12px;
+  ${bgColor('white')}
+  padding: 4px 12px;
+  margin: 0 7px;
+  color: #c83f3f;
+  ${media.tablet`
+    display:block;
+  `}
+`
 
 const NotifyBanner = () => {
   const { t } = useTranslation('common')
@@ -105,18 +110,25 @@ const NotifyBanner = () => {
   //     statusText = t(`upgradeComplete`)
   //   }
   // }
-
+  const dateDiff =
+    (new Date('05/21/2023').getTime() - new Date().getTime()) /
+    (1000 * 3600 * 24)
   return (
     <StyledNotification notify={notify}>
       <DefaultText
         fontSz="xxs"
         customColor="white"
         align="center"
-        customMargin="0 21px 0 0"
+        // customMargin="0 21px 0 0"
       >
         <span className="mobile-text">{t('bannerMobile')}</span>
         <span className="tablet-text">{t('banner')}</span>
       </DefaultText>
+      {/* {statusText !== undefined && ( */}
+      <StyledActivation fontSz="xxs" customColor="green" align="center">
+        {dateDiff.toFixed(0)} days remaining
+      </StyledActivation>
+      {/* )} */}
       <StyledReadMore
         as="a"
         href={process.env.NEXT_PUBLIC_NOTIFY_BANNER_LINK}
@@ -125,12 +137,6 @@ const NotifyBanner = () => {
       >
         {t('readMore')}
       </StyledReadMore>
-
-      {/* {statusText !== undefined && (
-        <StyledActivation fontSz="xxs" customColor="green" align="center">
-          {statusText}
-        </StyledActivation>
-      )} */}
 
       <CloseButton onClick={() => setNotify(false)}>
         <SVGs name="close" />
