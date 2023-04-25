@@ -115,7 +115,7 @@ const NotifyBanner = () => {
         fontSz="xxs"
         customColor="white"
         align="center"
-        // customMargin="0 21px 0 0"
+        customMargin="0 21px 0 0"
       >
         <span className="mobile-text">{t('bannerMobile')}</span>
         <span className="tablet-text">{t('banner')}</span>
