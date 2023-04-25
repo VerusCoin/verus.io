@@ -7,11 +7,7 @@ import { useNotifyContext } from '@/lib/Contexts'
 
 const StyledNotification = styled.div<any>`
   ${bgColor('#C83F3F')};
-  display: none;
-  ${media.tablet`
-    display: ${(props: any) => (props.notify ? 'flex' : 'none')};  
-  `}
-
+  display: ${(props: any) => (props.notify ? 'flex' : 'none')};
   position: fixed;
   top: 0;
   right: 0;
