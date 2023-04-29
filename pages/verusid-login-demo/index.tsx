@@ -106,7 +106,7 @@ const VerusIdLoginExample = () => {
                 <FcApproval size="64px" />
               </DefaultText>
               <DefaultText align="center" fontSz="md">
-                Congrats you logged in!
+                {result.id}! Congrats you logged in!
               </DefaultText>
 
               <StyledNote>
