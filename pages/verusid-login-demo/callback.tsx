@@ -61,7 +61,7 @@ const LoginResponse = ({ loginResponse, result }: Record<string, any>) => {
                 <FcApproval size="64px" />
               </DefaultText>
               <DefaultText align="center" fontSz="md">
-                Congrats you logged in!
+                {result.id}! Congrats you logged in!
               </DefaultText>
               <StyledNote>
                 <DefaultText align="center" fontSz="xs">
