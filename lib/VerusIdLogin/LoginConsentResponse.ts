@@ -9,11 +9,13 @@ const LoginConsentResponse = async (response: string) => {
   const res = new primitives.LoginConsentResponse()
   res.fromBuffer(base64url.toBuffer(response))
   const valid = await VerusRPC.verifyLoginConsentResponse(res)
+
   let id
   if (valid) {
-    id = await VerusRPC.interface.getIdentity(res.decision.request.signing_id)
-    id = id.result?.identity.name
+    id = await VerusRPC.interface.getIdentity(res.signing_id)
+    id = id.result?.identity.name + '@'
   }
+
   // console.log(res)
   // console.log('result', result)
   return { valid, id }

@@ -57,6 +57,7 @@ const StyledNote = styled.div`
 
 const VerusIdLoginExample = () => {
   const [qrURL, setQrURL] = useState()
+  const [user, setUser] = useState<string>()
   const [success, setSuccess] = useState(false)
   const session = uuidV4()
   const title = 'VerusId Login Example'
@@ -93,6 +94,7 @@ const VerusIdLoginExample = () => {
   const awaitSocketResponse = (msg: Record<string, any>) => {
     if (msg.session === session) {
       setSuccess(true)
+      setUser(msg.id)
     }
   }
   return (
@@ -105,8 +107,11 @@ const VerusIdLoginExample = () => {
               <DefaultText align="center">
                 <FcApproval size="64px" />
               </DefaultText>
+              <DefaultText align="center" fontSz="mdlg">
+                {user}
+              </DefaultText>
               <DefaultText align="center" fontSz="md">
-                {result.id}! Congrats you logged in!
+                Congrats you logged in!
               </DefaultText>
 
               <StyledNote>
@@ -125,10 +130,10 @@ const VerusIdLoginExample = () => {
                   <>
                     <QrCode
                       value={qrURL}
-                      size={256}
+                      size={300}
                       logoImage={`./svg/verus-logo.svg`}
-                      logoOpacity={0.5}
-                      logoWidth={50}
+                      logoOpacity={0.25}
+                      logoWidth={150}
                       qrStyle="dots"
                       ecLevel="Q"
                     />
@@ -144,7 +149,7 @@ const VerusIdLoginExample = () => {
               </StyledQRLink>
               <StyledQRCode>
                 {qrURL ? (
-                  <QRCode value={qrURL} level="Q" />
+                  <QRCode value={qrURL} level="Q" size={300} />
                 ) : (
                   <DefaultText align="center" fontSz="md">
                     ...Getting Login Request

@@ -114,6 +114,11 @@ export const MainNavigationJSON: IMainNavigation = {
           href: '/faq',
           description: true,
         },
+        {
+          link: 'loginDemo',
+          href: '/verusid-login-demo',
+          description: true,
+        },
       ],
     },
     { category: 'wallet', href: '/wallet', button: true },
