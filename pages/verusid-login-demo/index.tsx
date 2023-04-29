@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { v4 as uuidV4 } from 'uuid'
 import io from 'socket.io-client'
 import styled from 'styled-components'
-import { QRCode } from 'react-qrcode-logo'
+import { QRCode as QrCode } from 'react-qrcode-logo'
 import { MainLayout } from '@/components/layouts'
 import { NextSeo } from 'next-seo'
-
+import QRCode from 'react-qr-code'
 import { StyledContainer } from '@/components/sections/VerusId/Styles'
 import { spacer } from '@/styles/helpers'
 import { media } from 'styled-bootstrap-grid'
@@ -40,6 +40,15 @@ const StyledDiv = styled.div<any>`
     min-width: 696px;
   `}
 `
+
+const StyledQRLink = styled.a<any>`
+  margin: auto;
+  padding: 20px;
+  border: solid 1px black;
+  border-radius: 5px;
+  text-decoration: none;
+`
+
 const StyledNote = styled.div`
   grid-column: span 2;
   margin: auto;
@@ -52,6 +61,7 @@ const VerusIdLoginExample = () => {
   const session = uuidV4()
   const title = 'VerusId Login Example'
   const description = 'Test using the VerusID as Login Credentials.'
+
   useEffect(() => {
     socketInitializer()
     getLoginConsentRequest()
@@ -110,16 +120,31 @@ const VerusIdLoginExample = () => {
         ) : (
           <StyledContainer>
             <StyledDiv>
+              <StyledQRLink href={qrURL}>
+                {qrURL ? (
+                  <>
+                    <QrCode
+                      value={qrURL}
+                      size={256}
+                      logoImage={`./svg/verus-logo.svg`}
+                      logoOpacity={0.5}
+                      logoWidth={50}
+                      qrStyle="dots"
+                      ecLevel="Q"
+                    />
+                    <DefaultText align="center" fontSz="xs" customColor="black">
+                      Click or scan QR-Code
+                    </DefaultText>
+                  </>
+                ) : (
+                  <DefaultText align="center" fontSz="md">
+                    ...Getting Login Request
+                  </DefaultText>
+                )}
+              </StyledQRLink>
               <StyledQRCode>
                 {qrURL ? (
-                  <QRCode
-                    value={qrURL}
-                    size={185}
-                    logoImage={`./svg/verus-logo.svg`}
-                    logoOpacity={0.5}
-                    logoWidth={50}
-                    qrStyle="dots"
-                  />
+                  <QRCode value={qrURL} level="Q" />
                 ) : (
                   <DefaultText align="center" fontSz="md">
                     ...Getting Login Request
@@ -131,7 +156,8 @@ const VerusIdLoginExample = () => {
                 VerusId Login Example
               </DefaultText>
               <DefaultText align="center" fontSz="sm">
-                Scan the QR Code to login in.
+                Scan the QR Code to login in, or click on QR-Code if Verus App
+                is installed with a VerusID
               </DefaultText>
               <StyledNote>
                 <DefaultText align="center" fontSz="xs">

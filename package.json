@@ -79,6 +79,7 @@
     "react-hook-form": "^7.32.2",
     "react-icons": "^4.4.0",
     "react-pdf": "^5.7.2",
+    "react-qr-code": "^2.0.11",
     "react-qrcode-logo": "^2.9.0",
     "react-typed": "^1.2.0",
     "react-use": "^17.4.0",
