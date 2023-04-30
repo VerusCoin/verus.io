@@ -34,7 +34,6 @@ export class GetVdxfidResponse extends primitives.ApiResponse {
     qualifiedname: { namespace: string; name: string }
     bounddata: {
       vdxfkey: string
-      unit256: unknown
       indexnum: number
     }
   }) {

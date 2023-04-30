@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { v4 as uuidV4 } from 'uuid'
+
 import io from 'socket.io-client'
 import styled from 'styled-components'
-import { QRCode as QrCode } from 'react-qrcode-logo'
+// import { QRCode as QrCode } from 'react-qrcode-logo'
 import { MainLayout } from '@/components/layouts'
 import { NextSeo } from 'next-seo'
 import QRCode from 'react-qr-code'
@@ -11,15 +11,13 @@ import { spacer } from '@/styles/helpers'
 import { media } from 'styled-bootstrap-grid'
 import { DefaultText } from '@/components/elements'
 import { FcApproval } from 'react-icons/fc'
-
 let socket
-
-const StyledQRCode = styled.div`
-  margin: auto;
-  padding: 20px;
-  border: solid 1px;
-  border-radius: 5px;
-`
+// const StyledQRCode = styled.div`
+//   margin: auto;
+//   padding: 20px;
+//   border: solid 1px;
+//   border-radius: 5px;
+// `
 const StyledDiv = styled.div<any>`
   ${(props) => (props.bottom ? spacer('xl') : spacer('xxl'))}
   justify-content: center;
@@ -56,10 +54,11 @@ const StyledNote = styled.div`
 `
 
 const VerusIdLoginExample = () => {
-  const [qrURL, setQrURL] = useState()
+  const [qrHookURL, setQrHookURL] = useState()
+  const [qrRedirURL, setQrRedirURL] = useState()
   const [user, setUser] = useState<string>()
   const [success, setSuccess] = useState(false)
-  const session = uuidV4()
+  const [session, setSession] = useState<string>()
   const title = 'VerusId Login Example'
   const description = 'Test using the VerusID as Login Credentials.'
 
@@ -67,6 +66,7 @@ const VerusIdLoginExample = () => {
     socketInitializer()
     getLoginConsentRequest()
   }, [])
+
   const socketInitializer = async () => {
     await fetch('/api/auth/socket')
     socket = io()
@@ -86,13 +86,19 @@ const VerusIdLoginExample = () => {
     // }
 
     const data = await fetch(
-      `/api/auth/verusIdLogin?callback=${window.location.href}&session=${session}`
+      `/api/auth/verusIdLogin?redir=${window.location.href}&hook=${window.location.host}`
     ).then((res) => res.json())
-    setQrURL(data)
+    // console.log('request', data)
+    setSession(data.hook.session_key)
+    setQrHookURL(data.hook.uri)
+    setQrRedirURL(data.redir.uri)
+    // setSession(data.session)
+    // setQrURL(data.data.uri)
   }
 
-  const awaitSocketResponse = (msg: Record<string, any>) => {
-    if (msg.session === session) {
+  const awaitSocketResponse = (msg: any) => {
+    // console.log(msg)
+    if (msg.session === session && msg.valid) {
       setSuccess(true)
       setUser(msg.id)
     }
@@ -111,7 +117,8 @@ const VerusIdLoginExample = () => {
                 {user}
               </DefaultText>
               <DefaultText align="center" fontSz="md">
-                Congrats you logged in!
+                you have succefully logged in using a VerusID you have full
+                control over!
               </DefaultText>
 
               <StyledNote>
@@ -125,10 +132,10 @@ const VerusIdLoginExample = () => {
         ) : (
           <StyledContainer>
             <StyledDiv>
-              <StyledQRLink href={qrURL}>
-                {qrURL ? (
+              <StyledQRLink href={qrRedirURL}>
+                {qrHookURL ? (
                   <>
-                    <QrCode
+                    {/* <QrCode
                       value={qrURL}
                       size={300}
                       logoImage={`./svg/verus-logo.svg`}
@@ -136,7 +143,8 @@ const VerusIdLoginExample = () => {
                       logoWidth={150}
                       qrStyle="dots"
                       ecLevel="Q"
-                    />
+                    /> */}
+                    <QRCode value={qrHookURL} level="Q" size={300} />
                     <DefaultText align="center" fontSz="xs" customColor="black">
                       Click or scan QR-Code
                     </DefaultText>
@@ -147,7 +155,7 @@ const VerusIdLoginExample = () => {
                   </DefaultText>
                 )}
               </StyledQRLink>
-              <StyledQRCode>
+              {/* <StyledQRCode>
                 {qrURL ? (
                   <QRCode value={qrURL} level="Q" size={300} />
                 ) : (
@@ -155,7 +163,7 @@ const VerusIdLoginExample = () => {
                     ...Getting Login Request
                   </DefaultText>
                 )}
-              </StyledQRCode>
+              </StyledQRCode> */}
 
               <DefaultText align="center" fontSz="md">
                 VerusId Login Example

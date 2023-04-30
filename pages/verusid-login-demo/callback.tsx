@@ -64,7 +64,8 @@ const LoginResponse = ({ loginResponse, result }: Record<string, any>) => {
                 {result.id}
               </DefaultText>
               <DefaultText align="center" fontSz="md">
-                Congrats you logged in!
+                you have succefully logged in using a VerusID you have full
+                control over!
               </DefaultText>
               <StyledNote>
                 <DefaultText align="center" fontSz="xs">

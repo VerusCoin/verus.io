@@ -5,19 +5,26 @@ import { primitives } from 'verusid-ts-client'
 import base64url from 'base64url'
 import { VerusRPC } from './LoginConsentRequest'
 
-const LoginConsentResponse = async (response: string) => {
-  const res = new primitives.LoginConsentResponse()
-  res.fromBuffer(base64url.toBuffer(response))
+const LoginConsentResponse = async (response: string, type?: 'WEBHOOK') => {
+  let res, id
+  if (type === 'WEBHOOK') {
+    res = new primitives.LoginConsentResponse(JSON.parse(response))
+    const requested_access =
+      res.decision.request.challenge.requested_access || []
+    res.decision.request.challenge.requested_access = requested_access.map(
+      (x) => new primitives.RequestedPermission(x.vdxfkey)
+    )
+  } else {
+    res = new primitives.LoginConsentResponse()
+    res.fromBuffer(base64url.toBuffer(response))
+  }
   const valid = await VerusRPC.verifyLoginConsentResponse(res)
 
-  let id
   if (valid) {
     id = await VerusRPC.interface.getIdentity(res.signing_id)
     id = id.result?.identity.name + '@'
   }
 
-  // console.log(res)
-  // console.log('result', result)
   return { valid, id }
 }
 

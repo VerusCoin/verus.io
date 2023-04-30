@@ -1,5 +1,15 @@
 import { VerusIdInterface, primitives } from 'verusid-ts-client'
-
+import { GetVdxfidResponse, GetVdxfidRequest } from './customRequestClasses'
+type VdxfidResult = {
+  vdxfid: string
+  indexid: string
+  hash160result: string
+  qualifiedname: { namespace: string; name: string }
+  bounddata: {
+    vdxfkey: string
+    indexnum: number
+  }
+}
 export const VerusRPC = new VerusIdInterface(
   'VRSC',
   process.env.VERUS_API || 'https://api.verus.services'
@@ -10,9 +20,11 @@ const requestedAccess = new primitives.RequestedPermission(
 const LoginConsentRequest = async ({
   callback,
   session,
+  type,
 }: {
   callback: string
   session: string
+  type?: 'WEBHOOK'
 }) => {
   //load info
   let blockHeight, identity, chainId
@@ -33,23 +45,30 @@ const LoginConsentRequest = async ({
   if (!blockHeight?.result && !identity?.result) {
     throw new Error('LoginConsentRequest failed due to know info or identity')
   }
+  let redirectUri
   identity = identity?.result
+  if (type === 'WEBHOOK') {
+    //  'https://verus.requestcatcher.com/test'
+    redirectUri = new primitives.RedirectUri(
+      `${callback}/api/auth/webhook`,
+      primitives.LOGIN_CONSENT_WEBHOOK_VDXF_KEY.vdxfid
+    )
+  } else {
+    redirectUri = new primitives.RedirectUri(
+      `${callback}/callback?session=${session}&`,
+      primitives.LOGIN_CONSENT_REDIRECT_VDXF_KEY.vdxfid
+    )
+  }
 
-  const redirectUri = new primitives.RedirectUri(
-    `${callback}/callback?session=${session}&`,
-    primitives.LOGIN_CONSENT_REDIRECT_VDXF_KEY.vdxfid
+  // primitives.ApiRequest
+  const vdxfid = await VerusRPC.interface.request<GetVdxfidResponse['result']>(
+    new GetVdxfidRequest(chainId as string, session)
   )
-  // const redirectUri = new primitives.RedirectUri(
-  //   `http://192.168.86.69:3000/api/auth/webhook`,
-  //   primitives.LOGIN_CONSENT_WEBHOOK_VDXF_KEY.vdxfid
-  // )
-  primitives.ApiRequest
-  // const test = await VerusRPC.interface.request<GetVdxfidResponse['result']>(
-  //   new GetVdxfidRequest(
-  //     chainId as string,
-  //     '`vrsc::verusio.website.login.${session}`'
-  //   )
-  // )
+  let session_id: VdxfidResult | undefined
+  if (vdxfid.result) {
+    session_id = vdxfid.result as VdxfidResult
+  }
+
   // const test = await FetchVdxfId(`vrsc::verusio.website.login.${session}`)
   // const test = await FetchVdxfId(`i6FRvkoT1GPH3PtN5FvvTfzFmcYHVtefS8`)
   //3355ca2fa5540ca8fd801f602db22a9bc25f6e1e
@@ -61,7 +80,7 @@ const LoginConsentRequest = async ({
     challenge_id: 'iHjZfUUkQ5638dy5o3LsugcpbBZ8aMQ1Y7',
     requested_access: [requestedAccess],
     redirect_uris: [redirectUri],
-
+    session_id: session_id?.vdxfid,
     created_at,
   })
 
@@ -82,9 +101,9 @@ const LoginConsentRequest = async ({
     identity!,
     chainId
   )
-
+  // console.log(redirectUri)
   if (verified) {
-    return req.toWalletDeeplinkUri()
+    return { uri: req.toWalletDeeplinkUri(), session_key: session_id?.vdxfid }
   }
   return Error('unable to create a valid consent Request')
 }
