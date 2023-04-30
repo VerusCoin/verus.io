@@ -6,7 +6,7 @@ import base64url from 'base64url'
 import { VerusRPC } from './LoginConsentRequest'
 
 const LoginConsentResponse = async (response: string, type?: 'WEBHOOK') => {
-  let res, id
+  let res, id, session
   if (type === 'WEBHOOK') {
     res = new primitives.LoginConsentResponse(JSON.parse(response))
     const requested_access =
@@ -23,9 +23,10 @@ const LoginConsentResponse = async (response: string, type?: 'WEBHOOK') => {
   if (valid) {
     id = await VerusRPC.interface.getIdentity(res.signing_id)
     id = id.result?.identity.name + '@'
+    session = res.decision.request.challenge.session_id
   }
 
-  return { valid, id }
+  return { valid, id, session }
 }
 
 export default LoginConsentResponse
