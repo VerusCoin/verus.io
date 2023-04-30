@@ -39,6 +39,10 @@ const LoginConsentRequest = async ({
     `${callback}/callback?session=${session}&`,
     primitives.LOGIN_CONSENT_REDIRECT_VDXF_KEY.vdxfid
   )
+  // const redirectUri = new primitives.RedirectUri(
+  //   `http://192.168.86.69:3000/api/auth/webhook`,
+  //   primitives.LOGIN_CONSENT_WEBHOOK_VDXF_KEY.vdxfid
+  // )
   primitives.ApiRequest
   // const test = await VerusRPC.interface.request<GetVdxfidResponse['result']>(
   //   new GetVdxfidRequest(
