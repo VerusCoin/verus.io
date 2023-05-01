@@ -58,7 +58,7 @@ const VerusIdLoginExample = () => {
   const [qrRedirURL, setQrRedirURL] = useState()
   const [user, setUser] = useState<string>()
   const [success, setSuccess] = useState(false)
-  const [session, setSession] = useState<string>()
+  const [session_key, setSession_key] = useState<string>()
   const title = 'VerusId Login Example'
   const description = 'Test using the VerusID as Login Credentials.'
 
@@ -68,8 +68,8 @@ const VerusIdLoginExample = () => {
   }, [])
 
   const socketInitializer = async () => {
-    await fetch('/api/auth/socket')
-    socket = io(window.origin)
+    // await fetch('/api/auth/socket')
+    socket = io()
 
     socket.on('update-input', (msg) => {
       awaitSocketResponse(msg)
@@ -89,8 +89,9 @@ const VerusIdLoginExample = () => {
     const data = await fetch(
       `/api/auth/verusIdLogin?redir=${window.location.href}&hook=${window.origin}`
     ).then((res) => res.json())
-    // console.log('request', data)
-    setSession(data.hook.session_key)
+    // console.log('request', data.hook.session_key)
+
+    setSession_key(data.hook.session_key)
     setQrHookURL(data.hook.uri)
     setQrRedirURL(data.redir.uri)
     // setSession(data.session)
@@ -98,8 +99,9 @@ const VerusIdLoginExample = () => {
   }
 
   const awaitSocketResponse = (msg: any) => {
-    // console.log(msg)
-    if (msg.session === session && msg.valid) {
+    console.warn('socket', msg)
+    console.warn('current session', session_key)
+    if (msg.session === session_key && msg.valid) {
       setSuccess(true)
       setUser(msg.id)
     }

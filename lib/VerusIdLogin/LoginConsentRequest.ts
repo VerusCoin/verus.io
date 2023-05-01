@@ -49,6 +49,7 @@ const LoginConsentRequest = async ({
   identity = identity?.result
   if (type === 'WEBHOOK') {
     //  'https://verus.requestcatcher.com/test'
+    // `${callback}/api/auth/webhook`
     redirectUri = new primitives.RedirectUri(
       `${callback}/api/auth/webhook`,
       primitives.LOGIN_CONSENT_WEBHOOK_VDXF_KEY.vdxfid
