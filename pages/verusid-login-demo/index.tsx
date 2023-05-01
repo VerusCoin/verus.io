@@ -69,7 +69,8 @@ const VerusIdLoginExample = () => {
 
   const socketInitializer = async () => {
     await fetch('/api/auth/socket')
-    socket = io()
+    socket = io(window.origin)
+
     socket.on('update-input', (msg) => {
       awaitSocketResponse(msg)
     })
@@ -86,7 +87,7 @@ const VerusIdLoginExample = () => {
     // }
 
     const data = await fetch(
-      `/api/auth/verusIdLogin?redir=${window.location.href}&hook=${window.location.host}`
+      `/api/auth/verusIdLogin?redir=${window.location.href}&hook=${window.origin}`
     ).then((res) => res.json())
     // console.log('request', data)
     setSession(data.hook.session_key)

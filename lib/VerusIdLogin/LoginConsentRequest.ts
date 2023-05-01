@@ -103,6 +103,7 @@ const LoginConsentRequest = async ({
   )
   // console.log(redirectUri)
   if (verified) {
+    // console.log(req.challenge.redirect_uris)
     return { uri: req.toWalletDeeplinkUri(), session_key: session_id?.vdxfid }
   }
   return Error('unable to create a valid consent Request')
