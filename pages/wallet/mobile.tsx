@@ -1,15 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import { NextSeo } from 'next-seo'
 import { GetServerSideProps } from 'next'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import useTranslation from 'next-translate/useTranslation'
 import { MainLayout } from '@/components/layouts'
-import { Button, Card, CardText } from '@/components/elements'
-import dayjs from 'dayjs'
-import { fontFam, bgColor, spacer } from '@/styles/helpers'
+import { Card, CardText } from '@/components/elements'
+// import dayjs from 'dayjs'
+import { bgColor, spacer } from '@/styles/helpers'
 
 import {
-  MobileDownload,
+  // MobileDownload,
   WalletSubtext,
   CoinCard,
 } from '@/components/sections/Wallet'
@@ -24,25 +25,25 @@ const StyledMenu = styled.div`
     `}
 `
 
-const StyledInfo = styled.div`
-  margin-top: 29px;
-  margin-left: auto;
-  margin-right: auto;
-  p.info span {
-    ${fontFam('geoHead')}
-  }
-  a.external {
-    svg {
-      margin-left: 5px;
-      height: 12px;
-      width: 12px;
-    }
-  }
-  ${media.tablet`
-    margin-top: 0;
-    margin-left: 82px;
-  `}
-`
+// const StyledInfo = styled.div`
+//   margin-top: 29px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   p.info span {
+//     ${fontFam('geoHead')}
+//   }
+//   a.external {
+//     svg {
+//       margin-left: 5px;
+//       height: 12px;
+//       width: 12px;
+//     }
+//   }
+//   ${media.tablet`
+//     margin-top: 0;
+//     margin-left: 82px;
+//   `}
+// `
 
 const StyledCard = styled.div<any>`
   ${bgColor('white')}
@@ -107,13 +108,33 @@ const StyledContainer = styled.div<any>`
   `}
 `
 
-const Mobile = ({
-  name,
-  published_at,
-}: {
-  name: string
-  published_at: string
-}) => {
+const StyledImage = styled.div`
+  display: inline-flex;
+
+  justify-content: center;
+  /* align-items: center; */
+  /* width: fit-content; */
+  gap: 16px;
+  img {
+    height: 30px;
+  }
+  ${media.tablet`
+  img {
+    height: 60px;
+  }
+  `}
+`
+
+const StyledMobileGo = styled(StyledCard)`
+  height: 150px;
+  padding: 20px;
+  ${media.tablet`
+    height: 250px;
+    padding: 44px 50px;
+  `}
+`
+
+const Mobile = () => {
   const { t } = useTranslation('walletMobile')
   const title = t('seo:page.mobile.title')
   const description = t('seo:page.mobile.description')
@@ -137,7 +158,11 @@ const Mobile = ({
             desktopStyles={' padding: 0 60px 100px; height: unset !important;'}
           >
             <StyledMenu>
-              <MobileDownload />
+              <StyledImage>
+                <img src="/images/GooglePlayBadge.png" />
+                <img src="/images/AppStoreBadge.png" />
+              </StyledImage>
+              {/* <MobileDownload />
               <StyledInfo>
                 <CardText
                   className="info"
@@ -168,7 +193,7 @@ const Mobile = ({
                 >
                   {t('common:githubRepo')}
                 </Button>
-              </StyledInfo>
+              </StyledInfo> */}
             </StyledMenu>
           </Card>
           <StyledCard wallet bg>
@@ -182,15 +207,14 @@ const Mobile = ({
             header={t('cards.support.header')}
             text={t('cards.support.text')}
           />
-          <StyledCard>
-            <CardText
-              book
-              fontSz="mdlg"
-              margin="0 0 50px"
-              text={t('cards.useMobile')}
-            />
-            <MobileDownload />
-          </StyledCard>
+          <StyledMobileGo>
+            <CardText book fontSz="mdlg" text={t('cards.useMobile')} />
+
+            <StyledImage>
+              <img src="/images/GooglePlayBadge.png" />
+              <img src="/images/AppStoreBadge.png" />
+            </StyledImage>
+          </StyledMobileGo>
           <WalletSubtext />
         </StyledContainer>
       </MainLayout>
@@ -214,3 +238,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: { name, published_at },
   }
 }
+
+/* <MobileDownload /> */
