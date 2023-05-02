@@ -43,7 +43,7 @@ const LoginResponse = ({ loginResponse, result }: Record<string, any>) => {
     socketInitializer()
   }, [])
   const socketInitializer = async () => {
-    await fetch('/api/auth/socket')
+    await fetch('/api/socket')
     socket = io()
     socket.emit('input-change', { ...loginResponse, ...result })
   }

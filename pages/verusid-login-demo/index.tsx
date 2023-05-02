@@ -68,7 +68,7 @@ const VerusIdLoginExample = () => {
   }, [])
 
   const socketInitializer = async () => {
-    await fetch('/api/auth/socket')
+    await fetch('/api/socket')
     socket = io()
 
     socket.on('update-input', (msg) => {
