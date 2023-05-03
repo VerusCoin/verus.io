@@ -10,12 +10,22 @@ const emit = async (data: any) => {
 }
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   emit(req.body)
-  const verification = await LoginConsentResponse(
-    JSON.stringify(req.body),
-    'WEBHOOK'
-  )
+  // const verification = await LoginConsentResponse(
+  //   JSON.stringify(req.body),
+  //   'WEBHOOK'
+  // )
+  let verification
 
-  emit(verification)
+  try {
+    verification = await LoginConsentResponse(
+      JSON.stringify(req.body),
+      'WEBHOOK'
+    )
+    emit(verification)
+  } catch (error) {
+    console.error(error)
+  }
+
   // console.log(verification)
   res.status(200).json({ message: 'ok' })
 }

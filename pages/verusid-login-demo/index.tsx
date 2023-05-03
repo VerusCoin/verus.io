@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+// import { GetServerSideProps } from 'next'
 import { isMobile } from 'react-device-detect'
 import io from 'socket.io-client'
 import styled from 'styled-components'
@@ -58,10 +59,10 @@ const VerusIdLoginExample = () => {
   const [qrRedirURL, setQrRedirURL] = useState()
   const [user, setUser] = useState<string>()
   const [success, setSuccess] = useState(false)
-  const [session_key, setSession_key] = useState<string>()
+  // const [session_key, setSession_key] = useState<string>()
   const title = 'VerusID Login Example'
   const description = 'Test using the VerusID as Login Credentials.'
-
+  let session_key: string
   useEffect(() => {
     socketInitializer()
     getLoginConsentRequest()
@@ -89,9 +90,14 @@ const VerusIdLoginExample = () => {
     const data = await fetch(
       `/api/auth/verusIdLogin?redir=${window.location.href}&hook=${window.origin}`
     ).then((res) => res.json())
+    // .then((data) => {
+    //   setSession_key(data.hook.session_key)
+    //   setQrHookURL(data.hook.uri)
+    //   setQrRedirURL(data.redir.uri)
+    // })
     // console.log('request', data.hook.session_key)
 
-    setSession_key(data.hook.session_key)
+    session_key = data.hook.session_key
     setQrHookURL(data.hook.uri)
     setQrRedirURL(data.redir.uri)
     // setSession(data.session)
@@ -138,7 +144,13 @@ const VerusIdLoginExample = () => {
               {isMobile ? (
                 <>
                   <DefaultText align="center">
-                    <Button href={qrRedirURL}>Login with VerusID</Button>
+                    {qrRedirURL ? (
+                      <Button href={qrRedirURL}>Login with VerusID</Button>
+                    ) : (
+                      <DefaultText align="center" fontSz="md">
+                        ...Getting Login Request
+                      </DefaultText>
+                    )}
                   </DefaultText>
                   <DefaultText align="center" fontSz="md">
                     VerusID Login Example
@@ -180,6 +192,26 @@ const VerusIdLoginExample = () => {
     </>
   )
 }
+
+// export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
+//   const loginResponse = ctx.query as {
+//     session: string
+//     i5fvfsaTFKtrHCPYQHTXRaXcyxHmJMxTMe: string
+//   }
+//   const params = new URLSearchParams(loginResponse)
+//   if (params) {
+//     // console.log(loginResponse.i5fvfsaTFKtrHCPYQHTXRaXcyxHmJMxTMe)
+//     console.log(params)
+//     // console.log(loginResponse.i5fvfsaTFKtrHCPYQHTXRaXcyxHmJMxTMe)
+//   }
+
+//   // const result = await fetch(
+//   //   `http://localhost:3000/api/auth/verifyLogin?${params}`
+//   // ).then((res) => res.json())
+//   return {
+//     props: {},
+//   }
+// }
 
 export default VerusIdLoginExample
 

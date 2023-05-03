@@ -106,6 +106,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
   }
 
   const params = new URLSearchParams(loginResponse)
+  // console.log(params)
   const result = await fetch(
     `http://localhost:3000/api/auth/verifyLogin?${params}`
   ).then((res) => res.json())

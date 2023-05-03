@@ -7,8 +7,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     session: string
     i5fvfsaTFKtrHCPYQHTXRaXcyxHmJMxTMe: string
   }
-  const verification = await LoginConsentResponse(
-    query.i5fvfsaTFKtrHCPYQHTXRaXcyxHmJMxTMe
-  )
+  let verification
+  try {
+    verification = await LoginConsentResponse(
+      query.i5fvfsaTFKtrHCPYQHTXRaXcyxHmJMxTMe
+    )
+  } catch (e) {
+    verification = { valid: false }
+  }
   res.json(verification)
 }

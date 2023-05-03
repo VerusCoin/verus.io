@@ -47,6 +47,13 @@ const LoginConsentRequest = async ({
   }
   let redirectUri
   identity = identity?.result
+  const vdxfid = await VerusRPC.interface.request<GetVdxfidResponse['result']>(
+    new GetVdxfidRequest(chainId as string, session)
+  )
+  let session_id: VdxfidResult | undefined
+  if (vdxfid.result) {
+    session_id = vdxfid.result as VdxfidResult
+  }
   if (type === 'WEBHOOK') {
     //  'https://verus.requestcatcher.com/test'
     // `${callback}/api/auth/webhook`
@@ -62,13 +69,6 @@ const LoginConsentRequest = async ({
   }
 
   // primitives.ApiRequest
-  const vdxfid = await VerusRPC.interface.request<GetVdxfidResponse['result']>(
-    new GetVdxfidRequest(chainId as string, session)
-  )
-  let session_id: VdxfidResult | undefined
-  if (vdxfid.result) {
-    session_id = vdxfid.result as VdxfidResult
-  }
 
   // const test = await FetchVdxfId(`vrsc::verusio.website.login.${session}`)
   // const test = await FetchVdxfId(`i6FRvkoT1GPH3PtN5FvvTfzFmcYHVtefS8`)
