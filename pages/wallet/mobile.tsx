@@ -109,30 +109,31 @@ const StyledContainer = styled.div<any>`
 `
 
 const StyledImage = styled.div`
-  display: inline-flex;
-
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   /* align-items: center; */
   /* width: fit-content; */
   gap: 16px;
   img {
-    height: 30px;
-  }
-  ${media.tablet`
-  img {
     height: 60px;
+    width: 200px;
   }
-  `}
+
+  ${media.tablet`
+    flex-direction: row;
+    `}
 `
 
-const StyledMobileGo = styled(StyledCard)`
-  height: 150px;
-  padding: 20px;
-  ${media.tablet`
-    height: 250px;
-    padding: 44px 50px;
-  `}
-`
+// const StyledMobileGo = styled(StyledCard)`
+//   height: 150px;
+//   padding: 20px;
+
+//   ${media.tablet`
+//     height: 250px;
+//     padding: 44px 50px;
+//   `}
+// `
 
 const Mobile = () => {
   const { t } = useTranslation('walletMobile')
@@ -159,8 +160,20 @@ const Mobile = () => {
           >
             <StyledMenu>
               <StyledImage>
-                <img src="/images/GooglePlayBadge.png" />
-                <img src="/images/AppStoreBadge.png" />
+                <a
+                  href="https://play.google.com/store/apps/details?id=org.autonomoussoftwarefoundation.verusmobile.android&hl=en&gl=US"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src="/images/GooglePlayBadge.png" />
+                </a>
+                <a
+                  href="https://apps.apple.com/en/app/verus-mobile/id6447361908"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src="/images/AppStoreBadge.png" />
+                </a>
               </StyledImage>
               {/* <MobileDownload />
               <StyledInfo>
@@ -207,14 +220,31 @@ const Mobile = () => {
             header={t('cards.support.header')}
             text={t('cards.support.text')}
           />
-          <StyledMobileGo>
-            <CardText book fontSz="mdlg" text={t('cards.useMobile')} />
+          <StyledCard>
+            <CardText
+              book
+              fontSz="mdlg"
+              margin="0 0 50px"
+              text={t('cards.useMobile')}
+            />
 
             <StyledImage>
-              <img src="/images/GooglePlayBadge.png" />
-              <img src="/images/AppStoreBadge.png" />
+              <a
+                href="https://play.google.com/store/apps/details?id=org.autonomoussoftwarefoundation.verusmobile.android&hl=en&gl=US"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/images/GooglePlayBadge.png" />
+              </a>
+              <a
+                href="https://apps.apple.com/en/app/verus-mobile/id6447361908"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="/images/AppStoreBadge.png" />
+              </a>
             </StyledImage>
-          </StyledMobileGo>
+          </StyledCard>
           <WalletSubtext />
         </StyledContainer>
       </MainLayout>
