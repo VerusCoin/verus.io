@@ -112,12 +112,11 @@ const StyledImage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   /* width: fit-content; */
   gap: 16px;
   img {
     height: 60px;
-    width: 200px;
   }
 
   ${media.tablet`

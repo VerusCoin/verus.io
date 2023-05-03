@@ -89,6 +89,11 @@ export const MainNavigationJSON: IMainNavigation = {
           href: '/exchanges',
           description: true,
         },
+        {
+          link: 'loginDemo',
+          href: '/verusid-login-demo',
+          description: true,
+        },
       ],
     },
     {
@@ -112,11 +117,6 @@ export const MainNavigationJSON: IMainNavigation = {
           svg: 'faq',
           link: 'faqPage',
           href: '/faq',
-          description: true,
-        },
-        {
-          link: 'loginDemo',
-          href: '/verusid-login-demo',
           description: true,
         },
       ],

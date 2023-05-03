@@ -57,6 +57,10 @@
     "exchangesPage": {
       "title": "Exchanges",
       "description": "Buy $VRSC"
+    },
+    "loginDemo": {
+      "title": "VerusID Login Demo",
+      "description": "Demo using VerusID to login in"
     }
   },
   "docs": {
@@ -72,10 +76,6 @@
     "faqPage": {
       "title": "FAQ",
       "description": "Frequently asked questions"
-    },
-    "loginDemo": {
-      "title": "VerusID Login Demo",
-      "description": "Demo using VerusID to login in"
     }
   },
   "wallet": {
