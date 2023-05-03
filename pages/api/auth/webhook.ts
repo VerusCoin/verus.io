@@ -9,7 +9,7 @@ const emit = async (data: any) => {
   setTimeout(() => socket.disconnect(), 250)
 }
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  emit(req.body)
+  // emit(req.body)
   // const verification = await LoginConsentResponse(
   //   JSON.stringify(req.body),
   //   'WEBHOOK'

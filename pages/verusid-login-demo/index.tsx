@@ -10,7 +10,7 @@ import QRCode from 'react-qr-code'
 import { StyledContainer } from '@/components/sections/VerusId/Styles'
 import { spacer } from '@/styles/helpers'
 import { media } from 'styled-bootstrap-grid'
-import { Button, DefaultText } from '@/components/elements'
+import { DefaultText } from '@/components/elements'
 import { FcApproval } from 'react-icons/fc'
 let socket
 const StyledQRCode = styled.div`
@@ -53,7 +53,28 @@ const StyledNote = styled.div`
   margin: auto;
   max-width: 600px;
 `
+const StyledButton = styled.a<any>`
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  padding: ${(props) => (props.small ? '12px 20px' : '16px 30px')};
+  background: ${(props) => props.theme.buttons.primary.bg};
+  border-radius: ${(props) => props.theme.buttons.primary.radius};
+  color: ${(props) => props.theme.buttons.primary.text};
+  cursor: pointer;
+  transition: background-color ${(props) => props.theme.transitions.regular};
+  text-decoration: none;
+  font-family: ${(props) =>
+    props.fontRegular
+      ? props.theme.typo.primary.family
+      : props.theme.typo.header.family};
 
+  ${(props) => props.wide && `padding: 20px 30px;`}
+
+  ${media.desktop`
+    ${(props: any) => props.wide && `padding: 20px 60px;`}
+  `}
+`
 const VerusIdLoginExample = () => {
   const [qrHookURL, setQrHookURL] = useState()
   const [qrRedirURL, setQrRedirURL] = useState()
@@ -105,8 +126,8 @@ const VerusIdLoginExample = () => {
   }
 
   const awaitSocketResponse = (msg: any) => {
-    console.warn('socket', msg)
-    console.warn('current session', session_key)
+    // console.warn('socket', msg)
+    // console.warn('current session', session_key)
     if (msg.session === session_key && msg.valid) {
       setSuccess(true)
       setUser(msg.id)
@@ -145,7 +166,9 @@ const VerusIdLoginExample = () => {
                 <>
                   <DefaultText align="center">
                     {qrRedirURL ? (
-                      <Button href={qrRedirURL}>Login with VerusID</Button>
+                      <StyledButton href={qrRedirURL}>
+                        Login with VerusID
+                      </StyledButton>
                     ) : (
                       <DefaultText align="center" fontSz="md">
                         ...Getting Login Request
