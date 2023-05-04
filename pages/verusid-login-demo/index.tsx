@@ -85,10 +85,11 @@ const VerusIdLoginExample = () => {
   const [qrRedirURL, setQrRedirURL] = useState()
   const [user, setUser] = useState<string>()
   const [success, setSuccess] = useState(false)
+  const [start, setStart] = useState<string>()
   // const [session_key, setSession_key] = useState<string>()
   const title = 'VerusID Login Example'
   const description = 'Test using the VerusID as Login Credentials.'
-  let session_key = ''
+  let session_key: string
 
   useEffect(() => {
     // socketInitializer()
@@ -125,6 +126,8 @@ const VerusIdLoginExample = () => {
     // console.log('request', data.hook.session_key)
 
     session_key = data.hook.session_key
+    setStart('/api/auth/verusIdLoginStatus?session=' + session_key)
+
     setQrHookURL(data.hook.uri)
     setQrRedirURL(data.redir.uri)
     // setSession(data.session)
@@ -140,19 +143,16 @@ const VerusIdLoginExample = () => {
   //   }
   // }
 
-  const { data } = useSWR(
-    `/api/auth/verusIdLoginStatus?session=${session_key}`,
-    fetcher,
-    {
-      refreshInterval: 6000,
-    }
-  )
+  const { data } = useSWR(start ? start : null, fetcher, {
+    refreshInterval: 6000,
+  })
 
   useEffect(() => {
     if (data) {
       if (data.session === session_key && data.valid) {
         setSuccess(true)
         setUser(data.id)
+        setStart(undefined)
       }
     }
   }, [data])
