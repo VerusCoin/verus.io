@@ -151,8 +151,9 @@ const VerusIdLoginExample = () => {
   useEffect(() => {
     console.warn('data', data)
     if (data) {
+      console.warn('session_key', session_key)
       console.warn('session match', data.session === session_key)
-      console.warn('isValid')
+      console.warn('isValid', data.valid)
       if (data.session === session_key && data.valid) {
         setSuccess(true)
         setUser(data.id)
