@@ -171,7 +171,7 @@ const VerusIdLoginExample = () => {
                 {user}
               </DefaultText>
               <DefaultText align="center" fontSz="md">
-                you have succefully logged in using a VerusID you have full
+                you have successfully logged in using a VerusID you have full
                 control over!
               </DefaultText>
 
