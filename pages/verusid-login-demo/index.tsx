@@ -127,7 +127,8 @@ const VerusIdLoginExample = () => {
 
     session_key = data.hook.session_key
     setStart('/api/auth/verusIdLoginStatus?session=' + session_key)
-
+    console.warn(session_key)
+    console.warn(start)
     setQrHookURL(data.hook.uri)
     setQrRedirURL(data.redir.uri)
     // setSession(data.session)
@@ -148,7 +149,10 @@ const VerusIdLoginExample = () => {
   })
 
   useEffect(() => {
+    console.warn('data', data)
     if (data) {
+      console.warn('session match', data.session === session_key)
+      console.warn('isValid')
       if (data.session === session_key && data.valid) {
         setSuccess(true)
         setUser(data.id)
