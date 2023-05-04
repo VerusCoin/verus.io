@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 // import { GetServerSideProps } from 'next'
 import { isMobile } from 'react-device-detect'
-import io from 'socket.io-client'
+// import io from 'socket.io-client'
 import styled from 'styled-components'
 // import { QRCode as QrCode } from 'react-qrcode-logo'
 import { MainLayout } from '@/components/layouts'
@@ -12,7 +12,9 @@ import { spacer } from '@/styles/helpers'
 import { media } from 'styled-bootstrap-grid'
 import { DefaultText } from '@/components/elements'
 import { FcApproval } from 'react-icons/fc'
-let socket
+import useSWR from 'swr'
+
+// let socket
 const StyledQRCode = styled.div`
   margin: auto;
   padding: 20px;
@@ -75,6 +77,9 @@ const StyledButton = styled.a<any>`
     ${(props: any) => props.wide && `padding: 20px 60px;`}
   `}
 `
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
+
 const VerusIdLoginExample = () => {
   const [qrHookURL, setQrHookURL] = useState()
   const [qrRedirURL, setQrRedirURL] = useState()
@@ -83,20 +88,21 @@ const VerusIdLoginExample = () => {
   // const [session_key, setSession_key] = useState<string>()
   const title = 'VerusID Login Example'
   const description = 'Test using the VerusID as Login Credentials.'
-  let session_key: string
+  let session_key = ''
+
   useEffect(() => {
-    socketInitializer()
+    // socketInitializer()
     getLoginConsentRequest()
   }, [])
 
-  const socketInitializer = async () => {
-    await fetch('/api/socket')
-    socket = io()
+  // const socketInitializer = async () => {
+  //   await fetch('/api/socket')
+  //   socket = io()
 
-    socket.on('update-input', (msg) => {
-      awaitSocketResponse(msg)
-    })
-  }
+  //   socket.on('update-input', (msg) => {
+  //     awaitSocketResponse(msg)
+  //   })
+  // }
   const getLoginConsentRequest = async () => {
     // let key = window.sessionStorage.getItem('verusIdLogin')
     // if (!key) {
@@ -125,14 +131,32 @@ const VerusIdLoginExample = () => {
     // setQrURL(data.data.uri)
   }
 
-  const awaitSocketResponse = (msg: any) => {
-    // console.warn('socket', msg)
-    // console.warn('current session', session_key)
-    if (msg.session === session_key && msg.valid) {
-      setSuccess(true)
-      setUser(msg.id)
+  // const awaitSocketResponse = (msg: any) => {
+  //   // console.warn('socket', msg)
+  //   // console.warn('current session', session_key)
+  //   if (msg.session === session_key && msg.valid) {
+  //     setSuccess(true)
+  //     setUser(msg.id)
+  //   }
+  // }
+
+  const { data } = useSWR(
+    `/api/auth/verusIdLoginStatus?session=${session_key}`,
+    fetcher,
+    {
+      refreshInterval: 6000,
     }
-  }
+  )
+
+  useEffect(() => {
+    if (data) {
+      if (data.session === session_key && data.valid) {
+        setSuccess(true)
+        setUser(data.id)
+      }
+    }
+  }, [data])
+
   return (
     <>
       <NextSeo title={title} description={description} />

@@ -18,6 +18,7 @@ const LoginConsentResponse = async (response: string, type?: 'WEBHOOK') => {
     res = new primitives.LoginConsentResponse()
     res.fromBuffer(base64url.toBuffer(response))
   }
+
   const valid = await VerusRPC.verifyLoginConsentResponse(res)
 
   if (valid) {
