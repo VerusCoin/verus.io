@@ -107,7 +107,7 @@ const NotifyBanner = () => {
   //   }
   // }
   const dateDiff =
-    (new Date('05/21/2023').getTime() - new Date().getTime()) /
+    (new Date('05/22/2023').getTime() - new Date().getTime()) /
     (1000 * 3600 * 24)
   return (
     <StyledNotification notify={notify}>

@@ -89,6 +89,11 @@ export const MainNavigationJSON: IMainNavigation = {
           href: '/exchanges',
           description: true,
         },
+        {
+          link: 'loginDemo',
+          href: '/verusid-login-demo',
+          description: true,
+        },
       ],
     },
     {

@@ -57,6 +57,10 @@
     "exchangesPage": {
       "title": "Exchanges",
       "description": "Buy $VRSC"
+    },
+    "loginDemo": {
+      "title": "VerusID Login Demo",
+      "description": "Demo using VerusID to login in"
     }
   },
   "docs": {
