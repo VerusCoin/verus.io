@@ -81,87 +81,87 @@ const StyledButton = styled.a<any>`
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 const VerusIdLoginExample = () => {
-  const [qrHookURL, setQrHookURL] = useState()
-  const [qrRedirURL, setQrRedirURL] = useState()
+  // const [qrHookURL, setQrHookURL] = useState()
+  // const [qrRedirURL, setQrRedirURL] = useState()
   const [user, setUser] = useState<string>()
   const [success, setSuccess] = useState(false)
-  const [start, setStart] = useState<string>()
+  const [getKey, setGetKey] = useState(false)
+  const [start, setStart] = useState(true)
   // const [session_key, setSession_key] = useState<string>()
   const title = 'VerusID Login Example'
   const description = 'Test using the VerusID as Login Credentials.'
-  let session_key: string
-
+  const { data: loginConsent } = useSWR(
+    getKey
+      ? `/api/auth/verusIdLogin?redir=${window.location.href}&hook=${window.origin}`
+      : undefined,
+    fetcher
+  )
+  //  const { data: verification } = useSWR(
+  //    start && session_key ? start : undefined,
+  //    fetcher,
+  //    {
+  //      refreshInterval: 6000,
+  //    }
+  //  )
+  const { data: verification } = useSWR(
+    () =>
+      start
+        ? '/api/auth/verusIdLoginStatus?session=' +
+          loginConsent.hook.session_key
+        : undefined,
+    fetcher,
+    {
+      refreshInterval: 6000,
+    }
+  )
   useEffect(() => {
-    // socketInitializer()
-    getLoginConsentRequest()
+    setGetKey(true)
   }, [])
 
-  // const socketInitializer = async () => {
-  //   await fetch('/api/socket')
-  //   socket = io()
-
-  //   socket.on('update-input', (msg) => {
-  //     awaitSocketResponse(msg)
-  //   })
-  // }
-  const getLoginConsentRequest = async () => {
-    // let key = window.sessionStorage.getItem('verusIdLogin')
-    // if (!key) {
-    //   key = uuidV4()
-    //   //TODO: put key back where other value is
-    //   window.sessionStorage.setItem(
-    //     'verusIdLogin',
-    //     '94a850aa-55b2-4eea-9ad5-2b3fbc0cffb3'
-    //   )
-    // }
-
-    const data = await fetch(
-      `/api/auth/verusIdLogin?redir=${window.location.href}&hook=${window.origin}`
-    ).then((res) => res.json())
-    // .then((data) => {
-    //   setSession_key(data.hook.session_key)
-    //   setQrHookURL(data.hook.uri)
-    //   setQrRedirURL(data.redir.uri)
-    // })
-    // console.log('request', data.hook.session_key)
-
-    session_key = data.hook.session_key
-    setStart('/api/auth/verusIdLoginStatus?session=' + session_key)
-    console.warn(session_key)
-    console.warn(start)
-    setQrHookURL(data.hook.uri)
-    setQrRedirURL(data.redir.uri)
-    // setSession(data.session)
-    // setQrURL(data.data.uri)
-  }
-
-  // const awaitSocketResponse = (msg: any) => {
-  //   // console.warn('socket', msg)
-  //   // console.warn('current session', session_key)
-  //   if (msg.session === session_key && msg.valid) {
-  //     setSuccess(true)
-  //     setUser(msg.id)
+  // useEffect(() => {
+  //   if (loginConsent) {
+  //     setSession_key(loginConsent.hook.session_key)
+  //     setStart('/api/auth/verusIdLoginStatus?session=' + session_key)
+  //     console.warn('session', session_key)
+  //     console.warn('url', start)
+  //     setQrHookURL(loginConsent.hook.uri)
+  //     setQrRedirURL(loginConsent.redir.uri)
   //   }
-  // }
+  // }, [loginConsent])
 
-  const { data } = useSWR(start ? start : null, fetcher, {
-    refreshInterval: 6000,
-  })
+  // const getLoginConsentRequest = useCallback(async () => {
+  //   const data = await fetch(
+  //     `/api/auth/verusIdLogin?redir=${window.location.href}&hook=${window.origin}`
+  //   ).then((res) => res.json())
+
+  //   setSession_key(data.hook.session_key)
+  //   setStart('/api/auth/verusIdLoginStatus?session=' + session_key)
+  //   console.warn('session', session_key)
+  //   console.warn('url', start)
+  //   setQrHookURL(data.hook.uri)
+  //   setQrRedirURL(data.redir.uri)
+  // }, [])
 
   useEffect(() => {
-    console.warn('data', data)
-    if (data) {
-      console.warn('session_key', session_key)
-      console.warn('data.session', data.session)
-      console.warn('session match', data.session == session_key)
-      console.warn('isValid', data.valid)
-      if (data.session === session_key && data.valid) {
+    console.warn('data', verification)
+    if (verification) {
+      console.warn('session_key', loginConsent.hook.session_key)
+      console.warn('data.session', verification.session)
+      console.warn(
+        'session match',
+        verification.session === loginConsent.hook.session_key
+      )
+      console.warn('isValid', verification.valid)
+      if (
+        verification.session === loginConsent.hook.session_key &&
+        verification.valid
+      ) {
         setSuccess(true)
-        setUser(data.id)
-        setStart(undefined)
+        setUser(verification.id)
+        setStart(false)
       }
     }
-  }, [data])
+  }, [verification])
 
   return (
     <>
@@ -195,8 +195,8 @@ const VerusIdLoginExample = () => {
               {isMobile ? (
                 <>
                   <DefaultText align="center">
-                    {qrRedirURL ? (
-                      <StyledButton href={qrRedirURL}>
+                    {loginConsent?.redir.uri ? (
+                      <StyledButton href={loginConsent.redir.uri}>
                         Login with VerusID
                       </StyledButton>
                     ) : (
@@ -215,8 +215,12 @@ const VerusIdLoginExample = () => {
               ) : (
                 <>
                   <StyledQRCode>
-                    {qrHookURL ? (
-                      <QRCode value={qrHookURL} level="Q" size={300} />
+                    {loginConsent?.hook.uri ? (
+                      <QRCode
+                        value={loginConsent.hook.uri}
+                        level="Q"
+                        size={300}
+                      />
                     ) : (
                       <DefaultText align="center" fontSz="md">
                         ...Getting Login Request
