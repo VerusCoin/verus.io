@@ -94,21 +94,19 @@ const StyledActivation = styled(DefaultText)`
 
 const NotifyBanner = () => {
   const { t } = useTranslation('common')
-  const { notify, setNotify } = useNotifyContext()
-  // const { notify, setNotify, blockString } = useNotifyContext()
+  // const { notify, setNotify } = useNotifyContext()
+  const { notify, setNotify, blockString } = useNotifyContext()
   // let statusText: string | undefined = undefined
   // if (blockString) {
-  //   let newString: string | string[] = blockString.split(',')
-  //   newString = newString[0] + newString[1]
-  //   if (parseInt(newString) > 0) {
+  //   if (blockCount && blockCount > 0) {
   //     statusText = t(`upgradeCounter`, { count: blockString })
   //   } else {
   //     statusText = t(`upgradeComplete`)
   //   }
   // }
-  const dateDiff =
-    (new Date('05/22/2023').getTime() - new Date().getTime()) /
-    (1000 * 3600 * 24)
+  // const dateDiff =
+  //   (new Date('05/22/2023').getTime() - new Date().getTime()) /
+  //   (1000 * 3600 * 24)
   return (
     <StyledNotification notify={notify}>
       <DefaultText
@@ -122,7 +120,7 @@ const NotifyBanner = () => {
       </DefaultText>
       {/* {statusText !== undefined && ( */}
       <StyledActivation fontSz="xxs" customColor="green" align="center">
-        {dateDiff.toFixed(0)} days remaining
+        {blockString} blocks remaining
       </StyledActivation>
       {/* )} */}
       <StyledReadMore
