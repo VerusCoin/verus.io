@@ -94,8 +94,8 @@ const StyledActivation = styled(DefaultText)`
 
 const NotifyBanner = () => {
   const { t } = useTranslation('common')
-  // const { notify, setNotify } = useNotifyContext()
-  const { notify, setNotify, blockString } = useNotifyContext()
+  const { notify, setNotify } = useNotifyContext()
+  // const { notify, setNotify, blockString } = useNotifyContext()
   // let statusText: string | undefined = undefined
   // if (blockString) {
   //   if (blockCount && blockCount > 0) {
@@ -105,7 +105,7 @@ const NotifyBanner = () => {
   //   }
   // }
   // const dateDiff =
-  //   (new Date('05/22/2023').getTime() - new Date().getTime()) /
+  //   (new Date('06/03/2023').getTime() - new Date().getTime()) /
   //   (1000 * 3600 * 24)
   return (
     <StyledNotification notify={notify}>
@@ -118,11 +118,12 @@ const NotifyBanner = () => {
         <span className="mobile-text">{t('bannerMobile')}</span>
         <span className="tablet-text">{t('banner')}</span>
       </DefaultText>
-      {/* {statusText !== undefined && ( */}
+
       <StyledActivation fontSz="xxs" customColor="green" align="center">
-        {blockString} blocks remaining
+        {/* {blockString} blocks remaining */}
+        Activated
       </StyledActivation>
-      {/* )} */}
+
       <StyledReadMore
         as="a"
         href={process.env.NEXT_PUBLIC_NOTIFY_BANNER_LINK}
