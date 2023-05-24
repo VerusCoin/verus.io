@@ -72,21 +72,21 @@ const EconomicCard = () => {
         <NetTag
           fam="geoHead"
           fontSz="mdlg"
-          net="test"
+          net="main"
           text={t('economic.conversion')}
         />
 
         <NetTag
           fam="geoHead"
           fontSz="mdlg"
-          net="test"
+          net="main"
           text={t('economic.blockchain')}
         />
 
         <NetTag
           fam="geoHead"
           fontSz="mdlg"
-          net="test"
+          net="main"
           text={t('economic.token')}
         />
       </StyledTagSection>

@@ -102,7 +102,7 @@ const CardSection = () => {
         <CardText book margin="25px 30px 0" text={t(`cards.verus.text`)} />
       </CoinCard>
       <StyledLifeBlood2Cards>
-        <NetTag net="test" />
+        <NetTag net="main" />
         <CardText
           book
           fontSz="xl"
@@ -112,12 +112,12 @@ const CardSection = () => {
         <CardText book margin="25px 30px 0" text={t(`cards.blockchain.text`)} />
       </StyledLifeBlood2Cards>
       <StyledLifeBlood3Cards>
-        <NetTag net="test" />
+        <NetTag net="main" />
         <CardText book fontSz="xl" margin="0" text={t(`cards.token.heading`)} />
         <CardText book margin="25px 30px 0" text={t(`cards.token.text`)} />
       </StyledLifeBlood3Cards>
       <CoinCard>
-        <NetTag net="test" />
+        <NetTag net="main" />
         <CardText book fontSz="xl" margin="0" text={t(`cards.defi.heading`)} />
         <CardText book margin="25px 30px 0" text={t(`cards.defi.text`)} />
       </CoinCard>

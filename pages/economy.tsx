@@ -136,7 +136,7 @@ const Economy = ({ fallback }: { fallback: any }) => {
           <EconomicCard />
           <EconomyBanner />
           <Card desktopStyles="height: unset">
-            <NetTag net="test" />
+            <NetTag net="main" />
             <CardText book fontSz="xl" text={t('defi.heading')} />
             <CardText margin="32px 0" book fontSz="sm" text={t('defi.text')} />
           </Card>

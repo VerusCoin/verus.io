@@ -86,7 +86,7 @@ const CreateWithVerus = () => {
             chain
           >
             <div>
-              <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
+              <CardText book fontSz="xs" color="green" text={t('liveMain')} />
 
               <CardText
                 book
@@ -121,7 +121,7 @@ const CreateWithVerus = () => {
             coin
           >
             <div>
-              <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
+              <CardText book fontSz="xs" color="green" text={t('liveMain')} />
 
               <CardText
                 book
@@ -145,7 +145,7 @@ const CreateWithVerus = () => {
           <LiquidityCard>
             <div className="card">
               <div>
-                <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
+                <CardText book fontSz="xs" color="green" text={t('liveMain')} />
                 <CardText
                   book
                   fontSz="xl"
@@ -243,7 +243,7 @@ const CreateWithVerus = () => {
             </div>
             <div className="card">
               <div>
-                <CardText book fontSz="xs" color="orange" text={t('tryTest')} />
+                <CardText book fontSz="xs" color="green" text={t('liveMain')} />
                 <CardText
                   book
                   fontSz="xl"
