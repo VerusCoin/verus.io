@@ -46,7 +46,7 @@ const EconomyBanner = () => {
   const { t } = useTranslation('economy')
   return (
     <StyledBanner>
-      <NetTag net="test" />
+      <NetTag net="main" />
       <CardText book fontSz="xl" color="white" text={t('banner.heading')} />
       <ExtraCardText>{t('banner.text')}</ExtraCardText>
     </StyledBanner>
