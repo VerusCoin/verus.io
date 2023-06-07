@@ -23,9 +23,5 @@ export const ExchangesJSON: IExchanges = {
       logo: 'graviex',
       url: 'graviex.net',
     },
-    {
-      logo: 'stex',
-      url: 'stex.com',
-    },
   ],
 }
