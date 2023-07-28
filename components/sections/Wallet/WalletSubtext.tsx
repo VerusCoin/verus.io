@@ -16,7 +16,7 @@ const WalletSubtext = () => {
       desktopStyles={
         'min-height:unset; padding: 100px 200px 0; height: unset !important;'
       }
-      giantStyles={'padding: 100px 260px 0;'}
+      giantStyles={'padding: 100px 60px 0;'}
     >
       <CardText
         margin="0"

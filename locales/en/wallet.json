@@ -7,7 +7,14 @@
     "desktop": {
       "header": "Verus Desktop",
       "text": "For Windows, macOS, Linux and ARM.",
-      "link": "Download Verus Desktop"
+      "link": "Download Verus Desktop",
+      "dropdown": {
+        "dropdown": "Download Testnet App",
+        "windows": "Download Windows app",
+        "mac": "Download Mac app",
+        "linux": "Download Linux app",
+        "arm": "Download Linux ARM app"
+      }
     },
     "mobile": {
       "header": "Verus Mobile",
@@ -25,6 +32,7 @@
         "arm": "Linux ARM CLI"
       }
     },
+
     "storage": {
       "header": "Cold Storage",
       "text": "Use a paper wallet to store your coins offline.",

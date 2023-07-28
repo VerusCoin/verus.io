@@ -38,7 +38,7 @@ import VerusSignatures from './assets/verusid-signatures.svg'
 import VerusIcon from './assets/identity.svg'
 import Windows from './assets/windows.svg'
 import Youtube from './assets/youtube.svg'
-
+import Testnet from './assets/testnet.svg'
 // interface SVGList {
 //   [key: string]: ReactNode
 // }
@@ -78,6 +78,7 @@ const SVGIcon: Record<string, ReactElement> = {
   miniTab: <MiniOpenInNew />,
   telegram: <Telegram />,
   telegramIcon: <TelegramIcon />,
+  testnet: <Testnet />,
   twitter: <Twitter />,
   verusIdLookup: <VerusIdLookup />,
   verusSignatures: <VerusSignatures />,
