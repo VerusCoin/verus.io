@@ -10,11 +10,13 @@ import {
   CardHeader,
   CardText,
   DefaultText,
+  SVGs,
 } from '@/components/elements'
 
 import { fontFam, bgColor } from '@/styles/helpers'
 
 import { CLIdownload, WalletSubtext } from '@/components/sections/Wallet'
+import DesktopTestnetDownload from '@/components/sections/Wallet/DesktopTestnetDownload'
 
 const StyledCard = styled.div<any>`
   ${bgColor('white')}
@@ -120,21 +122,30 @@ const StyledDownload = styled.a`
   color: inherit;
 `
 
-const Wallet = ({
-  linuxApp,
-  winApp,
-  macApp,
-  armApp,
-  name,
-  published_at,
-}: {
+const StyledTestNet = styled.div`
+  display: flex;
+`
+
+interface List {
   linuxApp: string
   winApp: string
   macApp: string
   armApp: string
   name: string
   published_at: string
-}) => {
+}
+
+interface FullList extends List {
+  name: string
+  published_at: string
+}
+
+interface WalletLists {
+  cli: FullList
+  testnet: List
+}
+
+const Wallet = ({ cli, testnet }: WalletLists) => {
   const { t } = useTranslation('wallet')
   const title = t('seo:page.wallet.title')
   const description = t('seo:page.wallet.description')
@@ -176,10 +187,10 @@ const Wallet = ({
             <CardHeader margin="0" text={t('cards.cli.header')} />
             <CardText margin="25px 0 0 " text={t('cards.cli.text')} />
             <CLIdownload
-              linuxApp={linuxApp}
-              winApp={winApp}
-              macApp={macApp}
-              armApp={armApp}
+              linuxApp={cli.linuxApp}
+              winApp={cli.winApp}
+              macApp={cli.macApp}
+              armApp={cli.armApp}
             />
             <div>
               <CardText
@@ -187,7 +198,7 @@ const Wallet = ({
                 margin="29px 0 0 "
                 fontSz="xs"
                 align="left"
-                text={t('common:latestVersion', { walletVersion: name })}
+                text={t('common:latestVersion', { walletVersion: cli.name })}
               />
               <CardText
                 className="info"
@@ -195,7 +206,7 @@ const Wallet = ({
                 fontSz="xs"
                 align="left"
                 text={t('common:released', {
-                  release: dayjs(published_at).format('MMM DD, YYYY'),
+                  release: dayjs(cli.published_at).format('MMM DD, YYYY'),
                 })}
               />
               <Button
@@ -225,6 +236,39 @@ const Wallet = ({
               </DefaultText>
             </StyledDownload>
           </StyledCard>
+          <StyledCard>
+            <StyledTestNet>
+              <SVGs name="testnet" />
+              <CardHeader margin="0" text="Desktop Testnet" />
+            </StyledTestNet>
+
+            <CardText
+              margin="15px 0 0 "
+              text="Participate in Verus testnet to get to know the functions at no financial risk, test your usecases or help development."
+            />
+            <DesktopTestnetDownload
+              linuxApp={testnet.linuxApp}
+              winApp={testnet.winApp}
+              macApp={testnet.macApp}
+              armApp={testnet.armApp}
+            />
+            <div>
+              <Button
+                className="external"
+                transparent
+                svg={{ type: 'miniTab', rotate: false }}
+                href="https://github.com/VerusCoin/Verus-Desktop/releases"
+                as="a"
+                color="#3165d4"
+                margin="0"
+                fontSize="xs"
+                target="_blank"
+              >
+                {t('common:githubRepo')}
+              </Button>
+            </div>
+          </StyledCard>
+
           <WalletSubtext />
         </Grid>
       </MainLayout>
@@ -238,8 +282,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
   // const result = await fetch(
   //   'https://api.github.com/repos/VerusCoin/VerusCoin/releases/latest'
   // )
-  const result = await fetch(
+  const cliResult = await fetch(
     'http://localhost:3000/api/verusWallets?wallet=cli'
+  ).then((res) => res.json())
+  const testnetResult = await fetch(
+    'http://localhost:3000/api/verusWallets?wallet=testnet'
   ).then((res) => res.json())
   // const latestCMDwallet = await result.json()
   // let linuxApp,
@@ -275,6 +322,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
   // const published_at = data.published_at
   return {
     // props: { linuxApp, winApp, macApp, armApp, name, published_at },
-    props: result,
+    props: { cli: cliResult, testnet: testnetResult },
   }
 }
