@@ -95,7 +95,7 @@ const StyledQRCode = styled.div`
 `
 
 const DonationInfo: Record<string, string> = {
-  verus: 'RQ5cSwGkWM6SiNkd5F46SUJrG7wrxRwrTc',
+  verus: 'Verus Coin Foundation@',
   bitcoin: '1FoRNRPTuXHseNPRc54yLwyeVrVGJgH5eo',
   komodo: 'RQ5cSwGkWM6SiNkd5F46SUJrG7wrxRwrTc',
   ethereum: '0xFA825bAd52101bEC6c2ee06b88f47E8DF03f66Eb',
