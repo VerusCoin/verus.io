@@ -6,6 +6,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { Button, DefaultText, Img } from '@/components/elements'
 import { bgColor, fontFam, fontSize } from '@/styles/helpers'
 
+
+
 const StyledAddress = styled.div`
   position: relative;
   margin-top: 30px;
@@ -54,8 +56,43 @@ const TooltipBox = styled.div<any>`
     border-color: #3165d4 transparent transparent transparent;
   }
 `
+
+const AddressTooltip = styled.div<any>`
+  ${fontFam('geoReg')}
+  ${fontSize('xxs')}
+  position: absolute;
+  bottom: 118%;
+
+  color: #fff;
+  background-color: #3165d4;
+
+  padding: 8px 8px;
+  border-radius: 8px;
+  display: none;
+  ${StyledAddressBox}:hover & {
+    display: block;
+  }
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 97%; /* At the bottom of the tooltip */
+    right: 50%;
+    margin-left: -15px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #3165d4 transparent transparent transparent;
+  }
+`
+
 // transition: visibility 1s, opacity 1s ease-in-out;
-const AddressCopy = ({ text }: { text: string }) => {
+const AddressCopy = ({
+  text,
+  tooltip,
+}: {
+  text: string
+  tooltip?: boolean
+}) => {
   const { t } = useTranslation('common')
 
   const [copy, setCopy] = useState(false)
@@ -74,7 +111,13 @@ const AddressCopy = ({ text }: { text: string }) => {
     <StyledAddress>
       <StyledAddressBox>
         <DefaultText>{text}</DefaultText>
+        {tooltip && (
+          <AddressTooltip>
+            i-address: i5v3h9FWVdRFbNHU7DfcpGykQjRaHtMqu7
+          </AddressTooltip>
+        )}
       </StyledAddressBox>
+
       <CopyToClipboard text={text} onCopy={() => setCopy(true)}>
         <Button transparent>
           <TooltipBox copyStat={copy}>{t('copied')}</TooltipBox>

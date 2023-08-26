@@ -95,10 +95,10 @@ const StyledQRCode = styled.div`
 `
 
 const DonationInfo: Record<string, string> = {
-  verus: 'RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ',
+  verus: 'Verus Coin Foundation@',
   bitcoin: '1FoRNRPTuXHseNPRc54yLwyeVrVGJgH5eo',
-  komodo: 'RVjvbZuqSGLGDm1B9BFkbHWySPKEx4tfjQ',
-  ethereum: '0x06E2F78E650C88c6D89440E778004037FEAbefC5',
+  komodo: 'RQ5cSwGkWM6SiNkd5F46SUJrG7wrxRwrTc',
+  ethereum: '0xFA825bAd52101bEC6c2ee06b88f47E8DF03f66Eb',
 }
 
 const ExternalLink: Record<string, string> = {
@@ -159,12 +159,15 @@ const DonationSection = () => {
               value={donationInfo.value}
               size={185}
               logoImage={`./svg/${donationInfo.coin}-logo.svg`}
-              logoOpacity={0.5}
+              logoOpacity={0.3}
               logoWidth={100}
               qrStyle="dots"
             />
           </StyledQRCode>
-          <AddressCopy text={donationInfo.value} />
+          <AddressCopy
+            text={donationInfo.value}
+            tooltip={donationInfo.coin === 'verus'}
+          />
 
           <a
             target="_blank"
@@ -177,9 +180,6 @@ const DonationSection = () => {
 
             <SVGs name="tab" />
           </a>
-          {donationInfo.coin === 'verus' && (
-            <AddressCopy text="Verus Coin Foundation@" />
-          )}
         </StyledDonationSection>
       )}
     </StyledContainer>
