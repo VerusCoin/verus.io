@@ -159,7 +159,7 @@ const DonationSection = () => {
               value={donationInfo.value}
               size={185}
               logoImage={`./svg/${donationInfo.coin}-logo.svg`}
-              logoOpacity={0.5}
+              logoOpacity={0.3}
               logoWidth={100}
               qrStyle="dots"
             />
