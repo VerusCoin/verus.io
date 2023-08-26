@@ -164,7 +164,10 @@ const DonationSection = () => {
               qrStyle="dots"
             />
           </StyledQRCode>
-          <AddressCopy text={donationInfo.value} />
+          <AddressCopy
+            text={donationInfo.value}
+            tooltip={donationInfo.coin === 'verus'}
+          />
 
           <a
             target="_blank"
@@ -177,9 +180,6 @@ const DonationSection = () => {
 
             <SVGs name="tab" />
           </a>
-          {donationInfo.coin === 'verus' && (
-            <AddressCopy text="Verus Coin Foundation@" />
-          )}
         </StyledDonationSection>
       )}
     </StyledContainer>
