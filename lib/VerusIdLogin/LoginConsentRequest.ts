@@ -1,15 +1,5 @@
 import { VerusIdInterface, primitives } from 'verusid-ts-client'
-import { GetVdxfidResponse, GetVdxfidRequest } from './customRequestClasses'
-type VdxfidResult = {
-  vdxfid: string
-  indexid: string
-  hash160result: string
-  qualifiedname: { namespace: string; name: string }
-  bounddata: {
-    vdxfkey: string
-    indexnum: number
-  }
-}
+
 export const VerusRPC = new VerusIdInterface(
   'VRSC',
   process.env.VERUS_API || 'https://api.verus.services'
@@ -47,13 +37,17 @@ const LoginConsentRequest = async ({
   }
   let redirectUri
   identity = identity?.result
-  const vdxfid = await VerusRPC.interface.request<GetVdxfidResponse['result']>(
-    new GetVdxfidRequest(chainId as string, session)
-  )
-  let session_id: VdxfidResult | undefined
+  // const vdxfid = await VerusRPC.interface.request<GetVdxfidResponse['result']>(
+  //   new GetVdxfidRequest(chainId as string, session)
+  // )
+
+  const vdxfid = await VerusRPC.interface.getVdxfId(session)
+
+  let session_id: typeof vdxfid.result | undefined
   if (vdxfid.result) {
-    session_id = vdxfid.result as VdxfidResult
+    session_id = vdxfid.result
   }
+
   if (type === 'WEBHOOK') {
     //  'https://verus.requestcatcher.com/test'
     // `${callback}/api/auth/webhook`
