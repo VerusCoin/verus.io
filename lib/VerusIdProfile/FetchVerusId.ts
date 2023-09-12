@@ -1,7 +1,7 @@
 import { VerusRPC } from '../VerusIdLogin/LoginConsentRequest'
 
 interface Query {
-  [key: string]: string
+  [key: string]: string | string[]
 }
 
 const FetchVerusId = async (query: Query) => {
@@ -29,8 +29,9 @@ const FetchVerusId = async (query: Query) => {
   //   }
   // }
   let result: Record<string, any> = {}
+
   try {
-    result = await VerusRPC.interface.getIdentity(query.id)
+    result = await VerusRPC.interface.getIdentity(query.id as string)
   } catch (error) {
     return { result: null, error: { code: -5, message: 'network issue' } }
   }
