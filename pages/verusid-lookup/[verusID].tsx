@@ -34,7 +34,7 @@ export default VerusIDResult
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   let verusId = ctx.query.verusID //{ verusID: 'naward@' }
-
+  
   if (verusId) {
     if (verusId.slice(-1) !== '@') {
       verusId = verusId + '@'

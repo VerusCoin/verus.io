@@ -35,12 +35,18 @@ const VerusidLookup = () => {
   const onSubmit: SubmitHandler<Inputs> = async (query) => {
     if (query) {
       //query.verusID = escape(query.verusID) //this breaks emojis
-      const url = `/api/verusIDcheck?id=${query.verusID}`
+      const params = new URLSearchParams({ id: query.verusID })
+      // const url = `/api/verusIDcheck?id=${query.verusID}`
+      const url = `/api/verusIDcheck?${params}`
       const result = await fetch(url)
       const data = await result.json()
       if (data.result) {
         setVerusID(data)
-        router.push(`/verusid-lookup/${data.result.id}`)
+
+        router.push({
+          pathname: '/verusid-lookup/[verusID]',
+          query: { verusID: data.result.id },
+        })
       } else {
         setVerusID({ error: data.error.message })
       }

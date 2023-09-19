@@ -92,7 +92,7 @@
     "styled-normalize": "^8.0.7",
     "swr": "^1.3.0",
     "uuid": "^9.0.0",
-    "verusid-ts-client": "https://github.com/naward-cs/verusid-ts-client.git",
+    "verusid-ts-client": "https://github.com/VerusCoin/verusid-ts-client.git",
     "web3": "^1.7.4",
     "xml2js": "^0.4.23"
   },
