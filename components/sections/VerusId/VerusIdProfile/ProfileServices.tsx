@@ -30,7 +30,7 @@ const ProfileServices = () => {
   // const webServices = context.profileJSON?.services.website
   // const accountServices = context.profileJSON?.services.accounts
   // const verusId = context.id
-
+  //FIXME: REDIT
   return (
     <StyledContainer>
       {Object.keys(services).map((item, index) => (
