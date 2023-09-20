@@ -27,20 +27,30 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     // i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw
     const verifyKey = data[ProofsJSON.controller.vdxfid]
     if (isValidUrl(verifyKey)) {
-      let verifiedData: any = await fetch(verifyKey).then((res) => res.text())
-
-      verifiedData = verusWebProof(verifiedData)
-
+      let verifiedData: any
+      if (verifyKey.match('reddit')) {
+        //different function for reddit
+        verifiedData = await fetch(verifyKey + '.json')
+          .then((res) => res.json())
+          .then((data) => data[1].data.children[0].data.body)
+      } else {
+        verifiedData = await fetch(verifyKey).then((res) => res.text())
+      }
       if (verifiedData) {
-        const validate = await FetchMessage({
-          ...verifiedData,
-          Identity: user,
-        })
-
-        result = validate
+        verifiedData = verusWebProof(verifiedData)
+        if (verifiedData) {
+          const validate = await FetchMessage({
+            ...verifiedData,
+            Identity: user,
+          })
+          result = validate
+        } else {
+          result.valid = 'error'
+        }
       } else {
         result.valid = 'error'
       }
+      
     } else if (data.type === 'blockchain') {
       const proofChecks: any = verusBlockchainProof(verifyKey)
       //we have two keys to check: 1) against address; and 2) against profile
