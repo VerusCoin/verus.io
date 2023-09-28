@@ -6,7 +6,7 @@ import { bgColor, fontFam, fontSize } from '@/styles/helpers'
 import React from 'react'
 import { Button } from '@/components/elements'
 import { FaMedium } from 'react-icons/fa'
-import useSWR from 'swr'
+// import useSWR from 'swr'
 
 const title = ''
 const description = ''
@@ -269,22 +269,21 @@ const StyledBottomCard = styled(EthTopLeft)`
     }
   }
 `
-const fetcher = (url: string) => fetch(url).then((res) => res.json())
+// const fetcher = (url: string) => fetch(url).then((res) => res.json())
 const blockNumber: number = parseInt(
   process.env.NEXT_PUBLIC_NOTIFY_BANNER_BLOCK || '0'
 )
 
 const EthBridge = () => {
-  const { data } = useSWR('/api/conversion', fetcher, {
-    refreshInterval: 60000,
-  })
-  const currencyNames = data?.result.currencynames
-  const currencyRates = data?.result.bestcurrencystate.currencies
-  const currentyReservers = data?.result.bestcurrencystate.reservecurrencies
-  const supply = data?.result.bestcurrencystate.supply
- 
+  // const { data } = useSWR('/api/conversion', fetcher, {
+  //   refreshInterval: 60000,
+  // })
+  // const currencyNames = data?.result.currencynames
+  // const currencyRates = data?.result.bestcurrencystate.currencies
+  // const currentyReservers = data?.result.bestcurrencystate.reservecurrencies
+  // const supply = data?.result.bestcurrencystate.supply
 
-  console.log(currencyRates, currencyNames, currentyReservers, supply)
+  // console.log(currencyRates, currencyNames, currentyReservers, supply)
   return (
     <>
       <NextSeo title={title} description={description} />
