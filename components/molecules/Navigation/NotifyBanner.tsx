@@ -6,7 +6,7 @@ import { DefaultText, SVGs } from '@/components/elements'
 import { useNotifyContext } from '@/lib/Contexts'
 
 const StyledNotification = styled.div<any>`
-  ${bgColor('#C83F3F')};
+  ${bgColor('#0F0F0F')};
   display: ${(props: any) => (props.notify ? 'flex' : 'none')};
   position: fixed;
   top: 0;
@@ -94,8 +94,8 @@ const StyledActivation = styled(DefaultText)`
 
 const NotifyBanner = () => {
   const { t } = useTranslation('common')
-  const { notify, setNotify } = useNotifyContext()
-  // const { notify, setNotify, blockString } = useNotifyContext()
+  // const { notify, setNotify } = useNotifyContext()
+  const { notify, setNotify, blockString } = useNotifyContext()
   // let statusText: string | undefined = undefined
   // if (blockString) {
   //   if (blockCount && blockCount > 0) {
@@ -120,8 +120,7 @@ const NotifyBanner = () => {
       </DefaultText>
 
       <StyledActivation fontSz="xxs" customColor="green" align="center">
-        {/* {blockString} blocks remaining */}
-        Activated
+        {blockString} blocks remaining
       </StyledActivation>
 
       <StyledReadMore
