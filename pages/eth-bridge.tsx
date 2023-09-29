@@ -6,10 +6,12 @@ import { bgColor, fontFam, fontSize } from '@/styles/helpers'
 import React from 'react'
 import { Button } from '@/components/elements'
 import { FaMedium } from 'react-icons/fa'
-// import useSWR from 'swr'
-
-const title = ''
-const description = ''
+import useSWR from 'swr'
+import FetchCoversion, { Conversion } from '@/lib/fetchCoversion'
+import { GetServerSideProps } from 'next'
+// import { BiSolidUpArrow } from 'react-icons/bi'
+const title = 'Verus-Ethereum Bridge'
+const description = 'Use the non-custodial bridge'
 
 const EthBridgeTopCard = styled.div`
   ${bgColor('white')}
@@ -100,7 +102,7 @@ const PreBadge = styled.p`
   background: #008f06;
   font-size: 12px;
   diplay: flex;
-
+  justify-content: center;
   padding: 5px 7px;
   text-align: center;
   color: white;
@@ -121,85 +123,7 @@ const BlueBarTextWrapper = styled.div<any>`
     ${(props: any) => props.top && 'margin-top: 60px;'}
   `}
 `
-const BlueBarTextDiv = styled.div`
-  width: 100%;
-  height: 60px;
-  flex-shrink: 0;
-  border-radius: 7px;
-  border: 1px solid #3165d4;
-  background: rgba(49, 101, 212, 0.08);
-  color: #3165d4;
-  padding: 22px;
-  ${fontFam('geoHead')}
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  display: flex;
-  justify-content: space-between;
-  p {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-  p.qty {
-    width: 75%;
-  }
-  div.lastPrice {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    gap: 5px;
-    p.currency {
-      width: fit-content;
-      ${fontSize('xxs')}
-      color: rgba(49, 101, 212, 0.59);
-    }
-  }
-  ${media.tablet`
-    p.qty {
-      width: 50%;
-    }
-    div.lastPrice {
-      flex-direction: row;
-      align-items: baseline;
-      width: auto;
-    }
-  `}
-`
-const BlueBarTopBar = styled.div`
-  color: rgba(49, 101, 212, 0.59);
 
-  ${fontFam('gepHead')}
-  font-size: 12px;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
-  display: flex;
-  justify-conent: end;
-  align-items: center;
-`
-
-const BlueSecondTopBar = styled(BlueBarTopBar)`
-  justify-content: space-between;
-  width: 100%;
-  span.reserve {
-    width: 35%;
-  }
-  div.lastPrice {
-    width: 30%;
-  }
-  ${media.tablet`
-  span.reserve {
-    width: auto;
-  }
-  div.lastPrice {
-    width: auto;
-  }
-  `}
-`
 const StyledQuestionTip = styled.div`
   margin-left: 5px;
   display: flex;
@@ -269,20 +193,111 @@ const StyledBottomCard = styled(EthTopLeft)`
     }
   }
 `
-// const fetcher = (url: string) => fetch(url).then((res) => res.json())
+
+const StyledBlueRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  padding: 2px 10px;
+
+  p {
+    ${fontFam('gepHead')}
+    font-size: 12px;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    color: rgba(49, 101, 212, 0.59);
+    width: 100%;
+  }
+
+  p.middle {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+  p.last {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+    span {
+      font-size: 10px;
+    }
+  }
+  ${media.tablet`
+  p.last {
+   flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    span{
+      margin-left: 5px;
+    }
+  }
+  `}
+`
+
+const StyledBlueRowContent = styled(StyledBlueRow)`
+  padding: 22px;
+  border-radius: 7px;
+  border: 1px solid #3165d4;
+  background: rgba(49, 101, 212, 0.08);
+  p {
+    ${fontFam('geoHead')}
+    color: #3165d4;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+`
+
+// const dateCalculater = (str, end) => {
+//   var diffDays = Math.floor(diffMs / 86400000) // days
+//   var diffHrs = Math.floor((diffMs % 86400000) / 3600000) // hours
+//   var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000) // minutes
+// }
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 const blockNumber: number = parseInt(
   process.env.NEXT_PUBLIC_NOTIFY_BANNER_BLOCK || '0'
 )
 
-const EthBridge = () => {
-  // const { data } = useSWR('/api/conversion', fetcher, {
+// const getRateConversion = (token: string, verusPrice: number) => {
+//   switch (token) {
+//     case 'VRSC':
+//     case 'VRSCTEST':
+//       return verusPrice
+//     default:
+//       return 0
+//   }
+// }
+
+const CoinGeckoVRSC = 'https://api.coingecko.com/api/v3/coins/verus-coin'
+
+const EthBridge = ({
+  bridgeFallback,
+}: // verusFallback,
+{
+  bridgeFallback: any
+  // verusFallback: any
+}) => {
+  const { data } = useSWR('/api/conversion', fetcher, {
+    refreshInterval: 60000,
+    fallback: bridgeFallback,
+  })
+  // const { data: verus } = useSWR(CoinGeckoVRSC, fetcher, {
   //   refreshInterval: 60000,
+  //   fallback: verusFallback,
   // })
+  // const verusPrice = verus.market_data.current_price.usd
+
   // const currencyNames = data?.result.currencynames
   // const currencyRates = data?.result.bestcurrencystate.currencies
   // const currentyReservers = data?.result.bestcurrencystate.reservecurrencies
   // const supply = data?.result.bestcurrencystate.supply
-
+  //let dif = Math. abs(x - y) / 1000
   // console.log(currencyRates, currencyNames, currentyReservers, supply)
   return (
     <>
@@ -293,86 +308,92 @@ const EthBridge = () => {
             <EthTopLeft>
               <StyledBadgeRow>
                 <PreBadge>IN PRECONVERSION</PreBadge>
-                <DateP>6d, 21h, 25m left</DateP>
+                <DateP>xx blocks left</DateP>
                 <span>
                   Launch block: {Intl.NumberFormat().format(blockNumber)}
                 </span>
               </StyledBadgeRow>
               <BlueBarTextWrapper>
-                <BlueBarTopBar>
-                  Supply
-                  <StyledQuestionTip>
-                    ?
-                    <Tooltip>
-                      <span>
-                        During the preconversion timeframe there is a fixed
-                        initial supply. This initial supply will be distributed
-                        by the protocol once the currency is launched.
-                      </span>
-                      <br />
-                      <br />
-                      <span>
-                        After the launch the supply is dynamic since people can
-                        convert to it, and out of it.
-                      </span>
-                    </Tooltip>
-                  </StyledQuestionTip>
-                </BlueBarTopBar>
-                <BlueBarTextDiv>
-                  <p>Bridge.vETH</p>
-
-                  <p>100,000</p>
-                </BlueBarTextDiv>
-              </BlueBarTextWrapper>
-
-              <BlueBarTextWrapper top>
-                <BlueSecondTopBar>
-                  <span>RESERVE CURRENCIES for bridge.veth</span>
-                  <span className="reserve">IN RESERVES</span>
-                  <div className="lastPrice">
-                    <span style={{ textAlign: 'right' }}>LAST PRICE</span>
+                <StyledBlueRow>
+                  <p>Liquidity Pool</p>
+                  <p className="middle">
+                    Supply
                     <StyledQuestionTip>
                       ?
                       <Tooltip>
                         <span>
-                          This is the last protocol price for the Bridge.vETH
-                          currency.
+                          During the preconversion timeframe there is a fixed
+                          initial supply. This initial supply will be
+                          distributed by the protocol once the currency is
+                          launched.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          After the launch the supply is dynamic since people
+                          can convert to it, and out of it.
                         </span>
                       </Tooltip>
                     </StyledQuestionTip>
-                  </div>
-                </BlueSecondTopBar>
-                <BlueBarTextDiv>
-                  <p>VRSC</p>
-                  <p className="qty">77,060</p>
-                  <div className="lastPrice">
-                    <p>2.168</p>
-                    <p className="currency">$0.80</p>
-                  </div>
-                </BlueBarTextDiv>
+                  </p>
+                  <p className="last">Price in DAI</p>
+                </StyledBlueRow>
+                <StyledBlueRowContent>
+                  <p style={{ textTransform: 'none' }}>{data.bridge.name}</p>
+                  <p className="middle">
+                    {Intl.NumberFormat().format(data.bridge.amount)}
+                  </p>
+                  <p className="last">
+                    {Intl.NumberFormat().format(
+                      data.bridge.daiPrice.toFixed(2)
+                    )}
+                  </p>
+                </StyledBlueRowContent>
               </BlueBarTextWrapper>
-              <BlueBarTextWrapper style={{ margin: '5px 0' }}>
-                <BlueBarTextDiv>
-                  <p>DAI.vETH</p>
-                  <p className="qty">122,135</p>
-                  <div className="lastPrice">
-                    <p>3.436</p>
-                    <p className="currency">$2.43</p>
-                  </div>
-                </BlueBarTextDiv>
+
+              <BlueBarTextWrapper top>
+                <StyledBlueRow>
+                  <p style={{ textTransform: 'none' }}>
+                    Bridge.vETH CURRENCIES
+                  </p>
+                  <p className="middle">Reserves</p>
+                  <p className="last">Price in DAI</p>
+                </StyledBlueRow>
+                {data.list.map((token: Conversion, index: number) => {
+                  // const rate = getRateConversion(token.name, verus)
+
+                  return (
+                    <StyledBlueRowContent
+                      key={index}
+                      style={{ marginBottom: '5px' }}
+                    >
+                      <p style={{ textTransform: 'none' }}>{token.name}</p>
+                      <p className="middle">
+                        {Intl.NumberFormat().format(token.amount)}
+                      </p>
+                      <p className="last">
+                        {Intl.NumberFormat('en-US', {
+                          style: 'decimal',
+                          maximumFractionDigits: 2,
+                          minimumFractionDigits: 2,
+                        }).format(token.daiPrice)}{' '}
+                        {/* <span>
+                          <BiSolidUpArrow className="arrow" />
+                          {rate}
+                        </span> */}
+                      </p>
+                    </StyledBlueRowContent>
+                  )
+                })}
               </BlueBarTextWrapper>
-              <BlueBarTextWrapper>
-                <BlueBarTextDiv>
-                  <p>vETH</p>
-                  <p className="qty">62.4336</p>
-                  <div className="lastPrice">
-                    <p>0.00175</p>
-                    <p className="currency">$2.48</p>
-                  </div>
-                </BlueBarTextDiv>
-              </BlueBarTextWrapper>
+
               <h4 style={{ fontWeight: '400' }}>
-                Total market value of liquidity: $288,225.75{' '}
+                Total market value of liquidity:{' '}
+                {Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'DAI',
+                  maximumFractionDigits: 6,
+                }).format(data.bridge.daiPrice)}
               </h4>
             </EthTopLeft>
             <EthTopRight>
@@ -516,3 +537,20 @@ const EthBridge = () => {
 }
 
 export default EthBridge
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const bridgeInfo = await FetchCoversion()
+  const verusInfo = await fetcher(CoinGeckoVRSC)
+
+  return {
+    props: {
+      bridgeFallback: {
+        '/api/conversion': bridgeInfo,
+      },
+      verusFallback: {
+        CoinGeckoVRSC: verusInfo,
+      },
+    },
+  }
+}
+

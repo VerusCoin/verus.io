@@ -4,20 +4,46 @@ const VerusTestRPC = new VerusIdInterface(
   'VRSCTEST',
   'https://api.verustest.net'
 )
+
+export type Conversion = {
+  name: string
+  amount: number
+  daiPrice: number
+}
+
 const FetchCoversion = async () => {
   const res = await VerusTestRPC.interface.getCurrency('vrsc-eth-bridge')
-  // console.log(res)
-  // const conversionPacket = {
-  //   currency: 'iN9vbHXexEh6GTZ45fRoJGKTQThfbgUwMh',
-  //   convertto: 'iSojYsotVzXz4wh2eJriASGo6UidJDDhL2',
-  //   amount: 1,
-  //   via: 'iSM7svCHRZezdtR54b37oYCnT4ic936tFy',
-  // }
-  // const estimation = await VerusTestRPC.interface.estimateConversion(
-  //   conversionPacket
-  // )
-  // console.log(estimation)
-  return res
+  const block = await VerusTestRPC.getCurrentHeight()
+  const bestState = res.result?.bestcurrencystate
+  const currencyNames = res.result?.currencynames || {}
+  const currencies = bestState?.reservecurrencies
+  const count = currencies?.length || 4
+  const supply = bestState?.supply || 100000
+
+  //need to get DAI first as base
+  const daiKey = Object.keys(currencyNames || {}).find(
+    (key) => currencyNames !== undefined && currencyNames[key] === 'DAI.vETH'
+  )
+  const daiAmount =
+    currencies?.find((c) => c.currencyid === daiKey)?.reserves || 0
+
+  //get price of each reserve coin
+  //(reserve DAI / reserve currency ) = price of reserve currency in DAI
+  //(reserve DAI * count ) / supply = price of Bridge.vETH in DAI
+  const list: Conversion[] | undefined = currencies?.map((token) => {
+    return {
+      name: currencyNames[token.currencyid],
+      amount: token.reserves,
+      daiPrice: daiAmount / token.reserves,
+    }
+  })
+  const bridge: Conversion = {
+    name: 'Bridge.vEth',
+    amount: supply,
+    daiPrice: (daiAmount * count) / supply,
+  }
+
+  return { list, bridge, block, currencies }
 }
 
 export default FetchCoversion

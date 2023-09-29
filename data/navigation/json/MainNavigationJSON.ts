@@ -90,6 +90,7 @@ export const MainNavigationJSON: IMainNavigation = {
           description: true,
         },
         {
+          svg: 'verusBridge',
           link: 'verusBridge',
           href: '/eth-bridge',
           description: true,

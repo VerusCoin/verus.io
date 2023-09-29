@@ -23,6 +23,7 @@ export interface IMenuSubItem {
     | 'supportWiki'
     | 'faq'
     | 'verusid'
+    | 'verusBridge'
     | ''
   link: string
   description?: boolean
