@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { IJumbotron } from '@/types/molecules'
 import { Row, Col, Container, media } from 'styled-bootstrap-grid'
 import parse from 'html-react-parser'
-import { Button, DefaultHeader, DefaultText } from '@/components/elements'
+import { Button, DefaultHeader, DefaultText, SVGs } from '@/components/elements'
 import { fontSize, spacer } from '@/styles/helpers'
 import { Grid } from '@/components/layouts'
 import { FaYoutube } from 'react-icons/fa'
@@ -139,7 +139,9 @@ const YouTubeFrame = styled.div`
     margin-top: 0;
   }
 `
-
+const EthereumFrame = styled(YouTubeFrame)`
+  margin-top: ${(props) => props.theme.spaces.xs};
+`
 //Two different Jumbotrons
 // 1) typical header with or without text or links
 // 2) header with split format at bottom one for button and the other for text
@@ -153,6 +155,7 @@ const Jumbotron = ({
   button,
   buttons,
   youtube,
+  ethlink,
   width,
   main = false,
 }: IJumbotron) => {
@@ -261,6 +264,25 @@ const Jumbotron = ({
                           {youtube.text}
                         </Button>
                       </YouTubeFrame>
+                    </Col>
+                  )}
+                  {ethlink && (
+                    <Col xs={12}>
+                      <EthereumFrame>
+                        <SVGs name="ethlogo" />
+
+                        <Button
+                          transparent
+                          className="youtube"
+                          href={ethlink.href}
+                          fontSize="xs"
+                          as="a"
+                          margin="45px 0 0"
+                          target="_blank"
+                        >
+                          {ethlink.text}
+                        </Button>
+                      </EthereumFrame>
                     </Col>
                   )}
                 </Row>

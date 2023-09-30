@@ -10,7 +10,8 @@ import useSWR from 'swr'
 import FetchCoversion from '@/lib/fetchCoversion'
 import { GetServerSideProps } from 'next'
 import { BiSolidUpArrow } from 'react-icons/bi'
-import { useForm } from 'react-hook-form'
+// import { useForm } from 'react-hook-form'
+import {useNotifyContext} from '@/lib/Contexts'
 const title = 'Verus-Ethereum Bridge'
 const description = 'Use the non-custodial bridge'
 
@@ -110,10 +111,10 @@ const PreBadge = styled.p`
   margin-right: 10px;
 `
 
-// const DateP = styled.p`
-//   ${fontFam('geoHead')}
-//   margin: 0 5px;
-// `
+const DateP = styled.p`
+  ${fontFam('geoHead')}
+  margin: 0 5px;
+`
 
 const BlueBarTextWrapper = styled.div<any>`
   ${(props: any) => props.top && 'margin-top: 25px;'}
@@ -170,31 +171,31 @@ const Tooltip = styled.div<any>`
   }
 `
 
-const StyledBottomCard = styled(EthTopLeft)`
-  h5 {
-    ${fontSize('sm')}
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-  p {
-    ${fontSize('menu')}
-    max-width: 575px;
-  }
-  a {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    svg {
-      height: 16px;
-    }
-    svg.medium {
-      height: 24px;
-      margin-right: 5px;
-      fill: black;
-    }
-  }
-`
+// const StyledBottomCard = styled(EthTopLeft)`
+//   h5 {
+//     ${fontSize('sm')}
+//     margin-bottom: 0;
+//     padding-bottom: 0;
+//   }
+//   p {
+//     ${fontSize('menu')}
+//     max-width: 575px;
+//   }
+//   a {
+//     margin-top: 40px;
+//     display: flex;
+//     align-items: center;
+//     width: fit-content;
+//     svg {
+//       height: 16px;
+//     }
+//     svg.medium {
+//       height: 24px;
+//       margin-right: 5px;
+//       fill: black;
+//     }
+//   }
+// `
 
 const StyledBlueRow = styled.div`
   display: grid;
@@ -273,6 +274,18 @@ const StyledBlueRowContent = styled(StyledBlueRow)`
     line-height: normal;
   }
 `
+
+const StyledLaunchBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  ${media.tablet`
+  flex-direction: row;
+  align-items: baseline;
+  `};
+`
+
 type Token = {
   name: string
   amount: number
@@ -287,50 +300,66 @@ const blockNumber: number = parseInt(
 )
 
 const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
+  const { blockCount } = useNotifyContext()
+  const [timeLeft, setTimeLeft] = useState<string>()
+
   const { data: ConversionList } = useSWR('/api/conversion', fetcher, {
     refreshInterval: 60000,
     fallback: bridgeFallback,
   })
-  const [bridgeVeth, setBridgeVeth] = useState(0)
-  const { register, watch, resetField } = useForm()
-  const ETHchange = watch('ETH')
-  const VRSCchange = watch('VRSC')
-  const DAIchange = watch('DAI')
 
   useEffect(() => {
-    if (ETHchange !== '') {
-      const ETH = ConversionList.list.find((t: any) => t.name === 'vETH')
-      //       //ETH Field value * ETH Price / Bridge Price
-      const total =
-        (parseInt(ETHchange) * ETH.price) / ConversionList.bridge.daiPrice
-      setBridgeVeth(total)
-      resetField('VRSC')
-      resetField('DAI')
-    }
-  }, [ETHchange])
+    if (blockCount) {
+      //1 block = approx 1 minute
+      const days = Math.floor(blockCount / 1440)
 
-  useEffect(() => {
-    if (VRSCchange !== '') {
-      const VRSC = ConversionList.list.find(
-        (t: any) => t.name === 'VRSC' || t.name === 'VRSCTEST'
-      )
-      //       //ETH Field value * ETH Price / Bridge Price
-      const total =
-        (parseInt(VRSCchange) * VRSC.price) / ConversionList.bridge.daiPrice
-      setBridgeVeth(total)
-      resetField('ETH')
-      resetField('DAI')
-    }
-  }, [VRSCchange])
+      const hours = Math.floor((blockCount % 1440) / 60)
 
-  useEffect(() => {
-    if (DAIchange !== '') {
-      const total = parseInt(DAIchange) / ConversionList.bridge.daiPrice
-      setBridgeVeth(total)
-      resetField('VRSC')
-      resetField('ETH')
+      const minutes = Math.floor((blockCount % 1440) % 60)
+      setTimeLeft(`${days}d, ${hours}h, ${minutes}m`)
     }
-  }, [DAIchange])
+  }, [blockCount])
+
+  // const [bridgeVeth, setBridgeVeth] = useState(0)
+  // const { register, watch, resetField } = useForm()
+  // const ETHchange = watch('ETH')
+  // const VRSCchange = watch('VRSC')
+  // const DAIchange = watch('DAI')
+
+  // useEffect(() => {
+  //   if (ETHchange !== '') {
+  //     const ETH = ConversionList.list.find((t: any) => t.name === 'vETH')
+  //     //       //ETH Field value * ETH Price / Bridge Price
+  //     const total =
+  //       (parseInt(ETHchange) * ETH.price) / ConversionList.bridge.daiPrice
+  //     setBridgeVeth(total)
+  //     resetField('VRSC')
+  //     resetField('DAI')
+  //   }
+  // }, [ETHchange])
+
+  // useEffect(() => {
+  //   if (VRSCchange !== '') {
+  //     const VRSC = ConversionList.list.find(
+  //       (t: any) => t.name === 'VRSC' || t.name === 'VRSCTEST'
+  //     )
+  //     //       //ETH Field value * ETH Price / Bridge Price
+  //     const total =
+  //       (parseInt(VRSCchange) * VRSC.price) / ConversionList.bridge.daiPrice
+  //     setBridgeVeth(total)
+  //     resetField('ETH')
+  //     resetField('DAI')
+  //   }
+  // }, [VRSCchange])
+
+  // useEffect(() => {
+  //   if (DAIchange !== '') {
+  //     const total = parseInt(DAIchange) / ConversionList.bridge.daiPrice
+  //     setBridgeVeth(total)
+  //     resetField('VRSC')
+  //     resetField('ETH')
+  //   }
+  // }, [DAIchange])
 
   return (
     <>
@@ -341,10 +370,12 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
             <EthTopLeft>
               <StyledBadgeRow>
                 <PreBadge>IN PRECONVERSION</PreBadge>
-                {/* <DateP>xx blocks left</DateP> */}
-                <span>
-                  Launch block: {Intl.NumberFormat().format(blockNumber)}
-                </span>
+                <StyledLaunchBlock>
+                  <DateP>{timeLeft} left</DateP>
+                  <span>
+                    Launch block: {Intl.NumberFormat().format(blockNumber)}
+                  </span>
+                </StyledLaunchBlock>
               </StyledBadgeRow>
               <BlueBarTextWrapper>
                 <StyledBlueRow>
@@ -504,7 +535,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
               </Button>
             </EthTopRight>
           </EthBridgeTopCard>
-          <EthBridgeTopCard>
+          {/* <EthBridgeTopCard>
             <StyledBottomCard>
               <h5>Informational Calculator</h5>
               <p>
@@ -612,7 +643,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                 </div>
               </div>
             </StyledBottomCard>
-          </EthBridgeTopCard>
+          </EthBridgeTopCard> */}
         </Grid>
       </MainLayout>
     </>

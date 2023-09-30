@@ -61,6 +61,7 @@ export default function App({ Component, pageProps }: AppProps): any {
           notify,
           setNotify,
           blockString: data?.blockString,
+          blockCount: data?.blockCount,
         }}
       >
         <ThemeProvider theme={primary}>

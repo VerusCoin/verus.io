@@ -18,6 +18,10 @@ export interface IJumbotron {
     text: string
     href: string
   }
+  ethlink?: {
+    text: string
+    href: string
+  }
 }
 
 interface JumboButtons {

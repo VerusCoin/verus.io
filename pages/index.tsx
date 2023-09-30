@@ -143,6 +143,10 @@ const Home = ({ data }: HomepageProps) => {
       text: t('jumbotron.youtube'),
       href: 'https://www.youtube.com/watch?v=qN30YmG3nEg',
     },
+    ethlink: {
+      text: 'Verus-Ethereum Bridge',
+      href: 'https://www.youtube.com',
+    },
     width: 1000,
     main: true,
   }

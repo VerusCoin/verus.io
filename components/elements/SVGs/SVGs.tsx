@@ -40,6 +40,7 @@ import Windows from './assets/windows.svg'
 import Youtube from './assets/youtube.svg'
 import Testnet from './assets/testnet.svg'
 import VerusBridge from './assets/eth-bridge-icon.svg'
+import EthLogo from './assets/eth-logo.svg'
 // interface SVGList {
 //   [key: string]: ReactNode
 // }
@@ -87,6 +88,7 @@ const SVGIcon: Record<string, ReactElement> = {
   verusid: <VerusIcon />,
   windows: <Windows />,
   youtube: <Youtube />,
+  ethlogo: <EthLogo />,
 }
 
 export function SVGs({ name }: { name: string }): ReactElement | null {
