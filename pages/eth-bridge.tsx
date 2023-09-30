@@ -456,10 +456,9 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                   </p>
                 </StyledBlueRow>
                 {ConversionList.list.map((token: Token, index: number) => {
-                  const diff = token.price - token.daiPrice
+                  const diff = token.daiPrice - token.price
                   const percent =
-                    Math.abs(token.price - token.daiPrice) /
-                    Math.abs((token.price + token.daiPrice) / 2)
+                    Math.abs(token.daiPrice - token.price) / token.price
                   const rate =
                     diff < 0 ? 'less' : diff > 0 ? 'greater' : 'equal'
 
@@ -485,7 +484,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                         }).format(token.daiPrice)}
 
                         <span className="equal">
-                          <BiSolidUpArrow />
+                          {diff !== 0 && <BiSolidUpArrow />}
                           {Intl.NumberFormat('en-US', {
                             style: 'percent',
                             maximumFractionDigits: 2,

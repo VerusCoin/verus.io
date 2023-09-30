@@ -145,7 +145,7 @@ const Home = ({ data }: HomepageProps) => {
     },
     ethlink: {
       text: 'Verus-Ethereum Bridge',
-      href: 'https://www.youtube.com',
+      href: '/eth-bridge',
     },
     width: 1000,
     main: true,
