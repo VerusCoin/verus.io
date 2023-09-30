@@ -3,13 +3,14 @@ import { NextSeo } from 'next-seo'
 import styled from 'styled-components'
 import { media } from 'styled-bootstrap-grid'
 import { bgColor, fontFam, fontSize } from '@/styles/helpers'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/elements'
 import { FaMedium } from 'react-icons/fa'
 import useSWR from 'swr'
-import FetchCoversion, { Conversion } from '@/lib/fetchCoversion'
+import FetchCoversion from '@/lib/fetchCoversion'
 import { GetServerSideProps } from 'next'
-// import { BiSolidUpArrow } from 'react-icons/bi'
+import { BiSolidUpArrow } from 'react-icons/bi'
+import { useForm } from 'react-hook-form'
 const title = 'Verus-Ethereum Bridge'
 const description = 'Use the non-custodial bridge'
 
@@ -225,8 +226,26 @@ const StyledBlueRow = styled.div`
     justify-content: end;
     span {
       font-size: 10px;
+      display: flex;
+      align-items: center;
+    }
+    &.less {
+      color: red;
+      span > svg {
+        transform: rotate(180deg);
+      }
+    }
+    &.equal {
+      color: black;
+      span > svg {
+        visible: hidden;
+      }
+    }
+    &.greater {
+      color: green;
     }
   }
+
   ${media.tablet`
   p.last {
    flex-direction: row;
@@ -253,52 +272,65 @@ const StyledBlueRowContent = styled(StyledBlueRow)`
     line-height: normal;
   }
 `
+type Token = {
+  name: string
+  amount: number
+  daiPrice: number
 
-// const dateCalculater = (str, end) => {
-//   var diffDays = Math.floor(diffMs / 86400000) // days
-//   var diffHrs = Math.floor((diffMs % 86400000) / 3600000) // hours
-//   var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000) // minutes
-// }
+  price: number
+}
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 const blockNumber: number = parseInt(
   process.env.NEXT_PUBLIC_NOTIFY_BANNER_BLOCK || '0'
 )
 
-// const getRateConversion = (token: string, verusPrice: number) => {
-//   switch (token) {
-//     case 'VRSC':
-//     case 'VRSCTEST':
-//       return verusPrice
-//     default:
-//       return 0
-//   }
-// }
-
-const CoinGeckoVRSC = 'https://api.coingecko.com/api/v3/coins/verus-coin'
-
-const EthBridge = ({
-  bridgeFallback,
-}: // verusFallback,
-{
-  bridgeFallback: any
-  // verusFallback: any
-}) => {
-  const { data } = useSWR('/api/conversion', fetcher, {
+const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
+  const { data: ConversionList } = useSWR('/api/conversion', fetcher, {
     refreshInterval: 60000,
     fallback: bridgeFallback,
   })
-  // const { data: verus } = useSWR(CoinGeckoVRSC, fetcher, {
-  //   refreshInterval: 60000,
-  //   fallback: verusFallback,
-  // })
-  // const verusPrice = verus.market_data.current_price.usd
+  const [bridgeVeth, setBridgeVeth] = useState(0)
+  const { register, watch, resetField } = useForm()
+  const ETHchange = watch('ETH')
+  const VRSCchange = watch('VRSC')
+  const DAIchange = watch('DAI')
 
-  // const currencyNames = data?.result.currencynames
-  // const currencyRates = data?.result.bestcurrencystate.currencies
-  // const currentyReservers = data?.result.bestcurrencystate.reservecurrencies
-  // const supply = data?.result.bestcurrencystate.supply
-  //let dif = Math. abs(x - y) / 1000
-  // console.log(currencyRates, currencyNames, currentyReservers, supply)
+  useEffect(() => {
+    if (ETHchange !== '') {
+      const ETH = ConversionList.list.find((t: any) => t.name === 'vETH')
+      //       //ETH Field value * ETH Price / Bridge Price
+      const total =
+        (parseInt(ETHchange) * ETH.price) / ConversionList.bridge.daiPrice
+      setBridgeVeth(total)
+      resetField('VRSC')
+      resetField('DAI')
+    }
+  }, [ETHchange])
+
+  useEffect(() => {
+    if (VRSCchange !== '') {
+      const VRSC = ConversionList.list.find(
+        (t: any) => t.name === 'VRSC' || t.name === 'VRSCTEST'
+      )
+      //       //ETH Field value * ETH Price / Bridge Price
+      const total =
+        (parseInt(VRSCchange) * VRSC.price) / ConversionList.bridge.daiPrice
+      setBridgeVeth(total)
+      resetField('ETH')
+      resetField('DAI')
+    }
+  }, [VRSCchange])
+
+  useEffect(() => {
+    if (DAIchange !== '') {
+      const total = parseInt(DAIchange) / ConversionList.bridge.daiPrice
+      setBridgeVeth(total)
+      resetField('VRSC')
+      resetField('ETH')
+    }
+  }, [DAIchange])
+
   return (
     <>
       <NextSeo title={title} description={description} />
@@ -336,17 +368,32 @@ const EthBridge = ({
                       </Tooltip>
                     </StyledQuestionTip>
                   </p>
-                  <p className="last">Price in DAI</p>
+                  <p className="last">
+                    Price in DAI{' '}
+                    <StyledQuestionTip>
+                      ?
+                      <Tooltip>
+                        <span style={{ textAlign: 'left' }}>
+                          This is the last protocol price for the Bridge.vETH
+                          currency.
+                        </span>
+                      </Tooltip>
+                    </StyledQuestionTip>
+                  </p>
                 </StyledBlueRow>
                 <StyledBlueRowContent>
-                  <p style={{ textTransform: 'none' }}>{data.bridge.name}</p>
+                  <p style={{ textTransform: 'none' }}>
+                    {ConversionList.bridge.name}
+                  </p>
                   <p className="middle">
-                    {Intl.NumberFormat().format(data.bridge.amount)}
+                    {Intl.NumberFormat().format(ConversionList.bridge.amount)}
                   </p>
                   <p className="last">
-                    {Intl.NumberFormat().format(
-                      data.bridge.daiPrice.toFixed(2)
-                    )}
+                    {Intl.NumberFormat('en-US', {
+                      style: 'decimal',
+                      maximumFractionDigits: 3,
+                      minimumFractionDigits: 3,
+                    }).format(ConversionList.bridge.daiPrice)}
                   </p>
                 </StyledBlueRowContent>
               </BlueBarTextWrapper>
@@ -357,10 +404,28 @@ const EthBridge = ({
                     Bridge.vETH CURRENCIES
                   </p>
                   <p className="middle">Reserves</p>
-                  <p className="last">Price in DAI</p>
+                  <p className="last">
+                    Price in DAI
+                    <StyledQuestionTip>
+                      ?
+                      <Tooltip>
+                        <span style={{ textAlign: 'left' }}>
+                          The protocol price of the reserves in DAI, compared to
+                          the market price. (if the percentage is up, the
+                          protocol price is higher than the market price, and
+                          vice versa)
+                        </span>
+                      </Tooltip>
+                    </StyledQuestionTip>
+                  </p>
                 </StyledBlueRow>
-                {data.list.map((token: Conversion, index: number) => {
-                  // const rate = getRateConversion(token.name, verus)
+                {ConversionList.list.map((token: Token, index: number) => {
+                  const diff = token.price - token.daiPrice
+                  const percent =
+                    Math.abs(token.price - token.daiPrice) /
+                    Math.abs((token.price + token.daiPrice) / 2)
+                  const rate =
+                    diff < 0 ? 'less' : diff > 0 ? 'greater' : 'equal'
 
                   return (
                     <StyledBlueRowContent
@@ -371,16 +436,22 @@ const EthBridge = ({
                       <p className="middle">
                         {Intl.NumberFormat().format(token.amount)}
                       </p>
-                      <p className="last">
+
+                      <p className={`last ${rate}`}>
                         {Intl.NumberFormat('en-US', {
                           style: 'decimal',
                           maximumFractionDigits: 2,
                           minimumFractionDigits: 2,
-                        }).format(token.daiPrice)}{' '}
-                        {/* <span>
-                          <BiSolidUpArrow className="arrow" />
-                          {rate}
-                        </span> */}
+                        }).format(token.daiPrice)}
+
+                        <span className="equal">
+                          <BiSolidUpArrow />
+                          {Intl.NumberFormat('en-US', {
+                            style: 'percent',
+                            maximumFractionDigits: 2,
+                            minimumFractionDigits: 2,
+                          }).format(percent)}
+                        </span>
                       </p>
                     </StyledBlueRowContent>
                   )
@@ -390,10 +461,14 @@ const EthBridge = ({
               <h4 style={{ fontWeight: '400' }}>
                 Total market value of liquidity:{' '}
                 {Intl.NumberFormat('en-US', {
-                  style: 'currency',
-                  currency: 'DAI',
+                  style: 'decimal',
+
+                  minimumFractionDigits: 2,
                   maximumFractionDigits: 6,
-                }).format(data.bridge.daiPrice)}
+                }).format(
+                  ConversionList.bridge.daiPrice * ConversionList.bridge.amount
+                )}{' '}
+                DAI
               </h4>
             </EthTopLeft>
             <EthTopRight>
@@ -440,7 +515,7 @@ const EthBridge = ({
                 style={{
                   width: '100%',
                   justifyContent: 'space-between',
-                  maxWidth: '300px',
+                  maxWidth: '350px',
                 }}
               >
                 <div
@@ -459,7 +534,6 @@ const EthBridge = ({
                     }}
                   >
                     <input
-                      name="ETH"
                       style={{
                         width: '100px',
                         height: '32px',
@@ -467,6 +541,7 @@ const EthBridge = ({
                         border: '1px solid #AFAFAF',
                         background: 'white',
                       }}
+                      {...register('ETH')}
                     />
                     <h4 style={{ margin: '0' }}>ETH</h4>
                   </div>
@@ -478,7 +553,6 @@ const EthBridge = ({
                     }}
                   >
                     <input
-                      name="DAI"
                       style={{
                         width: '100px',
                         height: '32px',
@@ -486,6 +560,7 @@ const EthBridge = ({
                         border: '1px solid #AFAFAF',
                         background: 'white',
                       }}
+                      {...register('DAI')}
                     />
                     <h4 style={{ margin: '0' }}>DAI</h4>
                   </div>
@@ -497,7 +572,6 @@ const EthBridge = ({
                     }}
                   >
                     <input
-                      name="VRSC"
                       style={{
                         width: '100px',
                         height: '32px',
@@ -505,6 +579,7 @@ const EthBridge = ({
                         border: '1px solid #AFAFAF',
                         background: 'white',
                       }}
+                      {...register('VRSC')}
                     />
                     <h4 style={{ margin: '0' }}>VRSC</h4>
                   </div>
@@ -524,7 +599,14 @@ const EthBridge = ({
                       gap: '5px',
                     }}
                   >
-                    <h4 style={{ margin: '0' }}>0 Bridge.vETH</h4>
+                    <h4 style={{ margin: '0' }}>
+                      {Intl.NumberFormat('en-US', {
+                        style: 'decimal',
+                        maximumFractionDigits: 2,
+                        minimumFractionDigits: 2,
+                      }).format(bridgeVeth || 0)}
+                      {` `}Bridge.vETH
+                    </h4>
                   </div>
                 </div>
               </div>
@@ -540,15 +622,15 @@ export default EthBridge
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const bridgeInfo = await FetchCoversion()
-  const verusInfo = await fetcher(CoinGeckoVRSC)
+  bridgeInfo.list = bridgeInfo?.list?.map((token) => ({
+    ...token,
+    price: token.daiPrice,
+  }))
 
   return {
     props: {
       bridgeFallback: {
         '/api/conversion': bridgeInfo,
-      },
-      verusFallback: {
-        CoinGeckoVRSC: verusInfo,
       },
     },
   }

@@ -37,7 +37,7 @@ const FetchCoversion = async () => {
       daiPrice: daiAmount / token.reserves,
     }
   })
-  const bridge: Conversion = {
+  const bridge: Omit<Conversion, 'convertPrice'> = {
     name: 'Bridge.vEth',
     amount: supply,
     daiPrice: (daiAmount * count) / supply,
