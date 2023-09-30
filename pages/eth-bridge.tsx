@@ -107,12 +107,13 @@ const PreBadge = styled.p`
   padding: 5px 7px;
   text-align: center;
   color: white;
+  margin-right: 10px;
 `
 
-const DateP = styled.p`
-  ${fontFam('geoHead')}
-  margin: 0 5px;
-`
+// const DateP = styled.p`
+//   ${fontFam('geoHead')}
+//   margin: 0 5px;
+// `
 
 const BlueBarTextWrapper = styled.div<any>`
   ${(props: any) => props.top && 'margin-top: 25px;'}
@@ -340,7 +341,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
             <EthTopLeft>
               <StyledBadgeRow>
                 <PreBadge>IN PRECONVERSION</PreBadge>
-                <DateP>xx blocks left</DateP>
+                {/* <DateP>xx blocks left</DateP> */}
                 <span>
                   Launch block: {Intl.NumberFormat().format(blockNumber)}
                 </span>

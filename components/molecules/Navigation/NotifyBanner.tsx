@@ -70,32 +70,33 @@ const CloseButton = styled.button`
 const StyledReadMore = styled.button`
   width: fit-content;
   padding: 4px 12px;
-  border: solid 1px white;
+  // border: solid 1px white;
   background: transparent;
-  border-radius: 12px;
+  // border-radius: 12px;
   color: white;
-  text-decoration: none;
+  //text-decoration: none;
+
   ${fontSize('xxs')}
   &:hover {
     background: rgb(255, 255, 255, 0.17);
   }
 `
-const StyledActivation = styled(DefaultText)`
-  display: none;
-  border-radius: 12px;
-  ${bgColor('white')}
-  padding: 4px 12px;
-  margin: 0 7px;
-  color: #c83f3f;
-  ${media.tablet`
-    display:block;
-  `}
-`
+// const StyledActivation = styled(DefaultText)`
+//   display: none;
+//   border-radius: 12px;
+//   ${bgColor('white')}
+//   padding: 4px 12px;
+//   margin: 0 7px;
+//   // color: #c83f3f;
+//   ${media.tablet`
+//     display:block;
+//   `}
+// `
 
 const NotifyBanner = () => {
   const { t } = useTranslation('common')
-  // const { notify, setNotify } = useNotifyContext()
-  const { notify, setNotify, blockString } = useNotifyContext()
+  const { notify, setNotify } = useNotifyContext()
+  // const { notify, setNotify, blockString } = useNotifyContext()
   // let statusText: string | undefined = undefined
   // if (blockString) {
   //   if (blockCount && blockCount > 0) {
@@ -119,9 +120,9 @@ const NotifyBanner = () => {
         <span className="tablet-text">{t('banner')}</span>
       </DefaultText>
 
-      <StyledActivation fontSz="xxs" customColor="green" align="center">
+      {/* <StyledActivation fontSz="xxs" customColor="green" align="center">
         {blockString} blocks remaining
-      </StyledActivation>
+      </StyledActivation> */}
 
       <StyledReadMore
         as="a"
