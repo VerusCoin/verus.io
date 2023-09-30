@@ -199,7 +199,8 @@ const Tooltip = styled.div<any>`
 
 const StyledBlueRow = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
+
   width: 100%;
   padding: 2px 10px;
 
@@ -214,7 +215,9 @@ const StyledBlueRow = styled.div`
     color: rgba(49, 101, 212, 0.59);
     width: 100%;
   }
-
+  p:first-child {
+    width: 125%;
+  }
   p.middle {
     display: flex;
     align-items: center;
@@ -272,6 +275,9 @@ const StyledBlueRowContent = styled(StyledBlueRow)`
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+  }
+  p:first-child {
+    text-transform: none;
   }
 `
 
@@ -415,13 +421,12 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                 </StyledBlueRow>
                 <StyledBlueRowContent>
                   <p style={{ textTransform: 'none' }}>
-                    {ConversionList.bridge.name}
+                    Bridge.vETH
                   </p>
                   <p className="middle">
                     {Intl.NumberFormat('en-US', {
                       style: 'decimal',
-                      maximumFractionDigits: 3,
-                      minimumFractionDigits: 3,
+                      maximumFractionDigits: 0,
                     }).format(ConversionList.bridge.amount)}
                   </p>
                   <p className="last">
@@ -436,9 +441,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
 
               <BlueBarTextWrapper top>
                 <StyledBlueRow>
-                  <p style={{ textTransform: 'none' }}>
-                    Bridge.vETH CURRENCIES
-                  </p>
+                  <p>Bridge.vETH reserve CURRENCIES</p>
                   <p className="middle">Reserves</p>
                   <p className="last">
                     Price in DAI
@@ -456,18 +459,21 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                   </p>
                 </StyledBlueRow>
                 {ConversionList.list.map((token: Token, index: number) => {
-                  const diff = token.daiPrice - token.price
-                  const percent =
-                    Math.abs(token.daiPrice - token.price) / token.price
                   const rate =
-                    diff < 0 ? 'less' : diff > 0 ? 'greater' : 'equal'
+                    token.daiPrice < token.price
+                      ? 'less'
+                      : token.daiPrice > token.price
+                      ? 'greater'
+                      : 'equal'
+
+                  const percent = Math.abs(token.daiPrice / token.price) - 1
 
                   return (
                     <StyledBlueRowContent
                       key={index}
                       style={{ marginBottom: '5px' }}
                     >
-                      <p style={{ textTransform: 'none' }}>{token.name}</p>
+                      <p>{token.name}</p>
                       <p className="middle">
                         {Intl.NumberFormat('en-US', {
                           style: 'decimal',
@@ -484,7 +490,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                         }).format(token.daiPrice)}
 
                         <span className="equal">
-                          {diff !== 0 && <BiSolidUpArrow />}
+                          {rate !== 'equal' && <BiSolidUpArrow />}
                           {Intl.NumberFormat('en-US', {
                             style: 'percent',
                             maximumFractionDigits: 2,
