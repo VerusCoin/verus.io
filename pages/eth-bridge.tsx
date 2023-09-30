@@ -418,7 +418,11 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                     {ConversionList.bridge.name}
                   </p>
                   <p className="middle">
-                    {Intl.NumberFormat().format(ConversionList.bridge.amount)}
+                    {Intl.NumberFormat('en-US', {
+                      style: 'decimal',
+                      maximumFractionDigits: 3,
+                      minimumFractionDigits: 3,
+                    }).format(ConversionList.bridge.amount)}
                   </p>
                   <p className="last">
                     {Intl.NumberFormat('en-US', {
@@ -466,7 +470,11 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                     >
                       <p style={{ textTransform: 'none' }}>{token.name}</p>
                       <p className="middle">
-                        {Intl.NumberFormat().format(token.amount)}
+                        {Intl.NumberFormat('en-US', {
+                          style: 'decimal',
+                          maximumFractionDigits: 3,
+                          minimumFractionDigits: 3,
+                        }).format(token.amount)}
                       </p>
 
                       <p className={`last ${rate}`}>
