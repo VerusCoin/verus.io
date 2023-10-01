@@ -66,6 +66,12 @@ export const MainNavigationJSON: IMainNavigation = {
           external: true,
         },
         {
+          svg: 'verusBridge',
+          link: 'verusBridge',
+          href: '/eth-bridge',
+          description: true,
+        },
+        {
           svg: 'verusIdLookup',
           link: 'lookupPage',
           href: '/verusid-lookup',
@@ -89,12 +95,7 @@ export const MainNavigationJSON: IMainNavigation = {
           href: '/exchanges',
           description: true,
         },
-        {
-          svg: 'verusBridge',
-          link: 'verusBridge',
-          href: '/eth-bridge',
-          description: true,
-        },
+
         {
           link: 'loginDemo',
           href: '/verusid-login-demo',

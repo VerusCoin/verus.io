@@ -82,9 +82,9 @@ const EthTopRight = styled.div`
 `
 
 const StyledBadgeRow = styled.div`
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+
   span {
     ${fontFam('geoHead')}
     font-size: 14px;
@@ -92,6 +92,8 @@ const StyledBadgeRow = styled.div`
   }
   ${media.desktop`
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
   `}
 `
 
@@ -118,12 +120,17 @@ const DateP = styled.p`
 
 const BlueBarTextWrapper = styled.div<any>`
   ${(props: any) => props.top && 'margin-top: 25px;'}
-
+  &.toptop {
+    margin-top: 25px;
+  }
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   ${media.desktop`
     ${(props: any) => props.top && 'margin-top: 60px;'}
+    &.toptop {
+    margin-top: 0;
+  }
   `}
 `
 
@@ -145,8 +152,13 @@ const Tooltip = styled.div<any>`
   position: absolute;
   bottom: 150%;
   width: 300px;
-  color: #fff;
-  background-color: #3165d4;
+  color: black;
+  text-align: left;
+  font-weight: 400;
+  // background-color: #3165d4;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.52);
   font-size: 12px;
   font-weight: 400;
   padding: 8px 8px;
@@ -154,6 +166,9 @@ const Tooltip = styled.div<any>`
   display: none;
   visibility: hidden;
   right: -50px;
+  a {
+    color: #3165d4;
+  }
   ${StyledQuestionTip}:hover & {
     display: block;
     visibility: visible;
@@ -162,12 +177,13 @@ const Tooltip = styled.div<any>`
   &:after {
     content: ' ';
     position: absolute;
-    top: 97%; /* At the bottom of the tooltip */
+    top: 100%; /* At the bottom of the tooltip */
     right: 16%;
 
     border-width: 8px;
     border-style: solid;
-    border-color: #3165d4 transparent transparent transparent;
+
+    border-color: rgba(0, 0, 0, 0.5) transparent transparent transparent;
   }
 `
 
@@ -199,25 +215,25 @@ const Tooltip = styled.div<any>`
 
 const StyledBlueRow = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: flex-end;
   width: 100%;
-  padding: 2px 10px;
-
-  p {
-    ${fontFam('gepHead')}
-    font-size: 12px;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    padding: 0;
-    margin: 0;
-    color: rgba(49, 101, 212, 0.59);
-    width: 100%;
-  }
+  padding: 2px 5px;
   p:first-child {
     width: 125%;
   }
+  p {
+    ${fontFam('gepHead')}
+    font-size: 10px;
+    font-weight: 700;
+    line-height: normal;
+
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+  }
+
   p.middle {
     display: flex;
     align-items: center;
@@ -226,34 +242,42 @@ const StyledBlueRow = styled.div`
   p.last {
     text-align: right;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+
     justify-content: end;
-    span {
-      font-size: 10px;
-      display: flex;
-      align-items: center;
+  }
+  p.equal {
+    text-align: right;
+    display: flex;
+
+    justify-content: end;
+    align-items: center;
+    svg {
+      margin-right: 4px;
     }
     &.less {
-      color: red;
-      span > svg {
+      color: red !important;
+      svg {
         transform: rotate(180deg);
       }
     }
     &.equal {
       color: black;
-      span > svg {
+      svg {
         visible: hidden;
       }
     }
     &.greater {
-      color: green;
+      color: green !important;
     }
   }
-
   ${media.tablet`
+  padding: 2px 10px;
+  p{
+    font-size: 12px;
+  }
   p.last {
-   flex-direction: row;
+   
+   text-align:left;
     align-items: center;
     justify-content: end;
     span{
@@ -264,32 +288,74 @@ const StyledBlueRow = styled.div`
 `
 
 const StyledBlueRowContent = styled(StyledBlueRow)`
-  padding: 22px;
+  padding: 14px;
   border-radius: 7px;
   border: 1px solid #3165d4;
   background: rgba(49, 101, 212, 0.08);
+  &.breaker {
+    margin-bottom: 2px;
+  }
   p {
     ${fontFam('geoHead')}
-    color: #3165d4;
-    font-size: 20px;
+
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    color: rgba(49, 101, 212, 0.59);
+  }
+  p.last {
+    color: #3165d4;
   }
   p:first-child {
     text-transform: none;
+    color: #3165d4;
   }
+  ${media.tablet`
+    padding: 18px;
+    p{font-size: 16px;}
+    
+    &.breaker{
+      margin-bottom: 5px;
+    }
+
+  `}
+  ${media.desktop`
+  padding: 22px;
+  p{
+    font-size: 20px;
+  }
+  `}
 `
 
 const StyledLaunchBlock = styled.div`
   display: flex;
-  flex-direction: column;
+  p {
+    font-size: 12px;
+  }
 
   align-items: center;
+  span {
+    font-size: 12px;
+  }
   ${media.tablet`
-  flex-direction: row;
+  p{font-size: 16px;}
+  
+  span{font-size:14px;}
   align-items: baseline;
   `};
+`
+const StyledLiquid = styled(StyledBlueRowContent)`
+  border-radius: 7px;
+  border: 1px solid #3165d4;
+  background: none;
+  margin-top: 28px;
+  p {
+    grid-column: span 2;
+  }
+  ${media.desktop`
+    margin-top: 40px;
+  `}
 `
 
 type Token = {
@@ -326,47 +392,6 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
     }
   }, [blockCount])
 
-  // const [bridgeVeth, setBridgeVeth] = useState(0)
-  // const { register, watch, resetField } = useForm()
-  // const ETHchange = watch('ETH')
-  // const VRSCchange = watch('VRSC')
-  // const DAIchange = watch('DAI')
-
-  // useEffect(() => {
-  //   if (ETHchange !== '') {
-  //     const ETH = ConversionList.list.find((t: any) => t.name === 'vETH')
-  //     //       //ETH Field value * ETH Price / Bridge Price
-  //     const total =
-  //       (parseInt(ETHchange) * ETH.price) / ConversionList.bridge.daiPrice
-  //     setBridgeVeth(total)
-  //     resetField('VRSC')
-  //     resetField('DAI')
-  //   }
-  // }, [ETHchange])
-
-  // useEffect(() => {
-  //   if (VRSCchange !== '') {
-  //     const VRSC = ConversionList.list.find(
-  //       (t: any) => t.name === 'VRSC' || t.name === 'VRSCTEST'
-  //     )
-  //     //       //ETH Field value * ETH Price / Bridge Price
-  //     const total =
-  //       (parseInt(VRSCchange) * VRSC.price) / ConversionList.bridge.daiPrice
-  //     setBridgeVeth(total)
-  //     resetField('ETH')
-  //     resetField('DAI')
-  //   }
-  // }, [VRSCchange])
-
-  // useEffect(() => {
-  //   if (DAIchange !== '') {
-  //     const total = parseInt(DAIchange) / ConversionList.bridge.daiPrice
-  //     setBridgeVeth(total)
-  //     resetField('VRSC')
-  //     resetField('ETH')
-  //   }
-  // }, [DAIchange])
-
   return (
     <>
       <NextSeo title={title} description={description} />
@@ -383,26 +408,26 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                   </span>
                 </StyledLaunchBlock>
               </StyledBadgeRow>
-              <BlueBarTextWrapper>
+              <BlueBarTextWrapper className="toptop">
                 <StyledBlueRow>
-                  <p>Liquidity Pool</p>
+                  <p>Liquidity pool</p>
                   <p className="middle">
                     Supply
                     <StyledQuestionTip>
                       ?
                       <Tooltip>
-                        <span>
+                        <p style={{ textAlign: 'left', fontWeight: '400' }}>
                           During the preconversion timeframe there is a fixed
                           initial supply. This initial supply will be
                           distributed by the protocol once the currency is
                           launched.
-                        </span>
+                        </p>
                         <br />
-                        <br />
-                        <span>
+
+                        <p style={{ textAlign: 'left', fontWeight: '400' }}>
                           After the launch the supply is dynamic since people
                           can convert to it, and out of it.
-                        </span>
+                        </p>
                       </Tooltip>
                     </StyledQuestionTip>
                   </p>
@@ -411,18 +436,16 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                     <StyledQuestionTip>
                       ?
                       <Tooltip>
-                        <span style={{ textAlign: 'left' }}>
+                        <p style={{ textAlign: 'left', fontWeight: '400' }}>
                           This is the last protocol price for the Bridge.vETH
                           currency.
-                        </span>
+                        </p>
                       </Tooltip>
                     </StyledQuestionTip>
                   </p>
                 </StyledBlueRow>
                 <StyledBlueRowContent>
-                  <p style={{ textTransform: 'none' }}>
-                    Bridge.vETH
-                  </p>
+                  <p style={{ textTransform: 'none' }}>Bridge.vETH</p>
                   <p className="middle">
                     {Intl.NumberFormat('en-US', {
                       style: 'decimal',
@@ -441,19 +464,47 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
 
               <BlueBarTextWrapper top>
                 <StyledBlueRow>
-                  <p>Bridge.vETH reserve CURRENCIES</p>
-                  <p className="middle">Reserves</p>
+                  <p>
+                    Bridge.vETH
+                    <br />
+                    reserve currencies
+                  </p>
+                  <p className="middle">In reserves</p>
                   <p className="last">
                     Price in DAI
                     <StyledQuestionTip>
                       ?
                       <Tooltip>
-                        <span style={{ textAlign: 'left' }}>
+                        <p style={{ textAlign: 'left', fontWeight: '400' }}>
                           The protocol price of the reserves in DAI, compared to
                           the market price. (if the percentage is up, the
                           protocol price is higher than the market price, and
                           vice versa)
-                        </span>
+                        </p>
+                      </Tooltip>
+                    </StyledQuestionTip>
+                  </p>
+                  <p className="last" style={{ alignItems: 'flex-end' }}>
+                    Compared
+                    <br />
+                    to market
+                    <StyledQuestionTip
+                      style={{ marginBottom: '2px', marginLeft: '0' }}
+                    >
+                      ?
+                      <Tooltip>
+                        <p style={{ textAlign: 'left', fontWeight: '400' }}>
+                          The protocol price compared to the market price
+                          (source:{' '}
+                          <a
+                            href="https://www.coingecko.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            coingecko.com
+                          </a>
+                          ).
+                        </p>
                       </Tooltip>
                     </StyledQuestionTip>
                   </p>
@@ -469,10 +520,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                   const percent = Math.abs(token.daiPrice / token.price) - 1
 
                   return (
-                    <StyledBlueRowContent
-                      key={index}
-                      style={{ marginBottom: '5px' }}
-                    >
+                    <StyledBlueRowContent key={index} className="breaker">
                       <p>{token.name}</p>
                       <p className="middle">
                         {Intl.NumberFormat('en-US', {
@@ -482,39 +530,40 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                         }).format(token.amount)}
                       </p>
 
-                      <p className={`last ${rate}`}>
+                      <p className="last">
                         {Intl.NumberFormat('en-US', {
                           style: 'decimal',
                           maximumFractionDigits: 2,
                           minimumFractionDigits: 2,
                         }).format(token.daiPrice)}
-
-                        <span className="equal">
-                          {rate !== 'equal' && <BiSolidUpArrow />}
-                          {Intl.NumberFormat('en-US', {
-                            style: 'percent',
-                            maximumFractionDigits: 2,
-                            minimumFractionDigits: 2,
-                          }).format(percent)}
-                        </span>
+                      </p>
+                      <p className={`equal ${rate}`}>
+                        {rate !== 'equal' && <BiSolidUpArrow />}
+                        {Intl.NumberFormat('en-US', {
+                          style: 'percent',
+                          maximumFractionDigits: 2,
+                          minimumFractionDigits: 2,
+                        }).format(percent)}
                       </p>
                     </StyledBlueRowContent>
                   )
                 })}
               </BlueBarTextWrapper>
+              <StyledLiquid>
+                <p>Total value of liquidity</p>
+                <p className="last">
+                  {Intl.NumberFormat('en-US', {
+                    style: 'decimal',
 
-              <h4 style={{ fontWeight: '400' }}>
-                Total market value of liquidity:{' '}
-                {Intl.NumberFormat('en-US', {
-                  style: 'decimal',
-
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 6,
-                }).format(
-                  ConversionList.bridge.daiPrice * ConversionList.bridge.amount
-                )}{' '}
-                DAI
-              </h4>
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 6,
+                  }).format(
+                    ConversionList.bridge.daiPrice *
+                      ConversionList.bridge.amount
+                  )}{' '}
+                  DAI
+                </p>
+              </StyledLiquid>
             </EthTopLeft>
             <EthTopRight>
               <h5>Verus-Ethereum Bridge</h5>

@@ -278,7 +278,6 @@ const Jumbotron = ({
                           fontSize="xs"
                           as="a"
                           margin="45px 0 0"
-                          target="_blank"
                         >
                           {ethlink.text}
                         </Button>
