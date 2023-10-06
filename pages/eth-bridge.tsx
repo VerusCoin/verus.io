@@ -11,13 +11,22 @@ import FetchCoversion from '@/lib/fetchCoversion'
 import { GetServerSideProps } from 'next'
 import { BiSolidUpArrow } from 'react-icons/bi'
 // import { useForm } from 'react-hook-form'
-import {useNotifyContext} from '@/lib/Contexts'
+import { useNotifyContext } from '@/lib/Contexts'
 const title = 'Verus-Ethereum Bridge'
 const description = 'Use the non-custodial bridge'
 
+const StyledEthBridgeGrid = styled(Grid)`
+  padding: 0;
+
+  ${media.tablet`
+    padding: 0 20px;
+    
+  `}
+`
+
 const EthBridgeTopCard = styled.div`
   ${bgColor('white')}
-  border-radius: 8px;
+
   padding: 20px;
   justify-content: space-between;
 
@@ -26,6 +35,9 @@ const EthBridgeTopCard = styled.div`
   gap: 20px;
 
   flex-direction: column;
+  ${media.tablet`
+    border-radius: 8px;  
+  `}
   ${media.desktop`
     flex-direction: row;
     padding: 80px;
@@ -84,7 +96,7 @@ const EthTopRight = styled.div`
 const StyledBadgeRow = styled.div`
   display: flex;
   flex-direction: column;
-
+  margin-bottom: 5px;
   span {
     ${fontFam('geoHead')}
     font-size: 14px;
@@ -97,20 +109,28 @@ const StyledBadgeRow = styled.div`
   `}
 `
 
-const PreBadge = styled.p`
+const PreBadge = styled.div`
   ${fontFam('geoHead')}
-  width: 125px;
-  height: 24px;
+  width: 104px !important;
+  height: 17px !important;
   flex-shrink: 0;
   border-radius: 7px;
   background: #008f06;
-  font-size: 12px;
+  font-size: 10px;
   diplay: flex;
+  align-items: center;
   justify-content: center;
-  padding: 5px 7px;
+  // padding: 5px 7px;
   text-align: center;
   color: white;
   margin-right: 10px;
+  margin-bottom: 10px;
+  ${media.tablet`
+    margin-bottom: 0;
+    font-size: 12px;
+    width: 125px !important;
+  height: 24px !important;
+  `}
 `
 
 const DateP = styled.p`
@@ -173,7 +193,9 @@ const Tooltip = styled.div<any>`
     display: block;
     visibility: visible;
   }
-
+  p:first-child {
+    width: 100% !important;
+  }
   &:after {
     content: ' ';
     position: absolute;
@@ -217,6 +239,7 @@ const StyledBlueRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: flex-end;
+
   width: 100%;
   padding: 2px 5px;
   p:first-child {
@@ -248,48 +271,59 @@ const StyledBlueRow = styled.div`
   p.equal {
     text-align: right;
     display: flex;
-
+    font-size: 12px;
     justify-content: end;
     align-items: center;
     svg {
-      margin-right: 4px;
+      margin-right: 2px;
+      height: 10px;
     }
     &.less {
-      color: red !important;
+      color: #ea1818 !important;
       svg {
         transform: rotate(180deg);
       }
     }
     &.equal {
-      color: black;
+      color: #939393;
+
       svg {
         visible: hidden;
       }
     }
     &.greater {
-      color: green !important;
+      color: #229904 !important;
     }
   }
   ${media.tablet`
   padding: 2px 10px;
+  
   p{
     font-size: 12px;
-  }
-  p.last {
-   
-   text-align:left;
+    &.equal {
+      font-size: 16px;
+    }
+    &.last {
+    text-align:left;
     align-items: center;
     justify-content: end;
     span{
       margin-left: 5px;
     }
+    svg{
+      margin-right: 4px;
+      height: 12px;
+    }
   }
+  
+  
   `}
 `
 
 const StyledBlueRowContent = styled(StyledBlueRow)`
   padding: 14px;
   border-radius: 7px;
+  align-items: center;
   border: 1px solid #3165d4;
   background: rgba(49, 101, 212, 0.08);
   &.breaker {
@@ -396,7 +430,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
     <>
       <NextSeo title={title} description={description} />
       <MainLayout>
-        <Grid>
+        <StyledEthBridgeGrid>
           <EthBridgeTopCard>
             <EthTopLeft>
               <StyledBadgeRow>
@@ -444,7 +478,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                     </StyledQuestionTip>
                   </p>
                 </StyledBlueRow>
-                <StyledBlueRowContent>
+                <StyledBlueRowContent style={{ background: 'none' }}>
                   <p style={{ textTransform: 'none' }}>Bridge.vETH</p>
                   <p className="middle">
                     {Intl.NumberFormat('en-US', {
@@ -476,10 +510,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                       ?
                       <Tooltip>
                         <p style={{ textAlign: 'left', fontWeight: '400' }}>
-                          The protocol price of the reserves in DAI, compared to
-                          the market price. (if the percentage is up, the
-                          protocol price is higher than the market price, and
-                          vice versa)
+                          The protocol price of the reserves in DAI.
                         </p>
                       </Tooltip>
                     </StyledQuestionTip>
@@ -494,7 +525,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                       ?
                       <Tooltip>
                         <p style={{ textAlign: 'left', fontWeight: '400' }}>
-                          The protocol price compared to the market price
+                          The protocol price compared to CoinGecko market price
                           (source:{' '}
                           <a
                             href="https://www.coingecko.com/"
@@ -543,7 +574,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                           style: 'percent',
                           maximumFractionDigits: 2,
                           minimumFractionDigits: 2,
-                        }).format(percent)}
+                        }).format(Math.abs(percent))}
                       </p>
                     </StyledBlueRowContent>
                   )
@@ -556,7 +587,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                     style: 'decimal',
 
                     minimumFractionDigits: 2,
-                    maximumFractionDigits: 6,
+                    maximumFractionDigits: 2,
                   }).format(
                     ConversionList.bridge.daiPrice *
                       ConversionList.bridge.amount
@@ -706,7 +737,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
               </div>
             </StyledBottomCard>
           </EthBridgeTopCard> */}
-        </Grid>
+        </StyledEthBridgeGrid>
       </MainLayout>
     </>
   )
