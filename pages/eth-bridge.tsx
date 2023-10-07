@@ -267,6 +267,9 @@ const StyledBlueRow = styled.div`
     display: flex;
 
     justify-content: end;
+    &.pricein {
+      align-items: flex-end;
+    }
   }
   p.equal {
     text-align: right;
@@ -307,12 +310,18 @@ const StyledBlueRow = styled.div`
     text-align:left;
     align-items: center;
     justify-content: end;
-    span{
-      margin-left: 5px;
-    }
-    svg{
-      margin-right: 4px;
-      height: 12px;
+      span{
+        margin-left: 5px;
+      }
+      svg{
+        margin-right: 4px;
+        height: 12px;
+      }
+      &.pricein {
+        br {
+          display: none;
+        }
+      }
     }
   }
   
@@ -444,7 +453,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
               </StyledBadgeRow>
               <BlueBarTextWrapper className="toptop">
                 <StyledBlueRow>
-                  <p>Liquidity pool</p>
+                  <p style={{ marginLeft: '2px' }}>Liquidity pool</p>
                   <p className="middle">
                     Supply
                     <StyledQuestionTip>
@@ -504,8 +513,9 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                     reserve currencies
                   </p>
                   <p className="middle">In reserves</p>
-                  <p className="last">
-                    Price in DAI
+                  <p className="last pricein">
+                    Price <br />
+                    in DAI
                     <StyledQuestionTip>
                       ?
                       <Tooltip>
@@ -516,11 +526,10 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                     </StyledQuestionTip>
                   </p>
                   <p className="last" style={{ alignItems: 'flex-end' }}>
-                    Compared
-                    <br />
-                    to market
+                    Compared to <br />
+                    CoinGecko
                     <StyledQuestionTip
-                      style={{ marginBottom: '2px', marginLeft: '0' }}
+                      style={{ marginBottom: '2px', marginLeft: '2px' }}
                     >
                       ?
                       <Tooltip>
