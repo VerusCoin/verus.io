@@ -148,9 +148,7 @@ const BlueBarTextWrapper = styled.div<any>`
   align-items: flex-end;
   ${media.desktop`
     ${(props: any) => props.top && 'margin-top: 60px;'}
-    &.toptop {
-    margin-top: 0;
-  }
+    
   `}
 `
 
