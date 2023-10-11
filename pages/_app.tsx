@@ -21,25 +21,28 @@ export default function App({ Component, pageProps }: AppProps): any {
     refreshInterval: 60000,
   })
   const [initialize, setInitialize] = useState(true)
-  const dateDiff =
-    (new Date('06/03/2023').getTime() - new Date().getTime()) /
-    (1000 * 3600 * 24)
+  // const dateDiff =
+  //   (new Date('06/03/2023').getTime() - new Date().getTime()) /
+  //   (1000 * 3600 * 24)
   useEffect(() => {
-    if (initialize) {
-      // if (data?.blockCount && data.blockCount > 0) {
-      //   setNotify(true)
-      //   setInitialize(false)
-      // } else {
-      //   setNotify(false)
-      // }
-      if (dateDiff > 0) {
-        setNotify(true)
-        setInitialize(false)
-      } else {
-        setNotify(false)
+    if (data) {
+      if (initialize) {
+        if (data?.blockCount && data.blockCount > 0) {
+          setNotify(true)
+          setInitialize(false)
+        } else {
+          setNotify(false)
+        }
+
+        // if (dateDiff > 0) {
+        //   setNotify(true)
+        //   setInitialize(false)
+        // } else {
+        //   setNotify(false)
+        // }
       }
     }
-  }, [])
+  }, [data])
 
   return (
     <>
@@ -58,6 +61,7 @@ export default function App({ Component, pageProps }: AppProps): any {
           notify,
           setNotify,
           blockString: data?.blockString,
+          blockCount: data?.blockCount,
         }}
       >
         <ThemeProvider theme={primary}>
