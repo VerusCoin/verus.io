@@ -417,7 +417,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
   const [timeLeft, setTimeLeft] = useState<string>()
 
   const { data: ConversionList } = useSWR('/api/conversion', fetcher, {
-    refreshInterval: 60000,
+    refreshInterval: 6000,
     fallback: bridgeFallback,
   })
 
