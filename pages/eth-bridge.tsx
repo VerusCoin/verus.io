@@ -614,7 +614,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                 fontSize="menu"
                 as="a"
                 target="_blank"
-                href="https://verus.io"
+                href="https://eth.verusbridge.io"
                 svg={{ type: 'miniTab', rotate: false }}
               >
                 Connect to the bridge
@@ -625,7 +625,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                 transparent
                 color="#3165D4"
                 svg={{ type: 'miniTab', rotate: false }}
-                href="https://medium.com/veruscoin/community-currencies-a-case-study-to-explore-new-technical-possibilities-ede897433b55"
+                href={process.env.NEXT_PUBLIC_NOTIFY_BANNER_LINK}
                 as="a"
                 margin="45px 0 0"
                 target="_blank"
