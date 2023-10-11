@@ -1,3 +1,4 @@
+export const Min1 = 60000 //1 minute
 export const Min5 = 300000 //5 minutes
 export const Min15 = 900000 //15 minutes
 export const Hour12 = 43200000 //12 Hours
