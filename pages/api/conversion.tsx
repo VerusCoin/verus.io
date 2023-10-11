@@ -75,7 +75,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           ...token,
           price: 1,
         }
-      case 'MKR':
+      case 'MKR.vETH':
         return {
           ...token,
           price: conversions.find((c) => c.symbol === 'mkr')?.price || 1449.5,
