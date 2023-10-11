@@ -1,9 +1,9 @@
-import { VerusIdInterface } from 'verusid-ts-client'
-
-const VerusTestRPC = new VerusIdInterface(
-  'VRSCTEST',
-  'https://api.verustest.net'
-)
+//import { VerusIdInterface } from 'verusid-ts-client'
+import { VerusRPC } from './VerusIdLogin/LoginConsentRequest'
+//const VerusTestRPC = new VerusIdInterface(
+//  'VRSCTEST',
+//  'https://api.verustest.net'
+//)
 
 export type Conversion = {
   name: string
@@ -12,8 +12,8 @@ export type Conversion = {
 }
 
 const FetchCoversion = async () => {
-  const res = await VerusTestRPC.interface.getCurrency('vrsc-eth-bridge')
-  const block = await VerusTestRPC.getCurrentHeight()
+  const res = await VerusRPC.interface.getCurrency('bridge.veth')
+  const block = await VerusRPC.getCurrentHeight()
   const bestState = res.result?.bestcurrencystate
   const currencyNames = res.result?.currencynames || {}
   const currencies = bestState?.reservecurrencies
