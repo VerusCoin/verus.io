@@ -424,11 +424,12 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
   useEffect(() => {
     if (blockCount) {
       //1 block = approx 1 minute
-      const days = Math.floor(blockCount / 1440)
+      const newBlockCount = blockCount * 1.03
+      const days = Math.floor((newBlockCount / 1440)
 
-      const hours = Math.floor((blockCount % 1440) / 60)
+      const hours = Math.floor((newBlockCount % 1440) / 60)
 
-      const minutes = Math.floor((blockCount % 1440) % 60)
+      const minutes = Math.floor((newBlockCount % 1440) % 60)
       setTimeLeft(`${days}d, ${hours}h, ${minutes}m`)
     }
   }, [blockCount])
