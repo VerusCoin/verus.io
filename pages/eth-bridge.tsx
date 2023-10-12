@@ -627,7 +627,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                 href="https://eth.verusbridge.io"
                 svg={{ type: 'miniTab', rotate: false }}
               >
-                Connect to the bridge
+                Go to the bridge website
               </Button>
               <Button
                 className="btn3"
