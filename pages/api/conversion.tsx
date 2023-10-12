@@ -1,9 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import FetchConversion from '@/lib/fetchCoversion'
 import cache from 'memory-cache'
-import { Min15 } from '@/lib/clocks'
+import { Min1, Min15 } from '@/lib/clocks'
 
 const cacheConversionPrice = '@conversionPrice'
+const cacheConverstionBridge = '@converstionBridge'
 
 const CoinGeckoVRSC = 'https://api.coingecko.com/api/v3/coins/verus-coin'
 const CoinGeckoETH = 'https://api.coingecko.com/api/v3/coins/ethereum'
@@ -23,7 +24,7 @@ type Token = {
 let index = 1
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   let result: any = req.query
-  result = await FetchConversion()
+  
   if (index) {
     // NOTE: Comment below for master branch.
     cache.del(cacheConversionPrice)
@@ -55,7 +56,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   } else {
     conversions = cache.get(cacheConversionPrice)
   }
-
+  if (!cache.get(cacheConverstionBridge)) {
+    result = await FetchConversion()
+    cache.put(cacheConverstionBridge, result, Min1)
+  } else {
+    result = cache.get(cacheConverstionBridge)
+  }
+  
   result.list = result.list.map((token: Token) => {
     switch (token.name) {
       case 'VRSCTEST':
@@ -75,7 +82,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           ...token,
           price: 1,
         }
-      case 'MKR':
+      case 'MKR.vETH':
         return {
           ...token,
           price: conversions.find((c) => c.symbol === 'mkr')?.price || 1449.5,

@@ -7,11 +7,12 @@ import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/elements'
 import { FaMedium } from 'react-icons/fa'
 import useSWR from 'swr'
-import FetchCoversion from '@/lib/fetchCoversion'
+// import FetchCoversion from '@/lib/fetchCoversion'
 import { GetServerSideProps } from 'next'
 import { BiSolidUpArrow } from 'react-icons/bi'
 // import { useForm } from 'react-hook-form'
 import { useNotifyContext } from '@/lib/Contexts'
+import { Conversion } from '@/lib/fetchCoversion'
 const title = 'Verus-Ethereum Bridge'
 const description = 'Use the non-custodial bridge'
 
@@ -415,24 +416,36 @@ const blockNumber: number = parseInt(
 const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
   const { blockCount } = useNotifyContext()
   const [timeLeft, setTimeLeft] = useState<string>()
-
+  const [poolLiquidity, setPoolLiquidity] = useState(0)
   const { data: ConversionList } = useSWR('/api/conversion', fetcher, {
-    refreshInterval: 60000,
+    refreshInterval: 60_000, //every minute
     fallback: bridgeFallback,
   })
 
   useEffect(() => {
     if (blockCount) {
       //1 block = approx 1 minute
-      const days = Math.floor(blockCount / 1440)
+      const newBlockCount = blockCount * 1.05
+      const days = Math.floor(newBlockCount / 1440)
 
-      const hours = Math.floor((blockCount % 1440) / 60)
+      const hours = Math.floor((newBlockCount % 1440) / 60)
 
-      const minutes = Math.floor((blockCount % 1440) % 60)
+      const minutes = Math.floor((newBlockCount % 1440) % 60)
       setTimeLeft(`${days}d, ${hours}h, ${minutes}m`)
     }
   }, [blockCount])
 
+  useEffect(() => {
+    if (ConversionList) {
+      const amount = ConversionList.list.reduce(
+        (total: number, token: Conversion & { price: number }) =>
+          total + token.amount * token.price,
+        0
+      )
+      setPoolLiquidity(amount)
+    }
+  }, [ConversionList])
+  
   return (
     <>
       <NextSeo title={title} description={description} />
@@ -595,10 +608,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
 
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2,
-                  }).format(
-                    ConversionList.bridge.daiPrice *
-                      ConversionList.bridge.amount
-                  )}{' '}
+                  }).format(poolLiquidity)}{' '}
                   DAI
                 </p>
               </StyledLiquid>
@@ -617,7 +627,7 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                 href="https://eth.verusbridge.io"
                 svg={{ type: 'miniTab', rotate: false }}
               >
-                Connect to the bridge
+                Go to the bridge website
               </Button>
               <Button
                 className="btn3"
@@ -753,11 +763,13 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
 export default EthBridge
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const bridgeInfo = await FetchCoversion()
-  bridgeInfo.list = bridgeInfo?.list?.map((token) => ({
-    ...token,
-    price: token.daiPrice,
-  }))
+  const bridgeInfo = await fetch('http://localhost:3000/api/conversion').then(
+    (res) => res.json()
+  )
+  // bridgeInfo.list = bridgeInfo?.list?.map((token) => ({
+  //   ...token,
+  //   price: token.daiPrice,
+  // }))
 
   return {
     props: {
