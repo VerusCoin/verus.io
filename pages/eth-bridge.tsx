@@ -12,7 +12,7 @@ import { GetServerSideProps } from 'next'
 import { BiSolidUpArrow } from 'react-icons/bi'
 // import { useForm } from 'react-hook-form'
 import { useNotifyContext } from '@/lib/Contexts'
-import { Conversion } from '@/lib/fetchCoversion'
+
 const title = 'Verus-Ethereum Bridge'
 const description = 'Use the non-custodial bridge'
 
