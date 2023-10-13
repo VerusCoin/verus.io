@@ -12,7 +12,7 @@ import { GetServerSideProps } from 'next'
 import { BiSolidUpArrow } from 'react-icons/bi'
 // import { useForm } from 'react-hook-form'
 import { useNotifyContext } from '@/lib/Contexts'
-import { Conversion } from '@/lib/fetchCoversion'
+
 const title = 'Verus-Ethereum Bridge'
 const description = 'Use the non-custodial bridge'
 
@@ -437,11 +437,12 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
 
   useEffect(() => {
     if (ConversionList) {
-      const amount = ConversionList.list.reduce(
-        (total: number, token: Conversion & { price: number }) =>
-          total + token.amount * token.price,
-        0
-      )
+      const amount = ConversionList.bridge.daiPrice * ConversionList.bridge.amount
+  //    const amount = ConversionList.list.reduce(
+  //      (total: number, token: Conversion & { price: number }) =>
+  //        total + token.amount * token.price,
+  //      0
+  //    )
       setPoolLiquidity(amount)
     }
   }, [ConversionList])
