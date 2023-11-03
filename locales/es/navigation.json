@@ -58,10 +58,15 @@
       "title": "Exchanges",
       "description": "Buy $VRSC"
     },
+    "verusBridge": {
+      "title": "Verus-Ethereum Bridge",
+      "description": "The non-custodial bridge"
+    },
     "loginDemo": {
       "title": "VerusID Login Demo",
       "description": "Demo using VerusID to login in"
     }
+    
   },
   "docs": {
     "title": "Docs & Support",

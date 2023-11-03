@@ -78,6 +78,21 @@ const StyledCard = styled.div<any>`
 const ExchangeCard = ({ exchanges }: IExchanges) => {
   return (
     <StyledContainer>
+      <StyledCard>
+        <div>
+          <Img className="verusBridge" name="verusBridge" logo height={70} />
+        </div>
+        <Button
+          transparent
+          svg={{ type: 'tab', rotate: false }}
+          href="https://eth.verusbridge.io"
+          as="a"
+          color="#3165d4"
+          target="_blank"
+        >
+          Verus Defi AMM
+        </Button>
+      </StyledCard>
       {exchanges.map((element: IExchange, index: number) => (
         <StyledCard key={index}>
           <div>

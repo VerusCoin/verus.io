@@ -2,18 +2,27 @@
   "jumbotron": {
     "title": "Welcome to Verus",
     "heading": "The Internet of Value",
+    "text1": "Unstoppable & people-powered public infrastructure.",
+    "text2": "A base to build Web3, and to empower individuals & communities.",
     "buttons": {
-      "first": "Create businesses with Verus",
-      "second": "Start mining and staking",
+      "first": "Build with Verus",
+      "second": "Learn VerusID",
       "third": "Protocol foundations",
       "fourth": "VerusID"
     },
-    "youtube": "Watch introductory video on YouTube"
+    "youtube": "Michael Toutonghi, lead developer, examines the Verus protocol"
   },
   "banner": {
     "title": "Get started",
     "text": "Learn how to get VRSC, which wallets to use and how to interact with the Verus network.",
     "link": "Learn more"
+  },
+  "multiChainCard": {
+    "title": "The multi-chain & multi-currency L0/1 blockchain protocol.",
+    "description": "The rent-free protocol enables novel ways to create value for individuals, communities, businesses, organizations, and governments.",
+    "btn1": "Protocol Foundations",
+    "btn2": "Download Vision Paper",
+    "medium": "Read on Community Contributed Value"
   },
   "cardBanner": "Verus is scalable public infrastructure for the world.",
   "cards": {

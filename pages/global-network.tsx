@@ -151,7 +151,7 @@ const Foundations = () => {
                 <DefaultText fam="geoHead" fontSz="sm">
                   {t('coins:ethereum')}
                 </DefaultText>
-                <NetTag net="test" unMargin />
+                <NetTag net="main" unMargin />
               </StyledRow>
 
               {/* <StyledRow>
