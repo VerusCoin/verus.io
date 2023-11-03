@@ -8,6 +8,10 @@ import { IExchanges } from '@/types/exchanges'
 export const ExchangesJSON: IExchanges = {
   exchanges: [
     {
+      logo: 'verusBridge',
+      url: 'eth.verusbridge.io',
+    },
+    {
       logo: 'safeTrade',
       url: 'safe.trade',
     },

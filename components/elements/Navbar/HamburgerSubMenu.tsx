@@ -7,9 +7,10 @@ import Link from 'next/link'
 
 const StyledSubMenu = styled.ul<{ openSubMenu: boolean }>`
   overflow: hidden;
-  max-height: ${(props) => (props.openSubMenu ? '400px' : '0')};
+  max-height: ${(props) => (props.openSubMenu ? '500px' : '0')};
+
   height: ${(props) => (props.openSubMenu ? 'auto' : '0')};
-  transition: max-height ${(props) => props.theme.transitions.fast};
+  transition: max-height ${(props) => props.theme.transitions.fast} ease-in-out;
   margin: 0;
   padding: 0;
   list-style: none;

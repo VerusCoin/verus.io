@@ -13,7 +13,7 @@ import { BiSolidUpArrow } from 'react-icons/bi'
 // import { useForm } from 'react-hook-form'
 // import { useNotifyContext } from '@/lib/Contexts'
 
-const title = 'Verus-Ethereum Bridge'
+const title = 'Verus DeFi AMM'
 const description = 'Use the non-custodial bridge'
 
 const StyledEthBridgeGrid = styled(Grid)`
