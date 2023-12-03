@@ -6,7 +6,7 @@ import { DefaultText, SVGs } from '@/components/elements'
 import { useNotifyContext } from '@/lib/Contexts'
 
 const StyledNotification = styled.div<any>`
-  ${bgColor('#0F0F0F')};
+  ${bgColor('blue')};
   display: ${(props: any) => (props.notify ? 'flex' : 'none')};
   position: fixed;
   top: 0;
@@ -70,11 +70,11 @@ const CloseButton = styled.button`
 const StyledReadMore = styled.button`
   width: fit-content;
   padding: 4px 12px;
-  // border: solid 1px white;
+  border: solid 1px white;
   background: transparent;
-  // border-radius: 12px;
+  border-radius: 12px;
   color: white;
-  //text-decoration: none;
+  text-decoration: none;
 
   ${fontSize('xxs')}
   &:hover {
