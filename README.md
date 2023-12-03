@@ -1,3 +1,6 @@
+Discord has been setup to use nginx redirects so if need to find look for https://verus.io/discord
+
+
 # Next.js Boilerplate
 
 > Easy to use front-end boilerplate to start developing your Next.js application right away 💯

@@ -56,7 +56,7 @@ const StyledCard = styled.div<any>`
 `
 
 const SocialList: Record<string, string> = {
-  discord: 'https://discord.com/invite/VRKMP2S',
+  discord: 'https://verus.io/discord',
   twitter: 'https://twitter.com/veruscoin',
   github: 'https://github.com/VerusCoin',
   telegram: 'https://t.me/veruscommunity',

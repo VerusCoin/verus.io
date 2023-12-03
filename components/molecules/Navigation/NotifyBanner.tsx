@@ -6,7 +6,8 @@ import { DefaultText, SVGs } from '@/components/elements'
 import { useNotifyContext } from '@/lib/Contexts'
 
 const StyledNotification = styled.div<any>`
-  ${bgColor('#0F0F0F')};
+  ${bgColor('red')};
+  color: yellow;
   display: ${(props: any) => (props.notify ? 'flex' : 'none')};
   position: fixed;
   top: 0;
