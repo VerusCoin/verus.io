@@ -6,12 +6,12 @@ import { Min1, Min15 } from '@/lib/clocks'
 const cacheConversionPrice = '@conversionPrice'
 const cacheConverstionBridge = '@converstionBridge'
 
-const CoinGeckoVRSC = 'https://api.coingecko.com/api/v3/coins/verus-coin'
-const CoinGeckoETH = 'https://api.coingecko.com/api/v3/coins/ethereum'
-const CoinGeckoMRK = 'https://api.coingecko.com/api/v3/coins/maker'
-const CoinGeckoDAI = 'https://api.coingecko.com/api/v3/coins/dai'
-const urls = [CoinGeckoVRSC, CoinGeckoETH, CoinGeckoMRK, CoinGeckoDAI]
-
+// const CoinGeckoVRSC = 'https://api.coingecko.com/api/v3/coins/verus-coin'
+// const CoinGeckoETH = 'https://api.coingecko.com/api/v3/coins/ethereum'
+// const CoinGeckoMRK = 'https://api.coingecko.com/api/v3/coins/maker'
+// const CoinGeckoDAI = 'https://api.coingecko.com/api/v3/coins/dai'
+// const urls = [CoinGeckoVRSC, CoinGeckoETH, CoinGeckoMRK, CoinGeckoDAI]
+const CoinpaprikaURL = 'https://api.coinpaprika.com/v1/tickers'
 type Conversions = {
   symbol: string
   price: number
@@ -32,23 +32,38 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     index = 0
   }
   let conversions: Conversions[] = [
-    { symbol: 'vrsc', price: 0.412836 },
-    { symbol: 'eth', price: 1666.45 },
-    { symbol: 'mkr', price: 1449.5 },
-    { symbol: 'dai', price: 1 },
+    { symbol: 'vrsc', price: 0 },
+    { symbol: 'eth', price: 0 },
+    { symbol: 'mkr', price: 0 },
+    { symbol: 'dai', price: 0 },
   ]
   if (!cache.get(cacheConversionPrice)) {
     try {
-      conversions = await Promise.all(
-        urls.map(async (url) => {
-          return await fetch(url)
-            .then((res) => res.json())
-            .then((c): { symbol: string; price: number } => ({
-              symbol: c.symbol,
-              price: c.market_data.current_price.usd,
-            }))
-        })
-      )
+       // conversions = await Promise.all(
+    //   urls.map(async (url) => fetch(url)
+    //     .then((res) => res.json())
+    //     .then((c) => ({
+    //       symbol: c.symbol,
+    //       price: c.market_data.current_price.usd
+    //     })))
+    // )
+    conversions = await fetch(CoinpaprikaURL).then(res => res.json()).then(c => {
+      const m = conversions.map(t => {
+        switch (t.symbol) {
+          case 'vrsc':
+            return { symbol: t.symbol, price: c.filter(x => x.id === 'vrsc-verus-coin')[ 0 ].quotes.USD.price || 0 }
+          case 'eth':
+            return { symbol: t.symbol, price: c.filter(x => x.id === 'eth-ethereum')[ 0 ].quotes.USD.price || 0 }
+          case 'mkr':
+            return { symbol: t.symbol, price: c.filter(x => x.id === 'mkr-maker')[ 0 ].quotes.USD.price || 0 }
+          case 'dai':
+            return { symbol: t.symbol, price: c.filter(x => x.id === 'dai-dai')[ 0 ].quotes.USD.price || 0 }
+          default:
+            return { symbol: t.symbol, price: 0 }
+        }
+      })
+      return m
+    })
     } catch (error) {
       console.error('%s: fetching prices %s', Date().toString(), error)
     }
@@ -70,12 +85,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return {
           ...token,
           price:
-            conversions.find((c) => c.symbol === 'vrsc')?.price || 0.412836,
+            conversions.find((c) => c.symbol === 'vrsc')?.price || 0,
         }
       case 'vETH':
         return {
           ...token,
-          price: conversions.find((c) => c.symbol === 'eth')?.price || 1666.45,
+          price: conversions.find((c) => c.symbol === 'eth')?.price || 0,
         }
       case 'DAI.vETH':
         return {
@@ -85,7 +100,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       case 'MKR.vETH':
         return {
           ...token,
-          price: conversions.find((c) => c.symbol === 'mkr')?.price || 1449.5,
+          price: conversions.find((c) => c.symbol === 'mkr')?.price || 0,
         }
       // return { ...token, price: vrscPrice }
       default:
