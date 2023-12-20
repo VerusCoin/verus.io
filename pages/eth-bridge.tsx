@@ -547,14 +547,14 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                       ?
                       <Tooltip>
                         <p style={{ textAlign: 'left', fontWeight: '400' }}>
-                          The protocol price compared to Coinpaprika market price
-                          (source:{' '}
+                          The protocol price compared to Coinpaprika market
+                          price (source:{' '}
                           <a
                             href="https://coinpaprika.com/"
                             target="_blank"
                             rel="noreferrer"
                           >
-                            coingecko.com
+                            Coinpaprika.com
                           </a>
                           ).
                         </p>
@@ -591,12 +591,16 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                         }).format(token.daiPrice)}
                       </p>
                       <p className={`equal ${rate}`}>
-                        {token.price !== 0 ? rate !== 'equal' && <BiSolidUpArrow /> : null}
-                        {token.price !== 0 ? Intl.NumberFormat('en-US', {
-                          style: 'percent',
-                          maximumFractionDigits: 2,
-                          minimumFractionDigits: 2,
-                        }).format(Math.abs(percent)) : "Error"}
+                        {token.price !== 0
+                          ? rate !== 'equal' && <BiSolidUpArrow />
+                          : null}
+                        {token.price !== 0
+                          ? Intl.NumberFormat('en-US', {
+                              style: 'percent',
+                              maximumFractionDigits: 2,
+                              minimumFractionDigits: 2,
+                            }).format(Math.abs(percent))
+                          : 'Error'}
                       </p>
                     </StyledBlueRowContent>
                   )
