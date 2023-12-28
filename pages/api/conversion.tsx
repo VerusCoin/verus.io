@@ -48,6 +48,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (index) {
     // NOTE: Comment below for master branch.
     cache.del(cacheConversionPrice)
+    cache.del(cacheConverstionBridge)
     // cache.clear()
     index = 0
   }
