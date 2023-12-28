@@ -540,21 +540,21 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                   </p>
                   <p className="last" style={{ alignItems: 'flex-end' }}>
                     Compared to <br />
-                    CoinGecko
+                    Coinpaprika
                     <StyledQuestionTip
                       style={{ marginBottom: '2px', marginLeft: '2px' }}
                     >
                       ?
                       <Tooltip>
                         <p style={{ textAlign: 'left', fontWeight: '400' }}>
-                          The protocol price compared to CoinGecko market price
-                          (source:{' '}
+                          The protocol price compared to Coinpaprika market
+                          price (source:{' '}
                           <a
-                            href="https://www.coingecko.com/"
+                            href="https://coinpaprika.com/"
                             target="_blank"
                             rel="noreferrer"
                           >
-                            coingecko.com
+                            Coinpaprika.com
                           </a>
                           ).
                         </p>
@@ -591,12 +591,16 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                         }).format(token.daiPrice)}
                       </p>
                       <p className={`equal ${rate}`}>
-                        {rate !== 'equal' && <BiSolidUpArrow />}
-                        {Intl.NumberFormat('en-US', {
-                          style: 'percent',
-                          maximumFractionDigits: 2,
-                          minimumFractionDigits: 2,
-                        }).format(Math.abs(percent))}
+                        {token.price !== 0
+                          ? rate !== 'equal' && <BiSolidUpArrow />
+                          : null}
+                        {token.price !== 0
+                          ? Intl.NumberFormat('en-US', {
+                              style: 'percent',
+                              maximumFractionDigits: 2,
+                              minimumFractionDigits: 2,
+                            }).format(Math.abs(percent))
+                          : 'Error'}
                       </p>
                     </StyledBlueRowContent>
                   )
