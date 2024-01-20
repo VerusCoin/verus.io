@@ -5,7 +5,7 @@ import { media } from 'styled-bootstrap-grid'
 import { bgColor, fontFam, fontSize } from '@/styles/helpers'
 import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/elements'
-import { FaMedium } from 'react-icons/fa'
+// import { FaMedium } from 'react-icons/fa'
 import useSWR from 'swr'
 // import FetchCoversion from '@/lib/fetchCoversion'
 import { GetServerSideProps } from 'next'
@@ -641,13 +641,12 @@ const EthBridge = ({ bridgeFallback }: { bridgeFallback: any }) => {
                 transparent
                 color="#3165D4"
                 svg={{ type: 'miniTab', rotate: false }}
-                href={process.env.NEXT_PUBLIC_NOTIFY_BANNER_LINK}
+                href="https://docs.verus.io/eth-bridge/"
                 as="a"
                 margin="45px 0 0"
                 target="_blank"
               >
-                <FaMedium size={24} className="medium" />
-                Learn more on Medium
+                Learn more on docs.verus.io
               </Button>
             </EthTopRight>
           </EthBridgeTopCard>
