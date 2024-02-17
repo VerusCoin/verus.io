@@ -35,6 +35,7 @@ const ServiceCard = ({
     user: verusUser,
     ...serviceAccount,
   }
+
   const [data, setData] = useState<Record<string, any> | null>(null)
 
   useEffect(() => {
@@ -62,8 +63,13 @@ const ServiceCard = ({
   }
 
   const [show, setShow] = useState(false)
-  let shortUrl: string | string[] =
-    serviceAccount.i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw.toString()
+  let shortUrl: string | string[]
+  if (serviceAccount.i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw) {
+    shortUrl = serviceAccount?.i9TbCypmPKRpKPZDjk3YcCEZXK6wmPTXjw.toString()
+  } else {
+    shortUrl = ''
+  }
+
   try {
     let domain: URL | string = new URL(shortUrl)
     domain = domain.hostname
