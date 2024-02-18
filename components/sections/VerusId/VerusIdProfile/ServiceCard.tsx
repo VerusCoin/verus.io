@@ -11,8 +11,13 @@ import {
 import { ObjectFinder, capitalizeFirstLetter } from './Helper'
 import { VerusIDContext } from '@/lib/Contexts'
 import ServiceCardDropDown from './ServiceCardDropDown'
-// TODO: work on proof card
+import { isValidUrl, verusWebProof } from '@/lib/VerusIdProfile/Validators'
+import { ProofsJSON } from '@/data/vdxfid'
 
+// TODO: work on proof card
+type DataFetch = {
+  user: string
+} & AccountObjects
 const ServiceCard = ({
   type,
   serviceAccount,
@@ -31,24 +36,87 @@ const ServiceCard = ({
 
   const context = useContext(VerusIDContext)
   const verusUser = context.id
-  const dataFetch = {
+  const dataFetch: DataFetch = {
     user: verusUser,
     ...serviceAccount,
   }
 
   const [data, setData] = useState<Record<string, any> | null>(null)
-
   useEffect(() => {
-    fetch('/api/verificationCheck', {
-      method: 'POST',
-      body: JSON.stringify(dataFetch),
-    })
-      .then((res) => res.json())
-      .then((result) => setData(result))
+    const verifyKey = dataFetch[ProofsJSON.controller.vdxfid]
+
+    const validateService = async (verifyKey: string) => {
+      let result: any = { valid: 'error' }
+      let verifiedData: any
+      if (verifyKey.match('reddit')) {
+        //reddit specific
+        try {
+          verifiedData = await fetch(verifyKey + '.json')
+            .then((res) => res.json())
+            .then((data) => data[1].data.children[0].data.body)
+        } catch (error) {
+          setData(result)
+          verifiedData = undefined
+        }
+      } else if (verifyKey.match('twitter')) {
+        try {
+          verifiedData = await fetch(verifyKey).then((res) => res.text())
+        } catch (error) {
+          setData(result)
+          verifiedData = undefined
+        }
+      } else {
+        fetch('/api/verificationCheck', {
+          method: 'POST',
+          body: JSON.stringify(dataFetch),
+        })
+          .then((res) => res.json())
+          .then((result) => setData(result))
+        return
+      }
+
+      if (verifiedData) {
+        verifiedData = verusWebProof(verifiedData)
+        if (verifiedData) {
+          const validate = await fetch('/api/verusSignatureMessage', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ...verifiedData, Identity: dataFetch.user }),
+          }).then((res) => res.json())
+
+          result = validate
+        } else {
+          result.valid = 'error'
+        }
+      } else {
+        result.valid = 'error'
+      }
+
+      setData(result)
+    }
+    if (isValidUrl(verifyKey)) {
+      //we can force verifyKey is a string
+      validateService(verifyKey as unknown as string)
+    }
     return () => {
       setData(null)
     }
   }, [])
+
+  // useEffect(;() => {
+
+  //   // fetch('/api/verificationCheck', {
+  //   //   method: 'POST',
+  //   //   body: JSON.stringify(dataFetch),
+  //   // })
+  //   //   .then((res) => res.json())
+  //   //   .then((result) => setData(result))
+  //   // return () => {
+  //   //   setData(null)
+  //   // }
+  // }, [])
   if (data) {
     switch (data?.valid) {
       case 'true':
