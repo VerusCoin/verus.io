@@ -29,16 +29,6 @@ const Papers = ({
             <PaperCards paper={paper} key={index} />
           ))}
         </Grid>
-        {/* <StyledHeader>
-          <DefaultHeader as="h2" align="center">
-            {data.PapersJSON.title}
-          </DefaultHeader>
-        </StyledHeader>
-        <Section width={720}>
-          {PaperListData.map((paper: IPaper, index: number) => (
-            <PaperList key={index} {...paper} />
-          ))}
-        </Section> */}
       </MainLayout>
     </>
   )

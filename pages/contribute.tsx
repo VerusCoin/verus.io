@@ -80,12 +80,5 @@ const Contribute = () => {
   )
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     props: {
-//       data: null,
-//     },
-//   }
-// }
 
 export default Contribute

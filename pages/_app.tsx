@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps): any {
     (1000 * 3600 * 24)
   useEffect(() => {
     if (initialize) {
-      // if (data?.blockCount && data.blockCount > 0) {
+      // if (data?.blockCount && data.blockCount > 0) { //used for banner mannagement based on block height env
       //   setNotify(true)
       //   setInitialize(false)
       // } else {

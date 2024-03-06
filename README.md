@@ -1,10 +1,4 @@
-# Next.js Boilerplate
-
-> Easy to use front-end boilerplate to start developing your Next.js application right away 💯
-
-[**Learn More**](#learn-more)
-
----
+# Verus.io Website
 
 ## Highlights
 
@@ -89,6 +83,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 - [x] Write README.md
 - [ ] Add more examples
+- [ ] update dependecies
 
 ## License
 

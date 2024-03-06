@@ -25,31 +25,3 @@ export interface ICard {
   buttonHref?: string
 }
 
-// export interface IUniqueSellingPoints {
-//   title: string
-//   items: IUSP[]
-// }
-
-// export interface IUSP {
-//   color: 'blue' | 'darkblue' | 'white' | 'green'
-//   title: string
-//   text: string
-// }
-// export interface IUspBanner {
-//   svg?: 'usp'
-//   text: string
-//   button?: {
-//     href: string
-//     text: string
-//   }
-// }
-
-// export interface IServices {
-//   data: IServiceItem[]
-// }
-
-// export interface IServiceItem {
-//   svg: string
-//   title: string
-//   text: string
-// }

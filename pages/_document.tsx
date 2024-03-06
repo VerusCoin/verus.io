@@ -69,8 +69,6 @@ class MyDocument extends Document {
             content="/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
-
-          {/* <meta property="og:locale:alternate" content="es_ES" /> */}
         </Head>
         <body>
           <Main />

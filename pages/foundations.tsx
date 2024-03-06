@@ -11,8 +11,7 @@ import {
   CardHeader,
 } from '@/components/elements'
 import Modal, { useModal } from '@/components/elements/Modal/Modal'
-// import { GetStaticProps, InferGetStaticPropsType } from 'next'
-// import { FoundationsProps } from '@/types/foundations'
+
 import {
   EarthCard,
   KeychainCard,
@@ -20,10 +19,6 @@ import {
   NetworkCard,
   MultiChainCard,
 } from '@/components/sections/Foundation'
-
-// const ModalToggle=(modal, setModal)=>{
-
-// }
 
 const Foundations = () => {
   const { t } = useTranslation('foundation')
@@ -99,48 +94,13 @@ const Foundations = () => {
               </Button>
             </div>
           </NetworkCard>
-          {/* <Card
-            large
-            tabletStyles="padding: 50px 60px 100px;"
-            desktopStyles="padding: 100px 60px;"
-          >
-            <div>
-              <CardText
-                book
-                fontSz="xl"
-                margin="32px 64px;"
-                text={t('quantumProof.header')}
-              />
-              <CardText
-                book
-                fontSz="lg"
-                color="blue"
-                text={t('quantumProof.text')}
-                margin="56px 90px;"
-              />
-            </div>
-            <Button
-              onClick={() => multiModal('quantumProof')}
-              fontRegular
-              small
-              margin="50px 0 0"
-            >
-              {`${t('common:findMore')}`}
-            </Button>
-          </Card> */}
+
           <Card
-            // large
             tabletStyles="padding: 30px 5px 100px;"
             desktopStyles="padding: 30px 5px;"
-            // giantStyles="padding: 30px 50px;"
           >
             <div>
-              <CardHeader
-                // book
-                // fontSz="xl"
-                margin="32px 0;"
-                text={t('mev.header')}
-              />
+              <CardHeader margin="32px 0;" text={t('mev.header')} />
               <CardText
                 book
                 fontSz="mdlg"
@@ -149,12 +109,7 @@ const Foundations = () => {
                 margin="32px 0 ;"
               />
             </div>
-            <Button
-              onClick={() => multiModal('mev')}
-              fontRegular
-              small
-              // margin="50px 0 0"
-            >
+            <Button onClick={() => multiModal('mev')} fontRegular small>
               {`${t('common:findMore')}`}
             </Button>
           </Card>
@@ -173,12 +128,5 @@ const Foundations = () => {
   )
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     props: {
-//       data: null,
-//     },
-//   }
-// }
 
 export default Foundations

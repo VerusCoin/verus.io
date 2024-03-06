@@ -50,10 +50,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     CLI = await fetch(
       'https://api.github.com/repos/VerusCoin/VerusCoin/releases/latest'
     ).then((res) => res.json())
-    // console.log(CLI)
-    // Desktop = await fetch(
-    //   'https://api.github.com/repos/VerusCoin/Verus-Desktop/releases/latest'
-    // ).then((res) => res.json())
+
     const list: any[] = await fetch(
       'https://api.github.com/repos/VerusCoin/Verus-Desktop/releases'
     ).then((res) => res.json())
@@ -72,13 +69,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       }
     }
     data = { cli: CLI, desktop: Desktop, mobile: Mobile, testnet: Testnet }
-    // console.log(list.length)
-    // console.log(list[1].name)
-    // if (list[0].name.match(testnetRegex)) {
-    //   console.log('found')
-    // } else {
-    //   console.log('notfound')
-    // }
+
     cache.put(cacheWallets, data, Min5)
   } else {
     data = cache.get(cacheWallets)

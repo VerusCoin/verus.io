@@ -256,31 +256,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const result = await fetch(
     'http://localhost:3000/api/verusWallets?wallet=desktop'
   ).then((res) => res.json())
-  // const latestDesktop = await result.json()
-  // let linuxApp,
-  //   winApp,
-  //   macApp,
-  //   armApp = ''
-
-  // const name = latestDesktop.name
-  // const published_at = latestDesktop.published_at
-  // latestDesktop.assets.map((asset: any) => {
-  //   if (asset.name.includes('arm64')) {
-  //     armApp = asset.browser_download_url
-  //   }
-
-  //   if (asset.name.includes('Windows')) {
-  //     winApp = asset.browser_download_url
-  //   }
-
-  //   if (asset.name.includes('MacOS')) {
-  //     macApp = asset.browser_download_url
-  //   }
-
-  //   if (asset.name.includes('x86_64')) {
-  //     linuxApp = asset.browser_download_url
-  //   }
-  // })
 
   return {
     // props: { name, published_at, linuxApp, winApp, macApp, armApp },

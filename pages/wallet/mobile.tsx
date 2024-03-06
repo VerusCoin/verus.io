@@ -25,25 +25,6 @@ const StyledMenu = styled.div`
     `}
 `
 
-// const StyledInfo = styled.div`
-//   margin-top: 29px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   p.info span {
-//     ${fontFam('geoHead')}
-//   }
-//   a.external {
-//     svg {
-//       margin-left: 5px;
-//       height: 12px;
-//       width: 12px;
-//     }
-//   }
-//   ${media.tablet`
-//     margin-top: 0;
-//     margin-left: 82px;
-//   `}
-// `
 
 const StyledCard = styled.div<any>`
   ${bgColor('white')}
@@ -124,15 +105,6 @@ const StyledImage = styled.div`
     `}
 `
 
-// const StyledMobileGo = styled(StyledCard)`
-//   height: 150px;
-//   padding: 20px;
-
-//   ${media.tablet`
-//     height: 250px;
-//     padding: 44px 50px;
-//   `}
-// `
 
 const Mobile = () => {
   const { t } = useTranslation('walletMobile')
@@ -174,38 +146,6 @@ const Mobile = () => {
                   <img src="/images/AppStoreBadge.png" />
                 </a>
               </StyledImage>
-              {/* <MobileDownload />
-              <StyledInfo>
-                <CardText
-                  className="info"
-                  margin="0"
-                  fontSz="xs"
-                  align="left"
-                  text={t('common:latestVersion', { walletVersion: name })}
-                />
-                <CardText
-                  className="info"
-                  margin="16px 0"
-                  fontSz="xs"
-                  align="left"
-                  text={t('common:released', {
-                    release: dayjs(published_at).format('MMM DD, YYYY'),
-                  })}
-                />
-                <Button
-                  className="external"
-                  transparent
-                  svg={{ type: 'miniTab', rotate: false }}
-                  href="https://github.com/VerusCoin/Verus-Mobile/releases/latest"
-                  as="a"
-                  color="#3165d4"
-                  margin="0"
-                  fontSize="xs"
-                  target="_blank"
-                >
-                  {t('common:githubRepo')}
-                </Button>
-              </StyledInfo> */}
             </StyledMenu>
           </Card>
           <StyledCard wallet bg>
@@ -254,9 +194,6 @@ const Mobile = () => {
 export default Mobile
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  // const result = await fetch(
-  //   'https://api.github.com/repos/VerusCoin/Verus-Mobile/releases'
-  // )
   const result = await fetch(
     'http://localhost:3000/api/verusWallets?wallet=mobile'
   )
@@ -268,4 +205,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 }
 
-/* <MobileDownload /> */
+

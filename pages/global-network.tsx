@@ -21,9 +21,7 @@ const StyledTable = styled.div`
 
   width: 100%;
 `
-// > div:first-child {
-//   border-bottom: 1px solid #ececec;
-// }
+
 const StyledRow = styled.div`
   display: flex;
   align-items: center;
@@ -154,15 +152,6 @@ const Foundations = () => {
                 <NetTag net="test" unMargin />
               </StyledRow>
 
-              {/* <StyledRow>
-              <div>
-                <Img name="pirate-logo" height={32} />
-              </div>
-              <DefaultText fam="geoHead" fontSz="mdlg">
-                {t('coins:pirate')}
-              </DefaultText>
-              <NetTag net="plan" unMargin />
-            </StyledRow> */}
               <CardText
                 fontSz="xs"
                 text={t('bridgeCard.text')}
@@ -170,15 +159,6 @@ const Foundations = () => {
                 color="#676767"
               />
             </StyledTable>
-            {/* <Button
-            transparent
-            svg={{ type: 'tab', rotate: false }}
-            href="#"
-            as="a"
-            color="#3165d4"
-          >
-            {t('bridgeCard.link')}
-          </Button> */}
           </Card>
 
           <DefaultLinkCard card="create" />

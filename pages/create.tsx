@@ -320,17 +320,5 @@ const CreateWithVerus = () => {
   )
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     props: {
-//       data: {
-//         JumbotronJSON,
-//         StartAProjectJSON,
-//         SelfSovereignJSON,
-//         DefiSovereignJSON,
-//       },
-//     },
-//   }
-// }
 
 export default CreateWithVerus

@@ -33,8 +33,8 @@ const VerusIDResult = ({ data }: { data: Record<string, any> }) => {
 export default VerusIDResult
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  let verusId = ctx.query.verusID //{ verusID: 'naward@' }
-  
+  let verusId = ctx.query.verusID //{ verusID: 'xx@' }
+
   if (verusId) {
     if (verusId.slice(-1) !== '@') {
       verusId = verusId + '@'

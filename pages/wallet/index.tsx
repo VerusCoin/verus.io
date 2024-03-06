@@ -288,38 +288,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const testnetResult = await fetch(
     'http://localhost:3000/api/verusWallets?wallet=testnet'
   ).then((res) => res.json())
-  // const latestCMDwallet = await result.json()
-  // let linuxApp,
-  //   winApp,
-  //   macApp,
-  //   armApp= ''
 
-  // const name = latestCMDwallet.name
-  // const published_at = latestCMDwallet.published_at
-
-  // latestCMDwallet.assets.map((asset: any) => {
-  //   if (asset.name.includes('arm64')) {
-  //     armApp = asset.browser_download_url
-  //   }
-  //   if (asset.name.includes('Windows')) {
-  //     winApp = asset.browser_download_url
-  //   }
-
-  //   if (asset.name.includes('MacOS')) {
-  //     macApp = asset.browser_download_url
-  //   }
-
-  //   if (asset.name.includes('x86_64' || 'amd64')) {
-  //     linuxApp = asset.browser_download_url
-  //   }
-  // })
-
-  // const linuxApp = data.linuxApp
-  // const winApp = data.winApp
-  // const macApp = data.macApp
-  // const armApp = data.armApp
-  // const name = data.name
-  // const published_at = data.published_at
   return {
     // props: { linuxApp, winApp, macApp, armApp, name, published_at },
     props: { cli: cliResult, testnet: testnetResult },
