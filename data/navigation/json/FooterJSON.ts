@@ -5,7 +5,7 @@ export const FooterJSON: IFooter = {
     {
       svg: 'discordIcon',
       title: 'discord',
-      href: 'https://discord.com/invite/VRKMP2S',
+      href: 'https://verus.io/discord',
       label: {
         color: 'green',
       },
@@ -101,7 +101,7 @@ export const FooterJSON: IFooter = {
         },
         {
           name: 'discord',
-          href: 'https://discord.com/invite/VRKMP2S',
+          href: 'https://verus.io/discord',
           external: true,
         },
         {
@@ -136,7 +136,7 @@ export const FooterJSON: IFooter = {
       items: [
         {
           name: 'discord',
-          href: 'https://discord.gg/VRKMP2S',
+          href: 'https://verus.io/discord',
           external: true,
         },
         {

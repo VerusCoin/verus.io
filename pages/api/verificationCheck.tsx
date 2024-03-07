@@ -30,12 +30,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       let verifiedData: any
       if (verifyKey.match('reddit')) {
         //different function for reddit
+
         verifiedData = await fetch(verifyKey + '.json')
           .then((res) => res.json())
           .then((data) => data[1].data.children[0].data.body)
       } else {
         verifiedData = await fetch(verifyKey).then((res) => res.text())
       }
+
       if (verifiedData) {
         verifiedData = verusWebProof(verifiedData)
         if (verifiedData) {
@@ -50,10 +52,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       } else {
         result.valid = 'error'
       }
-      
     } else if (data.type === 'blockchain') {
       const proofChecks: any = verusBlockchainProof(verifyKey)
       //we have two keys to check: 1) against address; and 2) against profile
+
       let validate = await FetchMessage({
         ...proofChecks.key1,
         Identity: user,
@@ -73,7 +75,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
           break
         case 'eth':
-          valid
           if (web3) {
             try {
               valid = web3.eth.accounts.recover(
@@ -83,7 +84,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             } catch {
               valid = undefined
             }
-            if (valid === data.address) {
+            if (valid?.toLowerCase() === data.address.toLowerCase()) {
               validate = { valid: 'true' }
             } else {
               validate = { valid: 'false' }

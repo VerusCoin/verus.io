@@ -4,6 +4,10 @@ import { IExchanges } from '@/types/exchanges'
 //   logo: 'bitGlobal',
 //   url: 'bitglobal.com',
 // },
+// {
+//   logo: 'graviex',
+//   url: 'graviex.net',
+// },
 
 export const ExchangesJSON: IExchanges = {
   exchanges: [
@@ -18,10 +22,6 @@ export const ExchangesJSON: IExchanges = {
     {
       logo: 'atomicDex',
       url: 'atomicdex.io',
-    },
-    {
-      logo: 'graviex',
-      url: 'graviex.net',
     },
   ],
 }

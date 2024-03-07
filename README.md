@@ -1,4 +1,9 @@
-# Verus.io Website
+Discord has been setup to use nginx redirects so if need to find look for https://verus.io/discord
+
+
+# Verus.io
+
+---
 
 ## Highlights
 
