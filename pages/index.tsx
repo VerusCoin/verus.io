@@ -19,7 +19,7 @@ import {
 } from '@/components/elements'
 import { FaMedium } from 'react-icons/fa'
 import { Container, Row, Col, media } from 'styled-bootstrap-grid'
-// import { Banner, Blog, KnowCards } from '@/components/sections/Home'
+
 import { Blog, KnowCards } from '@/components/sections/Home'
 
 const StyledCardContainer = styled(Container)`
@@ -142,10 +142,6 @@ const Home = ({ data }: HomepageProps) => {
     youtube: {
       text: t('jumbotron.youtube'),
       href: 'https://www.youtube.com/watch?v=qN30YmG3nEg',
-    },
-    ethlink: {
-      text: 'Verus-Ethereum Bridge',
-      href: '/eth-bridge',
     },
     width: 1000,
     main: true,
