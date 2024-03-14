@@ -18,6 +18,8 @@
 # misc
 .DS_Store
 *.pem
+/public/robots.txt
+/.vscode
 
 # debug
 npm-debug.log*
@@ -29,16 +31,17 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-.env
 
 # vercel
 .vercel
-
-# vsCode
-/.vscode/
-.vscode/settings.json
+.idea
 
 #package and yarn lock
 package-lock.json
 yarn.lock
 .env
+
+#nextjs 12
+next.lock
+tsconfig.tsbuildinfo
+*.tsbuildinfo

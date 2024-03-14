@@ -1,0 +1,63 @@
+{
+  "vdxfkey": "i5fvfsaTFKtrHCPYQHTXRaXcyxHmJMxTMe",
+  "version": 1,
+  "system_id": "i5w5MuNik5NtLcYmNzcvaoixooEebB6MGV",
+  "signing_id": "i8KagdpEfD9XYY1n9UppY5sNG71iBbqEnn",
+  "decision": {
+    "vdxfkey": "iQP5eKQaYDV3FFXsq7276LyWxk4ttjuSdm",
+    "version": 1,
+    "decision_id": "iHjZfUUkQ5638dy5o3LsugcpbBZ8aMQ1Y7",
+    "request": {
+      "vdxfkey": "i3dQmgjq8L8XFGQUrs9Gpo8zvPWqs1KMtV",
+      "version": 1,
+      "system_id": "i5w5MuNik5NtLcYmNzcvaoixooEebB6MGV",
+      "signing_id": "iKaDagEZfB1QPtkyKx558FGTYiUFBkCQBV",
+      "signature": {
+        "vdxfkey": "iPi1DPgDDu7hP1mAp5xJ8rHBWwXSzc6yA8",
+        "version": 1,
+        "signature": "AgVWaSYAAUEf+N7onq8PYYOVd3Fd6lQj4sj26Yq6+UZPQCWso5vptnIqdnfClezVUxyIey94KJEMT6XLhOP5tTPPNcdRN4ulJw=="
+      },
+      "challenge": {
+        "vdxfkey": "i5maLnB62WmKKXFZniqDRU1JiC2Hd1xpVb",
+        "version": 1,
+        "challenge_id": "iHjZfUUkQ5638dy5o3LsugcpbBZ8aMQ1Y7",
+        "requested_access": [
+          {
+            "vdxfkey": "iLUrA89mDKnwxZcMiPadfNB9TLp58A2TKU",
+            "version": 1,
+            "encoding": "utf-8",
+            "data": ""
+          }
+        ],
+        "requested_access_audience": [],
+        "subject": [],
+        "provisioning_info": [],
+        "alt_auth_factors": [],
+        "session_id": null,
+        "attestations": [],
+        "redirect_uris": [
+          {
+            "vdxfkey": "iSaBWByu4zqhEZ6HQmFxvfR1HyiFuhnJfL",
+            "version": 1,
+            "uri": "https://verus.requestcatcher.com/test"
+          }
+        ],
+        "created_at": 1682874099,
+        "salt": null,
+        "context": {
+          "vdxfkey": "iBMochrKPSQfua5yZYWyd6p4QnREakqU44",
+          "version": 1,
+          "kv": {}
+        },
+        "skip": false
+      }
+    },
+    "created_at": 1682874139,
+    "skipped": false
+  },
+  "signature": {
+    "vdxfkey": "iPi1DPgDDu7hP1mAp5xJ8rHBWwXSzc6yA8",
+    "version": 1,
+    "signature": "AgVWaSYAAUEf96mAotk+tulnCxcB2sBOLlgkZ8dqYA54rMmVkiN5fd9iIDaqgphydqQ/j8LCKyfG6Acj1Iryii8h8UHQtVAp1g=="
+  }
+}

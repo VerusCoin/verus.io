@@ -1,0 +1,32 @@
+{
+  "jumbotron": {
+    "heading": "$VRSC coin.",
+    "text": "A coin full of energy and utility. Servicing the economy."
+  },
+  "cards": {
+    "payment": {
+      "heading": "Payments",
+      "text": "$VRSC is used for cheap, fast, scalable and final payments. "
+    },
+    "staking": {
+      "heading": "Staking",
+      "text": "Anyone with $VRSC can start staking and earn. No minimum requirements."
+    },
+    "verus": {
+      "heading": "VerusID",
+      "text": "Pay $VRSC to the protocol for VerusID creation."
+    },
+    "blockchain": {
+      "heading": "Blockchains",
+      "text": "Pay $VRSC to the protocol to create interoperable blockchains."
+    },
+    "token": {
+      "heading": "Tokens",
+      "text": "Pay $VRSC to the protocol to create tokens and currencies."
+    },
+    "defi": {
+      "heading": "DeFi",
+      "text": "DeFi tokens and currencies on the Verus mainchain must have $VRSC in its reserves."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "jumbotron": {
+    "heading": "Verus Mobile.",
+    "text": "Everything you need in your pocket."
+  },
+
+  "cards": {
+    "wallet": "Store Verus, Bitcoin and other cryptocurrencies. No problem.",
+    "verusId": "Store and send fully private $VRSC.",
+    "support": {
+      "header": "Support for many different cryptocurrencies.",
+      "text": "+ all ERC-20, and many many more!"
+    },
+    "useMobile": "Use Verus Mobile on the go."
+  },
+  "dropdown": {
+    "dropdown": "Download Verus Mobile",
+    "ios": "Verus Mobile for iOS",
+    "android": "Verus Mobile for Android"
+  }
+}

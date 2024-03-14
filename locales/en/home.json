@@ -1,0 +1,65 @@
+{
+  "jumbotron": {
+    "title": "Welcome to Verus",
+    "heading": "The Internet of Value",
+    "text1": "Unstoppable & people-powered public infrastructure.",
+    "text2": "A base to build Web3, and to empower individuals & communities.",
+    "buttons": {
+      "first": "Build with Verus",
+      "second": "Learn VerusID",
+      "third": "Protocol foundations",
+      "fourth": "VerusID"
+    },
+    "youtube": "Michael Toutonghi, lead developer, examines the Verus protocol"
+  },
+  "banner": {
+    "title": "Get started",
+    "text": "Learn how to get VRSC, which wallets to use and how to interact with the Verus network.",
+    "link": "Learn more"
+  },
+  "multiChainCard": {
+    "title": "The multi-chain & multi-currency L0/1 blockchain protocol.",
+    "description": "The rent-free protocol enables novel ways to create value for individuals, communities, businesses, organizations, and governments.",
+    "btn1": "Protocol Foundations",
+    "btn2": "Download Vision Paper",
+    "medium": "Read on Community Contributed Value"
+  },
+  "cardBanner": "Verus is scalable public infrastructure for the world.",
+  "cards": {
+    "pbaasCard": {
+      "header": "PBaaS",
+      "text": "Use Public Blockchains as a Service to deploy customizable, scalable and interoperable blockchains within minutes. No need to provision additional resources."
+    },
+    "verusCard": {
+      "header": "VerusID",
+      "text": "Digital identities, assets and namespaces for any project. Self-sovereign, decentralized or even centralized. The most complete identity system in the world."
+    },
+    "defiCard": {
+      "header": "DeFi",
+      "text": "Instant liquidity for blockchain and token projects. Create markets and find funding. Use for lending and borrowing."
+    },
+    "privCard": {
+      "header": "Privacy",
+      "text": "Your privacy is a human right. Get fully encrypted zero knowledge private transactions. "
+    },
+    "interopCard": {
+      "header": "Interoperability",
+      "text": "Exchange value and data seamlessly across blockchains and other systems. Connect any system together with Verus Interchain Protocol."
+    },
+    "dataCard": {
+      "header": "Data",
+      "text": "Define and publish verifiable data structures across blockchains and other systems. With Verus Data Exchange Format (VDXF) it’s never been easier."
+    },
+    "paymentCard": {
+      "header": "Payments",
+      "text": "You get cheap, fast, scalable and final payments. An essential element of all decentralized systems."
+    },
+    "knowCard": {
+      "know": "Did you know?",
+      "header": "<u>Verus</u> is Latin and means:",
+      "text": "true real actual genuine"
+    }
+  },
+  "highlighted": "Highlighted Articles",
+  "latest": "Latest Articles"
+}

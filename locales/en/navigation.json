@@ -1,0 +1,95 @@
+{
+  "technology": {
+    "title": "Technology",
+    "createPage": {
+      "title": "Create with Verus",
+      "description": "Blockchain technology for any project"
+    },
+    "verusID": {
+      "title": "VerusID",
+      "description": "Identities and namespaces"
+    },
+    "foundationPage": {
+      "title": "Strong Foundations",
+      "description": "Built for continual growth"
+    },
+    "coinPage": {
+      "title": "Coin",
+      "description": "Value and utility"
+    },
+    "globalPage": {
+      "title": "Global Network",
+      "description": "Connecting all blockchains"
+    }
+  },
+  "economy": {
+    "title": "Economy"
+  },
+  "community": {
+    "title": "Community",
+    "peoplePage": {
+      "title": "People",
+      "description": "Worldwide community contributors"
+    },
+    "contributePage": {
+      "title": "Contribute",
+      "description": "Support Verus community"
+    }
+  },
+  "resources": {
+    "title": "Resources",
+    "explorerPage": {
+      "title": "Explorer",
+      "description": "Browse addresses and transactions"
+    },
+    "lookupPage": {
+      "title": "VerusID Lookup",
+      "description": "Search for registered identities"
+    },
+    "signaturePage": {
+      "title": "VerusID Signatures",
+      "description": "Verify messages, files and hashes"
+    },
+    "papersPage": {
+      "title": "Papers",
+      "description": "Browse research papers"
+    },
+    "exchangesPage": {
+      "title": "Get VRSC",
+      "description": "Get on protocol and exchanges"
+    },
+    "verusBridge": {
+      "title": "Verus-Ethereum Bridge",
+      "description": "The non-custodial bridge"
+    },
+    "loginDemo": {
+      "title": "VerusID Login Demo",
+      "description": "Demo using VerusID to login in"
+    }
+    
+  },
+  "docs": {
+    "title": "Docs & Support",
+    "documentationPage": {
+      "title": "Documentation",
+      "description": "Learn and use Verus blockchain technology"
+    },
+    "wikiPage": {
+      "title": "Support Wiki",
+      "description": "Guides and troubleshooting"
+    },
+    "faqPage": {
+      "title": "FAQ",
+      "description": "Frequently asked questions"
+    }
+  },
+  "wallet": {
+    "title": "Get Wallet"
+  },
+  "blog": {
+    "title": "Blog"
+  },
+  "visionPaper": {
+    "title": "Download Vision Paper"
+  }
+}

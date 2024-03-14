@@ -1,0 +1,45 @@
+{
+  "general": "General",
+  "people": "People",
+  "community": "Community",
+  "openEconomy": "Mining & Staking",
+  "faq": "FAQ",
+  "exchanges": "Exchanges",
+  "technology": "Technology",
+  "create": "Create",
+  "foundation": "Foundations",
+  "coin": "Coin",
+  "global": "Global Network",
+  "paper": "Vision Paper",
+  "explorer": "Explorer",
+  "verusID": "VerusID Lookup",
+  "verusSig": "VerusID Signatures",
+  "socials": "Socials",
+  "twitter": "Twitter",
+  "facebook": "Facebook",
+  "telegram": "Telegram",
+  "youtube": "YouTube",
+  "discord": "Discord",
+  "reddit": "Reddit",
+  "medium": "Medium",
+  "qq": "QQ",
+  "bitcointalk": "Bitcointalk",
+  "keybase": "Keybase",
+  "createWithUs": "Create with Verus",
+  "github": "GitHub",
+  "documentation": "Documentation",
+  "brand": "Brand Materials",
+  "contribute": "Contribute",
+  "privacyPolicy": "Privacy Policy",
+  "socialCard": {
+    "discord": {
+      "title": "Discord Server",
+      "label": "Largest community hub",
+      "text": "Join the active Verus community with over 10K members for all questions and discussions."
+    },
+    "telegram": {
+      "title": "Telegram Community",
+      "text": "Jump in our community Telegram server. Ask questions and discuss everything related to Verus."
+    }
+  }
+}

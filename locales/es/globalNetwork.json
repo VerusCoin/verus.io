@@ -1,0 +1,33 @@
+{
+  "jumbotron": {
+    "heading": "Global network.",
+    "text": "A giant network of value."
+  },
+  "connectedCard": {
+    "header": "Connecting </br> all blockchains together.",
+    "modal": {
+      "header": "All roads lead to Verus.",
+      "text": "Verus is uniquely positioned to be at the centre of the crypto industry. Here’s why. All blockchains, public or private, can easily connect to Verus through advanced bridging technology. As a multichain network, the blockchains created within the ecosystem can communicate with all other connected blockchains in a completely decentralized fashion. All these internal and external interoperable blockchains can share data and value flawlessly. At the same time, they  leverage all Verus core technology, and the core technologies of the connected blockchains. Creating a giant network of value and data."
+    }
+  },
+  "provisioningCard": {
+    "header": "Provisioning a global network of liquidity.",
+    "modal": {
+      "header": "Immense amounts of value flowing everywhere.",
+      "text": "Incredibly powerful DeFi technology realizes a global network of liquidity. Let’s explain. Blockchains connected to Verus have mathematically defined conversion rates. Meaning you can always convert currencies. Always! Without needing any counterparties. Imagine countless blockchains and tokens all connected with each other. An immense network of liquidity arises. The opportunities to arbitrage between rates within and outside the network are enormous. Which will bring even more liquidity. This is the global network of liquidity. Find it only with Verus."
+    }
+  },
+  "advantageCard": {
+    "header": "Huge advantages for bridged blockchains.",
+    "text": "Connect to global liquidity.",
+    "modal": {
+      "header": "Take advantage. Of everything.",
+      "text": "Each blockchain connecting to Verus receives great advantages. They connect to the global network of liquidity, making their currency immediately convertible to all other currencies in the network. No counterparties are necessary through powerful DeFi technology. It doesn’t stop there. Next to that, connected blockchains can use VerusID, the most complete self-sovereign identity system in the world. Users can secure wealth with Vault. On top of that, connected blockchains can use technologies of other connected blockchains. Connect your blockchain to Verus and bring tremendous value to your ecosystem."
+    }
+  },
+  "bridgeCard": {
+    "header": "Bridged external blockchains.",
+    "text": "All PBaaS-blockchains are automatically connected to the global network.",
+    "link": "Get help to bridge your blockchain to Verus"
+  }
+}
